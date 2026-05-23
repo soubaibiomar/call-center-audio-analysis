@@ -11,99 +11,161 @@ pinned: false
 
 # Call Center Intelligence System
 
-A production-grade, multi-agent AI platform that turns raw call center audio into structured transcripts, call summaries, weighted quality scores, compliance flags, and downloadable PDF / JSON reports.
-
-The system is built on a **LangGraph** state machine, **faster-whisper** speech-to-text, and LangChain **structured output** over three interchangeable LLM providers (**OpenAI GPT-4o**, **Google Gemini 2.0 Flash**, and **Groq Llama 3.3 70B**). It ships with a 3-tab **Gradio** interface, an audit log, transcription caching, a PII redaction and prompt-injection defense layer, and 113 automated tests.
+> Turn raw call center audio into structured transcripts, summaries, weighted quality scores, and downloadable PDF / JSON reports in minutes.
 
 [![Live Demo](https://img.shields.io/badge/HuggingFace-Live%20Demo-yellow)](https://huggingface.co/spaces/animeshkcm/call-center-intelligence)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/ANI-IN/Call-Center-Intelligence-System)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Tests](https://img.shields.io/badge/tests-113%20passed-green.svg)]()
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Tests](https://img.shields.io/badge/tests-109%20unit%20%2B%20security-green.svg)](#tests)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/ANI-IN/Call-Center-Intelligence-System)](https://github.com/ANI-IN/Call-Center-Intelligence-System/commits/main)
 
-## Capstone Framing
+Built on **LangGraph**, **faster-whisper**, **LangChain structured output**, and **Gradio**. Ships with a 3-tab UI, an audit log, transcription caching, a PII redaction and prompt-injection defense layer, and a deterministic weighted QA rubric.
 
-### Problem Statement
+## Table of Contents
 
-Build an automated, end-to-end quality assurance pipeline for call center operations, combining speech recognition, large language models, and structured data contracts into a single deployable application.
+1. [The Problem](#the-problem)
+2. [The Solution](#the-solution)
+3. [Who It Is For and Use Cases](#who-it-is-for-and-use-cases)
+4. [Key Features](#key-features)
+5. [Demo](#demo)
+6. [Architecture](#architecture)
+7. [Tech Stack](#tech-stack)
+8. [Prerequisites](#prerequisites)
+9. [Installation](#installation)
+10. [Configuration](#configuration)
+11. [Running the App](#running-the-app)
+12. [Using the App Step by Step](#using-the-app-step-by-step)
+13. [Code Walkthrough](#code-walkthrough)
+14. [Sample Data](#sample-data)
+15. [Customization](#customization)
+16. [Troubleshooting](#troubleshooting)
+17. [Project Structure](#project-structure)
+18. [Security Notes](#security-notes)
+19. [Contributing](#contributing)
+20. [License](#license)
+21. [Acknowledgments](#acknowledgments)
 
-### Business Use Case
+## The Problem
 
-A mid-size call center handles roughly **5,000 calls per day**. Quality assurance teams typically review **fewer than 5%** of those calls and spend around 15 minutes per review. The result is three systemic failures:
+A mid-sized contact center handles roughly 5,000 calls a day. Manual quality assurance typically reviews fewer than 5% of those calls, with each review taking 10 to 15 minutes of a senior agent's time. The result is three structural failures:
+
+1. **A coverage gap.** Roughly 95% of calls are never reviewed. Coaching, compliance signals, and customer sentiment are invisible at the population level.
+2. **A consistency gap.** Inter-rater agreement between human reviewers ranges from 40% to 60% in published QA studies. Two reviewers giving the same call different scores erodes the value of any individual score.
+3. **A latency gap.** Reviews happen days after the call. By the time a compliance issue is flagged, the customer has already been impacted.
+
+The cost is real: missed compliance violations, slow coaching feedback, and an inability to spot customer-experience trends until much later.
+
+## The Solution
+
+The Call Center Intelligence System replaces the manual review with an automated pipeline that runs on every call, in minutes, with deterministic scoring rules.
+
+| Pain | Capability |
+|---|---|
+| Coverage gap | 100% of calls are processed, not a random sample. |
+| Consistency gap | A weighted formula (Professionalism 15%, Empathy 20%, Problem Resolution 30%, Compliance 20%, Communication Clarity 15%) is recomputed in Python from the LLM's dimension scores. The overall score never drifts. |
+| Latency gap | A 5-minute call finishes processing in 2 to 4 minutes on CPU, or under 30 seconds with a GPU. Compliance flags surface immediately. |
+| Cost | About $0.03 per call on GPT-4o; free on Gemini or Groq tier. |
+| Trust | PII redacted before any LLM call. 22 prompt-injection patterns are checked at ingestion. Append-only audit log of every action. |
+
+## Who It Is For and Use Cases
+
+### Operations leader at a contact center
+
+You manage 30 to 200 agents across one or more teams. You need population-level visibility into call quality, not anecdotes. You use this system to flag the bottom 10% of calls for human review and to surface week-over-week trends in compliance flags and customer sentiment.
+
+### Compliance officer
+
+You need to know, today, whether any agent disclosed sensitive data without verification or processed a transaction without consent. The compliance scoring dimension and the explicit `compliance_flags` field give you that visibility on every call. Critical flags route to a separate supervisor terminal so they are visible at the top of the queue.
+
+### Applied AI engineer building a similar system
+
+You want a reference implementation of a production multi-agent pipeline that gets the engineering concerns right: typed state, conditional routing, retries, security boundaries enforced inside the graph, multi-provider LLM swap, structured output, deterministic post-processing of LLM outputs, and a clean separation between UI, services, agents, graph, and persistence. The 36-line `app.py` and the 240-line `src/graph/workflow.py` are the entry points.
+
+## Key Features
+
+User-facing:
+
+- 3-tab Gradio UI: Analyze Call, All MP3 History, Observability.
+- Upload or microphone-record audio, get a transcript with timestamps, an LLM-generated summary, weighted QA scores, and downloadable PDF and JSON reports.
+- Browse every past analysis on the History tab; click a row to load the full transcript and analysis.
+- Observability tab shows pipeline metrics, a LangSmith status panel, and the last 20 audit events.
+
+Technical:
+
+- **Multi-agent LangGraph** with 7 nodes and three terminal states (success, supervisor review, error).
+- **3 LLM providers** swappable via a single `LLM_PROVIDER` env var: OpenAI GPT-4o (paid), Gemini 2.0 Flash (free), Groq Llama 3.3 70B (free).
+- **faster-whisper** with int8 quantization, VAD filter, and greedy decoding for speed.
+- **SHA-256 transcription cache** keyed on file content. Identical audio returns instantly.
+- **PII redaction** of SSN, credit card, email, and phone in both full text and per-segment text before any LLM call.
+- **22 prompt-injection regex patterns** checked at ingestion.
+- **Deterministic weighted scoring**: the LLM's `overall_score` is overwritten in Python from the per-dimension scores and fixed weights.
+- **Structured LLM output** via `with_structured_output(...)` so the pipeline never tries to parse free-form text.
+- **Append-only audit log** with timestamps, actions, and details.
+
+Intentionally not included:
+
+- Real speaker diarization (the heuristic in `src/agents/transcription.py:64-102` is acknowledged as best-effort).
+- Multi-tenant authentication (the Gradio UI is single-user; deploy behind an authenticated proxy if you need it).
+- Real-time streaming transcription (the pipeline is batch-per-call).
+- Voice biometrics or speaker identification.
+
+## Demo
+
+Live: <https://huggingface.co/spaces/animeshkcm/call-center-intelligence>
+
+If a screenshot is not available, the layout looks like this:
+
+```
++-------------------------------------------------------------------------+
+| Call Center Intelligence System                                          |
+| AI-powered call center analysis platform.                                |
++----[Analyze Call]----[All MP3 History]----[Observability]----------------+
+|                                                                          |
+|  +-------------------------+   +--------------------------------------+  |
+|  |  [ Upload or Record  ]  |   |  Caller ID: [______________]          | |
+|  |  [    Audio (mp3)    ]  |   |  Department: [_____________]          | |
+|  |                         |   |                                       | |
+|  |                         |   |        [   ANALYZE CALL   ]           | |
+|  +-------------------------+   +--------------------------------------+  |
+|                                                                          |
+|  ----------------------------------------------------------------        |
+|  > Processing your call... 5 to 10 minutes on the free CPU tier.         |
+|  ----------------------------------------------------------------        |
+|                                                                          |
+|  Full Transcript [v]                                                     |
+|  [00:00] Agent: Thank you for calling support, how can I help?           |
+|  [00:04] Customer: I have an issue with my last bill.                    |
+|  [00:08] Agent: I'm sorry to hear that. Can you describe what you saw?   |
+|  ...                                                                     |
+|                                                                          |
+|  ## Call Summary               | ## Quality Analysis                     |
+|  Call Purpose: ...             | Overall Quality Score: 4.10 / 5         |
+|  Key Discussion Points:        | Professionalism: 4 / 5                  |
+|  - ...                         | Empathy: 4 / 5                          |
+|  Action Items:                 | Problem Resolution: 4 / 5               |
+|  - Agent: send refund          | Compliance: 4 / 5                       |
+|  Resolution: resolved          | Communication Clarity: 4 / 5            |
+|  Sentiment: Frustrated -> OK   | Compliance Flags: none.                 |
+|                                                                          |
+|  [Download Full Report (JSON)]  [Download Full Report (PDF)]             |
++-------------------------------------------------------------------------+
+```
+
+## Architecture
+
+See `docs/architecture.md` for the deep version. The TL;DR:
 
 ```mermaid
 flowchart LR
-    A["Coverage Gap<br/>~95% of calls<br/>never reviewed"]
-    B["Consistency Gap<br/>40–60% inter-rater<br/>agreement on QA"]
-    C["Latency Gap<br/>Issues surface days<br/>after the call"]
-    A --> D["Customer, Compliance,<br/>and Revenue Risk"]
-    B --> D
-    C --> D
-
-    style D fill:#f44336,color:white
-```
-
-| Metric | Manual QA | This System |
-|---|---|---|
-| Call coverage | < 5% | **100%** |
-| Time per call | ~15 min | **2–5 min (CPU) / < 30s (GPU)** |
-| Consistency | 40–60% agreement | **Deterministic weighted formula** |
-| Compliance detection | Days later | **Real time, at ingestion** |
-| Cost per call | ~$5 (labor) | **$0.03 (GPT-4o) / $0 (free tier)** |
-
-### Evaluation Metrics
-
-- **Coverage** — 100% of calls scored versus < 5% manual.
-- **Consistency** — Deterministic weighted scoring (Professionalism 15%, Empathy 20%, Problem Resolution 30%, Compliance 20%, Communication Clarity 15%).
-- **Speed** — 2–5 min on CPU, under 30 s with a GPU.
-- **Cost** — $0.03 per call on GPT-4o, or zero on Gemini / Groq free tiers.
-- **Security** — PII redacted before any LLM call; 22 prompt-injection patterns blocked at ingestion.
-- **Reliability** — SHA-256 transcription cache, exponential backoff retries, graceful error routing via a dedicated error node.
-
-### Why This Matters for AI Engineers
-
-This project goes well beyond "wrap an LLM in an API" and demonstrates the engineering concerns that matter for Applied GenAI and Full Stack AI roles:
-
-- **Multi-agent orchestration** — A LangGraph state machine with conditional routing, typed state, retry logic, and a dedicated error terminal.
-- **Security-first design** — Injection detection and PII redaction are enforced *before* any transcript reaches the LLM.
-- **Production patterns** — Model singletons, transcription caching, cached DB sessions, rolling temp-file cleanup, graceful degradation when the LLM fails.
-- **Cost control** — Three providers switchable via a single `LLM_PROVIDER` env var, with zero code changes.
-- **Clean architecture** — A 36-line entrypoint, clearly separated UI / services / agents / graph / database layers, and 113 tests across unit, integration, and security.
-
-### Technical Complexity
-
-| Dimension | Detail |
-|---|---|
-| Pipeline stages | 7 (intake, transcription, injection check, PII redaction, summarization, QA scoring, report) |
-| Typed data contracts | 14 Pydantic models + 1 `StrEnum` in `src/graph/state.py` |
-| LLM providers | 3 (OpenAI, Gemini, Groq) via a single factory |
-| Security checks | 22 injection patterns + 4 PII types |
-| Test coverage | 113 tests across `tests/unit/`, `tests/integration/`, and `tests/security/` |
-| Architecture layers | 5 (UI, services, agents, graph, database) plus `utils/` and `security/` |
-
-### The Engineering Challenge
-
-This is not a single-prompt LLM wrapper — it solves five distinct engineering problems end to end:
-
-1. **Audio-to-structured-data pipeline** — Raw telephony audio becomes typed Pydantic objects across 7 processing stages.
-2. **Multi-agent coordination** — Conditional routing, typed state, retries, and error isolation via a LangGraph state machine.
-3. **Security boundary enforcement** — PII redaction and injection detection run *between* transcription and any LLM call.
-4. **Cost optimization** — Three LLM providers (one paid, two free) are interchangeable behind a single factory function.
-5. **Production reliability** — Transcription caching, DB session pooling, temp-file lifecycle management, and a dedicated error node.
-
-## System Architecture
-
-### Pipeline Overview
-
-```mermaid
-graph LR
-    A["Audio Upload<br/>(MP3 / WAV / FLAC / M4A)"] --> B["Intake Agent<br/>Format + Size + Duration"]
+    A["Audio Upload<br/>(MP3 / WAV / FLAC / M4A)"] --> B["Intake<br/>Format + Size + Duration"]
     B -->|Invalid| ERR["Error Terminal"]
     B -->|Valid| C["Transcription<br/>faster-whisper + VAD"]
     C --> D["Injection<br/>Detector"]
     D -->|Blocked| FLAG["Flagged Terminal"]
     D -->|Clean| E["PII<br/>Redactor"]
     E --> F["Summarization + QA Scoring<br/>(Sequential with Summary Context)"]
+    F -->|Critical flag| SUP["Supervisor Terminal"]
     F --> H["Report Agent"]
     H --> OUT["Transcript + Summary<br/>+ QA + PDF / JSON"]
     H --> DB[("SQLite<br/>calls.db")]
@@ -111,389 +173,274 @@ graph LR
     style F fill:#2196F3,color:white
     style ERR fill:#f44336,color:white
     style FLAG fill:#FF9800,color:white
+    style SUP fill:#FF9800,color:white
 ```
 
-> Summarization runs first. QA scoring then receives the summary as additional context for more accurate resolution and sentiment grounding.
-
-### LangGraph State Machine
-
-```mermaid
-stateDiagram-v2
-    [*] --> intake_step
-    intake_step --> transcribe_step : Valid audio
-    intake_step --> error_step : Invalid
-    transcribe_step --> injection_check_step
-    injection_check_step --> pii_redact_step : Clean
-    injection_check_step --> error_step : Injection detected
-    pii_redact_step --> summarize_and_qa_step
-    summarize_and_qa_step --> report_step : Normal
-    summarize_and_qa_step --> supervisor_step : Critical compliance flag
-    summarize_and_qa_step --> error_step : LLM failure
-    report_step --> [*]
-    supervisor_step --> [*]
-    error_step --> [*]
-```
-
-### Data Flow
+One key call:
 
 ```mermaid
 sequenceDiagram
     participant U as User
-    participant I as Intake Agent
-    participant W as faster-whisper
-    participant S as Security Layer
-    participant L as LLM (OpenAI / Gemini / Groq)
-    participant D as SQLite
+    participant W as LangGraph Workflow
+    participant Whisper as faster-whisper
+    participant Sec as Security Layer
+    participant L as LLM
+    participant DB as SQLite
 
-    U->>I: Upload audio file
-    I->>I: Validate format, size, duration
-    I->>I: Extract properties via mutagen
-    I->>W: Audio path
-
-    W->>D: Check SHA-256 transcription cache
-    alt Cache hit
-        D-->>W: Cached TranscriptionResult
-        W-->>S: Cached transcript (instant)
-    else Cache miss
-        W->>W: faster-whisper (beam=1, VAD, int8)
-        W->>W: Heuristic speaker diarization
-        W->>D: Save to TranscriptionCache
-        W-->>S: TranscriptionResult
-    end
-
-    S->>S: Injection scan (22 patterns)
-    S->>S: PII redaction (SSN / CC / email / phone)
-
-    S->>L: Summarization
-    L-->>S: SummaryResult
-    S->>L: QA scoring (with summary context)
-    L-->>S: QAScoreResult
-
-    S->>D: Persist CallRecord + audit log
-    S-->>U: Transcript + Summary + QA + PDF / JSON
+    U->>W: upload audio
+    W->>Whisper: transcribe
+    Whisper->>DB: SHA-256 cache check
+    DB-->>Whisper: hit / miss
+    Whisper-->>W: TranscriptionResult
+    W->>Sec: injection scan + PII redact
+    Sec-->>W: redacted transcript
+    W->>L: summarize
+    L-->>W: SummaryResult
+    W->>L: score (with summary context)
+    L-->>W: QAScoreResult
+    W->>DB: persist CallRecord + audit
+    W-->>U: report + PDF + JSON
 ```
 
-### Application Flow (Gradio UI)
+## Tech Stack
 
-```mermaid
-flowchart LR
-    APP["app.py<br/>(36-line entrypoint)"] --> UI["src/ui/app_builder.py"]
-    UI --> T1["Tab 1: Analyze Call<br/>Upload / record → full pipeline"]
-    UI --> T2["Tab 2: All MP3 History<br/>Master-detail over CallRecord"]
-    UI --> T3["Tab 3: Observability<br/>Metrics + LangSmith + Audit"]
-    T1 --> SVC["src/services/pipeline.py"]
-    T2 --> HSVC["src/services/history.py"]
-    T3 --> OSVC["src/services/observability.py"]
-    SVC --> WF["LangGraph Workflow"]
-    HSVC --> DB[("SQLite")]
-    OSVC --> DB
-```
-
-## Pipeline Stages
-
-| # | Stage | What it does | Key detail |
-|---|---|---|---|
-| 1 | **Intake** | Validates format (magic bytes), size (< 50 MB), and duration (< 60 min). | Properties extracted via `mutagen` for MP3 / FLAC / M4A; `wave` for WAV. |
-| 2 | **Transcription** | faster-whisper with int8 quantization, VAD filter, heuristic speaker diarization. | SHA-256 caching — identical audio returns instantly. |
-| 3 | **Injection Detection** | Scans the transcript against 22 prompt-injection patterns. | Blocks malicious audio before it reaches any LLM. |
-| 4 | **PII Redaction** | Redacts SSN, credit card, email, and phone numbers in both full text and per-segment text. | Runs before every LLM call; non-reversible at the downstream boundary. |
-| 5 | **Summarization** | Extracts purpose, discussion points, action items, resolution status, sentiment trajectory, and entities. | Structured output via `with_structured_output(SummaryResult)`. |
-| 6 | **QA Scoring** | Scores the agent on 5 weighted dimensions and emits compliance flags. | Receives the summary as context; overall score is recomputed deterministically from the weights. |
-| 7 | **Report** | Compiles the `CallReport`, persists to SQLite, and generates PDF + JSON artifacts. | Audit event written on both success and failure paths. |
-
-### QA Scoring Rubric
-
-| Dimension | Weight | Measures |
+| Layer | Technology | Reason |
 |---|---|---|
-| Professionalism | 15% | Tone, greeting / closing, etiquette. |
-| Empathy | 20% | Active listening, acknowledgment of feelings. |
-| Problem Resolution | 30% | Root cause, solution, confirmation. |
-| Compliance | 20% | Disclosures, verification, hold procedures. |
-| Communication Clarity | 15% | Clear explanations, jargon avoidance, pacing. |
+| Orchestration | LangGraph | Typed state, conditional edges, named terminals. |
+| Speech-to-text | faster-whisper | int8 quantization; 2 to 4x faster than vanilla Whisper. |
+| LLM (paid) | OpenAI GPT-4o | Best structured-output quality. |
+| LLM (free) | Google Gemini 2.0 Flash | 1,500 requests per day on the free tier. |
+| LLM (free) | Groq Llama 3.3 70B | Fastest hosted inference on Llama-class models. |
+| LLM framework | LangChain | `with_structured_output` for Pydantic-enforced JSON. |
+| Audio metadata | mutagen plus stdlib `wave` | Property extraction for MP3 / FLAC / M4A / WAV. |
+| Data models | Pydantic v2 | 14 typed contracts between pipeline stages. |
+| Database | SQLite + SQLAlchemy 2.0 | `CallRecord`, `AuditLogEntry`, `TranscriptionCache`. |
+| Web UI | Gradio 5.29 | 3 tabs, soft theme. |
+| Observability | LangSmith | Per-node tracing via `@traceable`. |
+| PDF | ReportLab | PDF report generation. |
+| Tests | pytest | 109 unit and security tests; integration suite gated on an LLM key. |
+| Lint / format / hooks | ruff + pre-commit + detect-secrets | Fast lint, format, and secret scanning. |
 
-The overall score is recomputed in Python from the dimension scores using the fixed weights above, rather than being trusted from the LLM output — a deterministic guardrail against scoring drift.
+## Prerequisites
 
-## Speed and Performance
+- Python 3.11 or later. Tested on 3.11 and 3.12.
+- `ffmpeg` available on `PATH`.
+- At least one LLM API key.
+- About 1 GB of disk for the Python deps; an additional 40 MB to 3 GB for Whisper depending on the model size.
 
-### Processing Time by Hardware
+## Installation
 
-| Hardware | 5-min call | 15-min call | Cost |
-|---|---|---|---|
-| CPU (HF Spaces free) | 2–4 min | 5–10 min | Free |
-| NVIDIA T4 (HF Spaces) | 10–15 s | 25–40 s | $0.60 / hr |
-| NVIDIA A10G (AWS / GCP) | 5–10 s | 15–25 s | ~$1 / hr |
-| NVIDIA A100 (RunPod) | 3–5 s | 8–15 s | ~$2 / hr |
-
-### Speed Optimizations
-
-```mermaid
-graph TD
-    A[Audio File] --> B{SHA-256 in cache?}
-    B -->|Yes| C[Return instantly<br/>~0 s]
-    B -->|No| D[faster-whisper<br/>beam=1, VAD, int8]
-    D --> E[Summarization]
-    E --> F[QA Scoring<br/>with summary context]
-    F --> H[Persist + Report]
-
-    style C fill:#4CAF50,color:white
-    style E fill:#2196F3,color:white
-    style F fill:#2196F3,color:white
-```
-
-| Optimization | Impact | Detail |
-|---|---|---|
-| Greedy decoding (`beam_size=1`) | ~2× faster | Minimal quality loss on clear audio. |
-| `condition_on_previous_text=False` | Prevents stalls | Avoids Whisper hallucination loops. |
-| VAD filter | 20–30% faster | Skips silent segments. |
-| int8 quantization | 2–4× faster on CPU | CTranslate2 backend with auto device detection. |
-| Sequential LLM with context | Better QA accuracy | QA sees summary → better resolution grounding. |
-| SHA-256 transcription cache | Instant on repeat | Identical audio skips transcription entirely. |
-| No audio preprocessing | 30–60 s saved | faster-whisper handles resampling internally. |
-| Cached DB session factories | Microseconds | `sessionmaker` reused per engine. |
-| Transcript artifact cleaning | Cleaner LLM input | Strips `[BLANK_AUDIO]`, YouTube artifacts, repeat-phrase loops. |
-
-### Whisper Model Comparison
-
-| Model | Size | 10-min call on CPU | Accuracy | Best for |
-|---|---|---|---|---|
-| `tiny` | 39 MB | ~1 min | Good | Free tier / fast iteration (default). |
-| `base` | 139 MB | ~3 min | Better | Balanced speed / accuracy. |
-| `small` | 461 MB | ~8 min | High | Important calls with clear audio. |
-| `large-v3` | 3 GB | ~25 min CPU / ~30 s GPU | Best | GPU deployments only. |
-
-Recommendation: use `tiny` on the free CPU tier and `large-v3` with a GPU for production accuracy.
-
-### GPU Deployment
-
-On HuggingFace Spaces:
-
-```
-Space Settings -> Hardware -> T4 small ($0.60/hr)
-Set env: WHISPER_MODEL_SIZE=large-v3
-```
-
-On RunPod or any CUDA host:
+### Native (development)
 
 ```bash
 git clone https://github.com/ANI-IN/Call-Center-Intelligence-System.git
 cd Call-Center-Intelligence-System
-pip install -e .
-export WHISPER_MODEL_SIZE=large-v3
-export OPENAI_API_KEY=sk-...
-python app.py
-```
-
-faster-whisper auto-detects CUDA via `torch.cuda.is_available()`; no code changes are required.
-
-## Technology Stack
-
-| Layer | Technology | Why |
-|---|---|---|
-| Orchestration | **LangGraph** | Typed state, conditional edges, dedicated error terminal. |
-| Speech-to-Text | **faster-whisper** | CTranslate2 backend; int8 quantization; 2–4× faster than vanilla Whisper. |
-| LLM (paid) | **OpenAI GPT-4o** | Best structured-output quality. |
-| LLM (free) | **Google Gemini 2.0 Flash** | Generous free tier for development. |
-| LLM (free) | **Groq Llama 3.3 70B** | Fastest hosted inference on Llama class models. |
-| LLM Framework | **LangChain** | `with_structured_output` for Pydantic-enforced JSON. |
-| Audio | **mutagen** + `wave` | Property extraction for MP3 / FLAC / M4A / WAV. |
-| Data Models | **Pydantic v2** | 14 typed contracts between pipeline stages. |
-| Database | **SQLite + SQLAlchemy 2.0** | `CallRecord`, `AuditLogEntry`, and `TranscriptionCache` tables. |
-| Web UI | **Gradio 5.29** | 3-tab interface (Analyze, All MP3 History, Observability). |
-| Observability | **LangSmith** | Per-node tracing via `@traceable`. |
-| PDF | **ReportLab** | PDF report generation. |
-| Testing | **pytest** | 113 tests across unit, integration, security. |
-| Linting / Hooks | **ruff** + **pre-commit** + **detect-secrets** | Fast lint, format, and secret scanning. |
-
-## Project Structure
-
-```
-call-center-intelligence/
-├── app.py                              # 36-line entrypoint: build, compile, launch
-├── pyproject.toml                      # Dependencies + tooling config
-├── requirements.txt                    # Pinned deps for HF Spaces
-├── Makefile                            # install / test / lint / format / run
-├── .env.example                        # Env var template
-│
-├── src/
-│   ├── agents/                         # Pipeline stages
-│   │   ├── intake.py                   #   Validation + metadata PII scan
-│   │   ├── transcription.py            #   faster-whisper + diarization + cache
-│   │   ├── summarization.py            #   Structured summary extraction
-│   │   ├── qa_scoring.py               #   5-dimension weighted scoring
-│   │   └── report.py                   #   PDF / JSON + DB persistence
-│   ├── graph/                          # LangGraph orchestration
-│   │   ├── state.py                    #   Pydantic models (14 typed contracts)
-│   │   ├── workflow.py                 #   State machine + nodes
-│   │   └── edges.py                    #   Routing logic
-│   ├── security/                       # Security layer
-│   │   ├── pii_redactor.py             #   SSN / CC / email / phone redaction
-│   │   ├── injection_detector.py       #   22 injection patterns
-│   │   └── audit.py                    #   Append-only audit logging
-│   ├── services/                       # Business logic (no UI deps)
-│   │   ├── pipeline.py                 #   process_call orchestration
-│   │   ├── history.py                  #   Read-only CallRecord access
-│   │   └── observability.py            #   Metrics + LangSmith status
-│   ├── ui/                             # Gradio presentation layer
-│   │   ├── app_builder.py              #   Assembles all tabs
-│   │   └── tabs/
-│   │       ├── analyze.py              #   Tab 1: single call analysis
-│   │       ├── history.py              #   Tab 2: master-detail history
-│   │       └── observability.py        #   Tab 3: metrics dashboard
-│   ├── database/                       # Persistence
-│   │   ├── models.py                   #   ORM models
-│   │   └── connection.py               #   Engine + session_scope
-│   └── utils/                          # Shared utilities
-│       ├── audio.py                    #   Format detection + mutagen
-│       ├── config.py                   #   Env-based Config dataclass
-│       ├── llm_factory.py              #   Multi-provider factory
-│       └── formatters.py               #   Display formatting
-│
-├── data/
-│   └── samples/                        # 10 sample MP3 call recordings
-│
-├── tests/                              # 113 tests
-│   ├── conftest.py                     #   Shared fixtures
-│   ├── unit/                           #   Agents, models, services, utils
-│   ├── integration/                    #   End-to-end pipeline + DB
-│   └── security/                       #   PII + injection suites
-```
-
-The architecture separates concerns across five layers: **UI** (`src/ui/`), **business logic** (`src/services/`), **agent pipeline** (`src/agents/`), **graph orchestration** (`src/graph/`), and **persistence** (`src/database/`), with cross-cutting concerns in `src/security/` and `src/utils/`. `app.py` is a thin 36-line entrypoint that loads config, initializes the DB, warms the Whisper model, compiles the workflow, and launches Gradio.
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.11+
-- `ffmpeg` (`brew install ffmpeg` / `apt install ffmpeg`)
-- At least one LLM API key (OpenAI, Google, or Groq)
-
-### Quick Start
-
-```bash
-git clone https://github.com/ANI-IN/Call-Center-Intelligence-System.git
-cd Call-Center-Intelligence-System
-
 python -m venv venv && source venv/bin/activate
 pip install -e ".[dev]"
-
+pre-commit install
 cp .env.example .env
-# Set OPENAI_API_KEY, or set LLM_PROVIDER=gemini and GOOGLE_API_KEY,
-# or set LLM_PROVIDER=groq and GROQ_API_KEY.
-
-python app.py      # opens at http://localhost:7860
+# edit .env to add your LLM key
 ```
 
-### Sample Dataset
-
-The repo includes 10 sample call recordings in `data/samples/` for immediate testing:
+### Docker
 
 ```bash
-ls data/samples/
-# sample_01.mp3 through sample_10.mp3
+docker build -t call-center-intel .
+docker run -p 7860:7860 --env-file .env call-center-intel
 ```
 
-Upload any of them to the **Analyze Call** tab to exercise the full pipeline.
-
-### Developer Commands
-
-```bash
-make install           # pip install -e ".[dev]" + pre-commit install
-make test              # unit + security tests
-make test-integration  # pipeline + DB integration
-make test-security     # PII + injection suites only
-make test-all          # all 113 tests
-make lint              # ruff check + format --check
-make format            # ruff check --fix + ruff format
-make typecheck         # mypy strict on src/
-make secret-scan       # detect-secrets baseline scan
-make run               # python app.py
-```
+The `Dockerfile` uses `python:3.12-slim`, installs `ffmpeg`, and runs as a non-root user.
 
 ## Configuration
 
-### LLM Provider (pick one)
+Every knob is an environment variable.
 
-```bash
-# OpenAI GPT-4o (default, ~$0.03 / call)
-LLM_PROVIDER=openai
-OPENAI_API_KEY=sk-...
-
-# Gemini 2.0 Flash (free: ~1500 req/day)
-LLM_PROVIDER=gemini
-GOOGLE_API_KEY=AI...
-
-# Groq Llama 3.3 70B (free: ~30 RPM)
-LLM_PROVIDER=groq
-GROQ_API_KEY=gsk_...
-```
-
-### Environment Variables
-
-| Variable | Default | Description |
+| Variable | Default | Effect |
 |---|---|---|
 | `LLM_PROVIDER` | `openai` | `openai` / `gemini` / `groq` |
-| `OPENAI_API_KEY` | — | Required when `LLM_PROVIDER=openai` |
-| `GOOGLE_API_KEY` | — | Required when `LLM_PROVIDER=gemini` |
-| `GROQ_API_KEY` | — | Required when `LLM_PROVIDER=groq` |
-| `WHISPER_MODEL_SIZE` | `tiny` | `tiny` / `base` / `small` / `large-v3` |
-| `LANGCHAIN_API_KEY` | — | LangSmith tracing (optional) |
+| `OPENAI_API_KEY` / `GOOGLE_API_KEY` / `GROQ_API_KEY` | unset | Per-provider authentication |
+| `WHISPER_MODEL_SIZE` | `tiny` | `tiny`, `base`, `small`, `large-v3` |
 | `LANGCHAIN_TRACING_V2` | `false` | Enable LangSmith tracing |
+| `LANGCHAIN_API_KEY` | unset | LangSmith authentication |
 | `LANGCHAIN_PROJECT` | `call-center-intelligence` | LangSmith project name |
-| `MAX_RETRIES_PER_NODE` | `3` | LLM retry attempts per node |
+| `MAX_RETRIES_PER_NODE` | `3` | LLM retry attempts |
 | `LLM_TIMEOUT_SECONDS` | `120` | LLM request timeout |
 | `MAX_COST_PER_CALL_USD` | `2.00` | Soft ceiling surfaced in config |
 | `CONFIDENCE_THRESHOLD` | `0.3` | Per-segment low-confidence threshold |
-| `LOW_CONFIDENCE_HALT_RATIO` | `0.8` | Flag-for-review ratio of low-confidence segments |
-| `DB_PATH` | `data/calls.db` | SQLite database path |
-| `DB_ENCRYPTION_KEY` | auto | Optional SQLCipher key (falls back to plain SQLite) |
+| `LOW_CONFIDENCE_HALT_RATIO` | `0.8` | Ratio above which a call is flagged for review |
+| `DB_PATH` | `data/calls.db` | SQLite location |
+| `DB_ENCRYPTION_KEY` | unset | Optional SQLCipher key |
 
-## Security
+Knobs that touch behavior directly in code:
 
-```mermaid
-graph LR
-    A[Raw Audio] --> B[Format + Size<br/>Validation]
-    B --> C[Transcription]
-    C --> D["Injection Scan<br/>(22 patterns)"]
-    D -->|Blocked| E[Flagged Terminal]
-    D -->|Clean| F["PII Redaction<br/>(SSN / CC / Email / Phone)"]
-    F --> G["LLM sees<br/>redacted text only"]
-    G --> H["Audit Log<br/>(append-only)"]
+| Where to tune | Effect |
+|---|---|
+| `src/agents/qa_scoring.py:18-24` | Change dimension weights. Must sum to 1.0. |
+| `src/agents/qa_scoring.py:26-107` | Rewrite the QA rubric prompt. |
+| `src/agents/summarization.py:14-39` | Rewrite the summarization prompt. |
+| `src/security/pii_redactor.py:22-31` | Add or remove PII patterns. |
+| `src/security/injection_detector.py:6-29` | Add or remove injection patterns. |
+| `src/utils/audio.py:13-15` | Change file size limit, duration limit, allowed formats. |
 
-    style D fill:#FF9800,color:white
-    style F fill:#f44336,color:white
-    style H fill:#9C27B0,color:white
+## Running the App
+
+```bash
+make run                        # native
+docker run -p 7860:7860 --env-file .env call-center-intel
 ```
 
-| Layer | Protection |
+The Gradio UI is at <http://127.0.0.1:7860>. On HuggingFace Spaces it binds to 0.0.0.0:7860 automatically because `SPACE_ID` is set.
+
+## Using the App Step by Step
+
+1. Open `http://127.0.0.1:7860` in a browser.
+2. **Analyze Call tab**:
+   1. Drop an MP3 (or one of the bundled samples) into the audio component.
+   2. Optionally fill in Caller ID and Department.
+   3. Click **Analyze Call**.
+   4. Wait. CPU `tiny` is 2 to 4 minutes for a 5-minute call.
+   5. Read the transcript, summary, and QA score. Download PDF or JSON.
+3. **All MP3 History tab**: every call you have ever analyzed in this database appears here. Click a row to load the full detail.
+4. **Observability tab**: total calls, success rate, average score, total audit events, and LangSmith status.
+
+## Code Walkthrough
+
+The entrypoint is 36 lines:
+
+```python
+# app.py:1-36
+config = load_config()                                       # 19
+_engine = get_engine(str(config.db_path), config.db_encryption_key)  # 21
+init_db(_engine)                                             # 22
+_get_whisper_model(config.whisper_model_size)                # 25
+_workflow = compile_workflow(config, db_engine=_engine)      # 28
+_audit = AuditLogger(engine=_engine)                         # 29
+demo = build_app(config, _workflow, _engine, _audit)         # 32
+demo.launch(server_name=host, server_port=7860, ssr_mode=False)  # 36
+```
+
+The workflow definition:
+
+- Nodes: `src/graph/workflow.py:43-187`
+- Graph assembly: `src/graph/workflow.py:190-235`
+- Routing: `src/graph/edges.py:1-24`
+
+The pipeline orchestration service (UI to graph): `src/services/pipeline.py:49-176`.
+
+The QA scoring weighted recomputation:
+
+```python
+# src/agents/qa_scoring.py:18-24, 129-135
+DIMENSION_WEIGHTS = {
+    "professionalism": 0.15,
+    "empathy": 0.20,
+    "problem_resolution": 0.30,
+    "compliance": 0.20,
+    "communication_clarity": 0.15,
+}
+# overall_score is recomputed deterministically from these weights.
+```
+
+For the full map see `docs/architecture.md#what-lives-where`.
+
+## Sample Data
+
+Ten sample MP3s under `data/samples/` exercise different call types:
+
+| File | Scenario | Try asking |
+|---|---|---|
+| `sample_01.mp3` | Short customer service | Did the agent greet the customer? |
+| `sample_02.mp3` | Extended billing inquiry | What action items were captured? |
+| `sample_03.mp3` | Technical support | What was the resolution status? |
+| `sample_04.mp3` | Account management | Any compliance flags? |
+| `sample_05.mp3` | Service complaint | What was the sentiment trajectory? |
+| `sample_06.mp3` | Product inquiry | Did empathy score above 3? |
+| `sample_07.mp3` | Subscription issue | What entities were extracted? |
+| `sample_08.mp3` | Payment dispute | Was a refund discussed? |
+| `sample_09.mp3` | Service cancellation | Was the customer retained? |
+| `sample_10.mp3` | General inquiry | How clear was the communication? |
+
+## Customization
+
+| You want to ... | Touch |
 |---|---|
-| **PII redaction** | SSN, credit card, email, and phone stripped from transcript and segments before any LLM call. |
-| **Injection detection** | 22 regex patterns covering instruction override, role switching, prompt leaks, DAN mode, social engineering, and more. |
-| **Audit logging** | Append-only `AuditLogEntry` rows with timestamp, action, and details. |
-| **Temp-file cleanup** | Rolling cleanup keeps at most 50 in-flight temp files per process. |
-| **Optional DB encryption** | Honors `DB_ENCRYPTION_KEY` via SQLCipher `PRAGMA key` when available. |
+| Change the QA dimensions or weights | `src/agents/qa_scoring.py:18-24` |
+| Rewrite the QA rubric | `src/agents/qa_scoring.py:26-107` |
+| Rewrite the summarization prompt | `src/agents/summarization.py:14-39` |
+| Add a new LLM provider | `src/utils/llm_factory.py:14-48` |
+| Add a new PII pattern | `src/security/pii_redactor.py:22-31` |
+| Add a new injection pattern | `src/security/injection_detector.py:6-29` |
+| Add a new pipeline node | `src/graph/workflow.py:190-235` |
+| Add a new tab | `src/ui/app_builder.py:18-46` and a new file under `src/ui/tabs/` |
+| Change the audio size limit | `src/utils/audio.py:13-15` |
+| Add a database column | `src/database/models.py:13-45` (plus a migration) |
 
 ## Troubleshooting
 
 | Problem | Fix |
 |---|---|
-| Processing takes > 10 min | Set `WHISPER_MODEL_SIZE=tiny` or attach a GPU. |
-| Pipeline error after transcription | Check the configured LLM provider key and remaining credits. |
-| Unsupported format | Supported formats are WAV, MP3, FLAC, and M4A. |
-| HF Space stuck building | Verify required secrets are set in Space Settings. |
-| Poor transcript quality | Upgrade to `WHISPER_MODEL_SIZE=small` or `large-v3`. |
-| `OPENAI_API_KEY is not set` on startup | Either export the key or switch `LLM_PROVIDER` to `gemini` / `groq`. |
+| Processing takes more than 10 minutes per call | `WHISPER_MODEL_SIZE=tiny` on CPU, or attach a GPU. |
+| `Required environment variable OPENAI_API_KEY is not set` at startup | Set the key in `.env`, or switch `LLM_PROVIDER` to `gemini` / `groq`. |
+| `Pipeline failed: Validation failed (no detail captured)` | Verify your file is one of WAV / MP3 / FLAC / M4A. Modern code surfaces specific intake errors at `src/graph/workflow.py:160-176`. |
+| `Error in expression` or `ValidationError` from Pydantic | The LLM returned malformed JSON. The retry loop will try again up to `MAX_RETRIES_PER_NODE` times. If it persists, drop to a smaller model or check the provider's status page. |
+| `ffmpeg: command not found` | Install ffmpeg: `brew install ffmpeg` (macOS), `apt install ffmpeg` (Debian / Ubuntu). |
+| Port 7860 already in use | Set `GRADIO_SERVER_PORT=7861` and re-run. |
+| Whisper download is very slow | Hugging Face throttle; retry once. After the first download, the model is cached locally. |
+| HuggingFace Space stuck on "Building" | Verify required `Secrets` are set in Space Settings. Build logs reveal the missing variable. |
+| Poor transcript quality | Upgrade `WHISPER_MODEL_SIZE` to `small` or `large-v3`. The `tiny` model loses accuracy on noisy or non-English audio. |
+| Compliance flags missing on calls that should have them | The injection or PII step may have routed the call away. Check the audit log on the Observability tab. |
+| History tab is empty | The DB has no completed calls yet. Analyze one first. |
+
+## Project Structure
+
+See `docs/architecture.md#what-lives-where` for the version with line-range citations. Top-level tree:
+
+```
+call-center-intelligence/
+├── app.py                              # 36-line entrypoint
+├── pyproject.toml                      # deps + tooling
+├── requirements.txt                    # pinned deps for HF Spaces
+├── Makefile                            # install / test / lint / format / run
+├── .env.example                        # env var template
+├── README.md                           # this file
+├── LICENSE                             # MIT
+├── CONTRIBUTING.md                     # contribution guide
+├── CODE_OF_CONDUCT.md                  # community norms
+├── SECURITY.md                         # private disclosure path
+├── CHANGELOG.md                        # Keep-a-Changelog format
+├── Dockerfile                          # containerized runs
+│
+├── src/
+│   ├── agents/                         # pipeline stages
+│   ├── graph/                          # LangGraph orchestration
+│   ├── security/                       # PII + injection + audit
+│   ├── services/                       # pipeline / history / observability
+│   ├── ui/                             # Gradio presentation layer
+│   ├── database/                       # SQLAlchemy models + connection
+│   └── utils/                          # shared utilities
+│
+├── data/samples/                       # 10 bundled MP3s
+├── tests/                              # 109 unit + security + 4 integration
+└── docs/                               # architecture, getting started
+```
+
+## Security Notes
+
+Short version: the system is layered (injection scan, then PII redaction, then LLM, then audit). See `SECURITY.md` for the disclosure path and the known risk areas. Report vulnerabilities privately via GitHub's `Report a vulnerability` button on the Security tab.
 
 ## Contributing
 
-1. Fork the repo.
-2. Create a feature branch: `git checkout -b feature/my-feature`.
-3. Run the full suite: `make test-all`.
-4. Run the linter: `make lint`.
-5. Open a pull request.
-
-All tests must pass and the code must satisfy the existing `ruff` configuration before review.
+See `CONTRIBUTING.md`. The short version: branch from `main`, follow Conventional Commits, run `make test` and `make lint` before pushing, and keep PRs scoped.
 
 ## License
 
-Distributed under the **CC BY-NC 4.0** license (Attribution-NonCommercial 4.0 International).
+MIT. See `LICENSE` for the full notice. The work is provided "AS IS", without warranty of any kind.
+
+## Acknowledgments
+
+- [LangChain and LangGraph](https://www.langchain.com/) for the agent orchestration framework.
+- [faster-whisper](https://github.com/SYSTRAN/faster-whisper) and the CTranslate2 backend for the fast on-CPU transcription path.
+- [OpenAI](https://openai.com/), [Google AI Studio](https://ai.google.dev/), and [Groq](https://groq.com/) for the language model APIs.
+- [Gradio](https://www.gradio.app/) for the UI framework.
+- [Hugging Face Spaces](https://huggingface.co/spaces) for free hosting of the live demo.
+- The maintainers of `mutagen`, `pydantic`, `sqlalchemy`, `reportlab`, and every other dependency listed in `requirements.txt`.
