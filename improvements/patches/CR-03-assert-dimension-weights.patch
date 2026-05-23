@@ -1,0 +1,28 @@
+From: Animesh Kumar <animesh.kcm@gmail.com>
+Subject: [PATCH] qa_scoring: assert DIMENSION_WEIGHTS sum to 1.0 at import time
+
+The rubric documented in README.md:206-213 relies on the QA dimension
+weights summing to exactly 1.0. Future edits could break the invariant
+silently. Add a single-line assertion that catches drift at import time.
+
+Reported in improvements/code-review.md#cr-03.
+
+---
+ src/agents/qa_scoring.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/agents/qa_scoring.py b/src/agents/qa_scoring.py
+index 0000000..0000000 100644
+--- a/src/agents/qa_scoring.py
++++ b/src/agents/qa_scoring.py
+@@ -22,6 +22,10 @@ DIMENSION_WEIGHTS = {
+     "compliance": 0.20,
+     "communication_clarity": 0.15,
+ }
++assert abs(sum(DIMENSION_WEIGHTS.values()) - 1.0) < 1e-9, (
++    "DIMENSION_WEIGHTS must sum to 1.0; check src/agents/qa_scoring.py "
++    f"(current sum: {sum(DIMENSION_WEIGHTS.values())})"
++)
+
+ SYSTEM_PROMPT = (
+     "You are an experienced call center quality coach. "

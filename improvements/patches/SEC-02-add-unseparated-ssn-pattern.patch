@@ -1,0 +1,29 @@
+From: Animesh Kumar <animesh.kcm@gmail.com>
+Subject: [PATCH] security: redact unseparated 9-digit SSN strings
+
+The PII redactor currently requires a separator (dash or whitespace) between
+the three digit groups of an SSN. Whisper transcripts often drop separators,
+leaving sequences like "123456789" untouched. Add a second pattern that
+matches a standalone 9-digit token.
+
+This may produce false positives on long reference numbers, but for call
+center transcripts a redacted reference is far better than a leaked SSN.
+
+Reported in improvements/security-review.md#sec-02.
+
+---
+ src/security/pii_redactor.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/security/pii_redactor.py b/src/security/pii_redactor.py
+index 0000000..0000000 100644
+--- a/src/security/pii_redactor.py
++++ b/src/security/pii_redactor.py
+@@ -21,6 +21,7 @@ class PIIRedactionResult:
+
+ PII_PATTERNS: list[tuple[str, str, str]] = [
+     (r"\b\d{3}[-\s]\d{2}[-\s]\d{4}\b", "SSN", "[REDACTED_SSN]"),
++    (r"\b\d{9}\b", "SSN", "[REDACTED_SSN]"),
+     (r"\b\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}\b", "CREDIT_CARD", "[REDACTED_CREDIT_CARD]"),
+     (r"\b[\w.+-]+@[\w-]+\.[\w.-]+\b", "EMAIL", "[REDACTED_EMAIL]"),
+     (

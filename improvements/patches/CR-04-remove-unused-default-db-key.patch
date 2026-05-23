@@ -1,0 +1,45 @@
+From: Animesh Kumar <animesh.kcm@gmail.com>
+Subject: [PATCH] config: remove unused _DEFAULT_DB_KEY that suggests encryption when none is applied
+
+_DEFAULT_DB_KEY is generated at import but never reaches SQLCipher because
+src/database/connection.py:23 only activates encryption when the env var
+DB_ENCRYPTION_KEY is explicitly set. Defaulting to an empty string clarifies
+that the DB is unencrypted by default and removes a misleading constant.
+
+Reported in improvements/code-review.md#cr-04 and security-review.md#sec-04.
+
+---
+ src/utils/config.py | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/src/utils/config.py b/src/utils/config.py
+index 0000000..0000000 100644
+--- a/src/utils/config.py
++++ b/src/utils/config.py
+@@ -1,7 +1,6 @@
+ from __future__ import annotations
+
+ import os
+-import secrets
+ from dataclasses import dataclass
+ from pathlib import Path
+
+@@ -9,9 +8,6 @@ from dotenv import load_dotenv
+
+ load_dotenv()
+
+-# Auto-generate a DB encryption key if not provided.
+-# Persists for the lifetime of the process.
+-_DEFAULT_DB_KEY = secrets.token_hex(16)
+
+
+ @dataclass(frozen=True)
+@@ -57,7 +53,7 @@ def load_config() -> Config:
+         openai_api_key=openai_key,
+         langchain_api_key=os.environ.get("LANGCHAIN_API_KEY", ""),
+         langchain_project=os.environ.get("LANGCHAIN_PROJECT", "call-center-intelligence"),
+-        db_encryption_key=os.environ.get("DB_ENCRYPTION_KEY", _DEFAULT_DB_KEY),
++        db_encryption_key=os.environ.get("DB_ENCRYPTION_KEY", ""),
+         db_path=Path(os.environ.get("DB_PATH", "data/calls.db")),
+         llm_provider=llm_provider,
+         max_cost_per_call_usd=float(os.environ.get("MAX_COST_PER_CALL_USD", "2.00")),

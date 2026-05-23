@@ -1,0 +1,35 @@
+From: Animesh Kumar <animesh.kcm@gmail.com>
+Subject: [PATCH] transcription: log cache read/write failures instead of silently swallowing
+
+The transcription cache helpers catch every Exception and continue. That
+preserves pipeline availability but loses the failure cause. Switch to
+logger.exception so the root cause appears in logs without changing the
+control flow.
+
+Reported in improvements/code-review.md#cr-01.
+
+---
+ src/agents/transcription.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/agents/transcription.py b/src/agents/transcription.py
+index 0000000..0000000 100644
+--- a/src/agents/transcription.py
++++ b/src/agents/transcription.py
+@@ -135,7 +135,7 @@ def _check_cache(audio_hash: str, engine) -> TranscriptionResult | None:
+             return None
+         finally:
+             session.close()
+-    except Exception:
++    except Exception:  # cache miss must not break the pipeline
++        logger.exception("Transcription cache read failed")
+         return None
+
+@@ -160,7 +160,7 @@ def _save_cache(audio_hash: str, result: TranscriptionResult, engine) -> None:
+             session.commit()
+         finally:
+             session.close()
+-    except Exception:
+-        pass  # Cache save failure is non-critical
++    except Exception:
++        logger.exception("Transcription cache write failed (non-critical)")
