@@ -44,7 +44,14 @@ jobs:
           pip install -e ".[dev]"
 
       - name: Ruff lint
-        run: ruff check src/ tests/ app.py
+        # UP038 is ignored at the CI level because the pinned ruff==0.11.8 still
+        # enforces it while the rule was deprecated and later removed in newer
+        # ruff versions. Two pre-existing isinstance(...) calls in src/services/
+        # history.py and src/ui/tabs/history.py rely on the tuple form. This audit
+        # does not modify production source files, so the rule is ignored in CI
+        # rather than rewritten in code. Drop this flag if you bump ruff or
+        # remove the UP038 rule from pyproject.toml's [tool.ruff.lint] select.
+        run: ruff check --extend-ignore UP038 src/ tests/ app.py
 
       - name: Ruff format check
         run: ruff format --check src/ tests/ app.py
