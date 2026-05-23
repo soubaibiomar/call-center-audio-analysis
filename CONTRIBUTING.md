@@ -85,10 +85,10 @@ Examples:
 ## What Is In Scope
 
 - Bug fixes against the documented behavior.
-- New tests that improve coverage of the riskiest untested paths (see `improvements/testing-gaps.md`).
+- New tests that improve coverage of the riskiest untested paths.
 - Documentation improvements that stay accurate to the code.
 - Performance refinements with a measured before / after.
-- Security hardening, especially for the items in `improvements/security-review.md`.
+- Security hardening, especially around the prompt-injection and PII redaction layers.
 - New LLM providers that conform to the `BaseChatModel` interface used by `src/utils/llm_factory.py`.
 
 ## What Is Out of Scope

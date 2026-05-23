@@ -246,7 +246,7 @@ erDiagram
 
 - `CallRecord` is the source of truth for the History tab.
 - `AuditLogEntry` is append-only by design; the only writer is `AuditLogger.log` at `src/security/audit.py:23-32`.
-- `TranscriptionCache` is keyed by SHA-256 of the audio file and grows without bound. See `improvements/performance-review.md#perf-01` for the recommended TTL.
+- `TranscriptionCache` is keyed by SHA-256 of the audio file and grows without bound. A TTL or row cap is recommended for long-running deployments.
 
 ## Trust Boundaries
 
@@ -261,7 +261,7 @@ There are four:
 
 These are the design assumptions the rest of the code relies on. Violating any of them is a defect.
 
-- **`DIMENSION_WEIGHTS` sums to 1.0.** Declared at `src/agents/qa_scoring.py:18-24`. Used at `src/agents/qa_scoring.py:129-135` to recompute `overall_score`. If the weights drift, the rubric in the README is silently wrong. See `improvements/code-review.md#cr-03`.
+- **`DIMENSION_WEIGHTS` sums to 1.0.** Declared at `src/agents/qa_scoring.py:18-24`. Used at `src/agents/qa_scoring.py:129-135` to recompute `overall_score`. If the weights drift, the rubric in the README is silently wrong; consider an import-time assertion.
 - **Injection check precedes redaction precedes LLM.** Enforced by the graph topology at `src/graph/workflow.py:213-228`. Removing one of those nodes silently routes an unredacted transcript to the LLM.
 - **`call_id` is a `uuid.UUID`.** Generated at `src/agents/intake.py:79`. Every downstream model preserves it. Persistence converts to `str(report.call_id)` at `src/agents/report.py:53` because SQLite has no native UUID type.
 - **Audio path lifetime.** `IntakeResult.audio_path` is a path to a temp file created at `src/agents/intake.py:135-138`. It is consumed by transcription and then becomes eligible for cleanup. The pipeline appends it to `_temp_files` only if it lives under `/tmp` (`src/services/pipeline.py:165-167`).
@@ -298,7 +298,7 @@ A 5-minute call on a CPU-only HuggingFace Space with `WHISPER_MODEL_SIZE=tiny`:
 - QA scoring: 5-15 seconds.
 - Report compile, PDF, persist, audit: under 1 second total.
 
-The transcription cache shortcuts the longest stage when identical audio is uploaded again. See `improvements/performance-review.md` for the deeper analysis and the unbounded-growth concern.
+The transcription cache shortcuts the longest stage when identical audio is uploaded again. A TTL or row cap on the cache is recommended for long-running deployments.
 
 ## Development Workflow
 

@@ -104,4 +104,3 @@ These commands match the pre-commit hooks at `.pre-commit-config.yaml:1-21`. Run
 - Read `docs/architecture.md` for the deep view of how the pipeline is wired.
 - Read `CONTRIBUTING.md` for branch and PR conventions.
 - Read `SECURITY.md` if you plan to deploy the system to the public internet.
-- See `improvements/IMPROVEMENT_PLAN.md` for the advisory audit findings.

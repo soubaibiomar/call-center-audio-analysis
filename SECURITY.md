@@ -40,19 +40,19 @@ If the report is declined:
 
 ## Known Risk Areas
 
-These are documented for transparency. The advisory audit in `improvements/security-review.md` contains the full details.
+These are documented for transparency.
 
 ### Prompt-injection patterns are best-effort
 
-The transcript is checked against 22 known prompt-injection patterns at `src/security/injection_detector.py:6-29`. The regex set catches direct attempts but is bypassable with character substitution, synonyms, or whitespace tricks. The README's claim of "blocked" should be read as "checked against known patterns". If your threat model requires stronger guarantees, you should add a learned classifier upstream of the LLM call.
+The transcript is checked against 22 known prompt-injection patterns at `src/security/injection_detector.py:6-29`. The regex set catches direct attempts but is bypassable with character substitution, synonyms, or whitespace tricks. The README's claim of "blocked" should be read as "checked against known patterns". If your threat model requires stronger guarantees, add a learned classifier upstream of the LLM call.
 
 ### PII redaction misses unseparated SSN strings
 
-The SSN pattern at `src/security/pii_redactor.py:23` requires a `-` or whitespace separator between digit groups. A nine-digit string with no separator is not redacted. Mitigation is proposed in `improvements/security-review.md#sec-02` and a patch is available at `improvements/patches/SEC-02-add-unseparated-ssn-pattern.patch`.
+The SSN pattern at `src/security/pii_redactor.py:23` requires a `-` or whitespace separator between digit groups. A nine-digit string with no separator is not redacted. Consider adding a second pattern matching standalone 9-digit tokens. There is a small false-positive risk (any nine-digit reference number gets redacted), which is the right trade-off for call-center transcripts.
 
 ### SQLCipher PRAGMA is built with an f-string
 
-The PRAGMA key is interpolated directly into the SQL string at `src/database/connection.py:29`. Exploitation requires control of the `DB_ENCRYPTION_KEY` environment variable, which is also what controls the database encryption itself, so the practical impact is low. The fix is small and is proposed in `improvements/security-review.md#sec-01`.
+The PRAGMA key is interpolated directly into the SQL string at `src/database/connection.py:29`. Exploitation requires control of the `DB_ENCRYPTION_KEY` environment variable, which is also what controls the database encryption itself, so the practical impact is low. The recommended mitigation is to escape embedded single quotes in the key before interpolation, or to constrain the key to hexadecimal characters at config-load time.
 
 ### Audit log can persist arbitrary dict content
 
