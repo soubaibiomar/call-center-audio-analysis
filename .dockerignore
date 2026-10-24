@@ -1,0 +1,16 @@
+.git/
+.venv/
+.env*
+!.env.example
+!.env.project28.example
+*.env.local
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+data/*.db
+data/*.sqlite
+data/audio/
+data/transcripts/
