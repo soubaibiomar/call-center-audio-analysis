@@ -1,0 +1,11 @@
+{
+  "metrics_repeat_identical": true,
+  "prediction_file_sha256": "8b700d980eb43b0ed6219b6e30159d266aec8e35413edd7a30f6bbea2df672f7",
+  "original_clips": 32,
+  "original_speaker_keys": {
+    "acted": 5,
+    "media": 15
+  },
+  "corpus_bytes": 19175202,
+  "note": "Uniform/constant-neutral are descriptive baselines, not trained or promoted candidates."
+}

@@ -5,13 +5,21 @@ from __future__ import annotations
 import logging
 import os
 import tempfile
-from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
+from typing import TYPE_CHECKING, Any
+
+from sqlalchemy.engine import Engine
+
+from src.agents.diarization import Role
+
+if TYPE_CHECKING:
+    from numpy.typing import NDArray
 
 from src.agents.report import generate_report_json, generate_report_pdf, persist_report
+from src.database.scope import current_identity
 from src.graph.state import AudioInput, CallReport
-from src.security.audit import AuditLogger
+from src.services.contracts import AuditPort, PipelineResult, WorkflowPort
 from src.utils.formatters import format_qa, format_summary
 
 logger = logging.getLogger(__name__)
@@ -33,26 +41,16 @@ def _cleanup_old_temp_files() -> None:
                 pass
 
 
-@dataclass
-class PipelineResult:
-    """Result of processing a single call."""
-
-    success: bool
-    transcript: str = ""
-    summary_md: str = ""
-    qa_md: str = ""
-    json_path: str | None = None
-    pdf_path: str | None = None
-    error: str | None = None
-
-
 def process_call(
-    audio_file,
+    audio_file: str | Path | tuple[int, NDArray[Any] | None] | None,
     caller_id: str | None,
     department: str | None,
-    workflow,
-    engine,
-    audit: AuditLogger,
+    workflow: WorkflowPort,
+    engine: Engine,
+    audit: AuditPort,
+    *,
+    downloads: bool = True,
+    channel_roles: dict[int, Role] | None = None,
 ) -> PipelineResult:
     """Process audio through the full pipeline. Returns structured result."""
     if audio_file is None:
@@ -79,8 +77,7 @@ def process_call(
         _temp_files.append(tmp.name)
         audio_file = tmp.name
         logger.info(
-            f"process_call: wrote microphone audio to {tmp.name} "
-            f"({arr.size} samples @ {sr}Hz)"
+            f"process_call: wrote microphone audio to {tmp.name} ({arr.size} samples @ {sr}Hz)"
         )
 
     audio_path = Path(str(audio_file))
@@ -105,7 +102,10 @@ def process_call(
     )
 
     try:
-        result = workflow.invoke({"audio_input": audio_input})
+        workflow_input: dict[str, Any] = {"audio_input": audio_input}
+        if channel_roles is not None:
+            workflow_input["channel_roles"] = dict(channel_roles)
+        result = workflow.invoke(workflow_input)
     except Exception as e:
         logger.exception("process_call: workflow.invoke raised an exception")
         return PipelineResult(success=False, error=f"Pipeline error: {e}")
@@ -124,12 +124,23 @@ def process_call(
         logger.warning("process_call: status was not 'failed' but no report was produced")
         return PipelineResult(success=False, error="No report generated.")
 
+    # The graph has finished reading its intake copy. API uploads own their lifetime;
+    # only remove the exact temp-directory/prefix convention created by run_intake.
+    if not downloads and current_identity() is not None:
+        intake_copy = Path(report.intake.audio_path)
+        if intake_copy.parent.resolve() == Path(
+            tempfile.gettempdir()
+        ).resolve() and intake_copy.name.startswith(f"call_{report.call_id}_"):
+            intake_copy.unlink(missing_ok=True)
+
     try:
         persist_report(report, engine=engine)
     except Exception:
         logger.exception(
             "process_call: persist_report failed (continuing to return result to user)"
         )
+        if current_identity() is not None:
+            return PipelineResult(success=False, error="Report persistence failed")
 
     audit.log(
         call_id=str(report.call_id),
@@ -151,9 +162,14 @@ def process_call(
     summary_md = format_summary(report.summary.model_dump())
     qa_md = format_qa(report.qa_scores.model_dump())
 
+    if not downloads:
+        return PipelineResult(
+            success=True, transcript=transcript, summary_md=summary_md, qa_md=qa_md, report=report
+        )
+
     # Generate downloadable files
     json_tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".json", prefix="report_")
-    with open(json_tmp.name, "w") as f:
+    with open(json_tmp.name, "w", encoding="utf-8") as f:
         f.write(generate_report_json(report))
     _temp_files.append(json_tmp.name)
 
@@ -173,4 +189,5 @@ def process_call(
         qa_md=qa_md,
         json_path=json_tmp.name,
         pdf_path=pdf_tmp.name,
+        report=report,
     )

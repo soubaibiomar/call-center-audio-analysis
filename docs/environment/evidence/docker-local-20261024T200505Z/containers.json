@@ -1,0 +1,70 @@
+[
+  {
+    "name": "project28-app-1",
+    "id": "31fa199d8cf6a9fb36c6f49df54857d9047e973d6f154c1da1b9a04dec7340f4",
+    "status": "running",
+    "started_at": "2026-10-24T20:05:47.227101376Z",
+    "health": "healthy",
+    "restart_count": 0,
+    "port_bindings": {
+      "7860/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "7861"
+        }
+      ]
+    },
+    "image": "project28-app:local"
+  },
+  {
+    "name": "project28-postgres-1",
+    "id": "3b83d712eb24111515baa8fe9067dc7b6012f0e3c5add52b6a30447cb561ef72",
+    "status": "running",
+    "started_at": "2026-10-24T20:05:36.289013695Z",
+    "health": "healthy",
+    "restart_count": 0,
+    "port_bindings": {
+      "5432/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "5433"
+        }
+      ]
+    },
+    "image": "postgres:17-alpine"
+  },
+  {
+    "name": "ollama",
+    "id": "a510efec2fca8a8889e9d06511ea21143dfa4d04220eeb73c0432b3b28f7e719",
+    "status": "running",
+    "started_at": "2026-10-24T20:03:35.353325866Z",
+    "health": null,
+    "restart_count": 0,
+    "port_bindings": {
+      "11434/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "11434"
+        }
+      ]
+    },
+    "image": "ollama/ollama:latest"
+  },
+  {
+    "name": "n8n",
+    "id": "5d7987b534a298c86141ab87685f4c80c622b6ea66328c0cb546c6900cd72bc0",
+    "status": "running",
+    "started_at": "2026-10-24T14:35:03.902271508Z",
+    "health": null,
+    "restart_count": 0,
+    "port_bindings": {
+      "5678/tcp": [
+        {
+          "HostIp": "",
+          "HostPort": "5678"
+        }
+      ]
+    },
+    "image": "docker.n8n.io/n8nio/n8n:latest"
+  }
+]

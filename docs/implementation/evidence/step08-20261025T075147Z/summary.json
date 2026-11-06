@@ -1,0 +1,34 @@
+{
+  "captured_at_utc": "2026-10-25T08:19:13.585029+00:00",
+  "step": "STEP_08",
+  "status": "DONE",
+  "verdict": "PASS WITH LIMITATIONS",
+  "acceptance_gates": {
+    "fresh_schema_migrates": true,
+    "legacy_fixture_import_and_query": true,
+    "empty_down_and_populated_restore": true
+  },
+  "tests": {
+    "passed": 193,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 23.11,
+    "upstream_passed": 113
+  },
+  "strict_mypy_files": 46,
+  "postgresql_version": "17.11",
+  "data_tables": 12,
+  "legacy_rows_imported": {
+    "call_records": 3,
+    "audit_log": 3,
+    "transcription_cache": 1
+  },
+  "legacy_field_parity": true,
+  "post_live_legacy_reports": 4,
+  "source_sqlite_reports_preserved": 3,
+  "restore_all_fields_equal": true,
+  "runtime_role": "project28_app",
+  "next_eligible_step": "STEP_09",
+  "next_step_started": false,
+  "commit_or_push": false
+}

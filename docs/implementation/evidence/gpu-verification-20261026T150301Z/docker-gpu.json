@@ -1,0 +1,25 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "infrastructure/compose/queue.local.yml",
+    "--profile",
+    "gpu",
+    "run",
+    "--rm",
+    "-T",
+    "--no-deps",
+    "worker-gpu",
+    "python",
+    "-"
+  ],
+  "exit_code": 0,
+  "seconds": 3.034611699999914,
+  "stdout": "{\"ctranslate2\": \"4.8.3\", \"device_count\": 1, \"compute_types\": [\"bfloat16\", \"float16\", \"float32\", \"int8\", \"int8_bfloat16\", \"int8_float16\", \"int8_float32\"], \"load_seconds\": 0.8841559249999591, \"success\": false, \"error_type\": \"RuntimeError\", \"error\": \"Library libcublas.so.12 is not found or cannot be loaded\", \"traceback\": \"Traceback (most recent call last):\\n  File \\\"<stdin>\\\", line 11, in <module>\\n  File \\\"/usr/local/lib/python3.12/site-packages/faster_whisper/transcribe.py\\\", line 942, in transcribe\\n    ) = self.detect_language(\\n        ^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"/usr/local/lib/python3.12/site-packages/faster_whisper/transcribe.py\\\", line 1819, in detect_language\\n    encoder_output = self.encode(\\n                     ^^^^^^^^^^^^\\n  File \\\"/usr/local/lib/python3.12/site-packages/faster_whisper/transcribe.py\\\", line 1400, in encode\\n    return self.model.encode(features, to_cpu=to_cpu)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nRuntimeError: Library libcublas.so.12 is not found or cannot be loaded\\n\"}\n",
+  "stderr": " Container project28-worker-gpu-run-e5729657794d Creating \n Container project28-worker-gpu-run-e5729657794d Created \n"
+}

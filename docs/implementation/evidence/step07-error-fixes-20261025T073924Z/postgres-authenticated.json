@@ -1,0 +1,14 @@
+{
+  "command": [
+    "docker",
+    "exec",
+    "project28-postgres-1",
+    "sh",
+    "-c",
+    "PGPASSWORD=\"$(cat /run/secrets/postgres_password)\" psql -h 127.0.0.1 -U project28 -d project28 -Atc \"select 1\""
+  ],
+  "exit_code": 0,
+  "seconds": 0.211,
+  "stdout": "1\n",
+  "stderr": ""
+}

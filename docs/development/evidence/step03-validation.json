@@ -1,0 +1,151 @@
+[
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_collaboration_configuration.py",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "seconds": 1.7074905000008584,
+    "stdout": "..                                                                       [100%]\n2 passed in 0.02s\n",
+    "stderr": "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "seconds": 22.585745600001246,
+    "stdout": "........................................................................ [ 52%]\n.................................................................        [100%]\n137 passed in 20.86s\n",
+    "stderr": "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/",
+      "tests/",
+      "app.py",
+      "scripts/fingerprint_repository.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.19295510000119975,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "app.py",
+      "scripts/fingerprint_repository.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.18773379999947792,
+    "stdout": "60 files already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy",
+      "tests/unit/test_collaboration_configuration.py"
+    ],
+    "exit_code": 0,
+    "seconds": 1.820579799999905,
+    "stdout": "Success: no issues found in 1 source file\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "tests/unit/test_collaboration_configuration.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.24019229999976233,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "check",
+      "--python",
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe"
+    ],
+    "exit_code": 0,
+    "seconds": 0.04853470000125526,
+    "stdout": "",
+    "stderr": "Checked 127 packages in 8ms\nAll installed packages are compatible\n"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.03181629999926372,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD",
+      "main",
+      "origin/main",
+      "upstream/main"
+    ],
+    "exit_code": 0,
+    "seconds": 0.024372699999730685,
+    "stdout": "a37e4634af1d2947fc3c548d54e62bda0b0daf89\nfed4b610742c1337147281fcec8f2cdcc0a79be5\na37e4634af1d2947fc3c548d54e62bda0b0daf89\nfed4b610742c1337147281fcec8f2cdcc0a79be5\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exit_code": 0,
+    "seconds": 0.023593800000526244,
+    "stdout": "feature/project28-foundation\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "-C",
+      "<USERPROFILE>\\Projects\\Project28-Upstream-Baseline-Step02",
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "exit_code": 0,
+    "seconds": 0.029011299999183393,
+    "stdout": "",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,134 @@
+{
+  ".env.project28.example": {
+    "sha256": "59832ca3b8919a45bac532b93228064ef5376003544d525a79cbd435059b3882",
+    "bytes": 1037
+  },
+  ".github/workflows/ci.yml": {
+    "sha256": "abfaed465c66229753395a8bfe18149abb1ccf06325dc73945c6bb6ff703bdc1",
+    "bytes": 2140
+  },
+  "Dockerfile": {
+    "sha256": "103cad028adcb6fc35f6790f616ed5f74611c393a7ecdc8850736ea08a88db03",
+    "bytes": 1627
+  },
+  "PROJECT28_REQUIREMENTS.lock.txt": {
+    "sha256": "b6f2559241f5a1615bd33a2b9274de8b3d2279e6e0154220484dd54aaca7fbc6",
+    "bytes": 2581
+  },
+  "alembic.ini": {
+    "sha256": "e7955a0ffb9c32a9c5067d7885ee9197328f17a4a12fb4a5bb556c2b85763aa2",
+    "bytes": 89
+  },
+  "app.py": {
+    "sha256": "14b613d0900cb28072067b9ebcfb191cd15ca9f26534beef96aeaa4f177a531a",
+    "bytes": 1326
+  },
+  "compose.local.yml": {
+    "sha256": "74b5f2d9b33a20981465546128063d91c1b6bd4a2521a508407316648c62459e",
+    "bytes": 2160
+  },
+  "compose.sqlite.yml": {
+    "sha256": "f7ee0cff5c2f6eac04cebcfb7d9b9b6a81b458378c7a9a9b1e8ea4fb1a35e833",
+    "bytes": 180
+  },
+  "docs/architecture.md": {
+    "sha256": "1d269b9035c28cb13b598bb0f4ea33407774e61a06ba80c444f202a9561c06bf",
+    "bytes": 14645
+  },
+  "docs/architecture/transition.md": {
+    "sha256": "3a4b831919d4b550274f76c55b62ea0767f972280b6a1269fbe77822984c7085",
+    "bytes": 8884
+  },
+  "docs/database/schema.md": {
+    "sha256": "6a329ef8254837752b6ffd3d95aab03ee7c9325e3b10ba60011ae7d8606e8f13",
+    "bytes": 10388
+  },
+  "docs/implementation/PROGRESS.md": {
+    "sha256": "354634923e578061892e6157c09b1016f1556e200018d86864f561b605022d58",
+    "bytes": 15327
+  },
+  "docs/implementation/STEP_07_define_modular_target_structure_and_compatibility_layer_REPORT.md": {
+    "sha256": "b65b5f81647756643e86f7ef45af089d73e13701c1d32d533b8744a29b865611",
+    "bytes": 61611
+  },
+  "docs/implementation/STEP_08_migrate_sqlite_persistence_to_postgresql_with_alembic_REPORT.md": {
+    "sha256": "736a3c9745203796d10ba39f2b21c9e5b37568f7f171dbc8a89369edeeda37cc",
+    "bytes": 28421
+  },
+  "docs/implementation/STEP_09_create_typed_fastapi_endpoints_and_auth_boundaries_REPORT.md": {
+    "sha256": "fe2a42562a3d1f98c314064cd08e89b53399ca6e35e4940cd518974ddfe7dd2d",
+    "bytes": 10715
+  },
+  "migrations/env.py": {
+    "sha256": "ddf983a1de9636b649f917b59f5e434f408086f22d0e6f0d1f361e5fe0bc9a4a",
+    "bytes": 822
+  },
+  "migrations/script.py.mako": {
+    "sha256": "e872497783a86c37adff84230ffe3893188aa3babe5b1f3da52f235470c79e26",
+    "bytes": 356
+  },
+  "migrations/versions/0001_platform_tenant_owned_platform_and_legacy_.py": {
+    "sha256": "840666f4f0e20f2546184c1fe536b7070b3a5bd124b216483ce886797772c404",
+    "bytes": 17363
+  },
+  "pyproject.toml": {
+    "sha256": "cc5016b23a0dce5af10ffcb3399a61e359e318a56a016d0e91a424668af89058",
+    "bytes": 1628
+  },
+  "requirements.txt": {
+    "sha256": "414609688c3f562296d56e0925c28cc5b8a80df78a896c50730a2f9c9cb44150",
+    "bytes": 358
+  },
+  "scripts/check_project_setup.py": {
+    "sha256": "93ab7f074fe59981d4aec7f8a692068d0d404ee80b340c5cf6e600fe9a1ca431",
+    "bytes": 2963
+  },
+  "services/api/db/__init__.py": {
+    "sha256": "f5760dae8a322b838744734b5d95d8e7e24b557f7a6d598e0e319d9b373079e2",
+    "bytes": 74
+  },
+  "services/api/db/admin.py": {
+    "sha256": "263f295e13c0179092ffd2bad470340afedd65a2dcfa920398e6318a82273401",
+    "bytes": 4400
+  },
+  "services/api/db/contracts.py": {
+    "sha256": "bb3f578e3cb9bb1d3a2cb0e0e35902dd268e6536321c0cf29bb87acf04a6049b",
+    "bytes": 866
+  },
+  "services/api/db/legacy_import.py": {
+    "sha256": "3bb51abdfc2ea98c83a69d67b2aeb9a1713f73569a61ea1d2cb8e2850fef204f",
+    "bytes": 7468
+  },
+  "services/api/db/models.py": {
+    "sha256": "07c215d29ad540b0695c0fe206eeef113bc56e9b42ab523875236775d1a331b1",
+    "bytes": 9056
+  },
+  "services/api/db/repository.py": {
+    "sha256": "1d9b1caa09efa4416a9445750d9eb1cc34263cb749c1f91bfeb857ab743efd75",
+    "bytes": 4708
+  },
+  "services/api/db/settings.py": {
+    "sha256": "e268e6eb5b6670b74435aef9d7e4fcf2c55754f597ad9ce8dcfa280abc5cd0ea",
+    "bytes": 634
+  },
+  "src/agents/report.py": {
+    "sha256": "4895cd64187b185ae95d4c53bc49b210b99bebfe046a79e7959349590102b58f",
+    "bytes": 4179
+  },
+  "src/database/connection.py": {
+    "sha256": "49b015f1b24e3e4b804b4e772fe208608dccc59a2848efdfda3966a57722d75a",
+    "bytes": 3586
+  },
+  "src/utils/config.py": {
+    "sha256": "fdee21bd06a565814cb3c97b9b91913c2c582239a32ca0388db43c34d29da761",
+    "bytes": 2406
+  },
+  "tests/integration/test_postgresql_persistence.py": {
+    "sha256": "0803cb3b2322459f2ce0453c4206d5da4466a7d6b5dbd600543455e245acc7bf",
+    "bytes": 15124
+  },
+  "tests/unit/test_database_configuration.py": {
+    "sha256": "d9eca851438f1f2a58f526ab2c6546d2b1dc3edd76986806e9dd59268b84513e",
+    "bytes": 2390
+  }
+}

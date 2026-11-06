@@ -1,0 +1,71 @@
+{
+  "database": "project28_step08_restore_20261025_080029",
+  "table_rows": {
+    "tenants": 1,
+    "audit_log": 3,
+    "call_records": 3,
+    "legacy_imports": 1,
+    "model_versions": 0,
+    "transcription_cache": 1,
+    "users": 1,
+    "calls": 3,
+    "training_runs": 0,
+    "jobs": 0,
+    "reviews": 0,
+    "segments": 93
+  },
+  "all_fields_equal": true,
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "exec",
+        "project28-postgres-1",
+        "pg_dump",
+        "-U",
+        "project28",
+        "-d",
+        "project28",
+        "-Fc",
+        "-f",
+        "/tmp/step08-populated.dump"
+      ],
+      "exit_code": 0,
+      "seconds": 0.242,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "cp",
+        "project28-postgres-1:/tmp/step08-populated.dump",
+        "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.local\\backups\\step08-20261025T075816Z\\postgres-populated.dump"
+      ],
+      "exit_code": 0,
+      "seconds": 0.142,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "project28-postgres-1",
+        "pg_restore",
+        "--no-owner",
+        "--no-privileges",
+        "-U",
+        "project28",
+        "-d",
+        "project28_step08_restore_20261025_080029",
+        "/tmp/step08-populated.dump"
+      ],
+      "exit_code": 0,
+      "seconds": 0.297,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "dump_sha256": "739d589a0548a3ac3b873aaeefbd521d67a2a6379327803976c88ba28977407c"
+}

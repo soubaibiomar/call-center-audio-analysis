@@ -1,0 +1,7 @@
+{
+  "cache_hit": true,
+  "provider_http_200": 4,
+  "provider_http_400": 0,
+  "provider_http_429": 0,
+  "raw_log_published": false
+}

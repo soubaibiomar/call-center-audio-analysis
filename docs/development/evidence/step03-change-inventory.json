@@ -1,0 +1,85 @@
+{
+  "step": "STEP_03",
+  "head": "a37e4634af1d2947fc3c548d54e62bda0b0daf89",
+  "self_excluded": "docs/development/evidence/step03-change-inventory.json",
+  "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "state": "modified",
+      "bytes": 964,
+      "sha256": "934a4700d36158ceaaaab65124a75c8c0dddcec8d94871dc86e05ae302852662"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "state": "modified",
+      "bytes": 2718,
+      "sha256": "40ce27f99312566f678e87e6eef24ba9002a00d4e6b66c27f10b7dda9dcadb86"
+    },
+    {
+      "path": ".github/labels.json",
+      "state": "created",
+      "bytes": 1666,
+      "sha256": "8f2d8b55689a7d261191fadfe2f76d9f1f5c9abdce38e954f5e32caab751696b"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "state": "modified",
+      "bytes": 6711,
+      "sha256": "f5078bd4e11d3a3df2be91769e4889f2d6a39bf19eab18c83ffbe422f0c70f4c"
+    },
+    {
+      "path": "docs/development/evidence/step03-delivery-checks.json",
+      "state": "created",
+      "bytes": 1103,
+      "sha256": "63445b956f2d41ea193a1aa0f6fb46d9efac7f588a129c930a8433a5e869bc70"
+    },
+    {
+      "path": "docs/development/evidence/step03-git-comparison.json",
+      "state": "created",
+      "bytes": 14287,
+      "sha256": "6999f4e2d08a57bd78600ef45d66117d9039259e4a28c9f23881f5a3a572fbba"
+    },
+    {
+      "path": "docs/development/evidence/step03-policy-validation.json",
+      "state": "created",
+      "bytes": 822,
+      "sha256": "72443671634742fef7aba6487765463008874cd614d60a01707c36a2e5ce2c35"
+    },
+    {
+      "path": "docs/development/evidence/step03-preflight.json",
+      "state": "created",
+      "bytes": 49292,
+      "sha256": "6f462a8ffb22e1f488a00bc68b0a25edef1ff28c4dc522db16dfd017b6d99904"
+    },
+    {
+      "path": "docs/development/evidence/step03-validation.json",
+      "state": "created",
+      "bytes": 5273,
+      "sha256": "979b98e30c0c6e0955b9502292bf9ce30ca4acb6d9e0574487322d50a0a1eb5a"
+    },
+    {
+      "path": "docs/development/workflow.md",
+      "state": "created",
+      "bytes": 10389,
+      "sha256": "a9f971ec0cba29e8147d13b846763c45a0f985a4beda605eb5371a079b64ec63"
+    },
+    {
+      "path": "docs/implementation/PROGRESS.md",
+      "state": "modified",
+      "bytes": 7428,
+      "sha256": "dbda885ef85bf5ee2f7908ac77ed342f95816c1c884722ec546bbdcfe5d5a5c7"
+    },
+    {
+      "path": "docs/implementation/STEP_03_establish_branching_and_collaboration_conventions_REPORT.md",
+      "state": "created",
+      "bytes": 24127,
+      "sha256": "0bc7bafeb157849db6d9e0acd8277ee884e25f03e47364469551ca933b499649"
+    },
+    {
+      "path": "tests/unit/test_collaboration_configuration.py",
+      "state": "created",
+      "bytes": 1642,
+      "sha256": "a8a04e3889c2b97465dc3767e3a9bf09a1535a67f07266d5a74cf7e03b5b482a"
+    }
+  ]
+}

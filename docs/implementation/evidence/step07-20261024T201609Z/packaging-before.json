@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-I",
+    "-c",
+    "import sys;sys.path.insert(0,'C:\\\\Users\\\\omar\\\\Documents\\\\Call center audio Analysis\\\\.local\\\\step07-wheel-before');import src.services.pipeline"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'src'\n",
+  "expected_failure": true
+}

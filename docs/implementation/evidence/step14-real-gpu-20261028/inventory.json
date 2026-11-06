@@ -1,0 +1,40 @@
+{
+  "source": "ggfox00000/dia-voxconverse-test",
+  "revision": "7e3ea2807400b9ed79451e20513f7a50ac4fd846",
+  "license": "CC-BY-4.0 (mirror assertion; upstream rights not independently confirmed)",
+  "records": [
+    {
+      "name": "wdvva",
+      "duration_seconds": 65.856,
+      "speakers": 2,
+      "reference_turns": 14,
+      "files": {
+        ".wav": {
+          "sha256": "67bbdb664210f71beaeb6bbe8913bfe34c653c5297985da38191abcb053bd251",
+          "bytes": 2107470
+        },
+        ".rttm": {
+          "sha256": "ace969e51fae19f09f1899970bd2204c961056f519d2209a8835c6c397519e9c",
+          "bytes": 827
+        }
+      }
+    },
+    {
+      "name": "lubpm",
+      "duration_seconds": 82.112,
+      "speakers": 2,
+      "reference_turns": 9,
+      "files": {
+        ".wav": {
+          "sha256": "0b25260390729340788e58486a947d926ac37898314f05ae1cb1baf3ef48561a",
+          "bytes": 2627662
+        },
+        ".rttm": {
+          "sha256": "ed5e94ff8540151fe926aada256d3376ca10dfbc9076c7bae022a97e17731927",
+          "bytes": 530
+        }
+      }
+    }
+  ],
+  "retention_until": "2026-11-28"
+}

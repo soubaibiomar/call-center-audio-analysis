@@ -1,0 +1,26 @@
+--- before/src/agents/report.py
++++ after/src/agents/report.py
+@@ -22,6 +22,7 @@
+     TranscriptionResult,
+ )
+ from src.services.job_execution import current_execution
++from src.services.model_runs import ModelRun
+ 
+ 
+ def compile_report(
+@@ -30,6 +31,7 @@
+     summary: SummaryResult,
+     qa_scores: QAScoreResult,
+     trace_id: str,
++    model_runs: list[ModelRun] | None = None,
+ ) -> CallReport:
+     return CallReport(
+         call_id=intake.call_id,
+@@ -39,6 +41,7 @@
+         qa_scores=qa_scores,
+         processed_at=datetime.now(),
+         trace_id=trace_id,
++        model_runs=model_runs or [],
+         status="completed",
+     )
+ 

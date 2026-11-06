@@ -1,0 +1,19 @@
+{
+  "primary_counts": {
+    "call_records": 4,
+    "calls": 4,
+    "segments": 124,
+    "audit_log": 4,
+    "transcription_cache": 1,
+    "external_identities": 0,
+    "analysis_jobs": 0
+  },
+  "missing_idp_default_http": {
+    "/health": 200,
+    "/ready": 503,
+    "/api/v1/calls": 503
+  },
+  "s3_bad_md5_rejected": "BadDigest",
+  "gradio_http": 200,
+  "anonymous_object_get_http": 403
+}

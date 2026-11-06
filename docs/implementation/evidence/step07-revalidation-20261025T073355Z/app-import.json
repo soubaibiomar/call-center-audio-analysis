@@ -1,0 +1,18 @@
+{
+  "command": [
+    "docker",
+    "exec",
+    "-e",
+    "DB_PATH=/tmp/step07-revalidation.db",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "project28-app-1",
+    "python",
+    "-c",
+    "import app; print(\"Original app imports and builds\")"
+  ],
+  "exit_code": 1,
+  "seconds": 0.138,
+  "stdout": "",
+  "stderr": "failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.\n"
+}

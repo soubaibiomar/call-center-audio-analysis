@@ -1,0 +1,73 @@
+{
+  "dataset": "apptek-com/apptek_callcenter_dialogues",
+  "revision": "b98967d9946f7f59f58d08624a2a00fe98fe0219",
+  "license": "CC-BY-SA-4.0",
+  "roleplay": true,
+  "manifest_sha256": "0702951b27d27a5137205f6d9f28a7eaa3227e65ab137d944c897b7b9c98fb71",
+  "model": "faster-whisper-tiny",
+  "device": "cpu-int8",
+  "normalization": "NFC casefold whitespace; punctuation retained",
+  "model_load_excluded": true,
+  "results": [
+    {
+      "accent": "en-AU",
+      "mode": "baseline",
+      "duration_seconds": 311.0,
+      "seconds": 3.8596542999998746,
+      "word_errors": 178,
+      "reference_words": 686,
+      "reference_speech_seconds": 238.05999999999997,
+      "vad_missed_seconds": 1.8900000000000032
+    },
+    {
+      "accent": "en-AU",
+      "mode": "segmented",
+      "duration_seconds": 311.0,
+      "seconds": 5.636009999999942,
+      "word_errors": 167,
+      "reference_words": 686,
+      "reference_speech_seconds": 238.05999999999997,
+      "vad_missed_seconds": 1.8900000000000032
+    },
+    {
+      "accent": "en-IN",
+      "mode": "baseline",
+      "duration_seconds": 398.95,
+      "seconds": 5.514541599999802,
+      "word_errors": 336,
+      "reference_words": 987,
+      "reference_speech_seconds": 353.8499999999999,
+      "vad_missed_seconds": 0.0
+    },
+    {
+      "accent": "en-IN",
+      "mode": "segmented",
+      "duration_seconds": 398.95,
+      "seconds": 8.503129200000103,
+      "word_errors": 336,
+      "reference_words": 987,
+      "reference_speech_seconds": 353.8499999999999,
+      "vad_missed_seconds": 0.0
+    },
+    {
+      "accent": "en-US_General",
+      "mode": "baseline",
+      "duration_seconds": 282.25,
+      "seconds": 3.3119027999998707,
+      "word_errors": 167,
+      "reference_words": 544,
+      "reference_speech_seconds": 183.4700000000002,
+      "vad_missed_seconds": 0.21599999999999753
+    },
+    {
+      "accent": "en-US_General",
+      "mode": "segmented",
+      "duration_seconds": 282.25,
+      "seconds": 5.088112499999852,
+      "word_errors": 180,
+      "reference_words": 544,
+      "reference_speech_seconds": 183.4700000000002,
+      "vad_missed_seconds": 0.21599999999999753
+    }
+  ]
+}

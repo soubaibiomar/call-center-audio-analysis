@@ -1,0 +1,407 @@
+[
+  {
+    "step": 1,
+    "name": "Verify Windows, Docker and GPU environment",
+    "week": "W1",
+    "lead": "Both",
+    "prompt": "prompts/STEP_01_verify_windows_docker_and_gpu_environment_PROMPT.md",
+    "template": "report_templates/STEP_01_verify_windows_docker_and_gpu_environment_REPORT.md",
+    "report": "docs/implementation/STEP_01_verify_windows_docker_and_gpu_environment_REPORT.md"
+  },
+  {
+    "step": 2,
+    "name": "Clone and fingerprint upstream repository",
+    "week": "W1",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_02_clone_and_fingerprint_upstream_repository_PROMPT.md",
+    "template": "report_templates/STEP_02_clone_and_fingerprint_upstream_repository_REPORT.md",
+    "report": "docs/implementation/STEP_02_clone_and_fingerprint_upstream_repository_REPORT.md"
+  },
+  {
+    "step": 3,
+    "name": "Establish branching and collaboration conventions",
+    "week": "W1",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_03_establish_branching_and_collaboration_conventions_PROMPT.md",
+    "template": "report_templates/STEP_03_establish_branching_and_collaboration_conventions_REPORT.md",
+    "report": "docs/implementation/STEP_03_establish_branching_and_collaboration_conventions_REPORT.md"
+  },
+  {
+    "step": 4,
+    "name": "Install dependencies and configure secrets safely",
+    "week": "W1",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_04_install_dependencies_and_configure_secrets_safely_PROMPT.md",
+    "template": "report_templates/STEP_04_install_dependencies_and_configure_secrets_safely_REPORT.md",
+    "report": "docs/implementation/STEP_04_install_dependencies_and_configure_secrets_safely_REPORT.md"
+  },
+  {
+    "step": 5,
+    "name": "Run original tests and static checks",
+    "week": "W1",
+    "lead": "Both",
+    "prompt": "prompts/STEP_05_run_original_tests_and_static_checks_PROMPT.md",
+    "template": "report_templates/STEP_05_run_original_tests_and_static_checks_REPORT.md",
+    "report": "docs/implementation/STEP_05_run_original_tests_and_static_checks_REPORT.md"
+  },
+  {
+    "step": 6,
+    "name": "Launch the original Gradio app and create baseline report",
+    "week": "W1",
+    "lead": "Both",
+    "prompt": "prompts/STEP_06_launch_the_original_gradio_app_and_create_baseline_repo_PROMPT.md",
+    "template": "report_templates/STEP_06_launch_the_original_gradio_app_and_create_baseline_repo_REPORT.md",
+    "report": "docs/implementation/STEP_06_launch_the_original_gradio_app_and_create_baseline_repo_REPORT.md"
+  },
+  {
+    "step": 7,
+    "name": "Define modular target structure and compatibility layer",
+    "week": "W2",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_07_define_modular_target_structure_and_compatibility_layer_PROMPT.md",
+    "template": "report_templates/STEP_07_define_modular_target_structure_and_compatibility_layer_REPORT.md",
+    "report": "docs/implementation/STEP_07_define_modular_target_structure_and_compatibility_layer_REPORT.md"
+  },
+  {
+    "step": 8,
+    "name": "Migrate SQLite persistence to PostgreSQL with Alembic",
+    "week": "W2",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_08_migrate_sqlite_persistence_to_postgresql_with_alembic_PROMPT.md",
+    "template": "report_templates/STEP_08_migrate_sqlite_persistence_to_postgresql_with_alembic_REPORT.md",
+    "report": "docs/implementation/STEP_08_migrate_sqlite_persistence_to_postgresql_with_alembic_REPORT.md"
+  },
+  {
+    "step": 9,
+    "name": "Create typed FastAPI endpoints and auth boundaries",
+    "week": "W2",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_09_create_typed_fastapi_endpoints_and_auth_boundaries_PROMPT.md",
+    "template": "report_templates/STEP_09_create_typed_fastapi_endpoints_and_auth_boundaries_REPORT.md",
+    "report": "docs/implementation/STEP_09_create_typed_fastapi_endpoints_and_auth_boundaries_REPORT.md"
+  },
+  {
+    "step": 10,
+    "name": "Build durable Redis background processing",
+    "week": "W2",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_10_build_durable_redis_background_processing_PROMPT.md",
+    "template": "report_templates/STEP_10_build_durable_redis_background_processing_REPORT.md",
+    "report": "docs/implementation/STEP_10_build_durable_redis_background_processing_REPORT.md"
+  },
+  {
+    "step": 11,
+    "name": "Integrate Qwen through a safe model-provider adapter",
+    "week": "W2",
+    "lead": "ML",
+    "prompt": "prompts/STEP_11_integrate_qwen_through_a_safe_model_provider_adapter_PROMPT.md",
+    "template": "report_templates/STEP_11_integrate_qwen_through_a_safe_model_provider_adapter_REPORT.md",
+    "report": "docs/implementation/STEP_11_integrate_qwen_through_a_safe_model_provider_adapter_REPORT.md"
+  },
+  {
+    "step": 12,
+    "name": "Inventory datasets and build permission-aware splits",
+    "week": "W1–W3",
+    "lead": "ML",
+    "prompt": "prompts/STEP_12_inventory_datasets_and_build_permission_aware_splits_PROMPT.md",
+    "template": "report_templates/STEP_12_inventory_datasets_and_build_permission_aware_splits_REPORT.md",
+    "report": "docs/implementation/STEP_12_inventory_datasets_and_build_permission_aware_splits_REPORT.md"
+  },
+  {
+    "step": 13,
+    "name": "Benchmark Whisper against Qwen3-ASR",
+    "week": "W1–W3",
+    "lead": "ML",
+    "prompt": "prompts/STEP_13_benchmark_whisper_against_qwen3_asr_PROMPT.md",
+    "template": "report_templates/STEP_13_benchmark_whisper_against_qwen3_asr_REPORT.md",
+    "report": "docs/implementation/STEP_13_benchmark_whisper_against_qwen3_asr_REPORT.md"
+  },
+  {
+    "step": 14,
+    "name": "Integrate neural diarization and role attribution",
+    "week": "W3",
+    "lead": "ML",
+    "prompt": "prompts/STEP_14_integrate_neural_diarization_and_role_attribution_PROMPT.md",
+    "template": "report_templates/STEP_14_integrate_neural_diarization_and_role_attribution_REPORT.md",
+    "report": "docs/implementation/STEP_14_integrate_neural_diarization_and_role_attribution_REPORT.md"
+  },
+  {
+    "step": 15,
+    "name": "Harden audio preprocessing, VAD and segmentation",
+    "week": "W3",
+    "lead": "ML",
+    "prompt": "prompts/STEP_15_harden_audio_preprocessing_vad_and_segmentation_PROMPT.md",
+    "template": "report_templates/STEP_15_harden_audio_preprocessing_vad_and_segmentation_REPORT.md",
+    "report": "docs/implementation/STEP_15_harden_audio_preprocessing_vad_and_segmentation_REPORT.md"
+  },
+  {
+    "step": 16,
+    "name": "Extend LangGraph with typed analysis nodes",
+    "week": "W3–W4",
+    "lead": "ML",
+    "prompt": "prompts/STEP_16_extend_langgraph_with_typed_analysis_nodes_PROMPT.md",
+    "template": "report_templates/STEP_16_extend_langgraph_with_typed_analysis_nodes_REPORT.md",
+    "report": "docs/implementation/STEP_16_extend_langgraph_with_typed_analysis_nodes_REPORT.md"
+  },
+  {
+    "step": 17,
+    "name": "Create controlled company knowledge ingestion",
+    "week": "W3–W4",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_17_create_controlled_company_knowledge_ingestion_PROMPT.md",
+    "template": "report_templates/STEP_17_create_controlled_company_knowledge_ingestion_REPORT.md",
+    "report": "docs/implementation/STEP_17_create_controlled_company_knowledge_ingestion_REPORT.md"
+  },
+  {
+    "step": 18,
+    "name": "Ground QA and recommendations in RAG",
+    "week": "W4",
+    "lead": "ML",
+    "prompt": "prompts/STEP_18_ground_qa_and_recommendations_in_rag_PROMPT.md",
+    "template": "report_templates/STEP_18_ground_qa_and_recommendations_in_rag_REPORT.md",
+    "report": "docs/implementation/STEP_18_ground_qa_and_recommendations_in_rag_REPORT.md"
+  },
+  {
+    "step": 19,
+    "name": "Integrate acoustic emotion classification baseline",
+    "week": "W4–W5",
+    "lead": "ML",
+    "prompt": "prompts/STEP_19_integrate_acoustic_emotion_classification_baseline_PROMPT.md",
+    "template": "report_templates/STEP_19_integrate_acoustic_emotion_classification_baseline_REPORT.md",
+    "report": "docs/implementation/STEP_19_integrate_acoustic_emotion_classification_baseline_REPORT.md"
+  },
+  {
+    "step": 20,
+    "name": "Benchmark emotion model and assess transfer bias",
+    "week": "W5",
+    "lead": "ML",
+    "prompt": "prompts/STEP_20_benchmark_emotion_model_and_assess_transfer_bias_PROMPT.md",
+    "template": "report_templates/STEP_20_benchmark_emotion_model_and_assess_transfer_bias_REPORT.md",
+    "report": "docs/implementation/STEP_20_benchmark_emotion_model_and_assess_transfer_bias_REPORT.md"
+  },
+  {
+    "step": 21,
+    "name": "Collect reviewed emotion labels without contaminating data",
+    "week": "W5",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_21_collect_reviewed_emotion_labels_without_contaminating_d_PROMPT.md",
+    "template": "report_templates/STEP_21_collect_reviewed_emotion_labels_without_contaminating_d_REPORT.md",
+    "report": "docs/implementation/STEP_21_collect_reviewed_emotion_labels_without_contaminating_d_REPORT.md"
+  },
+  {
+    "step": 22,
+    "name": "Initialize React Vite TypeScript frontend",
+    "week": "W2–W3",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_22_initialize_react_vite_typescript_frontend_PROMPT.md",
+    "template": "report_templates/STEP_22_initialize_react_vite_typescript_frontend_REPORT.md",
+    "report": "docs/implementation/STEP_22_initialize_react_vite_typescript_frontend_REPORT.md"
+  },
+  {
+    "step": 23,
+    "name": "Build dashboards for calls, live and model lab",
+    "week": "W3–W5",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_23_build_dashboards_for_calls_live_and_model_lab_PROMPT.md",
+    "template": "report_templates/STEP_23_build_dashboards_for_calls_live_and_model_lab_REPORT.md",
+    "report": "docs/implementation/STEP_23_build_dashboards_for_calls_live_and_model_lab_REPORT.md"
+  },
+  {
+    "step": 24,
+    "name": "Build timestamped human transcript and QA review",
+    "week": "W4–W5",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_24_build_timestamped_human_transcript_and_qa_review_PROMPT.md",
+    "template": "report_templates/STEP_24_build_timestamped_human_transcript_and_qa_review_REPORT.md",
+    "report": "docs/implementation/STEP_24_build_timestamped_human_transcript_and_qa_review_REPORT.md"
+  },
+  {
+    "step": 25,
+    "name": "Create real browser-to-browser audio and secure transport",
+    "week": "W4",
+    "lead": "Both",
+    "prompt": "prompts/STEP_25_create_real_browser_to_browser_audio_and_secure_transpo_PROMPT.md",
+    "template": "report_templates/STEP_25_create_real_browser_to_browser_audio_and_secure_transpo_REPORT.md",
+    "report": "docs/implementation/STEP_25_create_real_browser_to_browser_audio_and_secure_transpo_REPORT.md"
+  },
+  {
+    "step": 26,
+    "name": "Implement stabilized incremental ASR with partial revisions",
+    "week": "W4–W5",
+    "lead": "ML",
+    "prompt": "prompts/STEP_26_implement_stabilized_incremental_asr_with_partial_revis_PROMPT.md",
+    "template": "report_templates/STEP_26_implement_stabilized_incremental_asr_with_partial_revis_REPORT.md",
+    "report": "docs/implementation/STEP_26_implement_stabilized_incremental_asr_with_partial_revis_REPORT.md"
+  },
+  {
+    "step": 27,
+    "name": "Add grounded real-time agent assistance",
+    "week": "W5",
+    "lead": "Both",
+    "prompt": "prompts/STEP_27_add_grounded_real_time_agent_assistance_PROMPT.md",
+    "template": "report_templates/STEP_27_add_grounded_real_time_agent_assistance_REPORT.md",
+    "report": "docs/implementation/STEP_27_add_grounded_real_time_agent_assistance_REPORT.md"
+  },
+  {
+    "step": 28,
+    "name": "Measure live end-to-end latency and GPU limits",
+    "week": "W5",
+    "lead": "Both",
+    "prompt": "prompts/STEP_28_measure_live_end_to_end_latency_and_gpu_limits_PROMPT.md",
+    "template": "report_templates/STEP_28_measure_live_end_to_end_latency_and_gpu_limits_REPORT.md",
+    "report": "docs/implementation/STEP_28_measure_live_end_to_end_latency_and_gpu_limits_REPORT.md"
+  },
+  {
+    "step": 29,
+    "name": "Aggregate accurate agent/team operational analytics",
+    "week": "W5–W6",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_29_aggregate_accurate_agent_team_operational_analytics_PROMPT.md",
+    "template": "report_templates/STEP_29_aggregate_accurate_agent_team_operational_analytics_REPORT.md",
+    "report": "docs/implementation/STEP_29_aggregate_accurate_agent_team_operational_analytics_REPORT.md"
+  },
+  {
+    "step": 30,
+    "name": "Generate evidence-grounded multi-call coaching",
+    "week": "W5–W6",
+    "lead": "ML",
+    "prompt": "prompts/STEP_30_generate_evidence_grounded_multi_call_coaching_PROMPT.md",
+    "template": "report_templates/STEP_30_generate_evidence_grounded_multi_call_coaching_REPORT.md",
+    "report": "docs/implementation/STEP_30_generate_evidence_grounded_multi_call_coaching_REPORT.md"
+  },
+  {
+    "step": 31,
+    "name": "Evaluate coaching quality and intervention usefulness",
+    "week": "W6",
+    "lead": "Both",
+    "prompt": "prompts/STEP_31_evaluate_coaching_quality_and_intervention_usefulness_PROMPT.md",
+    "template": "report_templates/STEP_31_evaluate_coaching_quality_and_intervention_usefulness_REPORT.md",
+    "report": "docs/implementation/STEP_31_evaluate_coaching_quality_and_intervention_usefulness_REPORT.md"
+  },
+  {
+    "step": 32,
+    "name": "Implement active learning sample prioritization",
+    "week": "W5–W6",
+    "lead": "ML",
+    "prompt": "prompts/STEP_32_implement_active_learning_sample_prioritization_PROMPT.md",
+    "template": "report_templates/STEP_32_implement_active_learning_sample_prioritization_REPORT.md",
+    "report": "docs/implementation/STEP_32_implement_active_learning_sample_prioritization_REPORT.md"
+  },
+  {
+    "step": 33,
+    "name": "Version permission-checked audio datasets with DVC",
+    "week": "W5–W6",
+    "lead": "ML",
+    "prompt": "prompts/STEP_33_version_permission_checked_audio_datasets_with_dvc_PROMPT.md",
+    "template": "report_templates/STEP_33_version_permission_checked_audio_datasets_with_dvc_REPORT.md",
+    "report": "docs/implementation/STEP_33_version_permission_checked_audio_datasets_with_dvc_REPORT.md"
+  },
+  {
+    "step": 34,
+    "name": "Fine-tune ASR candidate using PyTorch and evaluate",
+    "week": "W6",
+    "lead": "ML",
+    "prompt": "prompts/STEP_34_fine_tune_asr_candidate_using_pytorch_and_evaluate_PROMPT.md",
+    "template": "report_templates/STEP_34_fine_tune_asr_candidate_using_pytorch_and_evaluate_REPORT.md",
+    "report": "docs/implementation/STEP_34_fine_tune_asr_candidate_using_pytorch_and_evaluate_REPORT.md"
+  },
+  {
+    "step": 35,
+    "name": "Track experiments and models with MLflow",
+    "week": "W6",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_35_track_experiments_and_models_with_mlflow_PROMPT.md",
+    "template": "report_templates/STEP_35_track_experiments_and_models_with_mlflow_REPORT.md",
+    "report": "docs/implementation/STEP_35_track_experiments_and_models_with_mlflow_REPORT.md"
+  },
+  {
+    "step": 36,
+    "name": "Approve, canary deploy and rollback a model",
+    "week": "W6–W7",
+    "lead": "Both",
+    "prompt": "prompts/STEP_36_approve_canary_deploy_and_rollback_a_model_PROMPT.md",
+    "template": "report_templates/STEP_36_approve_canary_deploy_and_rollback_a_model_REPORT.md",
+    "report": "docs/implementation/STEP_36_approve_canary_deploy_and_rollback_a_model_REPORT.md"
+  },
+  {
+    "step": 37,
+    "name": "Prepare learning interfaces for other neural networks",
+    "week": "W6–W7",
+    "lead": "ML",
+    "prompt": "prompts/STEP_37_prepare_learning_interfaces_for_other_neural_networks_PROMPT.md",
+    "template": "report_templates/STEP_37_prepare_learning_interfaces_for_other_neural_networks_REPORT.md",
+    "report": "docs/implementation/STEP_37_prepare_learning_interfaces_for_other_neural_networks_REPORT.md"
+  },
+  {
+    "step": 38,
+    "name": "Complete authentication, privacy and security threat model",
+    "week": "W1–W7",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_38_complete_authentication_privacy_and_security_threat_mod_PROMPT.md",
+    "template": "report_templates/STEP_38_complete_authentication_privacy_and_security_threat_mod_REPORT.md",
+    "report": "docs/implementation/STEP_38_complete_authentication_privacy_and_security_threat_mod_REPORT.md"
+  },
+  {
+    "step": 39,
+    "name": "Introduce traces, metrics and privacy-safe monitoring",
+    "week": "W6–W7",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_39_introduce_traces_metrics_and_privacy_safe_monitoring_PROMPT.md",
+    "template": "report_templates/STEP_39_introduce_traces_metrics_and_privacy_safe_monitoring_REPORT.md",
+    "report": "docs/implementation/STEP_39_introduce_traces_metrics_and_privacy_safe_monitoring_REPORT.md"
+  },
+  {
+    "step": 40,
+    "name": "Test failure modes and data recovery",
+    "week": "W7",
+    "lead": "Both",
+    "prompt": "prompts/STEP_40_test_failure_modes_and_data_recovery_PROMPT.md",
+    "template": "report_templates/STEP_40_test_failure_modes_and_data_recovery_REPORT.md",
+    "report": "docs/implementation/STEP_40_test_failure_modes_and_data_recovery_REPORT.md"
+  },
+  {
+    "step": 41,
+    "name": "Package a reproducible Docker Compose environment",
+    "week": "W7",
+    "lead": "Platform",
+    "prompt": "prompts/STEP_41_package_a_reproducible_docker_compose_environment_PROMPT.md",
+    "template": "report_templates/STEP_41_package_a_reproducible_docker_compose_environment_REPORT.md",
+    "report": "docs/implementation/STEP_41_package_a_reproducible_docker_compose_environment_REPORT.md"
+  },
+  {
+    "step": 42,
+    "name": "Run full end-to-end functional/security tests",
+    "week": "W7–W8",
+    "lead": "Both",
+    "prompt": "prompts/STEP_42_run_full_end_to_end_functional_security_tests_PROMPT.md",
+    "template": "report_templates/STEP_42_run_full_end_to_end_functional_security_tests_REPORT.md",
+    "report": "docs/implementation/STEP_42_run_full_end_to_end_functional_security_tests_REPORT.md"
+  },
+  {
+    "step": 43,
+    "name": "Publish reproducible technical and ML benchmarks",
+    "week": "W7–W8",
+    "lead": "ML",
+    "prompt": "prompts/STEP_43_publish_reproducible_technical_and_ml_benchmarks_PROMPT.md",
+    "template": "report_templates/STEP_43_publish_reproducible_technical_and_ml_benchmarks_REPORT.md",
+    "report": "docs/implementation/STEP_43_publish_reproducible_technical_and_ml_benchmarks_REPORT.md"
+  },
+  {
+    "step": 44,
+    "name": "Demonstrate both live intelligence and neural improvement",
+    "week": "W8",
+    "lead": "Both",
+    "prompt": "prompts/STEP_44_demonstrate_both_live_intelligence_and_neural_improveme_PROMPT.md",
+    "template": "report_templates/STEP_44_demonstrate_both_live_intelligence_and_neural_improveme_REPORT.md",
+    "report": "docs/implementation/STEP_44_demonstrate_both_live_intelligence_and_neural_improveme_REPORT.md"
+  },
+  {
+    "step": 45,
+    "name": "Deliver code, reproducibility and final handover",
+    "week": "W8",
+    "lead": "Both",
+    "prompt": "prompts/STEP_45_deliver_code_reproducibility_and_final_handover_PROMPT.md",
+    "template": "report_templates/STEP_45_deliver_code_reproducibility_and_final_handover_REPORT.md",
+    "report": "docs/implementation/STEP_45_deliver_code_reproducibility_and_final_handover_REPORT.md"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pre_commit",
+    "run",
+    "--files",
+    "services\\workers\\broker.py",
+    "services\\workers\\jobs.py",
+    "services\\workers\\runner.py",
+    "services\\workers\\runtime.py",
+    "services\\workers\\settings.py",
+    "services\\workers\\storage.py",
+    "services\\workers\\__init__.py",
+    "scripts/check_gpu_runtime.py",
+    "tests/unit/test_gpu_runtime.py",
+    "Dockerfile.gpu",
+    "requirements.gpu.txt",
+    "infrastructure/compose/queue.local.yml",
+    "docs/environment/GPU_VERIFICATION.md",
+    "docs/development/background-jobs.md",
+    "docs/architecture/durable-jobs.md",
+    "docs/implementation/PROGRESS.md",
+    "docs/implementation/STEP_10_build_durable_redis_background_processing_REPORT.md"
+  ],
+  "exit_code": 0,
+  "seconds": 3.426415000000816,
+  "stdout": "ruff.....................................................................Passed\nruff-format..............................................................Passed\nDetect secrets...........................................................Passed\nCheck for hardcoded API keys.............................................Passed\n",
+  "stderr": ""
+}

@@ -1,0 +1,15 @@
+{
+  "captured_at_utc": "2026-10-24T19:48:48.882937+00:00",
+  "target": "Latest attempted STEP_06; STEP_05 remains last completed numerical step",
+  "verdict": "FAIL",
+  "step_status": "BLOCKED",
+  "preflight_commands_sha256": "ae1bb99bdf3f5a681da37b94be3f046f52ae414dedb8ea31728d8d9eddb892c1",
+  "captured_configuration_failure_verified": true,
+  "captured_integration_result_verified": true,
+  "report_sections_present": true,
+  "report_links_verified": 5,
+  "selected_credential_ready": false,
+  "pins_match": true,
+  "code_fix_identified": false,
+  "real_demo_validated": false
+}

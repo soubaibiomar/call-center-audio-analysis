@@ -35,6 +35,8 @@ class TestRunQAScoring:
 
         assert isinstance(result, QAScoreResult)
         assert result.call_id == transcript.call_id
+        messages = mock_llm.invoke.call_args.args[0]
+        assert str(transcript.call_id) in messages[0].content
         assert 1 <= result.overall_score <= 5
 
     @patch("src.agents.qa_scoring.get_llm")

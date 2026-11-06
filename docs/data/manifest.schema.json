@@ -1,0 +1,214 @@
+{
+  "$defs": {
+    "Rights": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "approved",
+            "pending",
+            "denied"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "basis": {
+          "enum": [
+            "license",
+            "consent",
+            "unknown"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "license_id": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "License Id",
+          "type": "string"
+        },
+        "terms_url": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "Terms Url",
+          "type": "string"
+        },
+        "evidence_ref": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+          "title": "Evidence Ref",
+          "type": "string"
+        },
+        "reviewer_ref": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+          "title": "Reviewer Ref",
+          "type": "string"
+        },
+        "reviewed_on": {
+          "format": "date",
+          "title": "Reviewed On",
+          "type": "string"
+        },
+        "retention_until": {
+          "format": "date",
+          "title": "Retention Until",
+          "type": "string"
+        },
+        "train": {
+          "default": false,
+          "title": "Train",
+          "type": "boolean"
+        },
+        "evaluate": {
+          "default": false,
+          "title": "Evaluate",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status",
+        "basis",
+        "license_id",
+        "terms_url",
+        "evidence_ref",
+        "reviewer_ref",
+        "reviewed_on",
+        "retention_until"
+      ],
+      "title": "Rights",
+      "type": "object"
+    },
+    "Sample": {
+      "additionalProperties": false,
+      "properties": {
+        "sample_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+          "title": "Sample Id",
+          "type": "string"
+        },
+        "source_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_version": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+          "title": "Source Version",
+          "type": "string"
+        },
+        "subset": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+          "title": "Subset",
+          "type": "string"
+        },
+        "conversation_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+          "title": "Conversation Id",
+          "type": "string"
+        },
+        "speaker_ids": {
+          "items": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Speaker Ids",
+          "type": "array"
+        },
+        "audio_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Audio Sha256",
+          "type": "string"
+        },
+        "duration_seconds": {
+          "exclusiveMinimum": 0,
+          "title": "Duration Seconds",
+          "type": "number"
+        },
+        "languages": {
+          "items": {
+            "pattern": "^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Languages",
+          "type": "array"
+        },
+        "label_status": {
+          "enum": [
+            "human_verified",
+            "machine_only",
+            "unreviewed"
+          ],
+          "title": "Label Status",
+          "type": "string"
+        },
+        "label_evidence_ref": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label Evidence Ref"
+        },
+        "label_reviewer_ref": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label Reviewer Ref"
+        },
+        "rights": {
+          "$ref": "#/$defs/Rights"
+        }
+      },
+      "required": [
+        "sample_id",
+        "source_id",
+        "source_version",
+        "subset",
+        "conversation_id",
+        "speaker_ids",
+        "audio_sha256",
+        "duration_seconds",
+        "languages",
+        "label_status",
+        "rights"
+      ],
+      "title": "Sample",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "records": {
+      "items": {
+        "$ref": "#/$defs/Sample"
+      },
+      "minItems": 1,
+      "title": "Records",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "records"
+  ],
+  "title": "Manifest",
+  "type": "object"
+}

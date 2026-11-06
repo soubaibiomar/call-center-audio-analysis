@@ -1,0 +1,93 @@
+ M .dockerignore
+ M .env.project28.example
+ M .github/ISSUE_TEMPLATE/bug_report.md
+ M .github/PULL_REQUEST_TEMPLATE.md
+ M .github/workflows/ci.yml
+ M .gitignore
+ M .pre-commit-config.yaml
+ M CONTRIBUTING.md
+ M Dockerfile
+ M PROJECT28_REQUIREMENTS.lock.txt
+ M app.py
+ M docs/architecture.md
+ M pyproject.toml
+ M requirements.txt
+ M src/agents/intake.py
+ M src/agents/qa_scoring.py
+ M src/agents/report.py
+ M src/agents/summarization.py
+ M src/agents/transcription.py
+ M src/database/connection.py
+ M src/database/models.py
+ M src/graph/state.py
+ M src/graph/workflow.py
+ M src/security/audit.py
+ M src/security/pii_redactor.py
+ M src/services/history.py
+ M src/services/observability.py
+ M src/services/pipeline.py
+ M src/ui/app_builder.py
+ M src/ui/tabs/analyze.py
+ M src/ui/tabs/history.py
+ M src/ui/tabs/observability.py
+ M src/utils/audio.py
+ M src/utils/config.py
+ M src/utils/formatters.py
+ M src/utils/llm_factory.py
+ M tests/integration/test_pipeline_end_to_end.py
+ M tests/unit/test_history_service.py
+ M tests/unit/test_qa_scoring.py
+ M tests/unit/test_summarization.py
+?? .github/labels.json
+?? .serena/
+?? Dockerfile.gpu
+?? PROJECT28_MASTER_INSTRUCTIONS.md
+?? STEP_INDEX.md
+?? alembic.ini
+?? compose.local.yml
+?? compose.sqlite.yml
+?? design/
+?? docs/api/
+?? docs/architecture/
+?? docs/baselines/
+?? docs/database/
+?? docs/development/
+?? docs/environment/
+?? docs/implementation/
+?? docs/upstream/
+?? infrastructure/
+?? migrations/
+?? prompts/
+?? report_templates/
+?? requirements.gpu.txt
+?? resources/
+?? scripts/
+?? services/
+?? src/database/scope.py
+?? src/services/analysis.py
+?? src/services/contracts.py
+?? src/services/job_execution.py
+?? src/services/model_runs.py
+?? src/utils/audio_workspace.py
+?? src/utils/structured_inference.py
+?? stubs/
+?? tests/api/
+?? tests/fixtures/
+?? tests/integration/test_postgresql_persistence.py
+?? tests/llm/
+?? tests/unit/test_analysis_compatibility.py
+?? tests/unit/test_audio_decoder.py
+?? tests/unit/test_collaboration_configuration.py
+?? tests/unit/test_database_configuration.py
+?? tests/unit/test_database_recovery_edges.py
+?? tests/unit/test_docker_preparation.py
+?? tests/unit/test_environment_diagnostics.py
+?? tests/unit/test_gpu_runtime.py
+?? tests/unit/test_import_map.py
+?? tests/unit/test_llm_factory.py
+?? tests/unit/test_pipeline_exports.py
+?? tests/unit/test_project_setup.py
+?? tests/unit/test_queue_configuration.py
+?? tests/unit/test_repository_fingerprint.py
+?? tests/unit/test_typing_corrections.py
+?? tests/workers/

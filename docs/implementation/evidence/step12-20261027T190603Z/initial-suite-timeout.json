@@ -1,0 +1,6 @@
+{
+  "command": "pytest tests/unit tests/security tests/api tests/integration tests/workers tests/llm tests/datasets -q --tb=short",
+  "timeout_seconds": 120,
+  "result": "TimeoutExpired; no completed pytest result",
+  "context": "Docker Desktop and local services were starting; causality not yet verified."
+}

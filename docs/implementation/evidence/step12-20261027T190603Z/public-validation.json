@@ -1,0 +1,16 @@
+{
+  "metadata_only_schema_valid": true,
+  "records": 3,
+  "sample_sha256_matches": true,
+  "train_approved": 0,
+  "evaluation_approved": 0,
+  "human_verified_labels": 0,
+  "split_refused": true,
+  "duration_seconds": 24.625,
+  "languages": [
+    "en"
+  ],
+  "unique_speakers": 3,
+  "unique_conversations": 3,
+  "all_intake_files_git_ignored": true
+}

@@ -1,0 +1,19 @@
+{
+  "purpose": "non-commercial exploratory transcription smoke test; unreviewed reference; not a benchmark",
+  "source": "unidpro/call-center-audio",
+  "source_version": 1,
+  "license": "CC-BY-NC-ND-4.0",
+  "audio_sha256": "75a040f5df538fd66d7e9897d36043ad1392965149dc8cae3f853ffe94abd479",
+  "audio_bytes": 3230264,
+  "source_duration_seconds": 313.0,
+  "decoder_duration_seconds": 299.0,
+  "model": "faster-whisper-tiny",
+  "device": "cpu-int8",
+  "model_loading_included": false,
+  "inference_seconds": 12.381466999999247,
+  "inference_rtf": 0.04140958862876003,
+  "transcript_character_count": 2907,
+  "reference_review": "unverified",
+  "wer_cer": null,
+  "retention_until": "2026-11-28"
+}

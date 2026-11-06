@@ -1,0 +1,286 @@
+{
+  "project28-app-1": {
+    "status": "running",
+    "health": "healthy"
+  },
+  "project28-api-1": {
+    "status": "running",
+    "health": "healthy"
+  },
+  "project28-worker-cpu-1": {
+    "status": "running",
+    "health": null
+  },
+  "project28-worker-gpu-1": {
+    "status": "running",
+    "health": null
+  },
+  "project28-redis-1": {
+    "status": "running",
+    "health": "healthy"
+  },
+  "project28-object-store-1": {
+    "status": "running",
+    "health": "healthy"
+  },
+  "project28-postgres-1": {
+    "status": "running",
+    "health": "healthy"
+  },
+  "source_hashes": {
+    "project28-worker-cpu-1": {
+      "services/workers/settings.py": {
+        "sha256_bytes": [
+          131,
+          248,
+          166,
+          255,
+          35,
+          140,
+          108,
+          182,
+          43,
+          139,
+          99,
+          203,
+          225,
+          43,
+          108,
+          0,
+          207,
+          229,
+          84,
+          133,
+          17,
+          166,
+          122,
+          228,
+          135,
+          197,
+          11,
+          252,
+          94,
+          58,
+          218,
+          202
+        ]
+      },
+      "services/workers/runner.py": {
+        "sha256_bytes": [
+          175,
+          110,
+          117,
+          249,
+          44,
+          15,
+          191,
+          195,
+          100,
+          179,
+          117,
+          228,
+          147,
+          174,
+          229,
+          252,
+          4,
+          227,
+          109,
+          254,
+          219,
+          117,
+          249,
+          245,
+          14,
+          225,
+          1,
+          20,
+          124,
+          19,
+          89,
+          164
+        ]
+      }
+    },
+    "project28-worker-gpu-1": {
+      "services/workers/settings.py": {
+        "sha256_bytes": [
+          131,
+          248,
+          166,
+          255,
+          35,
+          140,
+          108,
+          182,
+          43,
+          139,
+          99,
+          203,
+          225,
+          43,
+          108,
+          0,
+          207,
+          229,
+          84,
+          133,
+          17,
+          166,
+          122,
+          228,
+          135,
+          197,
+          11,
+          252,
+          94,
+          58,
+          218,
+          202
+        ]
+      },
+      "services/workers/runner.py": {
+        "sha256_bytes": [
+          175,
+          110,
+          117,
+          249,
+          44,
+          15,
+          191,
+          195,
+          100,
+          179,
+          117,
+          228,
+          147,
+          174,
+          229,
+          252,
+          4,
+          227,
+          109,
+          254,
+          219,
+          117,
+          249,
+          245,
+          14,
+          225,
+          1,
+          20,
+          124,
+          19,
+          89,
+          164
+        ]
+      }
+    },
+    "host": {
+      "services/workers/settings.py": {
+        "sha256_bytes": [
+          131,
+          248,
+          166,
+          255,
+          35,
+          140,
+          108,
+          182,
+          43,
+          139,
+          99,
+          203,
+          225,
+          43,
+          108,
+          0,
+          207,
+          229,
+          84,
+          133,
+          17,
+          166,
+          122,
+          228,
+          135,
+          197,
+          11,
+          252,
+          94,
+          58,
+          218,
+          202
+        ]
+      },
+      "services/workers/runner.py": {
+        "sha256_bytes": [
+          175,
+          110,
+          117,
+          249,
+          44,
+          15,
+          191,
+          195,
+          100,
+          179,
+          117,
+          228,
+          147,
+          174,
+          229,
+          252,
+          4,
+          227,
+          109,
+          254,
+          219,
+          117,
+          249,
+          245,
+          14,
+          225,
+          1,
+          20,
+          124,
+          19,
+          89,
+          164
+        ]
+      }
+    }
+  },
+  "http": {
+    "http://127.0.0.1:7861/config": 200,
+    "http://127.0.0.1:8000/health": 200,
+    "http://127.0.0.1:8000/ready": 503,
+    "http://127.0.0.1:8000/api/v1/calls": 503
+  },
+  "primary_counts": {
+    "call_records": 4,
+    "calls": 4,
+    "segments": 124,
+    "audit_log": 4,
+    "transcription_cache": 1,
+    "external_identities": 0,
+    "analysis_jobs": 0
+  },
+  "cuda": {
+    "exit_code": 0,
+    "stdout": "CUDA runtime verified\n",
+    "stderr": ""
+  },
+  "redis_probe": {
+    "before": {
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "AUTH failed: WRONGPASS invalid username-password pair or user is disabled.\n"
+    },
+    "after": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  }
+}

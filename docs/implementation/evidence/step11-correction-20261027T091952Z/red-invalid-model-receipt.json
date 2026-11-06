@@ -1,0 +1,13 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/llm/test_step11_corrections.py::test_rejected_model_setting_is_not_echoed_in_receipt",
+    "-q",
+    "--tb=short"
+  ],
+  "exit_code": 1,
+  "stdout": "F                                                                        [100%]\n================================== FAILURES ===================================\n____________ test_rejected_model_setting_is_not_echoed_in_receipt _____________\ntests\\llm\\test_step11_corrections.py:98: in test_rejected_model_setting_is_not_echoed_in_receipt\n    assert runs[0].model_id == \"unresolved\"\nE   AssertionError: assert 'SYNTHETIC PRIVATE CONTENT' == 'unresolved'\nE     \nE     - unresolved\nE     + SYNTHETIC PRIVATE CONTENT\n=========================== short test summary info ===========================\nFAILED tests/llm/test_step11_corrections.py::test_rejected_model_setting_is_not_echoed_in_receipt\n1 failed in 1.47s\n",
+  "stderr": "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+}

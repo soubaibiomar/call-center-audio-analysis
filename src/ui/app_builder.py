@@ -2,8 +2,12 @@
 
 from __future__ import annotations
 
-import gradio as gr
+from typing import cast
 
+import gradio as gr
+from sqlalchemy.engine import Engine
+
+from src.services.contracts import AuditPort, WorkflowPort
 from src.services.observability import get_observability_dashboard
 from src.ui.tabs.analyze import build_analyze_tab
 from src.ui.tabs.history import build_history_tab, wire_history_autoload
@@ -11,9 +15,12 @@ from src.ui.tabs.observability import (
     build_observability_tab,
     wire_observability_autoload,
 )
+from src.utils.config import Config
 
 
-def build_app(config, workflow, engine, audit) -> gr.Blocks:
+def build_app(
+    config: Config, workflow: WorkflowPort, engine: Engine, audit: AuditPort
+) -> gr.Blocks:
     """Build the complete Gradio application."""
     with gr.Blocks(
         title="Call Center Intelligence System",
@@ -50,4 +57,4 @@ def build_app(config, workflow, engine, audit) -> gr.Blocks:
             outputs=[obs_metrics, obs_langsmith, obs_audit],
         )
 
-    return ui
+    return cast(gr.Blocks, ui)

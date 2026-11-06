@@ -1,0 +1,19 @@
+{
+  "captured_at_utc": "2026-10-24T19:52:24.096322+00:00",
+  "target": "STEP_09 latest blocked attempt; STEP_05 remains last completed numerical step",
+  "report_required_sections_present": true,
+  "report_links_verified": 3,
+  "preflight_summary_sha256": "0abaae3ba4731f608162a8c1dee0673d3ff40084341a3cbb72fb37ab4dc6a670",
+  "selected_credential_ready": false,
+  "pins_match": true,
+  "proposed_paths_exist": {
+    "services/api": false,
+    "migrations": false,
+    "docs/api/openapi.json": false,
+    "tests/api": false
+  },
+  "api_tests_executed": false,
+  "source_fix_required": false,
+  "verdict": "FAIL",
+  "reason": "No API factory/schema/auth/service adapter implemented; preceding STEP_06\u201308 remain BLOCKED."
+}

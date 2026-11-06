@@ -1,0 +1,20 @@
+[
+  {
+    "republish_seconds": "nan",
+    "configuration_accepted": true,
+    "date_math_error": "ValueError",
+    "message": "cannot convert float NaN to integer"
+  },
+  {
+    "republish_seconds": "infinity",
+    "configuration_accepted": true,
+    "date_math_error": "OverflowError",
+    "message": "cannot convert float infinity to integer"
+  },
+  {
+    "republish_seconds": "huge_finite",
+    "configuration_accepted": true,
+    "date_math_error": "OverflowError",
+    "message": "Python int too large to convert to C int"
+  }
+]

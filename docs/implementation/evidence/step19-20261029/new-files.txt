@@ -1,0 +1,7 @@
+docs/development/emotion-local.md
+ml/__init__.py
+ml/emotion/__init__.py
+ml/emotion/contracts.py
+ml/emotion/model.py
+ml/emotion/service.py
+tests/emotion/test_baseline.py

@@ -1,0 +1,24 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "infrastructure/compose/queue.local.yml",
+    "--profile",
+    "gpu",
+    "run",
+    "--rm",
+    "-T",
+    "--no-deps",
+    "worker-gpu",
+    "python",
+    "-"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"libcuda.so.1\": \"loadable\", \"libcublas.so.12\": \"libcublas.so.12: cannot open shared object file: No such file or directory\", \"libcublasLt.so.12\": \"libcublasLt.so.12: cannot open shared object file: No such file or directory\", \"libcudnn.so.9\": \"libcudnn.so.9: cannot open shared object file: No such file or directory\"}\n",
+  "stderr": " Container project28-worker-gpu-run-7e90809c81af Creating \n Container project28-worker-gpu-run-7e90809c81af Created \n"
+}

@@ -1,0 +1,12 @@
+{
+  "git_head": "a37e4634af1d2947fc3c548d54e62bda0b0daf89",
+  "branch": "feature/project28-foundation",
+  "host": "Windows-11-10.0.26300-SP0",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.88, 8188 MiB",
+  "images": {
+    "project28-step13-qwen:headers": "sha256:353fa0a122a46406dc198c65e72708d82910cda28fd93caa11f9825ad431f795",
+    "project28-upgrade-benchmark:local": "sha256:e9dacdbfc56c9f29805d51fab35eb14495c3f4bdba74f2d863a6647ea96fd5e7",
+    "project28-upgrade-whisper:local": "sha256:dada8ee53412e69d5d1de90e1e5254388e67691e6f6232723ffa56c15fa4f61a"
+  },
+  "conditions": "single GPU job at a time; user-authorized temporary Ollama shutdown; restarted after all six jobs"
+}

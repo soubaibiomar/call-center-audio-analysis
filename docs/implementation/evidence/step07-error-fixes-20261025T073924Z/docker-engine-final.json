@@ -1,0 +1,12 @@
+{
+  "command": [
+    "docker",
+    "info",
+    "--format",
+    "{{.ServerVersion}}"
+  ],
+  "exit_code": 0,
+  "seconds": 0.299,
+  "stdout": "29.9.2\n",
+  "stderr": ""
+}

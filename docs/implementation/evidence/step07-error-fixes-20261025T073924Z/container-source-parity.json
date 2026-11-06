@@ -1,0 +1,34 @@
+{
+  "command": [
+    "docker",
+    "exec",
+    "project28-app-1",
+    "python",
+    "-c",
+    "import hashlib,json;from pathlib import Path;names=['src/agents/intake.py', 'src/agents/qa_scoring.py', 'src/agents/report.py', 'src/agents/summarization.py', 'src/agents/transcription.py', 'src/database/connection.py', 'src/database/models.py', 'src/graph/workflow.py', 'src/security/audit.py', 'src/security/pii_redactor.py', 'src/services/analysis.py', 'src/services/contracts.py', 'src/services/history.py', 'src/services/observability.py', 'src/services/pipeline.py', 'src/ui/app_builder.py', 'src/ui/tabs/analyze.py', 'src/ui/tabs/history.py', 'src/ui/tabs/observability.py', 'src/utils/audio.py', 'src/utils/formatters.py'];print(json.dumps({name:hashlib.sha256(Path(\"/app\",name).read_bytes()).hexdigest() for name in names}))"
+  ],
+  "exit_code": 0,
+  "matches": {
+    "src/agents/intake.py": true,
+    "src/agents/qa_scoring.py": true,
+    "src/agents/report.py": true,
+    "src/agents/summarization.py": true,
+    "src/agents/transcription.py": true,
+    "src/database/connection.py": true,
+    "src/database/models.py": true,
+    "src/graph/workflow.py": true,
+    "src/security/audit.py": true,
+    "src/security/pii_redactor.py": true,
+    "src/services/analysis.py": true,
+    "src/services/contracts.py": true,
+    "src/services/history.py": true,
+    "src/services/observability.py": true,
+    "src/services/pipeline.py": true,
+    "src/ui/app_builder.py": true,
+    "src/ui/tabs/analyze.py": true,
+    "src/ui/tabs/history.py": true,
+    "src/ui/tabs/observability.py": true,
+    "src/utils/audio.py": true,
+    "src/utils/formatters.py": true
+  }
+}

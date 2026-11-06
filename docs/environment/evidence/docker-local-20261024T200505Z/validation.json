@@ -1,0 +1,160 @@
+[
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_docker_preparation.py",
+      "tests/unit/test_project_setup.py",
+      "tests/unit/test_audio_decoder.py",
+      "tests/unit/test_llm_factory.py",
+      "tests/unit/test_pipeline_exports.py",
+      "tests/integration/",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 3.7950104999981704,
+    "stdout": "...................                                                      [100%]\n19 passed in 1.56s\n",
+    "stderr": "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/",
+      "tests/",
+      "scripts/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.2744081999990158,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "scripts/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.20451109999703476,
+    "stdout": "68 files already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy",
+      "scripts/prepare_local_docker.py"
+    ],
+    "exit_code": 1,
+    "duration_seconds": 1.0175062000016624,
+    "stdout": "scripts\\prepare_local_docker.py:25: error: Call to untyped function (unknown) in typed context  [no-untyped-call]\nFound 1 error in 1 file (checked 1 source file)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      ".env.docker",
+      "-f",
+      "compose.local.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.3095632000004116,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      ".env.docker",
+      "-f",
+      "compose.local.yml",
+      "ps"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.3235958000004757,
+    "stdout": "NAME                   IMAGE                 COMMAND                  SERVICE    CREATED              STATUS                        PORTS\nproject28-app-1        project28-app:local   \"python app.py\"          app        About a minute ago   Up About a minute (healthy)   127.0.0.1:7861->7860/tcp\nproject28-postgres-1   postgres:17-alpine    \"docker-entrypoint.s\u2026\"   postgres   About a minute ago   Up About a minute (healthy)   127.0.0.1:5433->5432/tcp\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "project28-app-1",
+      "uv",
+      "pip",
+      "check",
+      "--system"
+    ],
+    "exit_code": 2,
+    "duration_seconds": 0.20822380000026897,
+    "stdout": "",
+    "stderr": "error: Failed to initialize cache at `/home/appuser/.cache/uv`\n  cause: failed to create directory `/home/appuser/.cache/uv`: Read-only file system (os error 30)\n"
+  },
+  {
+    "command": [
+      "git",
+      "check-ignore",
+      ".env",
+      ".env.docker",
+      ".local/postgres_password"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.02469299999938812,
+    "stdout": ".env\n.env.docker\n.local/postgres_password\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.03558160000102362,
+    "stdout": "",
+    "stderr": "warning: in the working copy of '.dockerignore', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of '.env.project28.example', LF will be replaced by CRLF the next time Git touches it\n"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "project28-postgres-1",
+      "psql authenticated TCP transaction probe (password from secret file)"
+    ],
+    "exit_code": 0,
+    "stdout": "BEGIN\nCREATE TABLE\nINSERT 0 1\n id |       value       \n----+-------------------\n  1 | persistence-ready\n(1 row)\n\nROLLBACK\n current_database | current_user |                                         version                                          \n------------------+--------------+------------------------------------------------------------------------------------------\n project28        | project28    | PostgreSQL 17.11 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit\n(1 row)\n\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "project28-app-1",
+      "python",
+      "-c",
+      "import socket,json,urllib.request; s=socket.create_connection(('postgres',5432),timeout=5); s.close(); r=urllib.request.urlopen('http://host.docker.internal:11434/api/tags',timeout=5); print(json.dumps({'postgres_tcp':True,'ollama_models':[m['name'] for m in json.load(r)['models']]}))"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"postgres_tcp\": true, \"ollama_models\": [\"qwen3.5:9b-q4_K_M\", \"qwen2.5-coder:7b\", \"llama3.1:8b\"]}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,10 @@
+[
+  "src/utils/llm_factory.py",
+  "src/utils/structured_inference.py",
+  "scripts/benchmark_local_llm.py",
+  "tests/llm/test_step11_corrections.py",
+  "tests/llm/test_local_provider.py",
+  "docs/development/local-models.md",
+  "docs/implementation/PROGRESS.md",
+  "docs/implementation/STEP_11_integrate_qwen_through_a_safe_model_provider_adapter_REPORT.md"
+]

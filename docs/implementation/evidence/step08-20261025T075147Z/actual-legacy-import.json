@@ -1,0 +1,20 @@
+{
+  "backup_sha256": "d40fa968e81059ed8f522332687e5e6ee25e4c8fc0e36b3012cbb5b6d88600ad",
+  "source_rows": {
+    "call_records": 3,
+    "audit_log": 3,
+    "transcription_cache": 1
+  },
+  "import_result": {
+    "sha256": "d40fa968e81059ed8f522332687e5e6ee25e4c8fc0e36b3012cbb5b6d88600ad",
+    "rows": {
+      "call_records": 3,
+      "audit_log": 3,
+      "transcription_cache": 1
+    },
+    "replayed": false
+  },
+  "explicit_replay_verified": true,
+  "sqlite_original_preserved": true,
+  "pre_migration_postgres_backup": true
+}

@@ -1,0 +1,21 @@
+{
+  "captured_at_utc": "2026-10-25T08:29:18.263138+00:00",
+  "step": "STEP_08",
+  "verdict": "PASS WITH LIMITATIONS",
+  "failures_identified": 3,
+  "failures_corrected": 3,
+  "unresolved_failures": 0,
+  "new_regression_cases": 5,
+  "tests_passed": 198,
+  "tests_failed": 0,
+  "tests_skipped": 0,
+  "pytest_seconds": 24.33,
+  "strict_mypy_files": 46,
+  "migration_changed": false,
+  "dependencies_changed": false,
+  "neural_models_changed": false,
+  "primary_reports_preserved": 4,
+  "next_eligible_step": "STEP_09",
+  "next_step_started": false,
+  "commit_or_push": false
+}

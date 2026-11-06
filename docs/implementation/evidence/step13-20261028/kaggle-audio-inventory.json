@@ -1,0 +1,28 @@
+{
+  "dataset": "unidpro/call-center-audio",
+  "version": 1,
+  "license": "Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)",
+  "listed_bytes": 48550483,
+  "listed_flac_count": 5,
+  "listed_metadata_csv_count": 2,
+  "metadata_rows": 5,
+  "metadata_columns": [
+    "call_id",
+    "Company_name",
+    "Category",
+    "device",
+    "OS",
+    "date_of_call",
+    "city_of_the_user",
+    "state_of_the_users",
+    "Country_of_the_user",
+    "Total_call_duration_in_seconds",
+    "call_duration_with_company_in_seconds",
+    "representative_waiting_time_in_seconds",
+    "Transcription",
+    "AI Sumary"
+  ],
+  "matched_audio_rows": 5,
+  "matched_rows_with_transcription": 5,
+  "human_review_claim_found_in_source_review": false
+}

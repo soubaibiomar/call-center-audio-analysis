@@ -2,7 +2,11 @@
 # Mirrors the HuggingFace Space configuration so the same image can be run
 # locally, on Fly.io, Render, or any container host.
 
-FROM python:3.12-slim
+ARG BASE_IMAGE=python:3.12-slim
+FROM ${BASE_IMAGE}
+
+USER root
+COPY --from=ghcr.io/astral-sh/uv:0.12.23 /uv /usr/local/bin/uv
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
@@ -23,15 +27,18 @@ WORKDIR /app
 
 # Install dependencies first so the layer caches across source-only changes.
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv pip install --system --no-cache -r requirements.txt
 
 # Copy the application source.
 COPY app.py ./
 COPY src/ ./src/
+COPY services/ ./services/
+COPY alembic.ini ./
+COPY migrations/ ./migrations/
 COPY data/samples/ ./data/samples/
 
 # Run as a non-root user.
-RUN useradd --create-home --uid 1000 appuser \
+RUN (id appuser >/dev/null 2>&1 || useradd --create-home --uid 1000 appuser) \
  && mkdir -p /app/data \
  && chown -R appuser:appuser /app
 USER appuser

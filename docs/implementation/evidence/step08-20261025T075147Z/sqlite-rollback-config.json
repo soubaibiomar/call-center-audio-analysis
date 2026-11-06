@@ -1,0 +1,19 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "compose.sqlite.yml",
+    "config",
+    "--quiet"
+  ],
+  "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis",
+  "exit_code": 0,
+  "seconds": 0.295,
+  "stdout": "",
+  "stderr": ""
+}

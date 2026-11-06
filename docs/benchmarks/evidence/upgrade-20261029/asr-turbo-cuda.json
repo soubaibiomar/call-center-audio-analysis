@@ -1,0 +1,134 @@
+{
+  "backend": "whisper",
+  "model_directory": "turbo",
+  "device": "cuda",
+  "precision": "float16",
+  "dataset": "apptek-com/apptek_callcenter_dialogues",
+  "dataset_revision": "b98967d9946f7f59f58d08624a2a00fe98fe0219",
+  "license": "CC-BY-SA-4.0",
+  "roleplay": true,
+  "manifest_sha256": "0702951b27d27a5137205f6d9f28a7eaa3227e65ab137d944c897b7b9c98fb71",
+  "normalization": "NFC/casefold/whitespace; punctuation retained",
+  "protocol": "mono16kHz; fixed30s; English hint where supported; greedy/beam1; no VAD; warmup1s silence; load/warmup excluded",
+  "load_seconds": 13.444251689999874,
+  "backend_version": "1.2.1",
+  "repetitions": 2,
+  "observations": [
+    {
+      "sample": "en-AU",
+      "repeat": 0,
+      "seconds": 6.335637641000176,
+      "audio_seconds": 311.0,
+      "word_errors": 130,
+      "reference_words": 686,
+      "char_errors": 426,
+      "reference_chars": 3485,
+      "hypothesis_sha256": "b61765411b9218af987479fab99f2083c36679d47c4045e103540c205bd95fa6"
+    },
+    {
+      "sample": "en-IN",
+      "repeat": 0,
+      "seconds": 9.004719827999907,
+      "audio_seconds": 398.9546875,
+      "word_errors": 272,
+      "reference_words": 987,
+      "char_errors": 790,
+      "reference_chars": 5446,
+      "hypothesis_sha256": "ab8a54a842a35cc4306cd49c6b22825fa49e344d256223c8056ff8e7c46d1d3b"
+    },
+    {
+      "sample": "en-US_General",
+      "repeat": 0,
+      "seconds": 6.151457580000169,
+      "audio_seconds": 282.248125,
+      "word_errors": 139,
+      "reference_words": 544,
+      "char_errors": 370,
+      "reference_chars": 2997,
+      "hypothesis_sha256": "8a92c740b3801e9a6ec35b55e82576d74176e92977b34d94c4bb31efda2c2754"
+    },
+    {
+      "sample": "en-AU",
+      "repeat": 1,
+      "seconds": 6.277648702999613,
+      "audio_seconds": 311.0,
+      "word_errors": 130,
+      "reference_words": 686,
+      "char_errors": 426,
+      "reference_chars": 3485,
+      "hypothesis_sha256": "b61765411b9218af987479fab99f2083c36679d47c4045e103540c205bd95fa6"
+    },
+    {
+      "sample": "en-IN",
+      "repeat": 1,
+      "seconds": 8.934291363000739,
+      "audio_seconds": 398.9546875,
+      "word_errors": 272,
+      "reference_words": 987,
+      "char_errors": 790,
+      "reference_chars": 5446,
+      "hypothesis_sha256": "ab8a54a842a35cc4306cd49c6b22825fa49e344d256223c8056ff8e7c46d1d3b"
+    },
+    {
+      "sample": "en-US_General",
+      "repeat": 1,
+      "seconds": 6.104220797999915,
+      "audio_seconds": 282.248125,
+      "word_errors": 139,
+      "reference_words": 544,
+      "char_errors": 370,
+      "reference_chars": 2997,
+      "hypothesis_sha256": "8a92c740b3801e9a6ec35b55e82576d74176e92977b34d94c4bb31efda2c2754"
+    }
+  ],
+  "versions": {
+    "numpy": "1.26.4",
+    "soundfile": "0.14.0",
+    "scipy": "1.17.1",
+    "rapidfuzz": "3.14.6"
+  },
+  "model_receipt": {
+    "repo": "dropbox-dash/faster-whisper-large-v3-turbo",
+    "revision": "0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "files": [
+      {
+        "file": "README.md",
+        "size": 1445,
+        "sha256": "b3068692728faed23580cce5cd569fc47ff76c690c032b2641ffd5554ea64d8f",
+        "lfs_sha256": null
+      },
+      {
+        "file": "config.json",
+        "size": 2263,
+        "sha256": "b0253ea6c0d3bea6b1e19e91a02acfd3b53f4467362efcb5a3e6b16c9b3a9b7e",
+        "lfs_sha256": null
+      },
+      {
+        "file": "model.bin",
+        "size": 1617884929,
+        "sha256": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da",
+        "lfs_sha256": "e76620f83d5f5b69efd3d87e3dc180c1bd21df9fbebacfd4335e5e1efcc018da"
+      },
+      {
+        "file": "preprocessor_config.json",
+        "size": 340,
+        "sha256": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711",
+        "lfs_sha256": null
+      },
+      {
+        "file": "tokenizer.json",
+        "size": 2710337,
+        "sha256": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd",
+        "lfs_sha256": null
+      },
+      {
+        "file": "vocabulary.json",
+        "size": 1068114,
+        "sha256": "c69260f2ab26d659b7c398f9a2b2b48ed0df16c3b47d7326782fd9cba71690c1",
+        "lfs_sha256": null
+      }
+    ]
+  },
+  "peak_torch_allocated_bytes": null,
+  "sampled_whole_gpu_peak_mib": 2359
+}

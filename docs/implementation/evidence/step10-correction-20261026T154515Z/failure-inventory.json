@@ -1,0 +1,38 @@
+[
+  {
+    "id": "S10-R01",
+    "severity": "P1",
+    "cause": "UUID allowlist retained noncanonical spellings while runner compares canonical UUID strings",
+    "reproduction": "red.json: canonical unit cases and real PostgreSQL/S3 job remains queued",
+    "correction": "Canonicalize/deduplicate UUIDs in frozen QueueSettings",
+    "validation": "green.json; tests.json; gpu-worker-http.json",
+    "status": "fixed"
+  },
+  {
+    "id": "S10-R02",
+    "severity": "P2",
+    "cause": "Numeric configuration accepted NaN/infinity/huge intervals and boolean/fractional counters",
+    "reproduction": "red.json; red-interval-consequences.json: timedelta raises ValueError/OverflowError",
+    "correction": "Strict integer counters and bounded finite intervals before dispatch",
+    "validation": "green.json; tests.json",
+    "status": "fixed"
+  },
+  {
+    "id": "S10-R03",
+    "severity": "P2",
+    "cause": "Completion replaced metrics map, discarding attempt/retry counters",
+    "reproduction": "red.json: first-success/retry-success metrics cases fail",
+    "correction": "Persist counters on claim; merge metrics on completion; one elapsed measurement",
+    "validation": "green.json; tests.json; gpu-worker-http.json",
+    "status": "fixed"
+  },
+  {
+    "id": "S10-R04",
+    "severity": "P2",
+    "cause": "Redis health probe retained CR from Windows CRLF secret while Redis parser normalized it",
+    "reproduction": "operations-final.json: unchanged credential old probe exit1, authenticated client ping succeeded",
+    "correction": "Trim trailing whitespace in health probe; recreate Redis preserving AOF volume",
+    "validation": "operations-final.json: corrected probe exit0 and healthy service",
+    "status": "fixed"
+  }
+]

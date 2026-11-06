@@ -1,0 +1,13 @@
+{
+  "command": [
+    "docker",
+    "image",
+    "inspect",
+    "project28-app:local",
+    "--format",
+    "{{.Id}}"
+  ],
+  "exit_code": 0,
+  "stdout": "sha256:920f2a2acae86c51f4fee402b2c8dc41c61e024d57bd7cbb0cf8eda3af22ca26\n",
+  "stderr": ""
+}

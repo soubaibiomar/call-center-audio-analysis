@@ -1,0 +1,19 @@
+{
+  "step": "STEP_04",
+  "date": "2026-10-24",
+  "decision": "PASS WITH LIMITATIONS",
+  "full_tests": "145 passed in 20.44s",
+  "packages": 127,
+  "versions_unchanged": true,
+  "direct_dev_pins_matched": 21,
+  "selected_provider": "openai",
+  "required_credential_missing": true,
+  "missing_credential_values_logged": false,
+  "precommit": "all four tracked-file hooks pass",
+  "new_source_explicit_secret_scan": "Passed in separate local execution",
+  "model_downloads": false,
+  "hook_installed": true,
+  "workspace_relocated": true,
+  "full_application_mypy": "Historical failure; next baseline step measures it",
+  "next_eligible": "STEP_05"
+}

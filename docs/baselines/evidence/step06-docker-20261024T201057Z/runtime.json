@@ -1,0 +1,35 @@
+{
+  "captured_at_utc": "2026-10-24T20:10:58.227985+00:00",
+  "endpoint": "http://127.0.0.1:7861/",
+  "entrypoint": "Gradio /_run_pipeline callback",
+  "dataset": "upstream bundled sample_01.mp3, educational/testing only",
+  "sample_sha256": "992feada7a67a56ee2881e0e2dc6ae8980d3190238be26c58d5b29b323b47989",
+  "private_export_directory_ignored": true,
+  "empty_audio": {
+    "elapsed_seconds": 0.12625910000133445,
+    "failure_banner": true,
+    "outputs_cleared": true
+  },
+  "sample_callback_seconds": 5.4757,
+  "analysis_complete": true,
+  "transcript_nonempty": true,
+  "summary_nonempty": true,
+  "qa_nonempty": true,
+  "report": {
+    "call_id": "f94d4fe5-48f2-432a-984a-030727f7c3db",
+    "status": "completed",
+    "segments": 31,
+    "duration_seconds": 122.74,
+    "qa_score": 3.05,
+    "json_bytes": 13584,
+    "json_sha256": "28e3586ae133c0cb686b5ff10515cde014dbc1de4511e277846151bdd46c06af",
+    "pdf_bytes": 3117,
+    "pdf_sha256": "e38a9d455bb08c43cc9ecb42c68bc9b352f85c7afed6dc4519c319e19a0b5dc5",
+    "json_downloaded_by_gradio_client": true,
+    "utf8_and_schema_valid": true,
+    "pdf_downloaded_by_gradio_client": true,
+    "pdf_magic_valid": true
+  },
+  "history_callback_executed": true,
+  "observability_callback_outputs": 3
+}

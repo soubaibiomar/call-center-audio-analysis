@@ -1,0 +1,401 @@
+{
+  "source": "User-supplied Project28_Implementation_Prompt_Pack_Commercially_UI",
+  "files": [
+    {
+      "path": "design/APPROVED_COMMMERCIALLY_STYLE_REFERENCE.png",
+      "sha256": "7d42aa3e63b0a3207ed2e6d1ab72e9c6d52aa961ca4cad546af06cfe48f18c53"
+    },
+    {
+      "path": "design/APPROVED_GREEN_ERP_REFERENCE.png",
+      "sha256": "573e34dcad16f67b519663363b68e280857170e9fe2aa653ca7b969f804b9e53"
+    },
+    {
+      "path": "design/UI_ACCEPTANCE_CHECKLIST.md",
+      "sha256": "eb39d60e5037f8136bff1ab8ed7f32ee57c99a66df6ffcb7b934c366d633855a"
+    },
+    {
+      "path": "design/UI_DESIGN_SYSTEM.md",
+      "sha256": "466e5589d901673901528d9180bdfb5ba78d969d344cb5e34c0b6dc3f0087eda"
+    },
+    {
+      "path": "PROJECT28_MASTER_INSTRUCTIONS.md",
+      "sha256": "c1538a949123f7750e5f6aa35ed0e43f1ce95fb9dc43acba62ce2729fc516a8c"
+    },
+    {
+      "path": "prompts/STEP_01_verify_windows_docker_and_gpu_environment_PROMPT.md",
+      "sha256": "e4696c49a716ef0a8262d9fec83547698fa367639d0ae22b13f3557f37f0d084"
+    },
+    {
+      "path": "prompts/STEP_02_clone_and_fingerprint_upstream_repository_PROMPT.md",
+      "sha256": "1144f8456a3fe7d8b7c61bd277d470d6d627d89df06cb5f121bb7cda36f7d661"
+    },
+    {
+      "path": "prompts/STEP_03_establish_branching_and_collaboration_conventions_PROMPT.md",
+      "sha256": "34951984cbedc0f02aceff3f116845c40e94510ccbc6abbe162529a75e75a497"
+    },
+    {
+      "path": "prompts/STEP_04_install_dependencies_and_configure_secrets_safely_PROMPT.md",
+      "sha256": "2f4f74cee6a142318e47770cd36626568924e1de5145517f4d5311120690f2f0"
+    },
+    {
+      "path": "prompts/STEP_05_run_original_tests_and_static_checks_PROMPT.md",
+      "sha256": "fce0545852e8c97b9c5a4d1506d0c776068fdada8c57014020041b496c2d490c"
+    },
+    {
+      "path": "prompts/STEP_06_launch_the_original_gradio_app_and_create_baseline_repo_PROMPT.md",
+      "sha256": "76294538cfd04d3b954d3d320a921ebb8ef2d01496a2f03841d818097a885812"
+    },
+    {
+      "path": "prompts/STEP_07_define_modular_target_structure_and_compatibility_layer_PROMPT.md",
+      "sha256": "86cf58eb101e9fe8ee7c89d3e3b7a7af1e4b1a0838dd1daafa031938b7c09a48"
+    },
+    {
+      "path": "prompts/STEP_08_migrate_sqlite_persistence_to_postgresql_with_alembic_PROMPT.md",
+      "sha256": "e2b38d1024db8d0bb68e9efbf723387d91137c597a575de5a118e8848321bac4"
+    },
+    {
+      "path": "prompts/STEP_09_create_typed_fastapi_endpoints_and_auth_boundaries_PROMPT.md",
+      "sha256": "cb908076f919a03dfdb4f4b9ecaa5b699b1e957e492af48f99ad8c40f645f83b"
+    },
+    {
+      "path": "prompts/STEP_10_build_durable_redis_background_processing_PROMPT.md",
+      "sha256": "f12c4f7132192d98b8796a7044a7bcd52d76247ac536db84fda7bac5cfeb1a72"
+    },
+    {
+      "path": "prompts/STEP_11_integrate_qwen_through_a_safe_model_provider_adapter_PROMPT.md",
+      "sha256": "fa4b5c1857e97a57500c5dea81e7b6c44dd44137ef3f1e6b71317132f06d15fd"
+    },
+    {
+      "path": "prompts/STEP_12_inventory_datasets_and_build_permission_aware_splits_PROMPT.md",
+      "sha256": "7951f7c798f04dc73c72abef8ccabddf1fc1e11dbd610ddde43cb2877746c031"
+    },
+    {
+      "path": "prompts/STEP_13_benchmark_whisper_against_qwen3_asr_PROMPT.md",
+      "sha256": "2e4fe3320298f0293baf8625d0e946dea84ccea20f6c96c9240fa866abbee0b8"
+    },
+    {
+      "path": "prompts/STEP_14_integrate_neural_diarization_and_role_attribution_PROMPT.md",
+      "sha256": "30e3beb9fb11b0cb0bcc6286b1bad27be7d984adc1dcbdab3facf696163007b9"
+    },
+    {
+      "path": "prompts/STEP_15_harden_audio_preprocessing_vad_and_segmentation_PROMPT.md",
+      "sha256": "4bd84a28d76e9a8d167775d7d632b3e69a29ca8a14bf968709fcfc533023922f"
+    },
+    {
+      "path": "prompts/STEP_16_extend_langgraph_with_typed_analysis_nodes_PROMPT.md",
+      "sha256": "bfb8d5a9031379afe33a571c0960eefdeb152cd45b4107c4b0f28164a1a94021"
+    },
+    {
+      "path": "prompts/STEP_17_create_controlled_company_knowledge_ingestion_PROMPT.md",
+      "sha256": "c7aeaced4078934c0b34aab57edfa0390d37587ba1eb266755e6a6d99a4e0d6f"
+    },
+    {
+      "path": "prompts/STEP_18_ground_qa_and_recommendations_in_rag_PROMPT.md",
+      "sha256": "e70b575c6c58478f62fbe4232109950c605ace1c51e3264676d2d9766bd99599"
+    },
+    {
+      "path": "prompts/STEP_19_integrate_acoustic_emotion_classification_baseline_PROMPT.md",
+      "sha256": "c3044a37f52c8c34a7d2691093542ca62ef4395c3d7a1c2173f1c1385950816e"
+    },
+    {
+      "path": "prompts/STEP_20_benchmark_emotion_model_and_assess_transfer_bias_PROMPT.md",
+      "sha256": "bd21810afe09f96c86c77c3e2496c887b2ac46ab9f675436f749731b37ca931c"
+    },
+    {
+      "path": "prompts/STEP_21_collect_reviewed_emotion_labels_without_contaminating_d_PROMPT.md",
+      "sha256": "f58d123c89d04a74120fbeabc4207ad7b69bc474e7a4ff425df00ee8dfd8aa3d"
+    },
+    {
+      "path": "prompts/STEP_22_initialize_react_vite_typescript_frontend_PROMPT.md",
+      "sha256": "b310a1552d39641ef7c16a55b612ec6ebec14cb2e1e7a848f38eba50af1ef647"
+    },
+    {
+      "path": "prompts/STEP_23_build_dashboards_for_calls_live_and_model_lab_PROMPT.md",
+      "sha256": "9f64e90185da630fe524038eec608dbe4c3d6887c5b51196fd566f0ab9d19351"
+    },
+    {
+      "path": "prompts/STEP_24_build_timestamped_human_transcript_and_qa_review_PROMPT.md",
+      "sha256": "0a2ff95da27ad826a1d11d0a0acd10e091dbcec9387867b41e5a45428e891d16"
+    },
+    {
+      "path": "prompts/STEP_25_create_real_browser_to_browser_audio_and_secure_transpo_PROMPT.md",
+      "sha256": "febcda5ea92f972b7a95cd13659f67f480e5e64fcb551ce655c0ea80bc22aad3"
+    },
+    {
+      "path": "prompts/STEP_26_implement_stabilized_incremental_asr_with_partial_revis_PROMPT.md",
+      "sha256": "8949f95bc7285e4418a783a0df665a8533a3d0c1cf88cacefd5481adafb9adc3"
+    },
+    {
+      "path": "prompts/STEP_27_add_grounded_real_time_agent_assistance_PROMPT.md",
+      "sha256": "4d8196036c0b0a1bdfa919b9c205fcf41e1a87947623bb421547833b0baaa138"
+    },
+    {
+      "path": "prompts/STEP_28_measure_live_end_to_end_latency_and_gpu_limits_PROMPT.md",
+      "sha256": "977e3531114584ae514872470ac6522d765eae6b2d75bea537346f7b39201786"
+    },
+    {
+      "path": "prompts/STEP_29_aggregate_accurate_agent_team_operational_analytics_PROMPT.md",
+      "sha256": "c3782dfc9c5872835c91995a4fbcf29ffc060e87a78eb50ee93866b3374350b7"
+    },
+    {
+      "path": "prompts/STEP_30_generate_evidence_grounded_multi_call_coaching_PROMPT.md",
+      "sha256": "8d6c67ea43a6276e37b42eab43385a04a7b521d5b41e4bcdb748bb818adb34b7"
+    },
+    {
+      "path": "prompts/STEP_31_evaluate_coaching_quality_and_intervention_usefulness_PROMPT.md",
+      "sha256": "3a86564eb3264c74d5518811fc5eaec2f8eb7b4e1a4bf12dfd764bf3c74f371a"
+    },
+    {
+      "path": "prompts/STEP_32_implement_active_learning_sample_prioritization_PROMPT.md",
+      "sha256": "fbde576140dab63403cf4900a8ec03cd904ef2fce9bf0cc18a7f4f2105847ee0"
+    },
+    {
+      "path": "prompts/STEP_33_version_permission_checked_audio_datasets_with_dvc_PROMPT.md",
+      "sha256": "e31343b035e275e4ecb366830352e52fd3f1f487e709471d3a83085eca42be6a"
+    },
+    {
+      "path": "prompts/STEP_34_fine_tune_asr_candidate_using_pytorch_and_evaluate_PROMPT.md",
+      "sha256": "3c142b3651bceb7d432081f7898faed64de39118115d4e1cc273ea081ae70c25"
+    },
+    {
+      "path": "prompts/STEP_35_track_experiments_and_models_with_mlflow_PROMPT.md",
+      "sha256": "ba0557f6b23094c8f99ef34700c63ae183c341f5ed4bcf561a1178ede4d03a73"
+    },
+    {
+      "path": "prompts/STEP_36_approve_canary_deploy_and_rollback_a_model_PROMPT.md",
+      "sha256": "902fca3e12afb1edb1d5e358d6b32cab53dff8f238b471fc753ebfb1a814244a"
+    },
+    {
+      "path": "prompts/STEP_37_prepare_learning_interfaces_for_other_neural_networks_PROMPT.md",
+      "sha256": "c54cb06560f0b18027bce2461038f405ee97df8b9bdcc41cda07de149e712c84"
+    },
+    {
+      "path": "prompts/STEP_38_complete_authentication_privacy_and_security_threat_mod_PROMPT.md",
+      "sha256": "b9a3809ef8df6da0c8dddf3195751182eead997d3b61fefe5c008e1956e6c913"
+    },
+    {
+      "path": "prompts/STEP_39_introduce_traces_metrics_and_privacy_safe_monitoring_PROMPT.md",
+      "sha256": "455b8b1f4ab77983b7a65ff4e9f08f40a4935707e2ae5ed632cebcc52de5c0e6"
+    },
+    {
+      "path": "prompts/STEP_40_test_failure_modes_and_data_recovery_PROMPT.md",
+      "sha256": "36f4fa74c5c1e4479e071f75261dff22dbaa1336b273a3b57a5b30212964bbd4"
+    },
+    {
+      "path": "prompts/STEP_41_package_a_reproducible_docker_compose_environment_PROMPT.md",
+      "sha256": "1fa8446e796a6aec4a6fde85917c676a598076acbb9c8e8b65f428117d7db275"
+    },
+    {
+      "path": "prompts/STEP_42_run_full_end_to_end_functional_security_tests_PROMPT.md",
+      "sha256": "5a9fc429dfeebe078117ee4e7c61f8777d56e2f00973d6590f49b4a4169e85a1"
+    },
+    {
+      "path": "prompts/STEP_43_publish_reproducible_technical_and_ml_benchmarks_PROMPT.md",
+      "sha256": "ffdef08ea05c6682b567da7414b034ad41582495152b893d848f66a8cb7ce382"
+    },
+    {
+      "path": "prompts/STEP_44_demonstrate_both_live_intelligence_and_neural_improveme_PROMPT.md",
+      "sha256": "06fb27ea90df980945af059dc127ba8da871cf81e8208c6d32d705836860c6a8"
+    },
+    {
+      "path": "prompts/STEP_45_deliver_code_reproducibility_and_final_handover_PROMPT.md",
+      "sha256": "9b42fd0692d84d72811dd85c8d0d82cd8de4b53c10547bf0476a956e00ce1376"
+    },
+    {
+      "path": "report_templates/STEP_01_verify_windows_docker_and_gpu_environment_REPORT.md",
+      "sha256": "11de205c0759665c88d6bcf57eba5182db9c2a4520c4fae48291b838fdf8e190"
+    },
+    {
+      "path": "report_templates/STEP_02_clone_and_fingerprint_upstream_repository_REPORT.md",
+      "sha256": "8ef3682a168833895dc110d519a8fa67d68caf59f23c32b348e973505db6eb81"
+    },
+    {
+      "path": "report_templates/STEP_03_establish_branching_and_collaboration_conventions_REPORT.md",
+      "sha256": "9ce27f1a899d1b1c618919b6ca410f123e0a082ce0ced96b0f73ea121e9f52a2"
+    },
+    {
+      "path": "report_templates/STEP_04_install_dependencies_and_configure_secrets_safely_REPORT.md",
+      "sha256": "a993052671c0029bc3dff89404226a62c50b7b1376facb149de19558f6e1e266"
+    },
+    {
+      "path": "report_templates/STEP_05_run_original_tests_and_static_checks_REPORT.md",
+      "sha256": "80e8daf5e40f0ca212341d51e4e1e88b5aaec481d98bb2345a96c158d4089d97"
+    },
+    {
+      "path": "report_templates/STEP_06_launch_the_original_gradio_app_and_create_baseline_repo_REPORT.md",
+      "sha256": "2d706acacad1dd1a734d9e5d16aeee97e7abdb652071db77be7dfe06140e2e40"
+    },
+    {
+      "path": "report_templates/STEP_07_define_modular_target_structure_and_compatibility_layer_REPORT.md",
+      "sha256": "a2318058dc7490d3f55889a7ef061479df2fcf274983b50a73ddd6bfb80a960b"
+    },
+    {
+      "path": "report_templates/STEP_08_migrate_sqlite_persistence_to_postgresql_with_alembic_REPORT.md",
+      "sha256": "7b08d5a872cf153e51400e734a092cec8359992f8fc253d1d4fd78cae341dfa0"
+    },
+    {
+      "path": "report_templates/STEP_09_create_typed_fastapi_endpoints_and_auth_boundaries_REPORT.md",
+      "sha256": "1ccd0db033be99c7546a11985795430e0d566bc50ce8dc6032c17cf97bc0d744"
+    },
+    {
+      "path": "report_templates/STEP_10_build_durable_redis_background_processing_REPORT.md",
+      "sha256": "99317773b8c97edd03d15a752b017904179cf75f4bb308b47969a0755e466dad"
+    },
+    {
+      "path": "report_templates/STEP_11_integrate_qwen_through_a_safe_model_provider_adapter_REPORT.md",
+      "sha256": "e399832b2125a9d31711cbd528e52af888f29bf06e81e23feee3b6d78a961082"
+    },
+    {
+      "path": "report_templates/STEP_12_inventory_datasets_and_build_permission_aware_splits_REPORT.md",
+      "sha256": "eceaeec1da298eac4998c2ebc99f14558115cc67c29f320ee88fccb50ca7f35b"
+    },
+    {
+      "path": "report_templates/STEP_13_benchmark_whisper_against_qwen3_asr_REPORT.md",
+      "sha256": "96cca6ded1adca05bc5ead37fdfb2b2c1bbeea258755132565baf37a86dfeb36"
+    },
+    {
+      "path": "report_templates/STEP_14_integrate_neural_diarization_and_role_attribution_REPORT.md",
+      "sha256": "f4f1fc7fa7cf4bd92c8b43b9bf786af2009d538fedc8d184bc203d64c0a59923"
+    },
+    {
+      "path": "report_templates/STEP_15_harden_audio_preprocessing_vad_and_segmentation_REPORT.md",
+      "sha256": "4627fce68af2ae6636bfacb36787d7e3a504d4bdba9b16b32eb1165bd4ecfc0b"
+    },
+    {
+      "path": "report_templates/STEP_16_extend_langgraph_with_typed_analysis_nodes_REPORT.md",
+      "sha256": "2da77aaf04fcc8b45846ec1e8a0f77473ff99a2efbb587839dee92291f7c75b5"
+    },
+    {
+      "path": "report_templates/STEP_17_create_controlled_company_knowledge_ingestion_REPORT.md",
+      "sha256": "c20e5c59aacdaeaa346c0207eb84d90c36a1b348bddec9f8ffb40c659851bb2c"
+    },
+    {
+      "path": "report_templates/STEP_18_ground_qa_and_recommendations_in_rag_REPORT.md",
+      "sha256": "d130ec2cff154a92adb96c4f1c6be8c54edfd149e72a7712d8512a76432904c3"
+    },
+    {
+      "path": "report_templates/STEP_19_integrate_acoustic_emotion_classification_baseline_REPORT.md",
+      "sha256": "439849bf98cd15a8b1e90c3bb8624c083c23797c292c28259e7a1819fa763548"
+    },
+    {
+      "path": "report_templates/STEP_20_benchmark_emotion_model_and_assess_transfer_bias_REPORT.md",
+      "sha256": "6b85512d93018e2124d38077e290e661f3a70ac29de75598301a1f9f38f32e94"
+    },
+    {
+      "path": "report_templates/STEP_21_collect_reviewed_emotion_labels_without_contaminating_d_REPORT.md",
+      "sha256": "9f7d9fbad09cedb5b8a94b310afe7e09e80f83feaf4f6be8aede547e83977b8d"
+    },
+    {
+      "path": "report_templates/STEP_22_initialize_react_vite_typescript_frontend_REPORT.md",
+      "sha256": "8a38ce1262c6c9b2c0532e626a22c7738468087d4fe0ca8f9d33f5b6c5940cda"
+    },
+    {
+      "path": "report_templates/STEP_23_build_dashboards_for_calls_live_and_model_lab_REPORT.md",
+      "sha256": "b07302f09e4716dacbcec679b636a5147d34cb6573f475bd2ad57e3dd8ab1771"
+    },
+    {
+      "path": "report_templates/STEP_24_build_timestamped_human_transcript_and_qa_review_REPORT.md",
+      "sha256": "80be614118dbad55a0ece32d2e46dbbaa2ce757227c7e36cf9b7bee13986eb56"
+    },
+    {
+      "path": "report_templates/STEP_25_create_real_browser_to_browser_audio_and_secure_transpo_REPORT.md",
+      "sha256": "336488385d29da91c001e0128e000f4e6152f18192a83246022e99a1bb2161ce"
+    },
+    {
+      "path": "report_templates/STEP_26_implement_stabilized_incremental_asr_with_partial_revis_REPORT.md",
+      "sha256": "9c594caa9dafdfb70804e0bfaf046fc31cde7be602f0f6d1be651fe026860d6b"
+    },
+    {
+      "path": "report_templates/STEP_27_add_grounded_real_time_agent_assistance_REPORT.md",
+      "sha256": "994cdee8ddd0530e95dab2e58eacec61a303c806382bab428ffe3f3262b32786"
+    },
+    {
+      "path": "report_templates/STEP_28_measure_live_end_to_end_latency_and_gpu_limits_REPORT.md",
+      "sha256": "fe7d8915f10d90ea92036af9d162e9b7e06aff601feea24e6096b3cd6a13db99"
+    },
+    {
+      "path": "report_templates/STEP_29_aggregate_accurate_agent_team_operational_analytics_REPORT.md",
+      "sha256": "5bbae2542f5fd8af1daa9af12b3c848b105fcee7ae8ef5557d23eb0310747a8f"
+    },
+    {
+      "path": "report_templates/STEP_30_generate_evidence_grounded_multi_call_coaching_REPORT.md",
+      "sha256": "c579fa32fc0e766857b853a7629e25a31049e5c4e5da5644c31604121f5dd004"
+    },
+    {
+      "path": "report_templates/STEP_31_evaluate_coaching_quality_and_intervention_usefulness_REPORT.md",
+      "sha256": "e93428a7d244eb966bce16f5ae36894093f6f8c5c8a1c5417dbe7bca01fd44af"
+    },
+    {
+      "path": "report_templates/STEP_32_implement_active_learning_sample_prioritization_REPORT.md",
+      "sha256": "15c1eea067148951c22463d85cac4e9f5701c1581983db3521509fa1359d9714"
+    },
+    {
+      "path": "report_templates/STEP_33_version_permission_checked_audio_datasets_with_dvc_REPORT.md",
+      "sha256": "1f5bcded3c5625370fc469fe48ae09943e2741a43dd792713608df0f7365e1e5"
+    },
+    {
+      "path": "report_templates/STEP_34_fine_tune_asr_candidate_using_pytorch_and_evaluate_REPORT.md",
+      "sha256": "961f294fd9758e60061773e83d434005b72cfb756f1b7ea97bf30b79e6a653da"
+    },
+    {
+      "path": "report_templates/STEP_35_track_experiments_and_models_with_mlflow_REPORT.md",
+      "sha256": "6a78152bb67d62b9050c29367f0793f23251520c47381d1281ee42dce62a012f"
+    },
+    {
+      "path": "report_templates/STEP_36_approve_canary_deploy_and_rollback_a_model_REPORT.md",
+      "sha256": "e029e740b608b2433b61cbb652776068f6fb7999154adc5b8fc4b538cf544043"
+    },
+    {
+      "path": "report_templates/STEP_37_prepare_learning_interfaces_for_other_neural_networks_REPORT.md",
+      "sha256": "8a114e48c9008ef4214b417ce22505e5c8a8dbb3ea86ebcba91323b3cebd412f"
+    },
+    {
+      "path": "report_templates/STEP_38_complete_authentication_privacy_and_security_threat_mod_REPORT.md",
+      "sha256": "00570b076168284a3a49fb43cfe9637a9fd7771854dd1cc2d976be1c8fe3a1bb"
+    },
+    {
+      "path": "report_templates/STEP_39_introduce_traces_metrics_and_privacy_safe_monitoring_REPORT.md",
+      "sha256": "4a70094dfae145ff4dedd6ef093a48450af0d17b2256e2f503082fffdea1530a"
+    },
+    {
+      "path": "report_templates/STEP_40_test_failure_modes_and_data_recovery_REPORT.md",
+      "sha256": "f975cf49dca9bcb01ff728a7ad384d1dc299e0f0c4937efce82120d759fab25c"
+    },
+    {
+      "path": "report_templates/STEP_41_package_a_reproducible_docker_compose_environment_REPORT.md",
+      "sha256": "03e83364763c8b4f7a2d142a311ddeb31c98d90cb64dd79213b9947b2851f296"
+    },
+    {
+      "path": "report_templates/STEP_42_run_full_end_to_end_functional_security_tests_REPORT.md",
+      "sha256": "f893346955aafa6ee00276a3bdf873ac7d1e082f305ab050c112b0c6716fcb6b"
+    },
+    {
+      "path": "report_templates/STEP_43_publish_reproducible_technical_and_ml_benchmarks_REPORT.md",
+      "sha256": "f5c61a12821f24db7cac95f49b555ad603ea87814fceda1a7795dd803f6e0cd6"
+    },
+    {
+      "path": "report_templates/STEP_44_demonstrate_both_live_intelligence_and_neural_improveme_REPORT.md",
+      "sha256": "a3addafe34713776155421fe0d2febdb5c3f767161f704c9c819733e16d9e37a"
+    },
+    {
+      "path": "report_templates/STEP_45_deliver_code_reproducibility_and_final_handover_REPORT.md",
+      "sha256": "e10e51a7a4f7c836bfe805bf108a08d2b3de90badc660564329da6806029dc92"
+    },
+    {
+      "path": "resources/REPORT_QUALITY_CHECKLIST.md",
+      "sha256": "6e6bf58a1a4c1233fc8cf162ca6c702869fa698ecf44623c32600a91a1e9ae6d"
+    },
+    {
+      "path": "resources/STEP_MANIFEST.json",
+      "sha256": "9c0bf2378baf6b30155f9cd99e435cc598257f802602a45a41961b8ab5235046"
+    },
+    {
+      "path": "resources/UPSTREAM_VERIFIED_FACTS.md",
+      "sha256": "f9ffb4f7d87a46ce4882d9944897b95a7e5abfd9332fc1c15e3f87b5ec6e3f65"
+    },
+    {
+      "path": "STEP_INDEX.md",
+      "sha256": "e0d48f1cc7bbd6184664589c12f077b9e79c8c848e7afd0b335282832c925d31"
+    }
+  ]
+}

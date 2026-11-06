@@ -1,0 +1,21 @@
+{
+  "protocol_version": 2,
+  "frozen_utc": "2026-10-29T20:52:52.579450+00:00",
+  "manifest_sha256": "cdeb7d8d47b895598dcede04d966c64f27f04fd16af7ba9ed9f582d896d59c68",
+  "models": [
+    "small-base",
+    "small-darija",
+    "turbo-base",
+    "qwen-base",
+    "moulsot"
+  ],
+  "source_sha256": {
+    "scripts/benchmark_upgrade_asr.py": "6b6511413a8187f8c907eb36b8b9ba1f81d6c42935bdf6f90bd03946bb820a70",
+    "scripts/intake_darija_specialist_benchmark.py": "99d7630eabb04fc495e5166706d5f226ca34ca5f1bf9f8e1f41892553d505544",
+    "scripts/convert_darija_whisper.py": "68515e8100b0a750bbd64e5e4f8dcd8bee8d661402722f258383bf2b803d59ba",
+    "scripts/run_darija_specialist_benchmarks.ps1": "8d4abde0d4eb8f38f3a18584d354958b3b5c5990f19aab2b909833d912e1354f",
+    "scripts/summarize_darija_specialist_benchmarks.py": "812acfb72f0dfd330b9f47d3213b86a3cb68dd908225382afdbb91fef0887763"
+  },
+  "conditions": "100 frozen fresh clips; Arabic hint; Whisper FP16 beam1 temperature0; Qwen BF16 greedy; max Qwen tokens256; one pass; common normalization",
+  "correction": "Whisper library default permits sampling fallback despite beam1. The initial attempt was interrupted without interpreting or selecting its scores; all primary model runs use explicit temperature0. Data unchanged; prior attempt archived."
+}

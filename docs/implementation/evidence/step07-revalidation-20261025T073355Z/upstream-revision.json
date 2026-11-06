@@ -1,0 +1,14 @@
+{
+  "command": [
+    "git",
+    "-C",
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\..\\..\\Projects\\Project28-Upstream-Baseline-Step02",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.local",
+  "exit_code": 0,
+  "seconds": 0.025,
+  "stdout": "fed4b610742c1337147281fcec8f2cdcc0a79be5\n",
+  "stderr": ""
+}

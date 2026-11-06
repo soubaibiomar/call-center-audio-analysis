@@ -1,0 +1,70 @@
+{
+  "src/services/contracts.py": {
+    "sha256": "7e1ca7999acbd17788cf19f91624b26dbccbc7c39e5c5c23cdfaa81d59b1c177",
+    "bytes": 1084
+  },
+  "src/services/analysis.py": {
+    "sha256": "d87e523bec3ac951e3e9726a603f37346fa0c6e06abeb6c5671ceb2f3b51cfe3",
+    "bytes": 1307
+  },
+  "services/__init__.py": {
+    "sha256": "9fac4375e4b01d0cd8c248b4c40cfd6144b2129d6b80cf3c552858319141a32f",
+    "bytes": 85
+  },
+  "services/api/__init__.py": {
+    "sha256": "f2b991d158eb109f314113e9ce1fb5f8023c5cd4ace5dfef41606957994637ef",
+    "bytes": 88
+  },
+  "services/api/analysis.py": {
+    "sha256": "891435bfcc0a6ac18a4eb7f2e7f724dd282ad8835821e752fa72a0b5117415d6",
+    "bytes": 561
+  },
+  "src/services/pipeline.py": {
+    "sha256": "cc3c0e73fcf79b3305b544666a4a0f7c24ff39145193573efd04f8ba10bbbee9",
+    "bytes": 5954
+  },
+  "src/ui/tabs/analyze.py": {
+    "sha256": "47f565f92c948dacf0984673170514aea08439cbaa0bfaf5f3e880bc7eba486f",
+    "bytes": 3964
+  },
+  "scripts/map_project_imports.py": {
+    "sha256": "306e6e8cfc0b32a5726d9efd6a74b31b9597cf2ef81c8b690fc28bbc43aaedd7",
+    "bytes": 2959
+  },
+  "tests/unit/test_analysis_compatibility.py": {
+    "sha256": "716c9a301e35a7b3b7e496f34f15fa60afa9f4753cb03e999cbe845d5c6f271c",
+    "bytes": 5332
+  },
+  "tests/unit/test_import_map.py": {
+    "sha256": "812519b73c4ce2f59f86391ca585b91fc884e3916387664edee59d6350917c22",
+    "bytes": 971
+  },
+  "pyproject.toml": {
+    "sha256": "fd8a01d6ae9289f0aee99dd339a132fb3865564f489987de66385145f3ec4ebc",
+    "bytes": 1490
+  },
+  "Dockerfile": {
+    "sha256": "93a558ca6b1067465fb04b08298b7dcfe27dce9c32c580b2474c8c8fb06ef3f5",
+    "bytes": 1574
+  },
+  ".github/workflows/ci.yml": {
+    "sha256": "579d533cffcc19e469773e79c2fc9efaecfa184126df41b99316143fc0937dd9",
+    "bytes": 2019
+  },
+  "docs/architecture/transition.md": {
+    "sha256": "72d7501f09b8346c7f243d08305d5aa247f413c26f04137e5d7ff8cd30009b92",
+    "bytes": 8290
+  },
+  "docs/architecture.md": {
+    "sha256": "40a6abfb2ad9e37ce7f62ea72f365d784c90bf8b576fa8f849e18e4bb5395f28",
+    "bytes": 14455
+  },
+  "docs\\implementation\\STEP_07_define_modular_target_structure_and_compatibility_layer_REPORT.md": {
+    "sha256": "ce4d157627fa1cca6d5ccf64f13ae1eb8ba418796e2fa4305fa3aa7ac37f7cc2",
+    "bytes": 24065
+  },
+  "docs/implementation/PROGRESS.md": {
+    "sha256": "3219937947a2bc03eeeddfbabeaee5e4d1c9c020a0018f64fbf0dc6e0080748b",
+    "bytes": 13816
+  }
+}

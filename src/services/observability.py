@@ -5,11 +5,15 @@ from __future__ import annotations
 import json
 import os
 
+from sqlalchemy.engine import Engine
+
 from src.database.connection import session_scope
 from src.database.models import AuditLogEntry, CallRecord
 
 
-def get_observability_dashboard(engine, langchain_project: str) -> tuple[str, str, list[list[str]]]:
+def get_observability_dashboard(
+    engine: Engine, langchain_project: str
+) -> tuple[str, str, list[list[str]]]:
     """Generate observability dashboard content.
 
     Returns (metrics_md, langsmith_md, audit_rows).

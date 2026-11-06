@@ -1,0 +1,74 @@
+[
+  {
+    "command": [
+      ".venv/Scripts/ruff.exe",
+      "check",
+      "scripts/benchmark_upgrade_asr.py",
+      "scripts/download_upgrade_models.py",
+      "scripts/intake_darija_specialist_benchmark.py",
+      "scripts/convert_darija_whisper.py",
+      "scripts/summarize_darija_specialist_benchmarks.py",
+      "tests/unit/test_darija_specialist_protocol.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.0867203999987396,
+    "output": "All checks passed!\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/ruff.exe",
+      "format",
+      "--check",
+      "scripts/benchmark_upgrade_asr.py",
+      "scripts/download_upgrade_models.py",
+      "scripts/intake_darija_specialist_benchmark.py",
+      "scripts/convert_darija_whisper.py",
+      "scripts/summarize_darija_specialist_benchmarks.py",
+      "tests/unit/test_darija_specialist_protocol.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.0221482000015385,
+    "output": "6 files already formatted\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "scripts/benchmark_upgrade_asr.py",
+      "scripts/download_upgrade_models.py",
+      "scripts/intake_darija_specialist_benchmark.py",
+      "scripts/convert_darija_whisper.py",
+      "scripts/summarize_darija_specialist_benchmarks.py",
+      "tests/unit/test_darija_specialist_protocol.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.16204170000128215,
+    "output": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_darija_specialist_protocol.py",
+      "tests/unit/test_multilingual_benchmark.py",
+      "tests/unit/test_upgrade_benchmark_protocol.py",
+      "tests/datasets/test_asr_benchmark.py",
+      "tests/unit/test_audio_preprocessing.py",
+      "-q",
+      "-rs"
+    ],
+    "exit_code": 0,
+    "seconds": 6.593062500000087,
+    "output": "..........................................                               [100%]\n42 passed in 4.66s\nC:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "artifact-integrity"
+    ],
+    "exit_code": 0,
+    "output": "All 5 primary jobs exited 0; 500 matched private/public predictions; common frozen manifest, explicit decoding policy, runner and source hashes verified."
+  }
+]

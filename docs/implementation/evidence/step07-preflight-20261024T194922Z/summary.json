@@ -1,0 +1,12 @@
+{
+  "captured_at_utc": "2026-10-24T19:49:22.325836+00:00",
+  "provider": "openai",
+  "selected_credential_ready": false,
+  "pins_match": true,
+  "prerequisite_inspection_seconds": 0.04251900000235764,
+  "preceding_step_status": "STEP_06 BLOCKED / FAIL",
+  "step07_implementation_started": false,
+  "step07_status": "BLOCKED",
+  "tests_run_this_preflight": false,
+  "reason": "User execution rule: do not advance on a FAIL; real baseline remains unvalidated."
+}

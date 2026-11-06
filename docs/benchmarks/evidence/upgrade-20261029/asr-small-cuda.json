@@ -1,0 +1,98 @@
+{
+  "backend": "whisper",
+  "model_directory": "536b0662742c02347bc0e980a01041f333bce120",
+  "device": "cuda",
+  "precision": "float16",
+  "dataset": "apptek-com/apptek_callcenter_dialogues",
+  "dataset_revision": "b98967d9946f7f59f58d08624a2a00fe98fe0219",
+  "license": "CC-BY-SA-4.0",
+  "roleplay": true,
+  "manifest_sha256": "0702951b27d27a5137205f6d9f28a7eaa3227e65ab137d944c897b7b9c98fb71",
+  "normalization": "NFC/casefold/whitespace; punctuation retained",
+  "protocol": "mono16kHz; fixed30s; English hint where supported; greedy/beam1; no VAD; warmup1s silence; load/warmup excluded",
+  "load_seconds": 4.836497599999348,
+  "backend_version": "1.2.1",
+  "repetitions": 2,
+  "observations": [
+    {
+      "sample": "en-AU",
+      "repeat": 0,
+      "seconds": 5.701318960999743,
+      "audio_seconds": 311.0,
+      "word_errors": 137,
+      "reference_words": 686,
+      "char_errors": 471,
+      "reference_chars": 3485,
+      "hypothesis_sha256": "46994c18be7475675a3218ec5b1e81dcc92231082ad898b0522c12f238b803fb"
+    },
+    {
+      "sample": "en-IN",
+      "repeat": 0,
+      "seconds": 7.5166049600002225,
+      "audio_seconds": 398.9546875,
+      "word_errors": 293,
+      "reference_words": 987,
+      "char_errors": 884,
+      "reference_chars": 5446,
+      "hypothesis_sha256": "6d30e0d2646e5aadffe45ba3f60592b46f04d3e2ad9d758137a668511aca5898"
+    },
+    {
+      "sample": "en-US_General",
+      "repeat": 0,
+      "seconds": 4.5258530119999705,
+      "audio_seconds": 282.248125,
+      "word_errors": 151,
+      "reference_words": 544,
+      "char_errors": 429,
+      "reference_chars": 2997,
+      "hypothesis_sha256": "1bcca3389a7102dd2de5310173b0c12220a1b9773832369005cc07cdd874347b"
+    },
+    {
+      "sample": "en-AU",
+      "repeat": 1,
+      "seconds": 5.043852343000253,
+      "audio_seconds": 311.0,
+      "word_errors": 137,
+      "reference_words": 686,
+      "char_errors": 471,
+      "reference_chars": 3485,
+      "hypothesis_sha256": "46994c18be7475675a3218ec5b1e81dcc92231082ad898b0522c12f238b803fb"
+    },
+    {
+      "sample": "en-IN",
+      "repeat": 1,
+      "seconds": 7.651447109000401,
+      "audio_seconds": 398.9546875,
+      "word_errors": 293,
+      "reference_words": 987,
+      "char_errors": 884,
+      "reference_chars": 5446,
+      "hypothesis_sha256": "6d30e0d2646e5aadffe45ba3f60592b46f04d3e2ad9d758137a668511aca5898"
+    },
+    {
+      "sample": "en-US_General",
+      "repeat": 1,
+      "seconds": 4.5153996250001,
+      "audio_seconds": 282.248125,
+      "word_errors": 151,
+      "reference_words": 544,
+      "char_errors": 429,
+      "reference_chars": 2997,
+      "hypothesis_sha256": "1bcca3389a7102dd2de5310173b0c12220a1b9773832369005cc07cdd874347b"
+    }
+  ],
+  "versions": {
+    "numpy": "1.26.4",
+    "soundfile": "0.14.0",
+    "scipy": "1.17.1",
+    "rapidfuzz": "3.14.6"
+  },
+  "cached_weight_sha256": [
+    {
+      "file": "model.bin",
+      "sha256": "3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671"
+    }
+  ],
+  "peak_torch_allocated_bytes": null,
+  "sampled_whole_gpu_peak_mib": 899
+}

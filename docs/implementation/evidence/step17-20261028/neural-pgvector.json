@@ -1,0 +1,13 @@
+{
+  "fixture": "3 synthetic procedures; 2 queries; not company production data",
+  "model": "BAAI/bge-m3",
+  "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+  "dimension": 1024,
+  "recall_at_1": 1.0,
+  "queries": 2,
+  "encoding_seconds": 2.4646073000000115,
+  "index_seconds": 0.1896452999999383,
+  "total_table_bytes_including_existing_test_rows": 204800,
+  "acl_and_deletion_assertions": true,
+  "device": "cpu"
+}

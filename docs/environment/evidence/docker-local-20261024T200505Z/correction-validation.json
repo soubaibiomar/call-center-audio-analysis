@@ -1,0 +1,100 @@
+[
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_docker_preparation.py",
+      "tests/unit/test_project_setup.py",
+      "tests/unit/test_audio_decoder.py",
+      "tests/unit/test_llm_factory.py",
+      "tests/unit/test_pipeline_exports.py",
+      "tests/integration/",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "stdout": "...................                                                      [100%]\n19 passed in 1.25s\n",
+    "stderr": "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy",
+      "scripts/prepare_local_docker.py"
+    ],
+    "exit_code": 0,
+    "stdout": "Success: no issues found in 1 source file\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/",
+      "tests/",
+      "scripts/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "scripts/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "stdout": "68 files already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "project28-app-1",
+      "uv",
+      "--no-cache",
+      "pip",
+      "check",
+      "--python",
+      "/usr/local/bin/python"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Using Python 3.12.15 environment at: /usr/local\nChecked 111 packages in 98ms\nAll installed packages are compatible\n"
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "ollama",
+      "ollama",
+      "ps"
+    ],
+    "exit_code": 0,
+    "stdout": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL \n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "warning: in the working copy of '.dockerignore', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of '.env.project28.example', LF will be replaced by CRLF the next time Git touches it\n"
+  }
+]

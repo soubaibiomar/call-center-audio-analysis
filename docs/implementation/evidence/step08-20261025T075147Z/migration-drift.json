@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-c",
+    "from pathlib import Path;from sqlalchemy import create_engine;from alembic import command;from alembic.config import Config;e=create_engine(Path(\".local/step08_admin_url\").read_text(),hide_parameters=True);cfg=Config(\"alembic.ini\");c=e.connect();cfg.attributes[\"connection\"]=c;command.check(cfg);c.close();e.dispose()"
+  ],
+  "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis",
+  "exit_code": 0,
+  "seconds": 1.6,
+  "stdout": "No new upgrade operations detected.\n",
+  "stderr": ""
+}

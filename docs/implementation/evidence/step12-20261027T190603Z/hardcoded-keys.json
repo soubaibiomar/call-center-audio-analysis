@@ -1,0 +1,10 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "scripts/check_hardcoded_keys.py"
+  ],
+  "exit_code": 0,
+  "seconds": 0.24,
+  "stdout": "",
+  "stderr": ""
+}

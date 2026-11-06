@@ -1,0 +1,37 @@
+{
+  "step": "STEP_02",
+  "decision": "PASS WITH LIMITATIONS",
+  "captured_at_utc": "2026-10-24T16:33:24.526358+00:00",
+  "timezone": "Africa/Casablanca",
+  "historical_code_test_failures_identified": 2,
+  "historical_corrections_revalidated": 2,
+  "new_active_failures": 0,
+  "unresolved_step02_failures": 0,
+  "new_source_corrections": 0,
+  "issues": [
+    {
+      "id": "R01",
+      "severity": "P2",
+      "status": "previously corrected; revalidated"
+    },
+    {
+      "id": "T01",
+      "severity": "P3",
+      "status": "previously corrected; revalidated"
+    }
+  ],
+  "controlled_reversals": "2 expected failures, each 1 failed / 9 deselected",
+  "current_focused_tests": "10 passed in 3.78s",
+  "current_full_suite": "135 passed in 21.26s",
+  "ruff": "lint and format PASS (59 files)",
+  "new_tool_mypy": "PASS",
+  "new_test_mypy": "PASS with scoped flags",
+  "full_application_mypy": "Historical FAIL unresolved; not rerun",
+  "real_upstream_export": "PASS",
+  "upstream_blob_hashes_verified": 87,
+  "specification_hashes_verified": 99,
+  "source_and_dependencies_unchanged": true,
+  "model_metrics": "Not measured",
+  "step03_started": false,
+  "project_commit_push_merge_deploy": false
+}

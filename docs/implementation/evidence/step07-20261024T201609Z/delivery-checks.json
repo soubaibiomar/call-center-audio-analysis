@@ -1,0 +1,59 @@
+[
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "app.py",
+      "src/",
+      "services/"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pre_commit",
+      "run",
+      "--all-files"
+    ],
+    "exit_code": 0,
+    "stdout": "ruff.....................................................................Passed\nruff-format..............................................................Passed\nDetect secrets...........................................................Passed\nCheck for hardcoded API keys.............................................Passed\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pre_commit",
+      "run",
+      "detect-secrets",
+      "--files",
+      "src/services/contracts.py",
+      "src/services/analysis.py",
+      "services/__init__.py",
+      "services/api/__init__.py",
+      "services/api/analysis.py",
+      "scripts/map_project_imports.py",
+      "tests/unit/test_analysis_compatibility.py",
+      "tests/unit/test_import_map.py"
+    ],
+    "exit_code": 0,
+    "stdout": "Detect secrets...........................................................Passed\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "warning: in the working copy of '.dockerignore', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of '.env.project28.example', LF will be replaced by CRLF the next time Git touches it\n"
+  }
+]

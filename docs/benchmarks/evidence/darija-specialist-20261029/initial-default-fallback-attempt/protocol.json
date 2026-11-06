@@ -1,0 +1,19 @@
+{
+  "frozen_utc": "2026-10-29T20:44:12.701672+00:00",
+  "manifest_sha256": "cdeb7d8d47b895598dcede04d966c64f27f04fd16af7ba9ed9f582d896d59c68",
+  "models": [
+    "small-base",
+    "small-darija",
+    "turbo-base",
+    "qwen-base",
+    "moulsot"
+  ],
+  "source_sha256": {
+    "scripts/benchmark_upgrade_asr.py": "9f86ea53e6b777ceaff6ae7fac8552bc3f2bf46bb00f5369cac4c09da63abb96",
+    "scripts/intake_darija_specialist_benchmark.py": "99d7630eabb04fc495e5166706d5f226ca34ca5f1bf9f8e1f41892553d505544",
+    "scripts/convert_darija_whisper.py": "68515e8100b0a750bbd64e5e4f8dcd8bee8d661402722f258383bf2b803d59ba",
+    "scripts/run_darija_specialist_benchmarks.ps1": "63156bd4ee6db38436796680299a38ab700a0ac9d42030c8533d5a7558a54929",
+    "scripts/summarize_darija_specialist_benchmarks.py": "869392f3f90af11a91209c17fc9d367da0c42e67af9b501e7fed3bdec5d29991"
+  },
+  "conditions": "100 fresh project clips; Arabic hint; Whisper FP16; Qwen BF16; greedy/beam1; max Qwen tokens256; one pass; same normalization; no tuning on observed scores"
+}

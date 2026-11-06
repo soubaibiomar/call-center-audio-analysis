@@ -1,0 +1,23 @@
+{
+  "step": "STEP_05",
+  "decision": "PASS WITH LIMITATIONS",
+  "gate": "Baseline outputs recorded; all failures classified; results executed",
+  "current_unit_security": 141,
+  "current_integration": 4,
+  "current_failed": 0,
+  "current_skipped": 0,
+  "original_passed": 113,
+  "current_ruff_lint": "PASS",
+  "current_ruff_format": "63 files pass",
+  "full_mypy": "FAIL; six initial errors, three files; analysis aborted",
+  "known_failure_groups": [
+    "M01 inherited typing/dependency target",
+    "L01 original lint, current corrected",
+    "F01 original formatting, current corrected"
+  ],
+  "warning": "pytest-asyncio loop scope",
+  "source_modified": false,
+  "runtime_dependencies_changed": false,
+  "ml_metrics": "Not measured",
+  "next_eligible": "STEP_06"
+}

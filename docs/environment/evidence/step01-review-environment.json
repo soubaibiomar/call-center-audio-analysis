@@ -1,0 +1,635 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-10-24T16:02:20.7928747+00:00",
+  "powershell_version": "7.6.5",
+  "working_revision": {
+    "executable": "git",
+    "arguments": [
+      "rev-parse",
+      "HEAD"
+    ],
+    "path": "C:\\Program Files\\Git\\cmd\\git.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "a37e4634af1d2947fc3c548d54e62bda0b0daf89",
+    "stderr": "",
+    "elapsed_ms": 25,
+    "output_capture_complete": true
+  },
+  "upstream_revision": {
+    "executable": "git",
+    "arguments": [
+      "rev-parse",
+      "upstream/main"
+    ],
+    "path": "C:\\Program Files\\Git\\cmd\\git.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "fed4b610742c1337147281fcec8f2cdcc0a79be5",
+    "stderr": "",
+    "elapsed_ms": 27,
+    "output_capture_complete": true
+  },
+  "branch": {
+    "executable": "git",
+    "arguments": [
+      "branch",
+      "--show-current"
+    ],
+    "path": "C:\\Program Files\\Git\\cmd\\git.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "feature/project28-foundation",
+    "stderr": "",
+    "elapsed_ms": 27,
+    "output_capture_complete": true
+  },
+  "path": [
+    "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell",
+    "<USERPROFILE>\\.codex\\tmp\\arg0-windows\\codex-arg0ZqIhZe",
+    "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\libheif\\libheif\\bin",
+    "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\jxrlib\\jxrlib\\bin",
+    "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin",
+    "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\bin\\override",
+    "C:\\Program Files\\Zulu\\zulu-25\\bin\\",
+    "C:\\Windows\\system32",
+    "C:\\Windows",
+    "C:\\Windows\\System32\\Wbem",
+    "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\",
+    "C:\\Windows\\System32\\OpenSSH\\",
+    "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common",
+    "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR",
+    "C:\\WINDOWS\\system32",
+    "C:\\WINDOWS",
+    "C:\\WINDOWS\\System32\\Wbem",
+    "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\",
+    "C:\\WINDOWS\\System32\\OpenSSH\\",
+    "C:\\Program Files\\dotnet\\",
+    "C:\\Program Files\\nodejs\\",
+    "C:\\Program Files\\Git\\cmd",
+    "C:\\Program Files (x86)\\cloudflared\\",
+    "C:\\Program Files\\WSL\\",
+    "<USERPROFILE>\\Documents\\IA2\\Java\\jdk-25.0.4.1+1\\bin",
+    "<USERPROFILE>\\Documents\\IA2\\Maven\\apache-maven-3.9.16\\bin",
+    "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell",
+    "<USERPROFILE>\\AppData\\Local\\Microsoft\\WindowsApps",
+    "<USERPROFILE>\\AppData\\Local\\Programs\\Antigravity IDE\\bin",
+    "<USERPROFILE>\\AppData\\Local\\Python\\bin",
+    "<USERPROFILE>\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\",
+    "<USERPROFILE>\\AppData\\Roaming\\npm",
+    "<USERPROFILE>\\.fly\\bin",
+    "<USERPROFILE>\\.local\\bin",
+    "<USERPROFILE>\\AppData\\Local\\Microsoft\\WinGet\\Links",
+    "C:\\DevTools\\apache-maven-3.9.16\\bin",
+    "<USERPROFILE>\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin",
+    "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\bin\\fallback",
+    "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin",
+    "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\git\\cmd",
+    "<USERPROFILE>\\AppData\\Local\\OpenAI\\Codex\\bin\\2d8a5d5756dbf318",
+    "<USERPROFILE>\\AppData\\Local\\OpenAI\\Codex\\bin\\37f54d68e5533a51"
+  ],
+  "tools": {
+    "git": {
+      "executable": "git",
+      "arguments": [
+        "--version"
+      ],
+      "path": "C:\\Program Files\\Git\\cmd\\git.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "git version 2.55.0.windows.3",
+      "stderr": "",
+      "elapsed_ms": 40,
+      "output_capture_complete": true
+    },
+    "python": {
+      "executable": "python",
+      "arguments": [
+        "--version"
+      ],
+      "path": "<USERPROFILE>\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "Python 3.14.6",
+      "stderr": "",
+      "elapsed_ms": 149,
+      "output_capture_complete": true
+    },
+    "uv": {
+      "executable": "uv",
+      "arguments": [
+        "--version"
+      ],
+      "path": "<USERPROFILE>\\AppData\\Local\\Microsoft\\WinGet\\Links\\uv.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "uv 0.12.23 (46b84fd0b 2026-10-03 x86_64-pc-windows-msvc)",
+      "stderr": "",
+      "elapsed_ms": 17,
+      "output_capture_complete": true
+    },
+    "docker": {
+      "executable": "docker",
+      "arguments": [
+        "--version"
+      ],
+      "path": "<USERPROFILE>\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "Docker version 29.9.2, build a82e528",
+      "stderr": "",
+      "elapsed_ms": 85,
+      "output_capture_complete": true
+    },
+    "node": {
+      "executable": "node",
+      "arguments": [
+        "--version"
+      ],
+      "path": "C:\\Program Files\\nodejs\\node.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "v24.18.0",
+      "stderr": "",
+      "elapsed_ms": 19,
+      "output_capture_complete": true
+    },
+    "ffmpeg": {
+      "executable": "ffmpeg",
+      "arguments": [
+        "-version"
+      ],
+      "path": null,
+      "status": "MISSING",
+      "exit_code": null,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_ms": 0,
+      "output_capture_complete": null
+    },
+    "code": {
+      "executable": "code",
+      "arguments": [
+        "--version"
+      ],
+      "path": null,
+      "status": "MISSING",
+      "exit_code": null,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_ms": 0,
+      "output_capture_complete": null
+    },
+    "docker_compose": {
+      "executable": "docker",
+      "arguments": [
+        "compose",
+        "version"
+      ],
+      "path": "<USERPROFILE>\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "Docker Compose version v5.6.1",
+      "stderr": "",
+      "elapsed_ms": 141,
+      "output_capture_complete": true
+    },
+    "npm": {
+      "executable": "node",
+      "arguments": [
+        "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+        "--version"
+      ],
+      "path": "C:\\Program Files\\nodejs\\node.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "11.16.0",
+      "stderr": "",
+      "elapsed_ms": 132,
+      "output_capture_complete": true,
+      "launcher_path": "C:\\Program Files\\nodejs\\npm.cmd"
+    },
+    "nvidia_smi": {
+      "executable": "nvidia-smi",
+      "arguments": [
+        "--query-gpu=name,memory.total,memory.used,driver_version",
+        "--format=csv,noheader,nounits"
+      ],
+      "path": "C:\\Windows\\system32\\nvidia-smi.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188, 366, 610.88",
+      "stderr": "",
+      "elapsed_ms": 43,
+      "output_capture_complete": true
+    }
+  },
+  "docker_info": {
+    "executable": "docker",
+    "arguments": [
+      "info",
+      "--format",
+      "{{.OSType}}|{{.Architecture}}|{{.ServerVersion}}|{{range $name, $runtime := .Runtimes}}{{$name}},{{end}}|{{.DefaultRuntime}}"
+    ],
+    "path": "<USERPROFILE>\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "linux|x86_64|29.9.2|io.containerd.runc.v2,nvidia,runc,|runc",
+    "stderr": "",
+    "elapsed_ms": 302,
+    "output_capture_complete": true
+  },
+  "docker_context": {
+    "executable": "docker",
+    "arguments": [
+      "context",
+      "show"
+    ],
+    "path": "<USERPROFILE>\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "desktop-linux",
+    "stderr": "",
+    "elapsed_ms": 138,
+    "output_capture_complete": true
+  },
+  "gpu_image": {
+    "executable": "docker",
+    "arguments": [
+      "image",
+      "inspect",
+      "nvidia/cuda:12.9.0-base-ubuntu22.04",
+      "--format",
+      "{{.Id}}"
+    ],
+    "path": "<USERPROFILE>\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "sha256:499898d51d158ad11c3ae6defa7e80829b2be04951212dfa80faf99b99a37dfe",
+    "stderr": "",
+    "elapsed_ms": 157,
+    "output_capture_complete": true
+  },
+  "container_gpu": {
+    "executable": "docker",
+    "arguments": [
+      "run",
+      "--rm",
+      "--name",
+      "project28-gpu-probe-f5738524963e4f038f066e5c94be625b",
+      "--pull=never",
+      "--network=none",
+      "--read-only",
+      "--cap-drop=ALL",
+      "--security-opt=no-new-privileges",
+      "--gpus",
+      "all",
+      "nvidia/cuda:12.9.0-base-ubuntu22.04",
+      "nvidia-smi",
+      "--query-gpu=name,memory.total,memory.used,driver_version",
+      "--format=csv,noheader,nounits"
+    ],
+    "path": "<USERPROFILE>\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188, 366, 610.88",
+    "stderr": "",
+    "elapsed_ms": 620,
+    "output_capture_complete": true
+  },
+  "services_before": {
+    "executable": "docker",
+    "arguments": [
+      "inspect",
+      "--format",
+      "{{.Id}}|{{.Name}}|{{.Config.Image}}|{{.State.Status}}|{{.State.StartedAt}}|{{.RestartCount}}",
+      "520a052a36bcf34c80b8fca18ae12511ad4aa4417c2b42edf4d9af2743731569",
+      "1678753c1b0a8b2142a35bbaf5ec6a8f0d7c7d155b102441fcd2417e244da0b7",
+      "6dd094f26700ab92d1a95d091160d43e37a0ea56d1092f8a11a27d190f7261ef",
+      "b50f1e9ac04cf7fea5eaa13bde45e547dcd27344d5ca1382a7449e4c41ee759c",
+      "d4c2aacd6cea0bd678ea7e9bcf82fcfc06b629e6203deb657e4f9dce04c90509",
+      "e418a2f8f83707ebb7c899e085dbe7f32ad7ab0622ae7214ff14bdb9f9042c8b",
+      "417a4eae97b968c240d9bdd515a5ad28591a60a337718cdc0d4036027fafc4cf",
+      "1e6fb9f81809bfe155cedf9aab99e19d3333c6ce41aca1ad256f4a3be6268d0d",
+      "4f4848aa50d6a715fab98275dccb23e2c47a3627f729944a71b068968246032f",
+      "a510efec2fca8a8889e9d06511ea21143dfa4d04220eeb73c0432b3b28f7e719",
+      "db0416f59ecfe1f1a341b56c029e10d461f2b799e429a62d65812674779cb7f7",
+      "007119de7d52cba02c26ae7b442727d7e52e9b35cbe3afc03123a02e7d92fc29",
+      "6aabe5b0238a8efb9a00e6d7bb58d82663cc2eae10281bb36ed59eb305172f99",
+      "323cce2d8f2b4eda9c9111cc41e618d09fd2b2951ce781970e677c5d74592a42",
+      "4f501cdde019a7e292b1126b1e8ff5eeb29e86a9f7f2b5f753b27984393b8a25",
+      "c3d0b3ea48f0f07fee50a2dbd4d8383b5e7b2e696c1a4943711f44395ea7cbc8",
+      "66898cdbf70431c77ba93e430b3d7c7bcf3ed3322e8fe57caf2c4f04de0b5621",
+      "daea09bd79aa80195f2bfe318c6cb3c651cc73f03f636fa437552c662e2f17de",
+      "14ccec3a29c8fc1b1e6a53349037706e1a6ebd67682ee3090c3f4aaa91418078",
+      "6b1294654905ece1da55cb29e30be588b546d2e79cb7070d8fdc5da4622f2c2d",
+      "5a41645394f032a61004784177ebe7133c32bd8f39e2fceb87a3363e58a3e7e8",
+      "99b79018b53e2bab1216796d14536f98851014586ec80c9ffe7c2958437f2064",
+      "745737e43cfab50b3cbc0adff59f714ba71aad4640985c5f706731802c45f245",
+      "0e4d2a884b3e4a6d3239428a51df2a9c0fbe6f4fadd3b48b28f6ea8a1159d440",
+      "e341f332564bad1309f71e8c1e9762c9571c750bfd89594201832528fb9f2d72",
+      "7bdd34e65720c7dffc1ae934920d46b7dd305b7108e4c50e22a63e9bdb5ff1fa",
+      "b819b4500daad117c552591e1e93560c609ec965ab96323a58f3fe721c30184c",
+      "8dda6b22161e4dcd72b437c97512701458efd314533f1e1b4b60e798aa3373f4",
+      "91cdd5b4c62612a20eb86c71c3566af92022c9d702c824e29fc5b5dd9330e47a",
+      "b2425d58bf813e76fdc0b5cac50513c62ce124da3760b0887420f09410b50b3f",
+      "e8a7bf41604cfa4efebe5e7742215b60e1c6d46fec425c06508a7417d90bbf5c",
+      "cf721b78af42c97b84962a93dea75d8a6626f37f228aa9bed06c3a959b291b5f",
+      "bdd9a803f5690ab078b321b23fd55a2cadbdb8bc9bceb7282b0775d16ad77c1f",
+      "d10f2d8431a7ce974bb45f5348448ec05534f75329c4b638fbcd42c9c978d489",
+      "0d6654abc27312b81d15c34d3cb66930f2f45c63343124b88fb41d0bf210dd80",
+      "456d80e9665aec1142c3fc56f2f2dee1858d9d67bde7d87c8a605e5eb44fb351",
+      "bdc91e43518429510849b3ff6c890f7f55e782b5dbf6922de91f588f3ffee036",
+      "4ce5afc08724c2d8afe1b0e1042ea4f245860bd0b8bbae0e7e08bd22132742e1",
+      "11546fe44d6efbb179f27157398d050dba6d76915617babe1a710d0e8b927e7a",
+      "900acfa53e20acb31f4c15f32bb9f6aa8a64f4fce8462a10ef983baeee7e679f",
+      "6e1e20959f1e361642f81d3b4c2cc2fc1d4eaf1233b44f9692aef075f38536cf",
+      "0756b50dc52ec00427eca5d6359650bd85a5e3b4ba161e8b1cce9cb68f5a832d",
+      "f53bb57d3576c40373fc2f25c75eb6991df5b883e6e848ae75b04bdbaa9ac036",
+      "7c4f0af5e3f3cc7122c7ded7a53ec078fed6dbf04bb0300e932205c221a51f71",
+      "ddd69500e795d1de6459d26657f96d45a02908924c8dad49308e7234096b5502",
+      "4068ce891ed07bec5b673d25e41623905f203e48351957b5a345a36b8f214778",
+      "94c956fa3cba5ba14b67c9d0e5e84860f512b35f1a66b8884ed1bd38901fad58",
+      "b1eb33c55a5da2e8bfcfaf210dcaf358a75c474c98da26d7c7631009deebc184",
+      "f7458b5c77ca572f2823cf67a3f1a1c214cbb6c1a99aeca6554aa4ba832028d2",
+      "84795c62e3f934396ca9911d2373c2c891cb0a93ce8cddabbd8465fd4527fa9a",
+      "f0a3d5b59101a6c41fbbf81f7f7dc4f8d95c5eee5b082c5a13d68ce4e561c3fe",
+      "5d7987b534a298c86141ab87685f4c80c622b6ea66328c0cb546c6900cd72bc0"
+    ],
+    "path": "<USERPROFILE>\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "04A2EF6F39981D3F2B0A0D4E6175D903056CE9DD394870250284DE9287A26F86\n160659BE20B61E8FE7821C4C319D9AD4B3F53FCC40922C5B65B578C0B16E94E4\n18051F313450A30B86607CD6ADF2D0F2A3FEDB1CBB8EBA6999D9BAE22D0BE244\n4015EC7A2F3610DE656D05CA7B0A377E8D2483F95A505BA622EF48863016E21F\nDE2C4A7C05659BD2A9CB5AFD4D73437254EFE2EC9AC39F6BE78774DCCDB74B6C\nB64397E07E483352D0CC34079EC245BD9A02DC96701F605CDA0BD128B51FF9AB\nDA8673E665FE6C5EC4444FCAE4C64B1880CE5B23B291FBDB59E6FCB4EFF51650\n7743D16D14336AD2C9C0F7E9C5BE1D6420CE5265DCE6BD433D6F0327D99CEAB6\n749104FB88514130C242FE1B8CA4EA73C32D27E81B839BDC9D894407C7509B4C\n7CB5F10289581007A1FCB20022B311CD1AA84CD47E0BF62F004895D363B5B6BC\n20A3CCDE6A1E8EA983657095C09905E24E8DDDDAA63487971C32AC3109C3D2B6\nE7D708177D4CE252AEA21D804A0D03B1DFBE37F521484D98A2B651A98DC7D4DE\n22198E557F79FE001B4A209959F1B04C26F61586236842F9F91E72B9F7707D95\nBB21330E64E62D451D8B84B748816214F23F27D414332E49BCC11D0742B36570\nC8BFDF3275A5EFC0CA16D40177B829B086CBD7594B5FC71FF6C10324AE5F2744\n8A1D00130401F8DB6AE44C121E16A7F56EE69E9833A6132CB3D119153B50C15E\n277449F796C635B957D336F28581B39BB24C8BFFD9862F127F88320F6F1A6FD2\nAB77448CF8F8BC7B9BD6AA085399FA6F4A36E5FD19802F95570B37538AE5B3D3\n90B75ECEC7A0526B0F14C14DB5A3AAD42FEF1973E1C34ED41DF8F54E4A698993\n748DDCDE09E5F910C781A86378ED930BDD539D8D447A049E912CEEA2985577F2\n52F0C19092A0BB9FABFB22F955A2443BAB732AE1F9770FB975B179693A173340\n7402D7248A34B97D60DB6FAF8749614FDA52435B860F55980E2CE4304838DAF5\n9757DCB41B3C208DC854C8D7388810C3B5E59120F8BA708F4EA16DFA7F019397\n71F623F13E84936944723CECF0C13BB05D631BE506618B812AC74509EA7F235E\nF2F27F7D1CD3ACE7E689161015D1281FDD483AABC8CFC9097122137879AC621A\n578AEE3714B2A2E56FCD233F859077215BC308CA070543B48FA8F0966AB0B6C6\n10AE439655122C8DCFB51FC5E8736DA018A616B563B1F2A98155F82A75674289\nBAE6D06729C745643DAA11B5968B8E4C3C036C7AAED4636C7694CD596F902D04\nA026D71B2D05A24F2CB70A958033205A75BF5902738B7E6DBB2A4B4E0CD1B0D0\n4D3104CA8DAF91DB5BCC89115B8FE1FA7A03868F6F6EFB97FB950135296B8C6A\nE77871931A7492F03E04ADE4C52E9041020585D91EF4F7FFC30C5952C0FB1EAB\n57C2C490875B67399F90012EE08F3694C1749DAF7EBCDC3EC80A75F0A14C4C9F\n24E29DD69176243D3B6CA114924ACD1036F4D15383555C0EF2E11B569AC65E3B\n5E7B9D357D4E520E384A1A81F009F90FC706C862F90B570E3B4E36FB29188F86\nEB515AB35FA33C5D2EE7E763580074D2DF673AFCCA057487641D2ECC84B586F0\nA5BC0C3428FC3C692D67900CB0417B2FA9B15A8EDA5610391554ED919FB3D7A1\n8C3DEEF62399BE7299FA9AFB76738E1F39408ACD68171F820186064B7D9383CE\n0DBD40AAB4D11C9B2A5D0D2259F0B91E5F1AC299074A1C65BDD05E47B190C7B7\nE54AB885AAFD8B15DF866A596EDE74EF7D326FA30CF5A0CB1824F419EE78D335\n27763D3BA65F56A334FDC367CDCBAA66FE9103745450114CB52CAC2CD4226CC0\n6100266266F25F4FDCE8B5ACC076C6E196A8E99D627CC73CE9E552E5E1875E64\nC2AF50F83D0EF277030514C84A15421BEA3B46744FBF4D136C2A7B6588720228\n58C76C934E58A398C9AD087F34626625F31A6AA517ABB3A11ECFFA47225613A3\n961A9EBBE063CA9DFC1CB35E9E0A5824495CADD17E2E4CBFBEDDF8FE6C07B405\n238E8FD40F7F2913DAFC470E0F7CBE707F61442118AC9805A8ECDE209AD3FD31\n98D8DBAF6C415E96084337D6BD4DB85CC4AC2B9F0338EF0C282054E027BEA990\nA8F4324FC7A5366AEF53C908E802A4EA41CE0FF4C482DB40D9E0865CC65EE6E3\n3B7AA9FAE1CA5BD358F50E1093C84DD5FA06C02432DDD3AA12FBEFCD28AA81C7\n0FA3356C6BA09FE3A17E11D6F87157EF33F0FE78E2E291A86AED196892D971E5\nDE466639407500F2F5FDB7ED05B4F999FB5BAFBA4631319A8A6B0A928634629F\n8B625DC66BEBE962F5A73D533BBAAEE36F1AC0E54F7136EFC31A166FED2ED543\n1023F4824C09FBA32439EDB155B51E5119F429833BAB20D5EAC4F3F61BA787D7",
+    "stderr": "",
+    "elapsed_ms": 3268,
+    "output_capture_complete": true,
+    "container_count": 52,
+    "running_count": 1,
+    "ollama_count": 1
+  },
+  "services_after": {
+    "executable": "docker",
+    "arguments": [
+      "inspect",
+      "--format",
+      "{{.Id}}|{{.Name}}|{{.Config.Image}}|{{.State.Status}}|{{.State.StartedAt}}|{{.RestartCount}}",
+      "520a052a36bcf34c80b8fca18ae12511ad4aa4417c2b42edf4d9af2743731569",
+      "1678753c1b0a8b2142a35bbaf5ec6a8f0d7c7d155b102441fcd2417e244da0b7",
+      "6dd094f26700ab92d1a95d091160d43e37a0ea56d1092f8a11a27d190f7261ef",
+      "b50f1e9ac04cf7fea5eaa13bde45e547dcd27344d5ca1382a7449e4c41ee759c",
+      "d4c2aacd6cea0bd678ea7e9bcf82fcfc06b629e6203deb657e4f9dce04c90509",
+      "e418a2f8f83707ebb7c899e085dbe7f32ad7ab0622ae7214ff14bdb9f9042c8b",
+      "417a4eae97b968c240d9bdd515a5ad28591a60a337718cdc0d4036027fafc4cf",
+      "1e6fb9f81809bfe155cedf9aab99e19d3333c6ce41aca1ad256f4a3be6268d0d",
+      "4f4848aa50d6a715fab98275dccb23e2c47a3627f729944a71b068968246032f",
+      "a510efec2fca8a8889e9d06511ea21143dfa4d04220eeb73c0432b3b28f7e719",
+      "db0416f59ecfe1f1a341b56c029e10d461f2b799e429a62d65812674779cb7f7",
+      "007119de7d52cba02c26ae7b442727d7e52e9b35cbe3afc03123a02e7d92fc29",
+      "6aabe5b0238a8efb9a00e6d7bb58d82663cc2eae10281bb36ed59eb305172f99",
+      "323cce2d8f2b4eda9c9111cc41e618d09fd2b2951ce781970e677c5d74592a42",
+      "4f501cdde019a7e292b1126b1e8ff5eeb29e86a9f7f2b5f753b27984393b8a25",
+      "c3d0b3ea48f0f07fee50a2dbd4d8383b5e7b2e696c1a4943711f44395ea7cbc8",
+      "66898cdbf70431c77ba93e430b3d7c7bcf3ed3322e8fe57caf2c4f04de0b5621",
+      "daea09bd79aa80195f2bfe318c6cb3c651cc73f03f636fa437552c662e2f17de",
+      "14ccec3a29c8fc1b1e6a53349037706e1a6ebd67682ee3090c3f4aaa91418078",
+      "6b1294654905ece1da55cb29e30be588b546d2e79cb7070d8fdc5da4622f2c2d",
+      "5a41645394f032a61004784177ebe7133c32bd8f39e2fceb87a3363e58a3e7e8",
+      "99b79018b53e2bab1216796d14536f98851014586ec80c9ffe7c2958437f2064",
+      "745737e43cfab50b3cbc0adff59f714ba71aad4640985c5f706731802c45f245",
+      "0e4d2a884b3e4a6d3239428a51df2a9c0fbe6f4fadd3b48b28f6ea8a1159d440",
+      "e341f332564bad1309f71e8c1e9762c9571c750bfd89594201832528fb9f2d72",
+      "7bdd34e65720c7dffc1ae934920d46b7dd305b7108e4c50e22a63e9bdb5ff1fa",
+      "b819b4500daad117c552591e1e93560c609ec965ab96323a58f3fe721c30184c",
+      "8dda6b22161e4dcd72b437c97512701458efd314533f1e1b4b60e798aa3373f4",
+      "91cdd5b4c62612a20eb86c71c3566af92022c9d702c824e29fc5b5dd9330e47a",
+      "b2425d58bf813e76fdc0b5cac50513c62ce124da3760b0887420f09410b50b3f",
+      "e8a7bf41604cfa4efebe5e7742215b60e1c6d46fec425c06508a7417d90bbf5c",
+      "cf721b78af42c97b84962a93dea75d8a6626f37f228aa9bed06c3a959b291b5f",
+      "bdd9a803f5690ab078b321b23fd55a2cadbdb8bc9bceb7282b0775d16ad77c1f",
+      "d10f2d8431a7ce974bb45f5348448ec05534f75329c4b638fbcd42c9c978d489",
+      "0d6654abc27312b81d15c34d3cb66930f2f45c63343124b88fb41d0bf210dd80",
+      "456d80e9665aec1142c3fc56f2f2dee1858d9d67bde7d87c8a605e5eb44fb351",
+      "bdc91e43518429510849b3ff6c890f7f55e782b5dbf6922de91f588f3ffee036",
+      "4ce5afc08724c2d8afe1b0e1042ea4f245860bd0b8bbae0e7e08bd22132742e1",
+      "11546fe44d6efbb179f27157398d050dba6d76915617babe1a710d0e8b927e7a",
+      "900acfa53e20acb31f4c15f32bb9f6aa8a64f4fce8462a10ef983baeee7e679f",
+      "6e1e20959f1e361642f81d3b4c2cc2fc1d4eaf1233b44f9692aef075f38536cf",
+      "0756b50dc52ec00427eca5d6359650bd85a5e3b4ba161e8b1cce9cb68f5a832d",
+      "f53bb57d3576c40373fc2f25c75eb6991df5b883e6e848ae75b04bdbaa9ac036",
+      "7c4f0af5e3f3cc7122c7ded7a53ec078fed6dbf04bb0300e932205c221a51f71",
+      "ddd69500e795d1de6459d26657f96d45a02908924c8dad49308e7234096b5502",
+      "4068ce891ed07bec5b673d25e41623905f203e48351957b5a345a36b8f214778",
+      "94c956fa3cba5ba14b67c9d0e5e84860f512b35f1a66b8884ed1bd38901fad58",
+      "b1eb33c55a5da2e8bfcfaf210dcaf358a75c474c98da26d7c7631009deebc184",
+      "f7458b5c77ca572f2823cf67a3f1a1c214cbb6c1a99aeca6554aa4ba832028d2",
+      "84795c62e3f934396ca9911d2373c2c891cb0a93ce8cddabbd8465fd4527fa9a",
+      "f0a3d5b59101a6c41fbbf81f7f7dc4f8d95c5eee5b082c5a13d68ce4e561c3fe",
+      "5d7987b534a298c86141ab87685f4c80c622b6ea66328c0cb546c6900cd72bc0"
+    ],
+    "path": "<USERPROFILE>\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "04A2EF6F39981D3F2B0A0D4E6175D903056CE9DD394870250284DE9287A26F86\n160659BE20B61E8FE7821C4C319D9AD4B3F53FCC40922C5B65B578C0B16E94E4\n18051F313450A30B86607CD6ADF2D0F2A3FEDB1CBB8EBA6999D9BAE22D0BE244\n4015EC7A2F3610DE656D05CA7B0A377E8D2483F95A505BA622EF48863016E21F\nDE2C4A7C05659BD2A9CB5AFD4D73437254EFE2EC9AC39F6BE78774DCCDB74B6C\nB64397E07E483352D0CC34079EC245BD9A02DC96701F605CDA0BD128B51FF9AB\nDA8673E665FE6C5EC4444FCAE4C64B1880CE5B23B291FBDB59E6FCB4EFF51650\n7743D16D14336AD2C9C0F7E9C5BE1D6420CE5265DCE6BD433D6F0327D99CEAB6\n749104FB88514130C242FE1B8CA4EA73C32D27E81B839BDC9D894407C7509B4C\n7CB5F10289581007A1FCB20022B311CD1AA84CD47E0BF62F004895D363B5B6BC\n20A3CCDE6A1E8EA983657095C09905E24E8DDDDAA63487971C32AC3109C3D2B6\nE7D708177D4CE252AEA21D804A0D03B1DFBE37F521484D98A2B651A98DC7D4DE\n22198E557F79FE001B4A209959F1B04C26F61586236842F9F91E72B9F7707D95\nBB21330E64E62D451D8B84B748816214F23F27D414332E49BCC11D0742B36570\nC8BFDF3275A5EFC0CA16D40177B829B086CBD7594B5FC71FF6C10324AE5F2744\n8A1D00130401F8DB6AE44C121E16A7F56EE69E9833A6132CB3D119153B50C15E\n277449F796C635B957D336F28581B39BB24C8BFFD9862F127F88320F6F1A6FD2\nAB77448CF8F8BC7B9BD6AA085399FA6F4A36E5FD19802F95570B37538AE5B3D3\n90B75ECEC7A0526B0F14C14DB5A3AAD42FEF1973E1C34ED41DF8F54E4A698993\n748DDCDE09E5F910C781A86378ED930BDD539D8D447A049E912CEEA2985577F2\n52F0C19092A0BB9FABFB22F955A2443BAB732AE1F9770FB975B179693A173340\n7402D7248A34B97D60DB6FAF8749614FDA52435B860F55980E2CE4304838DAF5\n9757DCB41B3C208DC854C8D7388810C3B5E59120F8BA708F4EA16DFA7F019397\n71F623F13E84936944723CECF0C13BB05D631BE506618B812AC74509EA7F235E\nF2F27F7D1CD3ACE7E689161015D1281FDD483AABC8CFC9097122137879AC621A\n578AEE3714B2A2E56FCD233F859077215BC308CA070543B48FA8F0966AB0B6C6\n10AE439655122C8DCFB51FC5E8736DA018A616B563B1F2A98155F82A75674289\nBAE6D06729C745643DAA11B5968B8E4C3C036C7AAED4636C7694CD596F902D04\nA026D71B2D05A24F2CB70A958033205A75BF5902738B7E6DBB2A4B4E0CD1B0D0\n4D3104CA8DAF91DB5BCC89115B8FE1FA7A03868F6F6EFB97FB950135296B8C6A\nE77871931A7492F03E04ADE4C52E9041020585D91EF4F7FFC30C5952C0FB1EAB\n57C2C490875B67399F90012EE08F3694C1749DAF7EBCDC3EC80A75F0A14C4C9F\n24E29DD69176243D3B6CA114924ACD1036F4D15383555C0EF2E11B569AC65E3B\n5E7B9D357D4E520E384A1A81F009F90FC706C862F90B570E3B4E36FB29188F86\nEB515AB35FA33C5D2EE7E763580074D2DF673AFCCA057487641D2ECC84B586F0\nA5BC0C3428FC3C692D67900CB0417B2FA9B15A8EDA5610391554ED919FB3D7A1\n8C3DEEF62399BE7299FA9AFB76738E1F39408ACD68171F820186064B7D9383CE\n0DBD40AAB4D11C9B2A5D0D2259F0B91E5F1AC299074A1C65BDD05E47B190C7B7\nE54AB885AAFD8B15DF866A596EDE74EF7D326FA30CF5A0CB1824F419EE78D335\n27763D3BA65F56A334FDC367CDCBAA66FE9103745450114CB52CAC2CD4226CC0\n6100266266F25F4FDCE8B5ACC076C6E196A8E99D627CC73CE9E552E5E1875E64\nC2AF50F83D0EF277030514C84A15421BEA3B46744FBF4D136C2A7B6588720228\n58C76C934E58A398C9AD087F34626625F31A6AA517ABB3A11ECFFA47225613A3\n961A9EBBE063CA9DFC1CB35E9E0A5824495CADD17E2E4CBFBEDDF8FE6C07B405\n238E8FD40F7F2913DAFC470E0F7CBE707F61442118AC9805A8ECDE209AD3FD31\n98D8DBAF6C415E96084337D6BD4DB85CC4AC2B9F0338EF0C282054E027BEA990\nA8F4324FC7A5366AEF53C908E802A4EA41CE0FF4C482DB40D9E0865CC65EE6E3\n3B7AA9FAE1CA5BD358F50E1093C84DD5FA06C02432DDD3AA12FBEFCD28AA81C7\n0FA3356C6BA09FE3A17E11D6F87157EF33F0FE78E2E291A86AED196892D971E5\nDE466639407500F2F5FDB7ED05B4F999FB5BAFBA4631319A8A6B0A928634629F\n8B625DC66BEBE962F5A73D533BBAAEE36F1AC0E54F7136EFC31A166FED2ED543\n1023F4824C09FBA32439EDB155B51E5119F429833BAB20D5EAC4F3F61BA787D7",
+    "stderr": "",
+    "elapsed_ms": 3296,
+    "output_capture_complete": true,
+    "container_count": 52,
+    "running_count": 1,
+    "ollama_count": 1
+  },
+  "service_continuity": {
+    "status": "PASS",
+    "reason": "Compared container ID, name, image, state, start time and restart count; point-in-time evidence only."
+  },
+  "gpu_after": {
+    "executable": "nvidia-smi",
+    "arguments": [
+      "--query-gpu=name,memory.total,memory.used,driver_version",
+      "--format=csv,noheader,nounits"
+    ],
+    "path": "C:\\Windows\\system32\\nvidia-smi.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188, 366, 610.88",
+    "stderr": "",
+    "elapsed_ms": 42,
+    "output_capture_complete": true
+  },
+  "resources": {
+    "os": {
+      "caption": "Microsoft Windows 11 Home",
+      "version": "10.0.26300",
+      "build": "26300",
+      "total_ram_bytes": 16868950016,
+      "available_ram_bytes": 1216851968
+    },
+    "disks": [
+      {
+        "drive": "C:",
+        "size_bytes": 999396732928,
+        "free_bytes": 358241026048
+      }
+    ],
+    "listeners": [
+      {
+        "port": 135,
+        "pid": 1676,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 135,
+        "pid": 1676,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 139,
+        "pid": 4,
+        "address_scope": "specific-address-redacted"
+      },
+      {
+        "port": 139,
+        "pid": 4,
+        "address_scope": "specific-address-redacted"
+      },
+      {
+        "port": 445,
+        "pid": 4,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 1462,
+        "pid": 4,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 5040,
+        "pid": 11672,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 7070,
+        "pid": 4148,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 7070,
+        "pid": 4148,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 7680,
+        "pid": 18644,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 9080,
+        "pid": 4472,
+        "address_scope": "loopback"
+      },
+      {
+        "port": 26822,
+        "pid": 16932,
+        "address_scope": "loopback"
+      },
+      {
+        "port": 32683,
+        "pid": 8224,
+        "address_scope": "loopback"
+      },
+      {
+        "port": 33683,
+        "pid": 8224,
+        "address_scope": "loopback"
+      },
+      {
+        "port": 42050,
+        "pid": 20160,
+        "address_scope": "loopback"
+      },
+      {
+        "port": 47546,
+        "pid": 3928,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 47546,
+        "pid": 3928,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49664,
+        "pid": 1300,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49664,
+        "pid": 1300,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49665,
+        "pid": 1196,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49665,
+        "pid": 1196,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49668,
+        "pid": 2140,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49668,
+        "pid": 2140,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49669,
+        "pid": 3140,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49669,
+        "pid": 3140,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49670,
+        "pid": 3928,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49670,
+        "pid": 3928,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49671,
+        "pid": 4252,
+        "address_scope": "loopback"
+      },
+      {
+        "port": 49682,
+        "pid": 1272,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 49682,
+        "pid": 1272,
+        "address_scope": "wildcard"
+      },
+      {
+        "port": 64084,
+        "pid": 16360,
+        "address_scope": "wildcard"
+      }
+    ]
+  },
+  "limitations": [
+    "No model inference or training; VRAM observations are not inference peak memory.",
+    "No secrets, container environment, audio or model volume contents inspected."
+  ]
+}

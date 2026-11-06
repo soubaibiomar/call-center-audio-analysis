@@ -3,13 +3,17 @@ from __future__ import annotations
 from datetime import datetime
 from io import BytesIO
 from pathlib import Path
+from xml.sax.saxutils import escape
 
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
+from reportlab.platypus.flowables import Flowable
+from sqlalchemy.engine import Engine
 
 from src.database.connection import get_engine, get_session, init_db
 from src.database.models import CallRecord
+from src.database.scope import current_identity
 from src.graph.state import (
     CallReport,
     IntakeResult,
@@ -17,6 +21,8 @@ from src.graph.state import (
     SummaryResult,
     TranscriptionResult,
 )
+from src.services.job_execution import current_execution
+from src.services.model_runs import ModelRun
 
 
 def compile_report(
@@ -25,6 +31,7 @@ def compile_report(
     summary: SummaryResult,
     qa_scores: QAScoreResult,
     trace_id: str,
+    model_runs: list[ModelRun] | None = None,
 ) -> CallReport:
     return CallReport(
         call_id=intake.call_id,
@@ -34,6 +41,7 @@ def compile_report(
         qa_scores=qa_scores,
         processed_at=datetime.now(),
         trace_id=trace_id,
+        model_runs=model_runs or [],
         status="completed",
     )
 
@@ -42,9 +50,11 @@ def persist_report(
     report: CallReport,
     db_path: str | None = None,
     encryption_key: str | None = None,
-    engine=None,
+    engine: Engine | None = None,
 ) -> None:
     if engine is None:
+        if db_path is None:
+            raise ValueError("persist_report requires an engine or db_path")
         engine = get_engine(db_path, encryption_key)
         init_db(engine)
     session = get_session(engine)
@@ -61,6 +71,18 @@ def persist_report(
             trace_id=report.trace_id,
         )
         session.add(record)
+        if engine.dialect.name == "postgresql":
+            from services.api.db.repository import store_report
+
+            session.flush()
+            identity = current_identity()
+            if identity:
+                store_report(session, report, identity.tenant_id, identity.user_id)
+            else:
+                store_report(session, report)
+        execution = current_execution()
+        if execution is not None:
+            execution.before_commit(session, report)
         session.commit()
     finally:
         session.close()
@@ -74,17 +96,19 @@ def generate_report_pdf(report: CallReport) -> bytes:
     buf = BytesIO()
     doc = SimpleDocTemplate(buf, pagesize=letter)
     styles = getSampleStyleSheet()
-    story: list = []
+    story: list[Flowable] = []
 
     story.append(Paragraph(f"Call Report: {report.call_id}", styles["Title"]))
     story.append(Spacer(1, 12))
 
     story.append(Paragraph("Summary", styles["Heading2"]))
-    story.append(Paragraph(f"Purpose: {report.summary.call_purpose}", styles["Normal"]))
+    story.append(Paragraph(escape(f"Purpose: {report.summary.call_purpose}"), styles["Normal"]))
     story.append(
         Paragraph(f"Resolution: {report.summary.resolution_status.value}", styles["Normal"])
     )
-    story.append(Paragraph(f"Sentiment: {report.summary.sentiment_trajectory}", styles["Normal"]))
+    story.append(
+        Paragraph(escape(f"Sentiment: {report.summary.sentiment_trajectory}"), styles["Normal"])
+    )
     story.append(Spacer(1, 12))
 
     story.append(Paragraph("QA Scores", styles["Heading2"]))
@@ -98,7 +122,9 @@ def generate_report_pdf(report: CallReport) -> bytes:
     ]:
         dim_score = getattr(scores, dim)
         story.append(
-            Paragraph(f"{dim}: {dim_score.score}/5 - {dim_score.justification}", styles["Normal"])
+            Paragraph(
+                escape(f"{dim}: {dim_score.score}/5 - {dim_score.justification}"), styles["Normal"]
+            )
         )
     story.append(Paragraph(f"Overall: {scores.overall_score}/5", styles["Normal"]))
     story.append(Spacer(1, 12))
@@ -108,8 +134,10 @@ def generate_report_pdf(report: CallReport) -> bytes:
         for flag in scores.compliance_flags:
             story.append(
                 Paragraph(
-                    f"[{flag.severity.upper()}] {flag.violation} "
-                    f"(ref: {flag.transcript_reference})",
+                    escape(
+                        f"[{flag.severity.upper()}] {flag.violation} "
+                        f"(ref: {flag.transcript_reference})"
+                    ),
                     styles["Normal"],
                 )
             )

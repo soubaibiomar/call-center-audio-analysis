@@ -1,0 +1,22 @@
+{
+  "build-final.json": "79590ca6dcfbe778795e5dcac3e61e6c5c473db0466634a84fb72b6fef0b399d",
+  "build.json": "b41ad23d0d48562be3216ff4cd5d3c691a48e97d48db3ff240161ebb29ffde17",
+  "compile.json": "0f40644b80a0075795f11414d7473e6d19dbd90fa65067b379fd3d24204dfb34",
+  "cpu-image-before.txt": "024bcbcd0bfad2bbae919999f24e02ed9a276a8a4a9af8dfb9eb0e1747d0224f",
+  "dependencies.json": "dfc37ef7ef889d6da187e709030b3251a4b8508b6330901f1efdc90b9d3ad77f",
+  "format.json": "abbb8dc02e8f53bce0462f56673683c0d6a3ee6a2d341ebfae55b58c463e3fe2",
+  "git-stat.txt": "b0b04f21795ce4a1d0826b4765f6722a4b78d8a16ce83dea5bb2eea5338d6aa3",
+  "git-status.txt": "96e5f11daab3f6becaac9546be4d35a2b488d6e339212b843a50ab05c1debb35",
+  "gpu-transcription.json": "cee77a77f934a90ac9b255b726b0f839734ec874ac21ea4997f8be90b72ff941",
+  "gpu-worker-http.json": "82476a13c48af81603501c6f3e096f638b56338599b8d4761619cd3b112bf777",
+  "gpu-worker-start.json": "35682d23c13cdd2740b8ee2eacd6d9803ba94042904a6d9d78050321ac3096f5",
+  "hardcoded-keys.json": "8ea9c591777b14cf7a71d51951b724b5252df12f819a1bda315450f48f088eaf",
+  "hooks.json": "6878eccc8881dff3ac73645eaffad6b3996f01b586f5ddb5f00bab86859583f2",
+  "mypy.json": "19bd76fccb31d8e21501f7d1dbe2fb7990f91a21f5590efd55fe81e8189151ea",
+  "operational.json": "218ff3574ebc82c5be8c326343fde44185d9c181555bf533be19858b3706f560",
+  "README.md": "4baafdc4cadcec225f34dd031a7b58b16f5acdc771099bfc2776f1936e9cc8b1",
+  "ruff.json": "78d0a7d7e886d18decb44ac14c8ff4f936b6b9dceeefece9a344b7788ebcb766",
+  "source-manifest.json": "1e207f947e802bf1a417523d13c9c8f5e875fe04f8e482df6aa3b55cef6e7d8b",
+  "tests.json": "03b5629c93c71701b8d83c9ef426ed867e2d8a997582075bd7cf44d6cd45a04e",
+  "tests.xml": "0475a7e22bf29c85a53a3b29bcc4d6e89e890507a3a59fc7c769751ca862e0b3"
+}

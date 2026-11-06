@@ -1,0 +1,12 @@
+{
+  "provider": "groq",
+  "credential_ready": true,
+  "pins_match": true,
+  "config_loaded": true,
+  "model": "openai/gpt-oss-20b",
+  "request_contains_private_audio": false,
+  "authenticated_request_succeeded": true,
+  "response_nonempty": true,
+  "elapsed_seconds": 0.8463575999994646,
+  "captured_at_utc": "2026-10-24T19:56:26.082649+00:00"
+}

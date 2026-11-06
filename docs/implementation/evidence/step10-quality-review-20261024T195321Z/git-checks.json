@@ -1,0 +1,32 @@
+[
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout": "a37e4634af1d2947fc3c548d54e62bda0b0daf89\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--stat"
+    ],
+    "exit_code": 0,
+    "stdout": " .github/ISSUE_TEMPLATE/bug_report.md          |  6 +-\n .github/PULL_REQUEST_TEMPLATE.md              | 71 +++++++++++++-------\n .github/workflows/ci.yml                      | 17 ++---\n .gitignore                                    |  4 ++\n .pre-commit-config.yaml                       |  2 +-\n CONTRIBUTING.md                               | 94 +++++++++++++++------------\n src/services/history.py                       | 21 ++----\n src/services/pipeline.py                      |  3 +-\n src/ui/tabs/history.py                        |  2 +-\n tests/integration/test_pipeline_end_to_end.py |  6 +-\n tests/unit/test_history_service.py            | 42 +++++++-----\n 11 files changed, 150 insertions(+), 118 deletions(-)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

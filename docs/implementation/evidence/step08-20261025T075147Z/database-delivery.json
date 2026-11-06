@@ -1,0 +1,152 @@
+{
+  "postgresql_version": "PostgreSQL 17.11 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit",
+  "revision": "0001_platform",
+  "runtime_role": {
+    "rolname": "project28_app",
+    "rolsuper": false,
+    "rolcreatedb": false,
+    "rolcreaterole": false,
+    "rolinherit": false,
+    "rolbypassrls": false
+  },
+  "runtime_owned_tables": 0,
+  "can_update": {
+    "calls": true,
+    "audit_log": false,
+    "users": false,
+    "model_versions": false,
+    "training_runs": false,
+    "legacy_imports": false
+  },
+  "policies": [
+    {
+      "relname": "alembic_version",
+      "relrowsecurity": false,
+      "relforcerowsecurity": false
+    },
+    {
+      "relname": "audit_log",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    },
+    {
+      "relname": "call_records",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    },
+    {
+      "relname": "calls",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    },
+    {
+      "relname": "jobs",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    },
+    {
+      "relname": "legacy_imports",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    },
+    {
+      "relname": "model_versions",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    },
+    {
+      "relname": "reviews",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    },
+    {
+      "relname": "segments",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    },
+    {
+      "relname": "tenants",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    },
+    {
+      "relname": "training_runs",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    },
+    {
+      "relname": "transcription_cache",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    },
+    {
+      "relname": "users",
+      "relrowsecurity": true,
+      "relforcerowsecurity": true
+    }
+  ],
+  "row_counts": {
+    "tenants": 1,
+    "users": 1,
+    "model_versions": 0,
+    "calls": 4,
+    "segments": 124,
+    "jobs": 0,
+    "reviews": 0,
+    "training_runs": 0,
+    "legacy_imports": 1,
+    "audit_log": 4,
+    "call_records": 4,
+    "transcription_cache": 1
+  },
+  "shape": {
+    "tenants": {
+      "foreign_keys": 0,
+      "indexes": 0
+    },
+    "users": {
+      "foreign_keys": 1,
+      "indexes": 3
+    },
+    "model_versions": {
+      "foreign_keys": 1,
+      "indexes": 3
+    },
+    "calls": {
+      "foreign_keys": 4,
+      "indexes": 6
+    },
+    "segments": {
+      "foreign_keys": 2,
+      "indexes": 2
+    },
+    "jobs": {
+      "foreign_keys": 2,
+      "indexes": 2
+    },
+    "reviews": {
+      "foreign_keys": 3,
+      "indexes": 2
+    },
+    "training_runs": {
+      "foreign_keys": 3,
+      "indexes": 1
+    },
+    "legacy_imports": {
+      "foreign_keys": 1,
+      "indexes": 2
+    },
+    "audit_log": {
+      "foreign_keys": 1,
+      "indexes": 2
+    },
+    "call_records": {
+      "foreign_keys": 1,
+      "indexes": 3
+    },
+    "transcription_cache": {
+      "foreign_keys": 1,
+      "indexes": 2
+    }
+  }
+}

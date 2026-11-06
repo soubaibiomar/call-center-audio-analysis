@@ -1,0 +1,70 @@
+[
+  {
+    "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis",
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/",
+      "tests/",
+      "scripts/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.20622020000155317,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis",
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "scripts/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.20329000000128872,
+    "stdout": "63 files already formatted\n",
+    "stderr": ""
+  },
+  {
+    "cwd": "C:\\Users\\omar\\Projects\\Project28-Upstream-Baseline-Step02",
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/",
+      "tests/",
+      "app.py"
+    ],
+    "exit_code": 1,
+    "duration_seconds": 0.19569639999826904,
+    "stdout": "src\\services\\history.py:63:52: UP038 Use `X | Y` in `isinstance` call instead of `(X, Y)`\n   |\n61 |                     \"status\": r.status or \"\",\n62 |                     \"overall_score\": (\n63 |                         f\"{float(score):.2f}/5\" if isinstance(score, (int, float)) else \"\u00e2\u20ac\u201d\"\n   |                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ UP038\n64 |                     ),\n65 |                     \"resolution_status\": str(resolution) if resolution else \"\u00e2\u20ac\u201d\",\n   |\n   = help: Convert to `X | Y`\n\nsrc\\ui\\tabs\\history.py:102:31: UP038 Use `X | Y` in `isinstance` call instead of `(X, Y)`\n    |\n100 |             )\n101 |         # evt.index can be a [row, col] pair or a single int depending on Gradio version\n102 |         idx = evt.index[0] if isinstance(evt.index, (list, tuple)) else evt.index\n    |                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ UP038\n103 |         if idx < 0 or idx >= len(call_ids):\n104 |             logger.warning(f\"History tab: row index {idx} out of range for {len(call_ids)} ids\")\n    |\n    = help: Convert to `X | Y`\n\nFound 2 errors.\nNo fixes available (2 hidden fixes can be enabled with the `--unsafe-fixes` option).\n",
+    "stderr": ""
+  },
+  {
+    "cwd": "C:\\Users\\omar\\Projects\\Project28-Upstream-Baseline-Step02",
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "app.py"
+    ],
+    "exit_code": 1,
+    "duration_seconds": 0.21158629999990808,
+    "stdout": "Would reformat: src\\services\\history.py\nWould reformat: src\\services\\pipeline.py\nWould reformat: tests\\unit\\test_history_service.py\n3 files would be reformatted, 53 files already formatted\n",
+    "stderr": ""
+  }
+]

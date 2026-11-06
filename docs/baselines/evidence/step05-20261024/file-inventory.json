@@ -1,0 +1,40 @@
+{
+  "self_excluded": true,
+  "files": [
+    {
+      "path": "docs/implementation/STEP_05_run_original_tests_and_static_checks_REPORT.md",
+      "bytes": 17020,
+      "sha256": "46f6096627317a5b4ad7dcc56b28c258a144425a92cec24add9cf0a058ee9c3e"
+    },
+    {
+      "path": "docs/baselines/verification.md",
+      "bytes": 3300,
+      "sha256": "4e7b3cfbe443ad5ac7c86e7d3d45dfa398057795ca64e3bf6791b14ea0588900"
+    },
+    {
+      "path": "docs/implementation/PROGRESS.md",
+      "bytes": 8134,
+      "sha256": "114514e1471b59248fff628afc015febcf9848c04ab33191d1ae513ac30a1a11"
+    },
+    {
+      "path": "docs/baselines/evidence/step05-20261024/commands.json",
+      "bytes": 28387,
+      "sha256": "7cffb987a57d1f92f7889dee71e96095d8f279fd55703749ed6c839042077414"
+    },
+    {
+      "path": "docs/baselines/evidence/step05-20261024/git-comparison.json",
+      "bytes": 15756,
+      "sha256": "03822fe0827db7568170d0b56b7921464937038463cd0016fbf7c43832eabe03"
+    },
+    {
+      "path": "docs/baselines/evidence/step05-20261024/seal.json",
+      "bytes": 379,
+      "sha256": "bdb437fe3df0516ef35554118ccccc69f05fe05881a8834df16c90191870eb26"
+    },
+    {
+      "path": "docs/baselines/evidence/step05-20261024/summary.json",
+      "bytes": 793,
+      "sha256": "e5b0795b956cd4c993cf42ea635e2fd31f5f953e2253961cab76531141f0c9ae"
+    }
+  ]
+}

@@ -1,6 +1,10 @@
 # Environment
 .env
 *.env.local
+.env.*
+!.env.example
+!.env.project28.example
+.venv/
 
 # Python
 __pycache__/
@@ -20,6 +24,12 @@ data/transcripts/
 *.wav
 *.flac
 *.m4a
+
+*.mp3
+
+# Dataset artifacts, manifests and split locks may contain restricted information.
+data/datasets/
+data/manifests/
 
 # Sample dataset is tracked (override *.mp3 for this dir)
 !data/samples/
@@ -41,3 +51,4 @@ docs/superpowers/
 
 # Secrets
 .secrets.baseline
+.local/

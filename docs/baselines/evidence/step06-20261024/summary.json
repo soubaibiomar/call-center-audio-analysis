@@ -1,0 +1,20 @@
+{
+  "step": "STEP_06",
+  "status": "BLOCKED",
+  "quality_verdict": "FAIL",
+  "failure_id": "E06-01",
+  "severity": "P1",
+  "classification": "Environment credential prerequisite, not a confirmed source regression",
+  "startup_exit_code": 1,
+  "startup_seconds": 13.801113599998644,
+  "cause": "Required environment variable OPENAI_API_KEY is not set",
+  "source_modified": false,
+  "model_downloads": false,
+  "browser_launched": false,
+  "screenshots": "NOT CAPTURED; application did not start",
+  "sample_audio_analysis": "NOT EXECUTED",
+  "exports": "NOT EXECUTED",
+  "runtime_features_working_count": "Not measured",
+  "next_eligible_step": "Resume STEP_06; STEP_07 not eligible",
+  "steps07_to15": "NOT STARTED; ordered execution stopped at failed dependency"
+}

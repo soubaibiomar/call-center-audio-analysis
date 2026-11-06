@@ -1,0 +1,71 @@
+[
+  {
+    "command": [
+      ".venv/Scripts/ruff.exe",
+      "check",
+      "scripts/benchmark_upgrade_asr.py",
+      "scripts/benchmark_upgrade_llm_quality.py",
+      "scripts/benchmark_upgrade_retrieval.py",
+      "scripts/download_upgrade_models.py",
+      "scripts/summarize_upgrade_benchmarks.py",
+      "scripts/report_upgrade_benchmarks.py",
+      "tests/unit/test_upgrade_benchmark_protocol.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.03551119999974617,
+    "output": "All checks passed!\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/ruff.exe",
+      "format",
+      "--check",
+      "scripts/benchmark_upgrade_asr.py",
+      "scripts/benchmark_upgrade_llm_quality.py",
+      "scripts/benchmark_upgrade_retrieval.py",
+      "scripts/download_upgrade_models.py",
+      "scripts/summarize_upgrade_benchmarks.py",
+      "scripts/report_upgrade_benchmarks.py",
+      "tests/unit/test_upgrade_benchmark_protocol.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.021711600000344333,
+    "output": "7 files already formatted\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "scripts/benchmark_upgrade_asr.py",
+      "scripts/benchmark_upgrade_llm_quality.py",
+      "scripts/benchmark_upgrade_retrieval.py",
+      "scripts/download_upgrade_models.py",
+      "scripts/summarize_upgrade_benchmarks.py",
+      "scripts/report_upgrade_benchmarks.py",
+      "tests/unit/test_upgrade_benchmark_protocol.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.16472690000045986,
+    "output": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_llm_factory.py",
+      "tests/unit/test_neural_diarization.py",
+      "tests/datasets/test_asr_benchmark.py",
+      "tests/unit/test_audio_preprocessing.py",
+      "tests/rag/test_grounding.py",
+      "tests/unit/test_upgrade_benchmark_protocol.py",
+      "-q",
+      "-rs"
+    ],
+    "exit_code": 0,
+    "seconds": 7.418030400000134,
+    "output": ".........................................s.....                          [100%]\n=========================== short test summary info ===========================\nSKIPPED [1] tests\\rag\\test_grounding.py:112: Configure isolated knowledge database\n46 passed, 1 skipped in 4.36s\nC:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  }
+]

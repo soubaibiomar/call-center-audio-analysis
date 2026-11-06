@@ -1,0 +1,31 @@
+{
+  "hashes": {
+    "app.py": "092438153c26506f36d5758234098f84fd3a53ed8574a694842702610d9997b5",
+    "src/services/pipeline.py": "9de2266721e99645e13e9669cb2b5c64c788c3e70903bd8560e207812dcd03bd",
+    "src/utils/llm_factory.py": "f3c5659c76eabc4783634dab7a40e9a28e0a837b25354a6a2e031110a5ed41ca",
+    "src/agents/summarization.py": "6a729fbe2b30e5806b23210c419e149c58a6d99735b621f3a98909321cfc49a8",
+    "src/agents/qa_scoring.py": "d80536f648b87da6d4a00d8f3b03e5adcc8e5f7776462d36e208e8594707b21b"
+  },
+  "versions": {
+    "gradio": "5.29.0",
+    "gradio-client": "1.10.0",
+    "faster-whisper": "1.2.1",
+    "av": "18.1.0",
+    "langgraph": "0.4.1",
+    "pydantic": "2.11.3",
+    "reportlab": "4.4.0"
+  },
+  "provider": "groq",
+  "model": "openai/gpt-oss-20b",
+  "asr_model": "tiny",
+  "db_path": "/app/data/calls.db",
+  "offline": "1",
+  "host_source_matches_container": true,
+  "captured_at_utc": "2026-10-24T20:12:46.123689+00:00",
+  "report_ids_consistent": true,
+  "qa_weighted_score_verified": 3.05,
+  "cache_hit_in_final_run": false,
+  "transcription_node_seconds_from_logs": 1.7,
+  "summary_qa_seconds_from_logs": 3.4,
+  "no_source_change_in_this_reexecution": true
+}

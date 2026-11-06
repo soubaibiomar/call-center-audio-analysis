@@ -1,0 +1,470 @@
+{
+  "acted": {
+    "uniform": {
+      "n": 32,
+      "labels": [
+        "neutral",
+        "happy",
+        "angry",
+        "sad",
+        "Unknown"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "raw_confusion_matrix": [
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ]
+      ],
+      "macro_f1": 0.1,
+      "operational_macro_f1": 0.0,
+      "per_class": {
+        "neutral": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4,
+          "support": 8
+        },
+        "happy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        },
+        "angry": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        },
+        "sad": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        }
+      },
+      "missing_classes": [],
+      "imbalance_ratio": 1.0,
+      "expected_calibration_error": 0.0,
+      "calibration_bins": 10,
+      "reliability": [
+        {
+          "bin": 2,
+          "n": 32,
+          "confidence": 0.25,
+          "accuracy": 0.25
+        }
+      ],
+      "coverage": 0.0,
+      "unknown_rate": 1.0,
+      "selective_accuracy": null
+    },
+    "constant_neutral": {
+      "n": 32,
+      "labels": [
+        "neutral",
+        "happy",
+        "angry",
+        "sad",
+        "Unknown"
+      ],
+      "confusion_matrix": [
+        [
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "raw_confusion_matrix": [
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ]
+      ],
+      "macro_f1": 0.1,
+      "operational_macro_f1": 0.1,
+      "per_class": {
+        "neutral": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4,
+          "support": 8
+        },
+        "happy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        },
+        "angry": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        },
+        "sad": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        }
+      },
+      "missing_classes": [],
+      "imbalance_ratio": 1.0,
+      "expected_calibration_error": 0.75,
+      "calibration_bins": 10,
+      "reliability": [
+        {
+          "bin": 9,
+          "n": 32,
+          "confidence": 1.0,
+          "accuracy": 0.25
+        }
+      ],
+      "coverage": 1.0,
+      "unknown_rate": 0.0,
+      "selective_accuracy": 0.25
+    }
+  },
+  "media": {
+    "uniform": {
+      "n": 32,
+      "labels": [
+        "neutral",
+        "happy",
+        "angry",
+        "sad",
+        "Unknown"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "raw_confusion_matrix": [
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ]
+      ],
+      "macro_f1": 0.1,
+      "operational_macro_f1": 0.0,
+      "per_class": {
+        "neutral": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4,
+          "support": 8
+        },
+        "happy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        },
+        "angry": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        },
+        "sad": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        }
+      },
+      "missing_classes": [],
+      "imbalance_ratio": 1.0,
+      "expected_calibration_error": 0.0,
+      "calibration_bins": 10,
+      "reliability": [
+        {
+          "bin": 2,
+          "n": 32,
+          "confidence": 0.25,
+          "accuracy": 0.25
+        }
+      ],
+      "coverage": 0.0,
+      "unknown_rate": 1.0,
+      "selective_accuracy": null
+    },
+    "constant_neutral": {
+      "n": 32,
+      "labels": [
+        "neutral",
+        "happy",
+        "angry",
+        "sad",
+        "Unknown"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "raw_confusion_matrix": [
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          0,
+          0
+        ]
+      ],
+      "macro_f1": 0.1,
+      "operational_macro_f1": 0.0,
+      "per_class": {
+        "neutral": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4,
+          "support": 8
+        },
+        "happy": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        },
+        "angry": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        },
+        "sad": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        }
+      },
+      "missing_classes": [],
+      "imbalance_ratio": 1.0,
+      "expected_calibration_error": 0.75,
+      "calibration_bins": 10,
+      "reliability": [
+        {
+          "bin": 9,
+          "n": 32,
+          "confidence": 1.0,
+          "accuracy": 0.25
+        }
+      ],
+      "coverage": 0.0,
+      "unknown_rate": 1.0,
+      "selective_accuracy": null
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "checksums": "Model digests and static prompt SHA256 prefixes represented as integer byte arrays; no metric/status altered.",
+  "synthetic_uri": "Historical JUnit testcase parameter labels replace the known dummy user:secret URI with synthetic-userinfo-endpoint. Current tests use explicit safe parameter IDs.",
+  "scan_summary": "No actual credential matched; no detection rule disabled."
+}

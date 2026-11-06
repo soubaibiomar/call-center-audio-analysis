@@ -1,26 +1,31 @@
 # Contributing
 
-Thanks for your interest in improving the Call Center Intelligence System. This document covers how to set up the project locally, the branch and PR conventions, the style guide, what is in scope and out of scope, and how to report bugs.
+Contributions preserve the original Call Center Intelligence behavior while Project 28
+adds Adaptive Call Center Intelligence capabilities. Follow the detailed
+[Project 28 development workflow](docs/development/workflow.md) for ownership,
+review, branch/commit conventions, conflicts, evidence and merge requirements.
+The workflow defines local policy; remote protections and labels are not activated
+merely by adding these files.
 
 ## Local Setup
 
-### Native (recommended for development)
+### Native Windows development
 
-```bash
-git clone https://github.com/ANI-IN/Call-Center-Intelligence-System.git
-cd Call-Center-Intelligence-System
+Use PowerShell and a uv-managed Python 3.12 environment; do not use Conda. The
+authorized dependency/setup step owns environment changes. When establishing a
+new development environment deliberately, the project commands are:
 
-python -m venv venv
-source venv/bin/activate            # Windows: venv\Scripts\activate
-
-pip install -e ".[dev]"
-pre-commit install
-
-cp .env.example .env
-# edit .env to add at least one LLM API key
+```powershell
+uv venv --python 3.12
+uv pip install --python .venv/Scripts/python.exe -e ".[dev]"
 ```
 
-You also need `ffmpeg` available on `PATH`. On macOS: `brew install ffmpeg`. On Debian / Ubuntu: `apt install ffmpeg`. On Windows: `choco install ffmpeg`.
+Inspect an existing environment before changing it. Never overwrite an existing
+`.env`; configure credentials privately using the setup documentation. FFmpeg is
+required for native audio operations; its host PATH absence is recorded in STEP_01.
+The existing Docker baseline offers a documented alternative. Hook configuration
+is in `.pre-commit-config.yaml`; installation/platform validation is a separate
+deliberate setup action, not something these instructions silently perform.
 
 ### Docker
 
@@ -35,48 +40,55 @@ The container runs the same Gradio app as `make run` and listens on port 7860.
 
 ## Running Tests Locally
 
-```bash
-make test               # unit + security suites (no API calls, under 20s)
-make test-integration   # full pipeline (requires an LLM key in .env)
-make test-security      # security suites only
-make test-all           # everything
+From the existing uv-managed Windows environment:
+
+```powershell
+.venv/Scripts/python.exe -m pytest tests/ -q --tb=short
+.venv/Scripts/python.exe -m ruff check src/ tests/ app.py
+.venv/Scripts/python.exe -m ruff format --check src/ tests/ app.py
+.venv/Scripts/python.exe -m mypy src/
+git diff --check
 ```
 
-Run `make test` before opening a PR. It is the same gate CI enforces on every push.
+Run focused checks for any changed development scripts as well. These commands
+do not install dependencies or launch models. Report actual exit codes and
+failures: full-project typing currently fails as documented in STEP_01/STEP_02;
+do not describe it as passed merely because a scoped check passes. The Makefile
+remains available for compatible shells. Current integration tests use mocked
+model/provider boundaries; their passing does not prove live model quality.
 
 ## Branch and PR Conventions
 
-- Create a branch from `main` named `<type>/<short-description>`. Types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`, `build`, `perf`.
-- Examples: `feat/strict-injection-normalization`, `fix/cache-error-logging`, `docs/architecture-rewrite`.
-- Keep PRs small. A PR that fixes one bug and refactors three modules is harder to review than two separate PRs.
-- Open the PR as a draft if you want early feedback. Mark it ready for review once CI is green.
-- Squash on merge is preferred. The PR title becomes the squashed commit message.
+Use a scoped branch and preserve existing uncommitted work. The already-existing
+`feature/project28-foundation` branch is reused; future names, responsibility
+boundaries and conflict procedures are in workflow rules W01–W06. Complete the
+[PR template](.github/PULL_REQUEST_TEMPLATE.md), including tests, security,
+documentation and measured ML/UI evidence where applicable. The other developer
+must approve the current revision before an authorized merge. Names/teams must be
+real; local reports do not substitute for independent human approval.
 
 ## Commit Message Style
 
-This repository uses **Conventional Commits**:
+Use Conventional Commits at cohesive, validated milestones:
 
-```
-<type>(<optional scope>): <short summary in imperative mood>
+```text
+<type>(<optional scope>): <concrete outcome>
 
-<optional body explaining the why>
-
-<optional footer with breaking changes or issue refs>
+Why the change was needed, its scope and material validation.
 ```
 
-Examples:
-
-- `feat(qa): assert dimension weights sum to 1.0 at import`
-- `fix(transcription): log cache failures instead of swallowing`
-- `docs: add architecture diagram for the LangGraph state machine`
-- `chore: add CI workflow with ruff and pytest`
+Group related implementation, configuration, documentation and tests. Avoid tiny
+per-edit commits or minute-based scheduling. Commit and push only when authorized.
+Adjusted dates spanning days require explicit intended dates and timezone from
+the user; do not invent a schedule or imply elapsed engineering time. Published
+history rewrites and force pushes require separate authorization. See W07–W08.
 
 ## Style Guide
 
 - **Formatter:** `ruff format`. Run `make format` to apply.
 - **Linter:** `ruff check` with the rules in `pyproject.toml:38-43`. Run `make lint` to verify.
 - **Type checker:** `mypy --strict` on `src/`. Run `make typecheck`.
-- **Pre-commit hooks** at `.pre-commit-config.yaml` enforce the formatter, the linter, and `detect-secrets` on every commit. Do not bypass with `--no-verify`.
+- **Pre-commit configuration** at `.pre-commit-config.yaml` defines formatter/linter/secret checks. Installed hook behavior must be validated on the target platform; STEP_03 does not install or certify hooks. Do not bypass active checks with `--no-verify`.
 - **Line length:** 100 characters (`pyproject.toml:40`).
 - **Imports:** Sorted by ruff's `I` rule. Avoid relative imports beyond a single dot.
 - **Docstrings:** One-line summary on every public function; longer docstrings only when the behavior is non-obvious. Existing modules show the style.
@@ -105,9 +117,9 @@ Open an issue on GitHub with:
 
 - The exact command or UI action that triggered the bug.
 - Expected behavior.
-- Actual behavior (full error message and stack trace if available).
+- Actual behavior (sanitized error message and stack trace if available).
 - Your environment: Python version (`python --version`), OS, whether you are running native or Docker.
-- A minimal reproduction. For audio-related bugs, attach a small sample audio if you can share one.
+- A minimal reproduction. For audio-related bugs, prefer a synthetic reproduction; share recordings only with verified permission and appropriate privacy handling.
 
 For **security-relevant** bugs, do not file a public issue. See `SECURITY.md` for the private disclosure path.
 
@@ -124,4 +136,4 @@ Reviewers may ask for changes; this is normal. If a request is unclear, ask. The
 
 ## License of Contributions
 
-By submitting a pull request, you agree that your contribution is licensed under the same terms as the project (CC BY-NC 4.0, see `LICENSE`). Do not contribute code you do not have the right to license.
+By submitting a pull request, you agree that your contribution is licensed under the same MIT terms as the project (see `LICENSE`). Do not contribute code you do not have the right to license.

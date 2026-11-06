@@ -1,0 +1,37 @@
+{
+  "captured_at_utc": "2026-10-24T20:08:07.889492+00:00",
+  "all_corrected_checks_passed": true,
+  "healthy_services": [
+    "project28-app-1",
+    "project28-postgres-1"
+  ],
+  "ports": {
+    "project28-app-1": {
+      "7860/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "7861"
+        }
+      ]
+    },
+    "project28-postgres-1": {
+      "5432/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "5433"
+        }
+      ]
+    }
+  },
+  "models_successfully_checked": [
+    "qwen3.5:9b-q4_K_M",
+    "qwen2.5-coder:7b",
+    "llama3.1:8b"
+  ],
+  "no_model_downloads": true,
+  "app_persistence": "SQLite (migration pending)",
+  "postgresql": "Authenticated TCP transaction passed; database ready",
+  "observed_whole_gpu_peak_mib": 6493,
+  "runtime_only_scope": "Operational setup, not STEP_08 migration or STEP_11 adapter completion",
+  "initial_failures": "Helper missing Callable annotation and invalid uv pip check --system diagnostic command corrected; earlier validation.json retained."
+}

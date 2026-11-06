@@ -1,0 +1,12 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "scripts.benchmark_local_llm",
+    "--output",
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\docs\\implementation\\evidence\\step11-correction-20261027T091952Z\\local-benchmark"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": null,
+  "note": "Successful tool execution exit0 observed; complete subprocess wall time not separately captured. Exact per-observation timings in results.json."
+}

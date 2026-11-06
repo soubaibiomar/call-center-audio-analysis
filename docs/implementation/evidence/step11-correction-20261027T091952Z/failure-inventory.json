@@ -1,0 +1,46 @@
+[
+  {
+    "id": "S11-R01",
+    "severity": "P1",
+    "component": "local model trust policy",
+    "failure": "Local endpoint accepted remote/cloud-backed model aliases and unverifiable metadata",
+    "reproduction": "red.json:3 policy cases do not raise; fake SDK constructor accepted alias",
+    "cause": "Address-only policy never inspected model routing/weights",
+    "fix": "Metadata-only /api/show preflight requires local GGUF model_info and absent remote_model/remote_host; otherwise no SDK construction",
+    "validation": "green-final.json; tests.json; local-benchmark/results.json; local-worker-http.json",
+    "status": "fixed"
+  },
+  {
+    "id": "S11-R02",
+    "severity": "P2",
+    "component": "inference HTTP ownership",
+    "failure": "Owned synchronous HTTP transport remained open after success/exhaustion",
+    "reproduction": "red.json:2 is_closed assertions fail",
+    "cause": "No finally/context resource cleanup around agent-owned client",
+    "fix": "ExitStack registers local sync client close immediately after construction",
+    "validation": "green-final.json; tests.json; actual local inference",
+    "status": "fixed"
+  },
+  {
+    "id": "S11-R03",
+    "severity": "P2",
+    "component": "failure model telemetry",
+    "failure": "Constructor failure ignored configured model; rejected free-form identifier could be echoed",
+    "reproduction": "red.json:environment model mismatch; red-invalid-model-receipt.json:rejected synthetic content appears",
+    "cause": "Preconstruction receipt used defaults separately from factory selector; model IDs lacked safe representation",
+    "fix": "Shared resolve_model_name plus bounded observed identifier/unresolved fallback",
+    "validation": "green-final.json; tests.json",
+    "status": "fixed"
+  },
+  {
+    "id": "S11-R04",
+    "severity": "P2",
+    "component": "benchmark process contract",
+    "failure": "Utility returned successful process status after all model inference failed",
+    "reproduction": "red.json:0% valid receipt but no SystemExit",
+    "cause": "Exceptions became result rows without aggregate exit gate",
+    "fix": "Preserve receipts then exit1 if any observation invalid; successful real run exits0",
+    "validation": "green-final.json; local-benchmark/results.json; benchmark-execution.json",
+    "status": "fixed"
+  }
+]

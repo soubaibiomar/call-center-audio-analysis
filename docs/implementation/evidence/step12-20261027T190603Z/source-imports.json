@@ -1,0 +1,207 @@
+{
+  "src/datasets/__init__.py": [],
+  "src/datasets/manifest.py": [
+    {
+      "line": 3,
+      "statement": "from datetime import date"
+    },
+    {
+      "line": 4,
+      "statement": "from typing import Annotated, Literal"
+    },
+    {
+      "line": 5,
+      "statement": "from urllib.parse import urlsplit"
+    },
+    {
+      "line": 7,
+      "statement": "from pydantic import BaseModel, ConfigDict, Field, StringConstraints, model_validator"
+    }
+  ],
+  "src/datasets/split.py": [
+    {
+      "line": 3,
+      "statement": "import hashlib"
+    },
+    {
+      "line": 4,
+      "statement": "import json"
+    },
+    {
+      "line": 5,
+      "statement": "from collections import defaultdict"
+    },
+    {
+      "line": 6,
+      "statement": "from datetime import date"
+    },
+    {
+      "line": 7,
+      "statement": "from typing import Literal"
+    },
+    {
+      "line": 9,
+      "statement": "from pydantic import Field"
+    },
+    {
+      "line": 11,
+      "statement": "from src.datasets.manifest import Manifest, StrictModel, Token"
+    }
+  ],
+  "src/datasets/__main__.py": [
+    {
+      "line": 3,
+      "statement": "import argparse"
+    },
+    {
+      "line": 4,
+      "statement": "from datetime import date"
+    },
+    {
+      "line": 5,
+      "statement": "from pathlib import Path"
+    },
+    {
+      "line": 7,
+      "statement": "from src.datasets.manifest import Manifest"
+    },
+    {
+      "line": 8,
+      "statement": "from src.datasets.split import load_lock_verified, plan_splits"
+    }
+  ],
+  "scripts/inventory_librispeech_sample.py": [
+    {
+      "line": 7,
+      "statement": "import argparse"
+    },
+    {
+      "line": 8,
+      "statement": "import hashlib"
+    },
+    {
+      "line": 9,
+      "statement": "import io"
+    },
+    {
+      "line": 10,
+      "statement": "import json"
+    },
+    {
+      "line": 11,
+      "statement": "import re"
+    },
+    {
+      "line": 12,
+      "statement": "import wave"
+    },
+    {
+      "line": 13,
+      "statement": "from datetime import date"
+    },
+    {
+      "line": 14,
+      "statement": "from pathlib import Path"
+    },
+    {
+      "line": 15,
+      "statement": "from urllib.parse import urlsplit"
+    },
+    {
+      "line": 17,
+      "statement": "import httpx"
+    },
+    {
+      "line": 19,
+      "statement": "from src.datasets.manifest import Manifest"
+    }
+  ],
+  "tests/datasets/test_manifest_and_split.py": [
+    {
+      "line": 3,
+      "statement": "import copy"
+    },
+    {
+      "line": 4,
+      "statement": "import hashlib"
+    },
+    {
+      "line": 5,
+      "statement": "import json"
+    },
+    {
+      "line": 6,
+      "statement": "import subprocess"
+    },
+    {
+      "line": 7,
+      "statement": "import sys"
+    },
+    {
+      "line": 8,
+      "statement": "from datetime import date"
+    },
+    {
+      "line": 10,
+      "statement": "import pytest"
+    },
+    {
+      "line": 11,
+      "statement": "from pydantic import ValidationError"
+    },
+    {
+      "line": 13,
+      "statement": "from src.datasets.manifest import Manifest"
+    },
+    {
+      "line": 14,
+      "statement": "from src.datasets.split import load_lock_verified, plan_splits"
+    }
+  ],
+  "tests/datasets/test_public_intake.py": [
+    {
+      "line": 3,
+      "statement": "import hashlib"
+    },
+    {
+      "line": 4,
+      "statement": "import json"
+    },
+    {
+      "line": 5,
+      "statement": "import sys"
+    },
+    {
+      "line": 6,
+      "statement": "from datetime import date"
+    },
+    {
+      "line": 7,
+      "statement": "from unittest.mock import patch"
+    },
+    {
+      "line": 9,
+      "statement": "import httpx"
+    },
+    {
+      "line": 10,
+      "statement": "import pytest"
+    },
+    {
+      "line": 12,
+      "statement": "from scripts import inventory_librispeech_sample"
+    },
+    {
+      "line": 13,
+      "statement": "from src.datasets.manifest import Manifest"
+    },
+    {
+      "line": 14,
+      "statement": "from src.datasets.split import plan_splits"
+    },
+    {
+      "line": 15,
+      "statement": "from tests.conftest import make_wav_bytes"
+    }
+  ]
+}

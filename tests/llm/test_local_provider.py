@@ -1,0 +1,203 @@
+"""Public provider and inference contracts using controlled HTTP responses."""
+
+import json
+from unittest.mock import MagicMock, patch
+
+import httpx
+import pytest
+from langchain_openai import ChatOpenAI
+
+from src.agents.summarization import SummarizationError, run_summarization
+from src.services.model_runs import capture_model_runs
+from src.utils.llm_factory import get_llm
+from tests.conftest import make_summary, make_transcription
+
+
+@pytest.mark.parametrize(
+    "provider,module,symbol",
+    [
+        ("openai", "langchain_openai", "ChatOpenAI"),
+        ("gemini", "langchain_google_genai", "ChatGoogleGenerativeAI"),
+        ("groq", "langchain_groq", "ChatGroq"),
+    ],
+)
+def test_hosted_provider_contract_preserved(provider, module, symbol):
+    with patch(f"{module}.{symbol}") as ctor:
+        assert get_llm(provider, model="explicit", timeout=11) is ctor.return_value
+    ctor.assert_called_once_with(model="explicit", timeout=11)
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "https://example.com/v1",
+        "http://localhost:11434/v1?token=private",
+        "http://user:secret@localhost:11434/v1",  # pragma: allowlist secret
+        "http://localhost:11434/other",
+    ],
+    ids=["remote", "query", "synthetic-userinfo", "wrong-path"],
+)
+def test_local_endpoint_rejects_remote_or_credential_urls(monkeypatch, url):
+    monkeypatch.setenv("OLLAMA_BASE_URL", url)
+    with pytest.raises(ValueError, match="local Ollama"):
+        get_llm("ollama")
+
+
+def test_unknown_provider_cannot_silently_fall_back():
+    with pytest.raises(ValueError, match="Unsupported LLM provider"):
+        get_llm("typo")
+
+
+def test_local_json_schema_over_real_sdk(monkeypatch):
+    transcript = make_transcription()
+    expected = make_summary(call_id=transcript.call_id)
+    requests = []
+
+    def respond(request):
+        requests.append(json.loads(request.content))
+        return httpx.Response(
+            200,
+            json={
+                "id": "synthetic",
+                "object": "chat.completion",
+                "created": 0,
+                "model": "qwen-test",
+                "choices": [
+                    {
+                        "index": 0,
+                        "finish_reason": "stop",
+                        "message": {"role": "assistant", "content": expected.model_dump_json()},
+                    }
+                ],
+            },
+        )
+
+    client = httpx.Client(transport=httpx.MockTransport(respond))
+
+    def construct(**kwargs):
+        kwargs["http_client"] = client
+        return ChatOpenAI(**kwargs)
+
+    with (
+        patch("langchain_openai.ChatOpenAI", side_effect=construct),
+        patch("src.utils.llm_factory.require_local_model"),
+    ):
+        with capture_model_runs() as events:
+            result = run_summarization(transcript, provider="ollama", model="qwen-test")
+    client.close()
+    assert result.call_id == transcript.call_id
+    assert requests[0]["response_format"]["type"] == "json_schema"
+    assert requests[0]["model"] == "qwen-test"
+    assert requests[0]["reasoning_effort"] == "none"
+    assert requests[0]["max_completion_tokens"] == 2048
+    assert len(events) == 1 and events[0].structured_output == "valid"
+    assert events[0].model_id == "qwen-test" and events[0].fallback == "none"
+    assert "billing" not in events[0].model_dump_json().lower()
+
+
+def test_retries_record_safe_errors_and_never_fallback(caplog):
+    llm = MagicMock()
+    llm.model_name = "qwen-test"
+    llm.with_structured_output.return_value = llm
+    llm.invoke.side_effect = [ValueError("PRIVATE CALL CONTENT"), make_summary()]
+    with patch("src.agents.summarization.get_llm", return_value=llm), patch("time.sleep"):
+        with capture_model_runs() as events:
+            run_summarization(make_transcription(), provider="ollama", max_retries=2)
+    assert [e.structured_output for e in events] == ["error", "valid"]
+    assert [e.attempt for e in events] == [1, 2]
+    assert all(e.fallback == "none" for e in events)
+    assert "PRIVATE CALL CONTENT" not in caplog.text
+
+
+def test_schema_failure_exhaustion_is_safe(caplog):
+    llm = MagicMock()
+    llm.model_name = "qwen-test"
+    llm.with_structured_output.return_value = llm
+    llm.invoke.return_value = {"call_purpose": "PRIVATE CALL CONTENT"}
+    with patch("src.agents.summarization.get_llm", return_value=llm):
+        with capture_model_runs() as events:
+            with pytest.raises(SummarizationError, match="Failed after 1 attempts") as error:
+                run_summarization(make_transcription(), provider="ollama", max_retries=1)
+    assert events[0].error_code == "schema_invalid"
+    assert "PRIVATE CALL CONTENT" not in str(error.value) + caplog.text
+
+
+@pytest.mark.parametrize(
+    "failure,code",
+    [
+        ("timeout", "timeout"),
+        ("connection", "unavailable"),
+        ("missing_model", "provider_http_error"),
+        ("redirect", "provider_http_error"),
+    ],
+)
+def test_transport_failures_do_not_call_hosted_service(failure, code):
+    seen = []
+
+    def respond(request):
+        seen.append(request.url.host)
+        if failure == "timeout":
+            raise httpx.ReadTimeout("PRIVATE DETAIL", request=request)
+        if failure == "connection":
+            raise httpx.ConnectError("PRIVATE DETAIL", request=request)
+        return httpx.Response(
+            302 if failure == "redirect" else 404,
+            headers={"Location": "https://example.com/private"},
+            json={"error": "PRIVATE DETAIL"},
+        )
+
+    with httpx.Client(transport=httpx.MockTransport(respond), follow_redirects=False) as client:
+
+        def construct(**kwargs):
+            kwargs["http_client"] = client
+            return ChatOpenAI(**kwargs)
+
+        with (
+            patch("langchain_openai.ChatOpenAI", side_effect=construct),
+            patch("src.utils.llm_factory.require_local_model"),
+        ):
+            with capture_model_runs() as events:
+                with pytest.raises(SummarizationError) as error:
+                    run_summarization(make_transcription(), provider="ollama", max_retries=1)
+    assert seen == ["127.0.0.1"]
+    assert events[0].error_code == code and events[0].fallback == "none"
+    assert "PRIVATE DETAIL" not in str(error.value)
+
+
+def test_model_metadata_roundtrip_preserves_old_reports(monkeypatch):
+    from services.api.schemas import Report
+    from src.agents.report import compile_report
+    from src.graph.state import CallReport
+    from src.graph.workflow import report_node, summarize_and_qa_node
+    from src.utils.config import load_config
+    from tests.conftest import make_intake_result, make_qa_scores
+
+    monkeypatch.setenv("LLM_PROVIDER", "ollama")
+    llm = MagicMock()
+    llm.model_name = "qwen-test:version"
+    llm.with_structured_output.return_value = llm
+    llm.invoke.side_effect = [make_summary(), make_qa_scores()]
+    intake = make_intake_result()
+    transcript = make_transcription(call_id=intake.call_id)
+    with (
+        patch("src.agents.summarization.get_llm", return_value=llm),
+        patch("src.agents.qa_scoring.get_llm", return_value=llm),
+    ):
+        state = summarize_and_qa_node({"transcription": transcript}, load_config())
+    report = report_node({"intake": intake, "transcription": transcript, **state})["report"]
+    restored = CallReport.model_validate_json(report.model_dump_json())
+    payload = Report.from_report(restored)
+    assert len(payload.model_runs) == 2
+    assert {r.schema_name for r in payload.model_runs} == {"SummaryResult", "QAScoreResult"}
+    assert all(r.model_version == "qwen-test:version" for r in payload.model_runs)
+    legacy = compile_report(intake, transcript, make_summary(), make_qa_scores(), "fixture")
+    old_json = legacy.model_dump(exclude={"model_runs"})
+    assert CallReport.model_validate(old_json).model_runs == []
+
+
+def test_capture_isolation_restores_outer_context():
+    with capture_model_runs() as outer:
+        with capture_model_runs() as inner:
+            assert inner is not outer
+    with capture_model_runs() as other:
+        assert other == [] and other is not inner

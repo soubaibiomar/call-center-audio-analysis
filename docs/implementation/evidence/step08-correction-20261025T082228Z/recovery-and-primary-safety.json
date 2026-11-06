@@ -1,0 +1,20 @@
+{
+  "database": "project28_step08_review_20261025_082622",
+  "empty_up_down_up": true,
+  "normal_role_provisioning": true,
+  "legacy_import": {
+    "sha256": "d40fa968e81059ed8f522332687e5e6ee25e4c8fc0e36b3012cbb5b6d88600ad",
+    "rows": {
+      "call_records": 3,
+      "audit_log": 3,
+      "transcription_cache": 1
+    },
+    "replayed": false
+  },
+  "exact_replay": true,
+  "original_snapshot_unchanged": true,
+  "primary_calls_before": 4,
+  "primary_calls_after": 4,
+  "actual_runtime_role_memberships": 0,
+  "query_returns_three_reports": true
+}

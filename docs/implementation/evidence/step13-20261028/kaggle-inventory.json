@@ -1,0 +1,17 @@
+{
+  "api_status": 200,
+  "dataset": "satvicoder/call-center-data",
+  "title": "Call Center Data",
+  "subtitle": "Call Center Daily Performance",
+  "license": "CC0: Public Domain",
+  "version": 1,
+  "download_status": 200,
+  "archive_bytes": 22935,
+  "archive_sha256": "aa79051c756c61c2e322d04562b6c3d6183d54c60e33741c36a826d13a610c4f",
+  "members": [
+    {
+      "name": "Call Center Data.csv",
+      "bytes": 66754
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "backend": "parakeet",
+  "model_directory": "parakeet",
+  "device": "cuda",
+  "precision": "float16",
+  "dataset": "apptek-com/apptek_callcenter_dialogues",
+  "dataset_revision": "b98967d9946f7f59f58d08624a2a00fe98fe0219",
+  "license": "CC-BY-SA-4.0",
+  "roleplay": true,
+  "manifest_sha256": "0702951b27d27a5137205f6d9f28a7eaa3227e65ab137d944c897b7b9c98fb71",
+  "normalization": "NFC/casefold/whitespace; punctuation retained",
+  "protocol": "mono16kHz; fixed30s; English hint where supported; greedy/beam1; no VAD; warmup1s silence; load/warmup excluded",
+  "load_seconds": 9.049796368999523,
+  "backend_version": "5.21.1",
+  "repetitions": 2,
+  "observations": [
+    {
+      "sample": "en-AU",
+      "repeat": 0,
+      "seconds": 3.364446362000308,
+      "audio_seconds": 311.0,
+      "word_errors": 107,
+      "reference_words": 686,
+      "char_errors": 283,
+      "reference_chars": 3485,
+      "hypothesis_sha256": "86e46b6f500fcabe73ac170161ffb941217bd90eed5be45a97b91211de26ff43"
+    },
+    {
+      "sample": "en-IN",
+      "repeat": 0,
+      "seconds": 4.162068094999995,
+      "audio_seconds": 398.9546875,
+      "word_errors": 284,
+      "reference_words": 987,
+      "char_errors": 671,
+      "reference_chars": 5446,
+      "hypothesis_sha256": "560688e2f710cc97320dabb1d0643fd46b1a36113e686c4921eb4dcb718b3aba"
+    },
+    {
+      "sample": "en-US_General",
+      "repeat": 0,
+      "seconds": 2.5141573409991906,
+      "audio_seconds": 282.248125,
+      "word_errors": 132,
+      "reference_words": 544,
+      "char_errors": 297,
+      "reference_chars": 2997,
+      "hypothesis_sha256": "a4356e83d629a43cd810231d2ede301c1e6fcbcc697cc098d3433aeedcfafba8"
+    },
+    {
+      "sample": "en-AU",
+      "repeat": 1,
+      "seconds": 2.468650978000369,
+      "audio_seconds": 311.0,
+      "word_errors": 107,
+      "reference_words": 686,
+      "char_errors": 283,
+      "reference_chars": 3485,
+      "hypothesis_sha256": "86e46b6f500fcabe73ac170161ffb941217bd90eed5be45a97b91211de26ff43"
+    },
+    {
+      "sample": "en-IN",
+      "repeat": 1,
+      "seconds": 3.8921021020005355,
+      "audio_seconds": 398.9546875,
+      "word_errors": 284,
+      "reference_words": 987,
+      "char_errors": 671,
+      "reference_chars": 5446,
+      "hypothesis_sha256": "560688e2f710cc97320dabb1d0643fd46b1a36113e686c4921eb4dcb718b3aba"
+    },
+    {
+      "sample": "en-US_General",
+      "repeat": 1,
+      "seconds": 2.3578356670004723,
+      "audio_seconds": 282.248125,
+      "word_errors": 132,
+      "reference_words": 544,
+      "char_errors": 297,
+      "reference_chars": 2997,
+      "hypothesis_sha256": "a4356e83d629a43cd810231d2ede301c1e6fcbcc697cc098d3433aeedcfafba8"
+    }
+  ],
+  "versions": {
+    "numpy": "1.26.4",
+    "soundfile": "0.14.0",
+    "scipy": "1.17.1",
+    "rapidfuzz": "3.14.6"
+  },
+  "model_receipt": {
+    "repo": "nvidia/parakeet-tdt-0.6b-v3",
+    "revision": "541d1f99c6b0c3cd0b11a95167540bb8edefd82b",
+    "files": [
+      {
+        "file": "README.md",
+        "size": 42888,
+        "sha256": "7a4306a43f395e3a716e77f1d81c03db18a0a355d7b566bb1d6307213ba0302b",
+        "lfs_sha256": null
+      },
+      {
+        "file": "config.json",
+        "size": 1153,
+        "sha256": "e747b85e1bdfd300c8b8ac63bac8dd5221f8fe9bc275b48d06c735fcd6971b6e",
+        "lfs_sha256": null
+      },
+      {
+        "file": "generation_config.json",
+        "size": 289,
+        "sha256": "b141de6ec6d7f982ece13f98f604e3fe1807ea9c0e839185d0ab7064604209d0",
+        "lfs_sha256": null
+      },
+      {
+        "file": "model.safetensors",
+        "size": 2508311120,
+        "sha256": "3a2026366188c8c68598edbbff92f8d11590a08e0ae2e6775544e7b07d6a5e11",
+        "lfs_sha256": "3a2026366188c8c68598edbbff92f8d11590a08e0ae2e6775544e7b07d6a5e11"
+      },
+      {
+        "file": "processor_config.json",
+        "size": 392,
+        "sha256": "8346a93a3b987fa1dec57a78f045cd0817d21786589a5a096b41a57a446fd1d7",
+        "lfs_sha256": null
+      },
+      {
+        "file": "tokenizer.json",
+        "size": 1159960,
+        "sha256": "bd321b096832a3f270bd3b2a88823957920f1a5c5ada71114a26ea729d0cbe91",
+        "lfs_sha256": null
+      },
+      {
+        "file": "tokenizer_config.json",
+        "size": 290,
+        "sha256": "0b2fe0037599ee335f0b972fa682bf0ece74e4ccfec755cb7daa3405d3d3e874",
+        "lfs_sha256": null
+      }
+    ]
+  },
+  "peak_torch_allocated_bytes": 1362446848,
+  "sampled_whole_gpu_peak_mib": 1501
+}

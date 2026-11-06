@@ -1,0 +1,13 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "mypy",
+    "src/datasets",
+    "scripts/inventory_librispeech_sample.py"
+  ],
+  "exit_code": 0,
+  "seconds": 1.0362630000017816,
+  "stdout": "Success: no issues found in 5 source files\n",
+  "stderr": ""
+}

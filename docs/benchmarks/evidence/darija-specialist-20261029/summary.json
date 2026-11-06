@@ -1,0 +1,187 @@
+{
+  "manifest_sha256": "cdeb7d8d47b895598dcede04d966c64f27f04fd16af7ba9ed9f582d896d59c68",
+  "models": {
+    "small-base": {
+      "name": "Whisper Small base",
+      "metrics": {
+        "clips": 100,
+        "reference_words": 1411,
+        "wer": 0.9950389794472005,
+        "cer": 0.548234598906781,
+        "strict_wer": 1.0106307583274274,
+        "rtf": 0.061668059110197786,
+        "p50_seconds": 0.22706731449943618,
+        "p95_seconds": 0.38044882500071253,
+        "audio_seconds": 413.9005625,
+        "empty_transcripts": 0
+      },
+      "precision": "float16",
+      "peak_gpu_mib": 960,
+      "load_seconds": 4.196226134999961,
+      "backend_version": "1.2.1",
+      "silence_control": {
+        "audio_seconds": 1,
+        "language_hint": "ar",
+        "nonempty": true,
+        "output_characters": 329,
+        "output_sha256": "7589acc91ef3545cc952ccb80534a345db1b600aa381398bad306697b67338af",
+        "scope": "single synthetic silence warmup; not a full no-speech validation"
+      },
+      "qwen_parameter_dtype_counts": {}
+    },
+    "small-darija": {
+      "name": "Whisper Small / DVoice Darija",
+      "metrics": {
+        "clips": 100,
+        "reference_words": 1411,
+        "wer": 0.9433026222537207,
+        "cer": 0.5562121435958044,
+        "strict_wer": 0.9553508150248051,
+        "rtf": 0.05474508868778476,
+        "p50_seconds": 0.20972708449971833,
+        "p95_seconds": 0.3288920019986108,
+        "audio_seconds": 413.9005625,
+        "empty_transcripts": 0
+      },
+      "precision": "float16",
+      "peak_gpu_mib": 960,
+      "load_seconds": 3.7237329079998744,
+      "backend_version": "1.2.1",
+      "silence_control": {
+        "audio_seconds": 1,
+        "language_hint": "ar",
+        "nonempty": true,
+        "output_characters": 335,
+        "output_sha256": "5da1643a9df14a29edac9c7507c586184e8170454b84e1e0d5d8aff2a24d3730",
+        "scope": "single synthetic silence warmup; not a full no-speech validation"
+      },
+      "qwen_parameter_dtype_counts": {}
+    },
+    "turbo-base": {
+      "name": "Whisper Turbo base",
+      "metrics": {
+        "clips": 100,
+        "reference_words": 1411,
+        "wer": 1.0035435861091424,
+        "cer": 0.5596099867040922,
+        "strict_wer": 1.0283486888731397,
+        "rtf": 0.08407759047438579,
+        "p50_seconds": 0.32835718100068334,
+        "p95_seconds": 0.42881005800154526,
+        "audio_seconds": 413.9005625,
+        "empty_transcripts": 0
+      },
+      "precision": "float16",
+      "peak_gpu_mib": 2364,
+      "load_seconds": 27.80924682300065,
+      "backend_version": "1.2.1",
+      "silence_control": {
+        "audio_seconds": 1,
+        "language_hint": "ar",
+        "nonempty": true,
+        "output_characters": 16,
+        "output_sha256": "95c86bf8b19e7febfe2111c8733cf77ddea49baab42c30929855c283ff4e1d00",
+        "scope": "single synthetic silence warmup; not a full no-speech validation"
+      },
+      "qwen_parameter_dtype_counts": {}
+    },
+    "qwen-base": {
+      "name": "Qwen3-ASR 1.7B base BF16",
+      "metrics": {
+        "clips": 100,
+        "reference_words": 1411,
+        "wer": 0.8625088589652729,
+        "cer": 0.39636578519722265,
+        "strict_wer": 0.8809355067328136,
+        "rtf": 0.2290331460760046,
+        "p50_seconds": 0.8585225470005753,
+        "p95_seconds": 1.6702429300003132,
+        "audio_seconds": 413.9005625,
+        "empty_transcripts": 0
+      },
+      "precision": "bfloat16",
+      "peak_gpu_mib": 4735,
+      "load_seconds": 62.53077409499929,
+      "backend_version": "0.0.6",
+      "silence_control": {
+        "audio_seconds": 1,
+        "language_hint": "ar",
+        "nonempty": true,
+        "output_characters": 4,
+        "output_sha256": "011306fdda75e9d298b25f838af1ab6a62b0e45a23be10b10c1c243e1fcec2a6",
+        "scope": "single synthetic silence warmup; not a full no-speech validation"
+      },
+      "qwen_parameter_dtype_counts": {
+        "torch.bfloat16": 2038052480
+      }
+    },
+    "moulsot": {
+      "name": "MoulSot v0.3 BF16",
+      "metrics": {
+        "clips": 100,
+        "reference_words": 1411,
+        "wer": 0.5393338058114813,
+        "cer": 0.20889348500517063,
+        "strict_wer": 0.6094968107725017,
+        "rtf": 0.2504890094296414,
+        "p50_seconds": 0.9344517290001022,
+        "p95_seconds": 1.7879446589995496,
+        "audio_seconds": 413.9005625,
+        "empty_transcripts": 0
+      },
+      "precision": "bfloat16",
+      "peak_gpu_mib": 4562,
+      "load_seconds": 43.17991575999986,
+      "backend_version": "0.0.6",
+      "silence_control": {
+        "audio_seconds": 1,
+        "language_hint": "ar",
+        "nonempty": true,
+        "output_characters": 11,
+        "output_sha256": "dc20e3f86ca7a4ee1c963870605b69517550b6388ded6dda0eff6ec640c93cd0",
+        "scope": "single synthetic silence warmup; not a full no-speech validation"
+      },
+      "qwen_parameter_dtype_counts": {
+        "torch.bfloat16": 2038052480
+      }
+    }
+  },
+  "paired_comparisons": {
+    "small-darija_vs_small-base": {
+      "candidate_minus_baseline_wer_points": -5.17363571934798,
+      "ci95_points": [
+        -19.673247106875426,
+        6.113207547169812
+      ],
+      "resampling_groups": 100,
+      "resamples": 5000,
+      "seed": 20261029,
+      "assumption": "source-prefix groups treated as independent; episode/speaker independence is unverified",
+      "candidate_to_baseline_inference_time_ratio": 0.8877381496628259
+    },
+    "moulsot_vs_qwen-base": {
+      "candidate_minus_baseline_wer_points": -32.317505315379165,
+      "ci95_points": [
+        -35.592011412268185,
+        -29.20415224913495
+      ],
+      "resampling_groups": 100,
+      "resamples": 5000,
+      "seed": 20261029,
+      "assumption": "source-prefix groups treated as independent; episode/speaker independence is unverified",
+      "candidate_to_baseline_inference_time_ratio": 1.0936801669157383
+    },
+    "moulsot_vs_turbo-base": {
+      "candidate_minus_baseline_wer_points": -46.420978029766125,
+      "ci95_points": [
+        -82.05329153605015,
+        -28.82999353587589
+      ],
+      "resampling_groups": 100,
+      "resamples": 5000,
+      "seed": 20261029,
+      "assumption": "source-prefix groups treated as independent; episode/speaker independence is unverified",
+      "candidate_to_baseline_inference_time_ratio": 2.9792600860267613
+    }
+  }
+}

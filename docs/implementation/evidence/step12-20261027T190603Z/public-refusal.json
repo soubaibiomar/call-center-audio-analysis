@@ -1,0 +1,20 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "src.datasets",
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\data\\datasets\\librispeech-intake-20261028T091407Z\\manifest.json",
+    "--as-of",
+    "2026-10-28",
+    "--seed",
+    "candidate-review",
+    "--output",
+    ".local\\step12-20261027T190603Z\\candidate-not-approved.lock.json"
+  ],
+  "exit_code": 1,
+  "seconds": 5.206216000005952,
+  "stdout": "",
+  "stderr": "Manifest or split validation failed; inspect the private inputs.\n",
+  "output_exists": false,
+  "reason": "Rights and human-label review remain pending."
+}

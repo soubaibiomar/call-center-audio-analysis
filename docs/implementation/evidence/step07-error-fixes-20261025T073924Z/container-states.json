@@ -1,0 +1,12 @@
+{
+  "command": [
+    "docker",
+    "ps",
+    "--format",
+    "{{.Names}}|{{.State}}"
+  ],
+  "exit_code": 0,
+  "seconds": 0.154,
+  "stdout": "project28-app-1|running\nproject28-postgres-1|running\nollama|running\nn8n|running\n",
+  "stderr": ""
+}

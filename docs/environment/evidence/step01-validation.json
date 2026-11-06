@@ -1,0 +1,243 @@
+[
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "stdout": "........................................................................ [ 59%]\n..................................................                       [100%]\n122 passed in 16.02s\n",
+    "stderr": "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "--extend-ignore",
+      "UP038",
+      "src/",
+      "tests/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "tests/unit/test_environment_diagnostics.py"
+    ],
+    "exit_code": 0,
+    "stdout": "1 file already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy",
+      "tests/unit/test_environment_diagnostics.py",
+      "--follow-imports=skip",
+      "--allow-untyped-decorators"
+    ],
+    "exit_code": 0,
+    "stdout": "Success: no issues found in 1 source file\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "app.py",
+      "src/",
+      "tests/unit/test_environment_diagnostics.py"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "app.py"
+    ],
+    "exit_code": 1,
+    "stdout": "Would reformat: src\\services\\history.py\nWould reformat: src\\services\\pipeline.py\nWould reformat: tests\\unit\\test_history_service.py\n3 files would be reformatted, 54 files already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy",
+      "src/"
+    ],
+    "exit_code": 2,
+    "stdout": "src\\agents\\report.py:7: error: Library stubs not installed for \"reportlab.lib.pagesizes\"  [import-untyped]\nsrc\\agents\\report.py:7: note: Hint: \"python3 -m pip install types-reportlab\"\nsrc\\agents\\report.py:7: note: (or run \"mypy --install-types\" to install all missing stub packages)\nsrc\\agents\\report.py:7: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports\nsrc\\agents\\report.py:8: error: Library stubs not installed for \"reportlab.lib.styles\"  [import-untyped]\nsrc\\agents\\report.py:9: error: Library stubs not installed for \"reportlab.platypus\"  [import-untyped]\nsrc\\agents\\transcription.py:7: error: Skipping analyzing \"faster_whisper\": module is installed, but missing library stubs or py.typed marker  [import-untyped]\nsrc\\agents\\transcription.py:25: error: Cannot find implementation or library stub for module named \"torch\"  [import-not-found]\n.venv\\Lib\\site-packages\\numpy\\__init__.pyi:737: error: Type statement is only supported in Python 3.12 and greater  [syntax]\nFound 6 errors in 3 files (errors prevented further checking)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "check",
+      "--python",
+      ".venv/Scripts/python.exe"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Checked 127 packages in 18ms\nAll installed packages are compatible\n"
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.EXE",
+      "-NoLogo",
+      "-NoProfile",
+      "-Command",
+      "$tokens=$null; $errors=$null; $null=[System.Management.Automation.Language.Parser]::ParseFile((Join-Path (Get-Location) 'scripts/Test-Project28Environment.ps1'), [ref]$tokens, [ref]$errors); if ($errors.Count) { $errors | Out-String | Write-Error; exit 1 }; Write-Output 'PowerShell parser: 0 errors'"
+    ],
+    "exit_code": 0,
+    "stdout": "PowerShell parser: 0 errors\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--pull=never",
+      "--network=none",
+      "--read-only",
+      "project28-foundation:baseline",
+      "ffmpeg",
+      "-version"
+    ],
+    "exit_code": 0,
+    "stdout": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with gcc 14 (Debian 14.2.0-19)\nconfiguration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared\nlibavutil      59. 39.100 / 59. 39.100\nlibavcodec     61. 19.101 / 61. 19.101\nlibavformat    61.  7.103 / 61.  7.103\nlibavdevice    61.  3.100 / 61.  3.100\nlibavfilter    10.  5.100 / 10.  5.100\nlibswscale      8.  3.100 /  8.  3.100\nlibswresample   5.  3.100 /  5.  3.100\nlibpostproc    58.  3.100 / 58.  3.100\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Python 3.12.15\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "upstream/main",
+      "--",
+      "app.py",
+      "src/",
+      "requirements.txt",
+      "pyproject.toml",
+      "Dockerfile"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_environment_diagnostics.py",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "stdout": ".........                                                                [100%]\n9 passed in 4.70s\n",
+    "stderr": "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_environment_diagnostics.py",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "stdout": ".........                                                                [100%]\n9 passed in 4.71s\n",
+    "stderr": "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "--extend-ignore",
+      "UP038",
+      "src/",
+      "tests/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "tests/unit/test_environment_diagnostics.py"
+    ],
+    "exit_code": 0,
+    "stdout": "1 file already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "mypy",
+      "tests/unit/test_environment_diagnostics.py",
+      "--follow-imports=skip",
+      "--allow-untyped-decorators"
+    ],
+    "exit_code": 0,
+    "stdout": "Success: no issues found in 1 source file\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.EXE",
+      "-NoLogo",
+      "-NoProfile",
+      "-Command",
+      ". ./scripts/Test-Project28Environment.ps1 -LibraryOnly; $baseline=(Get-Content docs/environment/evidence/step01-environment.json -Raw | ConvertFrom-Json).services_before; Test-ServiceContinuity $baseline (Get-ServiceSnapshot) | ConvertTo-Json"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"status\": \"PASS\",\n  \"reason\": \"Compared container ID, name, image, state, start time and restart count; point-in-time evidence only.\"\n}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "docker",
+    "tag",
+    "project28-app:local",
+    "project28-cpu-runtime:verified"
+  ],
+  "exit_code": 0,
+  "seconds": 0.20372950000000856,
+  "stdout": "",
+  "stderr": ""
+}

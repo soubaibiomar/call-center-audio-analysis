@@ -1,0 +1,21 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "infrastructure/compose/queue.local.yml",
+    "--profile",
+    "gpu",
+    "up",
+    "-d",
+    "--no-deps",
+    "worker-gpu"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": " Container project28-worker-gpu-1 Creating \n Container project28-worker-gpu-1 Created \n Container project28-worker-gpu-1 Starting \n Container project28-worker-gpu-1 Started \n"
+}

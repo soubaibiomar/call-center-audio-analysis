@@ -1,0 +1,26 @@
+--- before/tests/llm/test_local_provider.py
++++ after/tests/llm/test_local_provider.py
+@@ -78,7 +78,10 @@
+         kwargs["http_client"] = client
+         return ChatOpenAI(**kwargs)
+ 
+-    with patch("langchain_openai.ChatOpenAI", side_effect=construct):
++    with (
++        patch("langchain_openai.ChatOpenAI", side_effect=construct),
++        patch("src.utils.llm_factory.require_local_model"),
++    ):
+         with capture_model_runs() as events:
+             result = run_summarization(transcript, provider="ollama", model="qwen-test")
+     client.close()
+@@ -149,7 +152,10 @@
+             kwargs["http_client"] = client
+             return ChatOpenAI(**kwargs)
+ 
+-        with patch("langchain_openai.ChatOpenAI", side_effect=construct):
++        with (
++            patch("langchain_openai.ChatOpenAI", side_effect=construct),
++            patch("src.utils.llm_factory.require_local_model"),
++        ):
+             with capture_model_runs() as events:
+                 with pytest.raises(SummarizationError) as error:
+                     run_summarization(make_transcription(), provider="ollama", max_retries=1)

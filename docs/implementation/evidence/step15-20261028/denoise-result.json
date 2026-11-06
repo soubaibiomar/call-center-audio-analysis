@@ -1,0 +1,11 @@
+{
+  "compared_duration_seconds": 14.975,
+  "sample_rate": 16000,
+  "estimated_filter_delay_samples": 400,
+  "input_noise_mse": 0.0003989309770986438,
+  "denoised_noise_mse": 0.0003820497659035027,
+  "clean_denoised_distortion_mse": 1.2915720617456827e-06,
+  "snr_before_db": 18.865612779384392,
+  "snr_after_db": 19.053391007314936,
+  "filter": "FFmpeg afftdn default; clean-reference estimated delay compensated; 15s media speech plus seeded white noise"
+}

@@ -1,0 +1,104 @@
+--- before/src/graph/workflow.py
++++ after/src/graph/workflow.py
+@@ -28,6 +28,7 @@
+ )
+ from src.security.injection_detector import detect_injection
+ from src.security.pii_redactor import redact_pii
++from src.services.model_runs import ModelRun, capture_model_runs
+ from src.utils.config import Config
+ 
+ 
+@@ -38,6 +39,7 @@
+     summary: SummaryResult
+     qa_scores: QAScoreResult
+     report: CallReport
++    model_runs: list[ModelRun]
+     error: str
+     status: str
+ 
+@@ -116,37 +118,42 @@
+     transcript = state["transcription"]
+     errors: list[str] = []
+ 
+-    # Step 1: Summarization
+-    summary_result = None
+-    try:
+-        summary_result = run_summarization(
+-            transcript,
+-            max_retries=config.max_retries_per_node,
+-            timeout=config.llm_timeout_seconds,
+-            provider=config.llm_provider,
+-        )
+-    except SummarizationError as e:
+-        errors.append(f"Summarization: {e}")
+-
+-    # Step 2: QA scoring — now with summary context for better accuracy
+-    qa_result = None
+-    try:
+-        qa_result = run_qa_scoring(
+-            transcript,
+-            summary=summary_result,  # Pass summary for resolution/sentiment context
+-            max_retries=config.max_retries_per_node,
+-            timeout=config.llm_timeout_seconds,
+-            provider=config.llm_provider,
+-        )
+-    except QAScoringError as e:
+-        errors.append(f"QA Scoring: {e}")
++    with capture_model_runs() as model_runs:
++        # Step 1: Summarization
++        summary_result = None
++        try:
++            summary_result = run_summarization(
++                transcript,
++                max_retries=config.max_retries_per_node,
++                timeout=config.llm_timeout_seconds,
++                provider=config.llm_provider,
++            )
++        except SummarizationError as e:
++            errors.append(f"Summarization: {e}")
++
++        # Step 2: QA scoring â€” now with summary context for better accuracy
++        qa_result = None
++        try:
++            qa_result = run_qa_scoring(
++                transcript,
++                summary=summary_result,  # Pass summary for resolution/sentiment context
++                max_retries=config.max_retries_per_node,
++                timeout=config.llm_timeout_seconds,
++                provider=config.llm_provider,
++            )
++        except QAScoringError as e:
++            errors.append(f"QA Scoring: {e}")
+ 
+     logger.info(f"Summarization + QA completed in {time.time() - t0:.1f}s")
+ 
+     if errors or summary_result is None or qa_result is None:
+-        return {"error": "; ".join(errors) or "Analysis produced no result", "status": "failed"}
+-
+-    return {"summary": summary_result, "qa_scores": qa_result}
++        return {
++            "error": "; ".join(errors) or "Analysis produced no result",
++            "status": "failed",
++            "model_runs": model_runs,
++        }
++
++    return {"summary": summary_result, "qa_scores": qa_result, "model_runs": model_runs}
+ 
+ 
+ @traceable(name="report_node")
+@@ -157,6 +164,7 @@
+         summary=state["summary"],
+         qa_scores=state["qa_scores"],
+         trace_id="",
++        model_runs=state.get("model_runs", []),
+     )
+     return {"report": report, "status": "completed"}
+ 
+@@ -187,6 +195,7 @@
+         summary=state["summary"],
+         qa_scores=state["qa_scores"],
+         trace_id="",
++        model_runs=state.get("model_runs", []),
+     )
+     return {"report": report, "status": "flagged_for_review"}
+ 

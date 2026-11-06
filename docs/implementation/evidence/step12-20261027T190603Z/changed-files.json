@@ -1,0 +1,16 @@
+[
+  ".gitignore",
+  "src/datasets/__init__.py",
+  "src/datasets/manifest.py",
+  "src/datasets/split.py",
+  "src/datasets/__main__.py",
+  "scripts/inventory_librispeech_sample.py",
+  "tests/datasets/test_manifest_and_split.py",
+  "tests/datasets/test_public_intake.py",
+  "docs/data/DATASET_CATALOG.md",
+  "docs/data/ANNOTATION_GUIDE.md",
+  "docs/data/README.md",
+  "docs/data/manifest.schema.json",
+  "docs/implementation/PROGRESS.md",
+  "docs/implementation/STEP_12_inventory_datasets_and_build_permission_aware_splits_REPORT.md"
+]

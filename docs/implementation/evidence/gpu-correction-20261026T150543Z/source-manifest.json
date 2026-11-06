@@ -1,0 +1,19 @@
+{
+  "services\\workers\\broker.py": "ad0a0e0fe4e3b8bcf97cfeae394c57aeedc00b4f7a8be406d20ec55c96e325eb",
+  "services\\workers\\jobs.py": "49530b38fa8a1fa8e240f9e48c8d72972314ed73f6da5afba17c1ef164b25463",
+  "services\\workers\\runner.py": "fb5897d68e77f1b586fa1c289491c9cf870895e2dbe15a61b54f37f6a9be7115",
+  "services\\workers\\runtime.py": "4e6326f8520566845cdc60feac6ad1552cdfde83ae5413d34eafccd96522a519",
+  "services\\workers\\settings.py": "d0046a403532f77adae91f164e667fecabdcb0c55c48293c94d22a543cfccaed",
+  "services\\workers\\storage.py": "bec941d282d7ec371028fcdeab74bea5d46945c3fc6710944baac25aaa108a4f",
+  "services\\workers\\__init__.py": "53373905c2c82d6132148d251c638f1a89f106e7f1d16f460251f128c71035ea",
+  "scripts/check_gpu_runtime.py": "7c69489b3c0465241cbe85a58286252f017e561d70e0e7360d22e5f047cf833c",
+  "tests/unit/test_gpu_runtime.py": "08a42aa01cd42eb1a1f7b55979bff125c6fe7ffaebaaa5c1ae2120a12bf233d5",
+  "Dockerfile.gpu": "798b161fa650a08f10b40b5fc0dffb2aaf2f9eecb90e7f4b4c386929cad4a3ed",
+  "requirements.gpu.txt": "84a96155dc41a480a6d53b071ede1db85a9e6c88e0453af9a6016ed06d01674e",
+  "infrastructure/compose/queue.local.yml": "f5ba4f308fde49a4e7eabefccf34e2d051058735844004ded2dffbd85d57b1dc",
+  "docs/environment/GPU_VERIFICATION.md": "6440e1a5e8d9572ee7996b7f837d471f2fbfdd60ca685a64e0de18d8bf6e5f48",
+  "docs/development/background-jobs.md": "e1a3cf5b810c4044b6643363cb1fd7e805981e985b0794df5802a06fdfb95ad9",
+  "docs/architecture/durable-jobs.md": "6ea738a4a36b1c7262d3c9acd5ddd16311ea24210651051aedeadfe35162cbd8",
+  "docs/implementation/PROGRESS.md": "3e6acb6a2b57579b3039a100d69484a2346d9d844795431530c97742bd126b12",
+  "docs/implementation/STEP_10_build_durable_redis_background_processing_REPORT.md": "674f386fc0d9d04bfcc199c173ae33f5f9e467eb0bc3caaf47d795aaf311e0f4"
+}

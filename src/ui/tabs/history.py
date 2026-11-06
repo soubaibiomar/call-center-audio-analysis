@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import logging
 import tempfile
+from typing import Any
 
 import gradio as gr
+from sqlalchemy.engine import Engine
 
 from src.agents.report import generate_report_json, generate_report_pdf
 from src.services.history import get_call_detail, list_calls
@@ -16,7 +18,7 @@ _TABLE_HEADERS = ["Timestamp", "File", "Status", "Overall Score", "Resolution"]
 _DETAIL_PLACEHOLDER = "_Select a call from the table above to view its full analysis._"
 
 
-def _rows_to_display(rows: list[dict]) -> list[list[str]]:
+def _rows_to_display(rows: list[dict[str, Any]]) -> list[list[str]]:
     return [
         [
             r["processed_at"],
@@ -29,7 +31,7 @@ def _rows_to_display(rows: list[dict]) -> list[list[str]]:
     ]
 
 
-def build_history_tab(engine) -> tuple[gr.Dataframe, gr.Markdown]:
+def build_history_tab(engine: Engine) -> tuple[gr.Dataframe, gr.State]:
     """Build the All MP3 History tab. Returns the table and detail-header
     components so the parent can wire tab-select autoload.
     """
@@ -81,13 +83,15 @@ def build_history_tab(engine) -> tuple[gr.Dataframe, gr.Markdown]:
         json_file = gr.File(label="Download Full Report (JSON)")
         pdf_file = gr.File(label="Download Full Report (PDF)")
 
-    def _load_history():
+    def _load_history() -> tuple[list[list[str]], list[str]]:
         rows = list_calls(engine)
         logger.info(f"History tab: loaded {len(rows)} call(s)")
         ids = [r["call_id"] for r in rows]
         return _rows_to_display(rows), ids
 
-    def _on_row_select(call_ids: list[str], evt: gr.SelectData):
+    def _on_row_select(
+        call_ids: list[str], evt: gr.SelectData
+    ) -> tuple[str, dict[str, Any], str, str, str, str | None, str | None]:
         if evt is None or evt.index is None or not call_ids:
             return (
                 _DETAIL_PLACEHOLDER,
@@ -99,7 +103,7 @@ def build_history_tab(engine) -> tuple[gr.Dataframe, gr.Markdown]:
                 None,
             )
         # evt.index can be a [row, col] pair or a single int depending on Gradio version
-        idx = evt.index[0] if isinstance(evt.index, (list, tuple)) else evt.index
+        idx = evt.index[0] if isinstance(evt.index, list | tuple) else evt.index
         if idx < 0 or idx >= len(call_ids):
             logger.warning(f"History tab: row index {idx} out of range for {len(call_ids)} ids")
             return (
@@ -185,10 +189,12 @@ def build_history_tab(engine) -> tuple[gr.Dataframe, gr.Markdown]:
     return history_table, call_ids_state
 
 
-def wire_history_autoload(tab, history_table, call_ids_state, engine):
+def wire_history_autoload(
+    tab: gr.Tab, history_table: gr.Dataframe, call_ids_state: gr.State, engine: Engine
+) -> None:
     """Auto-refresh the table whenever the History tab is selected."""
 
-    def _load():
+    def _load() -> tuple[list[list[str]], list[str]]:
         rows = list_calls(engine)
         return _rows_to_display(rows), [r["call_id"] for r in rows]
 

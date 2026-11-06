@@ -1,0 +1,11 @@
+--- before/scripts/benchmark_local_llm.py
++++ after/scripts/benchmark_local_llm.py
+@@ -156,6 +156,8 @@
+             (args.output / "results.json").write_text(
+                 json.dumps(dict(ollama=version, results=all_results), indent=2), encoding="utf-8"
+             )
++        if any(not row["schema_valid"] for report in all_results for row in report["observations"]):
++            raise SystemExit(1)
+ 
+ 
+ if __name__ == "__main__":

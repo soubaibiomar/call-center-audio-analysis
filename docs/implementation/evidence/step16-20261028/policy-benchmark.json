@@ -1,0 +1,6 @@
+{
+  "fixture": "synthetic deterministic policy chain; not model inference",
+  "runs": 100,
+  "p95_ms": 0.09869999985312461,
+  "mean_ms": 0.06827400000020134
+}

@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import importlib
 import io
 import wave
+from collections.abc import Callable
 from dataclasses import dataclass
+from typing import Any
 
 from mutagen.flac import FLAC
 from mutagen.mp3 import MP3
@@ -56,18 +59,45 @@ def validate_audio_file(data: bytes, filename: str) -> ValidationResult:
             error=f"Unsupported audio format for file '{filename}'. Supported: {SUPPORTED_FORMATS}",
         )
 
+    if fmt == "wav" and int.from_bytes(data[4:8], "little") + 8 > len(data):
+        return ValidationResult(is_valid=False, error="Truncated WAV container")
+
+    try:
+        properties = extract_audio_properties(data, fmt)
+    except AudioValidationError:
+        return ValidationResult(is_valid=False, error="Invalid or corrupt audio container")
+    if properties.duration_seconds <= 0 or properties.sample_rate <= 0 or properties.channels <= 0:
+        return ValidationResult(is_valid=False, error="Invalid or empty audio stream")
+    if properties.duration_seconds > MAX_DURATION_SECONDS:
+        return ValidationResult(is_valid=False, error="Audio duration exceeds maximum")
+
     return ValidationResult(is_valid=True)
 
 
 def extract_audio_properties(data: bytes, fmt: str) -> AudioProperties:
     try:
         if fmt == "wav":
+            if len(data) < 12 or int.from_bytes(data[4:8], "little") + 8 > len(data):
+                raise AudioValidationError("Truncated WAV container")
             buf = io.BytesIO(data)
-            with wave.open(buf, "rb") as wf:
-                frames = wf.getnframes()
-                rate = wf.getframerate()
-                channels = wf.getnchannels()
-                duration = frames / rate
+            try:
+                with wave.open(buf, "rb") as wf:
+                    frames = wf.getnframes()
+                    rate = wf.getframerate()
+                    channels = wf.getnchannels()
+                    remaining = frames
+                    frame_bytes = channels * wf.getsampwidth()
+                    while remaining:
+                        count = min(remaining, 65536)
+                        if len(wf.readframes(count)) != count * frame_bytes:
+                            raise AudioValidationError("Truncated WAV audio data")
+                        remaining -= count
+                    duration = frames / rate
+            except wave.Error:
+                # The stdlib WAV reader does not support IEEE float WAV.
+                sf = importlib.import_module("soundfile")
+                info = sf.info(io.BytesIO(data))
+                rate, channels, duration = info.samplerate, info.channels, info.duration
             return AudioProperties(
                 duration_seconds=round(duration, 2),
                 sample_rate=rate,
@@ -77,7 +107,11 @@ def extract_audio_properties(data: bytes, fmt: str) -> AudioProperties:
             )
         # For non-wav formats, use mutagen to extract real properties.
         buf = io.BytesIO(data)
-        mutagen_classes = {"mp3": MP3, "flac": FLAC, "m4a": MP4}
+        mutagen_classes: dict[str, Callable[[io.BytesIO], Any]] = {
+            "mp3": MP3,
+            "flac": FLAC,
+            "m4a": MP4,
+        }
         parser_cls = mutagen_classes.get(fmt)
         audio = parser_cls(buf) if parser_cls else None
         if audio is not None and audio.info is not None:

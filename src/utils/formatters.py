@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Any
+
 
 def secs_to_mmss(seconds: float) -> str:
     """Convert seconds to MM:SS string."""
@@ -10,7 +12,7 @@ def secs_to_mmss(seconds: float) -> str:
     return f"{m:02d}:{s:02d}"
 
 
-def format_summary(d: dict) -> str:
+def format_summary(d: dict[str, Any]) -> str:
     """Format a summary dict as markdown for display."""
     lines = []
     lines.append(f"### Call Purpose\n{d.get('call_purpose', 'N/A')}\n")
@@ -46,7 +48,7 @@ def format_summary(d: dict) -> str:
     return "\n".join(lines)
 
 
-def format_qa(d: dict) -> str:
+def format_qa(d: dict[str, Any]) -> str:
     """Format QA scores dict as markdown for display."""
     lines = []
     overall = d.get("overall_score", 0)

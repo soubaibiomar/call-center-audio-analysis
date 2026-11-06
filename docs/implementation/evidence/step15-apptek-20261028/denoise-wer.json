@@ -1,0 +1,28 @@
+{
+  "dataset": "apptek-com/apptek_callcenter_dialogues",
+  "revision": "b98967d9946f7f59f58d08624a2a00fe98fe0219",
+  "accent": "en-US_General",
+  "noise": "seeded gaussian std=0.02",
+  "filter": "FFmpeg afftdn defaults",
+  "normalization": "NFC casefold whitespace; punctuation retained",
+  "results": [
+    {
+      "condition": "denoise-clean-pcm.wav",
+      "word_errors": 167,
+      "reference_words": 544,
+      "elapsed_seconds": 3.4444937000000664
+    },
+    {
+      "condition": "denoise-noisy-pcm.wav",
+      "word_errors": 260,
+      "reference_words": 544,
+      "elapsed_seconds": 3.3703138000000763
+    },
+    {
+      "condition": "denoise-filtered-pcm.wav",
+      "word_errors": 254,
+      "reference_words": 544,
+      "elapsed_seconds": 3.193095200000016
+    }
+  ]
+}

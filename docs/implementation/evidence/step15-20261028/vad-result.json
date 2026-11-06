@@ -1,0 +1,11 @@
+{
+  "source": "VoxConverse wdvva, source rights caveat in STEP14",
+  "seconds": 65.856,
+  "decode_seconds": 0.030280799999673036,
+  "vad_seconds": 0.33748110000033194,
+  "decode_vad_rtf": 0.005584334001457802,
+  "speech_reference_seconds": 61.81999999999999,
+  "vad_missed_seconds": 0.0,
+  "vad_missed_fraction": 0.0,
+  "chunk_count": 3
+}

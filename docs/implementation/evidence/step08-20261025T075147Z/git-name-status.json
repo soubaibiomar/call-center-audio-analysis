@@ -1,0 +1,12 @@
+{
+  "command": [
+    "git",
+    "diff",
+    "--name-status"
+  ],
+  "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis",
+  "exit_code": 0,
+  "seconds": 0.035,
+  "stdout": "M\t.dockerignore\nM\t.env.project28.example\nM\t.github/ISSUE_TEMPLATE/bug_report.md\nM\t.github/PULL_REQUEST_TEMPLATE.md\nM\t.github/workflows/ci.yml\nM\t.gitignore\nM\t.pre-commit-config.yaml\nM\tCONTRIBUTING.md\nM\tDockerfile\nM\tPROJECT28_REQUIREMENTS.lock.txt\nM\tapp.py\nM\tdocs/architecture.md\nM\tpyproject.toml\nM\trequirements.txt\nM\tsrc/agents/intake.py\nM\tsrc/agents/qa_scoring.py\nM\tsrc/agents/report.py\nM\tsrc/agents/summarization.py\nM\tsrc/agents/transcription.py\nM\tsrc/database/connection.py\nM\tsrc/database/models.py\nM\tsrc/graph/workflow.py\nM\tsrc/security/audit.py\nM\tsrc/security/pii_redactor.py\nM\tsrc/services/history.py\nM\tsrc/services/observability.py\nM\tsrc/services/pipeline.py\nM\tsrc/ui/app_builder.py\nM\tsrc/ui/tabs/analyze.py\nM\tsrc/ui/tabs/history.py\nM\tsrc/ui/tabs/observability.py\nM\tsrc/utils/audio.py\nM\tsrc/utils/config.py\nM\tsrc/utils/formatters.py\nM\tsrc/utils/llm_factory.py\nM\ttests/integration/test_pipeline_end_to_end.py\nM\ttests/unit/test_history_service.py\nM\ttests/unit/test_qa_scoring.py\nM\ttests/unit/test_summarization.py\n",
+  "stderr": "warning: in the working copy of '.dockerignore', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of '.env.project28.example', LF will be replaced by CRLF the next time Git touches it\n"
+}

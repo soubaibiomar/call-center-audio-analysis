@@ -1,0 +1,48 @@
+{
+  "model": "pyannote/speaker-diarization-community-1",
+  "model_revision": "3533c8cf8e369892e6b79ff1bf80f7b0286a54ee",
+  "model_content_sha256": "90258fe399a87a64586233dd81ea9ed01df831c29f23a886066c0b28e0aa0ecd",
+  "dataset_inventory_sha256": "ef75a9bfa21fe30bfb41d7cf7c4ca81da6104720c7c3b0e3b947ed82855d4369",
+  "device": "cuda",
+  "collar_seconds": 0.0,
+  "skip_overlap": false,
+  "peak_torch_allocated_bytes": 1707943936,
+  "records": [
+    {
+      "sample": "wdvva",
+      "duration_seconds": 65.856,
+      "latency_seconds": 7.259754841000358,
+      "hypothesis_speakers": 2,
+      "metrics": {
+        "der": 0.05088349274406305,
+        "reference_speaker_seconds": 75.79999999999998,
+        "overlap_reference_seconds": 13.98,
+        "overlap_missed_seconds": 0.4705624999999971,
+        "overlap_false_alarm_seconds": 1.5430624999999925,
+        "role_reference_seconds": 0.0,
+        "role_covered_seconds": 0.0,
+        "role_correct_seconds": 0.0
+      },
+      "role_accuracy": null,
+      "role_coverage": null
+    },
+    {
+      "sample": "lubpm",
+      "duration_seconds": 82.112,
+      "latency_seconds": 3.289938291999988,
+      "hypothesis_speakers": 2,
+      "metrics": {
+        "der": 0.035115872723928715,
+        "reference_speaker_seconds": 54.370000000000005,
+        "overlap_reference_seconds": 0.0,
+        "overlap_missed_seconds": 0.0,
+        "overlap_false_alarm_seconds": 0.0,
+        "role_reference_seconds": 0.0,
+        "role_covered_seconds": 0.0,
+        "role_correct_seconds": 0.0
+      },
+      "role_accuracy": null,
+      "role_coverage": null
+    }
+  ]
+}

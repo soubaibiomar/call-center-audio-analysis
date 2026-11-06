@@ -1,0 +1,100 @@
+{
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.15",
+  "git_head": "a37e4634af1d2947fc3c548d54e62bda0b0daf89",
+  "branch": "feature/project28-foundation",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.88, 8188 MiB",
+  "ollama_version": {
+    "version": "0.32.4"
+  },
+  "ollama_tags": {
+    "models": [
+      {
+        "name": "qwen3.5:4b-q4_K_M",
+        "model": "qwen3.5:4b-q4_K_M",
+        "modified_at": "2026-10-29T09:46:13.675549394Z",
+        "size": 3324173934,
+        "digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+        "details": {
+          "parent_model": "model.gguf",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "4.2B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 2560
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking",
+          "vision"
+        ]
+      },
+      {
+        "name": "qwen3.5:9b-q4_K_M",
+        "model": "qwen3.5:9b-q4_K_M",
+        "modified_at": "2026-10-13T16:14:02.218357934Z",
+        "size": 6550825550,
+        "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+        "details": {
+          "parent_model": "model.gguf",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "9.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 4096
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking",
+          "vision"
+        ]
+      },
+      {
+        "name": "qwen2.5-coder:7b",
+        "model": "qwen2.5-coder:7b",
+        "modified_at": "2026-10-13T15:09:05.437701977Z",
+        "size": 4683087561,
+        "digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "7.6B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 32768,
+          "embedding_length": 3584
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "insert"
+        ]
+      }
+    ]
+  },
+  "docker_images": [
+    "project28-upgrade-benchmark:local d511a276cad4",
+    "project28-step13-qwen:headers 353fa0a122a4",
+    "project28-step13-qwen:local 6658d6662780",
+    "ollama/ollama:latest 10c13eb515db"
+  ],
+  "final_benchmark_images": {
+    "project28-step13-qwen:headers": "sha256:353fa0a122a46406dc198c65e72708d82910cda28fd93caa11f9825ad431f795",
+    "project28-upgrade-benchmark:local": "sha256:e9dacdbfc56c9f29805d51fab35eb14495c3f4bdba74f2d863a6647ea96fd5e7",
+    "project28-upgrade-whisper:local": "sha256:dada8ee53412e69d5d1de90e1e5254388e67691e6f6232723ffa56c15fa4f61a"
+  },
+  "clean_asr_conditions": "Ollama container paused by user authorization; serial GPU jobs; original overlapping attempt retained separately"
+}

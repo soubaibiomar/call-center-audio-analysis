@@ -1,0 +1,13 @@
+{
+  "quality_decision": "PASS WITH LIMITATIONS",
+  "specification_files_verified": 99,
+  "report_original_sections": 13,
+  "correction_sections": 15,
+  "correction_answered_questions": 12,
+  "completed_steps": 1,
+  "not_started_steps": 44,
+  "report_local_links": "PASS",
+  "utf8_report": "PASS",
+  "correction_source_hashes": "PASS",
+  "new_document_profile_path_scan": "PASS"
+}

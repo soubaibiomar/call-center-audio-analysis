@@ -1,0 +1,10 @@
+{
+  "fresh_revision": "0003_jobs",
+  "tables_including_version": 15,
+  "row_policies_enabled_forced": [
+    true,
+    true
+  ],
+  "empty_base_roundtrip": true,
+  "alembic_metadata_check": true
+}

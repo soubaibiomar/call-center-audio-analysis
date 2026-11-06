@@ -1,0 +1,157 @@
+{
+  "modules": {
+    "src": "src/__init__.py",
+    "src.agents.intake": "src/agents/intake.py",
+    "src.agents.qa_scoring": "src/agents/qa_scoring.py",
+    "src.agents.report": "src/agents/report.py",
+    "src.agents.summarization": "src/agents/summarization.py",
+    "src.agents.transcription": "src/agents/transcription.py",
+    "src.agents": "src/agents/__init__.py",
+    "src.database.connection": "src/database/connection.py",
+    "src.database.models": "src/database/models.py",
+    "src.database": "src/database/__init__.py",
+    "src.graph.edges": "src/graph/edges.py",
+    "src.graph.state": "src/graph/state.py",
+    "src.graph.workflow": "src/graph/workflow.py",
+    "src.graph": "src/graph/__init__.py",
+    "src.security.audit": "src/security/audit.py",
+    "src.security.injection_detector": "src/security/injection_detector.py",
+    "src.security.pii_redactor": "src/security/pii_redactor.py",
+    "src.security": "src/security/__init__.py",
+    "src.services.analysis": "src/services/analysis.py",
+    "src.services.contracts": "src/services/contracts.py",
+    "src.services.history": "src/services/history.py",
+    "src.services.observability": "src/services/observability.py",
+    "src.services.pipeline": "src/services/pipeline.py",
+    "src.services": "src/services/__init__.py",
+    "src.ui.app_builder": "src/ui/app_builder.py",
+    "src.ui": "src/ui/__init__.py",
+    "src.utils.audio": "src/utils/audio.py",
+    "src.utils.config": "src/utils/config.py",
+    "src.utils.formatters": "src/utils/formatters.py",
+    "src.utils.llm_factory": "src/utils/llm_factory.py",
+    "src.utils": "src/utils/__init__.py",
+    "src.ui.tabs.analyze": "src/ui/tabs/analyze.py",
+    "src.ui.tabs.history": "src/ui/tabs/history.py",
+    "src.ui.tabs.observability": "src/ui/tabs/observability.py",
+    "src.ui.tabs": "src/ui/tabs/__init__.py",
+    "services": "services/__init__.py",
+    "services.api.analysis": "services/api/analysis.py",
+    "services.api": "services/api/__init__.py"
+  },
+  "dependencies": {
+    "services": [],
+    "services.api": [],
+    "services.api.analysis": [
+      "src.graph.state",
+      "src.services.contracts"
+    ],
+    "src": [],
+    "src.agents": [],
+    "src.agents.intake": [
+      "src.graph.state",
+      "src.utils.audio"
+    ],
+    "src.agents.qa_scoring": [
+      "src.graph.state",
+      "src.utils.formatters",
+      "src.utils.llm_factory"
+    ],
+    "src.agents.report": [
+      "src.database.connection",
+      "src.database.models",
+      "src.graph.state"
+    ],
+    "src.agents.summarization": [
+      "src.graph.state",
+      "src.utils.formatters",
+      "src.utils.llm_factory"
+    ],
+    "src.agents.transcription": [
+      "src.database.connection",
+      "src.database.models",
+      "src.graph.state"
+    ],
+    "src.database": [],
+    "src.database.connection": [
+      "src.database.models"
+    ],
+    "src.database.models": [],
+    "src.graph": [],
+    "src.graph.edges": [
+      "src.graph.state"
+    ],
+    "src.graph.state": [],
+    "src.graph.workflow": [
+      "src.agents.intake",
+      "src.agents.qa_scoring",
+      "src.agents.report",
+      "src.agents.summarization",
+      "src.agents.transcription",
+      "src.graph.edges",
+      "src.graph.state",
+      "src.security.injection_detector",
+      "src.security.pii_redactor",
+      "src.utils.config"
+    ],
+    "src.security": [],
+    "src.security.audit": [
+      "src.database.connection",
+      "src.database.models"
+    ],
+    "src.security.injection_detector": [],
+    "src.security.pii_redactor": [],
+    "src.services": [],
+    "src.services.analysis": [
+      "src.services.contracts",
+      "src.services.pipeline"
+    ],
+    "src.services.contracts": [
+      "src.graph.state"
+    ],
+    "src.services.history": [
+      "src.database.connection",
+      "src.database.models",
+      "src.graph.state",
+      "src.utils.formatters"
+    ],
+    "src.services.observability": [
+      "src.database.connection",
+      "src.database.models"
+    ],
+    "src.services.pipeline": [
+      "src.agents.report",
+      "src.graph.state",
+      "src.security.audit",
+      "src.services.contracts",
+      "src.utils.formatters"
+    ],
+    "src.ui": [],
+    "src.ui.app_builder": [
+      "src.services.observability",
+      "src.ui.tabs.analyze",
+      "src.ui.tabs.history",
+      "src.ui.tabs.observability"
+    ],
+    "src.ui.tabs": [],
+    "src.ui.tabs.analyze": [
+      "src.services.analysis",
+      "src.services.contracts"
+    ],
+    "src.ui.tabs.history": [
+      "src.agents.report",
+      "src.services.history"
+    ],
+    "src.ui.tabs.observability": [
+      "src.services.observability"
+    ],
+    "src.utils": [],
+    "src.utils.audio": [
+      "src.graph.state"
+    ],
+    "src.utils.config": [],
+    "src.utils.formatters": [],
+    "src.utils.llm_factory": []
+  },
+  "cycles": []
+}

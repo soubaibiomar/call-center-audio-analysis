@@ -1,0 +1,9 @@
+{
+  "real_upstream_export": "PASS",
+  "manifest_except_capture_timestamp": "PASS",
+  "tree_symbols_source_license": "PASS",
+  "tool_sha256": "27f26f177d294a326fb462bba7491e3822898133a503a1a40fc2eb74356fa6aa",
+  "tests_sha256": "034120a28f6a3ff34aa10b73d9d7136ce57478d2ebab525a8ca89c74f57a4ed9",
+  "production_code_changed_this_cycle": false,
+  "isolated_reversal_scenarios": 2
+}

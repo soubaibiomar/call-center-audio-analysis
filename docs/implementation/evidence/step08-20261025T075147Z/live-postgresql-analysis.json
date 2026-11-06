@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "storage": "PostgreSQL",
+  "database_role": "project28_app",
+  "database": "project28",
+  "before_legacy_calls": 3,
+  "after_legacy_calls": 4,
+  "normalized_call_rows": 1,
+  "normalized_segments": 31,
+  "call_id": "39332558-8144-469f-afff-f22c9aa569ad",
+  "elapsed_seconds": 4.1157,
+  "qa_score": 2.35,
+  "weighted_score_verified": true,
+  "json_bytes": 13676,
+  "pdf_bytes": 3261,
+  "sample_sha256": "992feada7a67a56ee2881e0e2dc6ae8980d3190238be26c58d5b29b323b47989",
+  "transcript_published": false
+}

@@ -1,0 +1,6 @@
+{
+  "baseline": "a37e4634af1d2947fc3c548d54e62bda0b0daf89",
+  "method": "AST-extracted functions executed against synthetic fixtures; checkout not reverted",
+  "history_nonobject_json": "'list' object has no attribute 'get'",
+  "structured_provider_dictionary": "Failed after 1 attempts. Last error: 'dict' object has no attribute 'call_id'"
+}

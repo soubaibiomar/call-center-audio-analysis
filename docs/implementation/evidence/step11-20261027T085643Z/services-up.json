@@ -1,0 +1,24 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "infrastructure/compose/queue.local.yml",
+    "--profile",
+    "gpu",
+    "up",
+    "-d",
+    "--no-deps",
+    "app",
+    "api",
+    "worker-cpu",
+    "worker-gpu"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": " Container project28-api-1 Recreate \n Container project28-worker-cpu-1 Recreate \n Container project28-worker-gpu-1 Recreate \n Container project28-app-1 Recreate \n Container project28-api-1 Recreated \n Container project28-worker-cpu-1 Recreated \n Container project28-app-1 Recreated \n Container project28-worker-gpu-1 Recreated \n Container project28-app-1 Starting \n Container project28-worker-cpu-1 Starting \n Container project28-api-1 Starting \n Container project28-worker-gpu-1 Starting \n Container project28-app-1 Started \n Container project28-worker-cpu-1 Started \n Container project28-api-1 Started \n Container project28-worker-gpu-1 Started \n"
+}

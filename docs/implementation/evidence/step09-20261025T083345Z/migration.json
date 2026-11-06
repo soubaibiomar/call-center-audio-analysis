@@ -1,0 +1,7 @@
+{
+  "fresh_revision": "0002_identity",
+  "tables_including_version": 14,
+  "empty_down_up": true,
+  "populated_downgrade_refused": true,
+  "identity_rows_preserved": 1
+}

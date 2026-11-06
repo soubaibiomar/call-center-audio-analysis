@@ -1,0 +1,27 @@
+{
+  "recorded_utc": "2026-10-29T21:08:39.438391+00:00",
+  "execution_location": "user laptop; local Docker GPU inference; network disabled during inference",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 610.88, 8188 MiB",
+  "images": [
+    {
+      "tags": [
+        "project28-upgrade-whisper:local"
+      ],
+      "id": "sha256:dada8ee53412e69d5d1de90e1e5254388e67691e6f6232723ffa56c15fa4f61a"
+    },
+    {
+      "tags": [
+        "project28-step13-qwen:headers"
+      ],
+      "id": "sha256:353fa0a122a46406dc198c65e72708d82910cda28fd93caa11f9825ad431f795"
+    }
+  ],
+  "git_head": "a37e4634af1d2947fc3c548d54e62bda0b0daf89",
+  "git_branch": "feature/project28-foundation",
+  "workspace_status": "existing uncommitted work; evaluated source hashes in protocol.json",
+  "ollama_running_after_completion": true,
+  "ollama_http_status_after_completion": 200,
+  "scoped_driver_parse": "passed; PowerShell parser returned no errors",
+  "private_storage_ignore_checks": "passed for private predictions and downloaded weights",
+  "new_runtime_packages_installed": false
+}

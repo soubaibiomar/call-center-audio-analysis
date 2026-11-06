@@ -1,0 +1,38 @@
+--- settings-before.py.txt
++++ services/workers/settings.py
+@@ -23,12 +23,29 @@
+     namespace: str = "project28"
+ 
+     def __post_init__(self) -> None:
+-        if not 1 <= self.capacity <= 10000 or not 1 <= self.max_attempts <= 5:
+-            raise ValueError("Invalid bounded job capacity/attempts")
+-        if self.backoff_seconds <= 0 or self.republish_seconds <= 0:
+-            raise ValueError("Retry and redelivery intervals must be positive")
+-        for tenant in self.tenants:
+-            UUID(tenant)
++        value: int | float
++        for name, value, maximum in (
++            ("capacity", self.capacity, 10000),
++            ("max_attempts", self.max_attempts, 5),
++        ):
++            if isinstance(value, bool) or not isinstance(value, int) or not 1 <= value <= maximum:
++                raise ValueError(f"{name} must be an integer between 1 and {maximum}")
++        for name, value, maximum in (
++            ("backoff_seconds", self.backoff_seconds, 300),
++            ("republish_seconds", self.republish_seconds, 86400),
++        ):
++            # Chained bounded comparison also rejects NaN/infinity without overflow
++            # converting an arbitrarily large JSON integer to a float.
++            if (
++                isinstance(value, bool)
++                or not isinstance(value, int | float)
++                or not 0 < value <= maximum
++            ):
++                raise ValueError(f"{name} must be finite and between 0 and {maximum} seconds")
++        if any(not isinstance(tenant, str) for tenant in self.tenants):
++            raise ValueError("Worker tenant IDs must be UUID strings")
++        canonical = tuple(dict.fromkeys(str(UUID(tenant)) for tenant in self.tenants))
++        object.__setattr__(self, "tenants", canonical)
+ 
+     @classmethod
+     def from_env(cls) -> "QueueSettings | None":

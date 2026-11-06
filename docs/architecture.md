@@ -1,5 +1,13 @@
 # Architecture
 
+Current STEP_08 database design and recovery are documented in
+[PostgreSQL schema and ownership](database/schema.md). Original diagrams below
+remain the upstream baseline where marked.
+
+STEP_07's current shared-service and API-adapter boundaries are documented in
+[the transition architecture](architecture/transition.md). The original diagrams
+and source-line references below are retained as upstream baseline context.
+
 This document is the deep version of the architecture section in `README.md`. It maps every concept the README mentions back to specific file paths and line ranges, calls out trust boundaries and invariants, and provides additional diagrams for the data model and the LangGraph state machine.
 
 If you have read the README, you already know **what** the system does. This document is about **how**, and **where** to find each piece.

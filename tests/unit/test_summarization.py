@@ -32,6 +32,8 @@ class TestRunSummarization:
 
         assert isinstance(result, SummaryResult)
         assert result.call_id == transcript.call_id
+        messages = mock_llm.invoke.call_args.args[0]
+        assert str(transcript.call_id) in messages[0].content
         assert result.resolution_status == ResolutionStatus.RESOLVED
 
     @patch("src.agents.summarization.get_llm")

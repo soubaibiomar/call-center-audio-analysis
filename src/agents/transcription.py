@@ -1,28 +1,50 @@
 from __future__ import annotations
 
 import hashlib
+import importlib
 import logging
+import os
 import re
+from collections.abc import Iterator
+from pathlib import Path
+from typing import TYPE_CHECKING, TypedDict
 
 from faster_whisper import WhisperModel
+from sqlalchemy.engine import Engine
 
+from src.agents.diarization import Role, align_turn, load_community
 from src.graph.state import (
     IntakeResult,
     TranscriptionResult,
     TranscriptionSegment,
 )
+from src.utils.audio_preprocessing import (
+    MAX_PREPROCESS_SECONDS,
+    contextual_windows,
+    decode_resample,
+    has_severe_phase_cancellation,
+    iter_resampled_windows,
+    speech_chunks,
+)
+from src.utils.audio_reconciliation import owned_segment
+
+if TYPE_CHECKING:
+    from faster_whisper import Segment
 
 logger = logging.getLogger(__name__)
 
 # Module-level singleton — load model ONCE
-_model = None
-_model_size = None
+_model: WhisperModel | None = None
+_model_size: str | None = None
 
 
 def _detect_device() -> tuple[str, str]:
     """Auto-detect best available device and compute type."""
+    forced = os.getenv("WHISPER_DEVICE")
+    if forced in {"cpu", "cuda"}:
+        return forced, "int8" if forced == "cpu" else "float16"
     try:
-        import torch
+        torch = importlib.import_module("torch")
 
         if torch.cuda.is_available():
             return "cuda", "float16"
@@ -34,7 +56,7 @@ def _detect_device() -> tuple[str, str]:
     return "cpu", "int8"
 
 
-def _get_whisper_model(model_size: str = "base"):
+def _get_whisper_model(model_size: str = "base") -> WhisperModel:
     global _model, _model_size
     if _model is None or _model_size != model_size:
         device, compute_type = _detect_device()
@@ -61,10 +83,17 @@ _CUSTOMER_PATTERNS = re.compile(
 )
 
 
+class SpeakerSegment(TypedDict):
+    text: str
+    start: float
+    end: float
+    confidence: float
+
+
 class SpeakerDiarizer:
     """Heuristic speaker detection using gaps, questions, and content patterns."""
 
-    def assign_speakers(self, segments: list[dict]) -> list[str]:
+    def assign_speakers(self, segments: list[SpeakerSegment]) -> list[str]:
         labels = ["Agent", "Customer"]
         assignments: list[str] = []
         current = 0  # 0 = Agent, 1 = Customer
@@ -118,7 +147,7 @@ def _compute_audio_hash(audio_path: str) -> str:
     return h.hexdigest()
 
 
-def _check_cache(audio_hash: str, engine) -> TranscriptionResult | None:
+def _check_cache(audio_hash: str, engine: Engine | None) -> TranscriptionResult | None:
     """Check if a transcription result exists in cache."""
     if engine is None:
         return None
@@ -139,7 +168,7 @@ def _check_cache(audio_hash: str, engine) -> TranscriptionResult | None:
         return None
 
 
-def _save_cache(audio_hash: str, result: TranscriptionResult, engine) -> None:
+def _save_cache(audio_hash: str, result: TranscriptionResult, engine: Engine | None) -> None:
     """Save transcription result to cache."""
     if engine is None:
         return
@@ -202,13 +231,38 @@ def run_transcription(
     confidence_threshold: float = 0.3,
     halt_ratio: float = 0.8,
     model_size: str = "base",
-    db_engine=None,
+    db_engine: Engine | None = None,
+    *,
+    channel_roles: dict[int, Role] | None = None,
 ) -> TranscriptionResult:
+    backend = os.getenv("DIARIZATION_BACKEND", "heuristic").strip().lower()
+    requested_segmentation = os.getenv("AUDIO_PREPROCESS_SEGMENTS")
+    segment_mode = requested_segmentation is not None and requested_segmentation.lower() == "true"
+    if requested_segmentation is None and intake.audio_properties.channels == 2:
+        segment_mode = has_severe_phase_cancellation(
+            Path(intake.audio_path).read_bytes(), intake.audio_path
+        )
+    if backend not in {"heuristic", "pyannote"}:
+        raise ValueError("Unsupported diarization backend")
+    if channel_roles is not None and (
+        backend != "pyannote"
+        or set(channel_roles) != {0, 1}
+        or set(channel_roles.values()) != {"Agent", "Customer"}
+    ):
+        raise ValueError("Trusted channel roles require neural mode and one role per channel")
+    neural_diarizer = (
+        load_community(os.getenv("DIARIZATION_MODEL_PATH", "")) if backend == "pyannote" else None
+    )
     # Check cache first
     audio_hash = None
     try:
         audio_hash = _compute_audio_hash(intake.audio_path)
-        cached = _check_cache(audio_hash, db_engine)
+        # Existing cache keys do not include a diarization backend/model revision.
+        cached = (
+            _check_cache(audio_hash, db_engine)
+            if backend == "heuristic" and not segment_mode
+            else None
+        )
         if cached is not None:
             cached.call_id = intake.call_id
             return cached
@@ -220,20 +274,61 @@ def run_transcription(
     # faster-whisper handles resampling and mono conversion internally
     # beam_size=1 (greedy) is ~2x faster than beam_size=5 with minimal quality loss
     # word_timestamps=True improves segment boundaries at negligible speed cost
-    raw_segments, info = model.transcribe(
-        intake.audio_path,
-        beam_size=1,
-        language="en",
-        vad_filter=True,
-        vad_parameters={"min_silence_duration_ms": 300},  # more precise speech boundaries
-        word_timestamps=True,
-        condition_on_previous_text=False,  # Prevents hallucination loops
-    )
+    if segment_mode:
+        data = Path(intake.audio_path).read_bytes()
+        if intake.audio_properties.duration_seconds >= MAX_PREPROCESS_SECONDS - 0.01:
+            windows = contextual_windows(iter_resampled_windows(data, intake.audio_path))
+        else:
+            windows = iter([(0, decode_resample(data, intake.audio_path))])
+
+        def segments_with_offsets() -> Iterator[tuple[Segment, float, float]]:
+            for offset, prepared in windows:
+                for chunk in speech_chunks(prepared):
+                    mono = prepared.samples[
+                        chunk.channel or 0, chunk.start_sample : chunk.end_sample
+                    ]
+                    raw, _info = model.transcribe(
+                        mono,
+                        beam_size=1,
+                        language="en",
+                        vad_filter=False,
+                        word_timestamps=True,
+                        condition_on_previous_text=False,
+                    )
+                    for segment in raw:
+                        reconciled = owned_segment(segment, chunk)
+                        if reconciled is None:
+                            continue
+                        segment = reconciled
+                        if segment.end < segment.start:
+                            raise ValueError("Transcription segment ends before it starts")
+                        yield (
+                            segment,
+                            offset / prepared.sample_rate + chunk.absolute_seconds(segment.start),
+                            offset / prepared.sample_rate + chunk.absolute_seconds(segment.end),
+                        )
+
+        timed_segments = segments_with_offsets()
+    else:
+        raw_segments, _info = model.transcribe(
+            intake.audio_path,
+            beam_size=1,
+            language="en",
+            vad_filter=True,
+            vad_parameters={"min_silence_duration_ms": 300},
+            word_timestamps=True,
+            condition_on_previous_text=False,
+        )
+        timed_segments = ((segment, segment.start, segment.end) for segment in raw_segments)
 
     # Collect segments with improved confidence and text cleanup
-    seg_list = []
+    seg_list: list[SpeakerSegment] = []
     full_text_parts = []
-    for seg in raw_segments:
+    # Channel-specific streams can overlap; chronological order is required by
+    # the legacy gap-based speaker heuristic and downstream transcript display.
+    if segment_mode:
+        timed_segments = iter(sorted(timed_segments, key=lambda item: (item[1], item[2])))
+    for seg, start_time, end_time in timed_segments:
         text = _clean_transcript_text(seg.text.strip())
         if not text:
             continue  # skip empty/artifact segments
@@ -247,16 +342,27 @@ def run_transcription(
         seg_list.append(
             {
                 "text": text,
-                "start": seg.start,
-                "end": seg.end,
+                "start": start_time,
+                "end": end_time,
                 "confidence": conf,
             }
         )
         full_text_parts.append(text)
 
     # Assign speakers
-    diarizer = _get_diarizer()
-    speakers = diarizer.assign_speakers(seg_list)
+    if backend == "heuristic":
+        speakers = _get_diarizer().assign_speakers(seg_list)
+        attributions = None
+    else:
+        if neural_diarizer is None:
+            raise RuntimeError("Neural diarization is not available")
+        turns = (
+            neural_diarizer.channel_turns(intake.audio_path)
+            if channel_roles is not None
+            else neural_diarizer.turns(intake.audio_path)
+        )
+        attributions = [align_turn(s["start"], s["end"], turns, channel_roles) for s in seg_list]
+        speakers = [a.role for a in attributions]
 
     # Build typed segments
     segments: list[TranscriptionSegment] = []
@@ -269,6 +375,9 @@ def run_transcription(
                 speaker=(speakers[i] if i < len(speakers) else "Unknown"),
                 confidence=s["confidence"],
                 low_confidence=s["confidence"] < confidence_threshold,
+                speaker_id=attributions[i].speaker_id if attributions else None,
+                speaker_role=attributions[i].role if attributions else None,
+                speaker_overlap=attributions[i].overlap if attributions else False,
             )
         )
 
@@ -286,7 +395,7 @@ def run_transcription(
     )
 
     # Save to cache for future identical audio
-    if audio_hash:
+    if audio_hash and backend == "heuristic" and not segment_mode:
         _save_cache(audio_hash, result, db_engine)
 
     return result

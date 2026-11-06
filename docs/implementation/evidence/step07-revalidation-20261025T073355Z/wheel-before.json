@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-I",
+    "-c",
+    "import sys;sys.dont_write_bytecode=True;sys.path.insert(0,'C:\\\\Users\\\\omar\\\\Documents\\\\Call center audio Analysis\\\\.local\\\\step07-wheel-before');from src.services.analysis import AnalysisService;from services.api.analysis import analyze_call;assert not any(m in sys.modules for m in [\"gradio\",\"sqlalchemy\",\"faster_whisper\",\"src.utils.config\"]);print(\"Installed entrypoints import without runtime setup\")"
+  ],
+  "exit_code": 0,
+  "seconds": 0.283,
+  "stdout": "Installed entrypoints import without runtime setup\n",
+  "stderr": ""
+}

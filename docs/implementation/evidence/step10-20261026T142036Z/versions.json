@@ -1,0 +1,13 @@
+{
+  "redis_server": "7.4.11",
+  "postgres_server": "17.11",
+  "dramatiq": "2.2.1",
+  "redis": "8.1.0",
+  "boto3": "1.43.118",
+  "botocore": "1.43.118",
+  "pydantic": "2.11.3",
+  "sqlalchemy": "2.0.41",
+  "fastapi": "0.162.0",
+  "ctranslate2": "4.8.3",
+  "faster-whisper": "1.2.1"
+}

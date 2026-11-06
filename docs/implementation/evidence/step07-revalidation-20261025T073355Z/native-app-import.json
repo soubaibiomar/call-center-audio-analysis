@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-c",
+    "import app; print(\"Original app imports and builds natively\")"
+  ],
+  "environment_overrides": {
+    "DB_PATH": "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.local\\step07-revalidation-native.db",
+    "WHISPER_MODEL_SIZE": "tiny",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "GRADIO_ANALYTICS_ENABLED": "false",
+    "LANGCHAIN_TRACING_V2": "false",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit_code": 0,
+  "seconds": 7.24,
+  "stdout": "Loading Whisper model (tiny)...\nWhisper model loaded.\nPipeline ready.\nOriginal app imports and builds natively\n",
+  "stderr": "2026-10-25 07:36:11,415 src.agents.transcription Loading Whisper 'tiny' on cpu (int8)\n"
+}

@@ -1,0 +1,2775 @@
+{
+  "domains": {
+    "acted": {
+      "metrics": {
+        "n": 32,
+        "labels": [
+          "neutral",
+          "happy",
+          "angry",
+          "sad",
+          "Unknown"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            5,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            7,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            5
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "raw_confusion_matrix": [
+          [
+            0,
+            0,
+            6,
+            2
+          ],
+          [
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            1,
+            0,
+            3,
+            4
+          ]
+        ],
+        "macro_f1": 0.26406926406926406,
+        "operational_macro_f1": 0.1833855799373041,
+        "per_class": {
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8
+          },
+          "happy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8
+          },
+          "angry": {
+            "precision": 0.32,
+            "recall": 1.0,
+            "f1": 0.48484848484848486,
+            "support": 8
+          },
+          "sad": {
+            "precision": 0.6666666666666666,
+            "recall": 0.5,
+            "f1": 0.5714285714285714,
+            "support": 8
+          }
+        },
+        "missing_classes": [],
+        "imbalance_ratio": 1.0,
+        "expected_calibration_error": 0.4795417655259371,
+        "calibration_bins": 10,
+        "reliability": [
+          {
+            "bin": 4,
+            "n": 2,
+            "confidence": 0.4325295686721802,
+            "accuracy": 0.5
+          },
+          {
+            "bin": 5,
+            "n": 1,
+            "confidence": 0.5074179172515869,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 6,
+            "n": 4,
+            "confidence": 0.6440468281507492,
+            "accuracy": 0.5
+          },
+          {
+            "bin": 7,
+            "n": 3,
+            "confidence": 0.7398311495780945,
+            "accuracy": 0.0
+          },
+          {
+            "bin": 8,
+            "n": 5,
+            "confidence": 0.8540163278579712,
+            "accuracy": 0.4
+          },
+          {
+            "bin": 9,
+            "n": 17,
+            "confidence": 0.9786597244879779,
+            "accuracy": 0.4117647058823529
+          }
+        ],
+        "coverage": 0.78125,
+        "unknown_rate": 0.21875,
+        "selective_accuracy": 0.36
+      },
+      "slices": {
+        "language": {
+          "en": {
+            "n": 32,
+            "labels": [
+              "neutral",
+              "happy",
+              "angry",
+              "sad",
+              "Unknown"
+            ],
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                5,
+                2,
+                1
+              ],
+              [
+                0,
+                0,
+                7,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                8,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                1,
+                5
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "raw_confusion_matrix": [
+              [
+                0,
+                0,
+                6,
+                2
+              ],
+              [
+                0,
+                0,
+                8,
+                0
+              ],
+              [
+                0,
+                0,
+                8,
+                0
+              ],
+              [
+                1,
+                0,
+                3,
+                4
+              ]
+            ],
+            "macro_f1": 0.26406926406926406,
+            "operational_macro_f1": 0.1833855799373041,
+            "per_class": {
+              "neutral": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 8
+              },
+              "happy": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 8
+              },
+              "angry": {
+                "precision": 0.32,
+                "recall": 1.0,
+                "f1": 0.48484848484848486,
+                "support": 8
+              },
+              "sad": {
+                "precision": 0.6666666666666666,
+                "recall": 0.5,
+                "f1": 0.5714285714285714,
+                "support": 8
+              }
+            },
+            "missing_classes": [],
+            "imbalance_ratio": 1.0,
+            "expected_calibration_error": 0.4795417655259371,
+            "calibration_bins": 10,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 2,
+                "confidence": 0.4325295686721802,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 5,
+                "n": 1,
+                "confidence": 0.5074179172515869,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 6,
+                "n": 4,
+                "confidence": 0.6440468281507492,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 7,
+                "n": 3,
+                "confidence": 0.7398311495780945,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 8,
+                "n": 5,
+                "confidence": 0.8540163278579712,
+                "accuracy": 0.4
+              },
+              {
+                "bin": 9,
+                "n": 17,
+                "confidence": 0.9786597244879779,
+                "accuracy": 0.4117647058823529
+              }
+            ],
+            "coverage": 0.78125,
+            "unknown_rate": 0.21875,
+            "selective_accuracy": 0.36
+          }
+        },
+        "accent": {
+          "unverified": {
+            "n": 32,
+            "labels": [
+              "neutral",
+              "happy",
+              "angry",
+              "sad",
+              "Unknown"
+            ],
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                5,
+                2,
+                1
+              ],
+              [
+                0,
+                0,
+                7,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                8,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                1,
+                5
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "raw_confusion_matrix": [
+              [
+                0,
+                0,
+                6,
+                2
+              ],
+              [
+                0,
+                0,
+                8,
+                0
+              ],
+              [
+                0,
+                0,
+                8,
+                0
+              ],
+              [
+                1,
+                0,
+                3,
+                4
+              ]
+            ],
+            "macro_f1": 0.26406926406926406,
+            "operational_macro_f1": 0.1833855799373041,
+            "per_class": {
+              "neutral": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 8
+              },
+              "happy": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 8
+              },
+              "angry": {
+                "precision": 0.32,
+                "recall": 1.0,
+                "f1": 0.48484848484848486,
+                "support": 8
+              },
+              "sad": {
+                "precision": 0.6666666666666666,
+                "recall": 0.5,
+                "f1": 0.5714285714285714,
+                "support": 8
+              }
+            },
+            "missing_classes": [],
+            "imbalance_ratio": 1.0,
+            "expected_calibration_error": 0.4795417655259371,
+            "calibration_bins": 10,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 2,
+                "confidence": 0.4325295686721802,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 5,
+                "n": 1,
+                "confidence": 0.5074179172515869,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 6,
+                "n": 4,
+                "confidence": 0.6440468281507492,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 7,
+                "n": 3,
+                "confidence": 0.7398311495780945,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 8,
+                "n": 5,
+                "confidence": 0.8540163278579712,
+                "accuracy": 0.4
+              },
+              {
+                "bin": 9,
+                "n": 17,
+                "confidence": 0.9786597244879779,
+                "accuracy": 0.4117647058823529
+              }
+            ],
+            "coverage": 0.78125,
+            "unknown_rate": 0.21875,
+            "selective_accuracy": 0.36
+          }
+        },
+        "noise": {
+          "clean": {
+            "n": 16,
+            "labels": [
+              "neutral",
+              "happy",
+              "angry",
+              "sad",
+              "Unknown"
+            ],
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                2,
+                1,
+                1
+              ],
+              [
+                0,
+                0,
+                4,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                4,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "raw_confusion_matrix": [
+              [
+                0,
+                0,
+                3,
+                1
+              ],
+              [
+                0,
+                0,
+                4,
+                0
+              ],
+              [
+                0,
+                0,
+                4,
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                2
+              ]
+            ],
+            "macro_f1": 0.26785714285714285,
+            "operational_macro_f1": 0.13333333333333333,
+            "per_class": {
+              "neutral": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 4
+              },
+              "happy": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 4
+              },
+              "angry": {
+                "precision": 0.3333333333333333,
+                "recall": 1.0,
+                "f1": 0.5,
+                "support": 4
+              },
+              "sad": {
+                "precision": 0.6666666666666666,
+                "recall": 0.5,
+                "f1": 0.5714285714285714,
+                "support": 4
+              }
+            },
+            "missing_classes": [],
+            "imbalance_ratio": 1.0,
+            "expected_calibration_error": 0.5928117502480745,
+            "calibration_bins": 10,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 1,
+                "confidence": 0.40836217999458313,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 6,
+                "n": 2,
+                "confidence": 0.6248578131198883,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 7,
+                "n": 2,
+                "confidence": 0.7262884378433228,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 9,
+                "n": 11,
+                "confidence": 0.9885240522297946,
+                "accuracy": 0.36363636363636365
+              }
+            ],
+            "coverage": 0.8125,
+            "unknown_rate": 0.1875,
+            "selective_accuracy": 0.3076923076923077
+          },
+          "gaussian_20db": {
+            "n": 16,
+            "labels": [
+              "neutral",
+              "happy",
+              "angry",
+              "sad",
+              "Unknown"
+            ],
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                3,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                4,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1,
+                3
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "raw_confusion_matrix": [
+              [
+                0,
+                0,
+                3,
+                1
+              ],
+              [
+                0,
+                0,
+                4,
+                0
+              ],
+              [
+                0,
+                0,
+                4,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                2
+              ]
+            ],
+            "macro_f1": 0.26050420168067223,
+            "operational_macro_f1": 0.22619047619047616,
+            "per_class": {
+              "neutral": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 4
+              },
+              "happy": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 4
+              },
+              "angry": {
+                "precision": 0.3076923076923077,
+                "recall": 1.0,
+                "f1": 0.47058823529411764,
+                "support": 4
+              },
+              "sad": {
+                "precision": 0.6666666666666666,
+                "recall": 0.5,
+                "f1": 0.5714285714285714,
+                "support": 4
+              }
+            },
+            "missing_classes": [],
+            "imbalance_ratio": 1.0,
+            "expected_calibration_error": 0.5111026000231504,
+            "calibration_bins": 10,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 1,
+                "confidence": 0.4566969573497772,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 5,
+                "n": 1,
+                "confidence": 0.5074179172515869,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 6,
+                "n": 2,
+                "confidence": 0.6632358431816101,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 7,
+                "n": 1,
+                "confidence": 0.7669165730476379,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 8,
+                "n": 5,
+                "confidence": 0.8540163278579712,
+                "accuracy": 0.4
+              },
+              {
+                "bin": 9,
+                "n": 6,
+                "confidence": 0.9605751236279806,
+                "accuracy": 0.5
+              }
+            ],
+            "coverage": 0.75,
+            "unknown_rate": 0.25,
+            "selective_accuracy": 0.4166666666666667
+          }
+        }
+      },
+      "worst_slice_gaps": {
+        "language": null,
+        "accent": null,
+        "noise": 0.007352941176470618
+      }
+    },
+    "media": {
+      "metrics": {
+        "n": 32,
+        "labels": [
+          "neutral",
+          "happy",
+          "angry",
+          "sad",
+          "Unknown"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "raw_confusion_matrix": [
+          [
+            0,
+            6,
+            0,
+            2
+          ],
+          [
+            0,
+            5,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            7,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            4
+          ]
+        ],
+        "macro_f1": 0.4479166666666667,
+        "operational_macro_f1": 0.0,
+        "per_class": {
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 8
+          },
+          "happy": {
+            "precision": 0.3125,
+            "recall": 0.625,
+            "f1": 0.4166666666666667,
+            "support": 8
+          },
+          "angry": {
+            "precision": 0.875,
+            "recall": 0.875,
+            "f1": 0.875,
+            "support": 8
+          },
+          "sad": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 8
+          }
+        },
+        "missing_classes": [],
+        "imbalance_ratio": 1.0,
+        "expected_calibration_error": 0.3087964793667197,
+        "calibration_bins": 10,
+        "reliability": [
+          {
+            "bin": 4,
+            "n": 3,
+            "confidence": 0.4494597017765045,
+            "accuracy": 0.6666666666666666
+          },
+          {
+            "bin": 5,
+            "n": 4,
+            "confidence": 0.5676121264696121,
+            "accuracy": 0.5
+          },
+          {
+            "bin": 6,
+            "n": 3,
+            "confidence": 0.6571970383326212,
+            "accuracy": 0.3333333333333333
+          },
+          {
+            "bin": 7,
+            "n": 6,
+            "confidence": 0.7438441713651022,
+            "accuracy": 0.3333333333333333
+          },
+          {
+            "bin": 8,
+            "n": 7,
+            "confidence": 0.8420650703566415,
+            "accuracy": 0.14285714285714285
+          },
+          {
+            "bin": 9,
+            "n": 9,
+            "confidence": 0.9589229226112366,
+            "accuracy": 0.8888888888888888
+          }
+        ],
+        "coverage": 0.0,
+        "unknown_rate": 1.0,
+        "selective_accuracy": null
+      },
+      "slices": {
+        "language": {
+          "ary": {
+            "n": 32,
+            "labels": [
+              "neutral",
+              "happy",
+              "angry",
+              "sad",
+              "Unknown"
+            ],
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                0,
+                0,
+                8
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                8
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                8
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                8
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "raw_confusion_matrix": [
+              [
+                0,
+                6,
+                0,
+                2
+              ],
+              [
+                0,
+                5,
+                1,
+                2
+              ],
+              [
+                0,
+                1,
+                7,
+                0
+              ],
+              [
+                0,
+                4,
+                0,
+                4
+              ]
+            ],
+            "macro_f1": 0.4479166666666667,
+            "operational_macro_f1": 0.0,
+            "per_class": {
+              "neutral": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 8
+              },
+              "happy": {
+                "precision": 0.3125,
+                "recall": 0.625,
+                "f1": 0.4166666666666667,
+                "support": 8
+              },
+              "angry": {
+                "precision": 0.875,
+                "recall": 0.875,
+                "f1": 0.875,
+                "support": 8
+              },
+              "sad": {
+                "precision": 0.5,
+                "recall": 0.5,
+                "f1": 0.5,
+                "support": 8
+              }
+            },
+            "missing_classes": [],
+            "imbalance_ratio": 1.0,
+            "expected_calibration_error": 0.3087964793667197,
+            "calibration_bins": 10,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 3,
+                "confidence": 0.4494597017765045,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "bin": 5,
+                "n": 4,
+                "confidence": 0.5676121264696121,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 6,
+                "n": 3,
+                "confidence": 0.6571970383326212,
+                "accuracy": 0.3333333333333333
+              },
+              {
+                "bin": 7,
+                "n": 6,
+                "confidence": 0.7438441713651022,
+                "accuracy": 0.3333333333333333
+              },
+              {
+                "bin": 8,
+                "n": 7,
+                "confidence": 0.8420650703566415,
+                "accuracy": 0.14285714285714285
+              },
+              {
+                "bin": 9,
+                "n": 9,
+                "confidence": 0.9589229226112366,
+                "accuracy": 0.8888888888888888
+              }
+            ],
+            "coverage": 0.0,
+            "unknown_rate": 1.0,
+            "selective_accuracy": null
+          }
+        },
+        "accent": {
+          "unverified": {
+            "n": 32,
+            "labels": [
+              "neutral",
+              "happy",
+              "angry",
+              "sad",
+              "Unknown"
+            ],
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                0,
+                0,
+                8
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                8
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                8
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                8
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "raw_confusion_matrix": [
+              [
+                0,
+                6,
+                0,
+                2
+              ],
+              [
+                0,
+                5,
+                1,
+                2
+              ],
+              [
+                0,
+                1,
+                7,
+                0
+              ],
+              [
+                0,
+                4,
+                0,
+                4
+              ]
+            ],
+            "macro_f1": 0.4479166666666667,
+            "operational_macro_f1": 0.0,
+            "per_class": {
+              "neutral": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 8
+              },
+              "happy": {
+                "precision": 0.3125,
+                "recall": 0.625,
+                "f1": 0.4166666666666667,
+                "support": 8
+              },
+              "angry": {
+                "precision": 0.875,
+                "recall": 0.875,
+                "f1": 0.875,
+                "support": 8
+              },
+              "sad": {
+                "precision": 0.5,
+                "recall": 0.5,
+                "f1": 0.5,
+                "support": 8
+              }
+            },
+            "missing_classes": [],
+            "imbalance_ratio": 1.0,
+            "expected_calibration_error": 0.3087964793667197,
+            "calibration_bins": 10,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 3,
+                "confidence": 0.4494597017765045,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "bin": 5,
+                "n": 4,
+                "confidence": 0.5676121264696121,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 6,
+                "n": 3,
+                "confidence": 0.6571970383326212,
+                "accuracy": 0.3333333333333333
+              },
+              {
+                "bin": 7,
+                "n": 6,
+                "confidence": 0.7438441713651022,
+                "accuracy": 0.3333333333333333
+              },
+              {
+                "bin": 8,
+                "n": 7,
+                "confidence": 0.8420650703566415,
+                "accuracy": 0.14285714285714285
+              },
+              {
+                "bin": 9,
+                "n": 9,
+                "confidence": 0.9589229226112366,
+                "accuracy": 0.8888888888888888
+              }
+            ],
+            "coverage": 0.0,
+            "unknown_rate": 1.0,
+            "selective_accuracy": null
+          }
+        },
+        "noise": {
+          "clean": {
+            "n": 16,
+            "labels": [
+              "neutral",
+              "happy",
+              "angry",
+              "sad",
+              "Unknown"
+            ],
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "raw_confusion_matrix": [
+              [
+                0,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                2,
+                1,
+                1
+              ],
+              [
+                0,
+                1,
+                3,
+                0
+              ],
+              [
+                0,
+                3,
+                0,
+                1
+              ]
+            ],
+            "macro_f1": 0.3358516483516484,
+            "operational_macro_f1": 0.0,
+            "per_class": {
+              "neutral": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 4
+              },
+              "happy": {
+                "precision": 0.2222222222222222,
+                "recall": 0.5,
+                "f1": 0.3076923076923077,
+                "support": 4
+              },
+              "angry": {
+                "precision": 0.75,
+                "recall": 0.75,
+                "f1": 0.75,
+                "support": 4
+              },
+              "sad": {
+                "precision": 0.3333333333333333,
+                "recall": 0.25,
+                "f1": 0.2857142857142857,
+                "support": 4
+              }
+            },
+            "missing_classes": [],
+            "imbalance_ratio": 1.0,
+            "expected_calibration_error": 0.4342439789324999,
+            "calibration_bins": 10,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 2,
+                "confidence": 0.44210200011730194,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 5,
+                "n": 1,
+                "confidence": 0.5962679386138916,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 6,
+                "n": 1,
+                "confidence": 0.6434242129325867,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 7,
+                "n": 3,
+                "confidence": 0.7538138826688131,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 8,
+                "n": 5,
+                "confidence": 0.8394843697547912,
+                "accuracy": 0.2
+              },
+              {
+                "bin": 9,
+                "n": 4,
+                "confidence": 0.9666119962930679,
+                "accuracy": 1.0
+              }
+            ],
+            "coverage": 0.0,
+            "unknown_rate": 1.0,
+            "selective_accuracy": null
+          },
+          "gaussian_20db": {
+            "n": 16,
+            "labels": [
+              "neutral",
+              "happy",
+              "angry",
+              "sad",
+              "Unknown"
+            ],
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                4
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "raw_confusion_matrix": [
+              [
+                0,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                3,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                4,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                3
+              ]
+            ],
+            "macro_f1": 0.553030303030303,
+            "operational_macro_f1": 0.0,
+            "per_class": {
+              "neutral": {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0,
+                "support": 4
+              },
+              "happy": {
+                "precision": 0.42857142857142855,
+                "recall": 0.75,
+                "f1": 0.5454545454545454,
+                "support": 4
+              },
+              "angry": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 4
+              },
+              "sad": {
+                "precision": 0.6,
+                "recall": 0.75,
+                "f1": 0.6666666666666666,
+                "support": 4
+              }
+            },
+            "missing_classes": [],
+            "imbalance_ratio": 1.0,
+            "expected_calibration_error": 0.24077041074633598,
+            "calibration_bins": 10,
+            "reliability": [
+              {
+                "bin": 4,
+                "n": 1,
+                "confidence": 0.46417510509490967,
+                "accuracy": 1.0
+              },
+              {
+                "bin": 5,
+                "n": 3,
+                "confidence": 0.5580601890881857,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "bin": 6,
+                "n": 2,
+                "confidence": 0.6640834510326385,
+                "accuracy": 0.5
+              },
+              {
+                "bin": 7,
+                "n": 3,
+                "confidence": 0.7338744600613912,
+                "accuracy": 0.6666666666666666
+              },
+              {
+                "bin": 8,
+                "n": 2,
+                "confidence": 0.8485168218612671,
+                "accuracy": 0.0
+              },
+              {
+                "bin": 9,
+                "n": 5,
+                "confidence": 0.9527716636657715,
+                "accuracy": 0.8
+              }
+            ],
+            "coverage": 0.0,
+            "unknown_rate": 1.0,
+            "selective_accuracy": null
+          }
+        }
+      },
+      "worst_slice_gaps": {
+        "language": null,
+        "accent": null,
+        "noise": 0.2171786546786546
+      }
+    }
+  },
+  "real_call_evaluation_available": false,
+  "note": "Domains kept separate. Correlated noise variants are not independent samples. Unknown accents are not inferred from identities. No training or calibration fit.",
+  "model_id": "superb/wav2vec2-base-superb-er",
+  "model_revision": "441a7599c3b22107314dcbd9166621c5c83f2cc5",
+  "manifest_sha256": "58cd5904f81ece053be983b751b275ac3868fd674b5fc077ed9c3abc3e1796ba",
+  "records": [
+    {
+      "record_id": "1ef237ba2c48e1f2",
+      "speaker_key": "d2530c449974ec98",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 1.1751923921110574e-05,
+        "happy": 7.720407666056417e-06,
+        "angry": 0.9999639987945557,
+        "sad": 1.6568839782848954e-05
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "1ef237ba2c48e1f2",
+      "speaker_key": "d2530c449974ec98",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.06734734028577805,
+        "happy": 0.0013748296769335866,
+        "angry": 0.9301095604896545,
+        "sad": 0.0011682502226904035
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "235e7db7f922872d",
+      "speaker_key": "d8a36484f7b84d2e",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.004933652002364397,
+        "happy": 0.0030264665838330984,
+        "angry": 0.9581179022789001,
+        "sad": 0.033921997994184494
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "235e7db7f922872d",
+      "speaker_key": "d8a36484f7b84d2e",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.02034958451986313,
+        "happy": 0.006053586024791002,
+        "angry": 0.8876840472221375,
+        "sad": 0.08591273427009583
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "9ca58cbb71b6f3e4",
+      "speaker_key": "6c621a94e663ec56",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.12439515441656113,
+        "happy": 0.28884416818618774,
+        "angry": 0.40836217999458313,
+        "sad": 0.1783984750509262
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "9ca58cbb71b6f3e4",
+      "speaker_key": "6c621a94e663ec56",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.005162836518138647,
+        "happy": 0.006764486897736788,
+        "angry": 0.9411662220954895,
+        "sad": 0.04690644145011902
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "4f1ee1f4b7d43342",
+      "speaker_key": "c821a175668eb8d4",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.011257963255047798,
+        "happy": 0.04079555347561836,
+        "angry": 0.026294216513633728,
+        "sad": 0.9216522574424744
+      },
+      "emitted": "sad"
+    },
+    {
+      "record_id": "4f1ee1f4b7d43342",
+      "speaker_key": "c821a175668eb8d4",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.008662608452141285,
+        "happy": 0.024897705763578415,
+        "angry": 0.19952307641506195,
+        "sad": 0.7669165730476379
+      },
+      "emitted": "sad"
+    },
+    {
+      "record_id": "1c04d0f306b65801",
+      "speaker_key": "d2530c449974ec98",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 3.910845862264978e-06,
+        "happy": 7.425916555803269e-05,
+        "angry": 0.9999184608459473,
+        "sad": 3.330032996018417e-06
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "1c04d0f306b65801",
+      "speaker_key": "d2530c449974ec98",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 0.005725483410060406,
+        "happy": 0.028281325474381447,
+        "angry": 0.9655619263648987,
+        "sad": 0.0004312393139116466
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "84f928249cb93a55",
+      "speaker_key": "d8a36484f7b84d2e",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 6.652351657976396e-06,
+        "happy": 2.7515152396517806e-05,
+        "angry": 0.9999635219573975,
+        "sad": 2.23550841838005e-06
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "84f928249cb93a55",
+      "speaker_key": "d8a36484f7b84d2e",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 0.12848927080631256,
+        "happy": 0.06238503381609917,
+        "angry": 0.8075556755065918,
+        "sad": 0.0015700019430369139
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "99731b244ed3d2ba",
+      "speaker_key": "6c621a94e663ec56",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 0.004704541992396116,
+        "happy": 5.7264885981567204e-05,
+        "angry": 0.9952157735824585,
+        "sad": 2.2428781448979862e-05
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "99731b244ed3d2ba",
+      "speaker_key": "6c621a94e663ec56",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 0.1433935910463333,
+        "happy": 0.003212857758626342,
+        "angry": 0.8525311946868896,
+        "sad": 0.00086237519280985
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "9fba9c581fd31e6a",
+      "speaker_key": "c821a175668eb8d4",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 7.373167318291962e-05,
+        "happy": 7.53002823330462e-05,
+        "angry": 0.9998393058776855,
+        "sad": 1.1704312782967463e-05
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "9fba9c581fd31e6a",
+      "speaker_key": "c821a175668eb8d4",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 0.22171305119991302,
+        "happy": 0.07420869171619415,
+        "angry": 0.696171760559082,
+        "sad": 0.007906434126198292
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "966a70e1ad5ac7d5",
+      "speaker_key": "d2530c449974ec98",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 1.6692012650310062e-05,
+        "happy": 4.253000042808708e-06,
+        "angry": 0.9999748468399048,
+        "sad": 4.216672550683143e-06
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "966a70e1ad5ac7d5",
+      "speaker_key": "d2530c449974ec98",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 0.10842426866292953,
+        "happy": 0.010568096302449703,
+        "angry": 0.8713680505752563,
+        "sad": 0.009639573283493519
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "e5e87558967d46cf",
+      "speaker_key": "d8a36484f7b84d2e",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 6.499521987279877e-05,
+        "happy": 0.0007534226169809699,
+        "angry": 0.9991776347160339,
+        "sad": 3.901312084053643e-06
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "e5e87558967d46cf",
+      "speaker_key": "d8a36484f7b84d2e",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 0.001839833683334291,
+        "happy": 0.04058869555592537,
+        "angry": 0.9554367065429688,
+        "sad": 0.002134734997525811
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "b432fb2d7a02ac6d",
+      "speaker_key": "6c621a94e663ec56",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 3.320088217151351e-05,
+        "happy": 2.120534554705955e-05,
+        "angry": 0.9999436140060425,
+        "sad": 2.0232939732522937e-06
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "b432fb2d7a02ac6d",
+      "speaker_key": "6c621a94e663ec56",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 0.007923881523311138,
+        "happy": 0.012469848617911339,
+        "angry": 0.9716095924377441,
+        "sad": 0.007996644824743271
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "1d26b172620df401",
+      "speaker_key": "c821a175668eb8d4",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 8.96589938292891e-07,
+        "happy": 1.857827101048315e-06,
+        "angry": 0.9999972581863403,
+        "sad": 1.7889377090796188e-08
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "1d26b172620df401",
+      "speaker_key": "c821a175668eb8d4",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 2.877478073060047e-05,
+        "happy": 0.00026827785768546164,
+        "angry": 0.9995667338371277,
+        "sad": 0.00013615252100862563
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "e847a54de4a4eafc",
+      "speaker_key": "d8a36484f7b84d2e",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.3467751443386078,
+        "happy": 0.013488592579960823,
+        "angry": 0.0006693860632367432,
+        "sad": 0.6390668749809265
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "e847a54de4a4eafc",
+      "speaker_key": "d8a36484f7b84d2e",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.4227554500102997,
+        "happy": 0.11226155608892441,
+        "angry": 0.008285983465611935,
+        "sad": 0.4566969573497772
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "ee4e7f2cab8e99df",
+      "speaker_key": "6c621a94e663ec56",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.048143625259399414,
+        "happy": 0.007141028996556997,
+        "angry": 0.7494022250175476,
+        "sad": 0.19531302154064178
+      },
+      "emitted": "angry"
+    },
+    {
+      "record_id": "ee4e7f2cab8e99df",
+      "speaker_key": "6c621a94e663ec56",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.1770544797182083,
+        "happy": 0.011934828013181686,
+        "angry": 0.6302999258041382,
+        "sad": 0.1807108223438263
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "c5e48336172ef591",
+      "speaker_key": "c821a175668eb8d4",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.7031746506690979,
+        "happy": 0.039733923971652985,
+        "angry": 0.03946186974644661,
+        "sad": 0.21762947738170624
+      },
+      "emitted": "neutral"
+    },
+    {
+      "record_id": "c5e48336172ef591",
+      "speaker_key": "c821a175668eb8d4",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.12884193658828735,
+        "happy": 0.0118490569293499,
+        "angry": 0.008366318419575691,
+        "sad": 0.8509426712989807
+      },
+      "emitted": "sad"
+    },
+    {
+      "record_id": "17ac0bdbe8760791",
+      "speaker_key": "14529b3befa408bf",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.09901277720928192,
+        "happy": 0.12572047114372253,
+        "angry": 0.16461795568466187,
+        "sad": 0.6106487512588501
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "17ac0bdbe8760791",
+      "speaker_key": "14529b3befa408bf",
+      "source_revision": "1658cd342dff90010aa843eaeebd53610a08b1dc",
+      "domain": "acted",
+      "language": "en",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.02913055755198002,
+        "happy": 0.018869465216994286,
+        "angry": 0.5074179172515869,
+        "sad": 0.4445819854736328
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "ffa8534fd37d6443",
+      "speaker_key": "8beb6a9efe32d66c",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.1891034096479416,
+        "happy": 0.8105125427246094,
+        "angry": 1.4096124687057454e-05,
+        "sad": 0.00036999001167714596
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "ffa8534fd37d6443",
+      "speaker_key": "8beb6a9efe32d66c",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.0863640159368515,
+        "happy": 0.9133163690567017,
+        "angry": 0.00015365038416348398,
+        "sad": 0.00016605708515271544
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "3cf956ceaa0c64d1",
+      "speaker_key": "8be0c22ff19ceb28",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.01791354827582836,
+        "happy": 0.2635636329650879,
+        "angry": 0.001202536397613585,
+        "sad": 0.7173202633857727
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "3cf956ceaa0c64d1",
+      "speaker_key": "8be0c22ff19ceb28",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.0021876732353121042,
+        "happy": 0.1077437624335289,
+        "angry": 0.0018549372907727957,
+        "sad": 0.8882136940956116
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "33be5a20472939fb",
+      "speaker_key": "a58254d389ec48a8",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.05823424458503723,
+        "happy": 0.825908899307251,
+        "angry": 0.06511891633272171,
+        "sad": 0.050737958401441574
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "33be5a20472939fb",
+      "speaker_key": "a58254d389ec48a8",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.016733793541789055,
+        "happy": 0.5843660235404968,
+        "angry": 0.23763392865657806,
+        "sad": 0.16126619279384613
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "c9ee3a5f4e9e2eee",
+      "speaker_key": "c7004c8ce3532c28",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.04042597860097885,
+        "happy": 0.5962679386138916,
+        "angry": 0.0014291171682998538,
+        "sad": 0.361876904964447
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "c9ee3a5f4e9e2eee",
+      "speaker_key": "c7004c8ce3532c28",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "neutral",
+      "probabilities": {
+        "neutral": 0.12046591192483902,
+        "happy": 0.6618648767471313,
+        "angry": 0.0015562199987471104,
+        "sad": 0.21611297130584717
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "45bf83f24e2ada9d",
+      "speaker_key": "8beb6a9efe32d66c",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 0.0005182148888707161,
+        "happy": 0.06213397905230522,
+        "angry": 0.07514578104019165,
+        "sad": 0.862201988697052
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "45bf83f24e2ada9d",
+      "speaker_key": "8beb6a9efe32d66c",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 0.005911581218242645,
+        "happy": 0.18142351508140564,
+        "angry": 0.0038450174033641815,
+        "sad": 0.8088199496269226
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "e68ac9179e6ab4bd",
+      "speaker_key": "db516e65f9e41fb0",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 0.05571705475449562,
+        "happy": 0.9397130608558655,
+        "angry": 0.00022523116786032915,
+        "sad": 0.004344571381807327
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "e68ac9179e6ab4bd",
+      "speaker_key": "db516e65f9e41fb0",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 0.022494636476039886,
+        "happy": 0.9439606070518494,
+        "angry": 0.0012844946468248963,
+        "sad": 0.03226025775074959
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "27e3ea3a92c8ba95",
+      "speaker_key": "f297bd340d1793d2",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 4.194052598904818e-05,
+        "happy": 0.9888002872467041,
+        "angry": 0.007325983140617609,
+        "sad": 0.003831733949482441
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "27e3ea3a92c8ba95",
+      "speaker_key": "f297bd340d1793d2",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 9.595698065822944e-05,
+        "happy": 0.9242335557937622,
+        "angry": 0.004706068895757198,
+        "sad": 0.07096438109874725
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "0397b14c5f653af0",
+      "speaker_key": "1fc292f2e8a0f1aa",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 0.0013793930411338806,
+        "happy": 0.3333475589752197,
+        "angry": 0.6434242129325867,
+        "sad": 0.021848825737833977
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "0397b14c5f653af0",
+      "speaker_key": "1fc292f2e8a0f1aa",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "happy",
+      "probabilities": {
+        "neutral": 0.0025351529475301504,
+        "happy": 0.5335200428962708,
+        "angry": 0.33379411697387695,
+        "sad": 0.13015061616897583
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "e25761ecd973efa8",
+      "speaker_key": "c3979d7ac4676be9",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 0.0024798314552754164,
+        "happy": 0.2927129566669464,
+        "angry": 0.475523442029953,
+        "sad": 0.22928380966186523
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "e25761ecd973efa8",
+      "speaker_key": "c3979d7ac4676be9",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 0.00021447626932058483,
+        "happy": 0.07762660831212997,
+        "angry": 0.7761915326118469,
+        "sad": 0.14596739411354065
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "37c81eeb9032866b",
+      "speaker_key": "ff3a7dc381d1b309",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 0.002177781891077757,
+        "happy": 0.0527287982404232,
+        "angry": 0.9441477060317993,
+        "sad": 0.000945620471611619
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "37c81eeb9032866b",
+      "speaker_key": "ff3a7dc381d1b309",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 0.00018388518947176635,
+        "happy": 0.007779238745570183,
+        "angry": 0.9898496866226196,
+        "sad": 0.0021870608907192945
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "bb6d2c46cfb83250",
+      "speaker_key": "7c880118ae245572",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 0.00010756367555586621,
+        "happy": 0.0060533201321959496,
+        "angry": 0.9937869310379028,
+        "sad": 5.2200000936863944e-05
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "bb6d2c46cfb83250",
+      "speaker_key": "7c880118ae245572",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 2.1025523892603815e-05,
+        "happy": 0.007381692063063383,
+        "angry": 0.9924980998039246,
+        "sad": 9.909601067192852e-05
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "c31fd49ed0ff5b2c",
+      "speaker_key": "11f7dbd9ebab13ef",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 0.002576867351308465,
+        "happy": 0.8942739367485046,
+        "angry": 0.03952721133828163,
+        "sad": 0.06362196058034897
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "c31fd49ed0ff5b2c",
+      "speaker_key": "11f7dbd9ebab13ef",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "angry",
+      "probabilities": {
+        "neutral": 0.001954669365659356,
+        "happy": 0.3148866295814514,
+        "angry": 0.46417510509490967,
+        "sad": 0.21898362040519714
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "6fbe041e22d1b611",
+      "speaker_key": "e359a9860b3facc7",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.0027633386198431253,
+        "happy": 0.7758646011352539,
+        "angry": 0.00012012802471872419,
+        "sad": 0.22125186026096344
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "6fbe041e22d1b611",
+      "speaker_key": "e359a9860b3facc7",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.0015116215217858553,
+        "happy": 0.3274863660335541,
+        "angry": 0.00469996128231287,
+        "sad": 0.6663020253181458
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "d1f1789bd8f77e04",
+      "speaker_key": "50dd576079f9f3a7",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.2306923121213913,
+        "happy": 0.7682567834854126,
+        "angry": 2.1403136543085566e-06,
+        "sad": 0.0010487738763913512
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "d1f1789bd8f77e04",
+      "speaker_key": "50dd576079f9f3a7",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.2248765528202057,
+        "happy": 0.7106252312660217,
+        "angry": 0.0018299807561561465,
+        "sad": 0.06266824156045914
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "6dc4bd12bf9060fb",
+      "speaker_key": "579a75ffc94c2c9e",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.18206043541431427,
+        "happy": 0.4086805582046509,
+        "angry": 0.013831023126840591,
+        "sad": 0.3954280614852905
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "6dc4bd12bf9060fb",
+      "speaker_key": "579a75ffc94c2c9e",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.40252625942230225,
+        "happy": 0.026958556845784187,
+        "angry": 0.014220647513866425,
+        "sad": 0.5562945008277893
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "cff59065b6774437",
+      "speaker_key": "7a971184d6c033c5",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "clean",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.002735084155574441,
+        "happy": 0.19260548055171967,
+        "angry": 0.00013488534023053944,
+        "sad": 0.8045244812965393
+      },
+      "emitted": "Unknown"
+    },
+    {
+      "record_id": "cff59065b6774437",
+      "speaker_key": "7a971184d6c033c5",
+      "source_revision": "4a9e6b02b78516ac50109cc2816386ac699aff95",
+      "domain": "media",
+      "language": "ary",
+      "accent": "unverified",
+      "noise": "gaussian_20db",
+      "truth": "sad",
+      "probabilities": {
+        "neutral": 0.0008241543546319008,
+        "happy": 0.2843463122844696,
+        "angry": 2.2938960682949983e-05,
+        "sad": 0.7148066163063049
+      },
+      "emitted": "Unknown"
+    }
+  ],
+  "preprocessing": [
+    {
+      "record_id": "1ef237ba2c48e1f2",
+      "original_channels": 1,
+      "seconds": 1.8685,
+      "noise_seed": 2446736762
+    },
+    {
+      "record_id": "235e7db7f922872d",
+      "original_channels": 1,
+      "seconds": 2.5025,
+      "noise_seed": 1055071544
+    },
+    {
+      "record_id": "9ca58cbb71b6f3e4",
+      "original_channels": 1,
+      "seconds": 3.2365625,
+      "noise_seed": 1062194324
+    },
+    {
+      "record_id": "4f1ee1f4b7d43342",
+      "original_channels": 1,
+      "seconds": 2.8361875,
+      "noise_seed": 3912746789
+    },
+    {
+      "record_id": "1c04d0f306b65801",
+      "original_channels": 1,
+      "seconds": 1.7684375,
+      "noise_seed": 3349733016
+    },
+    {
+      "record_id": "84f928249cb93a55",
+      "original_channels": 1,
+      "seconds": 2.2021875,
+      "noise_seed": 4182400898
+    },
+    {
+      "record_id": "99731b244ed3d2ba",
+      "original_channels": 1,
+      "seconds": 2.2021875,
+      "noise_seed": 82931391
+    },
+    {
+      "record_id": "9fba9c581fd31e6a",
+      "original_channels": 1,
+      "seconds": 2.7360625,
+      "noise_seed": 1990288575
+    },
+    {
+      "record_id": "966a70e1ad5ac7d5",
+      "original_channels": 1,
+      "seconds": 2.2755625,
+      "noise_seed": 3338226469
+    },
+    {
+      "record_id": "e5e87558967d46cf",
+      "original_channels": 1,
+      "seconds": 2.56925,
+      "noise_seed": 837656777
+    },
+    {
+      "record_id": "b432fb2d7a02ac6d",
+      "original_channels": 1,
+      "seconds": 3.1364375,
+      "noise_seed": 4283014018
+    },
+    {
+      "record_id": "1d26b172620df401",
+      "original_channels": 1,
+      "seconds": 3.06975,
+      "noise_seed": 2370252290
+    },
+    {
+      "record_id": "e847a54de4a4eafc",
+      "original_channels": 1,
+      "seconds": 2.2689375,
+      "noise_seed": 3179971897
+    },
+    {
+      "record_id": "ee4e7f2cab8e99df",
+      "original_channels": 1,
+      "seconds": 2.6693125,
+      "noise_seed": 2467566950
+    },
+    {
+      "record_id": "c5e48336172ef591",
+      "original_channels": 1,
+      "seconds": 2.8361875,
+      "noise_seed": 1045604397
+    },
+    {
+      "record_id": "17ac0bdbe8760791",
+      "original_channels": 1,
+      "seconds": 3.003,
+      "noise_seed": 2132778242
+    },
+    {
+      "record_id": "ffa8534fd37d6443",
+      "original_channels": 2,
+      "seconds": 6.0,
+      "noise_seed": 97411415
+    },
+    {
+      "record_id": "3cf956ceaa0c64d1",
+      "original_channels": 2,
+      "seconds": 6.0,
+      "noise_seed": 2434008955
+    },
+    {
+      "record_id": "33be5a20472939fb",
+      "original_channels": 2,
+      "seconds": 6.0,
+      "noise_seed": 1491054063
+    },
+    {
+      "record_id": "c9ee3a5f4e9e2eee",
+      "original_channels": 2,
+      "seconds": 6.0,
+      "noise_seed": 1450417726
+    },
+    {
+      "record_id": "45bf83f24e2ada9d",
+      "original_channels": 2,
+      "seconds": 6.0,
+      "noise_seed": 916621188
+    },
+    {
+      "record_id": "e68ac9179e6ab4bd",
+      "original_channels": 2,
+      "seconds": 6.0,
+      "noise_seed": 1882164381
+    },
+    {
+      "record_id": "27e3ea3a92c8ba95",
+      "original_channels": 2,
+      "seconds": 6.0,
+      "noise_seed": 1734568518
+    },
+    {
+      "record_id": "0397b14c5f653af0",
+      "original_channels": 2,
+      "seconds": 6.0,
+      "noise_seed": 2929834659
+    },
+    {
+      "record_id": "e25761ecd973efa8",
+      "original_channels": 2,
+      "seconds": 4.0,
+      "noise_seed": 1166910246
+    },
+    {
+      "record_id": "37c81eeb9032866b",
+      "original_channels": 2,
+      "seconds": 3.0,
+      "noise_seed": 1542412137
+    },
+    {
+      "record_id": "bb6d2c46cfb83250",
+      "original_channels": 2,
+      "seconds": 3.0,
+      "noise_seed": 2032007035
+    },
+    {
+      "record_id": "c31fd49ed0ff5b2c",
+      "original_channels": 2,
+      "seconds": 5.0,
+      "noise_seed": 451390568
+    },
+    {
+      "record_id": "6fbe041e22d1b611",
+      "original_channels": 2,
+      "seconds": 6.0,
+      "noise_seed": 2368583235
+    },
+    {
+      "record_id": "d1f1789bd8f77e04",
+      "original_channels": 2,
+      "seconds": 8.0,
+      "noise_seed": 1203430207
+    },
+    {
+      "record_id": "6dc4bd12bf9060fb",
+      "original_channels": 2,
+      "seconds": 10.0,
+      "noise_seed": 163454694
+    },
+    {
+      "record_id": "cff59065b6774437",
+      "original_channels": 2,
+      "seconds": 6.0,
+      "noise_seed": 1768766875
+    }
+  ],
+  "inference_seconds_total": 10.987341700001707,
+  "n_original_clips": 32,
+  "ui_decision": "NO_GO: no reviewed real Moroccan telephone evaluation",
+  "protocol": "four-class evaluation only; no training, tuning or calibration fit"
+}

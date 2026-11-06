@@ -12,6 +12,8 @@ import json
 import logging
 from typing import Any
 
+from sqlalchemy.engine import Engine
+
 from src.database.connection import session_scope
 from src.database.models import CallRecord
 from src.graph.state import CallReport
@@ -24,24 +26,20 @@ def _safe_loads(payload: str | None) -> dict[str, Any]:
     if not payload:
         return {}
     try:
-        return json.loads(payload)
+        decoded = json.loads(payload)
+        return decoded if isinstance(decoded, dict) else {}
     except (json.JSONDecodeError, TypeError):
         return {}
 
 
-def list_calls(engine, limit: int = 200) -> list[dict[str, Any]]:
+def list_calls(engine: Engine, limit: int = 200) -> list[dict[str, Any]]:
     """Return up to ``limit`` past calls, newest-first.
 
     Each row is a dict with display-ready scalars only — no nested objects —
     so it can be handed directly to a ``gr.Dataframe``.
     """
     with session_scope(engine) as session:
-        rows = (
-            session.query(CallRecord)
-            .order_by(CallRecord.processed_at.desc())
-            .limit(limit)
-            .all()
-        )
+        rows = session.query(CallRecord).order_by(CallRecord.processed_at.desc()).limit(limit).all()
 
         out: list[dict[str, Any]] = []
         for r in rows:
@@ -53,14 +51,12 @@ def list_calls(engine, limit: int = 200) -> list[dict[str, Any]]:
                 {
                     "call_id": r.call_id,
                     "processed_at": (
-                        r.processed_at.strftime("%Y-%m-%d %H:%M:%S")
-                        if r.processed_at
-                        else ""
+                        r.processed_at.strftime("%Y-%m-%d %H:%M:%S") if r.processed_at else ""
                     ),
                     "audio_filename": r.audio_filename or "",
                     "status": r.status or "",
                     "overall_score": (
-                        f"{float(score):.2f}/5" if isinstance(score, (int, float)) else "—"
+                        f"{float(score):.2f}/5" if isinstance(score, int | float) else "—"
                     ),
                     "resolution_status": str(resolution) if resolution else "—",
                 }
@@ -68,7 +64,7 @@ def list_calls(engine, limit: int = 200) -> list[dict[str, Any]]:
         return out
 
 
-def get_call_detail(engine, call_id: str) -> dict[str, Any] | None:
+def get_call_detail(engine: Engine, call_id: str) -> dict[str, Any] | None:
     """Return the full analysis for one call, ready for the detail panel.
 
     Returns ``None`` if the call_id is unknown. The returned dict contains:
@@ -82,9 +78,7 @@ def get_call_detail(engine, call_id: str) -> dict[str, Any] | None:
       edge case but the rest of the panel still renders)
     """
     with session_scope(engine) as session:
-        r: CallRecord | None = (
-            session.query(CallRecord).filter_by(call_id=call_id).one_or_none()
-        )
+        r: CallRecord | None = session.query(CallRecord).filter_by(call_id=call_id).one_or_none()
         if r is None:
             logger.info(f"get_call_detail: unknown call_id {call_id}")
             return None
@@ -110,8 +104,6 @@ def get_call_detail(engine, call_id: str) -> dict[str, Any] | None:
             "summary_md": (
                 format_summary(summary_dict) if summary_dict else "_No summary available._"
             ),
-            "qa_md": (
-                format_qa(qa_dict) if qa_dict else "_No QA scores available._"
-            ),
+            "qa_md": (format_qa(qa_dict) if qa_dict else "_No QA scores available._"),
             "report": report,
         }

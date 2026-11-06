@@ -1,0 +1,19 @@
+--- before/src/graph/state.py
++++ after/src/graph/state.py
+@@ -6,6 +6,8 @@
+ from typing import Literal
+ 
+ from pydantic import BaseModel, Field
++
++from src.services.model_runs import ModelRun
+ 
+ 
+ class AudioInput(BaseModel):
+@@ -105,6 +107,7 @@
+ 
+ 
+ class CallReport(BaseModel):
++    model_runs: list[ModelRun] = Field(default_factory=list)
+     call_id: uuid.UUID
+     intake: IntakeResult
+     transcription: TranscriptionResult

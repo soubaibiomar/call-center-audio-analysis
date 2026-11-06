@@ -1,0 +1,145 @@
+[
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 23.69796540000243,
+    "stdout": "........................................................................ [ 47%]\n........................................................................ [ 94%]\n........                                                                 [100%]\n152 passed in 21.58s\n",
+    "stderr": "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/",
+      "tests/",
+      "scripts/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.25452230000155396,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "scripts/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.19095110000125715,
+    "stdout": "68 files already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy",
+      "src/"
+    ],
+    "exit_code": 2,
+    "duration_seconds": 0.8328744999998889,
+    "stdout": "src\\agents\\report.py:7: error: Library stubs not installed for \"reportlab.lib.pagesizes\"  [import-untyped]\nsrc\\agents\\report.py:7: note: Hint: \"python3 -m pip install types-reportlab\"\nsrc\\agents\\report.py:7: note: (or run \"mypy --install-types\" to install all missing stub packages)\nsrc\\agents\\report.py:7: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports\nsrc\\agents\\report.py:8: error: Library stubs not installed for \"reportlab.lib.styles\"  [import-untyped]\nsrc\\agents\\report.py:9: error: Library stubs not installed for \"reportlab.platypus\"  [import-untyped]\nsrc\\agents\\transcription.py:7: error: Skipping analyzing \"faster_whisper\": module is installed, but missing library stubs or py.typed marker  [import-untyped]\nsrc\\agents\\transcription.py:25: error: Cannot find implementation or library stub for module named \"torch\"  [import-not-found]\n.venv\\Lib\\site-packages\\numpy\\__init__.pyi:737: error: Type statement is only supported in Python 3.12 and greater  [syntax]\nFound 6 errors in 3 files (errors prevented further checking)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      ".env.docker",
+      "-f",
+      "compose.local.yml",
+      "ps"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.45557300000291434,
+    "stdout": "NAME                   IMAGE                 COMMAND                  SERVICE    CREATED         STATUS                   PORTS\nproject28-app-1        project28-app:local   \"python app.py\"          app        6 minutes ago   Up 6 minutes (healthy)   127.0.0.1:7861->7860/tcp\nproject28-postgres-1   postgres:17-alpine    \"docker-entrypoint.s\u2026\"   postgres   6 minutes ago   Up 6 minutes (healthy)   127.0.0.1:5433->5432/tcp\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "--since",
+      "2026-10-24T20:10:50Z",
+      "project28-app-1"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.1673551000021689,
+    "stdout": "",
+    "stderr": "2026-10-24 20:10:58,297 src.ui.tabs.analyze Analyze tab: running pipeline (caller=step06-negative, dept=validation)\n2026-10-24 20:10:58,297 src.services.pipeline process_call: no audio provided\n2026-10-24 20:10:58,297 src.ui.tabs.analyze Analyze tab: pipeline returned failure \u2014 No file uploaded.\n2026-10-24 20:10:58,500 src.ui.tabs.analyze Analyze tab: running pipeline (caller=step06-docker-baseline, dept=validation)\n2026-10-24 20:10:58,500 src.services.pipeline process_call: received audio of type str\n2026-10-24 20:10:58,501 src.services.pipeline process_call: invoking workflow with sample_01.mp3 (1769445 bytes, caller=step06-docker-baseline, dept=validation)\n2026-10-24 20:10:58,510 src.graph.workflow Intake completed in 0.0s\n2026-10-24 20:10:58,739 faster_whisper Processing audio with duration 02:02.694\n\u001b[0;93m2026-10-24 20:10:58.771258693 [W:onnxruntime:Default, telemetry_1ds.cc:600 operator()] Failed to persist telemetry device ID; using an in-memory identifier\u001b[m\n2026-10-24 20:10:58,956 faster_whisper VAD filter removed 00:12.742 of audio\n2026-10-24 20:11:00,255 src.graph.workflow Transcription completed in 1.7s\n2026-10-24 20:11:02,128 httpx HTTP Request: POST https://api.groq.com/openai/v1/chat/completions \"HTTP/1.1 200 OK\"\n2026-10-24 20:11:03,678 httpx HTTP Request: POST https://api.groq.com/openai/v1/chat/completions \"HTTP/1.1 200 OK\"\n2026-10-24 20:11:03,679 src.graph.workflow Summarization + QA completed in 3.4s\n2026-10-24 20:11:03,679 src.services.pipeline process_call: workflow returned status=completed\n2026-10-24 20:11:03,689 src.services.pipeline process_call: completed call_id=f94d4fe5-48f2-432a-984a-030727f7c3db\n2026-10-24 20:11:03,695 src.ui.tabs.analyze Analyze tab: pipeline succeeded \u2014 rendering results\n2026-10-24 20:11:03,891 src.ui.tabs.history History tab: loaded 1 call(s)\n"
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.026963399999658577,
+    "stdout": "a37e4634af1d2947fc3c548d54e62bda0b0daf89\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--stat"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.039005400001769885,
+    "stdout": " .dockerignore                                 |  1 +\n .env.project28.example                        |  2 +\n .github/ISSUE_TEMPLATE/bug_report.md          |  6 +-\n .github/PULL_REQUEST_TEMPLATE.md              | 71 +++++++++++++-------\n .github/workflows/ci.yml                      | 17 ++---\n .gitignore                                    |  5 ++\n .pre-commit-config.yaml                       |  2 +-\n CONTRIBUTING.md                               | 94 +++++++++++++++------------\n Dockerfile                                    | 10 ++-\n PROJECT28_REQUIREMENTS.lock.txt               |  2 +-\n app.py                                        |  7 +-\n pyproject.toml                                |  1 +\n requirements.txt                              |  1 +\n src/agents/qa_scoring.py                      |  4 +-\n src/agents/summarization.py                   |  4 +-\n src/services/history.py                       | 21 ++----\n src/services/pipeline.py                      |  5 +-\n src/ui/tabs/history.py                        |  2 +-\n src/utils/llm_factory.py                      |  8 ++-\n tests/integration/test_pipeline_end_to_end.py |  6 +-\n tests/unit/test_history_service.py            | 42 +++++++-----\n tests/unit/test_qa_scoring.py                 |  2 +\n tests/unit/test_summarization.py              |  2 +\n 23 files changed, 186 insertions(+), 129 deletions(-)\n",
+    "stderr": "warning: in the working copy of '.dockerignore', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of '.env.project28.example', LF will be replaced by CRLF the next time Git touches it\n"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--name-status"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.0312980000016978,
+    "stdout": "M\t.dockerignore\nM\t.env.project28.example\nM\t.github/ISSUE_TEMPLATE/bug_report.md\nM\t.github/PULL_REQUEST_TEMPLATE.md\nM\t.github/workflows/ci.yml\nM\t.gitignore\nM\t.pre-commit-config.yaml\nM\tCONTRIBUTING.md\nM\tDockerfile\nM\tPROJECT28_REQUIREMENTS.lock.txt\nM\tapp.py\nM\tpyproject.toml\nM\trequirements.txt\nM\tsrc/agents/qa_scoring.py\nM\tsrc/agents/summarization.py\nM\tsrc/services/history.py\nM\tsrc/services/pipeline.py\nM\tsrc/ui/tabs/history.py\nM\tsrc/utils/llm_factory.py\nM\ttests/integration/test_pipeline_end_to_end.py\nM\ttests/unit/test_history_service.py\nM\ttests/unit/test_qa_scoring.py\nM\ttests/unit/test_summarization.py\n",
+    "stderr": "warning: in the working copy of '.dockerignore', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of '.env.project28.example', LF will be replaced by CRLF the next time Git touches it\n"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.03490990000136662,
+    "stdout": "",
+    "stderr": "warning: in the working copy of '.dockerignore', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of '.env.project28.example', LF will be replaced by CRLF the next time Git touches it\n"
+  },
+  {
+    "command": [
+      "git",
+      "check-ignore",
+      ".env",
+      ".local/step06-docker-downloads"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.023131200003263075,
+    "stdout": ".env\n.local/step06-docker-downloads\n",
+    "stderr": ""
+  }
+]

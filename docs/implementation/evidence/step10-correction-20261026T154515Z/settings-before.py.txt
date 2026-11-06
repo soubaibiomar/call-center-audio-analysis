@@ -1,0 +1,40 @@
+"""Private queue/storage configuration; no broker or model setup on import."""
+
+import json
+import os
+from dataclasses import dataclass, field
+from pathlib import Path
+from uuid import UUID
+
+
+@dataclass(frozen=True)
+class QueueSettings:
+    redis_url: str = field(repr=False)
+    endpoint_url: str
+    access_key: str = field(repr=False)
+    secret_key: str = field(repr=False)
+    bucket: str = "project28-audio"
+    tenants: tuple[str, ...] = ()
+    capacity: int = 32
+    max_attempts: int = 3
+    backoff_seconds: float = 5
+    republish_seconds: float = 15
+    region: str = "us-east-1"
+    namespace: str = "project28"
+
+    def __post_init__(self) -> None:
+        if not 1 <= self.capacity <= 10000 or not 1 <= self.max_attempts <= 5:
+            raise ValueError("Invalid bounded job capacity/attempts")
+        if self.backoff_seconds <= 0 or self.republish_seconds <= 0:
+            raise ValueError("Retry and redelivery intervals must be positive")
+        for tenant in self.tenants:
+            UUID(tenant)
+
+    @classmethod
+    def from_env(cls) -> "QueueSettings | None":
+        filename = os.getenv("QUEUE_CONFIG_FILE")
+        if not filename:
+            return None
+        data = json.loads(Path(filename).read_text(encoding="utf-8"))
+        data["tenants"] = tuple(data.get("tenants", []))
+        return cls(**data)

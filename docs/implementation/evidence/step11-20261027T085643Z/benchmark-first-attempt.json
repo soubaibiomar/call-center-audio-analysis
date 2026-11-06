@@ -1,0 +1,5 @@
+{
+  "status": "interrupted_after_confirmed_9b_timeout",
+  "reason": "Observed 9B timeout; suspected thinking control mismatch. Retry uses documented OpenAI reasoning_effort=none. Partial receipts retained; only benchmark client stopped.",
+  "observed_timeout_seconds": 120.046
+}

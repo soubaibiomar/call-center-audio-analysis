@@ -1,0 +1,19 @@
+{
+  "src/services/contracts.py": true,
+  "src/services/analysis.py": true,
+  "services/__init__.py": true,
+  "services/api/__init__.py": true,
+  "services/api/analysis.py": true,
+  "src/services/pipeline.py": true,
+  "src/ui/tabs/analyze.py": true,
+  "scripts/map_project_imports.py": true,
+  "tests/unit/test_analysis_compatibility.py": true,
+  "tests/unit/test_import_map.py": true,
+  "pyproject.toml": true,
+  "Dockerfile": true,
+  ".github/workflows/ci.yml": true,
+  "docs/architecture/transition.md": true,
+  "docs/architecture.md": true,
+  "docs\\implementation\\STEP_07_define_modular_target_structure_and_compatibility_layer_REPORT.md": true,
+  "docs/implementation/PROGRESS.md": true
+}

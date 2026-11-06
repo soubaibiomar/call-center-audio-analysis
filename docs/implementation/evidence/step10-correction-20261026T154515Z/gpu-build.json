@@ -1,0 +1,20 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "infrastructure/compose/queue.local.yml",
+    "--profile",
+    "gpu",
+    "build",
+    "worker-gpu"
+  ],
+  "exit_code": 0,
+  "seconds": 332.8144126999996,
+  "stdout": "#1 [internal] load local bake definitions\n#1 reading from stdin 582B done\n#1 DONE 0.0s\n\n#2 [internal] load build definition from Dockerfile.gpu\n#2 transferring dockerfile: 693B done\n#2 DONE 0.0s\n\n#3 [internal] load metadata for docker.io/library/project28-app:local\n#3 DONE 0.0s\n\n#4 [internal] load .dockerignore\n#4 transferring context: 249B done\n#4 DONE 0.0s\n\n#5 [internal] load build context\n#5 transferring context: 2.46kB 0.0s done\n#5 DONE 0.0s\n\n#6 [1/5] FROM docker.io/library/project28-app:local@sha256:336ef9ee68b2a48041068658abb954db16ce04e3d409b70644e59abe9c8b14c8\n#6 resolve docker.io/library/project28-app:local@sha256:336ef9ee68b2a48041068658abb954db16ce04e3d409b70644e59abe9c8b14c8 0.0s done\n#6 DONE 0.1s\n\n#7 [2/5] COPY requirements.gpu.txt /tmp/requirements.gpu.txt\n#7 DONE 0.1s\n\n#8 [3/5] RUN uv pip install --system --no-cache -r /tmp/requirements.gpu.txt  && find /usr/local/lib -type d -path '*/site-packages/nvidia/*/lib'       > /etc/ld.so.conf.d/project28-nvidia.conf  && test -s /etc/ld.so.conf.d/project28-nvidia.conf  && ldconfig\n#8 0.351 Using Python 3.12.15 environment at: /usr/local\n#8 0.735 Resolved 3 packages in 360ms\n#8 0.765 Downloading nvidia-cudnn-cu12 (730.7MiB)\n#8 0.809 Downloading nvidia-cublas-cu12 (554.3MiB)\n#8 0.809 Downloading nvidia-cuda-nvrtc-cu12 (85.4MiB)\n#8 75.14  Downloaded nvidia-cuda-nvrtc-cu12\n#8 243.1  Downloaded nvidia-cublas-cu12\n#8 259.1  Downloaded nvidia-cudnn-cu12\n#8 259.1 Prepared 3 packages in 4m 18s\n#8 259.1 Installed 3 packages in 9ms\n#8 259.1  + nvidia-cublas-cu12==12.9.2.10\n#8 259.1  + nvidia-cuda-nvrtc-cu12==12.9.86\n#8 259.1  + nvidia-cudnn-cu12==9.27.0.42\n#8 DONE 260.1s\n\n#9 [4/5] COPY services/workers/runtime.py /app/services/workers/runtime.py\n#9 DONE 0.0s\n\n#10 [5/5] COPY scripts/check_gpu_runtime.py /app/scripts/check_gpu_runtime.py\n#10 DONE 0.0s\n\n#11 exporting to image\n#11 exporting layers\n#11 exporting layers 49.7s done\n#11 exporting manifest sha256:cf23e4b93b026ad0e651ab72b6db2a7f2a0cf474670c87d5b52a8411503a3aeb 0.0s done\n#11 exporting config sha256:dba0d094e2029b37fda4bcf825fd2b73b22981c0db3036feb0a78f4502be1e7c done\n#11 exporting attestation manifest sha256:7316bb2ab434f73a82809bf2adcd13dcf0abf9d34b6a27d352db0fb9d15f8c08 done\n#11 exporting manifest list sha256:cba481a4cfdd214d2dd9f2fc8ea768ce9738bf6b8119e4a36a6fcd82bb27a437 done\n#11 naming to docker.io/library/project28-app:gpu done\n#11 unpacking to docker.io/library/project28-app:gpu\n#11 unpacking to docker.io/library/project28-app:gpu 21.8s done\n#11 DONE 71.6s\n\n#12 resolving provenance for metadata file\n#12 DONE 0.0s\n",
+  "stderr": " Image project28-app:gpu Building \n Image project28-app:gpu Built \n"
+}

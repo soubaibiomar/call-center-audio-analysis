@@ -1,0 +1,1197 @@
+{
+  "schema_version": "multilingual-asr-v1",
+  "purpose": "local non-commercial evaluation only; no training; no redistribution",
+  "reviewed_on": "2026-10-29",
+  "retention_until": "2026-11-28",
+  "sources": {
+    "fr": {
+      "repo": "fsicoli/common_voice_22_0",
+      "revision": "ae911de250fe9375d08e2daa2105b671d659d446",
+      "config": "fr",
+      "license": "CC0-1.0",
+      "domain": "community-validated read speech"
+    },
+    "ar": {
+      "repo": "google/fleurs",
+      "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+      "config": "ar_eg",
+      "license": "CC-BY-4.0",
+      "domain": "MSA read speech; Egyptian locale"
+    },
+    "ary": {
+      "repo": "UBC-NLP/Casablanca",
+      "revision": "8951b1b88e28c1107142ced57967b8d16350951d",
+      "config": "Morocco",
+      "license": "CC-BY-NC-ND-4.0",
+      "domain": "Moroccan Darija broadcast speech"
+    }
+  },
+  "selection": {
+    "fr": "first40 matching published test archive entries within a bounded32MB prefix; up_votes>=2/down_votes=0",
+    "ar_ary": "SHA256 rank across complete published test metadata; duration2..20s; >=3 reference words"
+  },
+  "manifest_sha256": "81588750c596e034fc7fc66a25797df5af7ce4dd801122f0b79d2cd08bbbbe0b",
+  "audio_bytes": 60988324,
+  "records": [
+    {
+      "sample_id": "fr-000",
+      "language": "fr",
+      "audio_sha256": "be4f7b4644ed2cf9f71434fbfd02ee291629456d323ce1fa730e3bc7814fd227",
+      "reference_sha256": "734bd9a3ef495543cef1cc38a5521416dbf9ef1da250fe56cbfae737ed63cd2f",
+      "duration_seconds": 3.672,
+      "source_path": "common_voice_fr_17299399.mp3",
+      "source_id": "3686ddabb5edcd82eab21799eaa6c0f5a9f549c70bb723ed6e33e372dcbff7f6",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-001",
+      "language": "fr",
+      "audio_sha256": "8e7f9aea7db04fb807bb2be5eea3b34fb2ef3b538712b1018b3663171710b9eb",
+      "reference_sha256": "0f8b098c3bf1aae573e23153a869dce1f8c21414f87fd17173ebbc287ef391cc",
+      "duration_seconds": 4.752,
+      "source_path": "common_voice_fr_17299401.mp3",
+      "source_id": "1aba6dc232f038557fb09700f1029d94bb68831fe994963e8c7e8571bc5a5682",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-002",
+      "language": "fr",
+      "audio_sha256": "f52934839a5a4a00899539d7222dcf80d178a1aa0d9963377745518d5c910b78",
+      "reference_sha256": "db5dbd8f6a242627c3839e2e9e952628f34edcfa565c4621aa69a602fb641dd9",
+      "duration_seconds": 2.904,
+      "source_path": "common_voice_fr_17301796.mp3",
+      "source_id": "2163a89f680c48a8ed4b5a4d1ab9b44c00e03bd15dc259f9ba977b6e0b94ee32",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-003",
+      "language": "fr",
+      "audio_sha256": "1fd7ee6264263e8f992317f307eb3f603e5cb66c8a096ff557c9e2f4f50a21bc",
+      "reference_sha256": "064e70d47b9a42671ba6b91c79d4168819a28715e8c50e11bc833fd33f5d28f2",
+      "duration_seconds": 5.784,
+      "source_path": "common_voice_fr_17302080.mp3",
+      "source_id": "709933dc2ead4c270ffb0bb85e66fdd2626bca663bb56675b5242685f7e942e8",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-004",
+      "language": "fr",
+      "audio_sha256": "b7b4d7262b386ef189a033aa430c5144381e0d52ceb79c6db0cba1be57ff1cad",
+      "reference_sha256": "98e8b9f75a6e6e55828b85e95b66cb452e922837768bb2155acf97b679ec103b",
+      "duration_seconds": 4.224,
+      "source_path": "common_voice_fr_17302081.mp3",
+      "source_id": "058c203a1ef255640ba14069eb046092d9a6b985811cc7c46cc07c5bb8307e19",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-005",
+      "language": "fr",
+      "audio_sha256": "341ee356ad421863697f4036f0a9700acd5a0c8d25227007ce36a101d5a9f185",
+      "reference_sha256": "245fff5e05d14961c2796912d7a5ca8436153adb265b5e47df66ae87ca19bf93",
+      "duration_seconds": 5.736,
+      "source_path": "common_voice_fr_17302082.mp3",
+      "source_id": "6c1f7be941495a6149eb8bfe57fd0c778737a7e77d17bee15d3788bd39d3ed7d",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-006",
+      "language": "fr",
+      "audio_sha256": "85dea42cb245151d1cc70f4b0a9ba8f8ebb49263a84b6bfdcf6b481481eb6ae5",
+      "reference_sha256": "384b42fb2f8bf1c470a773af8c629783643b5fe00efe366d3edce9cc9eb4bb47",
+      "duration_seconds": 3.744,
+      "source_path": "common_voice_fr_17302494.mp3",
+      "source_id": "172453deba2442432278a54501d853c564963096aaac28521771d2fc5ea27006",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-007",
+      "language": "fr",
+      "audio_sha256": "7d426181596efabe282e8a70780e26051214fa72e5b55b9d2b8436d20642ec5e",
+      "reference_sha256": "075a5c53bd308dfd992b2ae3a235cba0e755bd10b5d64e32a7e67ac29ba657f7",
+      "duration_seconds": 4.464,
+      "source_path": "common_voice_fr_17302495.mp3",
+      "source_id": "240505c09b2078b861781490ad3b02d0531e864feea17e3e37673fb5d4d756a9",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-008",
+      "language": "fr",
+      "audio_sha256": "2234d3e7ccd4c426184c8709e657e597588ad165897224ef556b37735ab3f82f",
+      "reference_sha256": "e3264386651cadc1ffc2ef9f387ddf16ad7b3e5d17062267c5eee93ba51c4970",
+      "duration_seconds": 5.376,
+      "source_path": "common_voice_fr_17302496.mp3",
+      "source_id": "2d5378a5d32345ba9182be7027dc2cc1c2956cca7dc2bf976bf6312dca62b9da",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-009",
+      "language": "fr",
+      "audio_sha256": "c1a8f3f52252d096932cd59a642ed74f013f47002515d1adbb94bea094aa9d23",
+      "reference_sha256": "76c05f1a732018d4e21ca7376d926a231e3ebceb4b7878a4968cc73c34f83ada",
+      "duration_seconds": 2.664,
+      "source_path": "common_voice_fr_17302591.mp3",
+      "source_id": "1f9a7023446d4624f7b56c3b4ba8292aa4aad8ff3db7df8209b404734b27b365",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-010",
+      "language": "fr",
+      "audio_sha256": "51d4634d352d93497da6eda0cf76d8e7436c311b7a863007c28a1126df0cba70",
+      "reference_sha256": "e622c3597f97f4fc1fce51db0d15f3d74d525876e2824f32c0550ea19d0eef4c",
+      "duration_seconds": 4.896,
+      "source_path": "common_voice_fr_17302592.mp3",
+      "source_id": "08323e959041c6621cb193f434309f4bd89b49deff6e71afa8d007d28830c6da",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-011",
+      "language": "fr",
+      "audio_sha256": "fa697990533990028e9a96d008a65dad4648338da1e6564986c2234b37894d65",
+      "reference_sha256": "c22210813e8204e8660bebf1d86508e210ec5ee89c494032936d1122e624a927",
+      "duration_seconds": 2.592,
+      "source_path": "common_voice_fr_17303700.mp3",
+      "source_id": "7aed2e1e08b54b8a06015eaa8c1be99fdb0dd6303362732a8b4113506dfdf939",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-012",
+      "language": "fr",
+      "audio_sha256": "d7cd5866d37d69224d080c68ee1c78fd526cd89d35903893b103330d067f26c6",
+      "reference_sha256": "e1d52ba05746cbf0e87ba12534c9ebe77210b05b8302e5242731dfd48c2e7b64",
+      "duration_seconds": 4.44,
+      "source_path": "common_voice_fr_17303701.mp3",
+      "source_id": "611bc92a67653af0cf4e630c9321cdfee3fab02917718deb45f84cccb854a8c2",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-013",
+      "language": "fr",
+      "audio_sha256": "11e4a556e1e11dab57d74bb98f02ee95e2b05f2a1b5a7a55b2203843764e83c4",
+      "reference_sha256": "81961d48928ab96bc68816890046b36a6c6016fafdd8d7dcb7eca652cd0c96df",
+      "duration_seconds": 3.264,
+      "source_path": "common_voice_fr_17304991.mp3",
+      "source_id": "5780e90574b6944a88544d2c88e2b5cad8a6bb10b5f33118a8f6d36fc809a65d",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-014",
+      "language": "fr",
+      "audio_sha256": "bc8d200e8d559ca723e8210aa0e55a10decad376c55b63b6e8ea600a7e368f4b",
+      "reference_sha256": "eba5d5739efd15f0acc0485496f42eb56676648c1451e05190e17db845b9b6bc",
+      "duration_seconds": 6.216,
+      "source_path": "common_voice_fr_17304992.mp3",
+      "source_id": "4c75b3ce0c69edc534c72b439f3de80a0e48793e73796a56315d10c2576b5066",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-015",
+      "language": "fr",
+      "audio_sha256": "230ab7f462d367a70816437e156ba2dafcd89ef417cff0d5f5912254aafa1490",
+      "reference_sha256": "e1137b601e45ee2e31a2c2019020cdf90262c26428e2979fe350b242e8d5ce1d",
+      "duration_seconds": 7.704,
+      "source_path": "common_voice_fr_17305149.mp3",
+      "source_id": "58b27208c61ed8834627990bc12dbdb00311c5681b7ff02e9eda339382c28c36",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-016",
+      "language": "fr",
+      "audio_sha256": "c7687f312e2f3ef3e8f12af351c7879afc7c41b758056eb23e9292b968ded98f",
+      "reference_sha256": "669d1ef942c46aef31d7d54a2d356f41980d836357dc6a8d0b2cb5ac64e33457",
+      "duration_seconds": 4.056,
+      "source_path": "common_voice_fr_17305717.mp3",
+      "source_id": "44717b5457428fa98dd868d1bab0baf2d45efabaa01adcee493aa6329c5c7f10",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-017",
+      "language": "fr",
+      "audio_sha256": "cd2a8e7bd634b9623cc3bc23b3055f9873a53a6b654702ada050252e07ac6fb8",
+      "reference_sha256": "a7b6fcd0818d261f470b6e47983043b463f08cdc89599aeb07d5c3a9ba5009a3",
+      "duration_seconds": 5.184,
+      "source_path": "common_voice_fr_17305983.mp3",
+      "source_id": "fd104cca5f9e389e55e321e74dad8bcfd2b9a6c03a4a5fe74c65049c9299322b",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-018",
+      "language": "fr",
+      "audio_sha256": "4cb8a24f91c0770aacd6271b0ef19f56bb02b1c880e09974a98abd5ed47a14d1",
+      "reference_sha256": "8e54e9135fb3d79f4496a51c4948cb59f358e3f2c843102e670b27e745ce6a2b",
+      "duration_seconds": 5.184,
+      "source_path": "common_voice_fr_17305985.mp3",
+      "source_id": "cd89ba55e984c11636ef2ff8d5936a0e2deee52139c4e5f79f37e0274bfa5a35",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-019",
+      "language": "fr",
+      "audio_sha256": "c4ab6df4e27ae98f464f5d782125758c6b5b6b10f0823e5f3e9f95246aa53a98",
+      "reference_sha256": "d492c0573d9ff66d476920d5972740d7b8cd666b66ca46447677ceb5e424545f",
+      "duration_seconds": 2.544,
+      "source_path": "common_voice_fr_17306764.mp3",
+      "source_id": "7d5623f87b03600f63ece88818246c5431333eebdfea08ef4e49d63eee061288",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-020",
+      "language": "fr",
+      "audio_sha256": "1f839a3b9623e228c3d4d9e8fc1e5cfb07b905297e8b751adb8a17dbc72d42ea",
+      "reference_sha256": "47dc631c8bf27e60f2443ac92b20234f67d3ced961a3689fcc10d78fa89288e9",
+      "duration_seconds": 6.336,
+      "source_path": "common_voice_fr_17306765.mp3",
+      "source_id": "68a90f89c135a0f43c469f368cedc3252743aaf5e15c432afa6aa1959f736f12",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-021",
+      "language": "fr",
+      "audio_sha256": "26b509062fba9a68d18084a8af07b322d5519f7dc339f06e5e8bf43e07a4813a",
+      "reference_sha256": "f659582dab46457a66af2fbf4a7bb317c0dacaaf555b694a67c62c06f4555575",
+      "duration_seconds": 6.624,
+      "source_path": "common_voice_fr_17306768.mp3",
+      "source_id": "9ca400a2ecd9940e2e615d47553aedf80e8e65dc07cc41fa5e016815d4d20e70",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-022",
+      "language": "fr",
+      "audio_sha256": "b3bfb052d368d8c22343554a016f91770cea9fc3b1227ed290fb612417bd4039",
+      "reference_sha256": "cf044161a9c4b203b16c9efd8ea2c209a0ba1c99a8eb996e0a25bf40e18330ba",
+      "duration_seconds": 5.28,
+      "source_path": "common_voice_fr_17307350.mp3",
+      "source_id": "7e407f4ec94cacc580acc09cf0d011b1913385b119ffe071cabfa472e1516457",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-023",
+      "language": "fr",
+      "audio_sha256": "2158a050d4035624102020da6d1e18fce2f7ca3edd8bcdaf8f8d3fe8b2c13afc",
+      "reference_sha256": "0ffe2b7bf8dbcb41878aa5ead8b4e5a4672b55e97916daea76c27b5272edc32b",
+      "duration_seconds": 8.472,
+      "source_path": "common_voice_fr_17307352.mp3",
+      "source_id": "4641a7393564fa0558773cb17382ad6ec5e562d758318e4017d420b7848dd685",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-024",
+      "language": "fr",
+      "audio_sha256": "23708cac3c2e4ddc4593b6f03b0ab4a99c2538353ca665c13b70addbc07ee37f",
+      "reference_sha256": "9edd11bec725c9500fd4596c6efeb0d099581654f41465f506ca766d9aab878d",
+      "duration_seconds": 5.016,
+      "source_path": "common_voice_fr_17307431.mp3",
+      "source_id": "b061e9aa8c649a1502d70062d1ae02b6724c7dd579ba5679a1c52eb1ed894471",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-025",
+      "language": "fr",
+      "audio_sha256": "e372f7963e4f3373c31519962b91df899542e72935deb81e1885361f8527d8a5",
+      "reference_sha256": "9901f0780477f3d6835cb949e906c540cf5b713bf0d85286d2105c8eb1a24ad3",
+      "duration_seconds": 5.904,
+      "source_path": "common_voice_fr_17307432.mp3",
+      "source_id": "beb92ae7cbb45b1de7bad6fc47a4715d2efab072f8c4dea5bf3d2bdb68dfa7fe",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-026",
+      "language": "fr",
+      "audio_sha256": "85e65c84ccaf6e5d0ad1df254c2b02633db9e07a1ff597a1f080c6ae6d879d4d",
+      "reference_sha256": "090a370ed3c37ce4f61e0d1928b0590407c2850ef8743d624cd7fb9f37dcfb17",
+      "duration_seconds": 5.904,
+      "source_path": "common_voice_fr_17307433.mp3",
+      "source_id": "8699eb8565f629c7907051d329167a4f99b1938e337c1385cf87d8ef98c339e9",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-027",
+      "language": "fr",
+      "audio_sha256": "fe0d2a0160eb1b1b9ccbf209f3ab880cef964324a6015b9406cd4d52c56a8594",
+      "reference_sha256": "e517005f58798b4c2b645500cfeec7356ee7f8789cd5f8cd31f83156dd899ecf",
+      "duration_seconds": 8.352,
+      "source_path": "common_voice_fr_17307510.mp3",
+      "source_id": "3c804099185790aedbe0503c87b4f88b33d45c4baa6253ed2dafa4623790b886",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-028",
+      "language": "fr",
+      "audio_sha256": "c3d5f7664ac1309a0f74ec7a0491c4d74b66be079d768e9b0edd790f6b1e14c3",
+      "reference_sha256": "ee654ed7a2b2ba1f2195923bf3e92b497a41934781663404ec3b6ca7a1ba093c",
+      "duration_seconds": 5.616,
+      "source_path": "common_voice_fr_17307511.mp3",
+      "source_id": "16085f972a52932d7fdc7cf83ebb8f78087a9e3179e57c7b49431024b61c2c7a",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-029",
+      "language": "fr",
+      "audio_sha256": "89e6c8712bcf69df5b9b89b1672eba2ae8a2ad23f811675c0d314cbf9f9209f3",
+      "reference_sha256": "1cee484377426a1e931db2fb41978205660d993957b7435fa6e1a370c4acdce5",
+      "duration_seconds": 7.416,
+      "source_path": "common_voice_fr_17307553.mp3",
+      "source_id": "174492e10fb70c37150b52f50a9530bd903c70142b7d56b78d60d9b50060f023",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-030",
+      "language": "fr",
+      "audio_sha256": "33a5a81aa6c6b7675904d7d59dd7aca68afb977275f3c7b4c950fd580b096316",
+      "reference_sha256": "4d68789150d6fe7b046143390e1ab37ab7c67f341f050251fbe89d1ff7406a48",
+      "duration_seconds": 3.168,
+      "source_path": "common_voice_fr_17307564.mp3",
+      "source_id": "083e302f1102c719a18e5a327ae89f6748e3d59be99de49a9f5b48a892f00ac9",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-031",
+      "language": "fr",
+      "audio_sha256": "ae6e231e27372acf9d9e466af1867b039960ed6f77f848817d6cb4100101988f",
+      "reference_sha256": "def759190d1f70eb4980c3ab4d3f6e21e44c993b737d01a788514552d97db685",
+      "duration_seconds": 3.864,
+      "source_path": "common_voice_fr_17307654.mp3",
+      "source_id": "dc28786564d677eab30891eaf61c3f0f4ccbb4dfd754dd3f9b8067813424d193",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-032",
+      "language": "fr",
+      "audio_sha256": "f1bfcd376fea3edb41e28441c9c98987175696bdbe8ac5fc0afdfc24ce702b47",
+      "reference_sha256": "e4b0be58f29a23229f071f074f11d7657b19d0193c43ff0e6b92b7aa4362d74d",
+      "duration_seconds": 5.64,
+      "source_path": "common_voice_fr_17307655.mp3",
+      "source_id": "d270aeae9f56b76a7031336430ac628b6956e9004c744e7f17f633adb1749fbb",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-033",
+      "language": "fr",
+      "audio_sha256": "7e3902b4682410965d4fe91a881d4ab593b5597710cb184ed2eb3c7c792059dc",
+      "reference_sha256": "f572c543e5ce2e24f861b9c756f13e8011c959a4401832c963b1ba6b2c8781e6",
+      "duration_seconds": 3.792,
+      "source_path": "common_voice_fr_17308648.mp3",
+      "source_id": "52f60499bc0153964df084b020fac0fe2bb143169e21bbdfb947d3f340904e63",
+      "up_votes": 5,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-034",
+      "language": "fr",
+      "audio_sha256": "60a437a54fac9505edb129f3ad19d81289d493fb898f33b3a783b16a9e6d67e8",
+      "reference_sha256": "29aadf7b79b41e6e574b603e4b1f0bcf9953a5d38977fa77cbf44015bdcd94e6",
+      "duration_seconds": 9.024,
+      "source_path": "common_voice_fr_17308730.mp3",
+      "source_id": "1d5b112ce5e162da3ef456df354c5c79f594a9d3d0a3484121fcca91aa35a68c",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-035",
+      "language": "fr",
+      "audio_sha256": "c73a91e0e9b9ddaadb544dbbf118d36640828ab590cdaac2d9a52a144058b1c1",
+      "reference_sha256": "de9724aed7fa6e8caab4097c36064e38509e071fed0c7b60739d1a644e73eb5a",
+      "duration_seconds": 5.424,
+      "source_path": "common_voice_fr_17308731.mp3",
+      "source_id": "4f10f48db9eca7af8c4699ec62a1bb11b4f8f68e111121fd04567e2317e17ca1",
+      "up_votes": 3,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-036",
+      "language": "fr",
+      "audio_sha256": "7b437a9579d87d69286af211a5cab27f12e68c4d93b3e087ea7688f19deedeb5",
+      "reference_sha256": "e8fc9fb6ad2ba8a7784b6a165b6c55211c9806894bd8f7a90bb24600b41cf409",
+      "duration_seconds": 5.184,
+      "source_path": "common_voice_fr_17308732.mp3",
+      "source_id": "49d5724eb60bd3af2938d03f34edfd8915d443bbf6090df815049ce407df3a5b",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-037",
+      "language": "fr",
+      "audio_sha256": "f643001dfdb665a18d1427682414e6c51e538a1817a145d55a548c5ff9f4d0f6",
+      "reference_sha256": "e5af4629d9d2f96a2628533e3c08b95d497a30271804411170db629c42172dae",
+      "duration_seconds": 4.344,
+      "source_path": "common_voice_fr_17308912.mp3",
+      "source_id": "593bf84fabe01e60923730b8d398856b822864f882dcbefee294988568c72358",
+      "up_votes": 4,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-038",
+      "language": "fr",
+      "audio_sha256": "78dca5457c5488fb21725b2659e12d9a33b7e1211e36d86f689f6cee4f714a72",
+      "reference_sha256": "bd7666407c9b8979e10bd22e09be9b9a4c2d38008429fd5e8ffe7ffade2db632",
+      "duration_seconds": 5.376,
+      "source_path": "common_voice_fr_17308913.mp3",
+      "source_id": "3039c2ae6284fce1713b2f2cb91eb623a60b7fc3902f0e0d447d4931c85f71a8",
+      "up_votes": 5,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "fr-039",
+      "language": "fr",
+      "audio_sha256": "b6e3e2ff41238fbbb674c505fbcbb2ca0e6b342e37c27198e5e45adb980369fc",
+      "reference_sha256": "98b9a6d83fd9ef4eb4ccd637e178519b7d238baaf60badccd9c38b23cb404777",
+      "duration_seconds": 4.224,
+      "source_path": "common_voice_fr_17309038.mp3",
+      "source_id": "57a1c722cf80159a232fe1ea95a6392bb7b07a6daa52214dd692e9128a99bcd9",
+      "up_votes": 2,
+      "down_votes": 0
+    },
+    {
+      "sample_id": "ar-000",
+      "language": "ar",
+      "audio_sha256": "20f0a85f760e0e4491b875d7ddc93a38e436c898f82f82261bd9cd393c926fb3",
+      "reference_sha256": "f2de6c0b02a59f7a3c73551be475828c669c0c97286aecb3769cb88a7a8f6848",
+      "duration_seconds": 9.48,
+      "source_row": 119,
+      "source_id": 1709
+    },
+    {
+      "sample_id": "ar-001",
+      "language": "ar",
+      "audio_sha256": "e975d8b9a9e724cb4614015bd384dca919155591e5f6673250fc4a8888749d6e",
+      "reference_sha256": "4cc8c845523f2272ab00d77ef0acf0016a526a2286a1adbd0a01e03e3cb4502e",
+      "duration_seconds": 8.28,
+      "source_row": 355,
+      "source_id": 1728
+    },
+    {
+      "sample_id": "ar-002",
+      "language": "ar",
+      "audio_sha256": "e0c26a2b66670329d921c99269975fd31be741e165e5db99c2039d55bb64b326",
+      "reference_sha256": "a4d07f553d277de304a7259a043af02681c34a634cf851afd289f098a05d11b1",
+      "duration_seconds": 9.06,
+      "source_row": 117,
+      "source_id": 1935
+    },
+    {
+      "sample_id": "ar-003",
+      "language": "ar",
+      "audio_sha256": "0e8fcf44fc8d0e6d41143880424566e47df4e838871ab5df3bae94a8746e8c43",
+      "reference_sha256": "c7799aea826a6e41cef75f10b30a6fac89503c66c45c5c4e9646452dd06a6122",
+      "duration_seconds": 9.66,
+      "source_row": 306,
+      "source_id": 1927
+    },
+    {
+      "sample_id": "ar-004",
+      "language": "ar",
+      "audio_sha256": "8e9a67a93ab5fd593fd276176d538ccfe6bfa60a799b388eaad71333f9f5c54f",
+      "reference_sha256": "258720740f2e45079f35f447862c6597f2a2f9aa99a358df4e137e1c65b56df7",
+      "duration_seconds": 16.32,
+      "source_row": 413,
+      "source_id": 1726
+    },
+    {
+      "sample_id": "ar-005",
+      "language": "ar",
+      "audio_sha256": "10a6f3142c3fe6c3a981ffa8ba452839a1c7acae323fb9211048b9097ae7d70f",
+      "reference_sha256": "d0d2029d3f4718b51e758ea15e21a051633e3e6f6126f0e04c1894a29d06e96c",
+      "duration_seconds": 6.54,
+      "source_row": 213,
+      "source_id": 1821
+    },
+    {
+      "sample_id": "ar-006",
+      "language": "ar",
+      "audio_sha256": "ad63d628a2de5e8e6015286655d9ba250903425ef8ee6c2129e866a0a70aa722",
+      "reference_sha256": "b55905be45ef6e225811be07c88f41cf620313251483b0e7bee1d75d748f943c",
+      "duration_seconds": 6.0,
+      "source_row": 308,
+      "source_id": 1799
+    },
+    {
+      "sample_id": "ar-007",
+      "language": "ar",
+      "audio_sha256": "1f0d1b39b89082a05f88f704710bdb8bfd72d3623920287457b411e2003d41cb",
+      "reference_sha256": "ad8b0a5ba0823d9fa564bad98e95547e267d6eaac80b22ba3b55d888abe2505d",
+      "duration_seconds": 10.92,
+      "source_row": 9,
+      "source_id": 1680
+    },
+    {
+      "sample_id": "ar-008",
+      "language": "ar",
+      "audio_sha256": "7270f3aae5b1251aee2bc6537d586e9f151a19902579feac24142b4f985ae484",
+      "reference_sha256": "9dad106ee939e6da175e29546e24f23a6ff350ba55945170412926c74726532e",
+      "duration_seconds": 13.86,
+      "source_row": 225,
+      "source_id": 1798
+    },
+    {
+      "sample_id": "ar-009",
+      "language": "ar",
+      "audio_sha256": "cbcb798be5a2de8f2a9657d97d3203bccdde5bfac59f7626b3329bfbbec18af7",
+      "reference_sha256": "b9f4047bba41d7c58247e61a9fea4768a8bef74ce78fd2e9eb346a000906aa4b",
+      "duration_seconds": 7.92,
+      "source_row": 30,
+      "source_id": 1737
+    },
+    {
+      "sample_id": "ar-010",
+      "language": "ar",
+      "audio_sha256": "ff1c868dfe964828f2018166831b24a908694af27df7662d67c45e06a9f9dd88",
+      "reference_sha256": "85266c74035fc34de3571bb55879c49ba1c92f9cf152644695a5d53d1555638f",
+      "duration_seconds": 4.02,
+      "source_row": 137,
+      "source_id": 1889
+    },
+    {
+      "sample_id": "ar-011",
+      "language": "ar",
+      "audio_sha256": "5141f32a424adbb73725d95f5fa4ac8c0f73f241c2ec678e51dae518b72e1896",
+      "reference_sha256": "e6d39a20837ab8ee003b2e91fcc133059225a27ad3b2acf6ee3f280e81fc6669",
+      "duration_seconds": 10.32,
+      "source_row": 366,
+      "source_id": 1988
+    },
+    {
+      "sample_id": "ar-012",
+      "language": "ar",
+      "audio_sha256": "0f610a5cfa0049daaaaae69ed7e9d218badbe83a85013d491313255acca890a9",
+      "reference_sha256": "58c9ef2b9af3702a7d77bed59946e6000d3df2ba5dbae3df8baab984e0d9d21a",
+      "duration_seconds": 6.36,
+      "source_row": 8,
+      "source_id": 1947
+    },
+    {
+      "sample_id": "ar-013",
+      "language": "ar",
+      "audio_sha256": "4c83acfd307ff4192388663bc4f8ef0ffb91e8f68cf515061b3de1d0ab2bb192",
+      "reference_sha256": "8def1fa031be89a779a99b356ede50c7dbc89cd61c833a97cef9625a1a0385e4",
+      "duration_seconds": 11.4,
+      "source_row": 313,
+      "source_id": 1872
+    },
+    {
+      "sample_id": "ar-014",
+      "language": "ar",
+      "audio_sha256": "bbaf9d72f529bc34a7fb37476dc1be659b09007c5536e6a37fdf89e8cf8fdf29",
+      "reference_sha256": "02a3645a7c1ce4048df2ccd7f3350f07b9e7c4262cf1268413491c2097a95c11",
+      "duration_seconds": 19.08,
+      "source_row": 338,
+      "source_id": 1911
+    },
+    {
+      "sample_id": "ar-015",
+      "language": "ar",
+      "audio_sha256": "120607b9e06c0567a48cc4cc4920afc6efff32401a65a564c757c90b4cda7ebe",
+      "reference_sha256": "41c9c3ca7115a648441bc31b23b9685f01a5ff9a69a8414165e39a28e67b072f",
+      "duration_seconds": 5.4,
+      "source_row": 67,
+      "source_id": 1941
+    },
+    {
+      "sample_id": "ar-016",
+      "language": "ar",
+      "audio_sha256": "3b01db5cbdcd97ffdaa70cf4d0f38ab1d6e62c4230fe6f7bf527bafd046216b8",
+      "reference_sha256": "d314e8dc231b980dd0a90132be862f90ae897bd6c6219d3384ce443173c5e55d",
+      "duration_seconds": 6.48,
+      "source_row": 394,
+      "source_id": 1957
+    },
+    {
+      "sample_id": "ar-017",
+      "language": "ar",
+      "audio_sha256": "65fe771b483ea8b1193715596e464978752f6139ff3f174fce466d1480147f09",
+      "reference_sha256": "505e57197c71a5de8eba29de2e6b9962f9952a9db7f2b9953d1cd6c0de134b12",
+      "duration_seconds": 7.8,
+      "source_row": 251,
+      "source_id": 1999
+    },
+    {
+      "sample_id": "ar-018",
+      "language": "ar",
+      "audio_sha256": "c8a0e778efdc3705d9ed1eae93c4f9d4a848b0116e51acd0fb63f7d8d2655a88",
+      "reference_sha256": "97d1e8d0f309993071643b11421d3d0e31fa40509ee0cbc8c340e9a5a4b90f52",
+      "duration_seconds": 14.88,
+      "source_row": 38,
+      "source_id": 1749
+    },
+    {
+      "sample_id": "ar-019",
+      "language": "ar",
+      "audio_sha256": "4ebedc4df9a7abecd2488523b5d2fa69fc308ab518740a8c91b918b09f739bd6",
+      "reference_sha256": "9db2179ef2cf6bc2a88dd89920b38e45e097eccae2c77590fcf488ccaa81c894",
+      "duration_seconds": 13.8,
+      "source_row": 116,
+      "source_id": 1715
+    },
+    {
+      "sample_id": "ar-020",
+      "language": "ar",
+      "audio_sha256": "30e095a58fe0375eea3abe3bf66aaa61dfc722494ece0eba3cbe0c3e5830ff90",
+      "reference_sha256": "0c7b4081fca7ac802c0786805a046a83c1460e36b6bd1c3b98caa37f54b39e8f",
+      "duration_seconds": 7.8,
+      "source_row": 297,
+      "source_id": 1838
+    },
+    {
+      "sample_id": "ar-021",
+      "language": "ar",
+      "audio_sha256": "9b60bbedd0492aa6dc2e64419200dcd21a0aa42a5bc7b6f03ea79b9b082e60cf",
+      "reference_sha256": "61249f629c25fe9497cb61610bb354064a953bd60e05e440d2951632d277d25c",
+      "duration_seconds": 16.38,
+      "source_row": 416,
+      "source_id": 1901
+    },
+    {
+      "sample_id": "ar-022",
+      "language": "ar",
+      "audio_sha256": "a18872845f27c5703d4bfd2ec2c95bc32574c327fe012623c54809f2838e21ad",
+      "reference_sha256": "828737210b773e71234969925ea0bd056f98056d76cd3d78b3c1b6f506978425",
+      "duration_seconds": 8.4,
+      "source_row": 398,
+      "source_id": 1828
+    },
+    {
+      "sample_id": "ar-023",
+      "language": "ar",
+      "audio_sha256": "419ba7b13b60152e56633e2aba99d865ec7405322f7ce51f6a6f67d3848345e3",
+      "reference_sha256": "fa3d3285c4de329219beba9ac5d2a157feeeccda30fdd72d3687c8dcabc8c085",
+      "duration_seconds": 9.12,
+      "source_row": 27,
+      "source_id": 1978
+    },
+    {
+      "sample_id": "ar-024",
+      "language": "ar",
+      "audio_sha256": "dafb9aab8e44f1fa198f2a1d10673adbc916d1bcd884eac93272fc673ae9fb1e",
+      "reference_sha256": "6aaf5e56b4773279c9fef060c0564745d955157de5f235ebdef403b66527dcd0",
+      "duration_seconds": 10.74,
+      "source_row": 256,
+      "source_id": 1965
+    },
+    {
+      "sample_id": "ar-025",
+      "language": "ar",
+      "audio_sha256": "439e477656399fd13b04ea5cbfd004c71b7fa66dd5a93faebffd194858d2a820",
+      "reference_sha256": "f2de6c0b02a59f7a3c73551be475828c669c0c97286aecb3769cb88a7a8f6848",
+      "duration_seconds": 11.92,
+      "source_row": 104,
+      "source_id": 1709
+    },
+    {
+      "sample_id": "ar-026",
+      "language": "ar",
+      "audio_sha256": "b768f447ce9ea85f71ccdc15b40e5d28ac47f4494580e2dc9ffb74a3291cc9c8",
+      "reference_sha256": "f700679ad89946aa7c3dc2d0d2a0987622b9fa941f92878f5a9339b43f64f60e",
+      "duration_seconds": 9.96,
+      "source_row": 53,
+      "source_id": 1991
+    },
+    {
+      "sample_id": "ar-027",
+      "language": "ar",
+      "audio_sha256": "bd1efe560617791b5d51db831c153aa1983638cc05e7685d30dca7a5138f34a5",
+      "reference_sha256": "f54e131397517c83d041ffead93cfc3c232faadb374dabece2946da31231b7af",
+      "duration_seconds": 7.56,
+      "source_row": 139,
+      "source_id": 1949
+    },
+    {
+      "sample_id": "ar-028",
+      "language": "ar",
+      "audio_sha256": "2e0532023ea3a9de62e21314c192033df5f4bbab1e46e024377fa712cb813f25",
+      "reference_sha256": "189a411bbb32b39ea9524ae5f9fa6511ca34c3f560ae48fd925553f833402669",
+      "duration_seconds": 5.94,
+      "source_row": 260,
+      "source_id": 1661
+    },
+    {
+      "sample_id": "ar-029",
+      "language": "ar",
+      "audio_sha256": "b14c359e453e043e20a744e08d9162db7ddca10142dc9a60024b0d257a0c8117",
+      "reference_sha256": "2ada5001c4a8a1eacb371625e30d07fcd201a2e4cb0ab4dd5198022bdb5aa39b",
+      "duration_seconds": 7.68,
+      "source_row": 152,
+      "source_id": 1698
+    },
+    {
+      "sample_id": "ar-030",
+      "language": "ar",
+      "audio_sha256": "83eed5548667c2798df372520efd6ae1c886676e997dd5ce977be5e4e87efa16",
+      "reference_sha256": "2f411189c8e651da741cc68da0b9f5b838991334df1ac5b74350c2fab31c81d2",
+      "duration_seconds": 7.8,
+      "source_row": 419,
+      "source_id": 1853
+    },
+    {
+      "sample_id": "ar-031",
+      "language": "ar",
+      "audio_sha256": "18c9beaf45658420ab89eba780f77f1c1f011b5376848771887ccf82921a461c",
+      "reference_sha256": "db0f856272bfb3f9728596996ec1e09efb5bb94c71406f4b5b08200061fc7c57",
+      "duration_seconds": 8.22,
+      "source_row": 393,
+      "source_id": 1814
+    },
+    {
+      "sample_id": "ar-032",
+      "language": "ar",
+      "audio_sha256": "d261c6c19633bd7119f8559c7304778088a7795bddd6f230ac9377912f91257a",
+      "reference_sha256": "9d7d776129f89a7a2a7d49ee73ab48683841f0cd86ab770aea7a07118a028dc5",
+      "duration_seconds": 9.78,
+      "source_row": 75,
+      "source_id": 1827
+    },
+    {
+      "sample_id": "ar-033",
+      "language": "ar",
+      "audio_sha256": "470d515813adef9aee977e023f020eec7444142730c8fb885889323c3651503e",
+      "reference_sha256": "9b95d399c4b76f0224b8d8bc1d00c25ad1750d6b95b4bd3268e89cd80fc26b25",
+      "duration_seconds": 16.8,
+      "source_row": 49,
+      "source_id": 1883
+    },
+    {
+      "sample_id": "ar-034",
+      "language": "ar",
+      "audio_sha256": "318e95704f15e5050d5f3703172415c5e9d7f83495c3589590e8c4ca8b2628f6",
+      "reference_sha256": "d48ac6d5a80ae2a3a4b3213d54df2f04c26e06c526cdebc47ace44ed1e38f2af",
+      "duration_seconds": 14.16,
+      "source_row": 1,
+      "source_id": 1730
+    },
+    {
+      "sample_id": "ar-035",
+      "language": "ar",
+      "audio_sha256": "be9b06106934fc1a68965f5e5cb77ad9230210fc065aef061810fcab3bb7fcdb",
+      "reference_sha256": "18892e7ee85b6d2de810c6f63b0e5544eb6a848328d6801f44320bf7eeec5377",
+      "duration_seconds": 9.84,
+      "source_row": 212,
+      "source_id": 1756
+    },
+    {
+      "sample_id": "ar-036",
+      "language": "ar",
+      "audio_sha256": "3bab20e172535d60ceedb3c2c6ed72667059408eecee114846673d84f4f8ba74",
+      "reference_sha256": "2f3f5f390db528a6e3d1caebe2b600b2239c257a0d6c223b49484d0ee583a2cf",
+      "duration_seconds": 10.2,
+      "source_row": 261,
+      "source_id": 1884
+    },
+    {
+      "sample_id": "ar-037",
+      "language": "ar",
+      "audio_sha256": "1a27f84ff9906c7873dd5f4c22804373e060c3617188c3d1bb0253046f47dc33",
+      "reference_sha256": "fe3ab6d672011c09a9e41b9fe0711a5e5ef20aa08d6f5ed7a6a4f12c6cb1348a",
+      "duration_seconds": 9.0,
+      "source_row": 252,
+      "source_id": 1662
+    },
+    {
+      "sample_id": "ar-038",
+      "language": "ar",
+      "audio_sha256": "76a4e76567874be5721fe2241c6428a97e694b53ce828e5663958e60bfdf44db",
+      "reference_sha256": "29308edfac188e013c8bbb60762d600455af4cc533ae699ccfc2e194834dda8e",
+      "duration_seconds": 13.32,
+      "source_row": 410,
+      "source_id": 1819
+    },
+    {
+      "sample_id": "ar-039",
+      "language": "ar",
+      "audio_sha256": "cca59df14be2fc8fd0f064dd7ad524878db5e976b03634db7833f0268e18a058",
+      "reference_sha256": "70831a1f06b4ebe6debe1a10ebef14cc5591327b0cfba378f214ab334dc65ce3",
+      "duration_seconds": 16.02,
+      "source_row": 2,
+      "source_id": 1995
+    },
+    {
+      "sample_id": "ary-000",
+      "language": "ary",
+      "audio_sha256": "5411ed791c9b796f15df0cfd6d31b62d8dc7ba0cd5062a617814d1c428a474e5",
+      "reference_sha256": "2b742436093ffe9b120cb74d5a633f8f721b0326e985056c918deb20bd0394c7",
+      "duration_seconds": 3.3653968253968256,
+      "source_row": 221,
+      "source_id": "15501_1"
+    },
+    {
+      "sample_id": "ary-001",
+      "language": "ary",
+      "audio_sha256": "a081031c617941c951155ed865019135427693047c8e44edc9d68554b9b1a8b3",
+      "reference_sha256": "4efea619532c54507633c6f3807b23335d1f265dd83503edad4e09173b3e45cd",
+      "duration_seconds": 7.226802721088435,
+      "source_row": 468,
+      "source_id": "56331_1"
+    },
+    {
+      "sample_id": "ary-002",
+      "language": "ary",
+      "audio_sha256": "6919b0c1ff97fdb61566c9072bfd41e293fe2d746d56f18aaa6365c437d588f4",
+      "reference_sha256": "dc4925aa60d7b587104668253c33005ec391ee499cf46ff0dcdb3e4200331d7e",
+      "duration_seconds": 3.9391609977324262,
+      "source_row": 914,
+      "source_id": "58503_2"
+    },
+    {
+      "sample_id": "ary-003",
+      "language": "ary",
+      "audio_sha256": "71055050a84a524be60568c8bba621bce678b569b80e652889b90276238a9c9f",
+      "reference_sha256": "e035db3451eadc38cf5425ed308ea78f1935856882c8bbaeeaa7713184e92c92",
+      "duration_seconds": 4.000748299319728,
+      "source_row": 375,
+      "source_id": "16162_1"
+    },
+    {
+      "sample_id": "ary-004",
+      "language": "ary",
+      "audio_sha256": "8627053bab8632ca2dee2c5930ef633a67947545c7ee126e4be4b615fa46193f",
+      "reference_sha256": "f84133859b48137d9419aa3dab5d84657abf52a4387cd9634ee298ca723c67c1",
+      "duration_seconds": 5.819909297052154,
+      "source_row": 415,
+      "source_id": "16346_1"
+    },
+    {
+      "sample_id": "ary-005",
+      "language": "ary",
+      "audio_sha256": "1c33710564ec4403917eaff2a2f9f458d20f568f567f0c38cfb6b78874d430e8",
+      "reference_sha256": "f32898286b33f9984cf9e2e7249851eaa235a49dc9a982548865c262bd957725",
+      "duration_seconds": 7.972063492063492,
+      "source_row": 724,
+      "source_id": "57417_1"
+    },
+    {
+      "sample_id": "ary-006",
+      "language": "ary",
+      "audio_sha256": "c4c022eb7f23190c8b59cd447e5d84de0bfa29f715bacfe8d9ae93b1216b3fe5",
+      "reference_sha256": "8293f4577db6279d5c8563ff835bfe6cbaab4fb6469c0fbdc281d5bc789b5f59",
+      "duration_seconds": 3.087981859410431,
+      "source_row": 709,
+      "source_id": "17692_1"
+    },
+    {
+      "sample_id": "ary-007",
+      "language": "ary",
+      "audio_sha256": "89a25e0226b22ec13c99c0f27c296e1514967f544da2832a5aa7579ccc6906ff",
+      "reference_sha256": "879d652f0cc672b431f690437ffc4aa52f0213464a87eadf441fee3ef3f4945c",
+      "duration_seconds": 2.671859410430839,
+      "source_row": 9,
+      "source_id": "14548_1"
+    },
+    {
+      "sample_id": "ary-008",
+      "language": "ary",
+      "audio_sha256": "915abcc0c7b05b2c4eb2abbebb121184d7fdc107f2d71b1f1bc24822b894c769",
+      "reference_sha256": "747e09c254aeb02e3a4db340722cc2db9a42232a0c8e4d1a1d43c67f128729d3",
+      "duration_seconds": 2.158934240362812,
+      "source_row": 87,
+      "source_id": "14937_2"
+    },
+    {
+      "sample_id": "ary-009",
+      "language": "ary",
+      "audio_sha256": "244f2e2b7e9b9ce4086b82f19de21622cbaf292caa0181974dd8c8f29e8c52de",
+      "reference_sha256": "c9e38d76a3936703d99e7be92914f421838281205106c35061b25adf299935de",
+      "duration_seconds": 2.711043083900227,
+      "source_row": 714,
+      "source_id": "17721_1"
+    },
+    {
+      "sample_id": "ary-010",
+      "language": "ary",
+      "audio_sha256": "d3328decb683b02d70a44714dcd5a4cd88a621b4c97282b84b67076b2dbab880",
+      "reference_sha256": "791dbb63ed3234aa9c3794cf03abcc5f594af8983a1e0ec8feeb0ebe1aafaa9b",
+      "duration_seconds": 8.578231292517007,
+      "source_row": 766,
+      "source_id": "17936_1"
+    },
+    {
+      "sample_id": "ary-011",
+      "language": "ary",
+      "audio_sha256": "30bd8582b7c2073647d593e06a7ca2f665f3cc7cb63beee48770d5526aced5f5",
+      "reference_sha256": "32d85d6e22a37b3b6863ba7fd653666bf917bc1d4fd7bf3832fdd892d4887414",
+      "duration_seconds": 3.5057369614512472,
+      "source_row": 235,
+      "source_id": "55267_1"
+    },
+    {
+      "sample_id": "ary-012",
+      "language": "ary",
+      "audio_sha256": "10cbac5b82cbcda539ef7604ac23898b99b660e56ac1a523ade29ef1773fb14f",
+      "reference_sha256": "60ebe112fe280121af0e9f5274a28ee016ed265c64e45f5d065724b6d99275b4",
+      "duration_seconds": 10.126031746031746,
+      "source_row": 764,
+      "source_id": "17924_1"
+    },
+    {
+      "sample_id": "ary-013",
+      "language": "ary",
+      "audio_sha256": "332a55398cc1dc475170889a740e74176142164fa64d834a2e30cbb5dbf3a7c3",
+      "reference_sha256": "1e08d5fa48367be561397de72b6df287bb83f9a6ff37d0050c63d761489803da",
+      "duration_seconds": 3.391859410430839,
+      "source_row": 295,
+      "source_id": "15844_1"
+    },
+    {
+      "sample_id": "ary-014",
+      "language": "ary",
+      "audio_sha256": "b9765ff80081c1553471037fdc293cf2d882e855a02cdbc0598cad849543abf1",
+      "reference_sha256": "215cd9734d22e4c77c3771cfc856b1edd92f7f10a9c525f6f453dd69b3d6fb77",
+      "duration_seconds": 3.1272562358276645,
+      "source_row": 844,
+      "source_id": "18356_2"
+    },
+    {
+      "sample_id": "ary-015",
+      "language": "ary",
+      "audio_sha256": "39f14427fa7bb4a62e1b51b1cd28142c92b3a6e42fc2e30c020c0bfb22879c7e",
+      "reference_sha256": "61d4957b9c17ad40e721be61a73d3234ce615d9515b3494f1c5bffcd1da34080",
+      "duration_seconds": 5.630839002267574,
+      "source_row": 565,
+      "source_id": "16983_1"
+    },
+    {
+      "sample_id": "ary-016",
+      "language": "ary",
+      "audio_sha256": "b361a4589914926d16ae678d8e24aeee53c2fa74c34a27d5e40c8b84a4b98706",
+      "reference_sha256": "dbc246043821c18c2d84974caf4b57ae7cebf4444e2f931906c41530e00daf5b",
+      "duration_seconds": 2.122154195011338,
+      "source_row": 750,
+      "source_id": "17874_1"
+    },
+    {
+      "sample_id": "ary-017",
+      "language": "ary",
+      "audio_sha256": "b20ee4b3314afc8ae28d34a565d39a8eae04f70de1bca81c87f4bbf91f6ceeed",
+      "reference_sha256": "148552e2e97c0e0c0c943bec49f7eb97f2582b744e9f91367e992bec4479ef3e",
+      "duration_seconds": 2.238934240362812,
+      "source_row": 870,
+      "source_id": "18525_4"
+    },
+    {
+      "sample_id": "ary-018",
+      "language": "ary",
+      "audio_sha256": "20aefc5265df8e42a687f9343307b463b07005533343c08aa5c88db7279a28db",
+      "reference_sha256": "131a9aa457ed07136339781bd217fd7c00935965bf8e662221aea5af77530caf",
+      "duration_seconds": 3.806734693877551,
+      "source_row": 487,
+      "source_id": "16677_1"
+    },
+    {
+      "sample_id": "ary-019",
+      "language": "ary",
+      "audio_sha256": "402de14c196422dbbbe39cc4dee1492c7cb4a443471ff45507bb24f8ddd9891c",
+      "reference_sha256": "f022a7f055ba15e07f4b3aeb1c06f712c1fefea5d1196ef7a67d15cd3cd03644",
+      "duration_seconds": 4.7440589569161,
+      "source_row": 1030,
+      "source_id": "59251_1"
+    },
+    {
+      "sample_id": "ary-020",
+      "language": "ary",
+      "audio_sha256": "b8cce8c6b818afbdf4592f2d378f6da8c9b5a94095b96a72dd22dfe716b4ef5e",
+      "reference_sha256": "3fc246644b8b415c2dccd956ee0340cea90a9734942bf5a7dd7bf1a3c7630e91",
+      "duration_seconds": 3.6083673469387754,
+      "source_row": 865,
+      "source_id": "18439_1"
+    },
+    {
+      "sample_id": "ary-021",
+      "language": "ary",
+      "audio_sha256": "d785176d78a84578f219529023f724033172745c8b530833cf9b2d4fac0d475e",
+      "reference_sha256": "4ff2ba6775383fad316516b7a49fabe3ccad8a185bdac2f62e4c319eea823774",
+      "duration_seconds": 9.973174603174604,
+      "source_row": 119,
+      "source_id": "54739_1"
+    },
+    {
+      "sample_id": "ary-022",
+      "language": "ary",
+      "audio_sha256": "39564006851eadb7cf8c46ea10953f9ba74424bb78492641bf8b1dacd4232acc",
+      "reference_sha256": "179e7d89b7c171e0ee1e86ad2f383a2c4d027153557be2a128bfc0dd78d9de2b",
+      "duration_seconds": 2.366077097505669,
+      "source_row": 961,
+      "source_id": "19034_1"
+    },
+    {
+      "sample_id": "ary-023",
+      "language": "ary",
+      "audio_sha256": "51bc7e9920d488e2bfd149c2d1179831e8eb557171aab1c79eeb49e0b49e93ef",
+      "reference_sha256": "cbd9c73dab0fce9cdc18e07d3520997e4c177fb61b98dbfa6429507cacb55f40",
+      "duration_seconds": 2.6747619047619047,
+      "source_row": 669,
+      "source_id": "17480_1"
+    },
+    {
+      "sample_id": "ary-024",
+      "language": "ary",
+      "audio_sha256": "4186228e4429f5fb7b92b69078665f952ae8ba3fd496aca8cdea609feaf1c7ab",
+      "reference_sha256": "771785faef4b59a55c460d1873bec6a4946dfee5922f511f7b4bc64a40958840",
+      "duration_seconds": 11.261337868480725,
+      "source_row": 866,
+      "source_id": "18442_3"
+    },
+    {
+      "sample_id": "ary-025",
+      "language": "ary",
+      "audio_sha256": "939c1df662c131449f69b231ba64768b4ecb46cb6f3f009bd18b2d310e20bbc5",
+      "reference_sha256": "50edfc990c4db33d7cf26d97d20b2e234c6d9e3153d956e36a30ed047d055363",
+      "duration_seconds": 5.505442176870749,
+      "source_row": 951,
+      "source_id": "18943_1"
+    },
+    {
+      "sample_id": "ary-026",
+      "language": "ary",
+      "audio_sha256": "82c27f294eff39eb96c02666c39170dbf9bc1d64cb4d75edbf00727943da54c5",
+      "reference_sha256": "d2f91af355cba9d4ef0e37816499c22a0e6e379846c7e9c45cfc1b0f62faea50",
+      "duration_seconds": 4.518344671201814,
+      "source_row": 567,
+      "source_id": "17001_1"
+    },
+    {
+      "sample_id": "ary-027",
+      "language": "ary",
+      "audio_sha256": "ef4244e9471fed88ae9b40210452f6957a61aa9c61599cf4efac1da82069eee9",
+      "reference_sha256": "0913ed73fa1e14109b6d573f702fc211a01f0a601060af4fecfadedf03c1f21a",
+      "duration_seconds": 6.217414965986395,
+      "source_row": 222,
+      "source_id": "15519_2"
+    },
+    {
+      "sample_id": "ary-028",
+      "language": "ary",
+      "audio_sha256": "9351d5efc24b0e00526986478f491dfaace13c39d9a6d0269753fc49ff6e3b5a",
+      "reference_sha256": "6a21417e15a26c118cf060c3ed116f67d704f2d7f2dc2eb5022b99b7b5105bc5",
+      "duration_seconds": 2.505827664399093,
+      "source_row": 733,
+      "source_id": "57570_1"
+    },
+    {
+      "sample_id": "ary-029",
+      "language": "ary",
+      "audio_sha256": "072513558cacef16f7bd8a493a6e63e0c8de4e874f368ed5e0dae21593e1554e",
+      "reference_sha256": "19f0d043025ca573ce0403fce92cd1810a72b3f6b411e20f34bd55dd1465e0c6",
+      "duration_seconds": 3.1135827664399094,
+      "source_row": 362,
+      "source_id": "55859_1"
+    },
+    {
+      "sample_id": "ary-030",
+      "language": "ary",
+      "audio_sha256": "6088659323aaaa8dc4e43e6a26718c710b244818bd2a8a9841c125b24f4d1730",
+      "reference_sha256": "880f1b8d38e26d60bdc38ac89b0164a1b629c9302ab96af68fcea5b38a321652",
+      "duration_seconds": 8.8343537414966,
+      "source_row": 912,
+      "source_id": "58471_1"
+    },
+    {
+      "sample_id": "ary-031",
+      "language": "ary",
+      "audio_sha256": "9d37e167816269eb18c7b80379077b0d0547c29b78e851e2e6a2699458f86240",
+      "reference_sha256": "35d6f98c49f12bc6dff2e5114359c9d7005ae5caea999498ca04e27864f1f56b",
+      "duration_seconds": 4.119024943310658,
+      "source_row": 465,
+      "source_id": "56303_1"
+    },
+    {
+      "sample_id": "ary-032",
+      "language": "ary",
+      "audio_sha256": "e3c6abee8877e6724a6efa3efd5ce81d46a1e8773c301ef06264c85e13c7d46b",
+      "reference_sha256": "19783b69aa6b0ca5228d27cd344b337e3f31f07bfed7f6d3f0be975a8337fe39",
+      "duration_seconds": 3.3091609977324263,
+      "source_row": 881,
+      "source_id": "58381_1"
+    },
+    {
+      "sample_id": "ary-033",
+      "language": "ary",
+      "audio_sha256": "91b4d621e4b333560e341191c8cb9bdb495a55a5443777f30794d281ef990914",
+      "reference_sha256": "78e40e6268225c301a3b0dead13b15f1437d783b15123f739cd1a040720a0c07",
+      "duration_seconds": 3.4790249433106575,
+      "source_row": 92,
+      "source_id": "14976_1"
+    },
+    {
+      "sample_id": "ary-034",
+      "language": "ary",
+      "audio_sha256": "269dc56434489259f9269b97d47516df1263f71578933e170d8146f798293e25",
+      "reference_sha256": "f164fdbcf9d572ba60422d9061637eac66a4de46a98eaa9956e787429e73f934",
+      "duration_seconds": 4.394920634920635,
+      "source_row": 802,
+      "source_id": "18132_1"
+    },
+    {
+      "sample_id": "ary-035",
+      "language": "ary",
+      "audio_sha256": "4011286aedd821e5f8ce59b225dc223e18723be81912261e93d172d8e9c66c04",
+      "reference_sha256": "3db391335ecaa788af9d0f7a324174980984b76e6ddecd22a388e113894fa9b7",
+      "duration_seconds": 8.915419501133787,
+      "source_row": 40,
+      "source_id": "14721_1"
+    },
+    {
+      "sample_id": "ary-036",
+      "language": "ary",
+      "audio_sha256": "19673ac0bc41edf88c29920d163bd64ea47aa101552a13d10f339e6d60230d6c",
+      "reference_sha256": "0f3483bdab4f35bf91a1353cf1fafe68d3aa0f08762764917293e8231e4e0a25",
+      "duration_seconds": 2.489501133786848,
+      "source_row": 129,
+      "source_id": "15092_1"
+    },
+    {
+      "sample_id": "ary-037",
+      "language": "ary",
+      "audio_sha256": "db461b54911a59b6fe84433ef6ce6059f2e892c8c06c02aa93109751877efef9",
+      "reference_sha256": "5c00332c4fbc1e08ffd5921ca56fbd03936078c687cf51159ffede1830e1b5c4",
+      "duration_seconds": 2.1080952380952382,
+      "source_row": 214,
+      "source_id": "15443_3"
+    },
+    {
+      "sample_id": "ary-038",
+      "language": "ary",
+      "audio_sha256": "4da8a812dfd2cee5b5693bcba262b662afaa603e49a805f06ef53f36746d4838",
+      "reference_sha256": "272255dc5a3db57095b3a7c9bf4ceae9afb8cc4b26256f3959983c00ac307a87",
+      "duration_seconds": 6.673832199546485,
+      "source_row": 796,
+      "source_id": "18087_2"
+    },
+    {
+      "sample_id": "ary-039",
+      "language": "ary",
+      "audio_sha256": "46d5c636089a6905743f3b926ea6ffcf0d32cd0344fc8cf6f06b6f3ba58f9461",
+      "reference_sha256": "55e0ff4364eee9371de71a16fef9f1d802c118eee93d981673a42daed5836301",
+      "duration_seconds": 2.0370068027210886,
+      "source_row": 643,
+      "source_id": "17371_1"
+    }
+  ]
+}

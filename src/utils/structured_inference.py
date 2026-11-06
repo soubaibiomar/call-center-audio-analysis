@@ -1,0 +1,107 @@
+"""One bounded retry budget with Pydantic validation and safe observations."""
+
+import hashlib
+import re
+import time
+from collections.abc import Callable
+from contextlib import ExitStack
+from typing import TypeVar
+
+import httpx
+from langchain_core.language_models.chat_models import BaseChatModel
+from langchain_core.messages import BaseMessage
+from openai import APIConnectionError, APIStatusError, APITimeoutError
+from pydantic import BaseModel, ValidationError
+
+from src.services.model_runs import ModelRun, record_model_run
+from src.utils.llm_factory import LocalModelPolicyError, resolve_model_name
+
+Result = TypeVar("Result", bound=BaseModel)
+
+
+class StructuredInferenceError(RuntimeError):
+    """Sanitized terminal failure; never embeds input or provider response."""
+
+
+def _observed_model_id(value: object) -> str:
+    """Log only a bounded identifier, never rejected free-form configuration."""
+    if isinstance(value, str) and re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.:/-]{0,199}", value):
+        return value
+    return "unresolved"
+
+
+def invoke_validated(
+    factory: Callable[[], BaseChatModel],
+    schema: type[Result],
+    messages: list[BaseMessage],
+    *,
+    provider: str,
+    model: str | None,
+    prompt: str,
+    max_attempts: int,
+) -> Result:
+    if (
+        isinstance(max_attempts, bool)
+        or not isinstance(max_attempts, int)
+        or not 1 <= max_attempts <= 5
+    ):
+        raise StructuredInferenceError("max_attempts must be between 1 and 5")
+    client = None
+    model_id = _observed_model_id(resolve_model_name(provider, model))
+    code = "provider_error"
+    with ExitStack() as resources:
+        for attempt in range(1, max_attempts + 1):
+            start = time.perf_counter()
+            try:
+                if client is None:
+                    llm = factory()
+                    if provider == "ollama":
+                        transport = getattr(llm, "http_client", None)
+                        if isinstance(transport, httpx.Client):
+                            resources.callback(transport.close)
+                    selected = getattr(llm, "model_name", None) or getattr(llm, "model", None)
+                    if isinstance(selected, str):
+                        model_id = _observed_model_id(selected)
+                    client = (
+                        llm.with_structured_output(schema, method="json_schema")
+                        if provider == "ollama"
+                        else llm.with_structured_output(schema)
+                    )
+                result = schema.model_validate(client.invoke(messages))
+            except Exception as error:
+                if isinstance(error, ValidationError):
+                    code = "schema_invalid"
+                elif isinstance(error, LocalModelPolicyError):
+                    code = "local_model_required"
+                elif isinstance(error, APITimeoutError | TimeoutError | httpx.TimeoutException):
+                    code = "timeout"
+                elif isinstance(error, APIConnectionError | httpx.NetworkError):
+                    code = "unavailable"
+                elif isinstance(error, APIStatusError | httpx.HTTPStatusError):
+                    code = "provider_http_error"
+                else:
+                    code = "provider_error"
+                valid = False
+            else:
+                valid = True
+            record_model_run(
+                ModelRun(
+                    provider=provider,
+                    model_id=model_id,
+                    model_version=model_id,
+                    prompt_revision=hashlib.sha256(prompt.encode()).hexdigest()[:16],
+                    schema_name=schema.__name__,
+                    attempt=attempt,
+                    retries=attempt - 1,
+                    latency_ms=(time.perf_counter() - start) * 1000,
+                    structured_output="valid"
+                    if valid
+                    else ("invalid" if code == "schema_invalid" else "error"),
+                    error_code=None if valid else code,
+                )
+            )
+            if valid:
+                return result
+            if attempt < max_attempts:
+                time.sleep(min(2 ** (attempt - 1), 10))
+        raise StructuredInferenceError(f"Failed after {max_attempts} attempts. Last error: {code}")

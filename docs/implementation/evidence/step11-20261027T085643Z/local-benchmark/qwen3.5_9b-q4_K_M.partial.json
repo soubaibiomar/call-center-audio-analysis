@@ -1,0 +1,33 @@
+[
+  {
+    "fixture": "billing",
+    "phase": "summary",
+    "schema_valid": false,
+    "seconds": 120.04649749999999,
+    "output_sha256_bytes": null,
+    "events": [
+      {
+        "provider": "ollama",
+        "model_id": "qwen3.5:9b-q4_K_M",
+        "model_version": "qwen3.5:9b-q4_K_M",
+        "prompt_revision_sha256_prefix_bytes": [
+          248,
+          137,
+          129,
+          7,
+          198,
+          125,
+          148,
+          197
+        ],
+        "schema_name": "SummaryResult",
+        "attempt": 1,
+        "retries": 0,
+        "latency_ms": 120046.36660000005,
+        "structured_output": "error",
+        "error_code": "timeout",
+        "fallback": "none"
+      }
+    ]
+  }
+]

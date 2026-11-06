@@ -1,0 +1,13 @@
+{
+  "report_prior_sections_preserved": 14,
+  "correction_sections": 15,
+  "correction_answered_questions": 12,
+  "upstream_blob_hashes_verified": 87,
+  "specification_hashes_verified": 99,
+  "unchanged_source_hashes": "PASS",
+  "baseline_clean": "PASS",
+  "license_attribution": "PASS",
+  "tracker": "2 DONE / 43 NOT STARTED",
+  "report_local_links": "PASS",
+  "utf8": "PASS"
+}

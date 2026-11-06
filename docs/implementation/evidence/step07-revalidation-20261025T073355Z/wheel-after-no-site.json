@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-I",
+    "-S",
+    "-c",
+    "import sys;sys.dont_write_bytecode=True;sys.path.insert(0,'C:\\\\Users\\\\omar\\\\Documents\\\\Call center audio Analysis\\\\.local\\\\step07-wheel-after');from src.services.analysis import AnalysisService;from services.api.analysis import analyze_call;assert not any(m in sys.modules for m in [\"gradio\",\"sqlalchemy\",\"faster_whisper\",\"src.utils.config\"]);print(\"Wheel-only imports succeeded\")"
+  ],
+  "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.local",
+  "exit_code": 0,
+  "seconds": 0.252,
+  "stdout": "Wheel-only imports succeeded\n",
+  "stderr": ""
+}

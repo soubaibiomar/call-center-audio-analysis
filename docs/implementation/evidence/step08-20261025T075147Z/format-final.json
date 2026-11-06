@@ -1,0 +1,21 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "ruff",
+    "format",
+    "--check",
+    "src/",
+    "services/",
+    "tests/",
+    "scripts/",
+    "stubs/",
+    "migrations/",
+    "app.py"
+  ],
+  "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis",
+  "exit_code": 0,
+  "seconds": 0.322,
+  "stdout": "90 files already formatted\n",
+  "stderr": ""
+}

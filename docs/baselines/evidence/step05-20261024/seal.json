@@ -1,0 +1,7 @@
+{
+  "captured_at_utc": "2026-10-24T19:21:28.536829+00:00",
+  "commands_sha256": "7cffb987a57d1f92f7889dee71e96095d8f279fd55703749ed6c839042077414",
+  "upstream_sha": "fed4b610742c1337147281fcec8f2cdcc0a79be5",
+  "working_head": "a37e4634af1d2947fc3c548d54e62bda0b0daf89",
+  "note": "Immutable execution snapshot; later runs use new files, never overwrite this baseline"
+}

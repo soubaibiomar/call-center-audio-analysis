@@ -1,0 +1,21 @@
+{
+  "captured_at_utc": "2026-10-24T20:21:52.874406+00:00",
+  "transport": "Existing Gradio callback now delegates through AnalysisService",
+  "sample": "upstream bundled sample_01.mp3",
+  "sample_sha256": "992feada7a67a56ee2881e0e2dc6ae8980d3190238be26c58d5b29b323b47989",
+  "model_downloads": false,
+  "elapsed_seconds": 7.8365,
+  "success": true,
+  "status": "completed",
+  "call_id": "937a4048-7e4d-4bf9-ae5a-0c1ed9d0c741",
+  "segments": 31,
+  "qa_score": 2.65,
+  "weighted_score_verified": true,
+  "json_bytes": 13359,
+  "pdf_bytes": 3124,
+  "json_sha256": "efb3ac68cd46d3bd09169d9b557f2b79e91afc133231e924373b2dac4a6ee704",
+  "pdf_sha256": "69f98146c822eecd701e4fc8c0241f791c7006cd185752720b07bbf56b369abd",
+  "callback_output_count": 6,
+  "summary_nonempty": true,
+  "qa_nonempty": true
+}

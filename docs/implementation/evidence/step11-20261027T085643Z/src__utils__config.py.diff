@@ -1,0 +1,11 @@
+--- before/src/utils/config.py
++++ after/src/utils/config.py
+@@ -33,7 +33,7 @@
+     llm_timeout_seconds: int
+ 
+     # LLM Provider
+-    llm_provider: str  # "openai", "gemini", "groq"
++    llm_provider: str  # "openai", "gemini", "groq", "ollama"
+ 
+     # Audio
+     whisper_model_size: str

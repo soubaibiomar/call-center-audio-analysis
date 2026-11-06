@@ -1,0 +1,29 @@
+C:\Users\omar\Documents\Call center audio Analysis\.venv\Lib\site-packages\pytest_asyncio\plugin.py:207: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+........................................................................ [ 17%]
+........................................................................ [ 35%]
+........................................................................ [ 53%]
+.................................................................F...... [ 71%]
+........................................................................ [ 89%]
+..........................................                               [100%]
+================================== FAILURES ===================================
+___________________ test_generated_openapi_matches_factory ____________________
+tests\api\test_api.py:470: in test_generated_openapi_matches_factory
+    assert json.loads(path.read_text(encoding="utf-8")) == create_app(ApiSettings()).openapi()
+E   AssertionError: assert {'components'..., ...}}, ...}} == {'components'..., ...}}, ...}}
+E     
+E     Omitting 3 identical items, use -vv to show
+E     Differing items:
+E     {'components': {'schemas': {'ActionItem': {'properties': {'deadline': {'anyOf': [...], 'title': 'Deadline'}, 'descript...'title': 'CallItem', 'type': 'object'}, ...}, 'securitySchemes': {'HTTPBearer': {'scheme': 'bearer', 'type': 'http'}}}} != {'components': {'schemas': {'ActionItem': {'properties': {'deadline': {'anyOf': [...], 'title': 'Deadline'}, 'descript...'title': 'CallItem', 'type': 'object'}, ...}, 'securitySchemes': {'HTTPBearer': {'scheme': 'bearer', 'type': 'http'}}}}
+E     Use -v to get more diff
+============================== warnings summary ===============================
+.venv\Lib\site-packages\starlette\testclient.py:45
+  C:\Users\omar\Documents\Call center audio Analysis\.venv\Lib\site-packages\starlette\testclient.py:45: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/api/test_api.py::test_generated_openapi_matches_factory - Assert...
+1 failed, 401 passed, 1 warning in 57.99s

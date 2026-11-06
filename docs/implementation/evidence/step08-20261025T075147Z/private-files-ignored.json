@@ -1,0 +1,8 @@
+{
+  ".local/database_url": true,
+  ".local/step08_admin_url": true,
+  ".local/step08_app_host_url": true,
+  ".local/database_app_password": true,
+  ".local/step08_test_admin_url": true,
+  ".local/step08_test_app_url": true
+}

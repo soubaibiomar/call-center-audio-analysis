@@ -1,0 +1,460 @@
+{
+  "script_sha256_before_fix": "7a95f6593f3f276fa0ece2a703c17e0c97c93e2c2d4d3ca996270360bf46cc2b",
+  "prior_inventory_check": [
+    {
+      "path": "PROJECT28_MASTER_INSTRUCTIONS.md",
+      "matches": true
+    },
+    {
+      "path": "STEP_INDEX.md",
+      "matches": true
+    },
+    {
+      "path": "design/APPROVED_COMMMERCIALLY_STYLE_REFERENCE.png",
+      "matches": true
+    },
+    {
+      "path": "design/APPROVED_GREEN_ERP_REFERENCE.png",
+      "matches": true
+    },
+    {
+      "path": "design/UI_ACCEPTANCE_CHECKLIST.md",
+      "matches": true
+    },
+    {
+      "path": "design/UI_DESIGN_SYSTEM.md",
+      "matches": true
+    },
+    {
+      "path": "docs/environment/evidence/prompt-package-provenance.json",
+      "matches": true
+    },
+    {
+      "path": "docs/environment/evidence/step01-documentation-checks.json",
+      "matches": true
+    },
+    {
+      "path": "docs/environment/evidence/step01-environment.json",
+      "matches": true
+    },
+    {
+      "path": "docs/environment/evidence/step01-git-comparison.json",
+      "matches": true
+    },
+    {
+      "path": "docs/environment/evidence/step01-secret-scan.json",
+      "matches": true
+    },
+    {
+      "path": "docs/environment/evidence/step01-validation.json",
+      "matches": true
+    },
+    {
+      "path": "docs/environment/requirements.md",
+      "matches": true
+    },
+    {
+      "path": "docs/implementation/PROGRESS.md",
+      "matches": true
+    },
+    {
+      "path": "docs/implementation/STEP_01_verify_windows_docker_and_gpu_environment_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_01_verify_windows_docker_and_gpu_environment_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_02_clone_and_fingerprint_upstream_repository_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_03_establish_branching_and_collaboration_conventions_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_04_install_dependencies_and_configure_secrets_safely_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_05_run_original_tests_and_static_checks_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_06_launch_the_original_gradio_app_and_create_baseline_repo_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_07_define_modular_target_structure_and_compatibility_layer_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_08_migrate_sqlite_persistence_to_postgresql_with_alembic_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_09_create_typed_fastapi_endpoints_and_auth_boundaries_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_10_build_durable_redis_background_processing_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_11_integrate_qwen_through_a_safe_model_provider_adapter_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_12_inventory_datasets_and_build_permission_aware_splits_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_13_benchmark_whisper_against_qwen3_asr_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_14_integrate_neural_diarization_and_role_attribution_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_15_harden_audio_preprocessing_vad_and_segmentation_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_16_extend_langgraph_with_typed_analysis_nodes_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_17_create_controlled_company_knowledge_ingestion_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_18_ground_qa_and_recommendations_in_rag_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_19_integrate_acoustic_emotion_classification_baseline_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_20_benchmark_emotion_model_and_assess_transfer_bias_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_21_collect_reviewed_emotion_labels_without_contaminating_d_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_22_initialize_react_vite_typescript_frontend_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_23_build_dashboards_for_calls_live_and_model_lab_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_24_build_timestamped_human_transcript_and_qa_review_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_25_create_real_browser_to_browser_audio_and_secure_transpo_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_26_implement_stabilized_incremental_asr_with_partial_revis_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_27_add_grounded_real_time_agent_assistance_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_28_measure_live_end_to_end_latency_and_gpu_limits_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_29_aggregate_accurate_agent_team_operational_analytics_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_30_generate_evidence_grounded_multi_call_coaching_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_31_evaluate_coaching_quality_and_intervention_usefulness_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_32_implement_active_learning_sample_prioritization_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_33_version_permission_checked_audio_datasets_with_dvc_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_34_fine_tune_asr_candidate_using_pytorch_and_evaluate_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_35_track_experiments_and_models_with_mlflow_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_36_approve_canary_deploy_and_rollback_a_model_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_37_prepare_learning_interfaces_for_other_neural_networks_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_38_complete_authentication_privacy_and_security_threat_mod_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_39_introduce_traces_metrics_and_privacy_safe_monitoring_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_40_test_failure_modes_and_data_recovery_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_41_package_a_reproducible_docker_compose_environment_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_42_run_full_end_to_end_functional_security_tests_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_43_publish_reproducible_technical_and_ml_benchmarks_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_44_demonstrate_both_live_intelligence_and_neural_improveme_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "prompts/STEP_45_deliver_code_reproducibility_and_final_handover_PROMPT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_01_verify_windows_docker_and_gpu_environment_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_02_clone_and_fingerprint_upstream_repository_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_03_establish_branching_and_collaboration_conventions_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_04_install_dependencies_and_configure_secrets_safely_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_05_run_original_tests_and_static_checks_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_06_launch_the_original_gradio_app_and_create_baseline_repo_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_07_define_modular_target_structure_and_compatibility_layer_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_08_migrate_sqlite_persistence_to_postgresql_with_alembic_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_09_create_typed_fastapi_endpoints_and_auth_boundaries_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_10_build_durable_redis_background_processing_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_11_integrate_qwen_through_a_safe_model_provider_adapter_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_12_inventory_datasets_and_build_permission_aware_splits_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_13_benchmark_whisper_against_qwen3_asr_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_14_integrate_neural_diarization_and_role_attribution_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_15_harden_audio_preprocessing_vad_and_segmentation_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_16_extend_langgraph_with_typed_analysis_nodes_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_17_create_controlled_company_knowledge_ingestion_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_18_ground_qa_and_recommendations_in_rag_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_19_integrate_acoustic_emotion_classification_baseline_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_20_benchmark_emotion_model_and_assess_transfer_bias_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_21_collect_reviewed_emotion_labels_without_contaminating_d_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_22_initialize_react_vite_typescript_frontend_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_23_build_dashboards_for_calls_live_and_model_lab_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_24_build_timestamped_human_transcript_and_qa_review_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_25_create_real_browser_to_browser_audio_and_secure_transpo_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_26_implement_stabilized_incremental_asr_with_partial_revis_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_27_add_grounded_real_time_agent_assistance_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_28_measure_live_end_to_end_latency_and_gpu_limits_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_29_aggregate_accurate_agent_team_operational_analytics_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_30_generate_evidence_grounded_multi_call_coaching_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_31_evaluate_coaching_quality_and_intervention_usefulness_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_32_implement_active_learning_sample_prioritization_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_33_version_permission_checked_audio_datasets_with_dvc_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_34_fine_tune_asr_candidate_using_pytorch_and_evaluate_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_35_track_experiments_and_models_with_mlflow_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_36_approve_canary_deploy_and_rollback_a_model_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_37_prepare_learning_interfaces_for_other_neural_networks_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_38_complete_authentication_privacy_and_security_threat_mod_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_39_introduce_traces_metrics_and_privacy_safe_monitoring_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_40_test_failure_modes_and_data_recovery_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_41_package_a_reproducible_docker_compose_environment_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_42_run_full_end_to_end_functional_security_tests_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_43_publish_reproducible_technical_and_ml_benchmarks_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_44_demonstrate_both_live_intelligence_and_neural_improveme_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "report_templates/STEP_45_deliver_code_reproducibility_and_final_handover_REPORT.md",
+      "matches": true
+    },
+    {
+      "path": "resources/REPORT_QUALITY_CHECKLIST.md",
+      "matches": true
+    },
+    {
+      "path": "resources/STEP_MANIFEST.json",
+      "matches": true
+    },
+    {
+      "path": "resources/UPSTREAM_VERIFIED_FACTS.md",
+      "matches": true
+    },
+    {
+      "path": "scripts/Test-Project28Environment.ps1",
+      "matches": true
+    },
+    {
+      "path": "tests/unit/test_environment_diagnostics.py",
+      "matches": false
+    }
+  ],
+  "reproduction": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_environment_diagnostics.py",
+      "-k",
+      "held_by or empty_docker or unicode_output",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 1,
+    "stdout": "FFF                                                                      [100%]\n================================== FAILURES ===================================\n________ test_timeout_includes_output_held_by_an_exited_process_child _________\ntests\\unit\\test_environment_diagnostics.py:121: in test_timeout_includes_output_held_by_an_exited_process_child\n    assert result[\"status\"] == \"TIMEOUT\"\nE   AssertionError: assert 'PASS' == 'TIMEOUT'\nE     \nE     - TIMEOUT\nE     + PASS\n____________ test_empty_docker_inventory_has_explicit_zero_counts _____________\ntests\\unit\\test_environment_diagnostics.py:132: in test_empty_docker_inventory_has_explicit_zero_counts\n    assert result[\"container_count\"] == 0\nE   KeyError: 'container_count'\n______________ test_unicode_output_survives_the_capture_boundary ______________\ntests\\unit\\test_environment_diagnostics.py:143: in test_unicode_output_survives_the_capture_boundary\n    assert result[\"stdout\"] == \"\\u00e9tat \\u2014 \\u0645\\u0631\\u062d\\u0628\\u0627\"\nE   AssertionError: assert '\\xc3\\xa9tat \\xe2\\u20ac\\u201d \\xd9\\u2026\\xd8\\xb1\\xd8\\\\xad\\xd8\\xa8\\xd8\\xa7' == '\\xe9tat \\u2014 \\u0645\\u0631\\u062d\\u0628\\u0627'\nE     \nE     - \\xe9tat \\u2014 \\u0645\\u0631\\u062d\\u0628\\u0627\nE     + \u00e9tat \u2014 \u0645\u0631\u062d\u0628\u0627\n=========================== short test summary info ===========================\nFAILED tests/unit/test_environment_diagnostics.py::test_timeout_includes_output_held_by_an_exited_process_child\nFAILED tests/unit/test_environment_diagnostics.py::test_empty_docker_inventory_has_explicit_zero_counts\nFAILED tests/unit/test_environment_diagnostics.py::test_unicode_output_survives_the_capture_boundary\n3 failed, 9 deselected in 4.93s\n",
+    "stderr": "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "viewports": [
+    {
+      "name": "access-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false
+    },
+    {
+      "name": "source-mismatch-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false
+    },
+    {
+      "name": "review-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false
+    },
+    {
+      "name": "review-tablet",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "name": "review-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "empty-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "name": "permission-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false
+    },
+    {
+      "name": "access-error-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    }
+  ],
+  "axe": [
+    {
+      "name": "review-desktop",
+      "violations": []
+    },
+    {
+      "name": "review-tablet",
+      "violations": []
+    },
+    {
+      "name": "review-mobile",
+      "violations": []
+    }
+  ],
+  "assertions": [
+    "Skip link receives keyboard focus",
+    "Mismatched audio is rejected before reviewer confirmation",
+    "Two signed synthetic reviewers verified correction; original remains angry",
+    "Revocation removes verified correction and refreshes state",
+    "Admin permission form updates separately from corrections",
+    "Empty search and invalid-auth error states render; sign-out clears data"
+  ],
+  "observed_review_metrics": {
+    "corrected_segments": 1,
+    "audit_pairs": 1,
+    "agreeing_pairs": 1,
+    "exact_label_agreement": 1,
+    "note": "Current paired reviews, including Unknown; not population reliability or kappa"
+  },
+  "console_errors": [],
+  "failed_responses": [
+    {
+      "path": "/api/v1/me",
+      "status": 401
+    }
+  ],
+  "fixture": "Local signed synthetic identities and generated audio; no actual human reviews"
+}

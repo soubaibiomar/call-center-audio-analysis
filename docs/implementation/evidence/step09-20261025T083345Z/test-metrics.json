@@ -1,0 +1,22 @@
+{
+  "total_tests": 235,
+  "api_tests": 37,
+  "denial_focused_cases": 15,
+  "denial_cases": [
+    "test_invalid_signed_tokens_denied[claims0]",
+    "test_invalid_signed_tokens_denied[claims1]",
+    "test_invalid_signed_tokens_denied[claims2]",
+    "test_invalid_signed_tokens_denied[claims3]",
+    "test_invalid_signed_tokens_denied[claims4]",
+    "test_invalid_signed_tokens_denied[claims5]",
+    "test_invalid_signed_tokens_denied[claims6]",
+    "test_invalid_signed_tokens_denied[claims7]",
+    "test_invalid_signed_tokens_denied[claims8]",
+    "test_unmapped_disabled_service_denied[disabled]",
+    "test_unmapped_disabled_service_denied[missing]",
+    "test_unmapped_disabled_service_denied[service]",
+    "test_unsigned_wrong_key_and_missing_denied",
+    "test_ownership_tenant_and_database_role",
+    "test_disabled_user_revocation_applies_to_existing_token"
+  ]
+}

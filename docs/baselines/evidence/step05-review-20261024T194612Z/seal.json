@@ -1,0 +1,5 @@
+{
+  "commands_sha256": "d39b372744a5f05ebe13b5c8d44c9d4b81cdad48f4b1ccf40698ae9f2e744d33",
+  "supplementary_ruff_sha256": "0f30e47fdf9836c3e62486ab61fc8ab3dc1e4b94918deb433d8bd7acf7d579db",
+  "note": "Separate re-execution snapshot; original baseline retained unchanged."
+}

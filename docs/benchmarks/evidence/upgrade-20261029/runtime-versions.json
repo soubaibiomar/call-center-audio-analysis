@@ -1,0 +1,11 @@
+{
+  "torch": "2.14.0",
+  "transformers": "5.21.1",
+  "accelerate": "1.15.0",
+  "faster-whisper": "1.2.1",
+  "ctranslate2": "4.8.4",
+  "rapidfuzz": "3.14.6",
+  "numpy": "1.26.4",
+  "soundfile": "0.14.0",
+  "scipy": "1.17.1"
+}

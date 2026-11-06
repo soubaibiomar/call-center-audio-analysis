@@ -1,0 +1,13 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "scripts.inventory_librispeech_sample",
+    "--output",
+    "data\\datasets\\librispeech-intake-20261028T091407Z"
+  ],
+  "exit_code": 0,
+  "seconds": 5.905768800002988,
+  "stdout": "{\n  \"records\": 3,\n  \"duration_seconds\": 24.625,\n  \"audio_bytes\": 788132,\n  \"speaker_ids\": 3,\n  \"status\": \"pending rights and human-label review\",\n  \"output\": \"C:\\\\Users\\\\omar\\\\Documents\\\\Call center audio Analysis\\\\data\\\\datasets\\\\librispeech-intake-20261028T091407Z\"\n}\n",
+  "stderr": ""
+}

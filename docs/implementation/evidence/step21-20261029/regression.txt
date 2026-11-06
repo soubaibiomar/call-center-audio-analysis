@@ -1,0 +1,148 @@
+C:\Users\omar\Documents\Call center audio Analysis\.venv\Lib\site-packages\pytest_asyncio\plugin.py:207: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+.........F.............................................................. [ 16%]
+........................................................................ [ 32%]
+........................................................................ [ 49%]
+...........................................F............................ [ 65%]
+...................EEEEEEEEEEEEEEE...................................... [ 82%]
+........................................................................ [ 98%]
+.....                                                                    [100%]
+=================================== ERRORS ====================================
+_______ ERROR at setup of test_legacy_snapshot_import_parity_and_replay _______
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+______ ERROR at setup of test_import_failure_rolls_back_every_legacy_row ______
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+_ ERROR at setup of test_import_preserves_other_tenants_when_numeric_ids_collide _
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+__ ERROR at setup of test_rls_filters_unscoped_legacy_and_normalized_queries __
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+___ ERROR at setup of test_runtime_cannot_cross_tenant_write_or_execute_ddl ___
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+________ ERROR at setup of test_missing_tenant_context_is_default_deny ________
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+__ ERROR at setup of test_composite_owner_fk_and_report_transaction_rollback __
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+_______ ERROR at setup of test_retention_dry_run_legal_hold_and_cascade _______
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+____________ ERROR at setup of test_populated_downgrade_is_refused ____________
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+_______ ERROR at setup of test_invalid_foreign_call_segment_is_rejected _______
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+_ ERROR at setup of test_transaction_local_tenant_scope_does_not_leak_through_pool _
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+__ ERROR at setup of test_raw_cache_retention_is_explicit_and_tenant_scoped ___
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+__ ERROR at setup of test_platform_metadata_links_without_claiming_execution __
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+_ ERROR at setup of test_import_rejects_wal_state_not_covered_by_main_file_hash _
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+___________ ERROR at setup of test_import_closes_source_connection ____________
+tests\integration\test_postgresql_persistence.py:72: in pg_scope
+    init_db(runtime)
+src\database\connection.py:68: in init_db
+    raise RuntimeError(
+E   RuntimeError: Run the reviewed Alembic migrations before starting the application
+================================== FAILURES ===================================
+__________________ test_unexpected_legacy_result_is_rejected __________________
+tests\unit\test_analysis_compatibility.py:104: in test_unexpected_legacy_result_is_rejected
+    service.analyze(AnalysisRequest(None))
+src\services\analysis.py:24: in analyze
+    result = process_call(
+E   TypeError: test_unexpected_legacy_result_is_rejected.<locals>.<lambda>() got an unexpected keyword argument 'downloads'
+
+During handling of the above exception, another exception occurred:
+tests\unit\test_analysis_compatibility.py:103: in test_unexpected_legacy_result_is_rejected
+    with pytest.raises(TypeError, match="unsupported result"):
+E   AssertionError: Regex pattern did not match.
+E    Regex: 'unsupported result'
+E    Input: "test_unexpected_legacy_result_is_rejected.<locals>.<lambda>() got an unexpected keyword argument 'downloads'"
+___________________ test_ownership_tenant_and_database_role ___________________
+tests\api\test_api.py:192: in test_ownership_tenant_and_database_role
+    assert client.get("/ready").status_code == 200
+E   AssertionError: assert 503 == 200
+E    +  where 503 = <Response [503 Service Unavailable]>.status_code
+E    +    where <Response [503 Service Unavailable]> = get('/ready')
+E    +      where get = <starlette.testclient.TestClient object at 0x0000024EBE2B5400>.get
+============================== warnings summary ===============================
+.venv\Lib\site-packages\starlette\testclient.py:45
+  C:\Users\omar\Documents\Call center audio Analysis\.venv\Lib\site-packages\starlette\testclient.py:45: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/unit/test_analysis_compatibility.py::test_unexpected_legacy_result_is_rejected
+FAILED tests/api/test_api.py::test_ownership_tenant_and_database_role - Asser...
+ERROR tests/integration/test_postgresql_persistence.py::test_legacy_snapshot_import_parity_and_replay
+ERROR tests/integration/test_postgresql_persistence.py::test_import_failure_rolls_back_every_legacy_row
+ERROR tests/integration/test_postgresql_persistence.py::test_import_preserves_other_tenants_when_numeric_ids_collide
+ERROR tests/integration/test_postgresql_persistence.py::test_rls_filters_unscoped_legacy_and_normalized_queries
+ERROR tests/integration/test_postgresql_persistence.py::test_runtime_cannot_cross_tenant_write_or_execute_ddl
+ERROR tests/integration/test_postgresql_persistence.py::test_missing_tenant_context_is_default_deny
+ERROR tests/integration/test_postgresql_persistence.py::test_composite_owner_fk_and_report_transaction_rollback
+ERROR tests/integration/test_postgresql_persistence.py::test_retention_dry_run_legal_hold_and_cascade
+ERROR tests/integration/test_postgresql_persistence.py::test_populated_downgrade_is_refused
+ERROR tests/integration/test_postgresql_persistence.py::test_invalid_foreign_call_segment_is_rejected
+ERROR tests/integration/test_postgresql_persistence.py::test_transaction_local_tenant_scope_does_not_leak_through_pool
+ERROR tests/integration/test_postgresql_persistence.py::test_raw_cache_retention_is_explicit_and_tenant_scoped
+ERROR tests/integration/test_postgresql_persistence.py::test_platform_metadata_links_without_claiming_execution
+ERROR tests/integration/test_postgresql_persistence.py::test_import_rejects_wal_state_not_covered_by_main_file_hash
+ERROR tests/integration/test_postgresql_persistence.py::test_import_closes_source_connection
+2 failed, 420 passed, 1 warning, 15 errors in 77.36s (0:01:17)

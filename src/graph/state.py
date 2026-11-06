@@ -7,6 +7,11 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
+from ml.emotion.contracts import EmotionResult
+from services.knowledge.grounding import PolicyAnswer
+from src.graph.analysis_nodes import AnalysisReview
+from src.services.model_runs import ModelRun
+
 
 class AudioInput(BaseModel):
     audio_data: bytes = Field(exclude=True, repr=False)
@@ -14,6 +19,7 @@ class AudioInput(BaseModel):
     caller_id: str | None = None
     timestamp: datetime | None = None
     department: str | None = None
+    expected_sha256: str | None = Field(default=None, pattern=r"^[0-9a-fA-F]{64}$")
 
 
 class AudioProperties(BaseModel):
@@ -45,6 +51,9 @@ class TranscriptionSegment(BaseModel):
     speaker: str
     confidence: float = Field(ge=0.0, le=1.0)
     low_confidence: bool
+    speaker_id: str | None = None
+    speaker_role: Literal["Agent", "Customer", "Unknown"] | None = None
+    speaker_overlap: bool = False
 
 
 class TranscriptionResult(BaseModel):
@@ -94,6 +103,7 @@ class ComplianceFlag(BaseModel):
 
 
 class QAScoreResult(BaseModel):
+    policy_evidence: PolicyAnswer | None = None
     call_id: uuid.UUID = Field(default_factory=uuid.uuid4)
     professionalism: QADimensionScore
     empathy: QADimensionScore
@@ -105,6 +115,10 @@ class QAScoreResult(BaseModel):
 
 
 class CallReport(BaseModel):
+    acoustic_emotion: EmotionResult | None = None
+    policy_evidence: PolicyAnswer | None = None
+    analysis_review: AnalysisReview | None = None
+    model_runs: list[ModelRun] = Field(default_factory=list)
     call_id: uuid.UUID
     intake: IntakeResult
     transcription: TranscriptionResult

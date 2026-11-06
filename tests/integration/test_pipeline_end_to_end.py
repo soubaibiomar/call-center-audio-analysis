@@ -4,6 +4,8 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
+from ml.emotion.contracts import EmotionResult, EmotionSignal
+from ml.emotion.service import EmotionService
 from src.graph.state import (
     AudioInput,
     QADimensionScore,
@@ -18,10 +20,10 @@ from tests.conftest import make_wav_bytes
 
 def _make_test_config() -> Config:
     return Config(
-        openai_api_key="test-key",
-        langchain_api_key="test-key",
+        openai_api_key="",
+        langchain_api_key="",
         langchain_project="test",
-        db_encryption_key="test-key",
+        db_encryption_key="",
         db_path=Path("test.db"),
         llm_provider="openai",
         max_cost_per_call_usd=2.0,
@@ -35,6 +37,7 @@ def _make_test_config() -> Config:
 
 @pytest.mark.integration
 class TestPipelineEndToEnd:
+    @pytest.mark.parametrize("emotion_enabled", [False, True])
     @patch("src.agents.qa_scoring.get_llm")
     @patch("src.agents.summarization.get_llm")
     @patch("src.agents.transcription._get_whisper_model")
@@ -43,6 +46,7 @@ class TestPipelineEndToEnd:
         mock_get_model: MagicMock,
         mock_summary_llm: MagicMock,
         mock_qa_llm: MagicMock,
+        emotion_enabled: bool,
     ) -> None:
         # Mock faster-whisper model
         mock_model = MagicMock()
@@ -55,7 +59,7 @@ class TestPipelineEndToEnd:
         seg1.avg_logprob = -0.1
         seg1.no_speech_prob = 0.05
         seg2 = MagicMock()
-        seg2.text = "I need help with billing."
+        seg2.text = "I need help with billing. The issue is resolved."
         seg2.start = 1.0
         seg2.end = 3.0
         seg2.avg_logprob = -0.15
@@ -96,13 +100,35 @@ class TestPipelineEndToEnd:
         )
 
         config = _make_test_config()
-        app = compile_workflow(config)
+        emotion = MagicMock(spec=EmotionService) if emotion_enabled else None
+        if emotion is not None:
+            emotion.analyze.return_value = EmotionResult(
+                status="completed",
+                signals=[
+                    EmotionSignal(
+                        start=0,
+                        end=1,
+                        speaker_id="fixture",
+                        label="angry",
+                        probabilities={"neutral": 0.01, "happy": 0.01, "angry": 0.97, "sad": 0.01},
+                        confidence=0.97,
+                    )
+                ],
+            )
+        app = compile_workflow(config, emotion=emotion)
 
         audio = AudioInput(audio_data=make_wav_bytes(duration_seconds=1.0), filename="test.wav")
         result = app.invoke({"audio_input": audio})
 
         assert result["status"] == "completed"
         assert result["report"] is not None
+        assert result["report"].qa_scores.overall_score == 4.0
+        assert result["report"].qa_scores.compliance.score == 4
+        assert result["report"].acoustic_emotion.status == (
+            "completed" if emotion_enabled else "disabled"
+        )
+        if emotion_enabled:
+            assert result["report"].acoustic_emotion.signals[0].label == "angry"
 
     def test_invalid_audio_routes_to_error(self) -> None:
         config = _make_test_config()

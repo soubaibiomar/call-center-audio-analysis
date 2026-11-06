@@ -1,0 +1,18 @@
+{
+  "fixture": "controlled stereo mix of two annotated media recordings; role assignments are experimental channel labels, not actual call-center roles",
+  "duration_seconds": 82.112,
+  "reference_speaker_count": 4,
+  "latency_seconds": 6.9900954710001315,
+  "metrics": {
+    "der": 0.055479613198125284,
+    "reference_speaker_seconds": 130.17,
+    "overlap_reference_seconds": 41.89,
+    "overlap_missed_seconds": 0.6830624999999912,
+    "overlap_false_alarm_seconds": 1.8411874999999958,
+    "role_reference_seconds": 36.260000000000005,
+    "role_covered_seconds": 34.524437500000005,
+    "role_correct_seconds": 34.524437500000005
+  },
+  "role_accuracy": 0.9521356177606177,
+  "role_coverage": 0.9521356177606177
+}

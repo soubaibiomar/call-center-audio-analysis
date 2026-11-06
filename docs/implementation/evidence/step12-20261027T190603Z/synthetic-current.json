@@ -1,0 +1,25 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "src.datasets",
+    ".local\\step12-20261027T190603Z\\manifest-final.json",
+    "--as-of",
+    "2026-10-28",
+    "--seed",
+    "synthetic-seed",
+    "--output",
+    ".local\\step12-20261027T190603Z\\lock-current.json"
+  ],
+  "exit_code": 0,
+  "seconds": 0.6290288000018336,
+  "stdout": "Validated and wrote a new split lock; store the file and its hash privately.\n",
+  "stderr": "",
+  "counts": {
+    "train": 6,
+    "validation": 1,
+    "test": 1
+  },
+  "records": 8,
+  "data": "synthetic only, no audio opened"
+}

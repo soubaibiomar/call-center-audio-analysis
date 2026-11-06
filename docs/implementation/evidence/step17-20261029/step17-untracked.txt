@@ -1,0 +1,7 @@
+docs/development/knowledge-local.md
+services/knowledge/__init__.py
+services/knowledge/embeddings.py
+services/knowledge/ingestion.py
+services/knowledge/store.py
+tests/rag/test_ingestion.py
+tests/rag/test_store.py

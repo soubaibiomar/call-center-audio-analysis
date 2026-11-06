@@ -18,7 +18,7 @@ from src.utils.config import load_config
 # --- Startup: load everything ONCE ---
 config = load_config()
 
-_engine = get_engine(str(config.db_path), config.db_encryption_key)
+_engine = get_engine(config.database_url or str(config.db_path), config.db_encryption_key)
 init_db(_engine)
 
 print(f"Loading Whisper model ({config.whisper_model_size})...")
@@ -32,5 +32,8 @@ print("Pipeline ready.")
 demo = build_app(config, _workflow, _engine, _audit)
 
 if __name__ == "__main__":
-    host = "0.0.0.0" if os.environ.get("SPACE_ID") else "127.0.0.1"
-    demo.launch(server_name=host, server_port=7860, ssr_mode=False)
+    host = os.environ.get("GRADIO_SERVER_NAME") or (
+        "0.0.0.0" if os.environ.get("SPACE_ID") else "127.0.0.1"
+    )
+    port = int(os.environ.get("GRADIO_SERVER_PORT", "7860"))
+    demo.launch(server_name=host, server_port=port, ssr_mode=False)

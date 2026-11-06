@@ -1,0 +1,15 @@
+{
+  "command": [
+    "docker",
+    "build",
+    "-f",
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.local\\step11-gpu.Dockerfile",
+    "-t",
+    "project28-app:gpu",
+    "."
+  ],
+  "exit_code": 0,
+  "seconds": 1.9955134000001635,
+  "stdout": "",
+  "stderr": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from step11-gpu.Dockerfile\n#1 transferring dockerfile: 251B 0.0s done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/project28-step11-review-base-gpu:20261027\n#2 DONE 0.0s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 249B done\n#3 DONE 0.0s\n\n#4 [internal] load build context\n#4 transferring context: 5.67kB 0.0s done\n#4 DONE 0.0s\n\n#5 [1/4] FROM docker.io/library/project28-step11-review-base-gpu:20261027@sha256:9d7cd545076af628e7f67dbd0b9ed0587566889722a0112e7c59d20869d5fabd\n#5 resolve docker.io/library/project28-step11-review-base-gpu:20261027@sha256:9d7cd545076af628e7f67dbd0b9ed0587566889722a0112e7c59d20869d5fabd\n#5 resolve docker.io/library/project28-step11-review-base-gpu:20261027@sha256:9d7cd545076af628e7f67dbd0b9ed0587566889722a0112e7c59d20869d5fabd 0.0s done\n#5 DONE 0.1s\n\n#6 [2/4] COPY src/ /app/src/\n#6 DONE 0.1s\n\n#7 [3/4] COPY services/api/schemas.py /app/services/api/schemas.py\n#7 DONE 0.0s\n\n#8 [4/4] COPY scripts/benchmark_local_llm.py /app/scripts/benchmark_local_llm.py\n#8 DONE 0.0s\n\n#9 exporting to image\n#9 exporting layers 0.1s done\n#9 exporting manifest sha256:e0da4600f90f8ad563182f4dc71f825a72b19d0f0d136939c0252b90a1f20094 0.0s done\n#9 exporting config sha256:076e5728edc033410031b46bc29dee91823f333bee1fb162c9d4199e3c743777 0.0s done\n#9 exporting attestation manifest sha256:df84627174f9149497baab81cffd21e86e41d518ebe04687fb73f584908a713f 0.0s done\n#9 exporting manifest list sha256:487e090c0ae4e1b7f3690191528f1b42ff9a6703d67c3692461b7045ad6c3619 done\n#9 naming to docker.io/library/project28-app:gpu done\n#9 unpacking to docker.io/library/project28-app:gpu 0.1s done\n#9 DONE 0.3s\n"
+}

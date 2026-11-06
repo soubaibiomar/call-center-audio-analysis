@@ -1,0 +1,23 @@
+{
+  "audio_seconds": 8,
+  "device": "cpu",
+  "model": "faster-whisper-tiny",
+  "model_revision": "d90ca5fe260221311c53c58e660288d3deb8d356",
+  "model_loading_excluded": true,
+  "results": [
+    {
+      "segmented": false,
+      "seconds": 0.534673200000725,
+      "rtf": 0.06683415000009063,
+      "segment_count": 2,
+      "valid_timestamps": true
+    },
+    {
+      "segmented": true,
+      "seconds": 0.25473299999976007,
+      "rtf": 0.03184162499997001,
+      "segment_count": 2,
+      "valid_timestamps": true
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "identity": "ephemeral RSA fixture, not real IdP",
+  "pipeline": "real Docker GPU worker, cached tiny Whisper/float16, configured hosted provider",
+  "states": [
+    "queued",
+    "running",
+    "finished"
+  ],
+  "container": "project28-step10-review-233a547b",
+  "upload": {
+    "http": 202,
+    "seconds": 0.5548557000001892
+  },
+  "terminal": {
+    "status": "finished",
+    "attempts": 1,
+    "error_code": null,
+    "metrics": {
+      "retries": 0.0,
+      "attempts": 1.0,
+      "execution_ms": 25260.301083999366,
+      "queue_wait_ms": 2085.677,
+      "last_attempt_ms": 25260.301083999366
+    }
+  },
+  "report_http": 200,
+  "pdf_http": 200,
+  "duplicate_same_job": true,
+  "total_seconds": 28.493624599999748
+}

@@ -1,0 +1,18 @@
+{
+  "captured_at_utc": "2026-10-24T19:18:29.010248+00:00",
+  "method": "uv venv --allow-existing --relocatable, followed by uv pip install --offline --no-deps --reinstall -r PROJECT28_REQUIREMENTS.lock.txt",
+  "python": "3.12.15",
+  "package_count": 127,
+  "package_versions_unchanged": true,
+  "uv_reported_phase_seconds": {
+    "resolve": 0.225,
+    "prepare": 4.48,
+    "uninstall": 3.83,
+    "install": 3.9
+  },
+  "end_to_end_install_wall_seconds": "Not measured",
+  "model_downloads": false,
+  "private_env_overwritten": false,
+  "hook_installed": true,
+  "production_source_modified": false
+}

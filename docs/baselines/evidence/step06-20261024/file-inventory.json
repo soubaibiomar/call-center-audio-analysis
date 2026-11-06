@@ -1,0 +1,35 @@
+{
+  "self_excluded": true,
+  "files": [
+    {
+      "path": "docs/implementation/STEP_06_launch_the_original_gradio_app_and_create_baseline_repo_REPORT.md",
+      "bytes": 17400,
+      "sha256": "c1d092eabec41a1fab41401e8f902afe183590107501185cb44c832018eaf628"
+    },
+    {
+      "path": "docs/baselines/UPSTREAM_FEATURE_MATRIX.md",
+      "bytes": 4011,
+      "sha256": "f6ec26ad8a17503e94fde36356b818289688d8bbe699e50e76871f8c381ae583"
+    },
+    {
+      "path": "docs/implementation/PROGRESS.md",
+      "bytes": 8535,
+      "sha256": "b1c7ca45b9c8309e9e55a0d74b78e38753d8ee95f216ec623e74276f1e775089"
+    },
+    {
+      "path": "docs/baselines/evidence/step06-20261024/git-comparison.json",
+      "bytes": 14968,
+      "sha256": "f3e10afaa740d7142e5cdf9fb85a767aa13375044cb541f3a7527b9e79e158ed"
+    },
+    {
+      "path": "docs/baselines/evidence/step06-20261024/startup.json",
+      "bytes": 1057,
+      "sha256": "e84ac6ddb3b3a8b9d25439533f0c53bc8d3642fc7fb7f142324b8169bee71c3d"
+    },
+    {
+      "path": "docs/baselines/evidence/step06-20261024/summary.json",
+      "bytes": 787,
+      "sha256": "0f6b3b8d3219e5f6dd518d54674ef1d86cd9aca21b467f5ad26ddf6cc8827de5"
+    }
+  ]
+}

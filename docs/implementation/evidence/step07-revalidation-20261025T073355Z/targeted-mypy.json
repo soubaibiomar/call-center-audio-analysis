@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "mypy",
+    "--follow-imports=skip",
+    "src/services/contracts.py",
+    "src/services/analysis.py",
+    "services/api/analysis.py",
+    "scripts/map_project_imports.py"
+  ],
+  "exit_code": 0,
+  "seconds": 0.946,
+  "stdout": "Success: no issues found in 4 source files\n",
+  "stderr": ""
+}

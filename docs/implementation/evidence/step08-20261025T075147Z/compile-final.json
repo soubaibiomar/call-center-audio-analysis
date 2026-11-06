@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "compileall",
+    "-q",
+    "src/",
+    "services/",
+    "migrations/",
+    "app.py"
+  ],
+  "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis",
+  "exit_code": 0,
+  "seconds": 0.28,
+  "stdout": "",
+  "stderr": ""
+}

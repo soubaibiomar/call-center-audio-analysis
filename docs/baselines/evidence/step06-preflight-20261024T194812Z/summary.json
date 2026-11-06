@@ -1,0 +1,14 @@
+{
+  "captured_at_utc": "2026-10-24T19:48:16.102177+00:00",
+  "provider": "openai",
+  "selected_credential_ready": false,
+  "all_direct_dev_pins_match": true,
+  "private_env_unchanged": true,
+  "config_command_failed_as_expected": true,
+  "new_app_startup_attempted": false,
+  "reason": "Existing failed full-app attempt preserved; current actual load_config reproduces same prerequisite failure.",
+  "browser_sample_exports_executed": false,
+  "model_download_performed": false,
+  "step_status": "BLOCKED",
+  "quality_verdict": "FAIL"
+}

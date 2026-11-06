@@ -1,0 +1,51 @@
+[
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_project_setup.py",
+      "tests/integration/",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 2.785847899998771,
+    "stdout": "............                                                             [100%]\n12 passed in 0.97s\n",
+    "stderr": "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy",
+      "scripts/check_project_setup.py",
+      "scripts/check_hardcoded_keys.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.5732012999978906,
+    "stdout": "Success: no issues found in 2 source files\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "scripts/check_hardcoded_keys.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.15648510000028182,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.031899699999485165,
+    "stdout": "",
+    "stderr": ""
+  }
+]

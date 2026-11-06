@@ -1,0 +1,13 @@
+{
+  "captured_at_utc": "2026-10-24T19:45:08.963569+00:00",
+  "private_env_preserved": true,
+  "source_test_configuration_unchanged": true,
+  "package_count": 127,
+  "direct_dev_pin_count": 21,
+  "pins_match": true,
+  "selected_credential_ready": false,
+  "all_commands_passed": true,
+  "hook_installed": true,
+  "model_download_performed": false,
+  "dependency_reinstallation_needed": false
+}

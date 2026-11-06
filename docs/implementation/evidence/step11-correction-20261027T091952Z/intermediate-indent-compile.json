@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "compileall",
+    "-q",
+    "src",
+    "services",
+    "scripts",
+    "app.py"
+  ],
+  "exit_code": 1,
+  "seconds": 0.363,
+  "stdout": "*** Error compiling 'src\\\\utils\\\\structured_inference.py'...\nSorry: IndentationError: expected an indented block after 'if' statement on line 63 (structured_inference.py, line 64)\n",
+  "stderr": ""
+}

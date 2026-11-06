@@ -1,0 +1,206 @@
+{
+  "step": "STEP_02",
+  "latest_correction_record": "step02-correction-summary.json",
+  "working_head": "a37e4634af1d2947fc3c548d54e62bda0b0daf89",
+  "self_excluded": "docs/upstream/evidence/step02-delivery-inventory.json",
+  "files": [
+    {
+      "path": "docs/implementation/PROGRESS.md",
+      "state": "modified",
+      "bytes": 7072,
+      "sha256": "23e4f985c96ad489bc3e2908655280862e7aa70f2a351dc231af6ea074644c8a"
+    },
+    {
+      "path": "docs/implementation/STEP_02_clone_and_fingerprint_upstream_repository_REPORT.md",
+      "state": "created",
+      "bytes": 54909,
+      "sha256": "81d29c50a1cb9af184fae6213fa09e21f7a34418347e26b6729cd4f42f7ee1ce"
+    },
+    {
+      "path": "docs/upstream/FAILURE_INVENTORY.md",
+      "state": "created",
+      "bytes": 2500,
+      "sha256": "67051f950f14875b2adf676491d31b74eaa77a671b8508783655ebf64764cd1c"
+    },
+    {
+      "path": "docs/upstream/SOURCE_REVIEW.md",
+      "state": "created",
+      "bytes": 10577,
+      "sha256": "bdfa1dad664d796130e7cd3665794d26317d7eb37992095ef254242f9d61decd"
+    },
+    {
+      "path": "docs/upstream/baseline/LICENSE.upstream.txt",
+      "state": "created",
+      "bytes": 1070,
+      "sha256": "d54fa399fb7fe39fcf3aac453058f6efdac371a65c15aac7a6dbc3d158aeb3a5"
+    },
+    {
+      "path": "docs/upstream/baseline/provenance.json",
+      "state": "created",
+      "bytes": 22257,
+      "sha256": "3d218a7b5c4e8d5b4a3a871faa2456b26ff437ce7979ea2b6740fa47ff69cfad"
+    },
+    {
+      "path": "docs/upstream/baseline/python-symbols.json",
+      "state": "created",
+      "bytes": 62669,
+      "sha256": "757801a6108aaf081d6234c939e58b31d50abe619bb3c28ae1349926687c53b8"
+    },
+    {
+      "path": "docs/upstream/baseline/source-evidence.md",
+      "state": "created",
+      "bytes": 39691,
+      "sha256": "b56ebca52df9d946d497b408eebe5dae1448fb26be940920454f1a2c859b7131"
+    },
+    {
+      "path": "docs/upstream/baseline/tracked-tree.txt",
+      "state": "created",
+      "bytes": 6399,
+      "sha256": "4e86f81e423136433e6b41435a09856c8ec2879d25bf3f70d06b8f204edcedf8"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-clean-baseline.json",
+      "state": "created",
+      "bytes": 1355,
+      "sha256": "f8f034973aaa0c0631667284829e7e16711de6d879d30403ec89a9b20e5a05e7"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-clone.json",
+      "state": "created",
+      "bytes": 380,
+      "sha256": "8486d4fa8e65105855ffd08b5a99b184dab52ee34022a630bfa1f142e0b019c6"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-correction-documentation-checks.json",
+      "state": "created",
+      "bytes": 391,
+      "sha256": "5385bd4f9d09322fe62ef0009e4049287b5bc393ca4db70a9b3ff08657835166"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-correction-equivalence.json",
+      "state": "created",
+      "bytes": 388,
+      "sha256": "27d1fbaadcb1210cccf06321b097517e12b46bdb60e854a02d1bbdaa380526ea"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-correction-git-comparison.json",
+      "state": "created",
+      "bytes": 13221,
+      "sha256": "734861a9d3760ece5fc110bbb16cdbb8b9b098d7e31d292dc9f09dfe5c45da9f"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-correction-preflight.json",
+      "state": "created",
+      "bytes": 4427,
+      "sha256": "7c55c432cde3d508c53be95212c466f3eb48f130e8404dd2987607b4adb4b0b2"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-correction-summary.json",
+      "state": "created",
+      "bytes": 1237,
+      "sha256": "77af135ad2b093bc3f852e9dd341ca21a8764ea8a5cb7c597e7ef4080bf46b7c"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-correction-validation.json",
+      "state": "created",
+      "bytes": 11484,
+      "sha256": "8d00a292a7b94799b9c448d8e2b69697e5f74106a79b795feaf1c587ac0485ff"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-delivery-inventory-before-correction.json",
+      "state": "created",
+      "bytes": 5603,
+      "sha256": "f9f0fc9c4d52dbc34807be60baa33edfc9c7935deb4c55b78cf3f0062f96f590"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-delivery-inventory-before-review.json",
+      "state": "created",
+      "bytes": 4212,
+      "sha256": "f87318a76c2568f659ab8c43ead229f5821e65b2bf5dc8ededb9f19c39ce332b"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-delivery-verification.json",
+      "state": "created",
+      "bytes": 793,
+      "sha256": "0f3881c888df345a1fe2a6bc022ce5106b3953a76511504ef28040366d71b12c"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-git-comparison.json",
+      "state": "created",
+      "bytes": 16055,
+      "sha256": "edab342180f5c3936c29d59a1f6b0264c06212d1541e0a141d86eeb552599a33"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-preflight.json",
+      "state": "created",
+      "bytes": 34447,
+      "sha256": "766dbb7cdbd89bc0aab6bdf04ced5d91d8c93e344a22268b20ebdda7b225c9e2"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-quality-review.json",
+      "state": "created",
+      "bytes": 1706,
+      "sha256": "ee2da7627817bd86ae1a0e822614a072e2892ac6a53370a28677840a64e8cd6c"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-reproduction.json",
+      "state": "created",
+      "bytes": 266,
+      "sha256": "3557020fec003d38e3fcef4635db6f3da09c0003eb57a9282dd566a2b34bf7ce"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-review-equivalence.json",
+      "state": "created",
+      "bytes": 337,
+      "sha256": "c9e7cc0ab9944306fbbaf72478225167c1341e6b5d273ee6bf9639e93b320141"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-review-git-comparison.json",
+      "state": "created",
+      "bytes": 12808,
+      "sha256": "cfe715afadc31de00ddd6ca8a7f9a160590fb3cb2b762ac48ce00afaa28af799"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-review-reproduction.json",
+      "state": "created",
+      "bytes": 1626,
+      "sha256": "c31506b74b362c9680c29f51d6496e16b5c6303b30d3070dba49c3e4b4659ce4"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-review-validation.json",
+      "state": "created",
+      "bytes": 5670,
+      "sha256": "3e349592e29763801d60a1a7384b3d67eb32c8249e88c992f29aa24241c79edb"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-source-facts.json",
+      "state": "created",
+      "bytes": 842,
+      "sha256": "56132cf76e12d4238a215a1b6eb3535f06514325ea36a2a29395344c6aa2f75e"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-validation-first-run.json",
+      "state": "created",
+      "bytes": 8298,
+      "sha256": "3474ce50277972ca7a52df8c4a58ae3a00802614f5765096141481c44de22658"
+    },
+    {
+      "path": "docs/upstream/evidence/step02-validation.json",
+      "state": "created",
+      "bytes": 4710,
+      "sha256": "288a66e7389574e145880380d12c2854f551a63a5cc674b66a8ecfced5d82a70"
+    },
+    {
+      "path": "scripts/fingerprint_repository.py",
+      "state": "created",
+      "bytes": 6865,
+      "sha256": "27f26f177d294a326fb462bba7491e3822898133a503a1a40fc2eb74356fa6aa"
+    },
+    {
+      "path": "tests/unit/test_repository_fingerprint.py",
+      "state": "created",
+      "bytes": 5446,
+      "sha256": "034120a28f6a3ff34aa10b73d9d7136ce57478d2ebab525a8ca89c74f57a4ed9"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+--- before/services/api/schemas.py
++++ after/services/api/schemas.py
+@@ -7,6 +7,7 @@
+ from pydantic import BaseModel, ConfigDict, Field
+ 
+ from src.graph.state import CallReport, QAScoreResult, SummaryResult, TranscriptionResult
++from src.services.model_runs import ModelRun
+ 
+ 
+ class ErrorBody(BaseModel):
+@@ -55,6 +56,7 @@
+ 
+ 
+ class Report(BaseModel):
++    model_runs: list[ModelRun] = Field(default_factory=list)
+     call_id: UUID
+     status: Literal["completed", "failed", "flagged_for_review"]
+     processed_at: datetime

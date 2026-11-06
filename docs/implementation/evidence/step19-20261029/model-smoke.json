@@ -1,0 +1,41 @@
+{
+  "fixture": "2 seconds generated 220Hz tone; no human emotion ground truth",
+  "load_seconds": 14.887479499999927,
+  "call_latency_seconds": 0.2820366000000831,
+  "device": "cpu",
+  "process_working_set_bytes": 875503616,
+  "peak_process_working_set_bytes": 875503616,
+  "gpu_peak_vram_bytes": null,
+  "macro_f1": null,
+  "unknown_rate": 0,
+  "sample_size_calls": 1,
+  "result": {
+    "status": "completed",
+    "signals": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "speaker_id": "fixture",
+        "overlap": false,
+        "label": "neutral",
+        "probabilities": {
+          "neutral": 0.944507360458374,
+          "happy": 0.03782800957560539,
+          "angry": 0.016614651307463646,
+          "sad": 0.0010500011267140508
+        },
+        "confidence": 0.944507360458374,
+        "reason": null,
+        "calibrated": false,
+        "model_id": "superb/wav2vec2-base-superb-er",
+        "model_revision": "441a7599c3b22107314dcbd9166621c5c83f2cc5"
+      }
+    ],
+    "reason": null,
+    "disclaimer": "Experimental acoustic pattern classification, not a person's true feelings. Probabilities are uncalibrated and must not determine HR or QA scores.",
+    "language": "en",
+    "model_id": "superb/wav2vec2-base-superb-er",
+    "model_revision": "441a7599c3b22107314dcbd9166621c5c83f2cc5",
+    "cache_policy": "Model weights in process; no audio or prediction result cache"
+  }
+}

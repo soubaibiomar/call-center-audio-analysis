@@ -1,0 +1,1 @@
+STEP09 correction: four reproduced groups, red8 -> green8, expanded9; full244 pass. See the A-O appendix in the STEP09 report. Finalized before STEP10 implementation; no STEP10 model result is claimed here. Earlier evidence remains unchanged.

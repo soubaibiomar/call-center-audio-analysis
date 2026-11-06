@@ -28,7 +28,7 @@ What did you think would happen instead?
 
 ## Logs and errors
 
-Paste the full traceback or relevant log lines. Use a code block.
+Paste a sanitized traceback or relevant log lines; remove API keys, identifiers and sensitive transcript text. Use a code block.
 
 ```
 <paste here>
@@ -36,4 +36,6 @@ Paste the full traceback or relevant log lines. Use a code block.
 
 ## Additional context
 
-Anything else that might help. For audio-related bugs, attach a small sample if you can share one.
+Add the owning role (AI/ML, Platform or shared), acceptance impact and safe reproduction.
+Prefer synthetic audio; do not attach private recordings or raw sensitive transcripts.
+Use the private disclosure process in SECURITY.md for sensitive security findings.

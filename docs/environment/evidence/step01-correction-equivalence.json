@@ -1,0 +1,36 @@
+{
+  "python_files": [
+    {
+      "path": "src/services/history.py",
+      "comparison": "PASS",
+      "normalization": "Only supported int/float and list/tuple isinstance tuple-to-union forms",
+      "original_sha256": "712c3f9e083bf364f592895106743c4ae96bc03b2aa60d90b9613275ccb19f8f",
+      "current_sha256": "f7716113692996d1d54b410c49399392617cd0f200fa617106e3edb8e31b27d1"
+    },
+    {
+      "path": "src/services/pipeline.py",
+      "comparison": "PASS",
+      "normalization": "Only supported int/float and list/tuple isinstance tuple-to-union forms",
+      "original_sha256": "c33ded7e7d1552917b0595d7c5a31a24071037816e4a39e9a98c7c71ad64fce7",
+      "current_sha256": "c65d38c3e6363fbe81ede4817d478b7f0d12565c7f816064a609a321795b39fe"
+    },
+    {
+      "path": "src/ui/tabs/history.py",
+      "comparison": "PASS",
+      "normalization": "Only supported int/float and list/tuple isinstance tuple-to-union forms",
+      "original_sha256": "07db4eaa02b742edfc19701fb401fd6676e28776f7ec577c1c2da3ec6434add1",
+      "current_sha256": "365777da0f5ccb48077fedf46a3e7c4a0411d52de1907b203b20e475e0ca2a31"
+    },
+    {
+      "path": "tests/unit/test_history_service.py",
+      "comparison": "PASS",
+      "normalization": "Only supported int/float and list/tuple isinstance tuple-to-union forms",
+      "original_sha256": "e7784907dd3680a449d89fb8b16530aa7c208d7e9f3df6d6d97102980718d912",
+      "current_sha256": "c8004e55d9928c40574df560fbe75902ddfc4b8ecc2f6a56a65583ebbd35e40e"
+    }
+  ],
+  "ci_yaml_parse": "PASS",
+  "strict_lint_enabled": true,
+  "format_gate_enabled": true,
+  "cloud_ci_executed": false
+}

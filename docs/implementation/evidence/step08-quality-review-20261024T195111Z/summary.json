@@ -1,0 +1,19 @@
+{
+  "captured_at_utc": "2026-10-24T19:51:11.008690+00:00",
+  "target": "STEP_08 latest blocked attempt; most recent completed numerical step remains STEP_05",
+  "report_sections_verified": 13,
+  "report_links_verified": 3,
+  "preflight_commands_sha256": "368ceb93c7b86813cacb8de7c58541170dff1f47243752a60a640b7f509e6fed",
+  "sqlite_test_claim_verified": true,
+  "database_source_diff_empty": true,
+  "selected_credential_ready": false,
+  "pins_match": true,
+  "migration_paths_present": {
+    "services/api/db": false,
+    "migrations": false,
+    "docs/database/schema.md": false
+  },
+  "new_tests_executed": false,
+  "verdict": "FAIL",
+  "reason": "No migration implementation/target-database validation; preceding STEP_06/07 remain FAIL."
+}

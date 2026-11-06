@@ -1,0 +1,10 @@
+{
+  "model": "Qwen/Qwen3-ASR-0.6B",
+  "revision": "5eb144179a02acc5e5ba31e748d22b0cf3e303b0",
+  "weight_bytes": 1876091704,
+  "observed_sha256": "79d6cbd4c98c7bbffe9db2edac07f56cd6637d0d5944b27f6c2b8353840323ea",
+  "publisher_sha256": "79d6cbd4c98c7bbffe9db2edac07f56cd6637d0d5944b27f6c2b8353840323ea",
+  "hash_verified": true,
+  "qwen_inference_executed": false,
+  "cuda_pytorch_installation": "interrupted before installation because host memory was low"
+}

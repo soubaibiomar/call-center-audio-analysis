@@ -1,0 +1,112 @@
+[
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "tests/",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "seconds": 20.0689296999999,
+    "stdout": "........................................................................ [ 57%]\n.....................................................                    [100%]\n125 passed in 17.97s\n",
+    "stderr": "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/",
+      "tests/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.21581349999996746,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.21278590000019904,
+    "stdout": "57 files already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "mypy",
+      "tests/unit/test_environment_diagnostics.py",
+      "--follow-imports=skip",
+      "--allow-untyped-decorators"
+    ],
+    "exit_code": 0,
+    "seconds": 0.5956932999997662,
+    "stdout": "Success: no issues found in 1 source file\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "mypy",
+      "src/"
+    ],
+    "exit_code": 2,
+    "seconds": 0.8116287000002558,
+    "stdout": "src\\agents\\report.py:7: error: Library stubs not installed for \"reportlab.lib.pagesizes\"  [import-untyped]\nsrc\\agents\\report.py:7: note: Hint: \"python3 -m pip install types-reportlab\"\nsrc\\agents\\report.py:7: note: (or run \"mypy --install-types\" to install all missing stub packages)\nsrc\\agents\\report.py:7: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports\nsrc\\agents\\report.py:8: error: Library stubs not installed for \"reportlab.lib.styles\"  [import-untyped]\nsrc\\agents\\report.py:9: error: Library stubs not installed for \"reportlab.platypus\"  [import-untyped]\nsrc\\agents\\transcription.py:7: error: Skipping analyzing \"faster_whisper\": module is installed, but missing library stubs or py.typed marker  [import-untyped]\nsrc\\agents\\transcription.py:25: error: Cannot find implementation or library stub for module named \"torch\"  [import-not-found]\n.venv\\Lib\\site-packages\\numpy\\__init__.pyi:737: error: Type statement is only supported in Python 3.12 and greater  [syntax]\nFound 6 errors in 3 files (errors prevented further checking)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "app.py",
+      "src/",
+      "tests/"
+    ],
+    "exit_code": 0,
+    "seconds": 0.3038311000000249,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "check",
+      "--python",
+      ".venv/Scripts/python.exe"
+    ],
+    "exit_code": 0,
+    "seconds": 0.11910360000001674,
+    "stdout": "",
+    "stderr": "Checked 127 packages in 19ms\nAll installed packages are compatible\n"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.03340680000019347,
+    "stdout": "",
+    "stderr": ""
+  }
+]

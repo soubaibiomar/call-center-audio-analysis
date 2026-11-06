@@ -1,0 +1,6 @@
+# Explicit compatibility rollback; retain/export PostgreSQL-only writes before switching back.
+services:
+  app:
+    environment:
+      DATABASE_URL: ""
+      DATABASE_URL_FILE: ""

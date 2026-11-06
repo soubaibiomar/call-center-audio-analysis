@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "mypy",
+    "src/",
+    "services/",
+    "app.py"
+  ],
+  "exit_code": 1,
+  "seconds": 2.951,
+  "stdout": "services\\workers\\settings.py:32: error: Incompatible types in assignment (expression has type \"float\", variable has type \"int\")  [assignment]\nFound 1 error in 1 file (checked 63 source files)\n",
+  "stderr": ""
+}

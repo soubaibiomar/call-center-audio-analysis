@@ -1,0 +1,29 @@
+{
+  "captured_at_utc": "2026-10-24T20:24:10.588119+00:00",
+  "step": "07",
+  "schema_identity": true,
+  "preserved_runtime_sources": [
+    "app.py",
+    "src/graph/state.py",
+    "src/agents/qa_scoring.py",
+    "src/agents/summarization.py"
+  ],
+  "local_modules": 38,
+  "static_edges": 54,
+  "static_cycles": [],
+  "canonical_implementation_definition_counts": {
+    "process_call": 1,
+    "run_summarization": 1,
+    "run_qa_scoring": 1,
+    "compile_report": 1
+  },
+  "all_delivery_checks_passed": true,
+  "quality": "PASS WITH LIMITATIONS",
+  "limitations": [
+    "inherited full mypy failure",
+    "API is internal adapter only; no FastAPI/auth implementation",
+    "SQLite persistence retained",
+    "original dark/purple Gradio retained; future ERP visual contract documented"
+  ],
+  "next_step": "08"
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "command": [
+      ".venv/Scripts/ruff.exe",
+      "check",
+      "scripts/benchmark_upgrade_asr.py",
+      "scripts/intake_multilingual_benchmark.py",
+      "scripts/summarize_multilingual_benchmarks.py",
+      "tests/unit/test_multilingual_benchmark.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.0848165000006702,
+    "output": "All checks passed!\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/ruff.exe",
+      "format",
+      "--check",
+      "scripts/benchmark_upgrade_asr.py",
+      "scripts/intake_multilingual_benchmark.py",
+      "scripts/summarize_multilingual_benchmarks.py",
+      "tests/unit/test_multilingual_benchmark.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.02687560000049416,
+    "output": "4 files already formatted\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "scripts/benchmark_upgrade_asr.py",
+      "scripts/intake_multilingual_benchmark.py",
+      "scripts/summarize_multilingual_benchmarks.py",
+      "tests/unit/test_multilingual_benchmark.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.16773789999933797,
+    "output": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_multilingual_benchmark.py",
+      "tests/unit/test_upgrade_benchmark_protocol.py",
+      "tests/datasets/test_asr_benchmark.py",
+      "tests/unit/test_audio_preprocessing.py",
+      "-q",
+      "-rs"
+    ],
+    "exit_code": 0,
+    "seconds": 4.170004900001004,
+    "output": "...................................                                      [100%]\n35 passed in 2.10s\nC:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "PowerShell Parser.ParseFile",
+      "scripts/run_multilingual_asr_benchmarks.ps1"
+    ],
+    "exit_code": 0,
+    "output": "No PowerShell parse errors; all six execution receipts have exit_code 0; 640 measured clip/model observations; Ollama running and HTTP API returned 200."
+  }
+]

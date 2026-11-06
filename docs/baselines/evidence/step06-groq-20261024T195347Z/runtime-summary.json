@@ -1,0 +1,17 @@
+{
+  "captured_at_utc": "2026-10-24T20:01:21.953788+00:00",
+  "secret_in_nonignored_repository_files": false,
+  "private_env_tracked": false,
+  "private_env_and_demo_db_ignored": true,
+  "detect_secrets_passed": true,
+  "fresh_decode_regression_before_fix": "1 failed in 0.40 s, metadata_errors TypeError with av19.0.2; captured in session output",
+  "dependency_change": "av19.0.2 -> av18.1.0, one wheel 26.3MiB; model weights not downloaded",
+  "final_ui_service_elapsed_seconds": 3.518,
+  "elapsed_definition": "server log first Analyze callback 19:59:02.484 to succeeded/rendering 19:59:06.002; transcription cache hit, single run",
+  "fresh_asr_node_elapsed_seconds": 2.3,
+  "asr_definition": "earlier uncached sample node log; not end-to-end final latency",
+  "gpu_used": false,
+  "cold_start_inference_vram": "Not measured",
+  "demo_db_rows": 2,
+  "rows_note": "First completed report persisted before export failed; second complete UI run. Dashboard completion count does not represent export success."
+}

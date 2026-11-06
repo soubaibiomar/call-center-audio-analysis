@@ -1,0 +1,16 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "config",
+    "--quiet"
+  ],
+  "exit_code": 0,
+  "seconds": 0.411,
+  "stdout": "",
+  "stderr": ""
+}

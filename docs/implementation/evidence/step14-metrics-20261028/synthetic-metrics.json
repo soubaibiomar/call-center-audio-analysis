@@ -1,0 +1,20 @@
+{
+  "kind": "synthetic two-speaker fixture; not model output or real benchmark",
+  "pyannote_metrics": "4.0.0",
+  "pyannote_core": "6.0.1",
+  "duration_seconds": 4,
+  "collar_seconds": 0,
+  "skip_overlap": false,
+  "metrics": {
+    "der": 0.25,
+    "reference_speaker_seconds": 4.0,
+    "overlap_reference_seconds": 1.0,
+    "overlap_missed_seconds": 1.0,
+    "overlap_false_alarm_seconds": 0.0,
+    "role_reference_seconds": 2.0,
+    "role_covered_seconds": 2.0,
+    "role_correct_seconds": 2.0
+  },
+  "role_accuracy": 1.0,
+  "role_coverage": 1.0
+}

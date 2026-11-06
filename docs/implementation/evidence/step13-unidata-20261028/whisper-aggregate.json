@@ -1,0 +1,13 @@
+{
+  "attempted": 5,
+  "successful": 5,
+  "duration_seconds": 3781.637,
+  "wer_against_unreviewed_reference": 0.36510766698669594,
+  "cer_against_unreviewed_reference": 0.26277225735220316,
+  "p50_seconds": 13.663266800009296,
+  "p95_seconds": 29.06675840000389,
+  "rtf": 0.02182246796823958,
+  "failures": 0,
+  "input_sha256": "52b18eb7ca1d058f77a2e41c06bee8da5f0f0e02ed89c72d8d965081b90c3843",
+  "model_sha256": "afddceaf6b390c92d3faca0f0dd5a7a13b2438a24e0d8a575d0613e148f7bf43"
+}

@@ -1,0 +1,160 @@
+[
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_repository_fingerprint.py",
+      "-q",
+      "--tb=short"
+    ],
+    "cwd": "<WORKSPACE>",
+    "exit_code": 0,
+    "seconds": 5.236949499998445,
+    "stdout": "..........                                                               [100%]\n10 passed in 3.45s\n",
+    "stderr": "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/",
+      "-q",
+      "--tb=short"
+    ],
+    "cwd": "<WORKSPACE>",
+    "exit_code": 0,
+    "seconds": 22.864167600000656,
+    "stdout": "........................................................................ [ 53%]\n...............................................................          [100%]\n135 passed in 20.82s\n",
+    "stderr": "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/",
+      "tests/",
+      "app.py",
+      "scripts/fingerprint_repository.py"
+    ],
+    "cwd": "<WORKSPACE>",
+    "exit_code": 0,
+    "seconds": 0.19484540000121342,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "app.py",
+      "scripts/fingerprint_repository.py"
+    ],
+    "cwd": "<WORKSPACE>",
+    "exit_code": 0,
+    "seconds": 0.17922600000019884,
+    "stdout": "59 files already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy",
+      "scripts/fingerprint_repository.py"
+    ],
+    "cwd": "<WORKSPACE>",
+    "exit_code": 0,
+    "seconds": 1.6579586999996536,
+    "stdout": "Success: no issues found in 1 source file\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy",
+      "tests/unit/test_repository_fingerprint.py",
+      "--follow-imports=skip",
+      "--allow-untyped-decorators"
+    ],
+    "cwd": "<WORKSPACE>",
+    "exit_code": 0,
+    "seconds": 1.6621618999997736,
+    "stdout": "Success: no issues found in 1 source file\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "scripts/fingerprint_repository.py",
+      "tests/unit/test_repository_fingerprint.py"
+    ],
+    "cwd": "<WORKSPACE>",
+    "exit_code": 0,
+    "seconds": 0.22402040000088164,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "<WORKSPACE>",
+    "exit_code": 0,
+    "seconds": 0.033113999999841326,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "<BASELINE>",
+    "exit_code": 0,
+    "seconds": 0.03274550000060117,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "fsck",
+      "--full"
+    ],
+    "cwd": "<BASELINE>",
+    "exit_code": 0,
+    "seconds": 0.3009421000006114,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Scripts\\python.exe",
+      "scripts/fingerprint_repository.py",
+      "<USERPROFILE>\\Projects\\Project28-Upstream-Baseline-Step02\\src",
+      "<USERPROFILE>\\AppData\\Local\\Temp\\project28-step02-review-b2hklnvq\\archive"
+    ],
+    "cwd": "<WORKSPACE>",
+    "exit_code": 0,
+    "seconds": 3.0434908000006544,
+    "stdout": "{\"head\": \"fed4b610742c1337147281fcec8f2cdcc0a79be5\", \"tracked_file_count\": 87, \"src_python_module_count\": 33}\n",
+    "stderr": ""
+  }
+]

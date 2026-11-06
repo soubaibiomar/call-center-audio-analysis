@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "tests/unit",
+    "tests/security",
+    "tests/api",
+    "tests/integration",
+    "tests/workers",
+    "-q",
+    "--tb=short",
+    "--junitxml=C:\\Users\\omar\\Documents\\Call center audio Analysis\\docs\\implementation\\evidence\\gpu-correction-20261026T150543Z\\tests.xml"
+  ],
+  "exit_code": 0,
+  "seconds": 46.492,
+  "stdout": "........................................................................ [ 27%]\n........................................................................ [ 55%]\n........................................................................ [ 83%]\n............................................                             [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\starlette\\testclient.py:45\n  C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\starlette\\testclient.py:45: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: C:\\Users\\omar\\Documents\\Call center audio Analysis\\docs\\implementation\\evidence\\gpu-correction-20261026T150543Z\\tests.xml -\n260 passed, 1 warning in 42.57s\n",
+  "stderr": "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+}

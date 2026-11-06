@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "scripts/prepare_queue_local.py",
+    "--bootstrap-storage"
+  ],
+  "exit_code": 0,
+  "seconds": 0.8024607000002106,
+  "stdout": "Private bucket and restricted runtime object permissions verified\nPrivate queue files verified; existing files preserved\n",
+  "stderr": "",
+  "existing_private_files_unchanged": true
+}

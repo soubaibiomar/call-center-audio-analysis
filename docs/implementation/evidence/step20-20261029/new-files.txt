@@ -1,0 +1,8 @@
+ml/evaluation/__init__.py
+ml/evaluation/emotion.py
+requirements.emotion-evaluation.txt
+scripts/benchmark_emotion.py
+scripts/intake_emotion_candidates.py
+scripts/score_emotion_predictions.py
+tests/emotion/test_benchmark_manifest.py
+tests/emotion/test_evaluation.py

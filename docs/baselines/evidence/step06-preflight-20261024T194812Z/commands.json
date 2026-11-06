@@ -1,0 +1,71 @@
+[
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-c",
+      "from src.utils.config import load_config; load_config()"
+    ],
+    "exit_code": 1,
+    "duration_seconds": 0.3363742000001366,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<USERPROFILE>\\Documents\\Call center audio Analysis\\src\\utils\\config.py\", line 53, in load_config\n    openai_key = _require(\"OPENAI_API_KEY\")\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<USERPROFILE>\\Documents\\Call center audio Analysis\\src\\utils\\config.py\", line 46, in _require\n    raise OSError(f\"Required environment variable {key} is not set\")\nOSError: Required environment variable OPENAI_API_KEY is not set\n"
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/integration/",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 2.7213207999993756,
+    "stdout": "....                                                                     [100%]\n4 passed in 0.94s\n",
+    "stderr": "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.023664399999688612,
+    "stdout": "a37e4634af1d2947fc3c548d54e62bda0b0daf89\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--stat"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.031018100002256688,
+    "stdout": " .github/ISSUE_TEMPLATE/bug_report.md          |  6 +-\n .github/PULL_REQUEST_TEMPLATE.md              | 71 +++++++++++++-------\n .github/workflows/ci.yml                      | 17 ++---\n .gitignore                                    |  4 ++\n .pre-commit-config.yaml                       |  2 +-\n CONTRIBUTING.md                               | 94 +++++++++++++++------------\n src/services/history.py                       | 21 ++----\n src/services/pipeline.py                      |  3 +-\n src/ui/tabs/history.py                        |  2 +-\n tests/integration/test_pipeline_end_to_end.py |  6 +-\n tests/unit/test_history_service.py            | 42 +++++++-----\n 11 files changed, 150 insertions(+), 118 deletions(-)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--name-status"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.027675799999997253,
+    "stdout": "M\t.github/ISSUE_TEMPLATE/bug_report.md\nM\t.github/PULL_REQUEST_TEMPLATE.md\nM\t.github/workflows/ci.yml\nM\t.gitignore\nM\t.pre-commit-config.yaml\nM\tCONTRIBUTING.md\nM\tsrc/services/history.py\nM\tsrc/services/pipeline.py\nM\tsrc/ui/tabs/history.py\nM\ttests/integration/test_pipeline_end_to_end.py\nM\ttests/unit/test_history_service.py\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.03298770000037621,
+    "stdout": "",
+    "stderr": ""
+  }
+]

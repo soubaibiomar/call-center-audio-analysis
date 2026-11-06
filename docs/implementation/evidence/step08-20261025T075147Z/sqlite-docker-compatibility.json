@@ -1,0 +1,23 @@
+{
+  "command": [
+    "docker",
+    "exec",
+    "-e",
+    "DATABASE_URL_FILE=",
+    "-e",
+    "DATABASE_URL=",
+    "-e",
+    "DB_PATH=/tmp/step08-sqlite-fallback.db",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "project28-app-1",
+    "python",
+    "-c",
+    "import app;assert app._engine.dialect.name==\"sqlite\";print(\"Original SQLite app imports/builds\")"
+  ],
+  "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis",
+  "exit_code": 0,
+  "seconds": 3.102,
+  "stdout": "Loading Whisper model (tiny)...\nWhisper model loaded.\nPipeline ready.\nOriginal SQLite app imports/builds\n",
+  "stderr": "2026-10-25 08:11:55,251 src.agents.transcription Loading Whisper 'tiny' on cpu (int8)\n"
+}

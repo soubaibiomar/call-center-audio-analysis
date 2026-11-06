@@ -1,0 +1,19 @@
+{
+  "outcome": "TimeoutExpired",
+  "timeout_seconds": 120,
+  "observation": "The first final-source GPU rebuild exceeded its orchestration deadline before a command record could be written; earlier functional build and GPU job already succeeded. Use a verified existing runtime base for the final source overlay.",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "infrastructure/compose/queue.local.yml",
+    "--profile",
+    "gpu",
+    "build",
+    "worker-gpu"
+  ]
+}

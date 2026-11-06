@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "ruff",
+    "format",
+    "--check",
+    "src/",
+    "services/",
+    "tests/",
+    "scripts/",
+    "stubs/",
+    "migrations/",
+    "app.py"
+  ],
+  "exit_code": 2,
+  "seconds": 0.305,
+  "stdout": "129 files already formatted\n",
+  "stderr": "error: Failed to parse src\\utils\\structured_inference.py:64:21: Expected an indented block after `if` statement\n"
+}

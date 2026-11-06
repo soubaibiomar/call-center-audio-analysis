@@ -1,0 +1,20 @@
+{
+  "captured_at_utc": "2026-10-24T19:53:21.479697+00:00",
+  "target": "STEP_10 blocked attempt; STEP_05 remains latest completed numerical step",
+  "report_required_sections_present": true,
+  "report_links_verified": 3,
+  "preflight_summary_sha256": "bb632cc804eedf45a69ca0df36afa2b68a96bba6d266dd89b4fea82ab339f560",
+  "selected_credential_ready": false,
+  "pins_match": true,
+  "proposed_paths_exist": {
+    "services/workers": false,
+    "services/api/routes/jobs.py": false,
+    "infrastructure/compose": false,
+    "tests/workers": false,
+    "migrations": false
+  },
+  "worker_tests_executed": false,
+  "source_fix_required": false,
+  "verdict": "FAIL",
+  "reason": "Upload job identity, idempotent retries, persisted failure metrics and prerequisites unimplemented."
+}

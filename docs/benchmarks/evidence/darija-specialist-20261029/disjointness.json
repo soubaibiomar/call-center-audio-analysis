@@ -1,0 +1,10 @@
+{
+  "overlap_with_prior_sample": {
+    "audio": 0,
+    "raw_reference": 0,
+    "source_id": 0,
+    "normalized_reference": 0,
+    "source_prefix": 0
+  },
+  "project_holdout_only": "Pretrained model exposure and episode/speaker independence not established"
+}

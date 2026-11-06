@@ -1,0 +1,12 @@
+{
+  "captured_at_utc": "2026-10-24T19:47:31.196479+00:00",
+  "review_target": "STEP_05 latest re-execution",
+  "evidence_seals_verified": 3,
+  "report_links_verified": 15,
+  "report_required_sections_present": true,
+  "all_test_claims_match_captures": true,
+  "typing_failure_correctly_reported": true,
+  "selected_credential_ready": false,
+  "pins_match": true,
+  "verdict": "PASS WITH LIMITATIONS"
+}

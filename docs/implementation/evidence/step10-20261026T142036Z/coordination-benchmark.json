@@ -1,0 +1,220 @@
+{
+  "conditions": "single CPU inference thread; synthetic graph (no neural inference); real S3/Redis/PG; one deliberately injected transient failure",
+  "n": 12,
+  "seconds_including_uploads": 0.8597463000000971,
+  "queue_wait_p95_ms": 557.692,
+  "jobs_per_min": 837.4563519493119,
+  "total_attempts": 13,
+  "retried_jobs": 1,
+  "retry_job_rate": 0.08333333333333333,
+  "retry_attempt_rate": 0.07692307692307693,
+  "terminal_failures": 0,
+  "queue_wait_samples_ms": [
+    308.587,
+    337.081,
+    365.944,
+    387.60499999999996,
+    410.563,
+    429.154,
+    449.83,
+    472.943,
+    497.141,
+    513.846,
+    537.004,
+    557.692
+  ],
+  "metrics": [
+    {
+      "id": "d9a4ba87-bc3b-45e0-b4e7-edf3d2f82daf",
+      "call_id": "d9a4ba87-bc3b-45e0-b4e7-edf3d2f82daf",
+      "status": "finished",
+      "attempts": 2,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.325650Z",
+      "started_at": "2026-10-26T14:35:57.070678Z",
+      "finished_at": "2026-10-26T14:35:57.085001Z",
+      "metrics": {
+        "execution_ms": 12.174000000413798,
+        "queue_wait_ms": 308.587
+      },
+      "progress": null
+    },
+    {
+      "id": "ccf4dcbc-6703-4925-80c9-6aa544b6ba33",
+      "call_id": "ccf4dcbc-6703-4925-80c9-6aa544b6ba33",
+      "status": "finished",
+      "attempts": 1,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.341234Z",
+      "started_at": "2026-10-26T14:35:56.678315Z",
+      "finished_at": "2026-10-26T14:35:56.704122Z",
+      "metrics": {
+        "execution_ms": 23.847899999964284,
+        "queue_wait_ms": 337.081
+      },
+      "progress": null
+    },
+    {
+      "id": "cc452626-84c1-4fb1-bfa0-7e3810790f63",
+      "call_id": "cc452626-84c1-4fb1-bfa0-7e3810790f63",
+      "status": "finished",
+      "attempts": 1,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.356948Z",
+      "started_at": "2026-10-26T14:35:56.722892Z",
+      "finished_at": "2026-10-26T14:35:56.739394Z",
+      "metrics": {
+        "execution_ms": 14.490900000055262,
+        "queue_wait_ms": 365.944
+      },
+      "progress": null
+    },
+    {
+      "id": "e09108d0-e842-45a1-b72e-fae16558ea9c",
+      "call_id": "e09108d0-e842-45a1-b72e-fae16558ea9c",
+      "status": "finished",
+      "attempts": 1,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.370579Z",
+      "started_at": "2026-10-26T14:35:56.758184Z",
+      "finished_at": "2026-10-26T14:35:56.775523Z",
+      "metrics": {
+        "execution_ms": 15.596199999890814,
+        "queue_wait_ms": 387.60499999999996
+      },
+      "progress": null
+    },
+    {
+      "id": "f098b922-a2bf-4d72-af07-ad86241c7401",
+      "call_id": "f098b922-a2bf-4d72-af07-ad86241c7401",
+      "status": "finished",
+      "attempts": 1,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.383836Z",
+      "started_at": "2026-10-26T14:35:56.794399Z",
+      "finished_at": "2026-10-26T14:35:56.808685Z",
+      "metrics": {
+        "execution_ms": 12.39979999991192,
+        "queue_wait_ms": 410.563
+      },
+      "progress": null
+    },
+    {
+      "id": "1997099e-8fe3-4cbb-b77f-56a78762860c",
+      "call_id": "1997099e-8fe3-4cbb-b77f-56a78762860c",
+      "status": "finished",
+      "attempts": 1,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.398578Z",
+      "started_at": "2026-10-26T14:35:56.827732Z",
+      "finished_at": "2026-10-26T14:35:56.843136Z",
+      "metrics": {
+        "execution_ms": 13.586499999746593,
+        "queue_wait_ms": 429.154
+      },
+      "progress": null
+    },
+    {
+      "id": "34920a0c-013d-4e1b-8ea1-720e96861e00",
+      "call_id": "34920a0c-013d-4e1b-8ea1-720e96861e00",
+      "status": "finished",
+      "attempts": 1,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.411400Z",
+      "started_at": "2026-10-26T14:35:56.861230Z",
+      "finished_at": "2026-10-26T14:35:56.875545Z",
+      "metrics": {
+        "execution_ms": 12.478199999804929,
+        "queue_wait_ms": 449.83
+      },
+      "progress": null
+    },
+    {
+      "id": "8d43a6f0-91d2-4bce-93e8-a7daefb2fedb",
+      "call_id": "8d43a6f0-91d2-4bce-93e8-a7daefb2fedb",
+      "status": "finished",
+      "attempts": 1,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.424353Z",
+      "started_at": "2026-10-26T14:35:56.897296Z",
+      "finished_at": "2026-10-26T14:35:56.914477Z",
+      "metrics": {
+        "execution_ms": 15.085099999851082,
+        "queue_wait_ms": 472.943
+      },
+      "progress": null
+    },
+    {
+      "id": "3ac54c48-ca0f-4980-af5c-c791748a07e4",
+      "call_id": "3ac54c48-ca0f-4980-af5c-c791748a07e4",
+      "status": "finished",
+      "attempts": 1,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.436936Z",
+      "started_at": "2026-10-26T14:35:56.934077Z",
+      "finished_at": "2026-10-26T14:35:56.948838Z",
+      "metrics": {
+        "execution_ms": 12.514000000010128,
+        "queue_wait_ms": 497.141
+      },
+      "progress": null
+    },
+    {
+      "id": "31b987cc-f9a5-4a25-816f-24ea0633746f",
+      "call_id": "31b987cc-f9a5-4a25-816f-24ea0633746f",
+      "status": "finished",
+      "attempts": 1,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.454212Z",
+      "started_at": "2026-10-26T14:35:56.968058Z",
+      "finished_at": "2026-10-26T14:35:56.983804Z",
+      "metrics": {
+        "execution_ms": 13.822699999764154,
+        "queue_wait_ms": 513.846
+      },
+      "progress": null
+    },
+    {
+      "id": "e307cc02-8a61-47f1-a2c1-1035f82598ab",
+      "call_id": "e307cc02-8a61-47f1-a2c1-1035f82598ab",
+      "status": "finished",
+      "attempts": 1,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.467350Z",
+      "started_at": "2026-10-26T14:35:57.004354Z",
+      "finished_at": "2026-10-26T14:35:57.018337Z",
+      "metrics": {
+        "execution_ms": 12.209900000016205,
+        "queue_wait_ms": 537.004
+      },
+      "progress": null
+    },
+    {
+      "id": "bee4597d-d0dc-4876-8a2c-367628d78fb4",
+      "call_id": "bee4597d-d0dc-4876-8a2c-367628d78fb4",
+      "status": "finished",
+      "attempts": 1,
+      "error_code": null,
+      "queue": "cpu",
+      "created_at": "2026-10-26T14:35:56.479075Z",
+      "started_at": "2026-10-26T14:35:57.036767Z",
+      "finished_at": "2026-10-26T14:35:57.050670Z",
+      "metrics": {
+        "execution_ms": 11.99640000004365,
+        "queue_wait_ms": 557.692
+      },
+      "progress": null
+    }
+  ]
+}

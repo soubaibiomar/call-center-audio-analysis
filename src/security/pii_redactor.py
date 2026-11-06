@@ -48,9 +48,9 @@ def redact_pii(text: str) -> PIIRedactionResult:
 
     # Deduplicate overlapping matches (keep the one that starts first)
     filtered: list[tuple[int, int, str, str, str]] = []
-    for match in all_matches:
-        if not filtered or match[1] <= filtered[-1][0]:
-            filtered.append(match)
+    for candidate in all_matches:
+        if not filtered or candidate[1] <= filtered[-1][0]:
+            filtered.append(candidate)
     filtered.reverse()
 
     detections: list[PIIDetection] = []

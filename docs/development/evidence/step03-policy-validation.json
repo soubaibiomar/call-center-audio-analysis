@@ -1,0 +1,30 @@
+{
+  "workflow_rule_ids": [
+    "W01",
+    "W02",
+    "W03",
+    "W04",
+    "W05",
+    "W06",
+    "W07",
+    "W08",
+    "W09",
+    "W10",
+    "W11",
+    "W12"
+  ],
+  "workflow_rule_count": 12,
+  "local_label_count": 13,
+  "prior_project_label_catalog": "absent (remote labels not queried)",
+  "pr_template_prior_checkbox_count": 8,
+  "pr_template_current_checkbox_count": 11,
+  "pr_template_tests_security_docs": "PASS",
+  "contribution_license": "MIT matches LICENSE",
+  "ownership": "AI/ML + Platform + shared, actual accounts pending",
+  "codeowners_installed": false,
+  "remote_protection_status": "NOT INSPECTED/NOT CHANGED",
+  "remote_labels_applied": false,
+  "remote_unreviewed_pr_count": "Not measured",
+  "branch_refs_unchanged": true,
+  "push_merge_or_deployment_executed": false
+}

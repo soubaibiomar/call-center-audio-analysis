@@ -1,0 +1,656 @@
+{
+  "CallReport": {
+    "$defs": {
+      "ActionItem": {
+        "properties": {
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "owner": {
+            "enum": [
+              "agent",
+              "customer",
+              "system"
+            ],
+            "title": "Owner",
+            "type": "string"
+          },
+          "deadline": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Deadline"
+          }
+        },
+        "required": [
+          "description",
+          "owner"
+        ],
+        "title": "ActionItem",
+        "type": "object"
+      },
+      "AudioProperties": {
+        "properties": {
+          "duration_seconds": {
+            "title": "Duration Seconds",
+            "type": "number"
+          },
+          "sample_rate": {
+            "title": "Sample Rate",
+            "type": "integer"
+          },
+          "channels": {
+            "title": "Channels",
+            "type": "integer"
+          },
+          "format": {
+            "title": "Format",
+            "type": "string"
+          },
+          "file_size_bytes": {
+            "title": "File Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "duration_seconds",
+          "sample_rate",
+          "channels",
+          "format",
+          "file_size_bytes"
+        ],
+        "title": "AudioProperties",
+        "type": "object"
+      },
+      "ComplianceFlag": {
+        "properties": {
+          "violation": {
+            "title": "Violation",
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ],
+            "title": "Severity",
+            "type": "string"
+          },
+          "transcript_reference": {
+            "title": "Transcript Reference",
+            "type": "string"
+          }
+        },
+        "required": [
+          "violation",
+          "severity",
+          "transcript_reference"
+        ],
+        "title": "ComplianceFlag",
+        "type": "object"
+      },
+      "Entity": {
+        "properties": {
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "label"
+        ],
+        "title": "Entity",
+        "type": "object"
+      },
+      "IntakeResult": {
+        "properties": {
+          "call_id": {
+            "format": "uuid",
+            "title": "Call Id",
+            "type": "string"
+          },
+          "audio_path": {
+            "title": "Audio Path",
+            "type": "string"
+          },
+          "audio_properties": {
+            "$ref": "#/$defs/AudioProperties"
+          },
+          "pii_scan": {
+            "$ref": "#/$defs/PIIScanResult"
+          },
+          "validation_passed": {
+            "title": "Validation Passed",
+            "type": "boolean"
+          },
+          "validation_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Validation Error"
+          }
+        },
+        "required": [
+          "call_id",
+          "audio_path",
+          "audio_properties",
+          "pii_scan",
+          "validation_passed",
+          "validation_error"
+        ],
+        "title": "IntakeResult",
+        "type": "object"
+      },
+      "PIIScanResult": {
+        "properties": {
+          "pii_detected": {
+            "title": "Pii Detected",
+            "type": "boolean"
+          },
+          "redacted_fields": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Redacted Fields",
+            "type": "array"
+          }
+        },
+        "required": [
+          "pii_detected",
+          "redacted_fields"
+        ],
+        "title": "PIIScanResult",
+        "type": "object"
+      },
+      "QADimensionScore": {
+        "properties": {
+          "score": {
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Score",
+            "type": "integer"
+          },
+          "justification": {
+            "title": "Justification",
+            "type": "string"
+          }
+        },
+        "required": [
+          "score",
+          "justification"
+        ],
+        "title": "QADimensionScore",
+        "type": "object"
+      },
+      "QAScoreResult": {
+        "properties": {
+          "call_id": {
+            "format": "uuid",
+            "title": "Call Id",
+            "type": "string"
+          },
+          "professionalism": {
+            "$ref": "#/$defs/QADimensionScore"
+          },
+          "empathy": {
+            "$ref": "#/$defs/QADimensionScore"
+          },
+          "problem_resolution": {
+            "$ref": "#/$defs/QADimensionScore"
+          },
+          "compliance": {
+            "$ref": "#/$defs/QADimensionScore"
+          },
+          "communication_clarity": {
+            "$ref": "#/$defs/QADimensionScore"
+          },
+          "overall_score": {
+            "maximum": 5.0,
+            "minimum": 1.0,
+            "title": "Overall Score",
+            "type": "number"
+          },
+          "compliance_flags": {
+            "items": {
+              "$ref": "#/$defs/ComplianceFlag"
+            },
+            "title": "Compliance Flags",
+            "type": "array"
+          }
+        },
+        "required": [
+          "professionalism",
+          "empathy",
+          "problem_resolution",
+          "compliance",
+          "communication_clarity",
+          "overall_score",
+          "compliance_flags"
+        ],
+        "title": "QAScoreResult",
+        "type": "object"
+      },
+      "ResolutionStatus": {
+        "enum": [
+          "resolved",
+          "unresolved",
+          "escalated"
+        ],
+        "title": "ResolutionStatus",
+        "type": "string"
+      },
+      "SummaryResult": {
+        "properties": {
+          "call_id": {
+            "format": "uuid",
+            "title": "Call Id",
+            "type": "string"
+          },
+          "call_purpose": {
+            "title": "Call Purpose",
+            "type": "string"
+          },
+          "key_discussion_points": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Key Discussion Points",
+            "type": "array"
+          },
+          "action_items": {
+            "items": {
+              "$ref": "#/$defs/ActionItem"
+            },
+            "title": "Action Items",
+            "type": "array"
+          },
+          "resolution_status": {
+            "$ref": "#/$defs/ResolutionStatus"
+          },
+          "sentiment_trajectory": {
+            "title": "Sentiment Trajectory",
+            "type": "string"
+          },
+          "entities": {
+            "items": {
+              "$ref": "#/$defs/Entity"
+            },
+            "title": "Entities",
+            "type": "array"
+          }
+        },
+        "required": [
+          "call_purpose",
+          "key_discussion_points",
+          "action_items",
+          "resolution_status",
+          "sentiment_trajectory",
+          "entities"
+        ],
+        "title": "SummaryResult",
+        "type": "object"
+      },
+      "TranscriptionResult": {
+        "properties": {
+          "call_id": {
+            "format": "uuid",
+            "title": "Call Id",
+            "type": "string"
+          },
+          "full_text": {
+            "title": "Full Text",
+            "type": "string"
+          },
+          "segments": {
+            "items": {
+              "$ref": "#/$defs/TranscriptionSegment"
+            },
+            "title": "Segments",
+            "type": "array"
+          },
+          "overall_confidence": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Overall Confidence",
+            "type": "number"
+          },
+          "flagged_for_review": {
+            "title": "Flagged For Review",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "call_id",
+          "full_text",
+          "segments",
+          "overall_confidence",
+          "flagged_for_review"
+        ],
+        "title": "TranscriptionResult",
+        "type": "object"
+      },
+      "TranscriptionSegment": {
+        "properties": {
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "start_time": {
+            "title": "Start Time",
+            "type": "number"
+          },
+          "end_time": {
+            "title": "End Time",
+            "type": "number"
+          },
+          "speaker": {
+            "title": "Speaker",
+            "type": "string"
+          },
+          "confidence": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence",
+            "type": "number"
+          },
+          "low_confidence": {
+            "title": "Low Confidence",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "text",
+          "start_time",
+          "end_time",
+          "speaker",
+          "confidence",
+          "low_confidence"
+        ],
+        "title": "TranscriptionSegment",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "call_id": {
+        "format": "uuid",
+        "title": "Call Id",
+        "type": "string"
+      },
+      "intake": {
+        "$ref": "#/$defs/IntakeResult"
+      },
+      "transcription": {
+        "$ref": "#/$defs/TranscriptionResult"
+      },
+      "summary": {
+        "$ref": "#/$defs/SummaryResult"
+      },
+      "qa_scores": {
+        "$ref": "#/$defs/QAScoreResult"
+      },
+      "processed_at": {
+        "format": "date-time",
+        "title": "Processed At",
+        "type": "string"
+      },
+      "trace_id": {
+        "title": "Trace Id",
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "completed",
+          "failed",
+          "flagged_for_review"
+        ],
+        "title": "Status",
+        "type": "string"
+      }
+    },
+    "required": [
+      "call_id",
+      "intake",
+      "transcription",
+      "summary",
+      "qa_scores",
+      "processed_at",
+      "trace_id",
+      "status"
+    ],
+    "title": "CallReport",
+    "type": "object"
+  },
+  "SummaryResult": {
+    "$defs": {
+      "ActionItem": {
+        "properties": {
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "owner": {
+            "enum": [
+              "agent",
+              "customer",
+              "system"
+            ],
+            "title": "Owner",
+            "type": "string"
+          },
+          "deadline": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Deadline"
+          }
+        },
+        "required": [
+          "description",
+          "owner"
+        ],
+        "title": "ActionItem",
+        "type": "object"
+      },
+      "Entity": {
+        "properties": {
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "label"
+        ],
+        "title": "Entity",
+        "type": "object"
+      },
+      "ResolutionStatus": {
+        "enum": [
+          "resolved",
+          "unresolved",
+          "escalated"
+        ],
+        "title": "ResolutionStatus",
+        "type": "string"
+      }
+    },
+    "properties": {
+      "call_id": {
+        "format": "uuid",
+        "title": "Call Id",
+        "type": "string"
+      },
+      "call_purpose": {
+        "title": "Call Purpose",
+        "type": "string"
+      },
+      "key_discussion_points": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Key Discussion Points",
+        "type": "array"
+      },
+      "action_items": {
+        "items": {
+          "$ref": "#/$defs/ActionItem"
+        },
+        "title": "Action Items",
+        "type": "array"
+      },
+      "resolution_status": {
+        "$ref": "#/$defs/ResolutionStatus"
+      },
+      "sentiment_trajectory": {
+        "title": "Sentiment Trajectory",
+        "type": "string"
+      },
+      "entities": {
+        "items": {
+          "$ref": "#/$defs/Entity"
+        },
+        "title": "Entities",
+        "type": "array"
+      }
+    },
+    "required": [
+      "call_purpose",
+      "key_discussion_points",
+      "action_items",
+      "resolution_status",
+      "sentiment_trajectory",
+      "entities"
+    ],
+    "title": "SummaryResult",
+    "type": "object"
+  },
+  "QAScoreResult": {
+    "$defs": {
+      "ComplianceFlag": {
+        "properties": {
+          "violation": {
+            "title": "Violation",
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ],
+            "title": "Severity",
+            "type": "string"
+          },
+          "transcript_reference": {
+            "title": "Transcript Reference",
+            "type": "string"
+          }
+        },
+        "required": [
+          "violation",
+          "severity",
+          "transcript_reference"
+        ],
+        "title": "ComplianceFlag",
+        "type": "object"
+      },
+      "QADimensionScore": {
+        "properties": {
+          "score": {
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Score",
+            "type": "integer"
+          },
+          "justification": {
+            "title": "Justification",
+            "type": "string"
+          }
+        },
+        "required": [
+          "score",
+          "justification"
+        ],
+        "title": "QADimensionScore",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "call_id": {
+        "format": "uuid",
+        "title": "Call Id",
+        "type": "string"
+      },
+      "professionalism": {
+        "$ref": "#/$defs/QADimensionScore"
+      },
+      "empathy": {
+        "$ref": "#/$defs/QADimensionScore"
+      },
+      "problem_resolution": {
+        "$ref": "#/$defs/QADimensionScore"
+      },
+      "compliance": {
+        "$ref": "#/$defs/QADimensionScore"
+      },
+      "communication_clarity": {
+        "$ref": "#/$defs/QADimensionScore"
+      },
+      "overall_score": {
+        "maximum": 5.0,
+        "minimum": 1.0,
+        "title": "Overall Score",
+        "type": "number"
+      },
+      "compliance_flags": {
+        "items": {
+          "$ref": "#/$defs/ComplianceFlag"
+        },
+        "title": "Compliance Flags",
+        "type": "array"
+      }
+    },
+    "required": [
+      "professionalism",
+      "empathy",
+      "problem_resolution",
+      "compliance",
+      "communication_clarity",
+      "overall_score",
+      "compliance_flags"
+    ],
+    "title": "QAScoreResult",
+    "type": "object"
+  }
+}

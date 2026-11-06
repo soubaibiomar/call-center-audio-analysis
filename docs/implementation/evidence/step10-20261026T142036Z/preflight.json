@@ -1,0 +1,14 @@
+{
+  "files": {
+    "services/api/app.py": "4237bc5ee28b2eb1ccc3ec1490891a9acd96e7b560229dfb151f2d706042ff25",
+    "services/api/schemas.py": "f3eea73551754b95daf4120fcc314fef59ef17c6c2d78e376579cdf23478243a",
+    "services/api/db/models.py": "505c784bfd434e776f8f3ff855443e72431ee71a0cec2c8b79b5c723a831ca97",
+    "src/agents/intake.py": "77d7abdb2896ae2fdf4738437e443bef9abbe1da0b0c111236dc00fe632d7065",
+    "src/agents/report.py": "5d1aa33fb58ce4efc3562ad43af7fba8a96a963ba78259f1852d0c7df5d008c1",
+    "src/utils/audio_workspace.py": "f0792c1dec58dad716c84eefc1a7841c480c5d535df51b57809ee4de286fb0c4",
+    "compose.local.yml": "74b5f2d9b33a20981465546128063d91c1b6bd4a2521a508407316648c62459e",
+    "requirements.txt": "1c827bdf46f6e01c6a3919119dc554c5cf64f76cc1b418a270e023e2d8d74687",
+    "pyproject.toml": "8b516d40cdf57785f435c70790b530308b43c47e05b38d00250dc1c1b43e8c41"
+  },
+  "note": "STEP09 correction gate244 passes; STEP10 scaffolding already in working tree; no step10 completion claimed"
+}

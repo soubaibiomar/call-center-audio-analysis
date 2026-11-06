@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pre_commit",
+    "run",
+    "--all-files"
+  ],
+  "exit_code": 0,
+  "seconds": 3.71,
+  "stdout": "ruff.....................................................................Passed\nruff-format..............................................................Passed\nDetect secrets...........................................................Passed\nCheck for hardcoded API keys.............................................Passed\n",
+  "stderr": ""
+}

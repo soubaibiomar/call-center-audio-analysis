@@ -1,0 +1,31 @@
+{
+  "step": "STEP_03",
+  "captured_at_utc": "2026-10-24T16:40:23.077456+00:00",
+  "decision": "PASS WITH LIMITATIONS",
+  "acceptance_gates": {
+    "branch_exists_main_refs_preserved": "PASS",
+    "template_tests_security_docs": "PASS",
+    "no_unauthorized_push": "PASS"
+  },
+  "refs_unchanged": true,
+  "prior_files_preserved_except_scope": 160,
+  "specification_hashes_verified": 99,
+  "workflow_rule_count": 12,
+  "local_labels": 13,
+  "focused_tests": "2 passed in 0.02s",
+  "full_suite": "137 passed in 20.86s",
+  "new_test_typing": "PASS",
+  "full_application_typing": "Historical failure unresolved; not rerun",
+  "report_sections": 13,
+  "answered_questions": 8,
+  "completed_steps": 3,
+  "not_started_steps": 42,
+  "remote_protection": "Not inspected or changed",
+  "remote_labels_applied": false,
+  "unreviewed_pr_count": "Not measured",
+  "codeowners": "Not installed; actual identities pending",
+  "production_source_or_dependencies_changed": false,
+  "next_eligible": "STEP_04",
+  "project_commit_push_merge_deploy": false,
+  "local_markdown_links": "PASS"
+}

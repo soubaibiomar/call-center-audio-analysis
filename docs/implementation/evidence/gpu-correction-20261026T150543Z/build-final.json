@@ -1,0 +1,20 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "infrastructure/compose/queue.local.yml",
+    "--profile",
+    "gpu",
+    "build",
+    "worker-gpu"
+  ],
+  "exit_code": 0,
+  "seconds": 1.2215495000000374,
+  "stdout": "#1 [internal] load local bake definitions\n#1 reading from stdin 582B done\n#1 DONE 0.0s\n\n#2 [internal] load build definition from Dockerfile.gpu\n#2 transferring dockerfile: 693B done\n#2 DONE 0.0s\n\n#3 [internal] load metadata for docker.io/library/project28-app:local\n#3 DONE 0.0s\n\n#4 [internal] load .dockerignore\n#4 transferring context: 249B done\n#4 DONE 0.0s\n\n#5 [internal] load build context\n#5 transferring context: 5.27kB done\n#5 DONE 0.0s\n\n#6 [1/5] FROM docker.io/library/project28-app:local@sha256:11d0bc10b250d094fb0ecd62a2b1e68a8c663e8c358e6b2f25f492c567bd377b\n#6 resolve docker.io/library/project28-app:local@sha256:11d0bc10b250d094fb0ecd62a2b1e68a8c663e8c358e6b2f25f492c567bd377b 0.0s done\n#6 DONE 0.0s\n\n#7 [2/5] COPY requirements.gpu.txt /tmp/requirements.gpu.txt\n#7 CACHED\n\n#8 [3/5] RUN uv pip install --system --no-cache -r /tmp/requirements.gpu.txt  && find /usr/local/lib -type d -path '*/site-packages/nvidia/*/lib'       > /etc/ld.so.conf.d/project28-nvidia.conf  && test -s /etc/ld.so.conf.d/project28-nvidia.conf  && ldconfig\n#8 CACHED\n\n#9 [4/5] COPY services/workers/runtime.py /app/services/workers/runtime.py\n#9 DONE 0.0s\n\n#10 [5/5] COPY scripts/check_gpu_runtime.py /app/scripts/check_gpu_runtime.py\n#10 DONE 0.0s\n\n#11 exporting to image\n#11 exporting layers 0.1s done\n#11 exporting manifest sha256:6bfd3068b7b66ab0bafecd0a46559538ed324bcbd0ef4b65d1729d5963e96342 done\n#11 exporting config sha256:9505cc5bd50375f1f02c93bc99595d4a342f0da97fbea58c480b26302b30ae93 done\n#11 exporting attestation manifest sha256:b37f87c96eebf5e533b9475e1b35a301aced267378a10db4c6ac0e7207225128\n#11 exporting attestation manifest sha256:b37f87c96eebf5e533b9475e1b35a301aced267378a10db4c6ac0e7207225128 done\n#11 exporting manifest list sha256:44784ffcab060ee95efc82f5ccf839c4467bb49f3d2053c0d7bcda641e12ca2f done\n#11 naming to docker.io/library/project28-app:gpu done\n#11 unpacking to docker.io/library/project28-app:gpu 0.0s done\n#11 DONE 0.2s\n\n#12 resolving provenance for metadata file\n#12 DONE 0.0s\n",
+  "stderr": " Image project28-app:gpu Building \n Image project28-app:gpu Built \n"
+}

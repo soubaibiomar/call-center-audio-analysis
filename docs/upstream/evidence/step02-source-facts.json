@@ -1,0 +1,34 @@
+{
+  "upstream_sha": "fed4b610742c1337147281fcec8f2cdcc0a79be5",
+  "graph_nodes": [
+    "intake_step",
+    "transcribe_step",
+    "injection_check_step",
+    "pii_redact_step",
+    "summarize_and_qa_step",
+    "report_step",
+    "error_step",
+    "supervisor_step"
+  ],
+  "tab_labels": [
+    "Analyze Call",
+    "All MP3 History",
+    "Observability"
+  ],
+  "injection_pattern_count": 22,
+  "qa_weights": {
+    "professionalism": 0.15,
+    "empathy": 0.2,
+    "problem_resolution": 0.3,
+    "compliance": 0.2,
+    "communication_clarity": 0.15
+  },
+  "qa_weight_sum": 1.0,
+  "src_modules_including_initializers": 33,
+  "nonempty_src_python_modules": 24,
+  "tracked_python_files": 56,
+  "tracked_files": 87,
+  "tracked_sample_mp3_paths": 10,
+  "model_inference_executed": false,
+  "training_executed": false
+}

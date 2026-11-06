@@ -1,0 +1,51 @@
+[
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/integration/test_database_persistence.py",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 2.2638790999990306,
+    "stdout": "..                                                                       [100%]\n2 passed in 0.38s\n",
+    "stderr": "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--",
+      "src/database/connection.py",
+      "src/database/models.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.024563599999964936,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--name-status"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.031512399997154716,
+    "stdout": "M\t.github/ISSUE_TEMPLATE/bug_report.md\nM\t.github/PULL_REQUEST_TEMPLATE.md\nM\t.github/workflows/ci.yml\nM\t.gitignore\nM\t.pre-commit-config.yaml\nM\tCONTRIBUTING.md\nM\tsrc/services/history.py\nM\tsrc/services/pipeline.py\nM\tsrc/ui/tabs/history.py\nM\ttests/integration/test_pipeline_end_to_end.py\nM\ttests/unit/test_history_service.py\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.033469899997726316,
+    "stdout": "",
+    "stderr": ""
+  }
+]

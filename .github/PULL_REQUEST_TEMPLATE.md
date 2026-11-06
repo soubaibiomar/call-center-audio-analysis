@@ -1,33 +1,60 @@
-## Summary
+## Outcome and scope
 
-One or two sentences describing what this PR does and why.
+Describe the concrete problem, resulting behavior and compatibility impact.
 
-## Changes
+- Project 28 step / issue:
+- Important changed files and rationale:
+- Ownership: AI/ML / Platform / shared
+- Other developer requested as reviewer (actual account, not an assumed identity):
 
-- ...
-- ...
+## Tests and acceptance evidence
 
-## Testing
+Record exact commands, environment, exit codes, pass/fail/skip counts and local
+evidence paths. Label unexecuted checks and explain why. Do not paste secrets.
 
-- [ ] `make test` passes.
-- [ ] `make lint` is clean.
-- [ ] `make typecheck` is clean (or unchanged from `main`).
-- [ ] New code is covered by tests, or covered by a follow-up issue.
+| Check | Command / environment | Actual result | Evidence |
+|---|---|---|---|
+| Regression / integration | | | |
+| Lint / format / typing | | | |
+| Step acceptance criteria | | | |
 
-## Screenshots (UI changes only)
+- Known failing checks: baseline comparison, impact, owner and follow-up.
+- [ ] Relevant current behavior and negative cases are covered; no unexplained regression.
+- [ ] A failing check is not represented as passed or hidden by an ignore/skip.
 
-| Before | After |
-|---|---|
-|  |  |
+## Security and data
 
-## Related issues
+- Data/permissions/authentication/PII impact and regression checks, or reason not applicable:
+- [ ] No keys, private recordings, raw sensitive transcripts or unsafe log attachments.
+- [ ] No security check was weakened to make validation pass.
+- [ ] Dataset use/training permissions verified if data or models change.
 
-Closes #
-Refs #
+## Documentation and compatibility
 
-## Checklist
+- Step report path and affected architecture/API/setup documentation:
+- Migration, rollback and recovery impact, or reason not applicable:
+- [ ] Report and measured metrics match current source and execution evidence.
+- [ ] Original behavior, attribution and MIT notice are preserved where required.
 
-- [ ] My commits follow the Conventional Commits style.
-- [ ] I read `CONTRIBUTING.md` and my PR fits the scope described there.
-- [ ] I did not bypass any pre-commit hooks.
-- [ ] If this changes a public interface, I updated the docs.
+## ML evidence (if applicable)
+
+Model/checkpoint and dataset versions, split/leakage checks, sample counts,
+baseline/candidate metrics, hardware and reproducible evaluation command:
+
+State whether training actually ran. Promotion/rollback approval is separate;
+an annotation interface or configuration change is not proof of learning.
+
+## UI evidence (if applicable)
+
+Actual before/after desktop/mobile screenshots, comparison against
+`design/APPROVED_COMMMERCIALLY_STYLE_REFERENCE.png`, color tokens, interaction and
+accessibility results. Explain deviations. Never reuse mock reference metrics.
+For non-UI changes, state why visual verification is not applicable.
+
+## Review and merge
+
+- Related issues / limitations:
+- [ ] Followed [Project 28 workflow](../docs/development/workflow.md).
+- [ ] Cohesive milestone commits use Conventional Commits; no invented elapsed history.
+- [ ] Other developer reviewed the current revision; discussions resolved and checks recorded.
+- [ ] No push, merge, deployment or published-history rewrite beyond explicit authorization.

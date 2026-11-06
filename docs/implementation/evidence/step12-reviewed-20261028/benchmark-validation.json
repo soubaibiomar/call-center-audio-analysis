@@ -1,0 +1,19 @@
+{
+  "records": 9,
+  "duration_seconds": 36.408,
+  "audio_bytes": 291669,
+  "speakers": 4,
+  "prompt_groups": 9,
+  "split_counts": {
+    "test": 3,
+    "validation": 2,
+    "train": 4
+  },
+  "approved_train_evaluate": 9,
+  "human_community_voted": 9,
+  "retention_until": "2026-11-28",
+  "revision": "ae911de250fe9375d08e2daa2105b671d659d446",
+  "lock_sha256": "d0c355bd5ccb66b88837af4283260171f94ab884c90f59b948f5a11c8b460505",
+  "leakage_check": "pass",
+  "clip_hash_check": "pass"
+}

@@ -1,0 +1,135 @@
+{
+  "target_snr_db": 20,
+  "min_snr_db": 19.949473448581617,
+  "max_snr_db": 20.070872359166323,
+  "records": [
+    {
+      "id": "1ef237ba2c48e1f2",
+      "realized_snr_db": 20.004701133144355
+    },
+    {
+      "id": "235e7db7f922872d",
+      "realized_snr_db": 20.000191786870012
+    },
+    {
+      "id": "9ca58cbb71b6f3e4",
+      "realized_snr_db": 20.039693932346886
+    },
+    {
+      "id": "4f1ee1f4b7d43342",
+      "realized_snr_db": 19.96429959408219
+    },
+    {
+      "id": "1c04d0f306b65801",
+      "realized_snr_db": 20.02222991605686
+    },
+    {
+      "id": "84f928249cb93a55",
+      "realized_snr_db": 19.952637044014253
+    },
+    {
+      "id": "99731b244ed3d2ba",
+      "realized_snr_db": 20.034318175745508
+    },
+    {
+      "id": "9fba9c581fd31e6a",
+      "realized_snr_db": 19.968111116310276
+    },
+    {
+      "id": "966a70e1ad5ac7d5",
+      "realized_snr_db": 20.070872359166323
+    },
+    {
+      "id": "e5e87558967d46cf",
+      "realized_snr_db": 19.983184606815275
+    },
+    {
+      "id": "b432fb2d7a02ac6d",
+      "realized_snr_db": 19.962061634189116
+    },
+    {
+      "id": "1d26b172620df401",
+      "realized_snr_db": 20.024515231246628
+    },
+    {
+      "id": "e847a54de4a4eafc",
+      "realized_snr_db": 20.034523354623374
+    },
+    {
+      "id": "ee4e7f2cab8e99df",
+      "realized_snr_db": 20.023521262755445
+    },
+    {
+      "id": "c5e48336172ef591",
+      "realized_snr_db": 19.949473448581617
+    },
+    {
+      "id": "17ac0bdbe8760791",
+      "realized_snr_db": 19.99507073420891
+    },
+    {
+      "id": "ffa8534fd37d6443",
+      "realized_snr_db": 20.015720175805377
+    },
+    {
+      "id": "3cf956ceaa0c64d1",
+      "realized_snr_db": 20.023213208705002
+    },
+    {
+      "id": "33be5a20472939fb",
+      "realized_snr_db": 20.01314981554222
+    },
+    {
+      "id": "c9ee3a5f4e9e2eee",
+      "realized_snr_db": 19.98591487371834
+    },
+    {
+      "id": "45bf83f24e2ada9d",
+      "realized_snr_db": 20.00021007530944
+    },
+    {
+      "id": "e68ac9179e6ab4bd",
+      "realized_snr_db": 20.02434041383883
+    },
+    {
+      "id": "27e3ea3a92c8ba95",
+      "realized_snr_db": 19.968254712948227
+    },
+    {
+      "id": "0397b14c5f653af0",
+      "realized_snr_db": 19.96992383824747
+    },
+    {
+      "id": "e25761ecd973efa8",
+      "realized_snr_db": 19.987555610883152
+    },
+    {
+      "id": "37c81eeb9032866b",
+      "realized_snr_db": 19.980210505445502
+    },
+    {
+      "id": "bb6d2c46cfb83250",
+      "realized_snr_db": 19.985195026119765
+    },
+    {
+      "id": "c31fd49ed0ff5b2c",
+      "realized_snr_db": 19.99834958064581
+    },
+    {
+      "id": "6fbe041e22d1b611",
+      "realized_snr_db": 20.001075689082633
+    },
+    {
+      "id": "d1f1789bd8f77e04",
+      "realized_snr_db": 20.016351106765985
+    },
+    {
+      "id": "6dc4bd12bf9060fb",
+      "realized_snr_db": 20.014373458791653
+    },
+    {
+      "id": "cff59065b6774437",
+      "realized_snr_db": 19.993419495302096
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "captured_at_utc": "2026-10-24T20:07:21.447331+00:00",
+  "ui_http": {
+    "status": 200,
+    "html_bytes": 73677
+  },
+  "postgres_host_port_reachable": true,
+  "all_commands_passed": false,
+  "app_persistence": "SQLite; no migration performed",
+  "postgres_service": "Ready, authenticated TCP transaction succeeded",
+  "ollama_models_checked": 3,
+  "model_downloads": false,
+  "n8n_preserved": true
+}

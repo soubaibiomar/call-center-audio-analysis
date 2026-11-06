@@ -1,0 +1,15 @@
+[
+  {"name": "bug", "color": "b91c1c", "description": "Reproducible behavior that violates an agreed requirement."},
+  {"name": "enhancement", "color": "1d5b49", "description": "An agreed capability or improvement with acceptance criteria."},
+  {"name": "documentation", "color": "5f6b61", "description": "Reports, setup guides, architecture or user documentation."},
+  {"name": "area:ml", "color": "347c55", "description": "ASR, diarization, emotion, graph intelligence, datasets or evaluation."},
+  {"name": "area:platform", "color": "526a56", "description": "APIs, persistence, workers, infrastructure, authentication or CI."},
+  {"name": "area:ui", "color": "6b8e52", "description": "Frontend interactions, accessibility or approved ERP visual design."},
+  {"name": "area:security", "color": "9a6700", "description": "Privacy or security engineering; sensitive findings use private disclosure."},
+  {"name": "status:blocked", "color": "a16207", "description": "A named dependency or decision prevents acceptance; record the next action."},
+  {"name": "status:needs-review", "color": "4f7055", "description": "Evidence is ready for the other developer to review."},
+  {"name": "priority:p0", "color": "991b1b", "description": "Critical security, privacy, data-loss or core-availability failure."},
+  {"name": "priority:p1", "color": "c2410c", "description": "High-impact API, inference, learning or business-logic failure."},
+  {"name": "priority:p2", "color": "a16207", "description": "Bounded functionality, UI or performance defect."},
+  {"name": "priority:p3", "color": "6b7280", "description": "Low-impact documentation, visual or maintainability issue."}
+]

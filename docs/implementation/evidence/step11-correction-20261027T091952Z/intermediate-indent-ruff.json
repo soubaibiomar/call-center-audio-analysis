@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "ruff",
+    "check",
+    "src/",
+    "services/",
+    "tests/",
+    "scripts/",
+    "stubs/",
+    "migrations/",
+    "app.py"
+  ],
+  "exit_code": 1,
+  "seconds": 0.341,
+  "stdout": "src\\utils\\structured_inference.py:64:21: SyntaxError: Expected an indented block after `if` statement\n   |\n62 |                     selected = getattr(llm, \"model_name\", None) or getattr(llm, \"model\", None)\n63 |                     if isinstance(selected, str):\n64 |                     model_id = _observed_model_id(selected)\n   |                     ^\n65 |                     client = (\n66 |                         llm.with_structured_output(schema, method=\"json_schema\")\n   |\n\nFound 1 error.\n",
+  "stderr": ""
+}

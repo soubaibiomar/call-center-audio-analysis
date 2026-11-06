@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "mypy",
+    "src/",
+    "services/",
+    "app.py"
+  ],
+  "exit_code": 2,
+  "seconds": 0.979,
+  "stdout": "src\\utils\\structured_inference.py:64: error: Expected an indented block after `if` statement  [syntax]\nFound 1 error in 1 file (errors prevented further checking)\n",
+  "stderr": ""
+}

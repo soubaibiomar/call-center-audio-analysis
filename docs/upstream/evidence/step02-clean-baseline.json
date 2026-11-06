@@ -1,0 +1,69 @@
+[
+  {
+    "command": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "exit_code": 0,
+    "seconds": 0.15514729999995325,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "seconds": 0.02202000000033877,
+    "stdout": "fed4b610742c1337147281fcec8f2cdcc0a79be5\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exit_code": 0,
+    "seconds": 0.02251299999988987,
+    "stdout": "main\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "remote",
+      "-v"
+    ],
+    "exit_code": 0,
+    "seconds": 0.022106200000052922,
+    "stdout": "origin\thttps://github.com/ANI-IN/Call-Center-Intelligence-System.git (fetch)\norigin\thttps://github.com/ANI-IN/Call-Center-Intelligence-System.git (push)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "--is-shallow-repository"
+    ],
+    "exit_code": 0,
+    "seconds": 0.024240200000349432,
+    "stdout": "false\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "fsck",
+      "--full"
+    ],
+    "exit_code": 0,
+    "seconds": 0.3110463000011805,
+    "stdout": "",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "mypy",
+    "src/"
+  ],
+  "exit_code": 2,
+  "seconds": 3.018,
+  "stdout": "src\\agents\\report.py:7: error: Library stubs not installed for \"reportlab.lib.pagesizes\"  [import-untyped]\nsrc\\agents\\report.py:7: note: Hint: \"python3 -m pip install types-reportlab\"\nsrc\\agents\\report.py:7: note: (or run \"mypy --install-types\" to install all missing stub packages)\nsrc\\agents\\report.py:7: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports\nsrc\\agents\\report.py:8: error: Library stubs not installed for \"reportlab.lib.styles\"  [import-untyped]\nsrc\\agents\\report.py:9: error: Library stubs not installed for \"reportlab.platypus\"  [import-untyped]\nsrc\\agents\\transcription.py:7: error: Skipping analyzing \"faster_whisper\": module is installed, but missing library stubs or py.typed marker  [import-untyped]\nsrc\\agents\\transcription.py:25: error: Cannot find implementation or library stub for module named \"torch\"  [import-not-found]\n.venv\\Lib\\site-packages\\numpy\\__init__.pyi:737: error: Type statement is only supported in Python 3.12 and greater  [syntax]\nFound 6 errors in 3 files (errors prevented further checking)\n",
+  "stderr": ""
+}

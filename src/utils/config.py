@@ -2,10 +2,12 @@ from __future__ import annotations
 
 import os
 import secrets
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from dotenv import load_dotenv
+
+from services.api.db.settings import database_url
 
 load_dotenv()
 
@@ -31,12 +33,13 @@ class Config:
     llm_timeout_seconds: int
 
     # LLM Provider
-    llm_provider: str  # "openai", "gemini", "groq"
+    llm_provider: str  # "openai", "gemini", "groq", "ollama"
 
     # Audio
     whisper_model_size: str
     confidence_threshold: float
     low_confidence_halt_ratio: float
+    database_url: str | None = field(default=None, repr=False)
 
 
 def load_config() -> Config:
@@ -67,4 +70,5 @@ def load_config() -> Config:
         whisper_model_size=os.environ.get("WHISPER_MODEL_SIZE", "tiny"),
         confidence_threshold=float(os.environ.get("CONFIDENCE_THRESHOLD", "0.3")),
         low_confidence_halt_ratio=float(os.environ.get("LOW_CONFIDENCE_HALT_RATIO", "0.8")),
+        database_url=database_url(),
     )

@@ -1,0 +1,245 @@
+{
+  "intake_manifest_sha256": "81588750c596e034fc7fc66a25797df5af7ce4dd801122f0b79d2cd08bbbbe0b",
+  "models": {
+    "tiny": {
+      "languages": {
+        "fr": {
+          "clips": 40,
+          "reference_words": 389,
+          "wer": 0.3393316195372751,
+          "cer": 0.15834845735027223,
+          "strict_wer": 0.44321329639889195,
+          "rtf": 0.020840298732649316,
+          "p50_seconds": 0.09001823700054956,
+          "p95_seconds": 0.3150232829993911,
+          "audio_seconds": 204.36,
+          "empty_transcripts": 0
+        },
+        "ar": {
+          "clips": 40,
+          "reference_words": 704,
+          "wer": 0.6747159090909091,
+          "cer": 0.2639543537583726,
+          "strict_wer": 0.6947218259629101,
+          "rtf": 0.015868825816968742,
+          "p50_seconds": 0.15957260150025832,
+          "p95_seconds": 0.2181568089999928,
+          "audio_seconds": 408.22,
+          "empty_transcripts": 0
+        },
+        "ary": {
+          "clips": 40,
+          "reference_words": 596,
+          "wer": 0.9614093959731543,
+          "cer": 0.5242550242550242,
+          "strict_wer": 0.9681208053691275,
+          "rtf": 0.1600815957017142,
+          "p50_seconds": 0.6382921889999125,
+          "p95_seconds": 1.5774534310003219,
+          "audio_seconds": 188.3315625,
+          "empty_transcripts": 0
+        }
+      },
+      "peak_gpu_mib": 441,
+      "load_seconds": 1.4305636099998082,
+      "version": "1.2.1"
+    },
+    "small": {
+      "languages": {
+        "fr": {
+          "clips": 40,
+          "reference_words": 389,
+          "wer": 0.09768637532133675,
+          "cer": 0.05172413793103448,
+          "strict_wer": 0.2188365650969529,
+          "rtf": 0.03176181078488034,
+          "p50_seconds": 0.15251208600056998,
+          "p95_seconds": 0.22362217199952283,
+          "audio_seconds": 204.36,
+          "empty_transcripts": 0
+        },
+        "ar": {
+          "clips": 40,
+          "reference_words": 704,
+          "wer": 0.3068181818181818,
+          "cer": 0.09426941205656164,
+          "strict_wer": 0.3609129814550642,
+          "rtf": 0.031972194314348085,
+          "p50_seconds": 0.2977388589997645,
+          "p95_seconds": 0.5472443979997479,
+          "audio_seconds": 408.22,
+          "empty_transcripts": 0
+        },
+        "ary": {
+          "clips": 40,
+          "reference_words": 596,
+          "wer": 0.8926174496644296,
+          "cer": 0.4237699237699238,
+          "strict_wer": 0.9077181208053692,
+          "rtf": 0.09597604058002435,
+          "p50_seconds": 0.27056685400020797,
+          "p95_seconds": 1.518666129999474,
+          "audio_seconds": 188.3315625,
+          "empty_transcripts": 0
+        }
+      },
+      "peak_gpu_mib": 1203,
+      "load_seconds": 2.687070242000118,
+      "version": "1.2.1"
+    },
+    "turbo": {
+      "languages": {
+        "fr": {
+          "clips": 40,
+          "reference_words": 389,
+          "wer": 0.06683804627249357,
+          "cer": 0.03901996370235935,
+          "strict_wer": 0.16620498614958448,
+          "rtf": 0.058382658162062784,
+          "p50_seconds": 0.2938936050004486,
+          "p95_seconds": 0.3415123489994585,
+          "audio_seconds": 204.36,
+          "empty_transcripts": 0
+        },
+        "ar": {
+          "clips": 40,
+          "reference_words": 704,
+          "wer": 0.125,
+          "cer": 0.03621930042173158,
+          "strict_wer": 0.18972895863052783,
+          "rtf": 0.03865562529516433,
+          "p50_seconds": 0.38304495199918165,
+          "p95_seconds": 0.4715788279991102,
+          "audio_seconds": 408.22,
+          "empty_transcripts": 0
+        },
+        "ary": {
+          "clips": 40,
+          "reference_words": 596,
+          "wer": 0.8573825503355704,
+          "cer": 0.41164241164241167,
+          "strict_wer": 0.8842281879194631,
+          "rtf": 0.10654038938906678,
+          "p50_seconds": 0.37125354999989213,
+          "p95_seconds": 1.300644265000301,
+          "audio_seconds": 188.3315625,
+          "empty_transcripts": 0
+        }
+      },
+      "peak_gpu_mib": 2485,
+      "load_seconds": 12.540215770999566,
+      "version": "1.2.1"
+    },
+    "qwen06": {
+      "languages": {
+        "fr": {
+          "clips": 40,
+          "reference_words": 389,
+          "wer": 0.061696658097686374,
+          "cer": 0.023139745916515426,
+          "strict_wer": 0.1745152354570637,
+          "rtf": 0.1160327226560816,
+          "p50_seconds": 0.5435631999998805,
+          "p95_seconds": 1.044695653999952,
+          "audio_seconds": 204.36,
+          "empty_transcripts": 0
+        },
+        "ar": {
+          "clips": 40,
+          "reference_words": 704,
+          "wer": 0.1690340909090909,
+          "cer": 0.05656164723393699,
+          "strict_wer": 0.26961483594864477,
+          "rtf": 0.11359305358630668,
+          "p50_seconds": 1.057147054500092,
+          "p95_seconds": 1.8794383730000845,
+          "audio_seconds": 408.22,
+          "empty_transcripts": 0
+        },
+        "ary": {
+          "clips": 40,
+          "reference_words": 596,
+          "wer": 0.9010067114093959,
+          "cer": 0.42584892584892586,
+          "strict_wer": 0.9161073825503355,
+          "rtf": 0.18709073853197147,
+          "p50_seconds": 0.7174024035011826,
+          "p95_seconds": 1.8789550309993501,
+          "audio_seconds": 188.3315625,
+          "empty_transcripts": 0
+        }
+      },
+      "peak_gpu_mib": 2115,
+      "load_seconds": 32.17161501599912,
+      "version": "0.0.6"
+    },
+    "qwen17": {
+      "languages": {
+        "fr": {
+          "clips": 40,
+          "reference_words": 389,
+          "wer": 0.030848329048843187,
+          "cer": 0.014972776769509982,
+          "strict_wer": 0.13573407202216067,
+          "rtf": 0.1392790677969885,
+          "p50_seconds": 0.6692879294996601,
+          "p95_seconds": 1.2895988750005927,
+          "audio_seconds": 204.36,
+          "empty_transcripts": 0
+        },
+        "ar": {
+          "clips": 40,
+          "reference_words": 704,
+          "wer": 0.09517045454545454,
+          "cer": 0.03349044902009427,
+          "strict_wer": 0.23109843081312412,
+          "rtf": 0.1251807397334894,
+          "p50_seconds": 1.2467043295000622,
+          "p95_seconds": 2.114861974001542,
+          "audio_seconds": 408.22,
+          "empty_transcripts": 0
+        },
+        "ary": {
+          "clips": 40,
+          "reference_words": 596,
+          "wer": 0.8288590604026845,
+          "cer": 0.37075537075537074,
+          "strict_wer": 0.8624161073825504,
+          "rtf": 0.2125952741458084,
+          "p50_seconds": 0.8320971625007587,
+          "p95_seconds": 2.0929565539991017,
+          "audio_seconds": 188.3315625,
+          "empty_transcripts": 0
+        }
+      },
+      "peak_gpu_mib": 4819,
+      "load_seconds": 48.165105284000674,
+      "version": "0.0.6"
+    },
+    "parakeet": {
+      "languages": {
+        "fr": {
+          "clips": 40,
+          "reference_words": 389,
+          "wer": 0.03598971722365039,
+          "cer": 0.011343012704174229,
+          "strict_wer": 0.13019390581717452,
+          "rtf": 0.0158628354325489,
+          "p50_seconds": 0.07393973550097144,
+          "p95_seconds": 0.09927357099877554,
+          "audio_seconds": 204.36,
+          "empty_transcripts": 0
+        }
+      },
+      "peak_gpu_mib": 1527,
+      "load_seconds": 7.839227471000413,
+      "version": "5.21.1"
+    }
+  },
+  "unsupported": {
+    "parakeet": [
+      "ar",
+      "ary"
+    ]
+  }
+}

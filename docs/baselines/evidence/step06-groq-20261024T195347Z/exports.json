@@ -1,0 +1,25 @@
+{
+  "captured_at_utc": "2026-10-24T20:00:53.959059+00:00",
+  "retrieval": "HTTP GET of actual UI download links",
+  "browser_download_event": "Timed out; not certified as successful browser save",
+  "files": {
+    "json": {
+      "http_status": 200,
+      "bytes": 15601,
+      "sha256": "17f42f1b8fd63e940b47d09f1a8cb1c4e0406e3572d22af0a454285821b16362",
+      "valid_utf8_json": true,
+      "pydantic_report_valid": true,
+      "call_id": "80af7bd1-fcbe-4c73-a537-63deda990a2c",
+      "status": "completed",
+      "segments": 38,
+      "qa_score": 3.2,
+      "audio_duration_seconds": 122.74
+    },
+    "pdf": {
+      "http_status": 200,
+      "bytes": 3161,
+      "sha256": "27ba0cad743204e4f1170dd73508289ea98182c6ff8566a8894357e504b6e852",
+      "pdf_magic_valid": true
+    }
+  }
+}

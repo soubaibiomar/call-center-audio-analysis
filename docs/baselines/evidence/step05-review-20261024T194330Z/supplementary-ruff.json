@@ -1,0 +1,35 @@
+[
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/",
+      "tests/",
+      "scripts/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.22126429999843822,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "scripts/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.21127859999978682,
+    "stdout": "63 files already formatted\n",
+    "stderr": ""
+  }
+]

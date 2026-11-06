@@ -1,0 +1,89 @@
+{
+  "previous_manifest_sha256": "81588750c596e034fc7fc66a25797df5af7ce4dd801122f0b79d2cd08bbbbe0b",
+  "metadata_records_checked": 40,
+  "audio_checks": [
+    {
+      "sample_id": "ary-000",
+      "source_id": "15501_1",
+      "sha256_match": true,
+      "duration": 3.3653968253968256,
+      "sample_rate": 44100,
+      "shape": [
+        148414,
+        2
+      ]
+    },
+    {
+      "sample_id": "ary-001",
+      "source_id": "56331_1",
+      "sha256_match": true,
+      "duration": 7.226802721088435,
+      "sample_rate": 44100,
+      "shape": [
+        318702,
+        2
+      ]
+    },
+    {
+      "sample_id": "ary-002",
+      "source_id": "58503_2",
+      "sha256_match": true,
+      "duration": 3.9391609977324262,
+      "sample_rate": 44100,
+      "shape": [
+        173717,
+        2
+      ]
+    },
+    {
+      "sample_id": "ary-003",
+      "source_id": "16162_1",
+      "sha256_match": true,
+      "duration": 4.000748299319728,
+      "sample_rate": 44100,
+      "shape": [
+        176433,
+        2
+      ]
+    },
+    {
+      "sample_id": "ary-004",
+      "source_id": "16346_1",
+      "sha256_match": true,
+      "duration": 5.819909297052154,
+      "sample_rate": 44100,
+      "shape": [
+        256658,
+        2
+      ]
+    }
+  ],
+  "scope": "source mapping and bytes, not independent human transcript verification",
+  "stereo_downmix_checks": [
+    {
+      "sample_id": "ary-000",
+      "channel_correlation": 0.9999951435903525,
+      "mono_rms_to_mean_channel_rms": 1.0000267028808594
+    },
+    {
+      "sample_id": "ary-001",
+      "channel_correlation": 0.9627401793537709,
+      "mono_rms_to_mean_channel_rms": 0.9907391667366028
+    },
+    {
+      "sample_id": "ary-002",
+      "channel_correlation": 0.9999998284755321,
+      "mono_rms_to_mean_channel_rms": 1.000072956085205
+    },
+    {
+      "sample_id": "ary-003",
+      "channel_correlation": 0.9992465690428946,
+      "mono_rms_to_mean_channel_rms": 0.9998846650123596
+    },
+    {
+      "sample_id": "ary-004",
+      "channel_correlation": 0.9999975505045611,
+      "mono_rms_to_mean_channel_rms": 1.000083565711975
+    }
+  ]
+}

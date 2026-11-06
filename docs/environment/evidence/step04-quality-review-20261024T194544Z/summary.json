@@ -1,0 +1,12 @@
+{
+  "captured_at_utc": "2026-10-24T19:45:48.665476+00:00",
+  "review_target": "STEP_04",
+  "prior_command_log_sha256": "5510c7ede98a20a9ab045107a1ba6f143b10d30ca29b7c4626a8ece69d15fb83",
+  "prior_commands_all_passed": true,
+  "report_local_links_verified": 8,
+  "required_report_sections_present": true,
+  "selected_credential_ready": false,
+  "pins_match": true,
+  "verdict": "PASS WITH LIMITATIONS",
+  "source_fixes_required": false
+}

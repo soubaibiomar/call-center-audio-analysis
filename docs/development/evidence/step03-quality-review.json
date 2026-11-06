@@ -1,0 +1,10 @@
+{
+  "step": "STEP_03",
+  "decision": "PASS WITH LIMITATIONS",
+  "reviewed_criteria": 10,
+  "confirmed_current_step_issues": 0,
+  "remote_protection": "unverified",
+  "local_labels_applied_remotely": false,
+  "evidence": "docs/environment/evidence/step04/validation.json",
+  "source_changes_this_review": false
+}

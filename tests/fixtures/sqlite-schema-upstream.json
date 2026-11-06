@@ -1,0 +1,23 @@
+{
+  "upstream_sha": "fed4b610742c1337147281fcec8f2cdcc0a79be5",
+  "schema": {
+    "audit_log": {
+      "table": "\nCREATE TABLE audit_log (\n\tid INTEGER NOT NULL, \n\tcall_id VARCHAR(36) NOT NULL, \n\taction VARCHAR(100) NOT NULL, \n\tuser VARCHAR(100) NOT NULL, \n\ttimestamp DATETIME NOT NULL, \n\tdetails TEXT, \n\tPRIMARY KEY (id)\n)\n\n",
+      "indexes": [
+        "CREATE INDEX ix_audit_log_call_id ON audit_log (call_id)"
+      ]
+    },
+    "call_records": {
+      "table": "\nCREATE TABLE call_records (\n\tid INTEGER NOT NULL, \n\tcall_id VARCHAR(36) NOT NULL, \n\tstatus VARCHAR(20) NOT NULL, \n\taudio_filename VARCHAR(255) NOT NULL, \n\ttranscript_text TEXT, \n\tsummary_json TEXT, \n\tqa_scores_json TEXT, \n\treport_json TEXT, \n\tprocessed_at DATETIME NOT NULL, \n\ttrace_id VARCHAR(255), \n\tPRIMARY KEY (id)\n)\n\n",
+      "indexes": [
+        "CREATE UNIQUE INDEX ix_call_records_call_id ON call_records (call_id)"
+      ]
+    },
+    "transcription_cache": {
+      "table": "\nCREATE TABLE transcription_cache (\n\tid INTEGER NOT NULL, \n\taudio_hash VARCHAR(64) NOT NULL, \n\ttranscription_json TEXT NOT NULL, \n\tcreated_at DATETIME NOT NULL, \n\tPRIMARY KEY (id)\n)\n\n",
+      "indexes": [
+        "CREATE UNIQUE INDEX ix_transcription_cache_audio_hash ON transcription_cache (audio_hash)"
+      ]
+    }
+  }
+}

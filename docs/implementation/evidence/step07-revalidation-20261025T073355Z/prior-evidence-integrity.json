@@ -1,0 +1,20 @@
+{
+  "contract-schemas-after.json": true,
+  "contract-schemas-before.json": true,
+  "delivery-checks.json": true,
+  "delivery-inventory.json": true,
+  "final-git.json": true,
+  "gradio-empty.png": true,
+  "gradio-history.png": true,
+  "gradio-observability.png": true,
+  "imports-current.json": true,
+  "imports-upstream.json": true,
+  "live-gradio.json": true,
+  "packaging-after.json": true,
+  "packaging-before.json": true,
+  "previous-blocked-report.md": true,
+  "runtime-log-summary.json": true,
+  "source-before.json": true,
+  "summary.json": true,
+  "validation.json": true
+}

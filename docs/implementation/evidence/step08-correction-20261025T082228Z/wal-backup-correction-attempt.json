@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "tests/unit/test_database_recovery_edges.py",
+    "tests/integration/test_postgresql_persistence.py",
+    "-q",
+    "--tb=short",
+    "-k",
+    "rejects_wal_state or closes_source_connection or role_memberships or closes_owned_connections"
+  ],
+  "exit_code": 1,
+  "seconds": 3.267,
+  "stdout": "..F..                                                                    [100%]\n================================== FAILURES ===================================\n_________ test_import_rejects_wal_state_not_covered_by_main_file_hash _________\ntests\\integration\\test_postgresql_persistence.py:407: in test_import_rejects_wal_state_not_covered_by_main_file_hash\n    result = import_backup(admin, snapshot, tenant_id=tenant, owner_user_id=owner)\nservices\\api\\db\\legacy_import.py:81: in import_backup\n    verified_snapshot(snapshot) as (source, digest),\n..\\..\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\contextlib.py:137: in __enter__\n    return next(self.gen)\nservices\\api\\db\\legacy_import.py:65: in verified_snapshot\n    raise ValueError(\"Import requires a standalone SQLite backup; run backup first\")\nE   ValueError: Import requires a standalone SQLite backup; run backup first\n=========================== short test summary info ===========================\nFAILED tests/integration/test_postgresql_persistence.py::test_import_rejects_wal_state_not_covered_by_main_file_hash\n1 failed, 4 passed, 13 deselected in 1.34s\n",
+  "stderr": "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+}

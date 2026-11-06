@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "mypy",
+    "src/",
+    "services/",
+    "app.py"
+  ],
+  "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis",
+  "exit_code": 0,
+  "seconds": 2.942,
+  "stdout": "Success: no issues found in 46 source files\n",
+  "stderr": ""
+}

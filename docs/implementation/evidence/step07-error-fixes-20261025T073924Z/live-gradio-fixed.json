@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "elapsed_seconds": 4.2369,
+  "callback_outputs": 6,
+  "sample_sha256": "992feada7a67a56ee2881e0e2dc6ae8980d3190238be26c58d5b29b323b47989",
+  "call_id": "8dfb5d5e-8080-44cf-803e-22d0a44205b1",
+  "status": "completed",
+  "segments": 31,
+  "qa_score": 2.7,
+  "weighted_score_verified": true,
+  "json_bytes": 13082,
+  "pdf_bytes": 2981,
+  "transcript_published": false,
+  "training": false
+}

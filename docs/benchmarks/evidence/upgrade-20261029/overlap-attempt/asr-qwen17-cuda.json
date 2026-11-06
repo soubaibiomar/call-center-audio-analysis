@@ -1,0 +1,164 @@
+{
+  "backend": "qwen",
+  "model_directory": "qwen17",
+  "device": "cuda",
+  "precision": "float16",
+  "dataset": "apptek-com/apptek_callcenter_dialogues",
+  "dataset_revision": "b98967d9946f7f59f58d08624a2a00fe98fe0219",
+  "license": "CC-BY-SA-4.0",
+  "roleplay": true,
+  "manifest_sha256": "0702951b27d27a5137205f6d9f28a7eaa3227e65ab137d944c897b7b9c98fb71",
+  "normalization": "NFC/casefold/whitespace; punctuation retained",
+  "protocol": "mono16kHz; fixed30s; English hint where supported; greedy/beam1; no VAD; warmup1s silence; load/warmup excluded",
+  "load_seconds": 120.74066176300039,
+  "backend_version": "0.0.6",
+  "repetitions": 2,
+  "observations": [
+    {
+      "sample": "en-AU",
+      "repeat": 0,
+      "seconds": 120.19048451600065,
+      "audio_seconds": 311.0,
+      "word_errors": 113,
+      "reference_words": 686,
+      "char_errors": 279,
+      "reference_chars": 3485,
+      "hypothesis_sha256": "3c7313f0a6f27ecb884373d958bdc94ee4eba8eb7e50f74bad6aec3028e9d180"
+    },
+    {
+      "sample": "en-IN",
+      "repeat": 0,
+      "seconds": 182.5080405280005,
+      "audio_seconds": 398.9546875,
+      "word_errors": 278,
+      "reference_words": 987,
+      "char_errors": 675,
+      "reference_chars": 5446,
+      "hypothesis_sha256": "e4dcf4c6b427f464cdd8404cea300ec0a69b41b84daa5d62791795f5c67edc27"
+    },
+    {
+      "sample": "en-US_General",
+      "repeat": 0,
+      "seconds": 78.94900028099983,
+      "audio_seconds": 282.248125,
+      "word_errors": 128,
+      "reference_words": 544,
+      "char_errors": 267,
+      "reference_chars": 2997,
+      "hypothesis_sha256": "f96154c4d7d6cb9f5f758d2e3e2a1e05e6002c782e51de5f1f1ce13cbf2af1b3"
+    },
+    {
+      "sample": "en-AU",
+      "repeat": 1,
+      "seconds": 29.66063630899953,
+      "audio_seconds": 311.0,
+      "word_errors": 113,
+      "reference_words": 686,
+      "char_errors": 279,
+      "reference_chars": 3485,
+      "hypothesis_sha256": "3c7313f0a6f27ecb884373d958bdc94ee4eba8eb7e50f74bad6aec3028e9d180"
+    },
+    {
+      "sample": "en-IN",
+      "repeat": 1,
+      "seconds": 41.57164401099908,
+      "audio_seconds": 398.9546875,
+      "word_errors": 278,
+      "reference_words": 987,
+      "char_errors": 675,
+      "reference_chars": 5446,
+      "hypothesis_sha256": "e4dcf4c6b427f464cdd8404cea300ec0a69b41b84daa5d62791795f5c67edc27"
+    },
+    {
+      "sample": "en-US_General",
+      "repeat": 1,
+      "seconds": 27.078481704000296,
+      "audio_seconds": 282.248125,
+      "word_errors": 128,
+      "reference_words": 544,
+      "char_errors": 267,
+      "reference_chars": 2997,
+      "hypothesis_sha256": "f96154c4d7d6cb9f5f758d2e3e2a1e05e6002c782e51de5f1f1ce13cbf2af1b3"
+    }
+  ],
+  "versions": {
+    "numpy": "1.26.4",
+    "soundfile": "0.14.0",
+    "scipy": "1.17.1",
+    "rapidfuzz": "3.14.6"
+  },
+  "model_receipt": {
+    "repo": "Qwen/Qwen3-ASR-1.7B",
+    "revision": "7278e1e70fe206f11671096ffdd38061171dd6e5",
+    "files": [
+      {
+        "file": "README.md",
+        "size": 57456,
+        "sha256": "5058416891bc47a2051557765997e8c42f8eb78a0e33c3e775bd17d4b0ba4d50",
+        "lfs_sha256": null
+      },
+      {
+        "file": "chat_template.json",
+        "size": 1161,
+        "sha256": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+        "lfs_sha256": null
+      },
+      {
+        "file": "config.json",
+        "size": 6194,
+        "sha256": "2e74a751548b8ad7d7526d29365ad8144c345d8b412b1152d25dc6698452712f",
+        "lfs_sha256": null
+      },
+      {
+        "file": "generation_config.json",
+        "size": 142,
+        "sha256": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+        "lfs_sha256": null
+      },
+      {
+        "file": "merges.txt",
+        "size": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "lfs_sha256": null
+      },
+      {
+        "file": "model-00001-of-00002.safetensors",
+        "size": 4220320824,
+        "sha256": "a4cd1f1a04d90b757dc7f7dd26254e69a013b19e80efe590a83c6a3bde8608d6",
+        "lfs_sha256": "a4cd1f1a04d90b757dc7f7dd26254e69a013b19e80efe590a83c6a3bde8608d6"
+      },
+      {
+        "file": "model-00002-of-00002.safetensors",
+        "size": 478200688,
+        "sha256": "6e0b9d9e09e2e0238e7ef3cc8a484ab387e91b90f1900bedf88bc92d7929ccfc",
+        "lfs_sha256": "6e0b9d9e09e2e0238e7ef3cc8a484ab387e91b90f1900bedf88bc92d7929ccfc"
+      },
+      {
+        "file": "model.safetensors.index.json",
+        "size": 64821,
+        "sha256": "f994739fe38e5210b9e3e8ce6c6307315e2ceac3cb630e7b7414d69dce520f60",
+        "lfs_sha256": null
+      },
+      {
+        "file": "preprocessor_config.json",
+        "size": 330,
+        "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "lfs_sha256": null
+      },
+      {
+        "file": "tokenizer_config.json",
+        "size": 12487,
+        "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "lfs_sha256": null
+      },
+      {
+        "file": "vocab.json",
+        "size": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "lfs_sha256": null
+      }
+    ]
+  },
+  "peak_torch_allocated_bytes": 4703688192,
+  "sampled_whole_gpu_peak_mib": 7865
+}

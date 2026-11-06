@@ -1,0 +1,14 @@
+{
+  "command": [
+    "uv",
+    "pip",
+    "check",
+    "--python",
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe"
+  ],
+  "cwd": "C:\\Users\\omar\\Documents\\Call center audio Analysis",
+  "exit_code": 0,
+  "seconds": 1.646,
+  "stdout": "",
+  "stderr": "Checked 135 packages in 16ms\nAll installed packages are compatible\n"
+}

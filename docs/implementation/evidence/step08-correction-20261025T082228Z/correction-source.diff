@@ -1,0 +1,101 @@
+--- before/admin.py
++++ current/admin.py
+@@ -34,6 +34,13 @@
+             )
+         elif any(existing):
+             raise ValueError("Existing runtime role has unsafe privileges")
++        membership = connection.execute(
++            "SELECT 1 FROM pg_auth_members m JOIN pg_roles r ON r.oid=m.member "
++            "WHERE r.rolname=%s LIMIT 1",
++            (APP_ROLE,),
++        ).fetchone()
++        if membership is not None:
++            raise ValueError("Runtime role memberships require explicit administrator review")
+         # Do not rotate an existing role's password implicitly.
+         connection.execute("REVOKE CREATE ON SCHEMA public FROM PUBLIC")
+         database = engine.url.database
+--- before/legacy_import.py
++++ current/legacy_import.py
+@@ -4,6 +4,8 @@
+ import hashlib
+ import json
+ import sqlite3
++from collections.abc import Iterator
++from contextlib import closing, contextmanager
+ from datetime import UTC, datetime, timedelta
+ from pathlib import Path
+ from typing import Any
+@@ -20,6 +22,11 @@
+ LEGACY_TABLES = ("call_records", "audit_log", "transcription_cache")
+ 
+ 
++def file_checksum(path: Path) -> str:
++    with path.open("rb") as source:
++        return hashlib.file_digest(source, "sha256").hexdigest()
++
++
+ def readonly_sqlite(path: Path) -> sqlite3.Connection:
+     connection = sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True)
+     connection.row_factory = sqlite3.Row
+@@ -32,15 +39,35 @@
+     destination.parent.mkdir(parents=True, exist_ok=True)
+     with destination.open("xb"):
+         pass  # Exclusive creation prevents accidental backup replacement.
+-    with readonly_sqlite(source) as original, sqlite3.connect(destination) as snapshot:
++    with (
++        closing(readonly_sqlite(source)) as original,
++        closing(sqlite3.connect(destination)) as snapshot,
++    ):
+         original.backup(snapshot)
++        snapshot.commit()
++        # SQLite backup can preserve a WAL-mode header; normalize only the new artifact.
++        if snapshot.execute("PRAGMA journal_mode=DELETE").fetchone()[0] != "delete":
++            raise ValueError("Could not produce a standalone SQLite backup")
+         if snapshot.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
+             raise ValueError("SQLite backup integrity check failed")
+         counts = {
+             name: snapshot.execute(f'SELECT count(*) FROM "{name}"').fetchone()[0]
+             for name in LEGACY_TABLES
+         }
+-    return {"sha256": hashlib.sha256(destination.read_bytes()).hexdigest(), "rows": counts}
++    return {"sha256": file_checksum(destination), "rows": counts}
++
++
++@contextmanager
++def verified_snapshot(path: Path) -> Iterator[tuple[sqlite3.Connection, str]]:
++    """Pin one standalone snapshot; a main-file hash cannot identify WAL state."""
++    with closing(readonly_sqlite(path)) as source:
++        source.execute("BEGIN")
++        # Read a page to establish the SQLite read transaction before hashing.
++        source.execute("SELECT name FROM sqlite_master").fetchall()
++        journal = source.execute("PRAGMA journal_mode").fetchone()[0]
++        if journal == "wal" or Path(str(path) + "-wal").exists():
++            raise ValueError("Import requires a standalone SQLite backup; run backup first")
++        yield source, file_checksum(path)
+ 
+ 
+ def import_backup(
+@@ -53,9 +80,12 @@
+     """One transaction; exact replay is a no-op; conflicting targets are refused."""
+     if engine.dialect.name != "postgresql":
+         raise ValueError("Legacy import requires PostgreSQL")
+-    digest = hashlib.sha256(snapshot.read_bytes()).hexdigest()
+     counts: dict[str, int] = {}
+-    with readonly_sqlite(snapshot) as source, Session(engine) as session, session.begin():
++    with (
++        verified_snapshot(snapshot) as (source, digest),
++        Session(engine) as session,
++        session.begin(),
++    ):
+         session.execute(
+             text("SELECT set_config('app.tenant_id', :tenant, true)"), {"tenant": tenant_id}
+         )
+@@ -123,6 +153,8 @@
+                         )
+             counts[name] = count
+         session.flush()
++        if file_checksum(snapshot) != digest:
++            raise ValueError("SQLite snapshot changed during import; target transaction aborted")
+         for name in LEGACY_TABLES:
+             # Table names are the fixed allowlist above, never user input.
+             session.execute(

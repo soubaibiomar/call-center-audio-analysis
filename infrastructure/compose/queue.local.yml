@@ -1,0 +1,122 @@
+# Combine with compose.local.yml; paths resolve against the repository root.
+services:
+  redis:
+    image: public.ecr.aws/docker/library/redis@sha256:57e4255cc971b1c8d6f8a6ca283ac01bc3ecdd914273ef6bfaede87aaecd6541
+    user: "999:1000"
+    command: [redis-server, /run/secrets/redis_config]
+    ports: ["127.0.0.1:16379:6379"]
+    volumes: [queue_redis_data:/data]
+    secrets: [redis_config]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 192m
+    healthcheck:
+      test: [CMD-SHELL, "REDISCLI_AUTH=$$(sed -n 's/[[:space:]]*$//;s/^requirepass //p' /run/secrets/redis_config) redis-cli ping | grep -q PONG"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+
+  storage-permissions:
+    image: quay.io/minio/minio@sha256:640c22768ed5dbc92eacc14502a1b06a1c708fa60431345c78dfc22917062e93
+    user: "0:0"
+    entrypoint: [/bin/sh, -c, "chown 1000:1000 /data"]
+    volumes: [queue_audio_data:/data]
+    cap_drop: [ALL]
+    cap_add: [CHOWN]
+    security_opt: [no-new-privileges:true]
+
+  object-store:
+    image: quay.io/minio/minio@sha256:640c22768ed5dbc92eacc14502a1b06a1c708fa60431345c78dfc22917062e93
+    user: "1000:1000"
+    command: [server, /data, --address, ":9000"]
+    environment:
+      MINIO_ROOT_USER_FILE: /run/secrets/s3_root_user
+      MINIO_ROOT_PASSWORD_FILE: /run/secrets/s3_root_password
+      MINIO_BROWSER: "off"
+    ports: ["127.0.0.1:19100:9000"]
+    volumes: [queue_audio_data:/data]
+    tmpfs: ["/tmp:mode=1777,size=64m"]
+    secrets: [s3_root_user, s3_root_password, s3_access_key, s3_secret_key]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+    depends_on:
+      storage-permissions:
+        condition: service_completed_successfully
+    healthcheck:
+      test: [CMD, curl, -f, http://127.0.0.1:9000/minio/health/live]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+
+  worker-cpu:
+    image: project28-app:local
+    command: [python, -m, services.workers.runtime, cpu]
+    env_file: [.env]
+    environment:
+      DATABASE_URL_FILE: /run/secrets/database_url
+      QUEUE_CONFIG_FILE: /run/secrets/queue_config
+      HF_HUB_CACHE: /home/appuser/.cache/huggingface/hub
+      HF_HUB_OFFLINE: "1"
+      LANGCHAIN_TRACING_V2: "false"
+      CUDA_VISIBLE_DEVICES: ""
+    secrets: [database_url, queue_config]
+    volumes:
+      - type: bind
+        source: ${PROJECT28_HF_CACHE_DIR:?Set cache path in .env.docker}
+        target: /home/appuser/.cache/huggingface/hub
+        read_only: true
+    tmpfs: ["/tmp:mode=1777,size=512m"]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 3g
+    pids_limit: 256
+    depends_on:
+      postgres: {condition: service_healthy}
+      object-store: {condition: service_healthy}
+      redis: {condition: service_started}
+    restart: unless-stopped
+
+  worker-gpu:
+    extends: worker-cpu
+    image: project28-app:gpu
+    build:
+      context: .
+      dockerfile: Dockerfile.gpu
+    command: [python, -m, services.workers.runtime, gpu]
+    profiles: [gpu]
+    environment:
+      CUDA_VISIBLE_DEVICES: "0"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  api:
+    extends: worker-cpu
+    command: [python, -m, uvicorn, services.api.app:create_app, --factory, --host, 0.0.0.0, --port, "8000"]
+    ports: ["127.0.0.1:8000:8000"]
+    mem_limit: 1g
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3).close()"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+secrets:
+  redis_config: {file: ./.local/redis.conf}
+  s3_root_user: {file: ./.local/s3_root_user}
+  s3_root_password: {file: ./.local/s3_root_password}
+  s3_access_key: {file: ./.local/s3_access_key}
+  s3_secret_key: {file: ./.local/s3_secret_key}
+  queue_config: {file: ./.local/queue_config.json}
+
+volumes:
+  queue_redis_data:
+  queue_audio_data:

@@ -1,0 +1,90 @@
+{
+  "self_excluded": true,
+  "files": [
+    {
+      "path": "scripts/check_project_setup.py",
+      "bytes": 2908,
+      "sha256": "838cd1b3ecaf215895d280bbef6c5c873d125820141e35ecd4160b97eb99342d"
+    },
+    {
+      "path": "scripts/check_hardcoded_keys.py",
+      "bytes": 1109,
+      "sha256": "8e59e9096ec0b56a2f9f5b625686d0f87cb5d3bc3cb097eed272ebc79caba022"
+    },
+    {
+      "path": "tests/unit/test_project_setup.py",
+      "bytes": 2379,
+      "sha256": "220ac8b39996d849c06bdce920d0394fdec472d0b8525dd9e5a7da6914f2023a"
+    },
+    {
+      "path": "tests/integration/test_pipeline_end_to_end.py",
+      "bytes": 4222,
+      "sha256": "bd25ed13e5bf168683c2cfb15f96a46a48de3974dec260e3d261f907ae458485"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 557,
+      "sha256": "1491e45a7f8db15b8c7f20b908c9c13574a9ce099903b91c4c6cab6390735f12"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "bytes": 524,
+      "sha256": "9898bf48a41412ed15a99e10054320e0195185648df7cff127e7cecceb82e0ab"
+    },
+    {
+      "path": "docs/environment/setup.md",
+      "bytes": 4267,
+      "sha256": "f2e110005b88abbe648c256222119fe47b0cc3ffc0ca60f37eb066d0e50020ee"
+    },
+    {
+      "path": "docs/implementation/STEP_04_install_dependencies_and_configure_secrets_safely_REPORT.md",
+      "bytes": 19304,
+      "sha256": "30e1d0f9a645eff45a7831229998e39987b3de2e372531c941182f9e7baf909d"
+    },
+    {
+      "path": "docs/implementation/PROGRESS.md",
+      "bytes": 7794,
+      "sha256": "3ff83170ec249760f563023bb6eb391b725e5b9bca90732145127f861a4d5449"
+    },
+    {
+      "path": "docs/environment/evidence/step04/git-comparison.json",
+      "bytes": 15210,
+      "sha256": "57b1474196da35ebfaf72f707cd90ba360f4dc598363a2fcce3d146038ef6f3b"
+    },
+    {
+      "path": "docs/environment/evidence/step04/installation.json",
+      "bytes": 617,
+      "sha256": "d7f28284dab0a6d60ee3b8c286759aee102ab729517a28d7d462088a46dc8d63"
+    },
+    {
+      "path": "docs/environment/evidence/step04/packages-after.json",
+      "bytes": 3345,
+      "sha256": "4f2ad0eeb53fc4a09dd0aa7db1814aabe22eea8c586ea08e8228c5c55727006d"
+    },
+    {
+      "path": "docs/environment/evidence/step04/packages-before.json",
+      "bytes": 3345,
+      "sha256": "4f2ad0eeb53fc4a09dd0aa7db1814aabe22eea8c586ea08e8228c5c55727006d"
+    },
+    {
+      "path": "docs/environment/evidence/step04/summary.json",
+      "bytes": 667,
+      "sha256": "b6e0e2f770cb4a6f256b40b8f7d7332345566daff961cb87c4bd8beead669c75"
+    },
+    {
+      "path": "docs/environment/evidence/step04/validation-before-correction.json",
+      "bytes": 10279,
+      "sha256": "23e142427fd55843f57e0de4325bdcc3da915a949472f2fb39da28bb186764b8"
+    },
+    {
+      "path": "docs/environment/evidence/step04/validation-before-final-fixture-cleanup.json",
+      "bytes": 9756,
+      "sha256": "c4e25544f379d7bb527b22045a5bd8289dd1fac866266c23ebc5631d1c34a662"
+    },
+    {
+      "path": "docs/environment/evidence/step04/validation.json",
+      "bytes": 9753,
+      "sha256": "c8b9dcfab66e1436ef8775d57c58e72e75527c523c664ca6ce72b495d0b75434"
+    }
+  ]
+}

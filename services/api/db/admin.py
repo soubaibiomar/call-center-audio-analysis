@@ -1,0 +1,126 @@
+"""Explicit migration-owner operations; never called by application startup."""
+
+import os
+from pathlib import Path
+
+import psycopg
+from psycopg import sql
+from sqlalchemy.engine import Engine
+from sqlalchemy.orm import Session
+
+from services.api.db.models import Base, Tenant, User
+from services.api.db.settings import LEGACY_TENANT_ID, LEGACY_USER_ID, database_url
+
+APP_ROLE = "project28_app"
+
+
+def provision_runtime(engine: Engine, password: str) -> None:
+    """Create a non-owner role and grant only the existing application's operations."""
+    if len(password) < 24:
+        raise ValueError("Runtime database password must have at least24 characters")
+    connection_url = engine.url.set(drivername="postgresql").render_as_string(hide_password=False)
+    with psycopg.connect(connection_url) as connection:
+        existing = connection.execute(
+            "SELECT rolsuper, rolcreatedb, rolcreaterole, rolbypassrls, rolinherit "
+            "FROM pg_roles WHERE rolname=%s",
+            (APP_ROLE,),
+        ).fetchone()
+        if existing is None:
+            connection.execute(
+                sql.SQL(
+                    "CREATE ROLE {} LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE "
+                    "NOINHERIT NOBYPASSRLS PASSWORD {}"
+                ).format(sql.Identifier(APP_ROLE), sql.Literal(password))
+            )
+        elif any(existing):
+            raise ValueError("Existing runtime role has unsafe privileges")
+        membership = connection.execute(
+            "SELECT 1 FROM pg_auth_members m JOIN pg_roles r ON r.oid=m.member "
+            "WHERE r.rolname=%s LIMIT 1",
+            (APP_ROLE,),
+        ).fetchone()
+        if membership is not None:
+            raise ValueError("Runtime role memberships require explicit administrator review")
+        # Do not rotate an existing role's password implicitly.
+        connection.execute("REVOKE CREATE ON SCHEMA public FROM PUBLIC")
+        database = engine.url.database
+        if database is None:
+            raise ValueError("Database name is required")
+        connection.execute(
+            sql.SQL("GRANT CONNECT ON DATABASE {} TO {}").format(
+                sql.Identifier(database), sql.Identifier(APP_ROLE)
+            )
+        )
+        connection.execute(
+            sql.SQL("GRANT USAGE ON SCHEMA public TO {}").format(sql.Identifier(APP_ROLE))
+        )
+        for table in Base.metadata.tables:
+            if table in {
+                "tenants",
+                "users",
+                "model_versions",
+                "training_runs",
+                "legacy_imports",
+                "external_identities",
+            }:
+                rights = "SELECT"
+            elif table in {"audit_log", "call_annotation_events", "emotion_partition_keys"}:
+                rights = "SELECT, INSERT"
+            else:
+                rights = "SELECT, INSERT, UPDATE, DELETE"
+            connection.execute(
+                sql.SQL("REVOKE ALL PRIVILEGES ON TABLE {} FROM {}").format(
+                    sql.Identifier(table), sql.Identifier(APP_ROLE)
+                )
+            )
+            connection.execute(
+                sql.SQL("GRANT " + rights + " ON TABLE {} TO {}").format(
+                    sql.Identifier(table), sql.Identifier(APP_ROLE)
+                )
+            )
+        connection.execute(
+            sql.SQL("GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO {}").format(
+                sql.Identifier(APP_ROLE)
+            )
+        )
+        connection.execute(
+            sql.SQL("GRANT SELECT ON alembic_version TO {}").format(sql.Identifier(APP_ROLE))
+        )
+    with Session(engine) as session, session.begin():
+        if session.get(Tenant, LEGACY_TENANT_ID) is None:
+            session.add(Tenant(id=LEGACY_TENANT_ID, name="Legacy Gradio", retention_days=90))
+            session.flush()
+        if session.get(User, LEGACY_USER_ID) is None:
+            session.add(
+                User(
+                    id=LEGACY_USER_ID,
+                    tenant_id=LEGACY_TENANT_ID,
+                    display_name="Legacy application",
+                    role="service",
+                    enabled=False,
+                )
+            )
+
+
+def main() -> None:
+    from sqlalchemy import create_engine
+
+    url = database_url()
+    path = os.environ.get("APP_DATABASE_PASSWORD_FILE")
+    if not url or not path:
+        raise ValueError("Private database URL and APP_DATABASE_PASSWORD_FILE are required")
+    engine = create_engine(url, hide_parameters=True)
+    try:
+        provision_runtime(engine, Path(path).read_text(encoding="utf-8").strip())
+    finally:
+        engine.dispose()
+    print("Runtime privileges and legacy ownership provisioned")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as error:
+        raise SystemExit(
+            f"Database provisioning failed ({type(error).__name__}); credentials omitted"
+        ) from None

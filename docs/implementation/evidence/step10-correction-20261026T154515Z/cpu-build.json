@@ -1,0 +1,20 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "infrastructure/compose/queue.local.yml",
+    "--profile",
+    "gpu",
+    "build",
+    "app"
+  ],
+  "exit_code": 0,
+  "seconds": 7.489920600000005,
+  "stdout": "#1 [internal] load local bake definitions\n#1 reading from stdin 638B done\n#1 DONE 0.0s\n\n#2 [internal] load build definition from Dockerfile\n#2 transferring dockerfile: 1.67kB 0.0s done\n#2 DONE 0.0s\n\n#3 [internal] load metadata for docker.io/library/project28-foundation:baseline\n#3 DONE 0.1s\n\n#4 [internal] load metadata for ghcr.io/astral-sh/uv:0.12.23\n#4 DONE 1.4s\n\n#5 [internal] load .dockerignore\n#5 transferring context: 249B done\n#5 DONE 0.0s\n\n#6 [stage-0  1/13] FROM docker.io/library/project28-foundation:baseline@sha256:fa8bb8526ac809f36277753c9b704243583738f068ddfd736fc8c49799da6211\n#6 resolve docker.io/library/project28-foundation:baseline@sha256:fa8bb8526ac809f36277753c9b704243583738f068ddfd736fc8c49799da6211 0.0s done\n#6 DONE 0.0s\n\n#7 FROM ghcr.io/astral-sh/uv:0.12.23@sha256:61d393e44e249f2e4b526b6c7ddcecce245946826e608e11c93ad4f5bba55b21\n#7 resolve ghcr.io/astral-sh/uv:0.12.23@sha256:61d393e44e249f2e4b526b6c7ddcecce245946826e608e11c93ad4f5bba55b21 0.0s done\n#7 DONE 0.0s\n\n#8 [internal] load build context\n#8 transferring context: 32.14MB 2.2s done\n#8 DONE 2.2s\n\n#9 [stage-0  3/13] RUN apt-get update  && apt-get install -y --no-install-recommends         ffmpeg         build-essential  && rm -rf /var/lib/apt/lists/*\n#9 CACHED\n\n#10 [stage-0  2/13] COPY --from=ghcr.io/astral-sh/uv:0.12.23 /uv /usr/local/bin/uv\n#10 CACHED\n\n#11 [stage-0  4/13] WORKDIR /app\n#11 CACHED\n\n#12 [stage-0  5/13] COPY requirements.txt ./\n#12 CACHED\n\n#13 [stage-0  6/13] RUN uv pip install --system --no-cache -r requirements.txt\n#13 CACHED\n\n#14 [stage-0  7/13] COPY app.py ./\n#14 CACHED\n\n#15 [stage-0  8/13] COPY src/ ./src/\n#15 DONE 0.1s\n\n#16 [stage-0  9/13] COPY services/ ./services/\n#16 DONE 0.0s\n\n#17 [stage-0 10/13] COPY alembic.ini ./\n#17 DONE 0.0s\n\n#18 [stage-0 11/13] COPY migrations/ ./migrations/\n#18 DONE 0.0s\n\n#19 [stage-0 12/13] COPY data/samples/ ./data/samples/\n#19 DONE 0.1s\n\n#20 [stage-0 13/13] RUN (id appuser >/dev/null 2>&1 || useradd --create-home --uid 1000 appuser)  && mkdir -p /app/data  && chown -R appuser:appuser /app\n#20 DONE 0.8s\n\n#21 exporting to image\n#21 exporting layers\n#21 exporting layers 0.9s done\n#21 exporting manifest sha256:9fe08717009d27d8ce789be67d330b913f3736c730b8ac9dbe48145767510ae0 done\n#21 exporting config sha256:e31af1436dc3d66dc870c34ddb25759afffa87d36266d5390e58b3c45900b1b5 done\n#21 exporting attestation manifest sha256:7257aff73d74c112a200a3f904a35331edd73bb683496b50b22a072d081dd854 done\n#21 exporting manifest list sha256:336ef9ee68b2a48041068658abb954db16ce04e3d409b70644e59abe9c8b14c8 done\n#21 naming to docker.io/library/project28-app:local done\n#21 unpacking to docker.io/library/project28-app:local\n#21 unpacking to docker.io/library/project28-app:local 0.4s done\n#21 DONE 1.4s\n\n#22 resolving provenance for metadata file\n#22 DONE 0.0s\n",
+  "stderr": " Image project28-app:local Building \n Image project28-app:local Built \n"
+}

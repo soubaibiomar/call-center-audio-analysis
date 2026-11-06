@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import hashlib
+import hmac
 import io
 import re
 import tempfile
@@ -7,6 +9,7 @@ import uuid
 import wave
 
 from src.graph.state import AudioInput, AudioProperties, IntakeResult, PIIScanResult
+from src.services.job_execution import current_execution
 from src.utils.audio import (
     MAX_DURATION_SECONDS,
     AudioValidationError,
@@ -14,6 +17,8 @@ from src.utils.audio import (
     extract_audio_properties,
     validate_audio_file,
 )
+from src.utils.audio_probe import verify_decode
+from src.utils.audio_workspace import current_audio_workspace
 
 # Simple regex patterns for PII in metadata fields
 PII_PATTERNS = [
@@ -76,7 +81,13 @@ def _make_failed_result(call_id: uuid.UUID, error: str) -> IntakeResult:
 
 
 def run_intake(audio_input: AudioInput) -> IntakeResult:
-    call_id = uuid.uuid4()
+    execution = current_execution()
+    call_id = execution.call_id if execution else uuid.uuid4()
+
+    if audio_input.expected_sha256 is not None and not hmac.compare_digest(
+        hashlib.sha256(audio_input.audio_data).hexdigest(), audio_input.expected_sha256.lower()
+    ):
+        return _make_failed_result(call_id, "Audio does not match the supplied source checksum")
 
     # Reject empty files immediately
     if len(audio_input.audio_data) == 0:
@@ -109,10 +120,12 @@ def run_intake(audio_input: AudioInput) -> IntakeResult:
     # Validate format and file size
     validation = validate_audio_file(audio_input.audio_data, audio_input.filename)
     if not validation.is_valid:
-        return _make_failed_result(call_id, validation.error)
+        return _make_failed_result(call_id, validation.error or "Audio validation failed")
 
     # Extract full audio properties
     fmt = detect_audio_format(audio_input.audio_data)
+    if fmt is None:
+        return _make_failed_result(call_id, "Unsupported audio format")
     try:
         props = extract_audio_properties(audio_input.audio_data, fmt)
     except AudioValidationError as exc:
@@ -131,9 +144,16 @@ def run_intake(audio_input: AudioInput) -> IntakeResult:
             ),
         )
 
+    try:
+        verify_decode(audio_input.audio_data)
+    except AudioValidationError as exc:
+        return _make_failed_result(call_id, str(exc))
+
     # Save audio to a temp file for downstream agents
     suffix = f".{fmt}" if fmt else ".bin"
-    tmp = tempfile.NamedTemporaryFile(delete=False, suffix=suffix, prefix=f"call_{call_id}_")
+    tmp = tempfile.NamedTemporaryFile(
+        delete=False, suffix=suffix, prefix=f"call_{call_id}_", dir=current_audio_workspace()
+    )
     tmp.write(audio_input.audio_data)
     tmp.close()
 

@@ -1,0 +1,72 @@
+{
+  "repo": "Anass-Srk/fine-tuned-whisper-small-darija",
+  "revision": "d3c4fd5048c5f182dea49e4af8670037a699cfe6",
+  "files": [
+    {
+      "file": "README.md",
+      "size": 1872,
+      "sha256": "610375a01a2ccdf287ce2d8fe210d8464c93e1fdbed7901a3b5c2accb2d408fc",
+      "lfs_sha256": null
+    },
+    {
+      "file": "added_tokens.json",
+      "size": 34604,
+      "sha256": "9715fd2243b6f06a5858b5e32950d2853f73dd5bc201aafcf76f5082a2d8acd1",
+      "lfs_sha256": null
+    },
+    {
+      "file": "config.json",
+      "size": 1376,
+      "sha256": "9cd2c4343c76916c674865965f1edf49fbeab33eddbbf415ed409c38bd1565b5",
+      "lfs_sha256": null
+    },
+    {
+      "file": "generation_config.json",
+      "size": 2956,
+      "sha256": "146a24f26c60588a13bb6279b1c08bd314a305cbcce0f85d0fe3371418343b9c",
+      "lfs_sha256": null
+    },
+    {
+      "file": "merges.txt",
+      "size": 493869,
+      "sha256": "2df2990a395e35e8dfbc7511e08c12d56018d8d04691e0133e5d63b21e154dc6",
+      "lfs_sha256": null
+    },
+    {
+      "file": "model.safetensors",
+      "size": 966995080,
+      "sha256": "1e015c7f6dba2ceeb12da5f5ab23d480caba557f919d956d382c37a78144d4ba",
+      "lfs_sha256": "1e015c7f6dba2ceeb12da5f5ab23d480caba557f919d956d382c37a78144d4ba"
+    },
+    {
+      "file": "normalizer.json",
+      "size": 52666,
+      "sha256": "bf1c507dc8724ca9cf9903640dacfb69dae2f00edee4f21ceba106a7392f26dd",
+      "lfs_sha256": null
+    },
+    {
+      "file": "preprocessor_config.json",
+      "size": 339,
+      "sha256": "a6a76d28c93edb273669eb9e0b0636a2bddbb1272c3261e47b7ca6dfdbac1b8d",
+      "lfs_sha256": null
+    },
+    {
+      "file": "special_tokens_map.json",
+      "size": 2194,
+      "sha256": "e67ae3a0aaa99abcd9f187138e12db1f65c16a14761c50ef10eef2c174a7a691",
+      "lfs_sha256": null
+    },
+    {
+      "file": "tokenizer_config.json",
+      "size": 282683,
+      "sha256": "2a4c4281cf9f51ac6ccc406fdc711a087afe6530f671fa7b80953edc498275ce",
+      "lfs_sha256": null
+    },
+    {
+      "file": "vocab.json",
+      "size": 1036584,
+      "sha256": "50d6a919f0a0601d56a04eb583c780d18553aa388254ba3158eb6a00f13e2c1a",
+      "lfs_sha256": null
+    }
+  ]
+}

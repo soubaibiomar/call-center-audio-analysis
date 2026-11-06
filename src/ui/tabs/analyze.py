@@ -3,16 +3,20 @@
 from __future__ import annotations
 
 import logging
+from typing import Any
 
 import gradio as gr
+from sqlalchemy.engine import Engine
 
-from src.services.pipeline import process_call
+from src.services.analysis import AnalysisService
+from src.services.contracts import AnalysisRequest, AuditPort, WorkflowPort
 
 logger = logging.getLogger(__name__)
 
 
-def build_analyze_tab(workflow, engine, audit) -> None:
+def build_analyze_tab(workflow: WorkflowPort, engine: Engine, audit: AuditPort) -> None:
     """Build the Analyze Call tab inside an existing gr.Tab context."""
+    service = AnalysisService(workflow=workflow, engine=engine, audit=audit)
     with gr.Row():
         with gr.Column(scale=2):
             audio_input = gr.Audio(
@@ -60,7 +64,7 @@ def build_analyze_tab(workflow, engine, audit) -> None:
         json_file = gr.File(label="Download Full Report (JSON)")
         pdf_file = gr.File(label="Download Full Report (PDF)")
 
-    def _show_processing():
+    def _show_processing() -> dict[str, Any]:
         return gr.update(
             value=(
                 "**Processing your call...** This will take approximately "
@@ -72,9 +76,11 @@ def build_analyze_tab(workflow, engine, audit) -> None:
             visible=True,
         )
 
-    def _run_pipeline(audio, cid, dept):
+    def _run_pipeline(
+        audio: str | None, cid: str | None, dept: str | None
+    ) -> tuple[dict[str, Any], str, str, str, str | None, str | None]:
         logger.info(f"Analyze tab: running pipeline (caller={cid or '-'}, dept={dept or '-'})")
-        result = process_call(audio, cid, dept, workflow, engine, audit)
+        result = service.analyze(AnalysisRequest(audio, cid, dept))
         if not result.success:
             error_text = result.error or "Unknown error"
             logger.warning(f"Analyze tab: pipeline returned failure — {error_text}")

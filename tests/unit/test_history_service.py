@@ -30,23 +30,31 @@ def _insert_record(
     report_json: str | None = None,
 ) -> str:
     cid = call_id or str(uuid.uuid4())
-    summary_dict = summary_dict if summary_dict is not None else {
-        "call_purpose": "Billing question",
-        "key_discussion_points": ["Charge dispute"],
-        "action_items": [],
-        "resolution_status": "resolved",
-        "sentiment_trajectory": "Frustrated -> Satisfied",
-        "entities": [],
-    }
-    qa_dict = qa_dict if qa_dict is not None else {
-        "overall_score": 4.25,
-        "professionalism": {"score": 4, "justification": "ok"},
-        "empathy": {"score": 4, "justification": "ok"},
-        "problem_resolution": {"score": 5, "justification": "ok"},
-        "compliance": {"score": 4, "justification": "ok"},
-        "communication_clarity": {"score": 4, "justification": "ok"},
-        "compliance_flags": [],
-    }
+    summary_dict = (
+        summary_dict
+        if summary_dict is not None
+        else {
+            "call_purpose": "Billing question",
+            "key_discussion_points": ["Charge dispute"],
+            "action_items": [],
+            "resolution_status": "resolved",
+            "sentiment_trajectory": "Frustrated -> Satisfied",
+            "entities": [],
+        }
+    )
+    qa_dict = (
+        qa_dict
+        if qa_dict is not None
+        else {
+            "overall_score": 4.25,
+            "professionalism": {"score": 4, "justification": "ok"},
+            "empathy": {"score": 4, "justification": "ok"},
+            "problem_resolution": {"score": 5, "justification": "ok"},
+            "compliance": {"score": 4, "justification": "ok"},
+            "communication_clarity": {"score": 4, "justification": "ok"},
+            "compliance_flags": [],
+        }
+    )
     session = get_session(engine)
     try:
         rec = CallRecord(

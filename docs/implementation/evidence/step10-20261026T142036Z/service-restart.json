@@ -1,0 +1,21 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "infrastructure/compose/queue.local.yml",
+    "restart",
+    "redis",
+    "object-store"
+  ],
+  "exit_code": 0,
+  "redis_authenticated_probe_survived": true,
+  "s3_sha256_survived": "2976da01e205a110c9fa41d47659e238a5c6d3c3f3137582f2949853faa201dd",
+  "object_bytes": 3244,
+  "stdout": "",
+  "stderr": " Container project28-redis-1 Restarting \n Container project28-object-store-1 Restarting \n Container project28-object-store-1 Started \n Container project28-redis-1 Started \n"
+}

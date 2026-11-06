@@ -1,0 +1,26 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "infrastructure/compose/queue.local.yml",
+    "--profile",
+    "gpu",
+    "up",
+    "-d",
+    "--no-deps",
+    "redis",
+    "app",
+    "api",
+    "worker-cpu",
+    "worker-gpu"
+  ],
+  "exit_code": 0,
+  "seconds": 8.652847000000293,
+  "stdout": "",
+  "stderr": "time=\"2026-10-26T16:06:27Z\" level=warning msg=\"Found orphan containers (project28-step10-review-233a547b) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.\"\n Container project28-redis-1 Recreate \n Container project28-app-1 Recreate \n Container project28-redis-1 Recreated \n Container project28-worker-cpu-1 Recreate \n Container project28-api-1 Recreate \n Container project28-worker-gpu-1 Recreate \n Container project28-api-1 Recreated \n Container project28-app-1 Recreated \n Container project28-worker-cpu-1 Recreated \n Container project28-worker-gpu-1 Recreated \n Container project28-redis-1 Starting \n Container project28-app-1 Starting \n Container project28-redis-1 Started \n Container project28-worker-cpu-1 Starting \n Container project28-api-1 Starting \n Container project28-worker-gpu-1 Starting \n Container project28-worker-cpu-1 Started \n Container project28-api-1 Started \n Container project28-app-1 Started \n Container project28-worker-gpu-1 Started \n"
+}

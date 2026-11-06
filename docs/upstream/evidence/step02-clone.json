@@ -1,0 +1,14 @@
+{
+  "command": [
+    "git",
+    "clone",
+    "--no-local",
+    "--",
+    "https://github.com/ANI-IN/Call-Center-Intelligence-System.git",
+    "<WORKSPACE_PARENT>/Project28-Upstream-Baseline-Step02"
+  ],
+  "exit_code": 0,
+  "seconds": 20.215436300000874,
+  "stdout": "",
+  "stderr": "Cloning into '<USERPROFILE>\\Projects\\Project28-Upstream-Baseline-Step02'...\n"
+}

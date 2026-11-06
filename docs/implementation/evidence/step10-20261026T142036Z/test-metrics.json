@@ -1,0 +1,18 @@
+{
+  "total": 256,
+  "worker_cases": 12,
+  "worker_names": [
+    "test_duplicate_and_conflicting_submission_and_admission",
+    "test_retry_then_finish_and_duplicate_delivery_produces_one_report",
+    "test_exhausted_failure_is_terminal_and_persists_sanitized_metrics",
+    "test_cancel_queued_and_inflight_rolls_back_report",
+    "test_integrity_tampering_is_permanent_failure_and_bucket_is_private",
+    "test_cpu_gpu_separation",
+    "test_http_upload_returns_owned_job_id_and_cancel_is_scoped",
+    "test_actual_redis_dispatch_and_redelivery",
+    "test_killed_worker_restarts_and_commits_one_logical_result",
+    "test_failure_after_commit_does_not_repeat_analysis",
+    "test_overlapping_duplicate_deliveries_do_not_execute_twice",
+    "test_broker_ack_gap_redelivers_without_duplicate_result"
+  ]
+}

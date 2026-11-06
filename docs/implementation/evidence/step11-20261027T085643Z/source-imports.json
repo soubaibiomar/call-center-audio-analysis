@@ -1,0 +1,548 @@
+{
+  "src/utils/llm_factory.py": [
+    {
+      "line": 10,
+      "statement": "from __future__ import annotations"
+    },
+    {
+      "line": 12,
+      "statement": "import os"
+    },
+    {
+      "line": 13,
+      "statement": "import re"
+    },
+    {
+      "line": 14,
+      "statement": "from urllib.parse import urlsplit"
+    },
+    {
+      "line": 16,
+      "statement": "from langchain_core.language_models.chat_models import BaseChatModel"
+    },
+    {
+      "line": 91,
+      "statement": "from langchain_openai import ChatOpenAI"
+    },
+    {
+      "line": 46,
+      "statement": "import httpx"
+    },
+    {
+      "line": 47,
+      "statement": "from langchain_openai import ChatOpenAI"
+    },
+    {
+      "line": 48,
+      "statement": "from pydantic import SecretStr"
+    },
+    {
+      "line": 81,
+      "statement": "from langchain_google_genai import ChatGoogleGenerativeAI"
+    },
+    {
+      "line": 86,
+      "statement": "from langchain_groq import ChatGroq"
+    }
+  ],
+  "src/utils/config.py": [
+    {
+      "line": 1,
+      "statement": "from __future__ import annotations"
+    },
+    {
+      "line": 3,
+      "statement": "import os"
+    },
+    {
+      "line": 4,
+      "statement": "import secrets"
+    },
+    {
+      "line": 5,
+      "statement": "from dataclasses import dataclass, field"
+    },
+    {
+      "line": 6,
+      "statement": "from pathlib import Path"
+    },
+    {
+      "line": 8,
+      "statement": "from dotenv import load_dotenv"
+    },
+    {
+      "line": 10,
+      "statement": "from services.api.db.settings import database_url"
+    }
+  ],
+  "src/utils/structured_inference.py": [
+    {
+      "line": 3,
+      "statement": "import hashlib"
+    },
+    {
+      "line": 4,
+      "statement": "import time"
+    },
+    {
+      "line": 5,
+      "statement": "from collections.abc import Callable"
+    },
+    {
+      "line": 6,
+      "statement": "from typing import TypeVar"
+    },
+    {
+      "line": 8,
+      "statement": "from langchain_core.language_models.chat_models import BaseChatModel"
+    },
+    {
+      "line": 9,
+      "statement": "from langchain_core.messages import BaseMessage"
+    },
+    {
+      "line": 10,
+      "statement": "from openai import APIConnectionError, APIStatusError, APITimeoutError"
+    },
+    {
+      "line": 11,
+      "statement": "from pydantic import BaseModel, ValidationError"
+    },
+    {
+      "line": 13,
+      "statement": "from src.services.model_runs import ModelRun, record_model_run"
+    },
+    {
+      "line": 14,
+      "statement": "from src.utils.llm_factory import DEFAULT_MODELS"
+    }
+  ],
+  "src/services/model_runs.py": [
+    {
+      "line": 3,
+      "statement": "import logging"
+    },
+    {
+      "line": 4,
+      "statement": "from collections.abc import Iterator"
+    },
+    {
+      "line": 5,
+      "statement": "from contextlib import contextmanager"
+    },
+    {
+      "line": 6,
+      "statement": "from contextvars import ContextVar"
+    },
+    {
+      "line": 7,
+      "statement": "from typing import Literal"
+    },
+    {
+      "line": 9,
+      "statement": "from pydantic import BaseModel, Field"
+    }
+  ],
+  "src/agents/summarization.py": [
+    {
+      "line": 1,
+      "statement": "from __future__ import annotations"
+    },
+    {
+      "line": 3,
+      "statement": "import logging"
+    },
+    {
+      "line": 5,
+      "statement": "from langchain_core.messages import HumanMessage, SystemMessage"
+    },
+    {
+      "line": 7,
+      "statement": "from src.graph.state import SummaryResult, TranscriptionResult"
+    },
+    {
+      "line": 8,
+      "statement": "from src.utils.formatters import secs_to_mmss"
+    },
+    {
+      "line": 9,
+      "statement": "from src.utils.llm_factory import get_llm"
+    },
+    {
+      "line": 10,
+      "statement": "from src.utils.structured_inference import StructuredInferenceError, invoke_validated"
+    }
+  ],
+  "src/agents/qa_scoring.py": [
+    {
+      "line": 1,
+      "statement": "from __future__ import annotations"
+    },
+    {
+      "line": 3,
+      "statement": "import logging"
+    },
+    {
+      "line": 5,
+      "statement": "from langchain_core.messages import HumanMessage, SystemMessage"
+    },
+    {
+      "line": 7,
+      "statement": "from src.graph.state import (\n    QAScoreResult,\n    SummaryResult,\n    TranscriptionResult,\n)"
+    },
+    {
+      "line": 12,
+      "statement": "from src.utils.formatters import secs_to_mmss"
+    },
+    {
+      "line": 13,
+      "statement": "from src.utils.llm_factory import get_llm"
+    },
+    {
+      "line": 14,
+      "statement": "from src.utils.structured_inference import StructuredInferenceError, invoke_validated"
+    }
+  ],
+  "src/graph/state.py": [
+    {
+      "line": 1,
+      "statement": "from __future__ import annotations"
+    },
+    {
+      "line": 3,
+      "statement": "import uuid"
+    },
+    {
+      "line": 4,
+      "statement": "from datetime import datetime"
+    },
+    {
+      "line": 5,
+      "statement": "from enum import StrEnum"
+    },
+    {
+      "line": 6,
+      "statement": "from typing import Literal"
+    },
+    {
+      "line": 8,
+      "statement": "from pydantic import BaseModel, Field"
+    },
+    {
+      "line": 10,
+      "statement": "from src.services.model_runs import ModelRun"
+    }
+  ],
+  "src/graph/workflow.py": [
+    {
+      "line": 2,
+      "statement": "from __future__ import annotations"
+    },
+    {
+      "line": 4,
+      "statement": "import logging"
+    },
+    {
+      "line": 5,
+      "statement": "import time"
+    },
+    {
+      "line": 6,
+      "statement": "from typing import TypedDict"
+    },
+    {
+      "line": 8,
+      "statement": "from langgraph.graph import END, StateGraph"
+    },
+    {
+      "line": 9,
+      "statement": "from langgraph.graph.state import CompiledStateGraph"
+    },
+    {
+      "line": 10,
+      "statement": "from langsmith import traceable"
+    },
+    {
+      "line": 11,
+      "statement": "from sqlalchemy.engine import Engine"
+    },
+    {
+      "line": 15,
+      "statement": "from src.agents.intake import run_intake"
+    },
+    {
+      "line": 16,
+      "statement": "from src.agents.qa_scoring import QAScoringError, run_qa_scoring"
+    },
+    {
+      "line": 17,
+      "statement": "from src.agents.report import compile_report"
+    },
+    {
+      "line": 18,
+      "statement": "from src.agents.summarization import SummarizationError, run_summarization"
+    },
+    {
+      "line": 19,
+      "statement": "from src.agents.transcription import run_transcription"
+    },
+    {
+      "line": 20,
+      "statement": "from src.graph.edges import route_after_intake, route_after_qa, route_after_transcription"
+    },
+    {
+      "line": 21,
+      "statement": "from src.graph.state import (\n    AudioInput,\n    CallReport,\n    IntakeResult,\n    QAScoreResult,\n    SummaryResult,\n    TranscriptionResult,\n)"
+    },
+    {
+      "line": 29,
+      "statement": "from src.security.injection_detector import detect_injection"
+    },
+    {
+      "line": 30,
+      "statement": "from src.security.pii_redactor import redact_pii"
+    },
+    {
+      "line": 31,
+      "statement": "from src.services.model_runs import ModelRun, capture_model_runs"
+    },
+    {
+      "line": 32,
+      "statement": "from src.utils.config import Config"
+    }
+  ],
+  "src/agents/report.py": [
+    {
+      "line": 1,
+      "statement": "from __future__ import annotations"
+    },
+    {
+      "line": 3,
+      "statement": "from datetime import datetime"
+    },
+    {
+      "line": 4,
+      "statement": "from io import BytesIO"
+    },
+    {
+      "line": 5,
+      "statement": "from pathlib import Path"
+    },
+    {
+      "line": 6,
+      "statement": "from xml.sax.saxutils import escape"
+    },
+    {
+      "line": 8,
+      "statement": "from reportlab.lib.pagesizes import letter"
+    },
+    {
+      "line": 9,
+      "statement": "from reportlab.lib.styles import getSampleStyleSheet"
+    },
+    {
+      "line": 10,
+      "statement": "from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer"
+    },
+    {
+      "line": 11,
+      "statement": "from reportlab.platypus.flowables import Flowable"
+    },
+    {
+      "line": 12,
+      "statement": "from sqlalchemy.engine import Engine"
+    },
+    {
+      "line": 14,
+      "statement": "from src.database.connection import get_engine, get_session, init_db"
+    },
+    {
+      "line": 15,
+      "statement": "from src.database.models import CallRecord"
+    },
+    {
+      "line": 16,
+      "statement": "from src.database.scope import current_identity"
+    },
+    {
+      "line": 17,
+      "statement": "from src.graph.state import (\n    CallReport,\n    IntakeResult,\n    QAScoreResult,\n    SummaryResult,\n    TranscriptionResult,\n)"
+    },
+    {
+      "line": 24,
+      "statement": "from src.services.job_execution import current_execution"
+    },
+    {
+      "line": 25,
+      "statement": "from src.services.model_runs import ModelRun"
+    },
+    {
+      "line": 75,
+      "statement": "from services.api.db.repository import store_report"
+    }
+  ],
+  "services/api/schemas.py": [
+    {
+      "line": 3,
+      "statement": "from datetime import datetime"
+    },
+    {
+      "line": 4,
+      "statement": "from typing import Literal"
+    },
+    {
+      "line": 5,
+      "statement": "from uuid import UUID"
+    },
+    {
+      "line": 7,
+      "statement": "from pydantic import BaseModel, ConfigDict, Field"
+    },
+    {
+      "line": 9,
+      "statement": "from src.graph.state import CallReport, QAScoreResult, SummaryResult, TranscriptionResult"
+    },
+    {
+      "line": 10,
+      "statement": "from src.services.model_runs import ModelRun"
+    }
+  ],
+  "scripts/benchmark_local_llm.py": [
+    {
+      "line": 6,
+      "statement": "import argparse"
+    },
+    {
+      "line": 7,
+      "statement": "import hashlib"
+    },
+    {
+      "line": 8,
+      "statement": "import json"
+    },
+    {
+      "line": 9,
+      "statement": "import math"
+    },
+    {
+      "line": 10,
+      "statement": "import subprocess"
+    },
+    {
+      "line": 11,
+      "statement": "import time"
+    },
+    {
+      "line": 12,
+      "statement": "from pathlib import Path"
+    },
+    {
+      "line": 13,
+      "statement": "from threading import Event, Thread"
+    },
+    {
+      "line": 14,
+      "statement": "from uuid import NAMESPACE_URL, uuid5"
+    },
+    {
+      "line": 16,
+      "statement": "import httpx"
+    },
+    {
+      "line": 18,
+      "statement": "from src.agents.qa_scoring import run_qa_scoring"
+    },
+    {
+      "line": 19,
+      "statement": "from src.agents.summarization import run_summarization"
+    },
+    {
+      "line": 20,
+      "statement": "from src.graph.state import TranscriptionResult, TranscriptionSegment"
+    },
+    {
+      "line": 21,
+      "statement": "from src.services.model_runs import capture_model_runs"
+    }
+  ],
+  "tests/llm/test_local_provider.py": [
+    {
+      "line": 3,
+      "statement": "import json"
+    },
+    {
+      "line": 4,
+      "statement": "from unittest.mock import MagicMock, patch"
+    },
+    {
+      "line": 6,
+      "statement": "import httpx"
+    },
+    {
+      "line": 7,
+      "statement": "import pytest"
+    },
+    {
+      "line": 8,
+      "statement": "from langchain_openai import ChatOpenAI"
+    },
+    {
+      "line": 10,
+      "statement": "from src.agents.summarization import SummarizationError, run_summarization"
+    },
+    {
+      "line": 11,
+      "statement": "from src.services.model_runs import capture_model_runs"
+    },
+    {
+      "line": 12,
+      "statement": "from src.utils.llm_factory import get_llm"
+    },
+    {
+      "line": 13,
+      "statement": "from tests.conftest import make_summary, make_transcription"
+    },
+    {
+      "line": 161,
+      "statement": "from services.api.schemas import Report"
+    },
+    {
+      "line": 162,
+      "statement": "from src.agents.report import compile_report"
+    },
+    {
+      "line": 163,
+      "statement": "from src.graph.state import CallReport"
+    },
+    {
+      "line": 164,
+      "statement": "from src.graph.workflow import report_node, summarize_and_qa_node"
+    },
+    {
+      "line": 165,
+      "statement": "from src.utils.config import load_config"
+    },
+    {
+      "line": 166,
+      "statement": "from tests.conftest import make_intake_result, make_qa_scores"
+    }
+  ],
+  "tests/api/test_model_runs.py": [
+    {
+      "line": 3,
+      "statement": "from sqlalchemy.orm import Session"
+    },
+    {
+      "line": 5,
+      "statement": "from src.services.model_runs import ModelRun"
+    },
+    {
+      "line": 6,
+      "statement": "from tests.api.test_api import fixture_report"
+    },
+    {
+      "line": 7,
+      "statement": "from tests.integration.test_postgresql_persistence import add_report"
+    }
+  ]
+}

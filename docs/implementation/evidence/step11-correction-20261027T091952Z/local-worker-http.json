@@ -1,0 +1,76 @@
+{
+  "identity": "ephemeral RSA fixture, not real IdP",
+  "pipeline": "real Docker CPU ASR worker, cached tiny Whisper, local Qwen 7B through Ollama",
+  "states": [
+    "queued",
+    "running",
+    "finished"
+  ],
+  "container": "project28-step11-review-dcd835af",
+  "upload": {
+    "http": 202,
+    "seconds": 0.39888690000043425
+  },
+  "terminal": {
+    "status": "finished",
+    "attempts": 1,
+    "error_code": null,
+    "metrics": {
+      "retries": 0.0,
+      "attempts": 1.0,
+      "execution_ms": 28888.95644699983,
+      "queue_wait_ms": 556.6560000000001,
+      "last_attempt_ms": 28888.95644699983
+    }
+  },
+  "report_http": 200,
+  "model_runs": [
+    {
+      "provider": "ollama",
+      "model_id": "qwen2.5-coder:7b",
+      "model_version": "qwen2.5-coder:7b",
+      "prompt_revision_sha256_prefix_bytes": [
+        248,
+        137,
+        129,
+        7,
+        198,
+        125,
+        148,
+        197
+      ],
+      "schema_name": "SummaryResult",
+      "attempt": 1,
+      "retries": 0,
+      "latency_ms": 15269.7899100001,
+      "structured_output": "valid",
+      "error_code": null,
+      "fallback": "none"
+    },
+    {
+      "provider": "ollama",
+      "model_id": "qwen2.5-coder:7b",
+      "model_version": "qwen2.5-coder:7b",
+      "prompt_revision_sha256_prefix_bytes": [
+        133,
+        87,
+        222,
+        191,
+        111,
+        3,
+        146,
+        84
+      ],
+      "schema_name": "QAScoreResult",
+      "attempt": 1,
+      "retries": 0,
+      "latency_ms": 10238.935198000036,
+      "structured_output": "valid",
+      "error_code": null,
+      "fallback": "none"
+    }
+  ],
+  "pdf_http": 200,
+  "duplicate_same_job": true,
+  "total_seconds": 30.33875100000023
+}

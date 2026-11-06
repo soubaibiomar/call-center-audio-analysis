@@ -1,0 +1,19 @@
+{
+  "cache_hit_observed": true,
+  "node_timings_seconds": [
+    [
+      "Transcription",
+      "0.0"
+    ],
+    [
+      "Summarization + QA",
+      "7.5"
+    ]
+  ],
+  "provider_http_status_counts": {
+    "200": 2,
+    "400": 1,
+    "429": 0
+  },
+  "raw_provider_failure_contents_not_saved": true
+}

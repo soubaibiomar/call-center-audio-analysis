@@ -1,0 +1,164 @@
+"""Opt-in sequential cached-model benchmark; synthetic text, no training/downloads.
+
+Run: python -m scripts.benchmark_local_llm --output <new-directory>
+"""
+
+import argparse
+import hashlib
+import json
+import math
+import subprocess
+import time
+from pathlib import Path
+from threading import Event, Thread
+from uuid import NAMESPACE_URL, uuid5
+
+import httpx
+
+from src.agents.qa_scoring import run_qa_scoring
+from src.agents.summarization import run_summarization
+from src.graph.state import TranscriptionResult, TranscriptionSegment
+from src.services.model_runs import capture_model_runs
+
+FIXTURES = [
+    (
+        "billing",
+        "Customer: An extra charge appeared. Agent: I removed the duplicate charge. "
+        "Customer: Thank you, that resolves it.",
+    ),
+    (
+        "delivery",
+        "Customer: My package is late. Agent: I will ask the delivery team for an "
+        "update tomorrow. Customer: Please do, the issue is still open.",
+    ),
+    (
+        "access",
+        "Customer: I cannot sign in. Agent: I am transferring this case to account "
+        "support. Customer: I understand; I still need access.",
+    ),
+]
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--models", nargs="+", default=["qwen2.5-coder:7b", "qwen3.5:9b-q4_K_M"])
+    parser.add_argument("--timeout", type=int, default=120)
+    args = parser.parse_args()
+    args.output.mkdir(parents=True, exist_ok=False)
+    with httpx.Client(trust_env=False, timeout=10) as http:
+        root = "http://127.0.0.1:11434"
+        inventory = http.get(root + "/api/tags").json()
+        available = {m["name"]: m for m in inventory["models"]}
+        if any(name not in available for name in args.models):
+            raise ValueError("Benchmark only supports already cached named models")
+        version = http.get(root + "/api/version").json()
+        all_results = []
+        for model in args.models:
+            stop = Event()
+            memory: list[int] = []
+
+            def sample() -> None:
+                while not stop.is_set():
+                    p = subprocess.run(
+                        ["nvidia-smi", "--query-gpu=memory.used", "--format=csv,noheader,nounits"],
+                        capture_output=True,
+                        text=True,
+                        timeout=5,
+                    )
+                    if p.returncode == 0:
+                        memory.extend(int(v.strip()) for v in p.stdout.splitlines())
+                    stop.wait(0.2)
+
+            thread = Thread(target=sample, daemon=True)
+            thread.start()
+            rows = []
+            try:
+                for name, text in FIXTURES:
+                    transcript = TranscriptionResult(
+                        call_id=uuid5(NAMESPACE_URL, "project28-step11-" + name),
+                        full_text=text,
+                        segments=[
+                            TranscriptionSegment(
+                                text=text,
+                                start_time=0,
+                                end_time=20,
+                                speaker="dialogue",
+                                confidence=1,
+                                low_confidence=False,
+                            )
+                        ],
+                        overall_confidence=1,
+                        flagged_for_review=False,
+                    )
+                    summary = None
+                    for phase in ("summary", "qa"):
+                        start = time.perf_counter()
+                        with capture_model_runs() as events:
+                            try:
+                                if phase == "summary":
+                                    result = run_summarization(
+                                        transcript,
+                                        provider="ollama",
+                                        model=model,
+                                        timeout=args.timeout,
+                                        max_retries=1,
+                                    )
+                                    summary = result
+                                else:
+                                    result = run_qa_scoring(
+                                        transcript,
+                                        summary=summary,
+                                        provider="ollama",
+                                        model=model,
+                                        timeout=args.timeout,
+                                        max_retries=1,
+                                    )
+                                valid = True
+                                output_hash = list(
+                                    hashlib.sha256(result.model_dump_json().encode()).digest()
+                                )
+                            except Exception:
+                                valid, output_hash = False, None
+                        row = dict(
+                            fixture=name,
+                            phase=phase,
+                            schema_valid=valid,
+                            seconds=time.perf_counter() - start,
+                            output_sha256_bytes=output_hash,
+                            events=[e.model_dump() for e in events],
+                        )
+                        rows.append(row)
+                        print(model, name, phase, valid, round(row["seconds"], 3), flush=True)
+                        # Receipts survive interrupted benchmark execution.
+                        (args.output / (model.replace(":", "_") + ".partial.json")).write_text(
+                            json.dumps(rows, indent=2), encoding="utf-8"
+                        )
+                loaded = http.get(root + "/api/ps").json()
+            finally:
+                stop.set()
+                thread.join(6)
+            durations = sorted(row["seconds"] for row in rows)
+            report = dict(
+                model=model,
+                digest=available[model]["digest"],
+                details=available[model]["details"],
+                observations=rows,
+                schema_valid_percent=100 * sum(row["schema_valid"] for row in rows) / len(rows),
+                p95_seconds=durations[math.ceil(0.95 * len(durations)) - 1],
+                sampled_whole_device_max_mib=max(memory) if memory else None,
+                memory_samples=len(memory),
+                loaded=loaded,
+                conditions="serial; 3 synthetic English fixtures; summary+QA; max_attempts1; "
+                "cold/warm mixed; temperature0; max_tokens2048; no ASR; no accuracy labels",
+            )
+            all_results.append(report)
+            (args.output / "results.json").write_text(
+                json.dumps(dict(ollama=version, results=all_results), indent=2), encoding="utf-8"
+            )
+        if any(not row["schema_valid"] for report in all_results for row in report["observations"]):
+            raise SystemExit(1)
+
+
+if __name__ == "__main__":
+    main()

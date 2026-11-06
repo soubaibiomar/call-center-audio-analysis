@@ -1,0 +1,11 @@
+{
+  "command": [
+    "git",
+    "status",
+    "--short"
+  ],
+  "exit_code": 0,
+  "seconds": 0.029,
+  "stdout": " M .dockerignore\n M .env.project28.example\n M .github/ISSUE_TEMPLATE/bug_report.md\n M .github/PULL_REQUEST_TEMPLATE.md\n M .github/workflows/ci.yml\n M .gitignore\n M .pre-commit-config.yaml\n M CONTRIBUTING.md\n M Dockerfile\n M PROJECT28_REQUIREMENTS.lock.txt\n M app.py\n M docs/architecture.md\n M pyproject.toml\n M requirements.txt\n M src/agents/qa_scoring.py\n M src/agents/summarization.py\n M src/services/history.py\n M src/services/pipeline.py\n M src/ui/tabs/analyze.py\n M src/ui/tabs/history.py\n M src/utils/llm_factory.py\n M tests/integration/test_pipeline_end_to_end.py\n M tests/unit/test_history_service.py\n M tests/unit/test_qa_scoring.py\n M tests/unit/test_summarization.py\n?? .github/labels.json\n?? PROJECT28_MASTER_INSTRUCTIONS.md\n?? STEP_INDEX.md\n?? compose.local.yml\n?? design/\n?? docs/architecture/\n?? docs/baselines/\n?? docs/development/\n?? docs/environment/\n?? docs/implementation/\n?? docs/upstream/\n?? prompts/\n?? report_templates/\n?? resources/\n?? scripts/\n?? services/\n?? src/services/analysis.py\n?? src/services/contracts.py\n?? tests/unit/test_analysis_compatibility.py\n?? tests/unit/test_audio_decoder.py\n?? tests/unit/test_collaboration_configuration.py\n?? tests/unit/test_docker_preparation.py\n?? tests/unit/test_environment_diagnostics.py\n?? tests/unit/test_import_map.py\n?? tests/unit/test_llm_factory.py\n?? tests/unit/test_pipeline_exports.py\n?? tests/unit/test_project_setup.py\n?? tests/unit/test_repository_fingerprint.py\n",
+  "stderr": ""
+}

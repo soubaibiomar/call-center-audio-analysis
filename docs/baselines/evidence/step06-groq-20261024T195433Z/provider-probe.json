@@ -1,0 +1,12 @@
+{
+  "provider": "groq",
+  "credential_ready": true,
+  "pins_match": true,
+  "config_loaded": true,
+  "model": "llama-3.3-70b-versatile",
+  "request_contains_private_audio": false,
+  "authenticated_request_succeeded": true,
+  "response_nonempty": false,
+  "elapsed_seconds": 0.7312577000011515,
+  "captured_at_utc": "2026-10-24T19:54:33.962139+00:00"
+}

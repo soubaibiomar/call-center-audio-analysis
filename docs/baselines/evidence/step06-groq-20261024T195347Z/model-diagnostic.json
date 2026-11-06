@@ -1,0 +1,23 @@
+{
+  "factory_api_host": "api.groq.com",
+  "provider_error_body": {
+    "error": {
+      "message": "The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.",
+      "type": "invalid_request_error",
+      "code": "model_not_found"
+    }
+  },
+  "available_models": [
+    "whisper-large-v3-turbo",
+    "qwen/qwen3.8-27b",
+    "canopylabs/orpheus-v1-english",
+    "openai/gpt-oss-20b",
+    "whisper-large-v3",
+    "meta-llama/llama-prompt-guard-2-22m",
+    "openai/gpt-oss-safeguard-20b",
+    "openai/gpt-oss-120b",
+    "allam-2-7b",
+    "canopylabs/orpheus-arabic-saudi",
+    "meta-llama/llama-prompt-guard-2-86m"
+  ]
+}

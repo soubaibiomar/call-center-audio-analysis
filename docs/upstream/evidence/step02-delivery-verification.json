@@ -1,0 +1,24 @@
+{
+  "step": "STEP_02",
+  "decision": "PASS WITH LIMITATIONS",
+  "acceptance_gates": {
+    "remote_and_sha": "PASS",
+    "clean_new_baseline_before_and_after": "PASS",
+    "license_attribution": "PASS"
+  },
+  "preserved_prior_files_except_tracker": 127,
+  "upstream_blob_hashes_verified": 87,
+  "specification_hashes_verified": 99,
+  "report_sections": 13,
+  "answered_questions": 8,
+  "completed_steps": 2,
+  "not_started_steps": 43,
+  "original_suite": "113 passed in 10.70s",
+  "combined_suite": "133 passed in 20.21s",
+  "new_tool_tests": "8 passed in 2.63s",
+  "source_module_count": 33,
+  "nonempty_source_modules": 24,
+  "full_application_mypy": "Historical FAIL unresolved; not rerun this step",
+  "project_commit_or_push": false,
+  "next_eligible": "STEP_03"
+}

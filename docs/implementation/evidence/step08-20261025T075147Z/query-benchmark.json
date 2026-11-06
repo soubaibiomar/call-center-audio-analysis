@@ -1,0 +1,23 @@
+{
+  "query": "list_calls, newest200, three imported sample reports; warm pool, serial Windows client, no inference",
+  "measurements": {
+    "sqlite_snapshot": {
+      "samples": 100,
+      "warmup": 5,
+      "row_count": 3,
+      "p50_ms": 0.4485,
+      "p95_ms": 0.5605,
+      "minimum_ms": 0.4161,
+      "maximum_ms": 0.7576
+    },
+    "postgresql_runtime_role": {
+      "samples": 100,
+      "warmup": 5,
+      "row_count": 3,
+      "p50_ms": 2.9176,
+      "p95_ms": 4.939,
+      "minimum_ms": 2.6753,
+      "maximum_ms": 6.9847
+    }
+  }
+}

@@ -1,0 +1,3 @@
+"""The CUDA capability symbol used by the dedicated GPU worker entrypoint."""
+
+def get_cuda_device_count() -> int: ...

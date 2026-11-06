@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+    "-m",
+    "ruff",
+    "format",
+    "--check",
+    "src/",
+    "services/",
+    "tests/",
+    "scripts/",
+    "stubs/",
+    "migrations/",
+    "app.py"
+  ],
+  "exit_code": 1,
+  "seconds": 0.235,
+  "stdout": "Would reformat: tests\\datasets\\test_unidata_runner.py\n1 file would be reformatted, 145 files already formatted\n",
+  "stderr": ""
+}

@@ -1,0 +1,26 @@
+{
+  "source": "axondata/call-center-speech-dataset",
+  "version": 1,
+  "license": "Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)",
+  "file_type_counts": {
+    ".docx": 10,
+    ".mp3": 10
+  },
+  "listed_size_bytes": 13239873,
+  "french_file_count": 4,
+  "french_documents_checked": [
+    {
+      "docx_valid": true,
+      "nonempty_paragraphs": 165,
+      "text_characters": 19575
+    },
+    {
+      "docx_valid": true,
+      "nonempty_paragraphs": 178,
+      "text_characters": 14262
+    }
+  ],
+  "human_transcript_review_found": false,
+  "audio_transcript_matching": "same parent folder only; exact alignment not verified",
+  "full_commercial_access": "provider states purchase required"
+}

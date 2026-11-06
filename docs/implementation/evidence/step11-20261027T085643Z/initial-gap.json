@@ -1,0 +1,13 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/llm/test_local_provider.py",
+    "-q",
+    "--tb=short"
+  ],
+  "exit_code": 2,
+  "stdout": "\n=================================== ERRORS ====================================\n______________ ERROR collecting tests/llm/test_local_provider.py ______________\nImportError while importing test module 'C:\\Users\\omar\\Documents\\Call center audio Analysis\\tests\\llm\\test_local_provider.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n..\\..\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\importlib\\__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\ntests\\llm\\test_local_provider.py:10: in <module>\n    from src.services.model_runs import capture_model_runs\nE   ModuleNotFoundError: No module named 'src.services.model_runs'\n=========================== short test summary info ===========================\nERROR tests/llm/test_local_provider.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.35s\n",
+  "stderr": "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+}

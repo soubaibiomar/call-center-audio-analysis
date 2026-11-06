@@ -1,0 +1,23 @@
+[
+  "src\\agents\\intake.py",
+  "src\\agents\\qa_scoring.py",
+  "src\\agents\\report.py",
+  "src\\agents\\summarization.py",
+  "src\\agents\\transcription.py",
+  "src\\database\\connection.py",
+  "src\\database\\models.py",
+  "src\\graph\\workflow.py",
+  "src\\security\\audit.py",
+  "src\\security\\pii_redactor.py",
+  "src\\services\\analysis.py",
+  "src\\services\\contracts.py",
+  "src\\services\\history.py",
+  "src\\services\\observability.py",
+  "src\\services\\pipeline.py",
+  "src\\ui\\app_builder.py",
+  "src\\ui\\tabs\\analyze.py",
+  "src\\ui\\tabs\\history.py",
+  "src\\ui\\tabs\\observability.py",
+  "src\\utils\\audio.py",
+  "src\\utils\\formatters.py"
+]

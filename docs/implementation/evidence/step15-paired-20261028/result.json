@@ -1,0 +1,99 @@
+{
+  "purpose": "non-commercial research; unreviewed transcripts; exploratory only",
+  "input_manifest_sha256": "52b18eb7ca1d058f77a2e41c06bee8da5f0f0e02ed89c72d8d965081b90c3843",
+  "model_revision": "d90ca5fe260221311c53c58e660288d3deb8d356",
+  "device": "cpu-int8",
+  "model_loading_excluded": true,
+  "results": [
+    {
+      "sample_id": "sample-01",
+      "mode": "baseline",
+      "duration_seconds": 902.1,
+      "elapsed_seconds": 6.41447340000002,
+      "word_errors": 282,
+      "reference_words": 965,
+      "segments": 93
+    },
+    {
+      "sample_id": "sample-01",
+      "mode": "segmented",
+      "duration_seconds": 902.1,
+      "elapsed_seconds": 19.25220109999998,
+      "word_errors": 319,
+      "reference_words": 965,
+      "segments": 110
+    },
+    {
+      "sample_id": "sample-02",
+      "mode": "baseline",
+      "duration_seconds": 299.0,
+      "elapsed_seconds": 3.525948299999982,
+      "word_errors": 279,
+      "reference_words": 658,
+      "segments": 57
+    },
+    {
+      "sample_id": "sample-02",
+      "mode": "segmented",
+      "duration_seconds": 299.0,
+      "elapsed_seconds": 10.281465400000002,
+      "word_errors": 272,
+      "reference_words": 658,
+      "segments": 71
+    },
+    {
+      "sample_id": "sample-03",
+      "mode": "baseline",
+      "duration_seconds": 611.26,
+      "elapsed_seconds": 7.527756100000033,
+      "word_errors": 577,
+      "reference_words": 1520,
+      "segments": 150
+    },
+    {
+      "sample_id": "sample-03",
+      "mode": "segmented",
+      "duration_seconds": 611.26,
+      "elapsed_seconds": 23.61362269999995,
+      "word_errors": 643,
+      "reference_words": 1520,
+      "segments": 142
+    },
+    {
+      "sample_id": "sample-04",
+      "mode": "baseline",
+      "duration_seconds": 386.16,
+      "elapsed_seconds": 4.895810900000015,
+      "word_errors": 237,
+      "reference_words": 856,
+      "segments": 85
+    },
+    {
+      "sample_id": "sample-04",
+      "mode": "segmented",
+      "duration_seconds": 386.16,
+      "elapsed_seconds": 9.539629600000012,
+      "word_errors": 251,
+      "reference_words": 856,
+      "segments": 75
+    },
+    {
+      "sample_id": "sample-05",
+      "mode": "baseline",
+      "duration_seconds": 1583.12,
+      "elapsed_seconds": 18.570316700000035,
+      "word_errors": 967,
+      "reference_words": 3292,
+      "segments": 291
+    },
+    {
+      "sample_id": "sample-05",
+      "mode": "segmented",
+      "duration_seconds": 1583.12,
+      "elapsed_seconds": 47.87214439999991,
+      "word_errors": 953,
+      "reference_words": 3292,
+      "segments": 335
+    }
+  ]
+}

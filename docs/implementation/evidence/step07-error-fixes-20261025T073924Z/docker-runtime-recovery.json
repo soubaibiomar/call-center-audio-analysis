@@ -1,0 +1,7 @@
+{
+  "action": "Preserved stale socket directory by renaming its parent; no deletion",
+  "source": "C:\\Users\\omar\\AppData\\Local\\docker-secrets-engine",
+  "destination": "C:\\Users\\omar\\AppData\\Local\\docker-secrets-engine.preserved-20261025T073932Z",
+  "contents": "engine.sock, zero bytes, ReparsePoint",
+  "volumes_unchanged": true
+}

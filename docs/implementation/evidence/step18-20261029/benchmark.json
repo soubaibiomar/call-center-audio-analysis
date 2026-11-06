@@ -1,0 +1,40 @@
+{
+  "fixture": "four synthetic retrieval outcomes; deterministic extractive answers; not neural retrieval benchmark",
+  "answers": [
+    {
+      "status": "supported",
+      "answer": "Approval is required.",
+      "sources": [
+        {
+          "source_id": "abba52b1-1c6f-4fb3-9b41-4a8bceb08fbe:v1:0:0d4e11ecacd4120d",
+          "passage": "Approval is required.",
+          "effective_date": "2026-10-28T09:11:13.529484Z"
+        }
+      ],
+      "reason": null
+    },
+    {
+      "status": "abstain",
+      "answer": null,
+      "sources": [],
+      "reason": "Missing or conflicting policy evidence"
+    },
+    {
+      "status": "abstain",
+      "answer": null,
+      "sources": [],
+      "reason": "Missing or conflicting policy evidence"
+    },
+    {
+      "status": "abstain",
+      "answer": null,
+      "sources": [],
+      "reason": "Suspicious policy requires review"
+    }
+  ],
+  "citation_exact_support_percent": 100,
+  "supported_answers": 1,
+  "unsupported_emitted_passages": 0,
+  "retrieval_recall_at_k": null,
+  "baseline": null
+}

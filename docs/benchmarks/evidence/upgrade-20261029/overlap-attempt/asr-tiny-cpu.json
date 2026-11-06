@@ -1,0 +1,90 @@
+{
+  "backend": "whisper",
+  "model_directory": "d90ca5fe260221311c53c58e660288d3deb8d356",
+  "device": "cpu",
+  "precision": "int8",
+  "dataset": "apptek-com/apptek_callcenter_dialogues",
+  "dataset_revision": "b98967d9946f7f59f58d08624a2a00fe98fe0219",
+  "license": "CC-BY-SA-4.0",
+  "roleplay": true,
+  "manifest_sha256": "0702951b27d27a5137205f6d9f28a7eaa3227e65ab137d944c897b7b9c98fb71",
+  "normalization": "NFC/casefold/whitespace; punctuation retained",
+  "protocol": "mono16kHz; fixed30s; English hint where supported; greedy/beam1; no VAD; warmup1s silence; load/warmup excluded",
+  "load_seconds": 9.780697899999723,
+  "repetitions": 2,
+  "observations": [
+    {
+      "sample": "en-AU",
+      "repeat": 0,
+      "seconds": 18.48677300000054,
+      "audio_seconds": 311.0,
+      "word_errors": 185,
+      "reference_words": 686,
+      "char_errors": 618,
+      "reference_chars": 3485,
+      "hypothesis_sha256": "f13c1d0337cf6e617306faad880cb9c60b5db77b52d1fd48cc2d78ee29e4dfea"
+    },
+    {
+      "sample": "en-IN",
+      "repeat": 0,
+      "seconds": 16.93519550000019,
+      "audio_seconds": 398.9546875,
+      "word_errors": 346,
+      "reference_words": 987,
+      "char_errors": 1041,
+      "reference_chars": 5446,
+      "hypothesis_sha256": "1fe7bc2d00e3fb0c98a2182f0ff5f51f79448f77dd3fa92d77b8d52a8eb021fb"
+    },
+    {
+      "sample": "en-US_General",
+      "repeat": 0,
+      "seconds": 15.027525200001037,
+      "audio_seconds": 282.248125,
+      "word_errors": 178,
+      "reference_words": 544,
+      "char_errors": 512,
+      "reference_chars": 2997,
+      "hypothesis_sha256": "9d889f005f400cba333c2ed3f133e5d563de4aa5abe0b74982dd17ba485c19ba"
+    },
+    {
+      "sample": "en-AU",
+      "repeat": 1,
+      "seconds": 16.002053899999737,
+      "audio_seconds": 311.0,
+      "word_errors": 185,
+      "reference_words": 686,
+      "char_errors": 618,
+      "reference_chars": 3485,
+      "hypothesis_sha256": "f13c1d0337cf6e617306faad880cb9c60b5db77b52d1fd48cc2d78ee29e4dfea"
+    },
+    {
+      "sample": "en-IN",
+      "repeat": 1,
+      "seconds": 13.821237400001337,
+      "audio_seconds": 398.9546875,
+      "word_errors": 346,
+      "reference_words": 987,
+      "char_errors": 1041,
+      "reference_chars": 5446,
+      "hypothesis_sha256": "1fe7bc2d00e3fb0c98a2182f0ff5f51f79448f77dd3fa92d77b8d52a8eb021fb"
+    },
+    {
+      "sample": "en-US_General",
+      "repeat": 1,
+      "seconds": 13.212786899999628,
+      "audio_seconds": 282.248125,
+      "word_errors": 178,
+      "reference_words": 544,
+      "char_errors": 515,
+      "reference_chars": 2997,
+      "hypothesis_sha256": "ac64811888a6f60761cd461b95c2433eff29f4124866b182797e287aaeff7ef5"
+    }
+  ],
+  "versions": {
+    "numpy": "2.5.4",
+    "soundfile": "0.13.1",
+    "scipy": "1.18.1",
+    "rapidfuzz": "3.14.6"
+  },
+  "peak_torch_allocated_bytes": null
+}

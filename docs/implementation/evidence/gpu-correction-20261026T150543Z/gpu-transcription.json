@@ -1,0 +1,129 @@
+{
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".env.docker",
+    "-f",
+    "compose.local.yml",
+    "-f",
+    "infrastructure/compose/queue.local.yml",
+    "--profile",
+    "gpu",
+    "run",
+    "--rm",
+    "-T",
+    "--no-deps",
+    "worker-gpu",
+    "python",
+    "-m",
+    "scripts.check_gpu_runtime"
+  ],
+  "exit_code": 0,
+  "seconds": 6.166104199999609,
+  "stdout": "{\"success\": true, \"cuda_devices\": 1, \"device\": \"cuda\", \"compute_type\": \"float16\", \"clip_seconds\": 10, \"load_seconds\": 0.9770497580002484, \"transcription_seconds\": 0.7109703830001308, \"segments\": 1, \"language\": \"en\"}\n",
+  "stderr": " Container project28-worker-gpu-run-b8669daaccd9 Creating \n Container project28-worker-gpu-run-b8669daaccd9 Created \n",
+  "whole_gpu_samples": [
+    {
+      "seconds": 0.07364309999957186,
+      "used_mib": 61
+    },
+    {
+      "seconds": 0.3446042999994461,
+      "used_mib": 61
+    },
+    {
+      "seconds": 0.6024740000002566,
+      "used_mib": 61
+    },
+    {
+      "seconds": 0.8561253999996552,
+      "used_mib": 61
+    },
+    {
+      "seconds": 1.1195128999997905,
+      "used_mib": 61
+    },
+    {
+      "seconds": 1.3679221000002144,
+      "used_mib": 61
+    },
+    {
+      "seconds": 1.6193467000002784,
+      "used_mib": 61
+    },
+    {
+      "seconds": 1.8591919999998936,
+      "used_mib": 61
+    },
+    {
+      "seconds": 2.1037593999999444,
+      "used_mib": 61
+    },
+    {
+      "seconds": 2.3558247999999367,
+      "used_mib": 61
+    },
+    {
+      "seconds": 2.6042890999997326,
+      "used_mib": 61
+    },
+    {
+      "seconds": 2.855391099999906,
+      "used_mib": 61
+    },
+    {
+      "seconds": 3.1002644999998665,
+      "used_mib": 61
+    },
+    {
+      "seconds": 3.373441400000047,
+      "used_mib": 69
+    },
+    {
+      "seconds": 3.6186163000002125,
+      "used_mib": 153
+    },
+    {
+      "seconds": 3.8565364999994927,
+      "used_mib": 153
+    },
+    {
+      "seconds": 4.097342500000195,
+      "used_mib": 249
+    },
+    {
+      "seconds": 4.355080600000292,
+      "used_mib": 249
+    },
+    {
+      "seconds": 4.602207699999781,
+      "used_mib": 249
+    },
+    {
+      "seconds": 4.855320900000152,
+      "used_mib": 261
+    },
+    {
+      "seconds": 5.103084800000033,
+      "used_mib": 267
+    },
+    {
+      "seconds": 5.357551699999931,
+      "used_mib": 161
+    },
+    {
+      "seconds": 5.614234300000135,
+      "used_mib": 161
+    },
+    {
+      "seconds": 5.860333800000262,
+      "used_mib": 61
+    },
+    {
+      "seconds": 6.1144337999994605,
+      "used_mib": 61
+    }
+  ],
+  "sampled_max_mib": 267
+}

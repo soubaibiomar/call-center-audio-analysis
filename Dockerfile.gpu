@@ -1,0 +1,18 @@
+# Extend the reviewed application image without changing CPU containers.
+ARG APP_IMAGE=project28-app:local
+FROM ${APP_IMAGE}
+
+USER root
+COPY requirements.gpu.txt /tmp/requirements.gpu.txt
+RUN uv pip install --system --no-cache -r /tmp/requirements.gpu.txt \
+ && find /usr/local/lib -type d -path '*/site-packages/nvidia/*/lib' \
+      > /etc/ld.so.conf.d/project28-nvidia.conf \
+ && test -s /etc/ld.so.conf.d/project28-nvidia.conf \
+ && ldconfig
+
+COPY services/workers/runtime.py /app/services/workers/runtime.py
+COPY services/workers/settings.py /app/services/workers/settings.py
+COPY services/workers/runner.py /app/services/workers/runner.py
+COPY scripts/check_gpu_runtime.py /app/scripts/check_gpu_runtime.py
+USER appuser
+CMD ["python", "-m", "services.workers.runtime", "gpu"]

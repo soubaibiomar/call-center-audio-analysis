@@ -1,0 +1,15 @@
+{
+  "command": [
+    "docker",
+    "build",
+    "-f",
+    "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.local\\step11-cpu.Dockerfile",
+    "-t",
+    "project28-app:local",
+    "."
+  ],
+  "exit_code": 0,
+  "seconds": 10.012276200000088,
+  "stdout": "",
+  "stderr": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from step11-cpu.Dockerfile\n#1 transferring dockerfile: 244B 0.0s done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/project28-step11-base-cpu:20261027\n#2 DONE 5.9s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 249B 0.0s done\n#3 DONE 0.0s\n\n#4 [1/4] FROM docker.io/library/project28-step11-base-cpu:20261027@sha256:26ac3b70f1f859ae78fd6a8adf397fcd499d61186e332bc6028cc3e34691ed55\n#4 resolve docker.io/library/project28-step11-base-cpu:20261027@sha256:26ac3b70f1f859ae78fd6a8adf397fcd499d61186e332bc6028cc3e34691ed55 0.1s done\n#4 DONE 0.1s\n\n#5 [internal] load build context\n#5 transferring context: 271.51kB 0.2s done\n#5 DONE 0.2s\n\n#4 [1/4] FROM docker.io/library/project28-step11-base-cpu:20261027@sha256:26ac3b70f1f859ae78fd6a8adf397fcd499d61186e332bc6028cc3e34691ed55\n#4 DONE 0.4s\n\n#6 [2/4] COPY src/ /app/src/\n#6 DONE 0.2s\n\n#7 [3/4] COPY services/api/schemas.py /app/services/api/schemas.py\n#7 DONE 0.2s\n\n#8 [4/4] COPY scripts/benchmark_local_llm.py /app/scripts/benchmark_local_llm.py\n#8 DONE 0.2s\n\n#9 exporting to image\n#9 exporting layers\n#9 exporting layers 0.7s done\n#9 exporting manifest sha256:798b8d0869f41639156d955aee6fc2a2962f5cab5492ebad288692c6c8316e4e 0.1s done\n#9 exporting config sha256:ea656b7d6976570b52bec494e8dc926fa21d8628de692c57c7de77bdaf1cd685 0.1s done\n#9 exporting attestation manifest sha256:6fa39049ee9a357f5aeaba089651c20f8fd34bb4426b1787a1c382e5e0c7c1b2 0.1s done\n#9 exporting manifest list sha256:8f153827d6b44b38f4eab560dd78b49f4950c98be5572a2160dd3882e04f862c\n#9 exporting manifest list sha256:8f153827d6b44b38f4eab560dd78b49f4950c98be5572a2160dd3882e04f862c 0.1s done\n#9 naming to docker.io/library/project28-app:local done\n#9 unpacking to docker.io/library/project28-app:local\n#9 unpacking to docker.io/library/project28-app:local 0.2s done\n#9 DONE 1.4s\n"
+}

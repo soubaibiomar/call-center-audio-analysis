@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import gradio as gr
+from sqlalchemy.engine import Engine
 
 from src.services.observability import get_observability_dashboard
 
 
 def build_observability_tab(
-    engine, langchain_project: str
+    engine: Engine, langchain_project: str
 ) -> tuple[gr.Markdown, gr.Markdown, gr.Dataframe]:
     """Build the Observability tab. Returns components for auto-load wiring."""
     gr.Markdown(
@@ -31,7 +32,7 @@ def build_observability_tab(
         interactive=False,
     )
 
-    def _refresh():
+    def _refresh() -> tuple[str, str, list[list[str]]]:
         return get_observability_dashboard(engine, langchain_project)
 
     obs_refresh.click(fn=_refresh, outputs=[obs_metrics, obs_langsmith, obs_audit])
@@ -40,8 +41,13 @@ def build_observability_tab(
 
 
 def wire_observability_autoload(
-    tab, obs_metrics, obs_langsmith, obs_audit, engine, langchain_project
-):
+    tab: gr.Tab,
+    obs_metrics: gr.Markdown,
+    obs_langsmith: gr.Markdown,
+    obs_audit: gr.Dataframe,
+    engine: Engine,
+    langchain_project: str,
+) -> None:
     """Wire tab-select auto-load for observability."""
     tab.select(
         fn=lambda: get_observability_dashboard(engine, langchain_project),

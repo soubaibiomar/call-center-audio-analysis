@@ -1,0 +1,20 @@
+[
+  {
+    "model": "qwen2.5-coder:7b",
+    "n": 6,
+    "valid": 6,
+    "p50_seconds": 7.207351899999935,
+    "p95_seconds": 12.383365400000002,
+    "sampled_whole_device_max_mib": 6326,
+    "memory_samples": 166
+  },
+  {
+    "model": "qwen3.5:9b-q4_K_M",
+    "n": 6,
+    "valid": 6,
+    "p50_seconds": 22.917424050000022,
+    "p95_seconds": 33.1460962000001,
+    "sampled_whole_device_max_mib": 6324,
+    "memory_samples": 512
+  }
+]

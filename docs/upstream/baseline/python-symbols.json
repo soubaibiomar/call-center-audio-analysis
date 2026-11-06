@@ -1,0 +1,2717 @@
+[
+  {
+    "path": "app.py",
+    "declarations": [],
+    "imports": [
+      {
+        "line": 4,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 6,
+        "statement": "import logging"
+      },
+      {
+        "line": 7,
+        "statement": "import os"
+      },
+      {
+        "line": 11,
+        "statement": "from src.agents.transcription import _get_whisper_model"
+      },
+      {
+        "line": 12,
+        "statement": "from src.database.connection import get_engine, init_db"
+      },
+      {
+        "line": 13,
+        "statement": "from src.graph.workflow import compile_workflow"
+      },
+      {
+        "line": 14,
+        "statement": "from src.security.audit import AuditLogger"
+      },
+      {
+        "line": 15,
+        "statement": "from src.ui.app_builder import build_app"
+      },
+      {
+        "line": 16,
+        "statement": "from src.utils.config import load_config"
+      }
+    ]
+  },
+  {
+    "path": "src/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "src/agents/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "src/agents/intake.py",
+    "declarations": [
+      {
+        "name": "_scan_metadata_for_pii",
+        "kind": "FunctionDef",
+        "line": 32,
+        "end_line": 47
+      },
+      {
+        "name": "_check_wav_duration",
+        "kind": "FunctionDef",
+        "line": 50,
+        "end_line": 64
+      },
+      {
+        "name": "_make_failed_result",
+        "kind": "FunctionDef",
+        "line": 67,
+        "end_line": 75
+      },
+      {
+        "name": "run_intake",
+        "kind": "FunctionDef",
+        "line": 78,
+        "end_line": 150
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import io"
+      },
+      {
+        "line": 4,
+        "statement": "import re"
+      },
+      {
+        "line": 5,
+        "statement": "import tempfile"
+      },
+      {
+        "line": 6,
+        "statement": "import uuid"
+      },
+      {
+        "line": 7,
+        "statement": "import wave"
+      },
+      {
+        "line": 9,
+        "statement": "from src.graph.state import AudioInput, AudioProperties, IntakeResult, PIIScanResult"
+      },
+      {
+        "line": 10,
+        "statement": "from src.utils.audio import MAX_DURATION_SECONDS, AudioValidationError, detect_audio_format, extract_audio_properties, validate_audio_file"
+      }
+    ]
+  },
+  {
+    "path": "src/agents/qa_scoring.py",
+    "declarations": [
+      {
+        "name": "QAScoringError",
+        "kind": "ClassDef",
+        "line": 110,
+        "end_line": 111
+      },
+      {
+        "name": "_format_input",
+        "kind": "FunctionDef",
+        "line": 114,
+        "end_line": 126
+      },
+      {
+        "name": "_recompute_overall_score",
+        "kind": "FunctionDef",
+        "line": 129,
+        "end_line": 135
+      },
+      {
+        "name": "run_qa_scoring",
+        "kind": "FunctionDef",
+        "line": 138,
+        "end_line": 170
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import logging"
+      },
+      {
+        "line": 4,
+        "statement": "import time"
+      },
+      {
+        "line": 6,
+        "statement": "from langchain_core.messages import HumanMessage, SystemMessage"
+      },
+      {
+        "line": 8,
+        "statement": "from src.graph.state import QAScoreResult, SummaryResult, TranscriptionResult"
+      },
+      {
+        "line": 13,
+        "statement": "from src.utils.formatters import secs_to_mmss"
+      },
+      {
+        "line": 14,
+        "statement": "from src.utils.llm_factory import get_llm"
+      }
+    ]
+  },
+  {
+    "path": "src/agents/report.py",
+    "declarations": [
+      {
+        "name": "compile_report",
+        "kind": "FunctionDef",
+        "line": 22,
+        "end_line": 38
+      },
+      {
+        "name": "persist_report",
+        "kind": "FunctionDef",
+        "line": 41,
+        "end_line": 66
+      },
+      {
+        "name": "generate_report_json",
+        "kind": "FunctionDef",
+        "line": 69,
+        "end_line": 70
+      },
+      {
+        "name": "generate_report_pdf",
+        "kind": "FunctionDef",
+        "line": 73,
+        "end_line": 118
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "from datetime import datetime"
+      },
+      {
+        "line": 4,
+        "statement": "from io import BytesIO"
+      },
+      {
+        "line": 5,
+        "statement": "from pathlib import Path"
+      },
+      {
+        "line": 7,
+        "statement": "from reportlab.lib.pagesizes import letter"
+      },
+      {
+        "line": 8,
+        "statement": "from reportlab.lib.styles import getSampleStyleSheet"
+      },
+      {
+        "line": 9,
+        "statement": "from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer"
+      },
+      {
+        "line": 11,
+        "statement": "from src.database.connection import get_engine, get_session, init_db"
+      },
+      {
+        "line": 12,
+        "statement": "from src.database.models import CallRecord"
+      },
+      {
+        "line": 13,
+        "statement": "from src.graph.state import CallReport, IntakeResult, QAScoreResult, SummaryResult, TranscriptionResult"
+      }
+    ]
+  },
+  {
+    "path": "src/agents/summarization.py",
+    "declarations": [
+      {
+        "name": "SummarizationError",
+        "kind": "ClassDef",
+        "line": 42,
+        "end_line": 43
+      },
+      {
+        "name": "_format_transcript",
+        "kind": "FunctionDef",
+        "line": 46,
+        "end_line": 52
+      },
+      {
+        "name": "run_summarization",
+        "kind": "FunctionDef",
+        "line": 55,
+        "end_line": 85
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import logging"
+      },
+      {
+        "line": 4,
+        "statement": "import time"
+      },
+      {
+        "line": 6,
+        "statement": "from langchain_core.messages import HumanMessage, SystemMessage"
+      },
+      {
+        "line": 8,
+        "statement": "from src.graph.state import SummaryResult, TranscriptionResult"
+      },
+      {
+        "line": 9,
+        "statement": "from src.utils.formatters import secs_to_mmss"
+      },
+      {
+        "line": 10,
+        "statement": "from src.utils.llm_factory import get_llm"
+      }
+    ]
+  },
+  {
+    "path": "src/agents/transcription.py",
+    "declarations": [
+      {
+        "name": "_detect_device",
+        "kind": "FunctionDef",
+        "line": 22,
+        "end_line": 34
+      },
+      {
+        "name": "_get_whisper_model",
+        "kind": "FunctionDef",
+        "line": 37,
+        "end_line": 48
+      },
+      {
+        "name": "SpeakerDiarizer",
+        "kind": "ClassDef",
+        "line": 64,
+        "end_line": 102
+      },
+      {
+        "name": "assign_speakers",
+        "kind": "FunctionDef",
+        "line": 67,
+        "end_line": 102
+      },
+      {
+        "name": "_get_diarizer",
+        "kind": "FunctionDef",
+        "line": 108,
+        "end_line": 109
+      },
+      {
+        "name": "_compute_audio_hash",
+        "kind": "FunctionDef",
+        "line": 112,
+        "end_line": 118
+      },
+      {
+        "name": "_check_cache",
+        "kind": "FunctionDef",
+        "line": 121,
+        "end_line": 139
+      },
+      {
+        "name": "_save_cache",
+        "kind": "FunctionDef",
+        "line": 142,
+        "end_line": 164
+      },
+      {
+        "name": "_clean_transcript_text",
+        "kind": "FunctionDef",
+        "line": 177,
+        "end_line": 197
+      },
+      {
+        "name": "run_transcription",
+        "kind": "FunctionDef",
+        "line": 200,
+        "end_line": 292
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import hashlib"
+      },
+      {
+        "line": 4,
+        "statement": "import logging"
+      },
+      {
+        "line": 5,
+        "statement": "import re"
+      },
+      {
+        "line": 7,
+        "statement": "from faster_whisper import WhisperModel"
+      },
+      {
+        "line": 9,
+        "statement": "from src.graph.state import IntakeResult, TranscriptionResult, TranscriptionSegment"
+      },
+      {
+        "line": 25,
+        "statement": "import torch"
+      },
+      {
+        "line": 126,
+        "statement": "from src.database.connection import get_session"
+      },
+      {
+        "line": 127,
+        "statement": "from src.database.models import TranscriptionCache"
+      },
+      {
+        "line": 147,
+        "statement": "from datetime import datetime"
+      },
+      {
+        "line": 149,
+        "statement": "from src.database.connection import get_session"
+      },
+      {
+        "line": 150,
+        "statement": "from src.database.models import TranscriptionCache"
+      }
+    ]
+  },
+  {
+    "path": "src/database/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "src/database/connection.py",
+    "declarations": [
+      {
+        "name": "get_engine",
+        "kind": "FunctionDef",
+        "line": 14,
+        "end_line": 35
+      },
+      {
+        "name": "set_sqlite_pragma",
+        "kind": "FunctionDef",
+        "line": 27,
+        "end_line": 30
+      },
+      {
+        "name": "init_db",
+        "kind": "FunctionDef",
+        "line": 38,
+        "end_line": 39
+      },
+      {
+        "name": "get_session",
+        "kind": "FunctionDef",
+        "line": 45,
+        "end_line": 49
+      },
+      {
+        "name": "session_scope",
+        "kind": "FunctionDef",
+        "line": 53,
+        "end_line": 63
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import os"
+      },
+      {
+        "line": 4,
+        "statement": "from collections.abc import Generator"
+      },
+      {
+        "line": 5,
+        "statement": "from contextlib import contextmanager"
+      },
+      {
+        "line": 7,
+        "statement": "from sqlalchemy import create_engine, event"
+      },
+      {
+        "line": 8,
+        "statement": "from sqlalchemy.engine import Engine"
+      },
+      {
+        "line": 9,
+        "statement": "from sqlalchemy.orm import Session, sessionmaker"
+      },
+      {
+        "line": 11,
+        "statement": "from src.database.models import Base"
+      }
+    ]
+  },
+  {
+    "path": "src/database/models.py",
+    "declarations": [
+      {
+        "name": "Base",
+        "kind": "ClassDef",
+        "line": 9,
+        "end_line": 10
+      },
+      {
+        "name": "CallRecord",
+        "kind": "ClassDef",
+        "line": 13,
+        "end_line": 25
+      },
+      {
+        "name": "AuditLogEntry",
+        "kind": "ClassDef",
+        "line": 28,
+        "end_line": 36
+      },
+      {
+        "name": "TranscriptionCache",
+        "kind": "ClassDef",
+        "line": 39,
+        "end_line": 45
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "from datetime import datetime"
+      },
+      {
+        "line": 5,
+        "statement": "from sqlalchemy import Column, DateTime, Integer, String, Text"
+      },
+      {
+        "line": 6,
+        "statement": "from sqlalchemy.orm import DeclarativeBase"
+      }
+    ]
+  },
+  {
+    "path": "src/graph/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "src/graph/edges.py",
+    "declarations": [
+      {
+        "name": "route_after_intake",
+        "kind": "FunctionDef",
+        "line": 8,
+        "end_line": 11
+      },
+      {
+        "name": "route_after_transcription",
+        "kind": "FunctionDef",
+        "line": 14,
+        "end_line": 17
+      },
+      {
+        "name": "route_after_qa",
+        "kind": "FunctionDef",
+        "line": 20,
+        "end_line": 24
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "from typing import Literal"
+      },
+      {
+        "line": 5,
+        "statement": "from src.graph.state import IntakeResult, QAScoreResult, TranscriptionResult"
+      }
+    ]
+  },
+  {
+    "path": "src/graph/state.py",
+    "declarations": [
+      {
+        "name": "AudioInput",
+        "kind": "ClassDef",
+        "line": 11,
+        "end_line": 16
+      },
+      {
+        "name": "AudioProperties",
+        "kind": "ClassDef",
+        "line": 19,
+        "end_line": 24
+      },
+      {
+        "name": "PIIScanResult",
+        "kind": "ClassDef",
+        "line": 27,
+        "end_line": 29
+      },
+      {
+        "name": "IntakeResult",
+        "kind": "ClassDef",
+        "line": 32,
+        "end_line": 38
+      },
+      {
+        "name": "TranscriptionSegment",
+        "kind": "ClassDef",
+        "line": 41,
+        "end_line": 47
+      },
+      {
+        "name": "TranscriptionResult",
+        "kind": "ClassDef",
+        "line": 50,
+        "end_line": 55
+      },
+      {
+        "name": "ResolutionStatus",
+        "kind": "ClassDef",
+        "line": 58,
+        "end_line": 61
+      },
+      {
+        "name": "ActionItem",
+        "kind": "ClassDef",
+        "line": 64,
+        "end_line": 67
+      },
+      {
+        "name": "Entity",
+        "kind": "ClassDef",
+        "line": 70,
+        "end_line": 72
+      },
+      {
+        "name": "SummaryResult",
+        "kind": "ClassDef",
+        "line": 75,
+        "end_line": 82
+      },
+      {
+        "name": "QADimensionScore",
+        "kind": "ClassDef",
+        "line": 85,
+        "end_line": 87
+      },
+      {
+        "name": "ComplianceFlag",
+        "kind": "ClassDef",
+        "line": 90,
+        "end_line": 93
+      },
+      {
+        "name": "QAScoreResult",
+        "kind": "ClassDef",
+        "line": 96,
+        "end_line": 104
+      },
+      {
+        "name": "CallReport",
+        "kind": "ClassDef",
+        "line": 107,
+        "end_line": 115
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import uuid"
+      },
+      {
+        "line": 4,
+        "statement": "from datetime import datetime"
+      },
+      {
+        "line": 5,
+        "statement": "from enum import StrEnum"
+      },
+      {
+        "line": 6,
+        "statement": "from typing import Literal"
+      },
+      {
+        "line": 8,
+        "statement": "from pydantic import BaseModel, Field"
+      }
+    ]
+  },
+  {
+    "path": "src/graph/workflow.py",
+    "declarations": [
+      {
+        "name": "PipelineState",
+        "kind": "ClassDef",
+        "line": 32,
+        "end_line": 40
+      },
+      {
+        "name": "intake_node",
+        "kind": "FunctionDef",
+        "line": 44,
+        "end_line": 48
+      },
+      {
+        "name": "transcription_node",
+        "kind": "FunctionDef",
+        "line": 52,
+        "end_line": 62
+      },
+      {
+        "name": "injection_check_node",
+        "kind": "FunctionDef",
+        "line": 66,
+        "end_line": 78
+      },
+      {
+        "name": "pii_redaction_node",
+        "kind": "FunctionDef",
+        "line": 82,
+        "end_line": 99
+      },
+      {
+        "name": "summarize_and_qa_node",
+        "kind": "FunctionDef",
+        "line": 103,
+        "end_line": 145
+      },
+      {
+        "name": "report_node",
+        "kind": "FunctionDef",
+        "line": 149,
+        "end_line": 157
+      },
+      {
+        "name": "error_node",
+        "kind": "FunctionDef",
+        "line": 160,
+        "end_line": 176
+      },
+      {
+        "name": "supervisor_review_node",
+        "kind": "FunctionDef",
+        "line": 179,
+        "end_line": 187
+      },
+      {
+        "name": "build_workflow",
+        "kind": "FunctionDef",
+        "line": 190,
+        "end_line": 235
+      },
+      {
+        "name": "compile_workflow",
+        "kind": "FunctionDef",
+        "line": 238,
+        "end_line": 240
+      }
+    ],
+    "imports": [
+      {
+        "line": 2,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 4,
+        "statement": "import logging"
+      },
+      {
+        "line": 5,
+        "statement": "import time"
+      },
+      {
+        "line": 6,
+        "statement": "from typing import TypedDict"
+      },
+      {
+        "line": 8,
+        "statement": "from langgraph.graph import END, StateGraph"
+      },
+      {
+        "line": 9,
+        "statement": "from langsmith import traceable"
+      },
+      {
+        "line": 13,
+        "statement": "from src.agents.intake import run_intake"
+      },
+      {
+        "line": 14,
+        "statement": "from src.agents.qa_scoring import QAScoringError, run_qa_scoring"
+      },
+      {
+        "line": 15,
+        "statement": "from src.agents.report import compile_report"
+      },
+      {
+        "line": 16,
+        "statement": "from src.agents.summarization import SummarizationError, run_summarization"
+      },
+      {
+        "line": 17,
+        "statement": "from src.agents.transcription import run_transcription"
+      },
+      {
+        "line": 18,
+        "statement": "from src.graph.edges import route_after_intake, route_after_qa, route_after_transcription"
+      },
+      {
+        "line": 19,
+        "statement": "from src.graph.state import AudioInput, CallReport, IntakeResult, QAScoreResult, SummaryResult, TranscriptionResult"
+      },
+      {
+        "line": 27,
+        "statement": "from src.security.injection_detector import detect_injection"
+      },
+      {
+        "line": 28,
+        "statement": "from src.security.pii_redactor import redact_pii"
+      },
+      {
+        "line": 29,
+        "statement": "from src.utils.config import Config"
+      }
+    ]
+  },
+  {
+    "path": "src/security/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "src/security/audit.py",
+    "declarations": [
+      {
+        "name": "AuditLogger",
+        "kind": "ClassDef",
+        "line": 10,
+        "end_line": 32
+      },
+      {
+        "name": "__init__",
+        "kind": "FunctionDef",
+        "line": 11,
+        "end_line": 21
+      },
+      {
+        "name": "log",
+        "kind": "FunctionDef",
+        "line": 23,
+        "end_line": 32
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import json"
+      },
+      {
+        "line": 4,
+        "statement": "from datetime import datetime"
+      },
+      {
+        "line": 6,
+        "statement": "from src.database.connection import get_engine, init_db, session_scope"
+      },
+      {
+        "line": 7,
+        "statement": "from src.database.models import AuditLogEntry"
+      }
+    ]
+  },
+  {
+    "path": "src/security/injection_detector.py",
+    "declarations": [
+      {
+        "name": "InjectionDetectionResult",
+        "kind": "ClassDef",
+        "line": 33,
+        "end_line": 36
+      },
+      {
+        "name": "detect_injection",
+        "kind": "FunctionDef",
+        "line": 39,
+        "end_line": 49
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import re"
+      },
+      {
+        "line": 4,
+        "statement": "from dataclasses import dataclass, field"
+      }
+    ]
+  },
+  {
+    "path": "src/security/pii_redactor.py",
+    "declarations": [
+      {
+        "name": "PIIDetection",
+        "kind": "ClassDef",
+        "line": 8,
+        "end_line": 12
+      },
+      {
+        "name": "PIIRedactionResult",
+        "kind": "ClassDef",
+        "line": 16,
+        "end_line": 19
+      },
+      {
+        "name": "redact_pii",
+        "kind": "FunctionDef",
+        "line": 34,
+        "end_line": 71
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import re"
+      },
+      {
+        "line": 4,
+        "statement": "from dataclasses import dataclass, field"
+      }
+    ]
+  },
+  {
+    "path": "src/services/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "src/services/history.py",
+    "declarations": [
+      {
+        "name": "_safe_loads",
+        "kind": "FunctionDef",
+        "line": 23,
+        "end_line": 29
+      },
+      {
+        "name": "list_calls",
+        "kind": "FunctionDef",
+        "line": 32,
+        "end_line": 68
+      },
+      {
+        "name": "get_call_detail",
+        "kind": "FunctionDef",
+        "line": 71,
+        "end_line": 117
+      }
+    ],
+    "imports": [
+      {
+        "line": 9,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 11,
+        "statement": "import json"
+      },
+      {
+        "line": 12,
+        "statement": "import logging"
+      },
+      {
+        "line": 13,
+        "statement": "from typing import Any"
+      },
+      {
+        "line": 15,
+        "statement": "from src.database.connection import session_scope"
+      },
+      {
+        "line": 16,
+        "statement": "from src.database.models import CallRecord"
+      },
+      {
+        "line": 17,
+        "statement": "from src.graph.state import CallReport"
+      },
+      {
+        "line": 18,
+        "statement": "from src.utils.formatters import format_qa, format_summary"
+      }
+    ]
+  },
+  {
+    "path": "src/services/observability.py",
+    "declarations": [
+      {
+        "name": "get_observability_dashboard",
+        "kind": "FunctionDef",
+        "line": 12,
+        "end_line": 105
+      }
+    ],
+    "imports": [
+      {
+        "line": 3,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 5,
+        "statement": "import json"
+      },
+      {
+        "line": 6,
+        "statement": "import os"
+      },
+      {
+        "line": 8,
+        "statement": "from src.database.connection import session_scope"
+      },
+      {
+        "line": 9,
+        "statement": "from src.database.models import AuditLogEntry, CallRecord"
+      }
+    ]
+  },
+  {
+    "path": "src/services/pipeline.py",
+    "declarations": [
+      {
+        "name": "_cleanup_old_temp_files",
+        "kind": "FunctionDef",
+        "line": 23,
+        "end_line": 33
+      },
+      {
+        "name": "PipelineResult",
+        "kind": "ClassDef",
+        "line": 37,
+        "end_line": 46
+      },
+      {
+        "name": "process_call",
+        "kind": "FunctionDef",
+        "line": 49,
+        "end_line": 176
+      }
+    ],
+    "imports": [
+      {
+        "line": 3,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 5,
+        "statement": "import logging"
+      },
+      {
+        "line": 6,
+        "statement": "import os"
+      },
+      {
+        "line": 7,
+        "statement": "import tempfile"
+      },
+      {
+        "line": 8,
+        "statement": "from dataclasses import dataclass"
+      },
+      {
+        "line": 9,
+        "statement": "from datetime import datetime"
+      },
+      {
+        "line": 10,
+        "statement": "from pathlib import Path"
+      },
+      {
+        "line": 12,
+        "statement": "from src.agents.report import generate_report_json, generate_report_pdf, persist_report"
+      },
+      {
+        "line": 13,
+        "statement": "from src.graph.state import AudioInput, CallReport"
+      },
+      {
+        "line": 14,
+        "statement": "from src.security.audit import AuditLogger"
+      },
+      {
+        "line": 15,
+        "statement": "from src.utils.formatters import format_qa, format_summary"
+      },
+      {
+        "line": 70,
+        "statement": "import numpy as np"
+      },
+      {
+        "line": 71,
+        "statement": "import soundfile as sf"
+      }
+    ]
+  },
+  {
+    "path": "src/ui/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "src/ui/app_builder.py",
+    "declarations": [
+      {
+        "name": "build_app",
+        "kind": "FunctionDef",
+        "line": 16,
+        "end_line": 53
+      }
+    ],
+    "imports": [
+      {
+        "line": 3,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 5,
+        "statement": "import gradio as gr"
+      },
+      {
+        "line": 7,
+        "statement": "from src.services.observability import get_observability_dashboard"
+      },
+      {
+        "line": 8,
+        "statement": "from src.ui.tabs.analyze import build_analyze_tab"
+      },
+      {
+        "line": 9,
+        "statement": "from src.ui.tabs.history import build_history_tab, wire_history_autoload"
+      },
+      {
+        "line": 10,
+        "statement": "from src.ui.tabs.observability import build_observability_tab, wire_observability_autoload"
+      }
+    ]
+  },
+  {
+    "path": "src/ui/tabs/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "src/ui/tabs/analyze.py",
+    "declarations": [
+      {
+        "name": "build_analyze_tab",
+        "kind": "FunctionDef",
+        "line": 14,
+        "end_line": 110
+      },
+      {
+        "name": "_show_processing",
+        "kind": "FunctionDef",
+        "line": 63,
+        "end_line": 73
+      },
+      {
+        "name": "_run_pipeline",
+        "kind": "FunctionDef",
+        "line": 75,
+        "end_line": 101
+      }
+    ],
+    "imports": [
+      {
+        "line": 3,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 5,
+        "statement": "import logging"
+      },
+      {
+        "line": 7,
+        "statement": "import gradio as gr"
+      },
+      {
+        "line": 9,
+        "statement": "from src.services.pipeline import process_call"
+      }
+    ]
+  },
+  {
+    "path": "src/ui/tabs/history.py",
+    "declarations": [
+      {
+        "name": "_rows_to_display",
+        "kind": "FunctionDef",
+        "line": 19,
+        "end_line": 29
+      },
+      {
+        "name": "build_history_tab",
+        "kind": "FunctionDef",
+        "line": 32,
+        "end_line": 185
+      },
+      {
+        "name": "_load_history",
+        "kind": "FunctionDef",
+        "line": 84,
+        "end_line": 88
+      },
+      {
+        "name": "_on_row_select",
+        "kind": "FunctionDef",
+        "line": 90,
+        "end_line": 164
+      },
+      {
+        "name": "wire_history_autoload",
+        "kind": "FunctionDef",
+        "line": 188,
+        "end_line": 195
+      },
+      {
+        "name": "_load",
+        "kind": "FunctionDef",
+        "line": 191,
+        "end_line": 193
+      }
+    ],
+    "imports": [
+      {
+        "line": 3,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 5,
+        "statement": "import logging"
+      },
+      {
+        "line": 6,
+        "statement": "import tempfile"
+      },
+      {
+        "line": 8,
+        "statement": "import gradio as gr"
+      },
+      {
+        "line": 10,
+        "statement": "from src.agents.report import generate_report_json, generate_report_pdf"
+      },
+      {
+        "line": 11,
+        "statement": "from src.services.history import get_call_detail, list_calls"
+      }
+    ]
+  },
+  {
+    "path": "src/ui/tabs/observability.py",
+    "declarations": [
+      {
+        "name": "build_observability_tab",
+        "kind": "FunctionDef",
+        "line": 10,
+        "end_line": 39
+      },
+      {
+        "name": "_refresh",
+        "kind": "FunctionDef",
+        "line": 34,
+        "end_line": 35
+      },
+      {
+        "name": "wire_observability_autoload",
+        "kind": "FunctionDef",
+        "line": 42,
+        "end_line": 49
+      }
+    ],
+    "imports": [
+      {
+        "line": 3,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 5,
+        "statement": "import gradio as gr"
+      },
+      {
+        "line": 7,
+        "statement": "from src.services.observability import get_observability_dashboard"
+      }
+    ]
+  },
+  {
+    "path": "src/utils/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "src/utils/audio.py",
+    "declarations": [
+      {
+        "name": "AudioValidationError",
+        "kind": "ClassDef",
+        "line": 18,
+        "end_line": 19
+      },
+      {
+        "name": "ValidationResult",
+        "kind": "ClassDef",
+        "line": 23,
+        "end_line": 25
+      },
+      {
+        "name": "detect_audio_format",
+        "kind": "FunctionDef",
+        "line": 28,
+        "end_line": 39
+      },
+      {
+        "name": "validate_audio_file",
+        "kind": "FunctionDef",
+        "line": 42,
+        "end_line": 59
+      },
+      {
+        "name": "extract_audio_properties",
+        "kind": "FunctionDef",
+        "line": 62,
+        "end_line": 100
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import io"
+      },
+      {
+        "line": 4,
+        "statement": "import wave"
+      },
+      {
+        "line": 5,
+        "statement": "from dataclasses import dataclass"
+      },
+      {
+        "line": 7,
+        "statement": "from mutagen.flac import FLAC"
+      },
+      {
+        "line": 8,
+        "statement": "from mutagen.mp3 import MP3"
+      },
+      {
+        "line": 9,
+        "statement": "from mutagen.mp4 import MP4"
+      },
+      {
+        "line": 11,
+        "statement": "from src.graph.state import AudioProperties"
+      }
+    ]
+  },
+  {
+    "path": "src/utils/config.py",
+    "declarations": [
+      {
+        "name": "Config",
+        "kind": "ClassDef",
+        "line": 18,
+        "end_line": 39
+      },
+      {
+        "name": "load_config",
+        "kind": "FunctionDef",
+        "line": 42,
+        "end_line": 70
+      },
+      {
+        "name": "_require",
+        "kind": "FunctionDef",
+        "line": 43,
+        "end_line": 47
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import os"
+      },
+      {
+        "line": 4,
+        "statement": "import secrets"
+      },
+      {
+        "line": 5,
+        "statement": "from dataclasses import dataclass"
+      },
+      {
+        "line": 6,
+        "statement": "from pathlib import Path"
+      },
+      {
+        "line": 8,
+        "statement": "from dotenv import load_dotenv"
+      }
+    ]
+  },
+  {
+    "path": "src/utils/formatters.py",
+    "declarations": [
+      {
+        "name": "secs_to_mmss",
+        "kind": "FunctionDef",
+        "line": 6,
+        "end_line": 10
+      },
+      {
+        "name": "format_summary",
+        "kind": "FunctionDef",
+        "line": 13,
+        "end_line": 46
+      },
+      {
+        "name": "format_qa",
+        "kind": "FunctionDef",
+        "line": 49,
+        "end_line": 86
+      }
+    ],
+    "imports": [
+      {
+        "line": 3,
+        "statement": "from __future__ import annotations"
+      }
+    ]
+  },
+  {
+    "path": "src/utils/llm_factory.py",
+    "declarations": [
+      {
+        "name": "get_llm",
+        "kind": "FunctionDef",
+        "line": 21,
+        "end_line": 48
+      }
+    ],
+    "imports": [
+      {
+        "line": 9,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 11,
+        "statement": "from langchain_core.language_models.chat_models import BaseChatModel"
+      },
+      {
+        "line": 36,
+        "statement": "from langchain_google_genai import ChatGoogleGenerativeAI"
+      },
+      {
+        "line": 41,
+        "statement": "from langchain_groq import ChatGroq"
+      },
+      {
+        "line": 46,
+        "statement": "from langchain_openai import ChatOpenAI"
+      }
+    ]
+  },
+  {
+    "path": "tests/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "tests/conftest.py",
+    "declarations": [
+      {
+        "name": "make_wav_bytes",
+        "kind": "FunctionDef",
+        "line": 22,
+        "end_line": 31
+      },
+      {
+        "name": "make_intake_result",
+        "kind": "FunctionDef",
+        "line": 34,
+        "end_line": 51
+      },
+      {
+        "name": "make_transcription",
+        "kind": "FunctionDef",
+        "line": 54,
+        "end_line": 82
+      },
+      {
+        "name": "make_summary",
+        "kind": "FunctionDef",
+        "line": 85,
+        "end_line": 94
+      },
+      {
+        "name": "make_qa_scores",
+        "kind": "FunctionDef",
+        "line": 97,
+        "end_line": 107
+      },
+      {
+        "name": "db_engine",
+        "kind": "FunctionDef",
+        "line": 111,
+        "end_line": 118
+      },
+      {
+        "name": "db_session",
+        "kind": "FunctionDef",
+        "line": 122,
+        "end_line": 128
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 3,
+        "statement": "import io"
+      },
+      {
+        "line": 4,
+        "statement": "import uuid"
+      },
+      {
+        "line": 5,
+        "statement": "import wave"
+      },
+      {
+        "line": 7,
+        "statement": "import pytest"
+      },
+      {
+        "line": 9,
+        "statement": "from src.graph.state import AudioProperties, IntakeResult, PIIScanResult, QADimensionScore, QAScoreResult, ResolutionStatus, SummaryResult, TranscriptionResult, TranscriptionSegment"
+      },
+      {
+        "line": 113,
+        "statement": "from src.database.connection import get_engine, init_db"
+      },
+      {
+        "line": 124,
+        "statement": "from src.database.connection import get_session"
+      }
+    ]
+  },
+  {
+    "path": "tests/integration/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "tests/integration/test_database_persistence.py",
+    "declarations": [
+      {
+        "name": "TestCallRecordPersistence",
+        "kind": "ClassDef",
+        "line": 10,
+        "end_line": 44
+      },
+      {
+        "name": "test_insert_and_retrieve_call_record",
+        "kind": "FunctionDef",
+        "line": 11,
+        "end_line": 29
+      },
+      {
+        "name": "test_insert_audit_log",
+        "kind": "FunctionDef",
+        "line": 31,
+        "end_line": 44
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "import uuid"
+      },
+      {
+        "line": 2,
+        "statement": "from datetime import datetime"
+      },
+      {
+        "line": 4,
+        "statement": "import pytest"
+      },
+      {
+        "line": 6,
+        "statement": "from src.database.models import AuditLogEntry, CallRecord"
+      }
+    ]
+  },
+  {
+    "path": "tests/integration/test_pipeline_end_to_end.py",
+    "declarations": [
+      {
+        "name": "_make_test_config",
+        "kind": "FunctionDef",
+        "line": 19,
+        "end_line": 33
+      },
+      {
+        "name": "TestPipelineEndToEnd",
+        "kind": "ClassDef",
+        "line": 37,
+        "end_line": 120
+      },
+      {
+        "name": "test_full_pipeline_happy_path",
+        "kind": "FunctionDef",
+        "line": 41,
+        "end_line": 105
+      },
+      {
+        "name": "test_invalid_audio_routes_to_error",
+        "kind": "FunctionDef",
+        "line": 107,
+        "end_line": 120
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "import uuid"
+      },
+      {
+        "line": 2,
+        "statement": "from pathlib import Path"
+      },
+      {
+        "line": 3,
+        "statement": "from unittest.mock import MagicMock, patch"
+      },
+      {
+        "line": 5,
+        "statement": "import pytest"
+      },
+      {
+        "line": 7,
+        "statement": "from src.graph.state import AudioInput, QADimensionScore, QAScoreResult, ResolutionStatus, SummaryResult"
+      },
+      {
+        "line": 14,
+        "statement": "from src.graph.workflow import compile_workflow"
+      },
+      {
+        "line": 15,
+        "statement": "from src.utils.config import Config"
+      },
+      {
+        "line": 16,
+        "statement": "from tests.conftest import make_wav_bytes"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "tests/security/test_pii_detection.py",
+    "declarations": [
+      {
+        "name": "TestPIIDetectionComprehensive",
+        "kind": "ClassDef",
+        "line": 7,
+        "end_line": 68
+      },
+      {
+        "name": "test_catches_phone_formats",
+        "kind": "FunctionDef",
+        "line": 18,
+        "end_line": 20
+      },
+      {
+        "name": "test_catches_email_formats",
+        "kind": "FunctionDef",
+        "line": 30,
+        "end_line": 32
+      },
+      {
+        "name": "test_catches_ssn_formats",
+        "kind": "FunctionDef",
+        "line": 41,
+        "end_line": 43
+      },
+      {
+        "name": "test_catches_credit_card_formats",
+        "kind": "FunctionDef",
+        "line": 53,
+        "end_line": 55
+      },
+      {
+        "name": "test_embedded_pii_in_conversation",
+        "kind": "FunctionDef",
+        "line": 57,
+        "end_line": 68
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "import pytest"
+      },
+      {
+        "line": 3,
+        "statement": "from src.security.pii_redactor import redact_pii"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_prompt_injection.py",
+    "declarations": [
+      {
+        "name": "TestPromptInjectionAdversarial",
+        "kind": "ClassDef",
+        "line": 7,
+        "end_line": 44
+      },
+      {
+        "name": "test_catches_injection",
+        "kind": "FunctionDef",
+        "line": 28,
+        "end_line": 30
+      },
+      {
+        "name": "test_passes_clean_text",
+        "kind": "FunctionDef",
+        "line": 42,
+        "end_line": 44
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "import pytest"
+      },
+      {
+        "line": 3,
+        "statement": "from src.security.injection_detector import detect_injection"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/__init__.py",
+    "declarations": [],
+    "imports": []
+  },
+  {
+    "path": "tests/unit/test_audio.py",
+    "declarations": [
+      {
+        "name": "TestDetectAudioFormat",
+        "kind": "ClassDef",
+        "line": 15,
+        "end_line": 29
+      },
+      {
+        "name": "test_wav_magic_bytes",
+        "kind": "FunctionDef",
+        "line": 16,
+        "end_line": 18
+      },
+      {
+        "name": "test_mp3_magic_bytes",
+        "kind": "FunctionDef",
+        "line": 20,
+        "end_line": 22
+      },
+      {
+        "name": "test_flac_magic_bytes",
+        "kind": "FunctionDef",
+        "line": 24,
+        "end_line": 26
+      },
+      {
+        "name": "test_unknown_format",
+        "kind": "FunctionDef",
+        "line": 28,
+        "end_line": 29
+      },
+      {
+        "name": "TestValidateAudioFile",
+        "kind": "ClassDef",
+        "line": 32,
+        "end_line": 52
+      },
+      {
+        "name": "test_valid_wav",
+        "kind": "FunctionDef",
+        "line": 33,
+        "end_line": 37
+      },
+      {
+        "name": "test_reject_unsupported_format",
+        "kind": "FunctionDef",
+        "line": 39,
+        "end_line": 42
+      },
+      {
+        "name": "test_reject_oversized_file",
+        "kind": "FunctionDef",
+        "line": 44,
+        "end_line": 48
+      },
+      {
+        "name": "test_reject_empty_file",
+        "kind": "FunctionDef",
+        "line": 50,
+        "end_line": 52
+      },
+      {
+        "name": "TestExtractAudioProperties",
+        "kind": "ClassDef",
+        "line": 55,
+        "end_line": 67
+      },
+      {
+        "name": "test_wav_properties",
+        "kind": "FunctionDef",
+        "line": 56,
+        "end_line": 63
+      },
+      {
+        "name": "test_raises_for_corrupt_audio",
+        "kind": "FunctionDef",
+        "line": 65,
+        "end_line": 67
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "import pytest"
+      },
+      {
+        "line": 3,
+        "statement": "from src.utils.audio import AudioValidationError, detect_audio_format, extract_audio_properties, validate_audio_file"
+      },
+      {
+        "line": 9,
+        "statement": "from tests.conftest import make_wav_bytes"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_edges.py",
+    "declarations": [
+      {
+        "name": "TestRouteAfterIntake",
+        "kind": "ClassDef",
+        "line": 14,
+        "end_line": 30
+      },
+      {
+        "name": "test_valid_intake_routes_to_transcribe",
+        "kind": "FunctionDef",
+        "line": 15,
+        "end_line": 17
+      },
+      {
+        "name": "test_failed_intake_routes_to_error",
+        "kind": "FunctionDef",
+        "line": 19,
+        "end_line": 30
+      },
+      {
+        "name": "TestRouteAfterTranscription",
+        "kind": "ClassDef",
+        "line": 33,
+        "end_line": 42
+      },
+      {
+        "name": "test_always_routes_to_summarize",
+        "kind": "FunctionDef",
+        "line": 34,
+        "end_line": 42
+      },
+      {
+        "name": "TestRouteAfterQa",
+        "kind": "ClassDef",
+        "line": 45,
+        "end_line": 64
+      },
+      {
+        "name": "test_normal_scores_route_to_report",
+        "kind": "FunctionDef",
+        "line": 46,
+        "end_line": 48
+      },
+      {
+        "name": "test_critical_flag_routes_to_supervisor",
+        "kind": "FunctionDef",
+        "line": 50,
+        "end_line": 57
+      },
+      {
+        "name": "test_non_critical_flag_routes_to_report",
+        "kind": "FunctionDef",
+        "line": 59,
+        "end_line": 64
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "import uuid"
+      },
+      {
+        "line": 3,
+        "statement": "from src.graph.edges import route_after_intake, route_after_qa, route_after_transcription"
+      },
+      {
+        "line": 4,
+        "statement": "from src.graph.state import AudioProperties, ComplianceFlag, IntakeResult, PIIScanResult, TranscriptionResult"
+      },
+      {
+        "line": 11,
+        "statement": "from tests.conftest import make_intake_result, make_qa_scores"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_formatters.py",
+    "declarations": [
+      {
+        "name": "TestSecsToMmss",
+        "kind": "ClassDef",
+        "line": 4,
+        "end_line": 12
+      },
+      {
+        "name": "test_zero",
+        "kind": "FunctionDef",
+        "line": 5,
+        "end_line": 6
+      },
+      {
+        "name": "test_one_minute_thirty",
+        "kind": "FunctionDef",
+        "line": 8,
+        "end_line": 9
+      },
+      {
+        "name": "test_over_ten_minutes",
+        "kind": "FunctionDef",
+        "line": 11,
+        "end_line": 12
+      },
+      {
+        "name": "TestFormatSummary",
+        "kind": "ClassDef",
+        "line": 15,
+        "end_line": 39
+      },
+      {
+        "name": "test_includes_call_purpose",
+        "kind": "FunctionDef",
+        "line": 16,
+        "end_line": 25
+      },
+      {
+        "name": "test_includes_action_items",
+        "kind": "FunctionDef",
+        "line": 27,
+        "end_line": 39
+      },
+      {
+        "name": "TestFormatQa",
+        "kind": "ClassDef",
+        "line": 42,
+        "end_line": 84
+      },
+      {
+        "name": "test_includes_overall_score",
+        "kind": "FunctionDef",
+        "line": 43,
+        "end_line": 55
+      },
+      {
+        "name": "test_includes_dimension_scores",
+        "kind": "FunctionDef",
+        "line": 57,
+        "end_line": 68
+      },
+      {
+        "name": "test_includes_compliance_flags_with_icons",
+        "kind": "FunctionDef",
+        "line": 70,
+        "end_line": 84
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from src.utils.formatters import format_qa, format_summary, secs_to_mmss"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_history_service.py",
+    "declarations": [
+      {
+        "name": "_insert_record",
+        "kind": "FunctionDef",
+        "line": 20,
+        "end_line": 67
+      },
+      {
+        "name": "TestListCalls",
+        "kind": "ClassDef",
+        "line": 70,
+        "end_line": 118
+      },
+      {
+        "name": "test_returns_empty_when_no_records",
+        "kind": "FunctionDef",
+        "line": 71,
+        "end_line": 72
+      },
+      {
+        "name": "test_returns_rows_newest_first",
+        "kind": "FunctionDef",
+        "line": 74,
+        "end_line": 84
+      },
+      {
+        "name": "test_row_has_display_ready_fields",
+        "kind": "FunctionDef",
+        "line": 86,
+        "end_line": 102
+      },
+      {
+        "name": "test_handles_missing_score_gracefully",
+        "kind": "FunctionDef",
+        "line": 104,
+        "end_line": 110
+      },
+      {
+        "name": "test_respects_limit",
+        "kind": "FunctionDef",
+        "line": 112,
+        "end_line": 118
+      },
+      {
+        "name": "TestGetCallDetail",
+        "kind": "ClassDef",
+        "line": 121,
+        "end_line": 164
+      },
+      {
+        "name": "test_unknown_call_id_returns_none",
+        "kind": "FunctionDef",
+        "line": 122,
+        "end_line": 123
+      },
+      {
+        "name": "test_returns_full_payload_for_known_call",
+        "kind": "FunctionDef",
+        "line": 125,
+        "end_line": 156
+      },
+      {
+        "name": "test_handles_corrupt_report_json",
+        "kind": "FunctionDef",
+        "line": 158,
+        "end_line": 164
+      }
+    ],
+    "imports": [
+      {
+        "line": 3,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 5,
+        "statement": "import json"
+      },
+      {
+        "line": 6,
+        "statement": "import uuid"
+      },
+      {
+        "line": 7,
+        "statement": "from datetime import datetime, timedelta"
+      },
+      {
+        "line": 9,
+        "statement": "from src.database.connection import get_session"
+      },
+      {
+        "line": 10,
+        "statement": "from src.database.models import CallRecord"
+      },
+      {
+        "line": 11,
+        "statement": "from src.services.history import get_call_detail, list_calls"
+      },
+      {
+        "line": 12,
+        "statement": "from tests.conftest import make_intake_result, make_qa_scores, make_summary, make_transcription"
+      },
+      {
+        "line": 127,
+        "statement": "from src.graph.state import CallReport"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_injection_detector.py",
+    "declarations": [
+      {
+        "name": "TestDetectInjection",
+        "kind": "ClassDef",
+        "line": 4,
+        "end_line": 22
+      },
+      {
+        "name": "test_clean_text_passes",
+        "kind": "FunctionDef",
+        "line": 5,
+        "end_line": 7
+      },
+      {
+        "name": "test_detects_ignore_instructions",
+        "kind": "FunctionDef",
+        "line": 9,
+        "end_line": 12
+      },
+      {
+        "name": "test_detects_role_switching",
+        "kind": "FunctionDef",
+        "line": 14,
+        "end_line": 18
+      },
+      {
+        "name": "test_detects_prompt_leaking",
+        "kind": "FunctionDef",
+        "line": 20,
+        "end_line": 22
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from src.security.injection_detector import detect_injection"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_intake.py",
+    "declarations": [
+      {
+        "name": "TestRunIntake",
+        "kind": "ClassDef",
+        "line": 8,
+        "end_line": 62
+      },
+      {
+        "name": "test_valid_wav_intake",
+        "kind": "FunctionDef",
+        "line": 9,
+        "end_line": 22
+      },
+      {
+        "name": "test_reject_unsupported_format",
+        "kind": "FunctionDef",
+        "line": 24,
+        "end_line": 31
+      },
+      {
+        "name": "test_reject_empty_file",
+        "kind": "FunctionDef",
+        "line": 33,
+        "end_line": 36
+      },
+      {
+        "name": "test_generates_unique_call_id",
+        "kind": "FunctionDef",
+        "line": 38,
+        "end_line": 42
+      },
+      {
+        "name": "test_pii_scan_on_metadata",
+        "kind": "FunctionDef",
+        "line": 44,
+        "end_line": 53
+      },
+      {
+        "name": "test_reject_over_60_min_duration",
+        "kind": "FunctionDef",
+        "line": 55,
+        "end_line": 62
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from datetime import datetime"
+      },
+      {
+        "line": 3,
+        "statement": "from src.agents.intake import run_intake"
+      },
+      {
+        "line": 4,
+        "statement": "from src.graph.state import AudioInput, IntakeResult"
+      },
+      {
+        "line": 5,
+        "statement": "from tests.conftest import make_wav_bytes"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_pii_redactor.py",
+    "declarations": [
+      {
+        "name": "TestRedactPII",
+        "kind": "ClassDef",
+        "line": 4,
+        "end_line": 42
+      },
+      {
+        "name": "test_redacts_phone_number",
+        "kind": "FunctionDef",
+        "line": 5,
+        "end_line": 10
+      },
+      {
+        "name": "test_redacts_email",
+        "kind": "FunctionDef",
+        "line": 12,
+        "end_line": 16
+      },
+      {
+        "name": "test_redacts_ssn",
+        "kind": "FunctionDef",
+        "line": 18,
+        "end_line": 22
+      },
+      {
+        "name": "test_redacts_credit_card",
+        "kind": "FunctionDef",
+        "line": 24,
+        "end_line": 28
+      },
+      {
+        "name": "test_no_pii_returns_original",
+        "kind": "FunctionDef",
+        "line": 30,
+        "end_line": 34
+      },
+      {
+        "name": "test_redacts_multiple_pii_types",
+        "kind": "FunctionDef",
+        "line": 36,
+        "end_line": 42
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from src.security.pii_redactor import redact_pii"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_qa_scoring.py",
+    "declarations": [
+      {
+        "name": "TestRunQAScoring",
+        "kind": "ClassDef",
+        "line": 14,
+        "end_line": 51
+      },
+      {
+        "name": "test_returns_valid_qa_result",
+        "kind": "FunctionDef",
+        "line": 16,
+        "end_line": 38
+      },
+      {
+        "name": "test_raises_after_max_retries",
+        "kind": "FunctionDef",
+        "line": 41,
+        "end_line": 51
+      },
+      {
+        "name": "TestScoreValidation",
+        "kind": "ClassDef",
+        "line": 54,
+        "end_line": 76
+      },
+      {
+        "name": "test_overall_score_recomputed_from_weights",
+        "kind": "FunctionDef",
+        "line": 56,
+        "end_line": 76
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "import uuid"
+      },
+      {
+        "line": 2,
+        "statement": "from unittest.mock import MagicMock, patch"
+      },
+      {
+        "line": 4,
+        "statement": "import pytest"
+      },
+      {
+        "line": 6,
+        "statement": "from src.agents.qa_scoring import QAScoringError, run_qa_scoring"
+      },
+      {
+        "line": 7,
+        "statement": "from src.graph.state import QADimensionScore, QAScoreResult"
+      },
+      {
+        "line": 11,
+        "statement": "from tests.conftest import make_summary, make_transcription"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_report.py",
+    "declarations": [
+      {
+        "name": "TestCompileReport",
+        "kind": "ClassDef",
+        "line": 7,
+        "end_line": 19
+      },
+      {
+        "name": "test_creates_valid_report",
+        "kind": "FunctionDef",
+        "line": 8,
+        "end_line": 19
+      },
+      {
+        "name": "TestGenerateReportJson",
+        "kind": "ClassDef",
+        "line": 22,
+        "end_line": 34
+      },
+      {
+        "name": "test_produces_valid_json",
+        "kind": "FunctionDef",
+        "line": 23,
+        "end_line": 34
+      },
+      {
+        "name": "TestGenerateReportPdf",
+        "kind": "ClassDef",
+        "line": 37,
+        "end_line": 49
+      },
+      {
+        "name": "test_produces_non_empty_pdf",
+        "kind": "FunctionDef",
+        "line": 38,
+        "end_line": 49
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "import uuid"
+      },
+      {
+        "line": 3,
+        "statement": "from src.agents.report import compile_report, generate_report_json, generate_report_pdf"
+      },
+      {
+        "line": 4,
+        "statement": "from tests.conftest import make_intake_result, make_qa_scores, make_summary, make_transcription"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_state.py",
+    "declarations": [
+      {
+        "name": "TestAudioInput",
+        "kind": "ClassDef",
+        "line": 25,
+        "end_line": 41
+      },
+      {
+        "name": "test_valid_audio_input",
+        "kind": "FunctionDef",
+        "line": 26,
+        "end_line": 35
+      },
+      {
+        "name": "test_audio_input_optional_metadata",
+        "kind": "FunctionDef",
+        "line": 37,
+        "end_line": 41
+      },
+      {
+        "name": "TestIntakeResult",
+        "kind": "ClassDef",
+        "line": 44,
+        "end_line": 78
+      },
+      {
+        "name": "test_valid_intake_result",
+        "kind": "FunctionDef",
+        "line": 45,
+        "end_line": 60
+      },
+      {
+        "name": "test_intake_result_with_validation_error",
+        "kind": "FunctionDef",
+        "line": 62,
+        "end_line": 78
+      },
+      {
+        "name": "TestTranscriptionResult",
+        "kind": "ClassDef",
+        "line": 81,
+        "end_line": 122
+      },
+      {
+        "name": "test_valid_transcription",
+        "kind": "FunctionDef",
+        "line": 82,
+        "end_line": 100
+      },
+      {
+        "name": "test_low_confidence_segment",
+        "kind": "FunctionDef",
+        "line": 102,
+        "end_line": 111
+      },
+      {
+        "name": "test_confidence_must_be_0_to_1",
+        "kind": "FunctionDef",
+        "line": 113,
+        "end_line": 122
+      },
+      {
+        "name": "TestSummaryResult",
+        "kind": "ClassDef",
+        "line": 125,
+        "end_line": 147
+      },
+      {
+        "name": "test_valid_summary",
+        "kind": "FunctionDef",
+        "line": 126,
+        "end_line": 147
+      },
+      {
+        "name": "TestQAScoreResult",
+        "kind": "ClassDef",
+        "line": 150,
+        "end_line": 202
+      },
+      {
+        "name": "test_valid_qa_scores",
+        "kind": "FunctionDef",
+        "line": 151,
+        "end_line": 194
+      },
+      {
+        "name": "test_score_must_be_1_to_5",
+        "kind": "FunctionDef",
+        "line": 196,
+        "end_line": 198
+      },
+      {
+        "name": "test_score_must_be_at_least_1",
+        "kind": "FunctionDef",
+        "line": 200,
+        "end_line": 202
+      },
+      {
+        "name": "TestCallReport",
+        "kind": "ClassDef",
+        "line": 205,
+        "end_line": 254
+      },
+      {
+        "name": "test_valid_call_report",
+        "kind": "FunctionDef",
+        "line": 206,
+        "end_line": 254
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "import uuid"
+      },
+      {
+        "line": 2,
+        "statement": "from datetime import datetime"
+      },
+      {
+        "line": 4,
+        "statement": "import pytest"
+      },
+      {
+        "line": 5,
+        "statement": "from pydantic import ValidationError"
+      },
+      {
+        "line": 7,
+        "statement": "from src.graph.state import ActionItem, AudioInput, AudioProperties, CallReport, ComplianceFlag, Entity, IntakeResult, PIIScanResult, QADimensionScore, QAScoreResult, ResolutionStatus, SummaryResult, TranscriptionResult, TranscriptionSegment"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_summarization.py",
+    "declarations": [
+      {
+        "name": "TestRunSummarization",
+        "kind": "ClassDef",
+        "line": 14,
+        "end_line": 69
+      },
+      {
+        "name": "test_returns_valid_summary_result",
+        "kind": "FunctionDef",
+        "line": 16,
+        "end_line": 35
+      },
+      {
+        "name": "test_retries_on_failure",
+        "kind": "FunctionDef",
+        "line": 38,
+        "end_line": 58
+      },
+      {
+        "name": "test_raises_after_max_retries",
+        "kind": "FunctionDef",
+        "line": 61,
+        "end_line": 69
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "import uuid"
+      },
+      {
+        "line": 2,
+        "statement": "from unittest.mock import MagicMock, patch"
+      },
+      {
+        "line": 4,
+        "statement": "import pytest"
+      },
+      {
+        "line": 6,
+        "statement": "from src.agents.summarization import SummarizationError, run_summarization"
+      },
+      {
+        "line": 7,
+        "statement": "from src.graph.state import ResolutionStatus, SummaryResult"
+      },
+      {
+        "line": 11,
+        "statement": "from tests.conftest import make_transcription"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_transcription.py",
+    "declarations": [
+      {
+        "name": "_make_mock_segment",
+        "kind": "FunctionDef",
+        "line": 8,
+        "end_line": 15
+      },
+      {
+        "name": "TestRunTranscription",
+        "kind": "ClassDef",
+        "line": 18,
+        "end_line": 56
+      },
+      {
+        "name": "test_successful_transcription",
+        "kind": "FunctionDef",
+        "line": 20,
+        "end_line": 38
+      },
+      {
+        "name": "test_flags_low_confidence_call",
+        "kind": "FunctionDef",
+        "line": 41,
+        "end_line": 56
+      }
+    ],
+    "imports": [
+      {
+        "line": 1,
+        "statement": "from unittest.mock import MagicMock, patch"
+      },
+      {
+        "line": 3,
+        "statement": "from src.agents.transcription import run_transcription"
+      },
+      {
+        "line": 4,
+        "statement": "from src.graph.state import TranscriptionResult"
+      },
+      {
+        "line": 5,
+        "statement": "from tests.conftest import make_intake_result"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_workflow_error.py",
+    "declarations": [
+      {
+        "name": "_make_failed_intake",
+        "kind": "FunctionDef",
+        "line": 18,
+        "end_line": 32
+      },
+      {
+        "name": "TestErrorNode",
+        "kind": "ClassDef",
+        "line": 35,
+        "end_line": 60
+      },
+      {
+        "name": "test_uses_explicit_error_when_set",
+        "kind": "FunctionDef",
+        "line": 36,
+        "end_line": 40
+      },
+      {
+        "name": "test_falls_back_to_intake_validation_error",
+        "kind": "FunctionDef",
+        "line": 42,
+        "end_line": 48
+      },
+      {
+        "name": "test_default_message_when_nothing_available",
+        "kind": "FunctionDef",
+        "line": 50,
+        "end_line": 53
+      },
+      {
+        "name": "test_explicit_error_wins_over_intake_field",
+        "kind": "FunctionDef",
+        "line": 55,
+        "end_line": 60
+      }
+    ],
+    "imports": [
+      {
+        "line": 10,
+        "statement": "from __future__ import annotations"
+      },
+      {
+        "line": 12,
+        "statement": "import uuid"
+      },
+      {
+        "line": 14,
+        "statement": "from src.graph.state import AudioProperties, IntakeResult, PIIScanResult"
+      },
+      {
+        "line": 15,
+        "statement": "from src.graph.workflow import error_node"
+      }
+    ]
+  }
+]

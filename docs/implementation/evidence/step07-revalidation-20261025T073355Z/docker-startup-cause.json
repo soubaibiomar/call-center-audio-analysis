@@ -1,0 +1,7 @@
+{
+  "source": "C:\\Users\\omar\\AppData\\Local\\Docker\\log\\host\\com.docker.backend.exe.log",
+  "error_lines": [
+    "[2026-10-25T07:36:09.678926800Z][com.docker.backend.exe.bugsnag] notifying bugsnag: [starting] starting services: initializing Secrets Engine: listening on unix://<HOME>/AppData/Local/docker-secrets-engine/engine.sock: rename <HOME>/AppData/Local/docker-secrets-engine/engine.sock <HOME>/AppData/Local/docker-secrets-engine/engine.sock.stale: The file cannot be accessed by the system. (listener: The file cannot be accessed by the system.)"
+  ],
+  "action": "Launched per-user Docker Desktop executable; no reset, socket deletion, volume or settings change performed."
+}

@@ -1,0 +1,18 @@
+{
+  "command": [
+    ".venv/Scripts/python.exe",
+    "app.py"
+  ],
+  "exit_code": 1,
+  "seconds": 13.801113599998644,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<USERPROFILE>\\Documents\\Call center audio Analysis\\app.py\", line 19, in <module>\n    config = load_config()\n             ^^^^^^^^^^^^^\n  File \"<USERPROFILE>\\Documents\\Call center audio Analysis\\src\\utils\\config.py\", line 53, in load_config\n    openai_key = _require(\"OPENAI_API_KEY\")\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<USERPROFILE>\\Documents\\Call center audio Analysis\\src\\utils\\config.py\", line 46, in _require\n    raise OSError(f\"Required environment variable {key} is not set\")\nOSError: Required environment variable OPENAI_API_KEY is not set\n",
+  "captured_at_utc": "2026-10-24T19:23:54.589802+00:00",
+  "controls": {
+    "model_hub_offline": true,
+    "tracing_disabled": true,
+    "analytics_disabled": true,
+    "cloud_space_binding_removed": true
+  },
+  "model_download_performed": false
+}

@@ -1,0 +1,233 @@
+[
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "tests/",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "stdout": "........................................................................ [ 57%]\n.....................................................                    [100%]\n125 passed in 17.90s\n",
+    "stderr": "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "--extend-ignore",
+      "UP038",
+      "src/",
+      "tests/",
+      "app.py"
+    ],
+    "exit_code": 1,
+    "stdout": "tests\\unit\\test_environment_diagnostics.py:140:101: E501 Line too long (126 > 100)\n    |\n139 | def test_unicode_output_survives_the_capture_boundary() -> None:\n140 |     program = \"import sys; sys.stdout.reconfigure(encoding='utf-8'); print('\\u00e9tat \\u2014 \\u0645\\u0631\\u062d\\u0628\\u0627')\"\n    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^ E501\n141 |     result = run_check(\n142 |         f\"Invoke-ToolCheck {ps_quote(sys.executable)} -Arguments @('-c', {ps_quote(program)})\"\n    |\n\nFound 1 error.\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "tests/unit/test_environment_diagnostics.py"
+    ],
+    "exit_code": 0,
+    "stdout": "1 file already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "mypy",
+      "tests/unit/test_environment_diagnostics.py",
+      "--follow-imports=skip",
+      "--allow-untyped-decorators"
+    ],
+    "exit_code": 0,
+    "stdout": "Success: no issues found in 1 source file\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "app.py",
+      "src/",
+      "tests/unit/test_environment_diagnostics.py"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.EXE",
+      "-NoLogo",
+      "-NoProfile",
+      "-Command",
+      "$t=$null; $e=$null; $null=[System.Management.Automation.Language.Parser]::ParseFile((Join-Path (Get-Location) 'scripts/Test-Project28Environment.ps1'),[ref]$t,[ref]$e); if ($e.Count) { $e|Out-String|Write-Error; exit 1 }; 'PowerShell parser: 0 errors'"
+    ],
+    "exit_code": 0,
+    "stdout": "PowerShell parser: 0 errors\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "app.py"
+    ],
+    "exit_code": 1,
+    "stdout": "Would reformat: src\\services\\history.py\nWould reformat: src\\services\\pipeline.py\nWould reformat: tests\\unit\\test_history_service.py\n3 files would be reformatted, 54 files already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "mypy",
+      "src/"
+    ],
+    "exit_code": 2,
+    "stdout": "src\\agents\\report.py:7: error: Library stubs not installed for \"reportlab.lib.pagesizes\"  [import-untyped]\nsrc\\agents\\report.py:7: note: Hint: \"python3 -m pip install types-reportlab\"\nsrc\\agents\\report.py:7: note: (or run \"mypy --install-types\" to install all missing stub packages)\nsrc\\agents\\report.py:7: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports\nsrc\\agents\\report.py:8: error: Library stubs not installed for \"reportlab.lib.styles\"  [import-untyped]\nsrc\\agents\\report.py:9: error: Library stubs not installed for \"reportlab.platypus\"  [import-untyped]\nsrc\\agents\\transcription.py:7: error: Skipping analyzing \"faster_whisper\": module is installed, but missing library stubs or py.typed marker  [import-untyped]\nsrc\\agents\\transcription.py:25: error: Cannot find implementation or library stub for module named \"torch\"  [import-not-found]\n.venv\\Lib\\site-packages\\numpy\\__init__.pyi:737: error: Type statement is only supported in Python 3.12 and greater  [syntax]\nFound 6 errors in 3 files (errors prevented further checking)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "check",
+      "--python",
+      ".venv/Scripts/python.exe"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Checked 127 packages in 19ms\nAll installed packages are compatible\n"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "upstream/main",
+      "--",
+      "app.py",
+      "src/",
+      "requirements.txt",
+      "pyproject.toml",
+      "Dockerfile"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "tests/",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "stdout": "........................................................................ [ 57%]\n.....................................................                    [100%]\n125 passed in 17.54s\n",
+    "stderr": "<USERPROFILE>\\Projects\\Adaptive-Call-Center-Intelligence\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "--extend-ignore",
+      "UP038",
+      "src/",
+      "tests/",
+      "app.py"
+    ],
+    "exit_code": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "tests/unit/test_environment_diagnostics.py"
+    ],
+    "exit_code": 0,
+    "stdout": "1 file already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "mypy",
+      "tests/unit/test_environment_diagnostics.py",
+      "--follow-imports=skip",
+      "--allow-untyped-decorators"
+    ],
+    "exit_code": 0,
+    "stdout": "Success: no issues found in 1 source file\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "--is-shallow-repository"
+    ],
+    "exit_code": 0,
+    "stdout": "false\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "remote",
+      "-v"
+    ],
+    "exit_code": 0,
+    "stdout": "origin\thttps://github.com/soubaibiomar/call-center-audio-analysis.git (fetch)\norigin\thttps://github.com/soubaibiomar/call-center-audio-analysis.git (push)\nupstream\thttps://github.com/ANI-IN/Call-Center-Intelligence-System (fetch)\nupstream\thttps://github.com/ANI-IN/Call-Center-Intelligence-System (push)\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout": "a37e4634af1d2947fc3c548d54e62bda0b0daf89\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

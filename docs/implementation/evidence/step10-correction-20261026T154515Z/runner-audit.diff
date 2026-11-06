@@ -1,0 +1,30 @@
+--- runner-before.py.txt
++++ services/workers/runner.py
+@@ -89,7 +89,12 @@
+             caller, department = job.caller_id, job.department
+             wait_ms = (now() - job.created_at).total_seconds() * 1000
+             wait_ms = job.metrics.get("queue_wait_ms", wait_ms)
+-            job.metrics = {**job.metrics, "queue_wait_ms": wait_ms}
++            job.metrics = {
++                **job.metrics,
++                "queue_wait_ms": wait_ms,
++                "attempts": float(job.attempts),
++                "retries": float(max(0, job.attempts - 1)),
++            }
+         start = perf_counter()
+ 
+         def commit(session: Session, report: CallReport) -> None:
+@@ -108,9 +113,12 @@
+                 now(),
+                 None,
+             )
++            elapsed_ms = (perf_counter() - start) * 1000
+             job.metrics = {
++                **job.metrics,
+                 "queue_wait_ms": wait_ms,
+-                "execution_ms": (perf_counter() - start) * 1000,
++                "execution_ms": elapsed_ms,
++                "last_attempt_ms": elapsed_ms,
+             }
+ 
+         try:

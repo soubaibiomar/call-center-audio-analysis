@@ -1,0 +1,187 @@
+[
+  {
+    "command": [
+      "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "scripts/check_project_setup.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.5343222000010428,
+    "stdout": "{\n  \"provider\": \"openai\",\n  \"provider_supported_upstream\": true,\n  \"credentials\": {\n    \"OPENAI_API_KEY\": \"MISSING\",\n    \"GOOGLE_API_KEY\": \"MISSING\",\n    \"GROQ_API_KEY\": \"MISSING\",\n    \"LANGCHAIN_API_KEY\": \"MISSING\"\n  },\n  \"selected_credential_ready\": false,\n  \"pins\": [\n    {\n      \"package\": \"langgraph\",\n      \"expected\": \"0.4.1\",\n      \"actual\": \"0.4.1\",\n      \"match\": true\n    },\n    {\n      \"package\": \"langchain\",\n      \"expected\": \"0.3.25\",\n      \"actual\": \"0.3.25\",\n      \"match\": true\n    },\n    {\n      \"package\": \"langchain-openai\",\n      \"expected\": \"0.3.12\",\n      \"actual\": \"0.3.12\",\n      \"match\": true\n    },\n    {\n      \"package\": \"langsmith\",\n      \"expected\": \"0.3.42\",\n      \"actual\": \"0.3.42\",\n      \"match\": true\n    },\n    {\n      \"package\": \"openai\",\n      \"expected\": \"1.82.0\",\n      \"actual\": \"1.82.0\",\n      \"match\": true\n    },\n    {\n      \"package\": \"gradio\",\n      \"expected\": \"5.29.0\",\n      \"actual\": \"5.29.0\",\n      \"match\": true\n    },\n    {\n      \"package\": \"faster-whisper\",\n      \"expected\": \"1.2.1\",\n      \"actual\": \"1.2.1\",\n      \"match\": true\n    },\n    {\n      \"package\": \"pydantic\",\n      \"expected\": \"2.11.3\",\n      \"actual\": \"2.11.3\",\n      \"match\": true\n    },\n    {\n      \"package\": \"sqlalchemy\",\n      \"expected\": \"2.0.41\",\n      \"actual\": \"2.0.41\",\n      \"match\": true\n    },\n    {\n      \"package\": \"python-dotenv\",\n      \"expected\": \"1.1.0\",\n      \"actual\": \"1.1.0\",\n      \"match\": true\n    },\n    {\n      \"package\": \"reportlab\",\n      \"expected\": \"4.4.0\",\n      \"actual\": \"4.4.0\",\n      \"match\": true\n    },\n    {\n      \"package\": \"soundfile\",\n      \"expected\": \"0.13.1\",\n      \"actual\": \"0.13.1\",\n      \"match\": true\n    },\n    {\n      \"package\": \"mutagen\",\n      \"expected\": \"1.47.0\",\n      \"actual\": \"1.47.0\",\n      \"match\": true\n    },\n    {\n      \"package\": \"langchain-google-genai\",\n      \"expected\": \"2.1.4\",\n      \"actual\": \"2.1.4\",\n      \"match\": true\n    },\n    {\n      \"package\": \"langchain-groq\",\n      \"expected\": \"0.3.2\",\n      \"actual\": \"0.3.2\",\n      \"match\": true\n    },\n    {\n      \"package\": \"pytest\",\n      \"expected\": \"8.3.5\",\n      \"actual\": \"8.3.5\",\n      \"match\": true\n    },\n    {\n      \"package\": \"pytest-asyncio\",\n      \"expected\": \"0.25.3\",\n      \"actual\": \"0.25.3\",\n      \"match\": true\n    },\n    {\n      \"package\": \"ruff\",\n      \"expected\": \"0.11.8\",\n      \"actual\": \"0.11.8\",\n      \"match\": true\n    },\n    {\n      \"package\": \"mypy\",\n      \"expected\": \"1.15.0\",\n      \"actual\": \"1.15.0\",\n      \"match\": true\n    },\n    {\n      \"package\": \"detect-secrets\",\n      \"expected\": \"1.5.0\",\n      \"actual\": \"1.5.0\",\n      \"match\": true\n    },\n    {\n      \"package\": \"pre-commit\",\n      \"expected\": \"4.2.0\",\n      \"actual\": \"4.2.0\",\n      \"match\": true\n    }\n  ],\n  \"all_direct_dev_pins_match\": true,\n  \"model_download_performed\": false,\n  \"credential_validity_tested\": false,\n  \"environment_created\": false\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/unit/test_project_setup.py",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "seconds": 1.639815099999396,
+    "stdout": "........                                                                 [100%]\n8 passed in 0.08s\n",
+    "stderr": "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "seconds": 22.112730000000738,
+    "stdout": "........................................................................ [ 49%]\n........................................................................ [ 99%]\n.                                                                        [100%]\n145 passed in 20.43s\n",
+    "stderr": "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Lib\\site-packages\\pytest_asyncio\\plugin.py:207: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/",
+      "tests/",
+      "app.py",
+      "scripts/"
+    ],
+    "exit_code": 0,
+    "seconds": 0.1953237000016088,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "src/",
+      "tests/",
+      "app.py",
+      "scripts/"
+    ],
+    "exit_code": 0,
+    "seconds": 0.1900948000002245,
+    "stdout": "63 files already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "mypy",
+      "scripts/check_project_setup.py",
+      "scripts/check_hardcoded_keys.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.5725854999982403,
+    "stdout": "Success: no issues found in 2 source files\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "scripts/",
+      "tests/unit/test_project_setup.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.2339682999991055,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "check",
+      "--python",
+      "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe"
+    ],
+    "exit_code": 0,
+    "seconds": 0.04641600000104518,
+    "stdout": "",
+    "stderr": "Checked 127 packages in 7ms\nAll installed packages are compatible\n"
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pre_commit",
+      "validate-config"
+    ],
+    "exit_code": 0,
+    "seconds": 0.8410551000015403,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "<USERPROFILE>\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pre_commit",
+      "run",
+      "--all-files"
+    ],
+    "exit_code": 0,
+    "seconds": 3.4748737000008987,
+    "stdout": "ruff.....................................................................Passed\nruff-format..............................................................Passed\nDetect secrets...........................................................Passed\nCheck for hardcoded API keys.............................................Passed\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "check-ignore",
+      ".env",
+      ".env.production",
+      ".venv/pyvenv.cfg"
+    ],
+    "exit_code": 0,
+    "seconds": 0.024841700000251876,
+    "stdout": ".env\n.env.production\n.venv/pyvenv.cfg\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "ls-files",
+      ".env*"
+    ],
+    "exit_code": 0,
+    "seconds": 0.022393000002921326,
+    "stdout": ".env.example\n.env.project28.example\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.03206710000085877,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD",
+      "main",
+      "origin/main",
+      "upstream/main"
+    ],
+    "exit_code": 0,
+    "seconds": 0.023813799998606555,
+    "stdout": "a37e4634af1d2947fc3c548d54e62bda0b0daf89\nfed4b610742c1337147281fcec8f2cdcc0a79be5\na37e4634af1d2947fc3c548d54e62bda0b0daf89\nfed4b610742c1337147281fcec8f2cdcc0a79be5\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "command": [
+      "git",
+      "check-ignore",
+      ".env",
+      "data/project28-step06-baseline.db"
+    ],
+    "exit_code": 0,
+    "stdout": ".env\ndata/project28-step06-baseline.db\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "git",
+      "ls-files",
+      ".env"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Users\\omar\\Documents\\Call center audio Analysis\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pre_commit",
+      "run",
+      "detect-secrets",
+      "--files",
+      "src/utils/llm_factory.py",
+      "src/agents/summarization.py",
+      "src/agents/qa_scoring.py",
+      "src/services/pipeline.py",
+      "tests/unit/test_audio_decoder.py",
+      "tests/unit/test_llm_factory.py",
+      "tests/unit/test_pipeline_exports.py"
+    ],
+    "exit_code": 0,
+    "stdout": "Detect secrets...........................................................Passed\n",
+    "stderr": ""
+  }
+]
