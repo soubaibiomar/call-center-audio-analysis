@@ -1,0 +1,39 @@
+{
+  "fixture": "Synthetic records; real local API/database/signatures. No inference or training.",
+  "assertions": [
+    "dashboard uses API totals and visibly labels synthetic data"
+  ],
+  "screenshots": [
+    {
+      "name": "dashboard-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    }
+  ],
+  "axe": [
+    {
+      "name": "dashboard-1440",
+      "violations": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": [
+            [
+              ".chart-panel:nth-child(1) > .chart-frame"
+            ],
+            [
+              ".chart-panel:nth-child(2) > .chart-frame"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "routes": [
+    "Dashboard"
+  ],
+  "refreshMilliseconds": [],
+  "decision": "FAIL",
+  "failure": "AssertionError [ERR_ASSERTION]: {\"name\":\"dashboard-1440\",\"violations\":[{\"id\":\"aria-prohibited-attr\",\"nodes\":[[\".chart-panel:nth-child(1) > .chart-frame\"],[\".chart-panel:nth-child(2) > .chart-frame\"]]}]}\n\n1 !== 0\n"
+}

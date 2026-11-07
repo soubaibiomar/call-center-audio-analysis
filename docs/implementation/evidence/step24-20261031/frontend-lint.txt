@@ -1,0 +1,4 @@
+
+> project28-web@0.1.0 lint
+> oxlint --deny-warnings --react-plugin --jsx-a11y-plugin src/app src/lib src/features/calls src/features/analytics src/features/live src/features/models src/features/workspace src/features/reviews scripts vite.workspace.config.ts vitest.config.ts
+

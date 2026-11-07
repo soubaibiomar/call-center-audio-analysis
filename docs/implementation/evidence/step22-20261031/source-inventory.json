@@ -1,0 +1,162 @@
+[
+  {
+    "path": "apps/web/src/app/App.test.tsx",
+    "sha256": "962455609dfacdfb9806fa13402d8795c3ea514b9cec17b4dbf3548f6bbae52b",
+    "bytes": 5016
+  },
+  {
+    "path": "apps/web/src/app/App.tsx",
+    "sha256": "f72b3777c67a04cbdd5de05d07df51c32259dc6601b7dc069f102217c8ea955b",
+    "bytes": 23792
+  },
+  {
+    "path": "apps/web/src/app/auth.tsx",
+    "sha256": "e789ba5adfc6ee4f629e8d6cfc7bcb5bc3dbd9ac57819842c1c51c71cb412a00",
+    "bytes": 1490
+  },
+  {
+    "path": "apps/web/src/app/main.tsx",
+    "sha256": "00cf144b7bbe9d24abc72f635fa00c891b3cb7f64136d356ea0672cc0918d0e1",
+    "bytes": 801
+  },
+  {
+    "path": "apps/web/src/app/workspace.css",
+    "sha256": "c87d85dc9ab824380286f8e678290d836f5122addd2473b67b7e93b289cfde46",
+    "bytes": 14238
+  },
+  {
+    "path": "apps/web/src/lib/api/client.test.ts",
+    "sha256": "fc38ceb94786b4f7aaf7d5b4e40f2874ec7009721e0944090b1f4eff28811259",
+    "bytes": 3573
+  },
+  {
+    "path": "apps/web/src/lib/api/client.ts",
+    "sha256": "e71ce5d908bd9005d286ce22bd3ba76de080b11b2ca6a9be871350a32e8fe2d2",
+    "bytes": 2730
+  },
+  {
+    "path": "apps/web/src/lib/api/generated.ts",
+    "sha256": "684f3eb491c2d6d48a6f1b26860e3e5ec4529216d727ab3fc416a18dfdcf2cca",
+    "bytes": 312
+  },
+  {
+    "path": "apps/web/workspace/index.html",
+    "sha256": "72194e1126adb34881cac552f0a1d682d9d34d4cda321c87069396d95107fbb4",
+    "bytes": 468
+  },
+  {
+    "path": "apps/web/workspace/main.tsx",
+    "sha256": "aee335e8fe460af49fcb23ce3b698ec5efa0c6113283b5ba108c9430cc816491",
+    "bytes": 26
+  },
+  {
+    "path": "apps/web/vite.workspace.config.ts",
+    "sha256": "303235192375f76a2dc94b4ec9600954ffdbfe7925d0ea7b7fc91cf5af0f396d",
+    "bytes": 676
+  },
+  {
+    "path": "apps/web/vitest.config.ts",
+    "sha256": "f0817372988c0ee15a1aa7d0c34a922b5d752394e27cb8316b8164af336652fd",
+    "bytes": 258
+  },
+  {
+    "path": "apps/web/scripts/generate-api.mjs",
+    "sha256": "a0cf29f30b7de73dac323466fa0f5ee7ac7af850e50d430057f902aecdd6473f",
+    "bytes": 1633
+  },
+  {
+    "path": "apps/web/tests/setup.ts",
+    "sha256": "a9b2c6d228c24de2a87aa1222700ff554aa6408eeb443502171212aabf361251",
+    "bytes": 198
+  },
+  {
+    "path": "apps/web/package.json",
+    "sha256": "a771aa7ab33dba93464690d2f1a6e7099b04da735cfb0a3c155b466c9681a9b7",
+    "bytes": 1621
+  },
+  {
+    "path": "apps/web/package-lock.json",
+    "sha256": "8a8ddbf2cad4939daf22730c360e92571f9978fdc513026fdc7c909ba48dc148",
+    "bytes": 124625
+  },
+  {
+    "path": "apps/web/.gitignore",
+    "sha256": "9d6b4edbfded4a1dba484b5d176580d68e09faf5f65a752910936420582bf5b8",
+    "bytes": 49
+  },
+  {
+    "path": "apps/web/tsconfig.json",
+    "sha256": "aa147587d7afad73c5fc037d88b3f217bf7c39b78fe5a85a7c96d75d8ae2bfac",
+    "bytes": 345
+  },
+  {
+    "path": "apps/web/tsconfig.workspace.json",
+    "sha256": "cb797cac332e416dc0837029e4366cec68fff3dd0b5293a424af3353b7d2ed99",
+    "bytes": 311
+  },
+  {
+    "path": "apps/web/tests/emotion-review.mjs",
+    "sha256": "3205827c9052515890f80acc758e3d24cd4157e2e71ba61b0e1809a83256f714",
+    "bytes": 9289
+  },
+  {
+    "path": "tests/frontend/workspace.mjs",
+    "sha256": "90a1ecaadb8735f4c8f981d4e24fd91ca81ab8e94fbc8f08fd6dd0051cc73cb3",
+    "bytes": 11099
+  },
+  {
+    "path": "services/api/app.py",
+    "sha256": "c905bd4cb14b9b9d3442538af7f30f070e8a73f8e0bc609aeb571b24d40a3522",
+    "bytes": 18862
+  },
+  {
+    "path": "scripts/preview_emotion_reviews.py",
+    "sha256": "289dce47eb01497a8ec6d4b2353789e9cb66b183660095a932ad08034e973e90",
+    "bytes": 4491
+  },
+  {
+    "path": "tests/api/test_api.py",
+    "sha256": "ac424f5e457de2d1c1bcb3c4bb5892446ec92aa8ab5b91106f1fb1a5c91c7690",
+    "bytes": 17760
+  },
+  {
+    "path": "tests/integration/test_postgresql_persistence.py",
+    "sha256": "d564ba912d6d80b2de787668ccc885a02842be5120013b1442d3bd5d8e12a227",
+    "bytes": 19959
+  },
+  {
+    "path": "tests/emotion/test_baseline.py",
+    "sha256": "45cbcf1d9815eaa699e96653eeae68637aa2058442e268c772077860c569a6cf",
+    "bytes": 4126
+  },
+  {
+    "path": ".github/workflows/ci.yml",
+    "sha256": "42f079af1d8b76450f804474db6dadb3fc19adde1eac234bb673d13cde35a537",
+    "bytes": 3266
+  },
+  {
+    "path": "docs/development/frontend-workspace.md",
+    "sha256": "06cf15cd3cf917c29038bb6b530aa910b437e47ba3fd133115a85efd1464d011",
+    "bytes": 4240
+  },
+  {
+    "path": "docs/implementation/STEP_22_initialize_react_vite_typescript_frontend_REPORT.md",
+    "sha256": "da3f008c374a5eab192bd2930456a656fa3eea0cd6a8a26095133dbe868a6331",
+    "bytes": 31519
+  },
+  {
+    "path": "docs/implementation/PROGRESS.md",
+    "sha256": "8e19a81d985e21245cbb624eef78b00086eeed499f94bf455c1b0373e4a949d9",
+    "bytes": 34147
+  },
+  {
+    "path": "docs/implementation/CURRENT_LIMITATIONS.md",
+    "sha256": "9f25a71f98cbc2a492aa8ef2bb575c5f57c45b63550b31fa13e21b77865bc6f3",
+    "bytes": 6978
+  },
+  {
+    "path": "docs/implementation/STEP_21_collect_reviewed_emotion_labels_without_contaminating_d_REPORT.md",
+    "sha256": "8df31f3bc62b5b6d60bc902a06365cd2526fe2e6512b6302a2b387cb319db6b8",
+    "bytes": 27845
+  }
+]

@@ -1,0 +1,4 @@
+
+> project28-web@0.1.0 api:check
+> node scripts/generate-api.mjs --check
+

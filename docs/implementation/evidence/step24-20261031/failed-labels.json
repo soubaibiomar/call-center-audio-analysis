@@ -1,0 +1,17 @@
+{
+  "labels": [
+    "Find a workspace page",
+    "Local recording",
+    "Playback position · 0:00.0 / 0:04.0",
+    "Corrected text 1Synthetic opening for playback verification.",
+    "Speaker 1AgentCustomerUnknown",
+    "Uncertain segment 1",
+    "Corrected text 2Synthetic evidence requiring review.",
+    "Speaker 2AgentCustomerUnknown",
+    "Uncertain segment 2",
+    "Override overall QA score",
+    "Decision rationale",
+    "I listened to the relevant audio and checked this saved revision."
+  ],
+  "text": "Workspace / Human review\nSynthetic validation records\nDemonstration fixtures from the local API. These are not operational results.\n\nCALL CENTER WORKSPACE\n\nHuman transcript & QA review\n\nListen, correct and submit for independent approval. Original model predictions remain preserved.\n\nBack to call analysis\ndraft\nRevision 1 · train\nRefresh review (discard unsaved)\n\nORIGINAL QA\n\n4.00 / 5\n\nModel prediction, preserved\n\nCORRECTION\n\nUnchanged\n\nSaved revision\n\nTRAINING CANDIDATE\n\nExcluded\n\nPermission recorded · uncertainty checks apply\n\nPRIVATE LOCAL PLAYBACK\n\nListen to the evidence\nAdministrator-attested source\n\nSelect the corresponding recording on your laptop. It stays in this tab; it is not uploaded. The review checks its checksum against the registered source.\n\nLocal recording\nPlayback position · 0:00.0 / 0:04.0\n\nSelected: step24-synthetic.wav\n\nChecksum and duration match the registered source.\nRegistered source\n\nSynthetic silent source deliberately paired with fictional transcript to test the workflow only.\n\nSHA-256 f751fd7094be088dc785125e4a1a0222a17c2bd20469aa31728ca5e515ed5809\n\nTIMESTAMPED CORRECTIONS\n\nTranscript review\n2 segments\n\nTiming stays attached to the original prediction. Select a timestamp to listen.\n\n0:00.0–0:01.0\nConfidence 90%\n\nOriginal · Agent: Synthetic opening for playback verification.\n\nCorrected text 1\nSpeaker 1\nAgent\nCustomer\nUnknown\nUncertain segment 1\n0:01.3–0:02.5\nConfidence 50%\n\nOriginal · Customer: Synthetic evidence requiring review.\n\nCorrected text 2\nSpeaker 2\nAgent\nCustomer\nUnknown\nUncertain segment 2\nQA score correction\nOverride overall QA score\nReview decision\n\nSave corrections before submitting. Approval or rejection requires a different reviewer. Editing a saved review resets its approval.\n\nSave corrections\nDecision rationale\nI listened to the relevant audio and checked this saved revision.\nSubmit for approval\nApprove review\nReject review\n\nEditor: None · Approver: None\n\nAudit trail\nLoad audit history"
+}

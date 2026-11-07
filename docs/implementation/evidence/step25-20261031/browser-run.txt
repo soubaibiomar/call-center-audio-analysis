@@ -1,0 +1,1 @@
+STEP25: 7 scenarios; 11 screenshots; 11 accessibility scans; 10 PCM receipts; 4 ASR event deliveries.

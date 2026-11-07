@@ -1,0 +1,19 @@
+{
+  "report_sections": 13,
+  "report_links_checked": 18,
+  "missing_links": [],
+  "new_source_files_count": 28,
+  "preserved_files": [
+    "apps/web/src/features/emotion/EmotionReview.tsx",
+    "apps/web/src/features/emotion/review.css",
+    "apps/web/src/main.tsx",
+    "apps/web/vite.config.js",
+    "apps/web/package-lock.json"
+  ],
+  "browser_scenarios": 9,
+  "browser_screenshots": 14,
+  "accessibility_scans": 14,
+  "backend": "484 passed, 2 skipped",
+  "frontend": "32 passed",
+  "next_step": "STEP_25; not started"
+}

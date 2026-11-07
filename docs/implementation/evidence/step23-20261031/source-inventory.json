@@ -1,0 +1,260 @@
+[
+  {
+    "path": "apps/web/.oxlintrc.json",
+    "change": "new-or-document-update",
+    "bytes": 65,
+    "sha256": "86e6521eb4661b5726ec50d8329890b5a067669acb62995553e20c29a780509c"
+  },
+  {
+    "path": "apps/web/package-lock.json",
+    "change": "modified",
+    "bytes": 142881,
+    "sha256": "32bd14e98cf5a7d6e9f34ba7ad07835b835053481009ff4340be12b857a07e45"
+  },
+  {
+    "path": "apps/web/package.json",
+    "change": "modified",
+    "bytes": 1833,
+    "sha256": "afdd1148e0e79187205653189662669ef252d9f2891ec8201a0c4464365a33cc"
+  },
+  {
+    "path": "apps/web/scripts/generate-api.mjs",
+    "change": "modified",
+    "bytes": 5099,
+    "sha256": "374cbb7638a218dba313b275de24e912fdacb0569f10da7f5a147ad64d213aec"
+  },
+  {
+    "path": "apps/web/src/app/App.test.tsx",
+    "change": "modified",
+    "bytes": 5867,
+    "sha256": "04f56e2b6c9ff938a428a1eb5c40766f328ed7fd4ace4aa4cfe823159d9bc659"
+  },
+  {
+    "path": "apps/web/src/app/App.tsx",
+    "change": "modified",
+    "bytes": 27226,
+    "sha256": "cbaeefd2ae4451f1506c4a0dadf813453b08c63b5bf1c9d1a4438db94805d1b6"
+  },
+  {
+    "path": "apps/web/src/app/auth.tsx",
+    "change": "modified",
+    "bytes": 1575,
+    "sha256": "cda0e141aa39db9b4e14edb605e3f3fda7dc0bcc1332e535fb6d034a28ee17e4"
+  },
+  {
+    "path": "apps/web/src/app/main.tsx",
+    "change": "modified",
+    "bytes": 846,
+    "sha256": "4e4b73d05fff6a3e367a48e33683b26ce14d6206869320c4efbba90d73bdda79"
+  },
+  {
+    "path": "apps/web/src/app/workspace.css",
+    "change": "modified",
+    "bytes": 14322,
+    "sha256": "90d07d7e43499c72f2d55c5980eadca1cec6ddce576905e3ba564eb66405fca5"
+  },
+  {
+    "path": "apps/web/src/features/analytics/DashboardPage.tsx",
+    "change": "new-or-document-update",
+    "bytes": 13051,
+    "sha256": "17a7d55dc55f2f76b295ff23e2683ed553d9957974924771658f7a245fd75186"
+  },
+  {
+    "path": "apps/web/src/features/calls/AudioPlayer.tsx",
+    "change": "new-or-document-update",
+    "bytes": 6775,
+    "sha256": "2c270077a7b8a9365c157629cc25e1f4907e86f365b94ff2e7c5f877f266afab"
+  },
+  {
+    "path": "apps/web/src/features/calls/CallDetailPage.tsx",
+    "change": "new-or-document-update",
+    "bytes": 8955,
+    "sha256": "1a0b465f004a84b281867eddafc5207907b1e3fda34f935347519eaf56f7e0a9"
+  },
+  {
+    "path": "apps/web/src/features/calls/CallsPage.tsx",
+    "change": "new-or-document-update",
+    "bytes": 11976,
+    "sha256": "e9fb1d5c830a043979553a22d2874920a72ed7873b4a150e15007f44dc0538a8"
+  },
+  {
+    "path": "apps/web/src/features/live/LivePage.tsx",
+    "change": "new-or-document-update",
+    "bytes": 4797,
+    "sha256": "6415fb81149ad3b8d425bc380d7a396e7527cbd71a744a2576eed8c8604a29ea"
+  },
+  {
+    "path": "apps/web/src/features/models/ModelsPage.tsx",
+    "change": "new-or-document-update",
+    "bytes": 3203,
+    "sha256": "7d53e06c789962803992e41503bb75dd632f5445c58c6e810357640d7597b190"
+  },
+  {
+    "path": "apps/web/src/features/workspace/features.css",
+    "change": "new-or-document-update",
+    "bytes": 8764,
+    "sha256": "74b68ef763914470264fe159962684f3957c3bff557d6926fcbf288685e1db4e"
+  },
+  {
+    "path": "apps/web/src/features/workspace/ReportWorkspace.tsx",
+    "change": "new-or-document-update",
+    "bytes": 15225,
+    "sha256": "977023db4312890a104384fbfdace40fa4c31a9d731aec0e97ce7c6978b828b1"
+  },
+  {
+    "path": "apps/web/src/features/workspace/shared.tsx",
+    "change": "new-or-document-update",
+    "bytes": 3669,
+    "sha256": "53beaaca4bfc6c02de094099972233f9bd22b92a4aa38de08b9499aa445b78ec"
+  },
+  {
+    "path": "apps/web/src/features/workspace/workspace.test.tsx",
+    "change": "new-or-document-update",
+    "bytes": 7126,
+    "sha256": "35b977d2b675f12ac77b3ec4f205c4dc2ff247ef3d8de9ca0ad84683ff0f9577"
+  },
+  {
+    "path": "apps/web/src/lib/api/client.ts",
+    "change": "modified",
+    "bytes": 3124,
+    "sha256": "e08f23f2c98802b9d64f3bdb3d545d26b1b85a39ef47b39cc418adfec697506b"
+  },
+  {
+    "path": "apps/web/src/lib/api/generated.ts",
+    "change": "modified",
+    "bytes": 5144,
+    "sha256": "1eb94006e514e56aedac12e828ba0588954f5327dca306596c425d7edd0583da"
+  },
+  {
+    "path": "apps/web/src/lib/api/queries.ts",
+    "change": "new-or-document-update",
+    "bytes": 1059,
+    "sha256": "99b1eb6bb82ef4f5d5c1c18a6fcc9f75c8db8619bfd1a60c7325a76d478e7543"
+  },
+  {
+    "path": "apps/web/src/lib/api/schema.generated.json",
+    "change": "new-or-document-update",
+    "bytes": 28389,
+    "sha256": "6b7412dc5641dd100918a5654a41221f73ea0d176806b71f346effc4b758111a"
+  },
+  {
+    "path": "apps/web/src/lib/api/validators.generated.d.mts",
+    "change": "new-or-document-update",
+    "bytes": 477,
+    "sha256": "75c34b101931600ba4fcef03f4456bb2b9a59d77f2cf967378b29ac62613089b"
+  },
+  {
+    "path": "apps/web/src/lib/api/validators.generated.mjs",
+    "change": "new-or-document-update",
+    "bytes": 241652,
+    "sha256": "5562fa1c1407d66fbfc28c6cd67e7e473fc1793ebcff936c6ac3945ecfce52cb"
+  },
+  {
+    "path": "apps/web/tsconfig.json",
+    "change": "modified",
+    "bytes": 377,
+    "sha256": "049c2927532fd7045ab0c1701af615f9632771061ecb2db6f52cbd975225841a"
+  },
+  {
+    "path": "apps/web/tsconfig.workspace.json",
+    "change": "modified",
+    "bytes": 472,
+    "sha256": "ee0da913eb7a0e8bfb800cdcd70a2c59dba5225c342182f42a7193831e8967b6"
+  },
+  {
+    "path": "apps/web/vite.workspace.config.ts",
+    "change": "modified",
+    "bytes": 865,
+    "sha256": "2538bde48883404e99e147b4193fa0bdfeacca0652c0aaad5d3a6b84aa8d9b71"
+  },
+  {
+    "path": "docs/api/openapi.json",
+    "change": "new-or-document-update",
+    "bytes": 154974,
+    "sha256": "6bdc5c7cb5c685d7d84bdf4278850ce0b38b44ff15913f66c2d75a3f35b458c5"
+  },
+  {
+    "path": "docs/development/dashboard-workspace.md",
+    "change": "new-or-document-update",
+    "bytes": 4740,
+    "sha256": "ed956bc059560da839979b6ae50c6aba774bec6050a560bb3ad509c46e53cf6c"
+  },
+  {
+    "path": "docs/implementation/CURRENT_LIMITATIONS.md",
+    "change": "new-or-document-update",
+    "bytes": 7925,
+    "sha256": "2a71547bdd63b8a5d164864e12c95efd1cdca3dff68f2f77dd2b37039ead821b"
+  },
+  {
+    "path": "docs/implementation/PROGRESS.md",
+    "change": "new-or-document-update",
+    "bytes": 34998,
+    "sha256": "1c34319faf2c4bd2b91a3272334d4c8e3bfef6a15172f8eb4383cde4104d74c2"
+  },
+  {
+    "path": "docs/implementation/STEP_22_initialize_react_vite_typescript_frontend_REPORT.md",
+    "change": "new-or-document-update",
+    "bytes": 32613,
+    "sha256": "1a6c73d6e395b60f964887dc348e6cb13c9b2cbc06f846c2d93dad0c7eb4a769"
+  },
+  {
+    "path": "docs/implementation/STEP_23_build_dashboards_for_calls_live_and_model_lab_REPORT.md",
+    "change": "new-or-document-update",
+    "bytes": 35884,
+    "sha256": "438c17c1ef56f126c43534379f83421e173f465b45ead94221e86fb021377d39"
+  },
+  {
+    "path": "scripts/preview_emotion_reviews.py",
+    "change": "modified",
+    "bytes": 4520,
+    "sha256": "d8cfb9b00ada8b22a77db0ea6bc382c130e84d57f2739a541c12e35c24f7f0ed"
+  },
+  {
+    "path": "scripts/preview_workspace.py",
+    "change": "new-or-document-update",
+    "bytes": 7466,
+    "sha256": "e5484139730894a520a082e0e499e322da3013f06dff3656a9f6cc8af862ec68"
+  },
+  {
+    "path": "services/api/app.py",
+    "change": "modified",
+    "bytes": 19775,
+    "sha256": "b51a4c70e16241f296d0f3d7b6a48bc6469b0da55c2959cb48bd2354402076a1"
+  },
+  {
+    "path": "services/api/routes/workspace.py",
+    "change": "new-or-document-update",
+    "bytes": 3809,
+    "sha256": "3fe358821e7bdd9ef6682d21d6c68c07bf90a6319c78276c2c856cb4b607515f"
+  },
+  {
+    "path": "services/api/schemas.py",
+    "change": "modified",
+    "bytes": 3408,
+    "sha256": "5e4f3c86c1af0108a2ec56af4dc84f9738508cf58676346832559fa96ecc48a5"
+  },
+  {
+    "path": "services/api/settings.py",
+    "change": "modified",
+    "bytes": 2398,
+    "sha256": "9005ba082a139d8c0ae614937c437ff98a36317e76b502c6805cd7bf9fdaca26"
+  },
+  {
+    "path": "tests/api/test_api.py",
+    "change": "modified",
+    "bytes": 17760,
+    "sha256": "471fa041cf5c027c42835300bf8ad75104056f5bb6c185d6af5da4d31dcf9fd2"
+  },
+  {
+    "path": "tests/api/test_workspace.py",
+    "change": "new-or-document-update",
+    "bytes": 5366,
+    "sha256": "41b8ad274386abc52d3c97c7538e8ef55249401f24b2adc1b5a0a7b9a65d7f4c"
+  },
+  {
+    "path": "tests/frontend/dashboards.mjs",
+    "change": "new-or-document-update",
+    "bytes": 14381,
+    "sha256": "137fd8638b8c9ee8aebe277a091f63bf3f21edb675d05cfa5cfea6563ea96cbf"
+  }
+]

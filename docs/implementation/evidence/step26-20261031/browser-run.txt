@@ -1,0 +1,1 @@
+STEP26: 7 scenarios; 12 screenshots; 12 accessibility scans; 22 PCM receipts; 18 ASR event deliveries.

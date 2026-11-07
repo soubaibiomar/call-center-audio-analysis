@@ -1,0 +1,22 @@
+{
+  "sections": 13,
+  "report_links_checked": 19,
+  "missing_links": [],
+  "preserved_files": [
+    "apps/web/src/features/emotion/EmotionReview.tsx",
+    "apps/web/src/features/emotion/review.css",
+    "apps/web/package-lock.json",
+    "apps/web/src/main.tsx",
+    "apps/web/vite.config.js",
+    "services/reviews/call_service.py",
+    "services/reviews/call_contracts.py",
+    "services/api/routes/call_reviews.py"
+  ],
+  "source_files_changed": 27,
+  "backend": "505 passed, 2 existing skips",
+  "frontend": "36 passed",
+  "live_browser": "7 scenarios, 11 screenshots, 11 zero-violation scans",
+  "workspace_browser": "13 scenarios, 9 views, 17 screenshots, 16 zero-violation scans",
+  "server_stderr": "empty after final browser run",
+  "step26_started": false
+}

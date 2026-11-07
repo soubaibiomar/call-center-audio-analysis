@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "src/app",
+    "src/lib",
+    "src/vite-env.d.ts",
+    "tests/setup.ts",
+    "src/features/calls",
+    "src/features/analytics",
+    "src/features/live",
+    "src/features/models",
+    "src/features/workspace",
+    "src/features/reviews",
+    "workspace"
+  ]
+}

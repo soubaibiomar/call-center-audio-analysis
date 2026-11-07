@@ -1,0 +1,164 @@
+[
+  {
+    "path": "apps/web/scripts/generate-api.mjs",
+    "change": "modified",
+    "before_sha256": "9431d4462236008420b98dbaa7eee4aaf10b7f86c94c573066bd68ac4e770ecf",
+    "after_sha256": "7e997e434e22ee875d77bc74c2a794ee37992e5ba2314120231fc84986189226"
+  },
+  {
+    "path": "apps/web/src/features/live/LivePage.tsx",
+    "change": "modified",
+    "before_sha256": "2056e54ee059e42c28a0859de3ece2beb5b977673413e28a17025bd0b8d87e31",
+    "after_sha256": "57fe3723178b4489b131568613f9be4ea98e99a86ec2e1246085d424962f7205"
+  },
+  {
+    "path": "apps/web/src/features/live/live.css",
+    "change": "modified",
+    "before_sha256": "6c8dd1b0812f7c3da205a34820df0acc623968e786877360b5e5877232eef788",
+    "after_sha256": "0e1045f42c1922108d7ce04a23685aeb79151d1517b8650364102bf38ec69dae"
+  },
+  {
+    "path": "apps/web/src/features/live/transcript.test.ts",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "940e6e3691d771ab2d753d23895922e4d8196b5a7fb87bda01a09813039d453e"
+  },
+  {
+    "path": "apps/web/src/features/live/transcript.ts",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "207e94edf5798ddb63af04780235624519901520124ff97cf1b9bca2a9ba8f9d"
+  },
+  {
+    "path": "apps/web/src/features/live/transport.ts",
+    "change": "modified",
+    "before_sha256": "445bbc7af33cfce784a9dd3b616cbc6e4a83d9c23c88663e9ec7eae3916df869",
+    "after_sha256": "a620a75fdbb27c2751cd35e37a21af01e04b3fd8fe50d5ca39e71ce34762c581"
+  },
+  {
+    "path": "apps/web/src/lib/api/client.ts",
+    "change": "modified",
+    "before_sha256": "749e9352a4fcb58d55630b65575cc7832ba8a1cb484cfc34c54912bf15320316",
+    "after_sha256": "6c015441b0222305060765665f157a5f100738000ca341fd702966d6cd0e9f27"
+  },
+  {
+    "path": "apps/web/src/lib/api/generated.ts",
+    "change": "modified",
+    "before_sha256": "5af7b00113593befc1306368ce19d38f60ae10d6a39c34b9c792e114935d27ae",
+    "after_sha256": "533c40f63b07de0ca1346348954021804f407a4fdb26799e41e74872f01b9947"
+  },
+  {
+    "path": "apps/web/src/lib/api/schema.generated.json",
+    "change": "modified",
+    "before_sha256": "f3c25ab91ead4cde247f32fa6680da70df189c60ae7ee305f564a314fd6855aa",
+    "after_sha256": "877df36683b189803f22313765d53256d51ce0933a0dd47a7160d05447138094"
+  },
+  {
+    "path": "apps/web/src/lib/api/validators.generated.d.mts",
+    "change": "modified",
+    "before_sha256": "17b14a8b037268f9240b7760e445c613bd58bb11a860a516600b623d9962e475",
+    "after_sha256": "7c785c68267c2d4e270548f227bef90e7c9271e806afb7990a8a4fa03d7948e9"
+  },
+  {
+    "path": "apps/web/src/lib/api/validators.generated.mjs",
+    "change": "modified",
+    "before_sha256": "9fba7908e7ae5884984b68b89c4638994cdaa54de5978233abbdc213961f76da",
+    "after_sha256": "c485308c9050f2264312747f92482933b905213bebee25e718120dd8d5687301"
+  },
+  {
+    "path": "ml/asr/__init__.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "d7b99c19647aa33e22ca369cabc09121cac5cac9c50c45613876f4b93ef0378b"
+  },
+  {
+    "path": "ml/asr/incremental.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "1310a9370bd50567f586905e25edcb76fca687c81d8d73cc23a6a39eb7a30cd6"
+  },
+  {
+    "path": "scripts/benchmark_incremental_asr.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "ebd39db6715ab477cfcb1dbc216822f9ce333902d9a012f762962ee42770f039"
+  },
+  {
+    "path": "scripts/preview_workspace.py",
+    "change": "modified",
+    "before_sha256": "30f0bb42c2c13b56f605b174c09987896899c037bb8280e461684c0c5ca2e5e3",
+    "after_sha256": "4fe26a103d290c40f391de20acc674bf46516f92ced22d00bc2c4e938a619d5f"
+  },
+  {
+    "path": "services/streaming/asr.py",
+    "change": "modified",
+    "before_sha256": "0c5873c9812bd633a9dde8155f2c4c7687e96b5cb87e03f8a387bc08f27d482e",
+    "after_sha256": "973e04f0b25cae99c433a0098e52d37f3f8935b74c946f60375b713de51419e8"
+  },
+  {
+    "path": "services/streaming/broker.py",
+    "change": "modified",
+    "before_sha256": "60f871c1d5cd731962410fc6fdd7ac1bf3ecd6ba3a41530a8ad437520f78a025",
+    "after_sha256": "82f34408269ab51937607aebb9a9de5f795d52154392aaf0bfdf5b3cd3812b56"
+  },
+  {
+    "path": "services/streaming/contracts.py",
+    "change": "modified",
+    "before_sha256": "3200424aaf139686eca9b28a4acc20caff066b256332147082f7248adb6b0d3c",
+    "after_sha256": "b5deab2c21a101e4b378f483e650c8895392e006761a30ba8dad9a7f4c0648f0"
+  },
+  {
+    "path": "services/streaming/routes.py",
+    "change": "modified",
+    "before_sha256": "67beac37188617e37b270e7a2a3acb486d6d55c857098012a64107f82c6c9f6f",
+    "after_sha256": "deee37b215989a19fc4561c27b630260f8cb5584f3e76820c76d00e6b3d6d038"
+  },
+  {
+    "path": "services/streaming/settings.py",
+    "change": "modified",
+    "before_sha256": "ed92379ac67579edaaea983323ae0fb20a510ffbb228fd0fc67f09526bffb6f5",
+    "after_sha256": "3672b941405258991d5a009d71500eca7dacc02ff03bc05907e127c041a6f96a"
+  },
+  {
+    "path": "stubs/faster_whisper/__init__.pyi",
+    "change": "modified",
+    "before_sha256": "af15d8e6d8417cebcaf5845ec6a6493e382fa392246dc0e821c7298d2b509792",
+    "after_sha256": "ecea559132415e372a7ad78868c1de8e118c6383392bc24b15e0223dc4a55539"
+  },
+  {
+    "path": "tests/api/test_api.py",
+    "change": "modified",
+    "before_sha256": "5149972e41f993cbbedd769bf9593e434573c6d4eb0c462c65860d7a4e0b555d",
+    "after_sha256": "51188694383d4ba7b1793b540ce83a358f4e1a84fee7d8b4a986bfb271ffe956"
+  },
+  {
+    "path": "tests/frontend/incremental-call.mjs",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "b4ed33f351a83d8859dd4d00bfc71ad28f6d5abfa76f60640f7f0f2fb526181c"
+  },
+  {
+    "path": "tests/streaming/conftest.py",
+    "change": "modified",
+    "before_sha256": "861d8dfa1412cfa498414640ae9be9e734248093ad5cbebf5dae1c7df7a6b26c",
+    "after_sha256": "c9825455f1daa0df8d752a78464046f17a469ee3ab6311fbb512eb9b8eacfff7"
+  },
+  {
+    "path": "tests/streaming/test_incremental.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "cd785e0840a916bdd3a763fffdf0ba331b166b5b7670c261fc6c0960bb179155"
+  },
+  {
+    "path": "tests/streaming/test_incremental_transport.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "99111fee0538de014659b8d2f2cd3cba6cfba2b880598c444c74b56832bc9862"
+  },
+  {
+    "path": "tests/streaming/test_transport.py",
+    "change": "modified",
+    "before_sha256": "855d091bfdbbe55e0f909815148faa6a9ddedab9059b22b9b4c60b1feec16e0e",
+    "after_sha256": "2f25a3647a83611803f9646ea7bd8d5c829543775ffd5f6cf1a7e2555706035a"
+  }
+]

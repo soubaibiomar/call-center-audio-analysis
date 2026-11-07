@@ -1,0 +1,14 @@
+{
+  "before": {
+    "entry_bytes": 520496,
+    "gzip_bytes": 153407,
+    "method": "direct size read from executed pre-standalone build; prior asset replaced by final rebuild",
+    "artifact_retained": false
+  },
+  "after": {
+    "path": "apps/web/dist-workspace/assets/index-CNF0RBeD.js",
+    "bytes": 467790,
+    "gzip_bytes": 122042
+  },
+  "change": "build-time standalone validation; no browser schema compilation; no latency improvement inferred"
+}

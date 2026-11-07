@@ -1,0 +1,35 @@
+{
+  "baseline": "Not measured: STEP_24 had no browser media transport",
+  "packet_samples": 2,
+  "received_packets": 597,
+  "lost_packets": 0,
+  "loss_percent": 0.0,
+  "concealed_samples": 0,
+  "total_received_samples": 521760,
+  "concealment_percent": 0.0,
+  "accepted_pcm_frames": 10,
+  "accepted_pcm_samples": 160000,
+  "accepted_pcm_bytes": 320000,
+  "per_participant_sequences": {
+    "0": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "1": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "asr_event_deliveries": 4,
+  "distinct_asr_events": 2,
+  "distinct_asr_senders": 2,
+  "reconnect_attempts": 1,
+  "reconnect_successes": 1,
+  "conditions": "two Chrome contexts, same laptop, SAPI synthetic microphone, loopback, no physical participants or WAN test"
+}

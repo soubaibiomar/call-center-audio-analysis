@@ -1,0 +1,18 @@
+{
+  "source": "Windows SAPI synthetic speech, no private recordings",
+  "sample_rate": 16000,
+  "source_samples": 148851,
+  "input_samples": 64000,
+  "model": "Systran/faster-whisper-tiny",
+  "revision": "d90ca5fe260221311c53c58e660288d3deb8d356",
+  "device": "cpu",
+  "compute_type": "int8",
+  "elapsed_seconds": 0.8024093999993056,
+  "segments": [
+    {
+      "start_seconds": 0.0,
+      "end_seconds": 4.0,
+      "text": "Hello. This is a local browser call."
+    }
+  ]
+}

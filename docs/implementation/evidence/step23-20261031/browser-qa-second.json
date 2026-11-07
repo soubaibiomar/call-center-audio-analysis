@@ -1,0 +1,57 @@
+{
+  "fixture": "Synthetic records; real local API/database/signatures. No inference or training.",
+  "assertions": [
+    "dashboard uses API totals and visibly labels synthetic data"
+  ],
+  "screenshots": [
+    {
+      "name": "dashboard-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "dashboard-1280",
+      "width": 1280,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "dashboard-1024",
+      "width": 1024,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "dashboard-390",
+      "width": 390,
+      "height": 844,
+      "horizontalOverflow": false
+    }
+  ],
+  "axe": [
+    {
+      "name": "dashboard-1440",
+      "violations": []
+    },
+    {
+      "name": "dashboard-1280",
+      "violations": []
+    },
+    {
+      "name": "dashboard-1024",
+      "violations": []
+    },
+    {
+      "name": "dashboard-390",
+      "violations": []
+    }
+  ],
+  "pageErrors": [],
+  "routes": [
+    "Dashboard"
+  ],
+  "refreshMilliseconds": [],
+  "decision": "FAIL",
+  "failure": "TimeoutError: locator.selectOption: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('Status', { exact: true })\u001b[22m\n"
+}

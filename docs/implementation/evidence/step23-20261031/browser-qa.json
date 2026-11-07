@@ -1,0 +1,229 @@
+{
+  "fixture": "Synthetic records; real local API/database/signatures. No inference or training.",
+  "assertions": [
+    "dashboard uses API totals and visibly labels synthetic data",
+    "call filters and sortable table use real scoped API results",
+    "timestamp and keyboard range move actual native audio to 1.25 seconds",
+    "QA/compliance route renders representative API fixtures",
+    "Emotion route renders representative API fixtures",
+    "Coaching route renders representative API fixtures",
+    "Knowledge route renders representative API fixtures",
+    "Model lab route renders representative API fixtures",
+    "Live route renders representative API fixtures",
+    "API failure cannot display empty success and retry recovers",
+    "fresh list response-to-render refresh measurements",
+    "registry permission denial is explicit for supervisor",
+    "empty account shows zero stored totals and honest empty calls"
+  ],
+  "screenshots": [
+    {
+      "name": "dashboard-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "dashboard-1280",
+      "width": 1280,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "dashboard-1024",
+      "width": 1024,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "dashboard-390",
+      "width": 390,
+      "height": 844,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "calls-filtered-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "calls-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "transcript-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "transcript-390",
+      "width": 390,
+      "height": 844,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "qa-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "emotion-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "coaching-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "knowledge-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "models-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "live-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "api-error-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "permission-1440",
+      "width": 1440,
+      "height": 1100,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "empty-390",
+      "width": 390,
+      "height": 844,
+      "horizontalOverflow": false
+    }
+  ],
+  "axe": [
+    {
+      "name": "dashboard-1440",
+      "violations": []
+    },
+    {
+      "name": "dashboard-1280",
+      "violations": []
+    },
+    {
+      "name": "dashboard-1024",
+      "violations": []
+    },
+    {
+      "name": "dashboard-390",
+      "violations": []
+    },
+    {
+      "name": "calls",
+      "violations": []
+    },
+    {
+      "name": "transcript",
+      "violations": []
+    },
+    {
+      "name": "transcript-mobile",
+      "violations": []
+    },
+    {
+      "name": "/qa",
+      "violations": []
+    },
+    {
+      "name": "/emotion",
+      "violations": []
+    },
+    {
+      "name": "/coaching",
+      "violations": []
+    },
+    {
+      "name": "/knowledge",
+      "violations": []
+    },
+    {
+      "name": "/models",
+      "violations": []
+    },
+    {
+      "name": "/live",
+      "violations": []
+    },
+    {
+      "name": "api-error",
+      "violations": []
+    },
+    {
+      "name": "permission",
+      "violations": []
+    },
+    {
+      "name": "empty-mobile",
+      "violations": []
+    }
+  ],
+  "pageErrors": [],
+  "routes": [
+    "Dashboard",
+    "Calls",
+    "Playback/transcript",
+    "QA/compliance",
+    "Emotion",
+    "Coaching",
+    "Knowledge",
+    "Model lab",
+    "Live"
+  ],
+  "refreshMilliseconds": [
+    36.188099999999395,
+    32.97080000000096,
+    34.03700000000026,
+    34.089599999999336,
+    35.206200000000536,
+    30.110399999999572,
+    26.764999999999418,
+    26.67859999999928,
+    26.848799999999756,
+    27.446200000000317,
+    26.471700000000055,
+    27.64760000000024,
+    31.232500000000073,
+    37.45749999999862,
+    32.59659999999894,
+    28.252000000000407,
+    33.11909999999989,
+    32.24699999999939,
+    27.264999999999418,
+    26.64930000000095
+  ],
+  "loadMetrics": {
+    "samples": 20,
+    "p95Milliseconds": 36.188099999999395,
+    "p50Milliseconds": 30.110399999999572,
+    "definition": "local calls-list refresh click through HTTP 200, validated query completion and a newly rendered data-updated timestamp; includes automation overhead; 3 synthetic records, sequential warm browser"
+  },
+  "decision": "PASS"
+}

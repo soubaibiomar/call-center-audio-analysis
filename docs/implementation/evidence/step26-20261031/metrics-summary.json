@@ -1,0 +1,18 @@
+{
+  "browser_event_updates": 9,
+  "partial_updates": 7,
+  "partial_ready_to_event_ms": {
+    "p50": 517.9784000029031,
+    "p95": 1407.0281999993313
+  },
+  "utterances": 4,
+  "revisions_per_utterance": [
+    4,
+    2,
+    2,
+    1
+  ],
+  "provisional_to_final": 2,
+  "standalone_effective_rtf": 0.2531461000004735,
+  "baseline_effective_rtf": 0.12922640000003108
+}

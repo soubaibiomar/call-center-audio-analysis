@@ -1,0 +1,8 @@
+{
+  "source": "Windows SAPI synthetic English source, n=1; not a human-reviewed corpus",
+  "expected_text": "Hello. This is a local browser call. Both people agree to this audio test. Please verify the connection.",
+  "final_text": "Hello. This is a local browser call. Both people agree to this audio test. Please verify the connection.",
+  "normalized_match": true,
+  "final_ownership_no_overlap": true,
+  "source_sha256": "3a3d607e309dee49a702362ca52ef47257c6e36620de12c868587c62241c779b"
+}

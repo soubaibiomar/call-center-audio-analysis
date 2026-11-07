@@ -1,0 +1,19 @@
+{
+  "scope": "prior STEP_21 isolated review page, not a comparable full shell",
+  "samples": 1,
+  "vite_reported_ms": 179,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 540
+    },
+    {
+      "path": "assets\\index-CAlU1UFW.css",
+      "bytes": 6708
+    },
+    {
+      "path": "assets\\index-Cvcs3V9v.js",
+      "bytes": 232244
+    }
+  ]
+}

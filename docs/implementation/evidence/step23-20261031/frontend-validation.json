@@ -1,0 +1,100 @@
+{
+  "commands": [
+    {
+      "command": [
+        "npm.cmd",
+        "run",
+        "api:check"
+      ],
+      "name": "api-check",
+      "exit_code": 0,
+      "seconds": 0.5177416999999878
+    },
+    {
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "name": "lint",
+      "exit_code": 0,
+      "seconds": 0.3840501999998196
+    },
+    {
+      "command": [
+        "npm.cmd",
+        "run",
+        "typecheck"
+      ],
+      "name": "typecheck",
+      "exit_code": 0,
+      "seconds": 1.3958819999998013
+    },
+    {
+      "command": [
+        "npm.cmd",
+        "test"
+      ],
+      "name": "frontend-tests",
+      "exit_code": 0,
+      "seconds": 9.375578200000291
+    },
+    {
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "name": "build",
+      "exit_code": 0,
+      "seconds": 3.845446400000128
+    }
+  ],
+  "assets": [
+    {
+      "path": "apps/web/dist-workspace/index.html",
+      "bytes": 589,
+      "gzip_bytes": 340
+    },
+    {
+      "path": "apps/web/dist-workspace/assets/CallDetailPage-D7EFUDbc.js",
+      "bytes": 59241,
+      "gzip_bytes": 17394
+    },
+    {
+      "path": "apps/web/dist-workspace/assets/CallsPage-ryVoQREh.js",
+      "bytes": 4151,
+      "gzip_bytes": 1539
+    },
+    {
+      "path": "apps/web/dist-workspace/assets/DashboardPage-o0ujNkkQ.js",
+      "bytes": 342114,
+      "gzip_bytes": 98891
+    },
+    {
+      "path": "apps/web/dist-workspace/assets/index-CFLm6DoV.css",
+      "bytes": 20698,
+      "gzip_bytes": 5406
+    },
+    {
+      "path": "apps/web/dist-workspace/assets/index-CNF0RBeD.js",
+      "bytes": 467790,
+      "gzip_bytes": 122042
+    },
+    {
+      "path": "apps/web/dist-workspace/assets/LivePage-Bp6kOpTm.js",
+      "bytes": 2717,
+      "gzip_bytes": 1188
+    },
+    {
+      "path": "apps/web/dist-workspace/assets/ModelsPage-CVXeBllF.js",
+      "bytes": 1782,
+      "gzip_bytes": 785
+    },
+    {
+      "path": "apps/web/dist-workspace/assets/ReportWorkspace-CbTtyzh4.js",
+      "bytes": 7583,
+      "gzip_bytes": 2605
+    }
+  ]
+}

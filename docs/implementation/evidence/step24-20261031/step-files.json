@@ -1,0 +1,170 @@
+[
+  {
+    "path": "apps/web/package.json",
+    "change": "modified",
+    "before_sha256": "afdd1148e0e79187205653189662669ef252d9f2891ec8201a0c4464365a33cc",
+    "after_sha256": "c43986ee1dd2b6a0f6fee0a61d016d0855c9e5ef28c278dda90902892939ec59"
+  },
+  {
+    "path": "apps/web/scripts/generate-api.mjs",
+    "change": "modified",
+    "before_sha256": "374cbb7638a218dba313b275de24e912fdacb0569f10da7f5a147ad64d213aec",
+    "after_sha256": "a7b57542289c4f3b2e80c4c3759da9d2c98abb85fb130682199dde1589271c2d"
+  },
+  {
+    "path": "apps/web/src/app/App.tsx",
+    "change": "modified",
+    "before_sha256": "cbaeefd2ae4451f1506c4a0dadf813453b08c63b5bf1c9d1a4438db94805d1b6",
+    "after_sha256": "2895378d18dc20a93bb6d9dfb9e1f60f6726560500222fed7cab7678d3e5eea8"
+  },
+  {
+    "path": "apps/web/src/features/calls/AudioPlayer.tsx",
+    "change": "modified",
+    "before_sha256": "2c270077a7b8a9365c157629cc25e1f4907e86f365b94ff2e7c5f877f266afab",
+    "after_sha256": "6f0e6c7b16b78f60226e6a40419a137a17ed56258956118c19925f03e26fe225"
+  },
+  {
+    "path": "apps/web/src/features/calls/CallDetailPage.tsx",
+    "change": "modified",
+    "before_sha256": "1a0b465f004a84b281867eddafc5207907b1e3fda34f935347519eaf56f7e0a9",
+    "after_sha256": "35cd4449062c75e1135084ba62d63e52343ab83150f680c27226eb8a48fd9dad"
+  },
+  {
+    "path": "apps/web/src/features/reviews/CallReviewPage.tsx",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "22d2a7d1c6b6baca21424175c452a3e392fb1f3204ce8166d0d1d6b8bfd76a2c"
+  },
+  {
+    "path": "apps/web/src/features/reviews/reviews.css",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "ad1890968ce7a01cd5cbbe8c3f9e987d262928ab053353400bbb3f599f68e9b5"
+  },
+  {
+    "path": "apps/web/src/features/reviews/reviews.test.ts",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "bd20b3e31c7edf82a972ba3b1ad0845b574de9b3ca99bf6cffc92034cfbb0b9b"
+  },
+  {
+    "path": "apps/web/src/lib/api/client.ts",
+    "change": "modified",
+    "before_sha256": "e08f23f2c98802b9d64f3bdb3d545d26b1b85a39ef47b39cc418adfec697506b",
+    "after_sha256": "2505a64aa4185a6dfdc840d77035cc3cf8fae34f0e2dd1c2fef6b432564a29f5"
+  },
+  {
+    "path": "apps/web/src/lib/api/generated.ts",
+    "change": "modified",
+    "before_sha256": "1eb94006e514e56aedac12e828ba0588954f5327dca306596c425d7edd0583da",
+    "after_sha256": "46c51e96740725d01eefa7b1ae332d74aa83d5e88d34c075fe4a32158cecfa48"
+  },
+  {
+    "path": "apps/web/src/lib/api/queries.ts",
+    "change": "modified",
+    "before_sha256": "99b1eb6bb82ef4f5d5c1c18a6fcc9f75c8db8619bfd1a60c7325a76d478e7543",
+    "after_sha256": "f5bbf245479f71afecfde6aed8b01c4e505f046a336178413264b09a0e7bae98"
+  },
+  {
+    "path": "apps/web/src/lib/api/schema.generated.json",
+    "change": "modified",
+    "before_sha256": "6b7412dc5641dd100918a5654a41221f73ea0d176806b71f346effc4b758111a",
+    "after_sha256": "a6bfa08840589ec7efe59eef36bc3705063ed6db582fc7af50b246d552e972d0"
+  },
+  {
+    "path": "apps/web/src/lib/api/validators.generated.d.mts",
+    "change": "modified",
+    "before_sha256": "75c34b101931600ba4fcef03f4456bb2b9a59d77f2cf967378b29ac62613089b",
+    "after_sha256": "1518585e50c665fd3e0ce0073c04ebab9c016bc51b67a1c88d5897a71e8c37d1"
+  },
+  {
+    "path": "apps/web/src/lib/api/validators.generated.mjs",
+    "change": "modified",
+    "before_sha256": "5562fa1c1407d66fbfc28c6cd67e7e473fc1793ebcff936c6ac3945ecfce52cb",
+    "after_sha256": "d632dc981e64ddf91cad019ccb12c3c11b504129941d887b061908143d062230"
+  },
+  {
+    "path": "apps/web/tsconfig.workspace.json",
+    "change": "modified",
+    "before_sha256": "ee0da913eb7a0e8bfb800cdcd70a2c59dba5225c342182f42a7193831e8967b6",
+    "after_sha256": "518d7bfb00ecd512d4a26ed300e6dab124be139434e31e82ccd79bb88e3c613c"
+  },
+  {
+    "path": "migrations/versions/0005_call_review.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "6e1b9e0d89a79a9b1d48f1fe2d57e6354ac243791d0d64ceaa47089f86645cad"
+  },
+  {
+    "path": "scripts/preview_workspace.py",
+    "change": "modified",
+    "before_sha256": "e5484139730894a520a082e0e499e322da3013f06dff3656a9f6cc8af862ec68",
+    "after_sha256": "acc32a061be0255857358c44ee1b8178fdc78ba8d476ef91aa962ccab3f5b0f3"
+  },
+  {
+    "path": "services/api/app.py",
+    "change": "modified",
+    "before_sha256": "b51a4c70e16241f296d0f3d7b6a48bc6469b0da55c2959cb48bd2354402076a1",
+    "after_sha256": "280fe08b59ce4a370a4c129ab7d9fd7fe210d9499065929f08660438bafba923"
+  },
+  {
+    "path": "services/api/db/admin.py",
+    "change": "modified",
+    "before_sha256": "f37cd66feb43caf26d9e94b8f3424fbd4f03424cf0bb88900082bd33b76828d9",
+    "after_sha256": "e5765f41516412bcb0acbb63bff0f6fa3a2c9a685698e970cf253f0f22e7026d"
+  },
+  {
+    "path": "services/api/db/models.py",
+    "change": "modified",
+    "before_sha256": "7a8bcf1064b35201099deb1dbd0698aa347836cce9ec656d4a38f87016b4ee72",
+    "after_sha256": "2b9fb170eb8ada23c24b8fb270ec409e5f7a8a97b2840f6e3f8c1c793a9e578b"
+  },
+  {
+    "path": "services/api/db/settings.py",
+    "change": "modified",
+    "before_sha256": "203661cab31d806f0e54115c004f46c0e9d717bd32e88b6b1d9ba923183e0776",
+    "after_sha256": "8452e9d09244e094e45f7ad28122354d4b480b8f0424579099d8157fd8978705"
+  },
+  {
+    "path": "services/api/routes/call_reviews.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "9ddcb98f8793c1d95f16d3a1a7e363e72d5b2fe784ebed661d764c59f0db6369"
+  },
+  {
+    "path": "services/reviews/call_contracts.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "49785010a90270dbde5fd8f91f91c2b2efe736bbcb61d0ac90381f511be76519"
+  },
+  {
+    "path": "services/reviews/call_service.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "093dd9fa2c89b90d08db21cb308c1d5ca01695e7417ab3f26b110c96c053b2d3"
+  },
+  {
+    "path": "tests/api/test_api.py",
+    "change": "modified",
+    "before_sha256": "471fa041cf5c027c42835300bf8ad75104056f5bb6c185d6af5da4d31dcf9fd2",
+    "after_sha256": "d6128b7c6a75ddbfe4bfac23b58b5d54b4c147586616feaa8858dda02ec12030"
+  },
+  {
+    "path": "tests/frontend/call-reviews.mjs",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "a13878c1b53354e49bc26584ebe85d7f3e236eda17015852f91add355fa0ce74"
+  },
+  {
+    "path": "tests/reviews/conftest.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "1de8b0596590f33fe8f9baf472ce2ab4a0c1d900023dc1c54a179f746e746d9d"
+  },
+  {
+    "path": "tests/reviews/test_call_reviews.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "9228d2ee118a55a53107d43716d167c3f1e58ab5e971fd661e10cd163a2243c8"
+  }
+]

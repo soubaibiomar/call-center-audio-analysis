@@ -1,0 +1,1 @@
+STEP24: 9 browser scenarios; 14 screenshots; 14 accessibility scans; 2 synthetic approved segments before revocation.

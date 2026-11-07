@@ -1,0 +1,132 @@
+C:\Users\omar\Documents\Call center audio Analysis\.venv\Lib\site-packages\pytest_asyncio\plugin.py:207: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+........................................................................ [ 15%]
+........................................................................ [ 31%]
+........................................................................ [ 47%]
+........................................................................ [ 63%]
+............................................................FF..F....... [ 79%]
+.............................................................s........s. [ 94%]
+.......................                                                  [100%]
+================================== FAILURES ===================================
+__________________ test_actual_redis_dispatch_and_redelivery __________________
+.venv\Lib\site-packages\redis\connection.py:1055: in connect_check_health
+    sock = self._connect()
+.venv\Lib\site-packages\redis\connection.py:1617: in _connect
+    raise err
+.venv\Lib\site-packages\redis\connection.py:1601: in _connect
+    sock.connect(socket_address)
+E   ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+tests\workers\test_durable_jobs.py:187: in test_actual_redis_dispatch_and_redelivery
+    assert queue.dispatch(engine) == 1
+services\workers\broker.py:61: in dispatch
+    self.actor.send(tenant, job.id)
+.venv\Lib\site-packages\dramatiq\actor.py:150: in send
+    return self.send_with_options(args=args, kwargs=kwargs)
+.venv\Lib\site-packages\dramatiq\actor.py:179: in send_with_options
+    return self.broker.enqueue(message, delay=delay)
+.venv\Lib\site-packages\dramatiq\brokers\redis.py:184: in enqueue
+    self.do_enqueue(queue_name, message.options["redis_message_id"], message.encode())
+.venv\Lib\site-packages\dramatiq\brokers\redis.py:275: in do_dispatch
+    self._max_unpack_size(),
+.venv\Lib\site-packages\dramatiq\brokers\redis.py:252: in _max_unpack_size
+    cls._max_unpack_size_val = DEFAULT_LUA_MAX_STACK or self.scripts["maxstack"]()
+.venv\Lib\site-packages\redis\commands\core.py:10936: in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+.venv\Lib\site-packages\redis\commands\core.py:11294: in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+.venv\Lib\site-packages\redis\commands\core.py:11262: in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+.venv\Lib\site-packages\redis\client.py:867: in execute_command
+    return self._execute_command(*args, **options)
+.venv\Lib\site-packages\redis\client.py:873: in _execute_command
+    conn = self.connection or pool.get_connection()
+.venv\Lib\site-packages\redis\utils.py:258: in wrapper
+    return func(*args, **kwargs)
+.venv\Lib\site-packages\redis\connection.py:3273: in get_connection
+    connection.connect()
+.venv\Lib\site-packages\redis\connection.py:1028: in connect
+    self.retry.call_with_retry(
+.venv\Lib\site-packages\redis\retry.py:132: in call_with_retry
+    raise error
+.venv\Lib\site-packages\redis\retry.py:120: in call_with_retry
+    return do()
+.venv\Lib\site-packages\redis\connection.py:1029: in <lambda>
+    lambda: self.connect_check_health(
+.venv\Lib\site-packages\redis\connection.py:1077: in connect_check_health
+    raise e
+E   redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:16379. No connection could be made because the target machine actively refused it.
+------------------------------ Captured log call ------------------------------
+CRITICAL dramatiq.worker.ConsumerThread(analysis_cpu):worker.py:326 Consumer encountered a connection error: Error 10061 connecting to 127.0.0.1:16379. No connection could be made because the target machine actively refused it.
+CRITICAL dramatiq.worker.ConsumerThread(analysis_cpu.DQ):worker.py:326 Consumer encountered a connection error: Error 10061 connecting to 127.0.0.1:16379. No connection could be made because the target machine actively refused it.
+CRITICAL dramatiq.worker.ConsumerThread(analysis_cpu):worker.py:326 Consumer encountered a connection error: Error 10061 connecting to 127.0.0.1:16379. No connection could be made because the target machine actively refused it.
+_________ test_killed_worker_restarts_and_commits_one_logical_result __________
+tests\workers\test_durable_jobs.py:231: in test_killed_worker_restarts_and_commits_one_logical_result
+    assert process.poll() is None
+E   AssertionError: assert 1 is None
+E    +  where 1 = poll()
+E    +    where poll = <Popen: returncode: 1 args: ['C:\\Users\\omar\\Documents\\Call center audio ...>.poll
+___________ test_broker_ack_gap_redelivers_without_duplicate_result ___________
+.venv\Lib\site-packages\redis\connection.py:1055: in connect_check_health
+    sock = self._connect()
+.venv\Lib\site-packages\redis\connection.py:1617: in _connect
+    raise err
+.venv\Lib\site-packages\redis\connection.py:1601: in _connect
+    sock.connect(socket_address)
+E   ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+tests\workers\test_durable_jobs.py:317: in test_broker_ack_gap_redelivers_without_duplicate_result
+    queue.dispatch(engine)
+services\workers\broker.py:61: in dispatch
+    self.actor.send(tenant, job.id)
+tests\workers\test_durable_jobs.py:312: in ambiguous
+    original(*args)
+.venv\Lib\site-packages\dramatiq\actor.py:150: in send
+    return self.send_with_options(args=args, kwargs=kwargs)
+.venv\Lib\site-packages\dramatiq\actor.py:179: in send_with_options
+    return self.broker.enqueue(message, delay=delay)
+.venv\Lib\site-packages\dramatiq\brokers\redis.py:184: in enqueue
+    self.do_enqueue(queue_name, message.options["redis_message_id"], message.encode())
+.venv\Lib\site-packages\dramatiq\brokers\redis.py:275: in do_dispatch
+    self._max_unpack_size(),
+.venv\Lib\site-packages\dramatiq\brokers\redis.py:252: in _max_unpack_size
+    cls._max_unpack_size_val = DEFAULT_LUA_MAX_STACK or self.scripts["maxstack"]()
+.venv\Lib\site-packages\redis\commands\core.py:10936: in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+.venv\Lib\site-packages\redis\commands\core.py:11294: in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+.venv\Lib\site-packages\redis\commands\core.py:11262: in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+.venv\Lib\site-packages\redis\client.py:867: in execute_command
+    return self._execute_command(*args, **options)
+.venv\Lib\site-packages\redis\client.py:873: in _execute_command
+    conn = self.connection or pool.get_connection()
+.venv\Lib\site-packages\redis\utils.py:258: in wrapper
+    return func(*args, **kwargs)
+.venv\Lib\site-packages\redis\connection.py:3273: in get_connection
+    connection.connect()
+.venv\Lib\site-packages\redis\connection.py:1028: in connect
+    self.retry.call_with_retry(
+.venv\Lib\site-packages\redis\retry.py:132: in call_with_retry
+    raise error
+.venv\Lib\site-packages\redis\retry.py:120: in call_with_retry
+    return do()
+.venv\Lib\site-packages\redis\connection.py:1029: in <lambda>
+    lambda: self.connect_check_health(
+.venv\Lib\site-packages\redis\connection.py:1077: in connect_check_health
+    raise e
+E   redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:16379. No connection could be made because the target machine actively refused it.
+============================== warnings summary ===============================
+.venv\Lib\site-packages\starlette\testclient.py:45
+  C:\Users\omar\Documents\Call center audio Analysis\.venv\Lib\site-packages\starlette\testclient.py:45: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] tests\rag\test_grounding.py:112: Configure isolated knowledge database
+SKIPPED [1] tests\rag\test_store.py:16: Configure isolated knowledge pgvector test URL
+3 failed, 450 passed, 2 skipped, 1 warning in 81.81s (0:01:21)

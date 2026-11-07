@@ -1,0 +1,13 @@
+
+> project28-web@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.5 C:/Users/omar/Documents/Call center audio Analysis/apps/web
+
+
+ Test Files  3 passed (3)
+      Tests  27 passed (27)
+   Start at  11:15:14
+   Duration  8.65s (import 58%, tests 19%, environment 19%, setup 4%, transform 1%)
+

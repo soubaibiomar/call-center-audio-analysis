@@ -1,0 +1,147 @@
+{
+  "base": "http://127.0.0.1:8786/workspace/",
+  "fixture": "synthetic silent WAV; signed identities; isolated PostgreSQL; no human labels",
+  "assertions": [
+    "administrator registers a checksum and explicit training permission",
+    "supervisor corrects text, speaker, uncertainty and audio-backed QA score",
+    "independent administrator approves; source preserved; export contains two synthetic segments",
+    "permission revocation removes approved labels from current export",
+    "mismatched audio disables decisions",
+    "concurrent edit receives conflict and explicit refresh permits reapplication",
+    "agent is denied a correction screen",
+    "independent reviewer can reject a resubmitted correction",
+    "administrator can erase annotation without changing original call"
+  ],
+  "screenshots": [
+    {
+      "name": "registration-desktop",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "draft-1440",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "draft-1280",
+      "width": 1280,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "draft-1024",
+      "width": 1024,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "draft-390",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "submitted-independent-approval-required",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "approved-desktop",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "approved-mobile",
+      "width": 390,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "permission-revoked",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "mismatched-recording",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "concurrent-edit-conflict",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "agent-permission-denied",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "rejected-review",
+      "width": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "erased-annotation-source-preserved",
+      "width": 1440,
+      "horizontalOverflow": false
+    }
+  ],
+  "axe": [
+    {
+      "name": "registration-desktop",
+      "violations": []
+    },
+    {
+      "name": "draft-1440",
+      "violations": []
+    },
+    {
+      "name": "draft-1280",
+      "violations": []
+    },
+    {
+      "name": "draft-1024",
+      "violations": []
+    },
+    {
+      "name": "draft-390",
+      "violations": []
+    },
+    {
+      "name": "submitted-independent-approval-required",
+      "violations": []
+    },
+    {
+      "name": "approved-desktop",
+      "violations": []
+    },
+    {
+      "name": "approved-mobile",
+      "violations": []
+    },
+    {
+      "name": "permission-revoked",
+      "violations": []
+    },
+    {
+      "name": "mismatched-recording",
+      "violations": []
+    },
+    {
+      "name": "concurrent-edit-conflict",
+      "violations": []
+    },
+    {
+      "name": "agent-permission-denied",
+      "violations": []
+    },
+    {
+      "name": "rejected-review",
+      "violations": []
+    },
+    {
+      "name": "erased-annotation-source-preserved",
+      "violations": []
+    }
+  ],
+  "pageErrors": [],
+  "exportedSegments": 2
+}

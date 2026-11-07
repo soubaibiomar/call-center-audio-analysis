@@ -1,0 +1,15 @@
+{
+  "apps\\web\\.gitignore": "c26497fa75a5a79134ab9d11f833f8e52d19cb4552e3a00e2cce0a2a8ee23914",
+  "apps\\web\\index.html": "c39a430ba7ed5812f119c39d778941c0b6451c1ce5ebc0c180dd5658cfbca942",
+  "apps\\web\\package-lock.json": "83e5c99ffc5b588ef6ed64b13970638eb44c488875b62cd3e43d1fcda32944f9",
+  "apps\\web\\package.json": "ba462832e0c7181d2d3ce6bf3a4266f43db9b966f126a27bc7f7a7c0e3fdc318",
+  "apps\\web\\tsconfig.json": "cd0639f19a39ce6ff3d972d43666df37c86d9f36f45ee58d2b1098c805ceec28",
+  "apps\\web\\vite.config.js": "701487673d4cef53276f060cbf878f9d7552ddf45639ae1c086d44666fb00b31",
+  "apps\\web\\src\\main.tsx": "9c5bf3d52c653f59457bcac3e9c35adf05d0d2444e3f031266417c3b61938298",
+  "apps\\web\\src\\vite-env.d.ts": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+  "apps\\web\\tests\\emotion-review.mjs": "d5944a48670cd2328455304946f4d01d27e8f034445de1f74b55539c92f3724b",
+  "apps\\web\\src\\features\\emotion\\EmotionReview.tsx": "ea6e03cfd5d1d76963240251b23f7677d9375917aa863a37029df7583fc0d83f",
+  "apps\\web\\src\\features\\emotion\\review.css": "58403b9f2c897607409cf11d3229d7f2e6b48824c5982ea1b0267a240fdc5c1e",
+  "services\\api\\app.py": "24aa924858ff112e0db4ff827722128f11dbdbcf8e70bc22c7ca3b41a61ddb43",
+  ".github\\workflows\\ci.yml": "384d87a4549328c3dcee13dbca08dead809f9370b18ca92e381b296a06552903"
+}

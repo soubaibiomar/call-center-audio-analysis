@@ -1,0 +1,164 @@
+[
+  {
+    "path": "apps/web/scripts/generate-api.mjs",
+    "change": "modified",
+    "before_sha256": "a7b57542289c4f3b2e80c4c3759da9d2c98abb85fb130682199dde1589271c2d",
+    "after_sha256": "9431d4462236008420b98dbaa7eee4aaf10b7f86c94c573066bd68ac4e770ecf"
+  },
+  {
+    "path": "apps/web/src/app/App.tsx",
+    "change": "modified",
+    "before_sha256": "2895378d18dc20a93bb6d9dfb9e1f60f6726560500222fed7cab7678d3e5eea8",
+    "after_sha256": "a3f4902a5109ef45dcc074b26cc2b7fb73ceb7a35f3f5f74fa606babfbe3e5cc"
+  },
+  {
+    "path": "apps/web/src/features/live/BatchMonitor.tsx",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "5347e5b10bc0881718cbf5631372cd1a886c432e10b7b5cfa0065b4aee6690c6"
+  },
+  {
+    "path": "apps/web/src/features/live/LivePage.tsx",
+    "change": "modified",
+    "before_sha256": "6415fb81149ad3b8d425bc380d7a396e7527cbd71a744a2576eed8c8604a29ea",
+    "after_sha256": "2056e54ee059e42c28a0859de3ece2beb5b977673413e28a17025bd0b8d87e31"
+  },
+  {
+    "path": "apps/web/src/features/live/live.css",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "6c8dd1b0812f7c3da205a34820df0acc623968e786877360b5e5877232eef788"
+  },
+  {
+    "path": "apps/web/src/features/live/pcm-worklet.js",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "5dc33a4696d93ffbda4586e789aaeb2ca3df37f9b9b9c74860263d2af1e8bc70"
+  },
+  {
+    "path": "apps/web/src/features/live/transport.test.ts",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "e333704081cdb5ea983533322f77f5c12fb7069c09ca81e779efa73a7738ecce"
+  },
+  {
+    "path": "apps/web/src/features/live/transport.ts",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "445bbc7af33cfce784a9dd3b616cbc6e4a83d9c23c88663e9ec7eae3916df869"
+  },
+  {
+    "path": "apps/web/src/lib/api/client.ts",
+    "change": "modified",
+    "before_sha256": "2505a64aa4185a6dfdc840d77035cc3cf8fae34f0e2dd1c2fef6b432564a29f5",
+    "after_sha256": "749e9352a4fcb58d55630b65575cc7832ba8a1cb484cfc34c54912bf15320316"
+  },
+  {
+    "path": "apps/web/src/lib/api/generated.ts",
+    "change": "modified",
+    "before_sha256": "46c51e96740725d01eefa7b1ae332d74aa83d5e88d34c075fe4a32158cecfa48",
+    "after_sha256": "5af7b00113593befc1306368ce19d38f60ae10d6a39c34b9c792e114935d27ae"
+  },
+  {
+    "path": "apps/web/src/lib/api/schema.generated.json",
+    "change": "modified",
+    "before_sha256": "a6bfa08840589ec7efe59eef36bc3705063ed6db582fc7af50b246d552e972d0",
+    "after_sha256": "f3c25ab91ead4cde247f32fa6680da70df189c60ae7ee305f564a314fd6855aa"
+  },
+  {
+    "path": "apps/web/src/lib/api/validators.generated.d.mts",
+    "change": "modified",
+    "before_sha256": "1518585e50c665fd3e0ce0073c04ebab9c016bc51b67a1c88d5897a71e8c37d1",
+    "after_sha256": "17b14a8b037268f9240b7760e445c613bd58bb11a860a516600b623d9962e475"
+  },
+  {
+    "path": "apps/web/src/lib/api/validators.generated.mjs",
+    "change": "modified",
+    "before_sha256": "d632dc981e64ddf91cad019ccb12c3c11b504129941d887b061908143d062230",
+    "after_sha256": "9fba7908e7ae5884984b68b89c4638994cdaa54de5978233abbdc213961f76da"
+  },
+  {
+    "path": "scripts/preview_workspace.py",
+    "change": "modified",
+    "before_sha256": "acc32a061be0255857358c44ee1b8178fdc78ba8d476ef91aa962ccab3f5b0f3",
+    "after_sha256": "30f0bb42c2c13b56f605b174c09987896899c037bb8280e461684c0c5ca2e5e3"
+  },
+  {
+    "path": "services/api/app.py",
+    "change": "modified",
+    "before_sha256": "280fe08b59ce4a370a4c129ab7d9fd7fe210d9499065929f08660438bafba923",
+    "after_sha256": "4302a184c38b4edba9ef891152e8e7f81a3cc2e55f1cb2c87028c673d7ada388"
+  },
+  {
+    "path": "services/api/routes/workspace.py",
+    "change": "modified",
+    "before_sha256": "3fe358821e7bdd9ef6682d21d6c68c07bf90a6319c78276c2c856cb4b607515f",
+    "after_sha256": "7301222b83141e9fec970edffa54216b5b295d3e27b2242c2805e26cfdc60aad"
+  },
+  {
+    "path": "services/api/schemas.py",
+    "change": "modified",
+    "before_sha256": "5e4f3c86c1af0108a2ec56af4dc84f9738508cf58676346832559fa96ecc48a5",
+    "after_sha256": "9471f07517289e41ce4a9e2bfec12cd3fc0b7c4160ce7c3d899cf1ee5edcc807"
+  },
+  {
+    "path": "services/streaming/__init__.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "74afff5f3e4deddd930fd7d5b0ed1b395c549bd7da328b9346aa3e21960082d9"
+  },
+  {
+    "path": "services/streaming/asr.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "0c5873c9812bd633a9dde8155f2c4c7687e96b5cb87e03f8a387bc08f27d482e"
+  },
+  {
+    "path": "services/streaming/broker.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "60f871c1d5cd731962410fc6fdd7ac1bf3ecd6ba3a41530a8ad437520f78a025"
+  },
+  {
+    "path": "services/streaming/contracts.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "3200424aaf139686eca9b28a4acc20caff066b256332147082f7248adb6b0d3c"
+  },
+  {
+    "path": "services/streaming/routes.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "67beac37188617e37b270e7a2a3acb486d6d55c857098012a64107f82c6c9f6f"
+  },
+  {
+    "path": "services/streaming/settings.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "ed92379ac67579edaaea983323ae0fb20a510ffbb228fd0fc67f09526bffb6f5"
+  },
+  {
+    "path": "tests/api/test_api.py",
+    "change": "modified",
+    "before_sha256": "d6128b7c6a75ddbfe4bfac23b58b5d54b4c147586616feaa8858dda02ec12030",
+    "after_sha256": "5149972e41f993cbbedd769bf9593e434573c6d4eb0c462c65860d7a4e0b555d"
+  },
+  {
+    "path": "tests/frontend/live-call.mjs",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "5dc1a804a6976b85a3c7b44b9cd2e351b456bf95a37a88be7075a0b7534d5acb"
+  },
+  {
+    "path": "tests/streaming/conftest.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "861d8dfa1412cfa498414640ae9be9e734248093ad5cbebf5dae1c7df7a6b26c"
+  },
+  {
+    "path": "tests/streaming/test_transport.py",
+    "change": "created",
+    "before_sha256": null,
+    "after_sha256": "855d091bfdbbe55e0f909815148faa6a9ddedab9059b22b9b4c60b1feec16e0e"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "name": "project28-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config vite.workspace.config.ts",
+    "dev:review": "vite --host 127.0.0.1 --port 8782",
+    "build": "npm run typecheck && npm run build:review && npm run build:workspace",
+    "build:review": "vite build",
+    "build:workspace": "vite build --config vite.workspace.config.ts",
+    "typecheck": "tsc --noEmit && tsc --project tsconfig.workspace.json",
+    "lint": "oxlint --deny-warnings --react-plugin --jsx-a11y-plugin src/app src/lib src/features/calls src/features/analytics src/features/live src/features/models src/features/workspace src/features/reviews scripts vite.workspace.config.ts vitest.config.ts",
+    "test": "vitest run",
+    "api:generate": "node scripts/generate-api.mjs",
+    "api:check": "node scripts/generate-api.mjs --check",
+    "test:browser": "node ../../tests/frontend/workspace.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "2.1.10",
+    "@tanstack/react-query": "5.105.0",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router-dom": "7.18.5",
+    "recharts": "3.10.1",
+    "wavesurfer.js": "8.0.4"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@tailwindcss/vite": "4.3.3",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.8",
+    "@types/node": "26.6.6",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "jsdom": "30.1.3",
+    "oxlint": "1.90.0",
+    "playwright": "1.64.1",
+    "prettier": "3.9.10",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  },
+  "engines": {
+    "node": ">=24.18.0 <25"
+  }
+}

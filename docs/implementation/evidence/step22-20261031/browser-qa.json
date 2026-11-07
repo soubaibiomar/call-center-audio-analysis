@@ -1,0 +1,123 @@
+{
+  "base": "http://127.0.0.1:8781/workspace/",
+  "fixture": "synthetic signed identities; isolated test database; no model inference",
+  "assertions": [
+    "public health connects to the actual local API",
+    "mobile navigation opens, follows a route, and closes",
+    "invalid identity stays outside the protected route",
+    "signed synthetic account opens the requested protected route",
+    "protected route overview renders",
+    "protected route calls renders",
+    "protected route live renders",
+    "protected route knowledge renders",
+    "protected route models renders",
+    "protected route settings renders",
+    "workspace page search has a useful empty state",
+    "keyboard skip link moves focus to the page content",
+    "disconnect clears access and blocks a protected deep link",
+    "reload does not persist a previously connected identity",
+    "unknown routes provide recovery",
+    "network failure has a visible retry path",
+    "existing review UI remains reachable"
+  ],
+  "screenshots": [
+    {
+      "name": "health-1440",
+      "width": 1440,
+      "height": 1000,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "health-1280",
+      "width": 1280,
+      "height": 1000,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "health-1024",
+      "width": 1024,
+      "height": 1000,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "health-390",
+      "width": 390,
+      "height": 844,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "access-error-390",
+      "width": 390,
+      "height": 844,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "protected-calls-1440",
+      "width": 1440,
+      "height": 1000,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "signed-health-1440",
+      "width": 1440,
+      "height": 1000,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "keyboard-focus-1440",
+      "width": 1440,
+      "height": 1000,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "not-found-1440",
+      "width": 1440,
+      "height": 1000,
+      "horizontalOverflow": false
+    },
+    {
+      "name": "offline-1440",
+      "width": 1440,
+      "height": 1000,
+      "horizontalOverflow": false
+    }
+  ],
+  "axe": [
+    {
+      "name": "health-1440",
+      "violations": []
+    },
+    {
+      "name": "health-1280",
+      "violations": []
+    },
+    {
+      "name": "health-1024",
+      "violations": []
+    },
+    {
+      "name": "health-390",
+      "violations": []
+    },
+    {
+      "name": "access-error-mobile",
+      "violations": []
+    },
+    {
+      "name": "protected-calls",
+      "violations": []
+    },
+    {
+      "name": "offline",
+      "violations": []
+    }
+  ],
+  "routeErrors": [],
+  "expectedFailures": [
+    {
+      "endpoint": "/api/v1/me",
+      "status": 401
+    }
+  ],
+  "decision": "PASS"
+}

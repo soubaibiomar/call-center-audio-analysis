@@ -1,0 +1,21 @@
+{
+  "operations": [
+    "fresh upgrade head",
+    "empty downgrade 0004_emotion",
+    "upgrade head"
+  ],
+  "head": "0005_call_review",
+  "forced_tenant_rls": [
+    [
+      "call_annotation_events",
+      true,
+      true
+    ],
+    [
+      "call_annotations",
+      true,
+      true
+    ]
+  ],
+  "production_migrated": false
+}

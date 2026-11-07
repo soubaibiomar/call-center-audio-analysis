@@ -1,0 +1,59 @@
+{
+  "files": 13,
+  "raw_bytes": 1091602,
+  "gzip_bytes": 275547,
+  "assets": [
+    {
+      "path": "index.html",
+      "bytes": 589
+    },
+    {
+      "path": "AudioPlayer-LiBodwHM.js",
+      "bytes": 54768
+    },
+    {
+      "path": "CallDetailPage-Cw9L8kkF.js",
+      "bytes": 4863
+    },
+    {
+      "path": "CallReviewPage-4FaMkQ-4.js",
+      "bytes": 16434
+    },
+    {
+      "path": "CallReviewPage-CyFZpJvE.css",
+      "bytes": 1289
+    },
+    {
+      "path": "CallsPage-DtudyC_F.js",
+      "bytes": 4151
+    },
+    {
+      "path": "DashboardPage-AJlssYTs.js",
+      "bytes": 342114
+    },
+    {
+      "path": "index-CFLm6DoV.css",
+      "bytes": 20698
+    },
+    {
+      "path": "index-JQyTXgOF.js",
+      "bytes": 614919
+    },
+    {
+      "path": "LivePage-DHmCu66t.css",
+      "bytes": 898
+    },
+    {
+      "path": "LivePage-DO2Yb3Xg.js",
+      "bytes": 21509
+    },
+    {
+      "path": "ModelsPage-vBgfcKFy.js",
+      "bytes": 1782
+    },
+    {
+      "path": "ReportWorkspace-U6sO2VzA.js",
+      "bytes": 7588
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "commands": [
+    {
+      "name": "api-types",
+      "command": [
+        "npm.cmd",
+        "run",
+        "api:check"
+      ],
+      "cwd": "apps\\web",
+      "exit_code": 0,
+      "seconds": 0.3995806000000357
+    },
+    {
+      "name": "lint",
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "cwd": "apps\\web",
+      "exit_code": 0,
+      "seconds": 0.435999000000038
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "npm.cmd",
+        "run",
+        "typecheck"
+      ],
+      "cwd": "apps\\web",
+      "exit_code": 0,
+      "seconds": 1.4803314999999202
+    },
+    {
+      "name": "component-tests",
+      "command": [
+        "npm.cmd",
+        "test"
+      ],
+      "cwd": "apps\\web",
+      "exit_code": 0,
+      "seconds": 9.677773699999989
+    },
+    {
+      "name": "production-build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "apps\\web",
+      "exit_code": 0,
+      "seconds": 3.71930529999986
+    }
+  ],
+  "bundle_files": [
+    {
+      "path": "dist\\index.html",
+      "bytes": 540,
+      "gzip_bytes": 321
+    },
+    {
+      "path": "dist\\assets\\index-CAlU1UFW.css",
+      "bytes": 6708,
+      "gzip_bytes": 2105
+    },
+    {
+      "path": "dist\\assets\\index-Cvcs3V9v.js",
+      "bytes": 232244,
+      "gzip_bytes": 71703
+    },
+    {
+      "path": "dist-workspace\\index.html",
+      "bytes": 589,
+      "gzip_bytes": 339
+    },
+    {
+      "path": "dist-workspace\\assets\\index-BDeJm-GB.js",
+      "bytes": 354220,
+      "gzip_bytes": 107219
+    },
+    {
+      "path": "dist-workspace\\assets\\index-Dnk8PDQG.css",
+      "bytes": 14246,
+      "gzip_bytes": 4054
+    }
+  ]
+}

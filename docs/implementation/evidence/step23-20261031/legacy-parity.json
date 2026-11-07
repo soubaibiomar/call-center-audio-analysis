@@ -1,0 +1,8 @@
+{
+  "unchanged": {
+    "apps/web/src/features/emotion/EmotionReview.tsx": true,
+    "apps/web/src/features/emotion/review.css": true,
+    "apps/web/src/main.tsx": true,
+    "apps/web/vite.config.js": true
+  }
+}

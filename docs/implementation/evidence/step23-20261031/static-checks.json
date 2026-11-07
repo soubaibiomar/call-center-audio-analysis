@@ -1,0 +1,54 @@
+[
+  {
+    "command": [
+      ".venv/Scripts/ruff.exe",
+      "check",
+      "services/api/app.py",
+      "services/api/schemas.py",
+      "services/api/settings.py",
+      "services/api/routes/workspace.py",
+      "scripts/preview_workspace.py",
+      "scripts/preview_emotion_reviews.py",
+      "tests/api/test_workspace.py"
+    ],
+    "exit_code": 0,
+    "output": "All checks passed!\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/ruff.exe",
+      "format",
+      "--check",
+      "services/api/app.py",
+      "services/api/schemas.py",
+      "services/api/settings.py",
+      "services/api/routes/workspace.py",
+      "scripts/preview_workspace.py",
+      "scripts/preview_emotion_reviews.py",
+      "tests/api/test_workspace.py"
+    ],
+    "exit_code": 0,
+    "output": "7 files already formatted\n"
+  },
+  {
+    "command": [
+      ".venv/Scripts/mypy.exe",
+      "services/api/app.py",
+      "services/api/routes/workspace.py",
+      "scripts/preview_workspace.py",
+      "scripts/preview_emotion_reviews.py",
+      "--follow-imports=silent"
+    ],
+    "exit_code": 0,
+    "output": "Success: no issues found in 4 source files\n"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "output": "warning: in the working copy of '.dockerignore', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of '.env.project28.example', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'requirements.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'src/agents/qa_scoring.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'src/agents/report.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'src/agents/summarization.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'src/utils/config.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'src/utils/llm_factory.py', LF will be replaced by CRLF the next time Git touches it\n"
+  }
+]

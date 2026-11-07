@@ -1,0 +1,41 @@
+{
+  "schema_version": "call-annotation-v1",
+  "items": [
+    {
+      "review_id": "ab9d725b-2263-4c8b-9bc1-69c13f21b88c",
+      "call_id": "ea0cb412-1280-456f-918a-00d1a501ae38",
+      "revision": 4,
+      "source_audio_sha256": "f751fd7094be088dc785125e4a1a0222a17c2bd20469aa31728ca5e515ed5809",
+      "original_sha256": "f53c18a9fa69afdf16c9a8088cf7a057ec41f4e23b56a700a81404ac89872b9b",
+      "source_expires_at": "2027-01-29T10:51:07.903737Z",
+      "author_id": "d6917954-db2d-4b31-bb3c-49350cc3f2a2",
+      "approver_id": "edd08e0b-4575-44f3-98e5-eadf1e72d18d",
+      "payload": {
+        "segments": [
+          {
+            "segment_index": 0,
+            "text": "Synthetic corrected opening.",
+            "speaker_role": "Customer",
+            "uncertain": false
+          },
+          {
+            "segment_index": 1,
+            "text": "Synthetic evidence requiring review.",
+            "speaker_role": "Agent",
+            "uncertain": false
+          }
+        ],
+        "qa_override": {
+          "score": 2.5,
+          "rationale": "Synthetic QA correction supported by the selected fixture interval.",
+          "audio_start": 0.25,
+          "audio_end": 1
+        }
+      }
+    }
+  ],
+  "approved_segments": 2,
+  "candidate_limit": 100,
+  "truncated": false,
+  "fingerprint": "23280cfa49934dc715f3561e721896790fd2afd525e046c4eae8d9e71443d3d7"
+}

@@ -1,0 +1,2337 @@
+{
+  "components": {
+    "schemas": {
+      "Health": {
+        "properties": {
+          "status": {
+            "enum": [
+              "ok",
+              "ready"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "Health",
+        "type": "object"
+      },
+      "Identity": {
+        "properties": {
+          "role": {
+            "enum": [
+              "agent",
+              "supervisor",
+              "admin"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "tenant_id": {
+            "format": "uuid",
+            "title": "Tenant Id",
+            "type": "string"
+          },
+          "user_id": {
+            "format": "uuid",
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "user_id",
+          "role"
+        ],
+        "title": "Identity",
+        "type": "object"
+      },
+      "Dashboard": {
+        "properties": {
+          "average_qa_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Average Qa Score"
+          },
+          "completed": {
+            "title": "Completed",
+            "type": "integer"
+          },
+          "failed": {
+            "title": "Failed",
+            "type": "integer"
+          },
+          "flagged_for_review": {
+            "title": "Flagged For Review",
+            "type": "integer"
+          },
+          "scope": {
+            "enum": [
+              "owned_calls",
+              "tenant"
+            ],
+            "title": "Scope",
+            "type": "string"
+          },
+          "total_calls": {
+            "title": "Total Calls",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "total_calls",
+          "completed",
+          "failed",
+          "flagged_for_review",
+          "average_qa_score",
+          "scope"
+        ],
+        "title": "Dashboard",
+        "type": "object"
+      },
+      "Activity": {
+        "properties": {
+          "days": {
+            "items": {
+              "$ref": "#/components/schemas/ActivityDay"
+            },
+            "title": "Days",
+            "type": "array"
+          },
+          "languages": {
+            "items": {
+              "$ref": "#/components/schemas/LanguageCount"
+            },
+            "title": "Languages",
+            "type": "array"
+          },
+          "scope": {
+            "enum": [
+              "owned_calls",
+              "tenant"
+            ],
+            "title": "Scope",
+            "type": "string"
+          },
+          "timezone": {
+            "const": "UTC",
+            "default": "UTC",
+            "title": "Timezone",
+            "type": "string"
+          },
+          "window_days": {
+            "title": "Window Days",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "days",
+          "languages",
+          "window_days",
+          "scope"
+        ],
+        "title": "Activity",
+        "type": "object"
+      },
+      "CallPage": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/CallItem"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "limit": {
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "title": "Offset",
+            "type": "integer"
+          },
+          "total": {
+            "minimum": 0,
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "total",
+          "limit",
+          "offset"
+        ],
+        "title": "CallPage",
+        "type": "object"
+      },
+      "Report": {
+        "properties": {
+          "acoustic_emotion": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EmotionResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "call_id": {
+            "format": "uuid",
+            "title": "Call Id",
+            "type": "string"
+          },
+          "duration_seconds": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration Seconds"
+          },
+          "model_runs": {
+            "items": {
+              "$ref": "#/components/schemas/ModelRun"
+            },
+            "title": "Model Runs",
+            "type": "array"
+          },
+          "processed_at": {
+            "format": "date-time",
+            "title": "Processed At",
+            "type": "string"
+          },
+          "qa_scores": {
+            "$ref": "#/components/schemas/QAScoreResult"
+          },
+          "status": {
+            "enum": [
+              "completed",
+              "failed",
+              "flagged_for_review"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/SummaryResult"
+          },
+          "transcription": {
+            "$ref": "#/components/schemas/TranscriptionResult"
+          }
+        },
+        "required": [
+          "call_id",
+          "status",
+          "processed_at",
+          "transcription",
+          "summary",
+          "qa_scores"
+        ],
+        "title": "Report",
+        "type": "object"
+      },
+      "JobStatus": {
+        "properties": {
+          "attempts": {
+            "minimum": 0,
+            "title": "Attempts",
+            "type": "integer"
+          },
+          "call_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Call Id"
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "metrics": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Metrics",
+            "type": "object"
+          },
+          "progress": {
+            "anyOf": [
+              {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Progress"
+          },
+          "queue": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Queue"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "call_id",
+          "status",
+          "attempts"
+        ],
+        "title": "JobStatus",
+        "type": "object"
+      },
+      "WorkspaceContext": {
+        "properties": {
+          "data_kind": {
+            "enum": [
+              "stored_records",
+              "synthetic_validation"
+            ],
+            "title": "Data Kind",
+            "type": "string"
+          },
+          "live_transport": {
+            "default": "not_available",
+            "enum": [
+              "not_available",
+              "webrtc_direct_demo"
+            ],
+            "title": "Live Transport",
+            "type": "string"
+          },
+          "training_controls": {
+            "const": "not_available",
+            "default": "not_available",
+            "title": "Training Controls",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data_kind"
+        ],
+        "title": "WorkspaceContext",
+        "type": "object"
+      },
+      "ModelVersionPage": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ModelVersionItem"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "limit": {
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "title": "Offset",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "limit",
+          "offset"
+        ],
+        "title": "ModelVersionPage",
+        "type": "object"
+      },
+      "LiveConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "analysis_available": {
+            "title": "Analysis Available",
+            "type": "boolean"
+          },
+          "enabled": {
+            "title": "Enabled",
+            "type": "boolean"
+          },
+          "model_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Id"
+          },
+          "sample_rate": {
+            "const": 16000,
+            "default": 16000,
+            "title": "Sample Rate",
+            "type": "integer"
+          },
+          "session_limit_seconds": {
+            "default": 600,
+            "title": "Session Limit Seconds",
+            "type": "integer"
+          },
+          "transport": {
+            "const": "webrtc-direct",
+            "default": "webrtc-direct",
+            "title": "Transport",
+            "type": "string"
+          }
+        },
+        "required": [
+          "enabled",
+          "analysis_available",
+          "model_id"
+        ],
+        "title": "LiveConfig",
+        "type": "object"
+      },
+      "LivePeers": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/LivePeer"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "LivePeers",
+        "type": "object"
+      },
+      "LiveSessions": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/LiveSessionView"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "LiveSessions",
+        "type": "object"
+      },
+      "LiveSessionView": {
+        "additionalProperties": false,
+        "properties": {
+          "capture_allowed": {
+            "title": "Capture Allowed",
+            "type": "boolean"
+          },
+          "consent_revision": {
+            "title": "Consent Revision",
+            "type": "integer"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "initiator_user_id": {
+            "format": "uuid",
+            "title": "Initiator User Id",
+            "type": "string"
+          },
+          "participants": {
+            "items": {
+              "$ref": "#/components/schemas/LiveParticipant"
+            },
+            "title": "Participants",
+            "type": "array"
+          },
+          "remaining_seconds": {
+            "title": "Remaining Seconds",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "initiator_user_id",
+          "participants",
+          "consent_revision",
+          "capture_allowed",
+          "remaining_seconds"
+        ],
+        "title": "LiveSessionView",
+        "type": "object"
+      },
+      "LiveTicket": {
+        "additionalProperties": false,
+        "properties": {
+          "expires_in_seconds": {
+            "title": "Expires In Seconds",
+            "type": "integer"
+          },
+          "ticket": {
+            "title": "Ticket",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket",
+          "expires_in_seconds"
+        ],
+        "title": "LiveTicket",
+        "type": "object"
+      },
+      "AudioReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_samples": {
+            "title": "Accepted Samples",
+            "type": "integer"
+          },
+          "buffered_samples": {
+            "title": "Buffered Samples",
+            "type": "integer"
+          },
+          "consent_revision": {
+            "title": "Consent Revision",
+            "type": "integer"
+          },
+          "sequence": {
+            "title": "Sequence",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "sequence",
+          "accepted_samples",
+          "buffered_samples",
+          "consent_revision"
+        ],
+        "title": "AudioReceipt",
+        "type": "object"
+      },
+      "LiveEvent": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "anyOf": [
+              {
+                "enum": [
+                  "analysis_failed",
+                  "analysis_retrying",
+                  "ended",
+                  "disconnected",
+                  "expired",
+                  "backpressure"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Code"
+          },
+          "consent_revision": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Consent Revision"
+          },
+          "segments": {
+            "items": {
+              "$ref": "#/components/schemas/LiveTranscriptSpan"
+            },
+            "maxItems": 100,
+            "title": "Segments",
+            "type": "array"
+          },
+          "sender_user_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Sender User Id"
+          },
+          "session": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LiveSessionView"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "signal": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LiveSignal"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "transcript": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TranscriptRevision"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "type": {
+            "enum": [
+              "session",
+              "signal",
+              "transcript",
+              "notice",
+              "pong",
+              "terminated"
+            ],
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "LiveEvent",
+        "type": "object"
+      },
+      "TranscriptRevision": {
+        "additionalProperties": false,
+        "properties": {
+          "agreed_prefix_words": {
+            "maximum": 500,
+            "minimum": 0,
+            "title": "Agreed Prefix Words",
+            "type": "integer"
+          },
+          "end_seconds": {
+            "minimum": 0,
+            "title": "End Seconds",
+            "type": "number"
+          },
+          "inference_ms": {
+            "minimum": 0,
+            "title": "Inference Ms",
+            "type": "number"
+          },
+          "ready_to_event_ms": {
+            "minimum": 0,
+            "title": "Ready To Event Ms",
+            "type": "number"
+          },
+          "reason": {
+            "enum": [
+              "silence",
+              "window_limit",
+              "manual",
+              "partial"
+            ],
+            "title": "Reason",
+            "type": "string"
+          },
+          "revision": {
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "start_seconds": {
+            "minimum": 0,
+            "title": "Start Seconds",
+            "type": "number"
+          },
+          "state": {
+            "enum": [
+              "provisional",
+              "final",
+              "failed"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 4000,
+            "title": "Text",
+            "type": "string"
+          },
+          "timing": {
+            "enum": [
+              "word",
+              "interpolated"
+            ],
+            "title": "Timing",
+            "type": "string"
+          },
+          "utterance_id": {
+            "format": "uuid",
+            "title": "Utterance Id",
+            "type": "string"
+          },
+          "window_end_seconds": {
+            "minimum": 0,
+            "title": "Window End Seconds",
+            "type": "number"
+          },
+          "window_start_seconds": {
+            "minimum": 0,
+            "title": "Window Start Seconds",
+            "type": "number"
+          }
+        },
+        "required": [
+          "utterance_id",
+          "revision",
+          "state",
+          "text",
+          "start_seconds",
+          "end_seconds",
+          "agreed_prefix_words",
+          "reason",
+          "timing",
+          "window_start_seconds",
+          "window_end_seconds",
+          "ready_to_event_ms",
+          "inference_ms"
+        ],
+        "title": "TranscriptRevision",
+        "type": "object"
+      },
+      "FlushReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "scheduled_windows": {
+            "maximum": 1,
+            "minimum": 0,
+            "title": "Scheduled Windows",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scheduled_windows"
+        ],
+        "title": "FlushReceipt",
+        "type": "object"
+      },
+      "CallReviewView": {
+        "additionalProperties": false,
+        "properties": {
+          "approver_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approver Id"
+          },
+          "author_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Author Id"
+          },
+          "call_id": {
+            "format": "uuid",
+            "title": "Call Id",
+            "type": "string"
+          },
+          "consent_to_train": {
+            "title": "Consent To Train",
+            "type": "boolean"
+          },
+          "eligible_for_training": {
+            "title": "Eligible For Training",
+            "type": "boolean"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "original": {
+            "$ref": "#/components/schemas/ReviewSnapshot"
+          },
+          "original_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Original Sha256",
+            "type": "string"
+          },
+          "partition": {
+            "enum": [
+              "train",
+              "evaluation"
+            ],
+            "title": "Partition",
+            "type": "string"
+          },
+          "payload": {
+            "$ref": "#/components/schemas/CorrectionPayload"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer"
+          },
+          "source_attestation": {
+            "title": "Source Attestation",
+            "type": "string"
+          },
+          "source_audio_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Source Audio Sha256",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "draft",
+              "submitted",
+              "approved",
+              "rejected"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "submitter_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Submitter Id"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "call_id",
+          "original",
+          "original_sha256",
+          "source_audio_sha256",
+          "source_attestation",
+          "partition",
+          "consent_to_train",
+          "revision",
+          "state",
+          "payload",
+          "author_id",
+          "submitter_id",
+          "approver_id",
+          "eligible_for_training",
+          "updated_at"
+        ],
+        "title": "CallReviewView",
+        "type": "object"
+      },
+      "CallEnrollment": {
+        "additionalProperties": false,
+        "properties": {
+          "audio_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Audio Sha256",
+            "type": "string"
+          },
+          "consent_evidence": {
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Consent Evidence",
+            "type": "string"
+          },
+          "consent_to_train": {
+            "default": false,
+            "title": "Consent To Train",
+            "type": "boolean"
+          },
+          "conversation_key": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Conversation Key",
+            "type": "string"
+          },
+          "partition": {
+            "enum": [
+              "train",
+              "evaluation"
+            ],
+            "title": "Partition",
+            "type": "string"
+          },
+          "source_attestation": {
+            "maxLength": 500,
+            "minLength": 10,
+            "title": "Source Attestation",
+            "type": "string"
+          },
+          "source_attested": {
+            "const": true,
+            "title": "Source Attested",
+            "type": "boolean"
+          },
+          "speaker_keys": {
+            "items": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 20,
+            "minItems": 1,
+            "title": "Speaker Keys",
+            "type": "array"
+          }
+        },
+        "required": [
+          "partition",
+          "audio_sha256",
+          "conversation_key",
+          "speaker_keys",
+          "consent_evidence",
+          "source_attestation",
+          "source_attested"
+        ],
+        "title": "CallEnrollment",
+        "type": "object"
+      },
+      "CorrectionInput": {
+        "additionalProperties": false,
+        "properties": {
+          "expected_revision": {
+            "minimum": 1,
+            "title": "Expected Revision",
+            "type": "integer"
+          },
+          "qa_override": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/QAOverride"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "segments": {
+            "items": {
+              "$ref": "#/components/schemas/SegmentCorrection"
+            },
+            "maxItems": 500,
+            "minItems": 1,
+            "title": "Segments",
+            "type": "array"
+          }
+        },
+        "required": [
+          "segments",
+          "expected_revision"
+        ],
+        "title": "CorrectionInput",
+        "type": "object"
+      },
+      "DecisionInput": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "submit",
+              "approve",
+              "reject"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "expected_revision": {
+            "minimum": 1,
+            "title": "Expected Revision",
+            "type": "integer"
+          },
+          "listened_to_audio": {
+            "const": true,
+            "title": "Listened To Audio",
+            "type": "boolean"
+          },
+          "observed_audio_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Observed Audio Sha256",
+            "type": "string"
+          },
+          "observed_duration_seconds": {
+            "exclusiveMinimum": 0,
+            "maximum": 1800,
+            "title": "Observed Duration Seconds",
+            "type": "number"
+          },
+          "rationale": {
+            "maxLength": 2000,
+            "minLength": 10,
+            "title": "Rationale",
+            "type": "string"
+          }
+        },
+        "required": [
+          "action",
+          "expected_revision",
+          "rationale",
+          "listened_to_audio",
+          "observed_audio_sha256",
+          "observed_duration_seconds"
+        ],
+        "title": "DecisionInput",
+        "type": "object"
+      },
+      "ConsentInput": {
+        "additionalProperties": false,
+        "properties": {
+          "consent_evidence": {
+            "maxLength": 300,
+            "minLength": 1,
+            "title": "Consent Evidence",
+            "type": "string"
+          },
+          "consent_to_train": {
+            "title": "Consent To Train",
+            "type": "boolean"
+          },
+          "expected_revision": {
+            "minimum": 1,
+            "title": "Expected Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "consent_to_train",
+          "consent_evidence",
+          "expected_revision"
+        ],
+        "title": "ConsentInput",
+        "type": "object"
+      },
+      "AnnotationDataset": {
+        "additionalProperties": false,
+        "properties": {
+          "approved_segments": {
+            "title": "Approved Segments",
+            "type": "integer"
+          },
+          "candidate_limit": {
+            "default": 100,
+            "title": "Candidate Limit",
+            "type": "integer"
+          },
+          "fingerprint": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Fingerprint",
+            "type": "string"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/AnnotationExportItem"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "schema_version": {
+            "const": "call-annotation-v1",
+            "default": "call-annotation-v1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "truncated": {
+            "title": "Truncated",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "items",
+          "approved_segments",
+          "truncated",
+          "fingerprint"
+        ],
+        "title": "AnnotationDataset",
+        "type": "object"
+      },
+      "ReviewEventView": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "title": "Action",
+            "type": "string"
+          },
+          "actor_id": {
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "payload_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Payload Sha256",
+            "type": "string"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "actor_id",
+          "action",
+          "revision",
+          "payload_sha256",
+          "created_at"
+        ],
+        "title": "ReviewEventView",
+        "type": "object"
+      },
+      "ActivityDay": {
+        "properties": {
+          "calls": {
+            "minimum": 0,
+            "title": "Calls",
+            "type": "integer"
+          },
+          "date": {
+            "title": "Date",
+            "type": "string"
+          }
+        },
+        "required": [
+          "date",
+          "calls"
+        ],
+        "title": "ActivityDay",
+        "type": "object"
+      },
+      "LanguageCount": {
+        "properties": {
+          "calls": {
+            "minimum": 0,
+            "title": "Calls",
+            "type": "integer"
+          },
+          "language": {
+            "title": "Language",
+            "type": "string"
+          }
+        },
+        "required": [
+          "language",
+          "calls"
+        ],
+        "title": "LanguageCount",
+        "type": "object"
+      },
+      "CallItem": {
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "language": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language"
+          },
+          "processed_at": {
+            "format": "date-time",
+            "title": "Processed At",
+            "type": "string"
+          },
+          "qa_score": {
+            "anyOf": [
+              {
+                "maximum": 5,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Qa Score"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "processed_at",
+          "qa_score"
+        ],
+        "title": "CallItem",
+        "type": "object"
+      },
+      "EmotionResult": {
+        "properties": {
+          "cache_policy": {
+            "default": "Model weights in process; no audio or prediction result cache",
+            "title": "Cache Policy",
+            "type": "string"
+          },
+          "disclaimer": {
+            "default": "Experimental acoustic pattern classification, not a person's true feelings. Probabilities are uncalibrated and must not determine HR or QA scores.",
+            "title": "Disclaimer",
+            "type": "string"
+          },
+          "language": {
+            "default": "unknown",
+            "title": "Language",
+            "type": "string"
+          },
+          "model_id": {
+            "default": "superb/wav2vec2-base-superb-er",
+            "title": "Model Id",
+            "type": "string"
+          },
+          "model_revision": {
+            "default": "441a7599c3b22107314dcbd9166621c5c83f2cc5",
+            "title": "Model Revision",
+            "type": "string"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "signals": {
+            "items": {
+              "$ref": "#/components/schemas/EmotionSignal"
+            },
+            "title": "Signals",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "disabled",
+              "completed",
+              "unavailable"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "EmotionResult",
+        "type": "object"
+      },
+      "ModelRun": {
+        "properties": {
+          "attempt": {
+            "minimum": 1,
+            "title": "Attempt",
+            "type": "integer"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "fallback": {
+            "const": "none",
+            "default": "none",
+            "title": "Fallback",
+            "type": "string"
+          },
+          "latency_ms": {
+            "minimum": 0,
+            "title": "Latency Ms",
+            "type": "number"
+          },
+          "model_id": {
+            "title": "Model Id",
+            "type": "string"
+          },
+          "model_version": {
+            "title": "Model Version",
+            "type": "string"
+          },
+          "prompt_revision": {
+            "title": "Prompt Revision",
+            "type": "string"
+          },
+          "provider": {
+            "title": "Provider",
+            "type": "string"
+          },
+          "retries": {
+            "minimum": 0,
+            "title": "Retries",
+            "type": "integer"
+          },
+          "schema_name": {
+            "title": "Schema Name",
+            "type": "string"
+          },
+          "structured_output": {
+            "enum": [
+              "valid",
+              "invalid",
+              "error"
+            ],
+            "title": "Structured Output",
+            "type": "string"
+          }
+        },
+        "required": [
+          "provider",
+          "model_id",
+          "model_version",
+          "prompt_revision",
+          "schema_name",
+          "attempt",
+          "retries",
+          "latency_ms",
+          "structured_output"
+        ],
+        "title": "ModelRun",
+        "type": "object"
+      },
+      "QAScoreResult": {
+        "properties": {
+          "call_id": {
+            "format": "uuid",
+            "title": "Call Id",
+            "type": "string"
+          },
+          "communication_clarity": {
+            "$ref": "#/components/schemas/QADimensionScore"
+          },
+          "compliance": {
+            "$ref": "#/components/schemas/QADimensionScore"
+          },
+          "compliance_flags": {
+            "items": {
+              "$ref": "#/components/schemas/ComplianceFlag"
+            },
+            "title": "Compliance Flags",
+            "type": "array"
+          },
+          "empathy": {
+            "$ref": "#/components/schemas/QADimensionScore"
+          },
+          "overall_score": {
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Overall Score",
+            "type": "number"
+          },
+          "policy_evidence": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PolicyAnswer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "problem_resolution": {
+            "$ref": "#/components/schemas/QADimensionScore"
+          },
+          "professionalism": {
+            "$ref": "#/components/schemas/QADimensionScore"
+          }
+        },
+        "required": [
+          "professionalism",
+          "empathy",
+          "problem_resolution",
+          "compliance",
+          "communication_clarity",
+          "overall_score",
+          "compliance_flags"
+        ],
+        "title": "QAScoreResult",
+        "type": "object"
+      },
+      "SummaryResult": {
+        "properties": {
+          "action_items": {
+            "items": {
+              "$ref": "#/components/schemas/ActionItem"
+            },
+            "title": "Action Items",
+            "type": "array"
+          },
+          "call_id": {
+            "format": "uuid",
+            "title": "Call Id",
+            "type": "string"
+          },
+          "call_purpose": {
+            "title": "Call Purpose",
+            "type": "string"
+          },
+          "entities": {
+            "items": {
+              "$ref": "#/components/schemas/Entity"
+            },
+            "title": "Entities",
+            "type": "array"
+          },
+          "key_discussion_points": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Key Discussion Points",
+            "type": "array"
+          },
+          "resolution_status": {
+            "$ref": "#/components/schemas/ResolutionStatus"
+          },
+          "sentiment_trajectory": {
+            "title": "Sentiment Trajectory",
+            "type": "string"
+          }
+        },
+        "required": [
+          "call_purpose",
+          "key_discussion_points",
+          "action_items",
+          "resolution_status",
+          "sentiment_trajectory",
+          "entities"
+        ],
+        "title": "SummaryResult",
+        "type": "object"
+      },
+      "TranscriptionResult": {
+        "properties": {
+          "call_id": {
+            "format": "uuid",
+            "title": "Call Id",
+            "type": "string"
+          },
+          "flagged_for_review": {
+            "title": "Flagged For Review",
+            "type": "boolean"
+          },
+          "full_text": {
+            "title": "Full Text",
+            "type": "string"
+          },
+          "overall_confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "title": "Overall Confidence",
+            "type": "number"
+          },
+          "segments": {
+            "items": {
+              "$ref": "#/components/schemas/TranscriptionSegment"
+            },
+            "title": "Segments",
+            "type": "array"
+          }
+        },
+        "required": [
+          "call_id",
+          "full_text",
+          "segments",
+          "overall_confidence",
+          "flagged_for_review"
+        ],
+        "title": "TranscriptionResult",
+        "type": "object"
+      },
+      "ModelVersionItem": {
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "family": {
+            "title": "Family",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "version": {
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "family",
+          "version",
+          "status",
+          "created_at"
+        ],
+        "title": "ModelVersionItem",
+        "type": "object"
+      },
+      "LivePeer": {
+        "additionalProperties": false,
+        "properties": {
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "user_id": {
+            "format": "uuid",
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "display_name"
+        ],
+        "title": "LivePeer",
+        "type": "object"
+      },
+      "LiveParticipant": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_samples": {
+            "title": "Accepted Samples",
+            "type": "integer"
+          },
+          "analysis": {
+            "title": "Analysis",
+            "type": "boolean"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "media_state": {
+            "enum": [
+              "new",
+              "connecting",
+              "connected",
+              "disconnected",
+              "failed",
+              "closed"
+            ],
+            "title": "Media State",
+            "type": "string"
+          },
+          "microphone": {
+            "title": "Microphone",
+            "type": "boolean"
+          },
+          "socket_connected": {
+            "title": "Socket Connected",
+            "type": "boolean"
+          },
+          "user_id": {
+            "format": "uuid",
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "display_name",
+          "microphone",
+          "analysis",
+          "socket_connected",
+          "media_state",
+          "accepted_samples"
+        ],
+        "title": "LiveParticipant",
+        "type": "object"
+      },
+      "LiveTranscriptSpan": {
+        "additionalProperties": false,
+        "properties": {
+          "end_seconds": {
+            "minimum": 0,
+            "title": "End Seconds",
+            "type": "number"
+          },
+          "start_seconds": {
+            "minimum": 0,
+            "title": "Start Seconds",
+            "type": "number"
+          },
+          "text": {
+            "maxLength": 4000,
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start_seconds",
+          "end_seconds",
+          "text"
+        ],
+        "title": "LiveTranscriptSpan",
+        "type": "object"
+      },
+      "LiveSignal": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate": {
+            "anyOf": [
+              {
+                "maxLength": 2048,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Candidate"
+          },
+          "kind": {
+            "enum": [
+              "offer",
+              "answer",
+              "ice"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "sdp": {
+            "anyOf": [
+              {
+                "maxLength": 32768,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Sdp"
+          },
+          "sdp_mid": {
+            "anyOf": [
+              {
+                "maxLength": 64,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Sdp Mid"
+          },
+          "sdp_mline_index": {
+            "anyOf": [
+              {
+                "maximum": 2,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Sdp Mline Index"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "title": "LiveSignal",
+        "type": "object"
+      },
+      "ReviewSnapshot": {
+        "additionalProperties": false,
+        "properties": {
+          "duration_seconds": {
+            "exclusiveMinimum": 0,
+            "maximum": 1800,
+            "title": "Duration Seconds",
+            "type": "number"
+          },
+          "model_runs": {
+            "items": {
+              "$ref": "#/components/schemas/ModelRun"
+            },
+            "title": "Model Runs",
+            "type": "array"
+          },
+          "qa_scores": {
+            "$ref": "#/components/schemas/QAScoreResult"
+          },
+          "transcription": {
+            "$ref": "#/components/schemas/TranscriptionResult"
+          }
+        },
+        "required": [
+          "transcription",
+          "qa_scores",
+          "duration_seconds",
+          "model_runs"
+        ],
+        "title": "ReviewSnapshot",
+        "type": "object"
+      },
+      "CorrectionPayload": {
+        "additionalProperties": false,
+        "properties": {
+          "qa_override": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/QAOverride"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "segments": {
+            "items": {
+              "$ref": "#/components/schemas/SegmentCorrection"
+            },
+            "maxItems": 500,
+            "minItems": 1,
+            "title": "Segments",
+            "type": "array"
+          }
+        },
+        "required": [
+          "segments"
+        ],
+        "title": "CorrectionPayload",
+        "type": "object"
+      },
+      "QAOverride": {
+        "additionalProperties": false,
+        "properties": {
+          "audio_end": {
+            "exclusiveMinimum": 0,
+            "title": "Audio End",
+            "type": "number"
+          },
+          "audio_start": {
+            "minimum": 0,
+            "title": "Audio Start",
+            "type": "number"
+          },
+          "rationale": {
+            "maxLength": 2000,
+            "minLength": 10,
+            "title": "Rationale",
+            "type": "string"
+          },
+          "score": {
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Score",
+            "type": "number"
+          }
+        },
+        "required": [
+          "score",
+          "rationale",
+          "audio_start",
+          "audio_end"
+        ],
+        "title": "QAOverride",
+        "type": "object"
+      },
+      "SegmentCorrection": {
+        "additionalProperties": false,
+        "properties": {
+          "segment_index": {
+            "minimum": 0,
+            "title": "Segment Index",
+            "type": "integer"
+          },
+          "speaker_role": {
+            "enum": [
+              "Agent",
+              "Customer",
+              "Unknown"
+            ],
+            "title": "Speaker Role",
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          },
+          "uncertain": {
+            "title": "Uncertain",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "segment_index",
+          "text",
+          "speaker_role",
+          "uncertain"
+        ],
+        "title": "SegmentCorrection",
+        "type": "object"
+      },
+      "AnnotationExportItem": {
+        "additionalProperties": false,
+        "properties": {
+          "approver_id": {
+            "title": "Approver Id",
+            "type": "string"
+          },
+          "author_id": {
+            "title": "Author Id",
+            "type": "string"
+          },
+          "call_id": {
+            "format": "uuid",
+            "title": "Call Id",
+            "type": "string"
+          },
+          "original_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Original Sha256",
+            "type": "string"
+          },
+          "payload": {
+            "$ref": "#/components/schemas/CorrectionPayload"
+          },
+          "review_id": {
+            "format": "uuid",
+            "title": "Review Id",
+            "type": "string"
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer"
+          },
+          "source_audio_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Source Audio Sha256",
+            "type": "string"
+          },
+          "source_expires_at": {
+            "format": "date-time",
+            "title": "Source Expires At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "review_id",
+          "call_id",
+          "revision",
+          "source_audio_sha256",
+          "original_sha256",
+          "source_expires_at",
+          "author_id",
+          "approver_id",
+          "payload"
+        ],
+        "title": "AnnotationExportItem",
+        "type": "object"
+      },
+      "EmotionSignal": {
+        "properties": {
+          "calibrated": {
+            "const": false,
+            "default": false,
+            "title": "Calibrated",
+            "type": "boolean"
+          },
+          "confidence": {
+            "anyOf": [
+              {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence"
+          },
+          "end": {
+            "exclusiveMinimum": 0,
+            "title": "End",
+            "type": "number"
+          },
+          "label": {
+            "default": "Unknown",
+            "enum": [
+              "neutral",
+              "happy",
+              "angry",
+              "sad",
+              "Unknown"
+            ],
+            "title": "Label",
+            "type": "string"
+          },
+          "model_id": {
+            "default": "superb/wav2vec2-base-superb-er",
+            "title": "Model Id",
+            "type": "string"
+          },
+          "model_revision": {
+            "default": "441a7599c3b22107314dcbd9166621c5c83f2cc5",
+            "title": "Model Revision",
+            "type": "string"
+          },
+          "overlap": {
+            "default": false,
+            "title": "Overlap",
+            "type": "boolean"
+          },
+          "probabilities": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Probabilities",
+            "type": "object"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "speaker_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Speaker Id"
+          },
+          "start": {
+            "minimum": 0,
+            "title": "Start",
+            "type": "number"
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ],
+        "title": "EmotionSignal",
+        "type": "object"
+      },
+      "QADimensionScore": {
+        "properties": {
+          "justification": {
+            "title": "Justification",
+            "type": "string"
+          },
+          "score": {
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Score",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "score",
+          "justification"
+        ],
+        "title": "QADimensionScore",
+        "type": "object"
+      },
+      "ComplianceFlag": {
+        "properties": {
+          "severity": {
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ],
+            "title": "Severity",
+            "type": "string"
+          },
+          "transcript_reference": {
+            "title": "Transcript Reference",
+            "type": "string"
+          },
+          "violation": {
+            "title": "Violation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "violation",
+          "severity",
+          "transcript_reference"
+        ],
+        "title": "ComplianceFlag",
+        "type": "object"
+      },
+      "PolicyAnswer": {
+        "properties": {
+          "answer": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answer"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/PolicyEvidence"
+            },
+            "title": "Sources",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "supported",
+              "abstain"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "PolicyAnswer",
+        "type": "object"
+      },
+      "ActionItem": {
+        "properties": {
+          "deadline": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Deadline"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "owner": {
+            "enum": [
+              "agent",
+              "customer",
+              "system"
+            ],
+            "title": "Owner",
+            "type": "string"
+          }
+        },
+        "required": [
+          "description",
+          "owner"
+        ],
+        "title": "ActionItem",
+        "type": "object"
+      },
+      "Entity": {
+        "properties": {
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "label"
+        ],
+        "title": "Entity",
+        "type": "object"
+      },
+      "ResolutionStatus": {
+        "enum": [
+          "resolved",
+          "unresolved",
+          "escalated"
+        ],
+        "title": "ResolutionStatus",
+        "type": "string"
+      },
+      "TranscriptionSegment": {
+        "properties": {
+          "confidence": {
+            "maximum": 1,
+            "minimum": 0,
+            "title": "Confidence",
+            "type": "number"
+          },
+          "end_time": {
+            "title": "End Time",
+            "type": "number"
+          },
+          "low_confidence": {
+            "title": "Low Confidence",
+            "type": "boolean"
+          },
+          "speaker": {
+            "title": "Speaker",
+            "type": "string"
+          },
+          "speaker_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Speaker Id"
+          },
+          "speaker_overlap": {
+            "default": false,
+            "title": "Speaker Overlap",
+            "type": "boolean"
+          },
+          "speaker_role": {
+            "anyOf": [
+              {
+                "enum": [
+                  "Agent",
+                  "Customer",
+                  "Unknown"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Speaker Role"
+          },
+          "start_time": {
+            "title": "Start Time",
+            "type": "number"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "start_time",
+          "end_time",
+          "speaker",
+          "confidence",
+          "low_confidence"
+        ],
+        "title": "TranscriptionSegment",
+        "type": "object"
+      },
+      "PolicyEvidence": {
+        "properties": {
+          "effective_date": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective Date"
+          },
+          "passage": {
+            "title": "Passage",
+            "type": "string"
+          },
+          "source_id": {
+            "title": "Source Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "passage"
+        ],
+        "title": "PolicyEvidence",
+        "type": "object"
+      }
+    }
+  }
+}
